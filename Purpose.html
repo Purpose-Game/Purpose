@@ -720,19 +720,80 @@ I hear footsteps behind the door and muffled voices. I was ready to fight my way
 
 &lt;%= window.story.render(&quot;F: Sophia!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P17V3" tags="" position="2200,4575" size="100,100">&quot;What&#39;s your name?&quot;, &lt;%= window.story.render(&quot;F: Dry mouth, need drink&quot;) %&gt;.
 
-&lt;%= window.story.render(&quot;F: Sophia!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="" position="2550,4575" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="" position="2050,4725" size="100,100">The voices stop, there are more footsteps- the door is opening. A woman steps through: she&#39;s tall and slender, with long dark brown hair, in her late 30s if I had to guess.
+&lt;%= window.story.render(&quot;F: Sophia!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="" position="2550,4575" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="" position="2050,4725" size="100,100">The voices stop, there are more footsteps- the door is opening. A woman steps through: she&#39;s has short brown hair, soft brown, is in her earlier 30s if I had to guess, but has a sort of hardered look about her.
 
 &quot;Sizing me up are you?&quot;, she asks.
 
 [[You say nothing|C1P18V2]]
 [[&quot;Yeah.&quot;|C1P18V1]]
-[[&quot;Why would I be?&quot;|C1P18V3]]</tw-passagedata><tw-passagedata pid="62" name="C1P18V1" tags="" position="1900,4875" size="100,100">&quot;Yeah, I am&quot;, I say as confidently as I can, while keeping eye contact.
+[[&quot;Why would I be?&quot;|C1P18V3]]</tw-passagedata><tw-passagedata pid="62" name="C1P18V1" tags="" position="1900,4875" size="100,100">&quot;Yeah, I am&quot;, I say while keeping eye contact.
 
-&quot;Fair enough&quot;, the woman replied. &quot;I guess I would be too if I was in your position&quot;, she adds.</tw-passagedata><tw-passagedata pid="63" name="C1P18V2" tags="" position="2050,4875" size="100,100">Well, she&#39;s caught me, no point stopping I suppose. I continue to look her over. She doesn&#39;t seem to bothered by it, she&#39;s still standing in the doorway.</tw-passagedata><tw-passagedata pid="64" name="C1P18V3" tags="" position="2200,4875" size="100,100">&quot;Why would I be doing a thing like that I wonder?&quot;, I remark sarcastically.
+&quot;How am I fairing?&quot;, the woman replies.
+
+[[You say nothing|C1P18V12]]
+[[&quot;Definitely a threat&quot;|C1P18V11]]
+[[&quot;Not a threat&quot;|C1P18V13]]</tw-passagedata><tw-passagedata pid="63" name="C1P18V2" tags="" position="2050,4875" size="100,100">Well, she&#39;s caught me, no point stopping I suppose. I continue to look her over. She doesn&#39;t seem to bothered by it, she&#39;s still standing in the doorway.
+
+&lt;%= window.story.render(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="64" name="C1P18V3" tags="" position="2200,4875" size="100,100">&quot;Why would I be doing a thing like that I wonder?&quot;, I remark sarcastically.
 
 &quot;Hmm, I don&#39;t know; maybe it has something to do with waking up on a stranger couch?&quot;, the woman replies without missing a beat.
 
-&quot;Could be...&quot;, I say back.</tw-passagedata><tw-passagedata pid="65" name="Staring contest, saying nothing" tags="" position="2400,4775" size="200,200">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+&quot;Could be...&quot;, I say back.
+
+&lt;%= window.story.render(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="65" name="Staring contest, saying nothing" tags="" position="2650,5200" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="66" name="C1P18V12" tags="" position="1750,5025" size="100,100">I stare for a moment longer, then shrug.
+
+The lady gives me a half smile.
+
+&lt;%= window.story.render(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="67" name="C1P18V11" tags="" position="1600,5025" size="100,100">&quot;You&#39;re definitely a threat: I don&#39;t know you&quot;, I say.
+
+&quot;Cautious; not a bad trait to have these days.&quot;, she replies.
+
+&lt;%= window.story.render(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="68" name="C1P18V13" tags="" position="1900,5025" size="100,100">&quot;You&#39;re not a threat: if you wanted to kill me, you&#39;d have done it while I was passed out&quot;, I say.
+
+&quot;Good point, but what if I wanted you to be awake when I killed you?&quot;, she asks. I stare back at her, unsure how to reply.
+
+&lt;%= window.story.render(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="69" name="F: My name is Lucy" tags="" position="2400,4900" size="100,200">She steps through the door and closes it behind her.
+
+&quot;My name is Lucy, and it seems you&#39;ve already met my daughter, Tiffany&quot;, Lucy says.
+
+&quot;I&#39;d welcome you to our home, but the broken &lt;% window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;) ? print(&quot;back door&quot;) : print(&quot;window&quot;) %&gt; suggests you already helped yourself&quot;, Lucy says as she folders her arms.
+
+[[You say nothing|C1P19V2]]&lt;br&gt;
+[[&quot;Sorry about that&quot;|C1P19V1]]&lt;br&gt;
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) {
+	print(&quot;[[&quot;I did knock&quot;|C1P19V4]]&lt;br&gt;&quot;);
+} %&gt;
+[[&quot;I didn&#39;t have a choice&quot;|C1P19V3]]</tw-passagedata><tw-passagedata pid="70" name="Protagonist: Sarah // Sister: Tiffany // Child: Sophia // Mother: Lucy" tags="" position="2275,350" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="71" name="C1P19V2" tags="" position="1975,5175" size="100,100">Well, this is awkward... I maintain eye contact with her.
+
+&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="C1P19V1" tags="" position="1825,5175" size="100,100">&quot;Ah, right... sorry about that&quot;, I say as I awkwardly scratch the back of my head.
+
+&quot;Don&#39;t sweat it, we only set up shop here a few days ago ourselves&quot;, Lucy remarks.&quot;Ah, right... sorry about that&quot;, I say as I awkwardly scratch the back of my head.
+
+&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="73" name="C1P19V3" tags="" position="2125,5175" size="100,100">&quot;I didn&#39;t have much of a choice, if I stayed out there I would have been a meal for the walkers by the end of the day&quot;, I remark.
+
+&quot;That is true, you really weren&#39;t in great shape. That much I can attest to that&quot;, Lucy replies.
+
+&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="74" name="C1P19V4" tags="" position="2275,5175" size="100,100">&quot;I did try knocking before I came in&quot;, I remark.
+
+&quot;Yeah, you did&quot;, Lucy chuckles.
+
+&quot;I was half tempted to open the door just to see who was crazy enough to still knock these days&quot;, Lucy says.
+
+&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="F: Anyway, since" tags="" position="2475,5175" size="100,100">Lucy takes a few more steps into the room and sits in an armchair across from me.
+
+&quot;Anyway, since you went and collapsed in my laundry room, you left me with a difficult choice: put you outside, which I could tell just by looking at the state you were in would be a death sentence; kill you there and then, which would also, you know, be a death sentence; or bring you in and patch you up&quot;, Lucy says very casually.
+
+[[You say nothing|C1P20V2]]&lt;br&gt;
+[[&quot;Thanks for saving me&quot;|C1P20V1]]&lt;br&gt;
+[[&quot;You should have let me die&quot;|C1P20V3]]</tw-passagedata><tw-passagedata pid="76" name="C1P20V2" tags="" position="2050,5325" size="100,100">I continue to stare at Lucy.</tw-passagedata><tw-passagedata pid="77" name="C1P20V1" tags="" position="1900,5325" size="100,100">&quot;Thanks for choosing option number three, I think&quot;, I reply cautiously.</tw-passagedata><tw-passagedata pid="78" name="C1P20V3" tags="" position="2200,5325" size="100,100">&quot;You should have left me to die&quot;, I state.
+
+&quot;Oh, and why&#39;s that?&quot;, Lucy asks?
+
+&quot;That&#39;s what I would have done in your position. Supplies are scarce these days, I was in pretty bad shape, and I was, and still am, a stranger. For all you know, I could have got hurt breaking into someone else&#39;s house, just like I did yours&quot;, I state matter-of-factly.
+
+&quot;Good point, I guess I&#39;m just too trusting&quot;, Lucy replies.</tw-passagedata><tw-passagedata pid="79" name="F: Speaking of which" tags="" position="2475,5325" size="100,100">Lucy sits forward in her chair.
+
+Speaking of injuries, *how did* you get yourself so banged up?&quot;, Lucy asks.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
