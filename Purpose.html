@@ -56,7 +56,7 @@ $(document).on("sm.passage.showing", function(event, passage) {
 // Helpers
 //
 
-// Redirrects one passage to another after a given time.
+// Redirects one passage to another after a given time.
 // 5 seconds by default.
 window.story.redirect = function (pageName, time = 5) {
 	let timeLeft = time;
@@ -70,6 +70,13 @@ window.story.redirect = function (pageName, time = 5) {
 	_.delay(tick, 1000);
 };
 
+// Displays text on screen after x period of time
+window.story.delayedText = function (time = 1000, id = "delayed", fadeIn = 1000) {
+	_.delay(function() {
+		$(`#${id}`).show(fadeIn);
+	}, time);
+}
+
 // Sets an achievement and shows a popup
 window.story.achievement = function (chapter, shorthand, title, text) {
 	try {
@@ -77,6 +84,11 @@ window.story.achievement = function (chapter, shorthand, title, text) {
 	} catch (_) {
 		state.achievements[chapter] = {};
 		state.achievements[chapter][shorthand] = true;
+	}
+
+	if (window.story.popup === undefined) {
+		console.log("SimpleNotification didn't load in time.");
+		return;
 	}
 	
 	window.story.popup.info({
@@ -139,29 +151,20 @@ $(function () {
 		window.story.popup = SimpleNotification;
 	});
 });</script><tw-passagedata pid="1" name="C1P1" tags="" position="2050,500" size="100,100">### Chapter One
-#### Introductions
+#### Poor choices
 
 &lt;%
-_.delay(function() {
-	$(&quot;#one&quot;).text(&quot;Go.&quot;);
-}, 2000);
-
-_.delay(function() {
-  	$(&quot;#two&quot;).text(&quot;Run.&quot;);
-}, 3000);
-
-_.delay(function() {
-	$(&quot;#three&quot;).text(&quot;Hide.&quot;);
-}, 4000);
-
-_.delay(function() {
-  	$(&quot;#main&quot;).show(1000);
-}, 5000);
+window.story.delayedText(2000, &quot;one&quot;, 0);
+window.story.delayedText(3000, &quot;two&quot;, 0);
+window.story.delayedText(4000, &quot;three&quot;, 0);
+window.story.delayedText(5000, &quot;four&quot;);
 %&gt;
 
-&lt;div#one&gt;&lt;/div&gt; &lt;div#two&gt;&lt;/div&gt; &lt;div#three&gt;&lt;/div&gt;&lt;br&gt;
+&lt;div-#one&gt;Go.&lt;/div&gt;
+&lt;div-#two&gt;Run.&lt;/div&gt;
+&lt;div-#three&gt;Hide.&lt;/div&gt;
 
-&lt;div#main style=&quot;display: none;&quot;&gt;
+&lt;div-#four&gt;
 
 That is what&#39;s repeating in my head, over and over, as I’m hobbling along this sidewalk, out in the open, blood dripping from my leg.
 
@@ -192,17 +195,16 @@ I go back up the patio steps and head to the back door.
 
 &lt;%= window.story.render(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="7" name="C1P5V11" tags="" position="1675,1250" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;);
+window.story.delayedText(3000);
 
 _.delay(function() {
-	$(&quot;#main&quot;).show(1000);
-	
-	window.story.achievement(&quot;Chapter0&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;);
-}, 3000);
+		window.story.achievement(&quot;Chapter0&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;);
+	}, 3000);
 %&gt;
 
 I knock, and wait...
 
-&lt;div#main style=&quot;Display: None&quot;&gt;
+&lt;div-#delayed&gt;
 
 Yeah, well, it was worth a try I guess?
 
@@ -248,18 +250,13 @@ It&#39;s still too dark inside properly. It looks like a laundry room?
 
 The board comes right off, pulling bits of the moldy window frame it was nailed to with it. I fall backward, and narrowly avoid hitting my head on a large tree root. I did, however, manage to land directly on my leg wound. &lt;%= window.story.render(&quot;F: Mother Comments&quot;) %&gt;.
 
-[[You get up again, and go to the window|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="Introduction" tags="noSave" position="2000,350" size="200,100">&lt;%
-_.delay(function() {
-	$(&quot;#main&quot;).show(3000);
-}, 1000);
-%&gt;
+[[You get up again, and go to the window|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="Introduction" tags="noSave" position="2000,350" size="200,100">&lt;% window.story.delayedText(1000, &quot;delayed&quot;, 3000) %&gt;
 	
-&lt;div#main style=&quot;Display: None&quot;&gt;
+&lt;div-#delayed&gt;
 
 The choices you make have an impact on the story.
 
-Important story information is **in bold**.
-Irreversible actions are \[\[**in bold**\]\].
+Important story information is **in bold**. Irreversible actions are &lt;a0&gt;**in bold**&lt;/a&gt;.
 
 [[New Game|C1P1]]
 &lt;% //[[Continue|C1P1]] Pending DB %&gt;
@@ -411,14 +408,12 @@ Still just the duck tape, not a bad find.
 &lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="22" name="C1P7V13" tags="" position="1900,2000" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Tap&quot;);
 
-_.delay(function() {
-	$(&quot;#main&quot;).show(1000);
-}, 3000);
+window.story.delayedText(2000);
 %&gt;
 
 I turn on the tap.
 
-&lt;div#main style=&quot;Display: None&quot;&gt;
+&lt;div-#delayed&gt;
 
 Yeah, that would have been too good to be true.
 
@@ -453,14 +448,12 @@ const iFound =
 	itemsCollected === 3 ? &quot;I found a handful of useful things&quot; :
 	&quot;I didn&#39;t find anything&quot;;
 	
-_.delay(function() {
-	$(&quot;#main&quot;).show(1000);
-}, 8000);
+window.story.delayedText(8000);
 %&gt;
 
 &lt;% print(iFound) %&gt;, but that&#39;s enough searching; my head is pounding now, I know I&#39;ve pushed myself too far, but what choice did I have? I just need... I need to... um, shit, come on Sarah, stay awake, we&#39;re almost there.
 
-&lt;div#main style=&quot;Display: None&quot;&gt;
+&lt;div#delayed style=&quot;Display: None&quot;&gt;
 
 I need, to sit down, and...
 
