@@ -206,13 +206,15 @@ In my 20 years on this earth I have never done anything more stupid than that; I
 
 [[[Continue limping down the sidewalk]|C1P2]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="C1P2" tags="" position="2050,650" size="100,100">**I&#39;m not feeling well**. The adrenaline must be wearing off, I&#39;m starting to get dizzy. Might be blood loss, might be nerves; regardless, I need to get off the street.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="C1P2" tags="" position="2050,650" size="100,100">I continue down the sidewalk, **I&#39;m not feeling too good**. The adrenaline must be wearing off, I&#39;m starting to get dizzy. Might be blood loss, might be nerves; regardless, I need to get off the street.
 
-[[[Look around]|C1P3]]</tw-passagedata><tw-passagedata pid="3" name="C1P3" tags="" position="2050,800" size="100,100">There are a few houses dotted along either side of the suburban street; with my previous encounter still fresh in my mind, I&#39;m not too keen to go back into one, but I don&#39;t have much of a choice.
+[[[Look around]|C1P3]]</tw-passagedata><tw-passagedata pid="3" name="C1P3" tags="" position="2050,800" size="100,100">I look around, there are a few houses dotted along either side of the suburban street; with my previous encounter still fresh in my mind, I&#39;m not too keen to go back into one, but I don&#39;t have much of a choice.
 
-[[[Head to the closest house]|C1P4]]</tw-passagedata><tw-passagedata pid="4" name="C1P4" tags="" position="2050,950" size="100,100">I hop over the brick fence to get into the back garden, if you could still call it that with how overgrown it is; it should be enough to keep the walkers out for now. The garden has walls on three sides, and a house on the fourth side. It has a few trees, some with large roots; I&#39;ll need to watch my step. And other than a few overgrown flowerbeds, there&#39;s not much out here.
+[[[Head to the closest house]|C1P4]]</tw-passagedata><tw-passagedata pid="4" name="C1P4" tags="" position="2050,950" size="100,100">I B-line it for the nearest house, it has a decent brick wall surrounding it; that&#39;ll do, it should be enough to keep the walkers out for now.
 
-Getting closer to the house, I see two ways in: the back door, or a window around the side of the house.
+I hop over the wall and land in the back garden, if you could still call it that with how overgrown it is. The garden has walls on three sides, and a house on the fourth side. It has a few trees, some with large roots, and a few overgrown flowerbeds; other than that, there&#39;s not much out here.
+
+Getting closer to the house, I can see two ways I might be able to get in: the back door, or a window around the side of the house.
 
 [[[Go to the window]|C1P5V2]]&lt;br&gt;
 [[[Go to the back door]|C1P5V1]]</tw-passagedata><tw-passagedata pid="5" name="C1P5V1" tags="" position="1975,1100" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
@@ -343,7 +345,7 @@ Now that I&#39;m inside, I need to deal with my leg; to do that, I&#39;m going t
 - something to clean the wound
 - something to bandage my leg with
 
-I could also use a weapon... I left my knife in that guy&#39;s neck, so I won&#39;t be getting that back any time soon.
+I could also use a weapon... I left my knife in that guy&#39;s head, so I won&#39;t be getting that back any time soon.
 
 &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="17" name="C1P7V1" tags="" position="1900,1850" size="100,100">&lt;%
 if (window.passage.name != &quot;C1P7V1&quot;){
@@ -765,7 +767,7 @@ I stare into her eyes for a moment longer.
 
 &lt;%= window.story.render(&quot;F: Sophia!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P17V3" tags="" position="2200,4575" size="100,100">&quot;What&#39;s your name?&quot;, &lt;%= window.story.render(&quot;F: Dry mouth, need drink&quot;) %&gt;.
 
-&lt;%= window.story.render(&quot;F: Sophia!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="" position="2550,4575" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="" position="2050,4725" size="100,100">The voices stop, there are more footsteps- the door is opening. A woman steps through: she&#39;s has short brown hair, soft brown eyes, and is in her earlier 30s if I had to guess. She has a sort of weathered look about her.
+&lt;%= window.story.render(&quot;F: Sophia!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="" position="2550,4575" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="" position="2050,4725" size="100,100">The voices stop, there are more footsteps- the door is opening. A woman steps through: she&#39;s has short brown hair, soft brown eyes, and is in her late 30s if I had to guess. She has a sort of weathered look about her.
 
 &quot;Sizing me up are you?&quot;, she asks.
 
@@ -823,7 +825,9 @@ Well, this is awkward... I maintain eye contact with her.
 
 &quot;Don&#39;t sweat it, we only set up shop here a few days ago ourselves&quot;, Lucy remarks.&quot;
 
-&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="C1P19V3" tags="" position="2125,5175" size="100,100">&quot;I didn&#39;t have much of a choice, if I stayed out there I would have been a meal for the walkers by the end of the day&quot;, I remark.
+&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="C1P19V3" tags="" position="2125,5175" size="100,100">&lt;% window.story.setChoice(&quot;Chapter0&quot;, &quot;NoChoice&quot;) %&gt;
+
+&quot;I didn&#39;t have much of a choice, if I stayed out there I would have been a meal for the walkers by the end of the day&quot;, I remark.
 
 &quot;That is true, you really weren&#39;t in great shape. That much I can attest to that&quot;, Lucy replies.
 
@@ -853,13 +857,43 @@ I continue to stare at Lucy.
 
 &quot;Good point, I guess I&#39;m just too trusting&quot;, Lucy replies.
 
-&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="78" name="F: How did you?" tags="" position="2475,5475" size="100,100">&quot;Yup. It&#39;s called a cannula; and that bag it&#39;s connected to, is just salty water&quot;, Lucy explains.
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="78" name="F: How did you?" tags="" position="2475,5475" size="100,100">&quot;Yup. It&#39;s called a cannula, and that bag it&#39;s connected to, is just salty water&quot;, Lucy explains.
 
-Lucy sits forward in her chair.
+&quot;You&#39;re lucky that you broke into the one house around here with a nurse in it, albeit an ill-supplied nurse&quot;, Lucy chuckles.
 
-&quot;Speaking of which, how *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
+Lucy pauses, then sits forward in her chair.
 
-[[[**Tell Lucy the Truth**]|C1P22V1]][[[**Lie to Lucy**]|C1P22V2]]</tw-passagedata><tw-passagedata pid="79" name="C1P22V1" tags="" position="1975,5625" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="C1P22V2" tags="" position="2125,5625" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="81" name="C1P9V2" tags="" position="2050,2750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
+&quot;Speaking of injuries, how *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
+
+[[[**Tell Lucy the Truth**]|C1P22V1]][[[**Lie to Lucy**]|C1P22V2]]</tw-passagedata><tw-passagedata pid="79" name="C1P22V1" tags="" position="1975,5625" size="100,100">&quot;I killed a man&quot;, I state.
+
+Lucy sits there for a moment, then her slight smile drops as she realizes I wasn&#39;t joking.
+
+&quot;Did he deserve it?&quot;, she asks.
+
+[[...|C1P22V12]]&lt;br&gt;
+[[Yes, it was unprovoked|C1P22V11]]&lt;br&gt;
+[[No, wrong place wrong time|C1P22V13]]</tw-passagedata><tw-passagedata pid="80" name="C1P22V2" tags="" position="2125,5625" size="100,100">&quot;I cut myself climbing a fence&quot;, I say; **improv is not my strong suit**.
+
+&quot;Uh-huh&quot;, Lucy says, clearly unconvinced.
+
+&quot;Must have been a hellova fence&quot;, she adds.
+
+&quot;It was. I was trying to get away from a pack of walkers, got cornered, and had to climb a chainlink fence with wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I try to justify.
+
+&lt;% if (window.story.getChoice(&quot;Chapter0&quot;, &quot;NoChoice&quot;)) { %&gt;
+
+&quot;Seems to be a running theme with you&quot;, Lucy remarks.
+
+&lt;% } %&gt;
+
+&quot;Look, kid- what&#39;s your name?&quot;, Lucy asks.
+
+&quot;It&#39;s Sarah&quot;, I say.
+
+&quot;Ok, Sarah, before the world went to hell in a handbasket, I was Wound Care Nurse for 9 years, so I know my cuts pretty well, well enough to know you&#39;re full of shit&quot;, Lucy states.
+
+&quot;I don&#39;t really care about how you hurt your leg, if you want to keep that to yourself, that&#39;s fine. Only one thing matters to me, and she&#39;s probably standing on the other side of that door listening right now, so, be straight with me: are you going to get my little girl killed? Because if the answer is yes, I&#39;ll just kill you now, save us both the hassle&quot;, Lucy says, as she pulls a knife out from behind her back and rests it on her legs.</tw-passagedata><tw-passagedata pid="81" name="C1P9V2" tags="" position="2050,2750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
 &lt;i&gt;
 
@@ -912,7 +946,13 @@ Lucy crosses her arms.
 
 &lt;% } %&gt;
 
-&quot;*Days?!*&quot;, I exclaim.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) { %&gt;
+
+&quot;Also, what the hell was the soap bar for?&quot;, Lucy adds.
+
+&lt;% } %&gt;
+
+&quot;Hold on, *Days?!*&quot;, I exclaim.
 
 &quot;&lt;% if (!verbal) print(&quot;She does speak! &quot;) %&gt;Oh yeah, you had one foot in the grave. That&#39;s why I had to give you IV fluids, couldn&#39;t have you dying of dehydration on me after all the effort I put into *not* killing you&quot;, Lucy states calmly.
 
@@ -925,7 +965,45 @@ Lucy crosses her arms.
 
 &lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="89" name="C1P21V3" tags="" position="2200,5475" size="100,100">&quot;Oh, like when you&#39;re in Hospital?&quot;, I enquire.
 
-&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata></tw-storydata>
+&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="90" name="C1P22V12" tags="" position="1825,5775" size="100,100">I look down for a moment, then back at Lucy. But I think that&#39;s all she needed to see.
+
+&quot;I&#39;ll take that as a no then&quot;, Lucy says in a flat tone.
+
+&lt;%= window.story.render(&quot;F: Picking fights&quot;) %&gt;
+
+&lt;%= window.story.render(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="91" name="C1P22V11" tags="" position="1675,5775" size="100,100">&quot;Yes, definitely. &lt;%= window.story.render(&quot;F: Basement&quot;) %&gt;
+
+&quot;I didn&#39;t mean to walk into his place, he could have just asked me to leave, or tried to talk to me, or something, but instead, he saw a *defenseless little girl*, and tried to kill me. So yeah, it was self-defense. The prick had it coming&quot;, I say passionately.
+
+&lt;%= window.story.render(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="92" name="C1P22V13" tags="" position="1975,5775" size="100,100">&quot;No, it was a bad case of wrong place, wrong time. &lt;%= window.story.render(&quot;F: Basement&quot;) %&gt;
+
+&lt;%= window.story.render(&quot;F: Picking fights&quot;) %&gt;
+
+&lt;%= window.story.render(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="93" name="F: Basement" tags="" position="1475,5775" size="100,100">I was going house by house, scavenging what I could. I went into this one place, started poking around, but I got sloppy, didn&#39;t clear the place fully before I started going through it. He was in the basement, and we bumped into each other on the stairs. We looked at each other for a moment, then he came at me with a hacksaw&quot;, I explain.
+
+&quot;So it was self-defense&quot;, Lucy says, sounding unconvinced.</tw-passagedata><tw-passagedata pid="94" name="F: Picking fights" tags="" position="1325,5775" size="100,100">&quot;I wasn&#39;t trying to pick a fight, hell, I wasn&#39;t even trying to find people, I was just looking for food, like everyone else these days. Yes, I was in this guy&#39;s house and he probably had the right to defend himself, but I possed no threat to him, and he attacked first... after he came at me, it was me or him&quot;, I try to justify.</tw-passagedata><tw-passagedata pid="95" name="F: Dying action" tags="" position="1175,5775" size="100,100">Lucy&#39;s expression hasn&#39;t changed, she looks a little tenser though.
+
+&quot;Anyway, to put a long story short, I got the upper hand, put him on the floor, and got on top of him, then I plunged my knife deep into the side of his neck. I thought it was over, so I let go... the last thing he did on this earth, was pull that knife out of his neck, and put it in my leg&quot;, I explain.
+
+&quot;I was so surprised, it took me a moment to process what had just happened, and, before I&#39;d even had time to do anything about it, he turned! The walker grabbed me, and I didn&#39;t have anything else at hand, so I pulled the same stunt he did: yanked the knife out of my leg, and put it in his fucking head&quot;, I say.
+
+&quot;Language&quot;, Lucy snaps.
+
+[[...|C1P23V2]]&lt;br&gt;
+[[What?|C1P23V1]]&lt;br&gt;
+[[Seriously?|C1P23V3]]</tw-passagedata><tw-passagedata pid="96" name="C1P23V2" tags="" position="1825,5925" size="100,100">I give her my best &#39;What the Fuck&#39; look.
+
+&lt;%= window.story.render(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="97" name="C1P23V1" tags="" position="1675,5925" size="100,100">&quot;What?&quot;, I say, confused.
+
+&lt;%= window.story.render(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="98" name="C1P23V3" tags="" position="1975,5925" size="100,100">&quot;Seriously? I just told you I killed a guy and you&#39;re worried about my use of the F Bomb?&quot;, I say, confuzzled.
+
+&lt;%= window.story.render(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="99" name="F: Habit" tags="" position="1475,5925" size="100,100">&quot;Sorry, habit. I don&#39;t like Tiff swearing, she&#39;s too young&quot;, Lucy says apologetically.
+
+&quot;Speaking of names, I never caught yours&quot;, Lucy remarks.
+
+&quot;It&#39;s Sarah&quot;, I say.
+
+&quot;Sarah... I had a cousin named Sarah&quot;, Lucy says.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
