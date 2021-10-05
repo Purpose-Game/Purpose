@@ -79,8 +79,7 @@ $(document).on("sm.passage.showing", function(event, passage) {
 // Helpers
 //
 
-// Redirects one passage to another after a given time.
-// 5 seconds by default.
+// Redirects one passage to another after a given time
 window.story.redirect = function (pageName, time = 5) {
 	let timeLeft = time;
 
@@ -473,15 +472,15 @@ I pick up the duck tape.
 let itemsCollected = 0;
 
 for (const [item, value] of window.story.getChoices(&quot;Chapter1&quot;)) {
-	switch (item) {	
+	switch (item) {
 		case &quot;Tape&quot;:
 			if (value) itemsCollected++;
 			break;
-			
+
 		case &quot;Disinfectant&quot;:
 			if (value) itemsCollected++;
 			break;
-			
+
 		case &quot;Shirt&quot;:
 			if (value) itemsCollected++;
 			break;
@@ -711,7 +710,7 @@ My eyes are locked on the shadow, watching, waiting for it to move.
 
 &lt;%= window.story.render(&quot;F: Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="47" name="C1P16V3" tags="" position="2200,4425" size="100,100">&quot;Who are you, what have you done to me? Show yourself!&quot;, I shout.
 
-&lt;%= window.story.render(&quot;F: Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="48" name="F: Mother Comments" tags="" position="2475,1250" size="100,100">I wince and refrain from shouting several words and I&#39;m sure my mother drop dead if she heard</tw-passagedata><tw-passagedata pid="49" name="F: Here goes nothing" tags="" position="2625,1550" size="100,100">I carefully push out bits of glass still left attached to the frame, and take one last look inside... well shit, he goes nothing.
+&lt;%= window.story.render(&quot;F: Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="48" name="F: Mother Comments" tags="" position="2475,1250" size="100,100">I wince and refrain from shouting several words and I&#39;m sure my mother would kill me if she heard</tw-passagedata><tw-passagedata pid="49" name="F: Here goes nothing" tags="" position="2625,1550" size="100,100">I carefully push out bits of glass still left attached to the frame, and take one last look inside... well shit, he goes nothing.
 
 [[[Climb in the window]|C1P6]]</tw-passagedata><tw-passagedata pid="50" name="F: Search options" tags="" position="2550,1950" size="100,200">&lt;%
 const passageName = window.passage.name;
@@ -806,12 +805,14 @@ The lady gives me a half smile.
 
 &quot;I&#39;d welcome you to our home, but the broken &lt;% window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;) ? print(&quot;back door&quot;) : print(&quot;window&quot;) %&gt; suggests you already helped yourself&quot;, Lucy says as she folders her arms.
 
+Guess that explains where I am.
+
 [[...|C1P19V2]]&lt;br&gt;
 [[Sorry.|C1P19V1]]&lt;br&gt;
 [[I had no choice.|C1P19V3]]&lt;br&gt;
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) {
 	print(&quot;[[I did knock.|C1P19V4]]&quot;);
-} %&gt;</tw-passagedata><tw-passagedata pid="69" name="Protagonist: Sarah // Sister: Tiffany // Child: Sophia // Mother: Lucy" tags="" position="2275,350" size="200,200">Protagonist: Sarah
+} %&gt;</tw-passagedata><tw-passagedata pid="69" name="Characters" tags="" position="2275,350" size="200,100">Protagonist: Sarah
 Sister: Tiffany
 Child: Sophia
 Mother: Lucy</tw-passagedata><tw-passagedata pid="70" name="C1P19V2" tags="" position="1975,5175" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
@@ -842,9 +843,9 @@ Well, this is awkward... I maintain eye contact with her.
 
 I continue to stare at Lucy.
 
-&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="C1P20V1" tags="" position="1900,5325" size="100,100">&quot;Thanks for choosing option number three, I think&quot;, I reply cautiously.
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="C1P20V1" tags="" position="1900,5325" size="100,100">&quot;Thanks for choosing option number three, I think&quot;, I reply cautiously.
 
-&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="77" name="C1P20V3" tags="" position="2200,5325" size="100,100">&quot;You should have left me to die&quot;, I state.
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="77" name="C1P20V3" tags="" position="2200,5325" size="100,100">&quot;You should have left me to die&quot;, I state.
 
 &quot;Oh, and why&#39;s that?&quot;, Lucy asks.
 
@@ -852,24 +853,13 @@ I continue to stare at Lucy.
 
 &quot;Good point, I guess I&#39;m just too trusting&quot;, Lucy replies.
 
-&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="78" name="F: How did you?" tags="" position="2475,5325" size="100,100">&lt;%
-if (
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;)
-) {
-	window.story.achievement(&quot;Chapter0&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;, &quot;You have the right to remain silent...&quot;);
-}
-%&gt;
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="78" name="F: How did you?" tags="" position="2475,5475" size="100,100">&quot;Yup. It&#39;s called a cannula; and that bag it&#39;s connected to, is just salty water&quot;, Lucy explains.
 
 Lucy sits forward in her chair.
 
-&quot;How *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
+&quot;Speaking of which, how *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
 
-[[[**Tell Lucy the Truth**]|C1P21V1]][[[**Lie to Lucy**]|C1P21V2]]</tw-passagedata><tw-passagedata pid="79" name="C1P21V1" tags="" position="1975,5475" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="C1P21V2" tags="" position="2125,5475" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="81" name="C1P9V2" tags="" position="2050,2750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
+[[[**Tell Lucy the Truth**]|C1P22V1]][[[**Lie to Lucy**]|C1P22V2]]</tw-passagedata><tw-passagedata pid="79" name="C1P22V1" tags="" position="1975,5625" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="C1P22V2" tags="" position="2125,5625" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="81" name="C1P9V2" tags="" position="2050,2750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
 &lt;i&gt;
 
@@ -877,7 +867,7 @@ I couldn&#39;t care less...
 
 &lt;/i&gt;
 
-&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="82" name="Credits" tags="" position="2575,350" size="200,200">Dead Font Walking Font - Allison James
+&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="82" name="Credits" tags="" position="2275,500" size="200,100">Dead Font Walking Font - Allison James
 https://www.1001fonts.com/dead-font-walking-font.html
 
 Ragged CSS Edges - Tymn Urban &amp; Stephen Melvin
@@ -888,7 +878,54 @@ https://github.com/Glagan/SimpleNotification</tw-passagedata><tw-passagedata pid
 
 I huff and ignore her.
 
-&lt;%= window.story.render(&quot;F: Roll over&quot;) %&gt;</tw-passagedata></tw-storydata>
+&lt;%= window.story.render(&quot;F: Roll over&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="F: I used your stuff" tags="" position="2475,5325" size="100,100">&lt;%
+let verbal = true;
+
+if (
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;)
+) {
+	verbal = false;
+
+	window.story.achievement(&quot;Chapter0&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;, &quot;You have the right to remain silent...&quot;);
+}
+%&gt;
+
+Lucy crosses her arms.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) { %&gt;
+
+&quot;You know that disinfectant you had on you is for cleaning, right?&quot;, Lucy remarks.
+
+&quot;Yeah I know, but it was all I could find. Couldn&#39;t exactly take myself down to the local chemist&quot;, I reply.
+
+&quot;&lt;% if (!verbal) { print(&quot;She does speak! &quot;); verbal = true; } %&gt;Well, good thing you had it because I was all out, and you would have had a nasty infection if I hadn&#39;t used it. Definitely shaved a few days off your recovery&quot;, Lucy says.
+
+&lt;% } else { %&gt;
+
+&quot;I didn&#39;t have anything to properly clean that wound with, so you developed a nasty infection for a little while there. It resolved within a few days though&quot;, Lucy says.
+
+&lt;% } %&gt;
+
+&quot;*Days?!*&quot;, I exclaim.
+
+&quot;&lt;% if (!verbal) print(&quot;She does speak! &quot;) %&gt;Oh yeah, you had one foot in the grave. That&#39;s why I had to give you IV fluids, couldn&#39;t have you dying of dehydration on me after all the effort I put into *not* killing you&quot;, Lucy states calmly.
+
+[[[Raise arm]|C1P21V2]]&lt;br&gt;
+[[Like in Hospital?|C1P21V3]]&lt;br&gt;
+[[The thing in my arm?|C1P21V1]]
+</tw-passagedata><tw-passagedata pid="87" name="C1P21V2" tags="" position="2050,5475" size="100,100">I raise my arm with the thing sticking out of it.
+
+&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="88" name="C1P21V1" tags="" position="1900,5475" size="100,100">&quot;Is that what this thing sticking in my arm is for?&quot;, I enquire.
+
+&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="89" name="C1P21V3" tags="" position="2200,5475" size="100,100">&quot;Oh, like when you&#39;re in Hospital?&quot;, I enquire.
+
+&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
