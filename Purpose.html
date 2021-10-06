@@ -248,7 +248,7 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;);
 window.story.delayedText(3000);
 
 _.delay(function() {
-		window.story.achievement(&quot;Chapter0&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;);
+		window.story.achievement(&quot;Chapter1&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;);
 	}, 3000);
 %&gt;
 
@@ -434,7 +434,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) {
 
 &lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="" position="1600,2000" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
-window.story.achievement(&quot;Chapter0&quot;, &quot;Soap&quot;, &quot;Nothing wasted&quot;, &quot;You never know when it will come in handy!&quot;);
+window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;, &quot;Nothing wasted&quot;, &quot;You never know when it will come in handy!&quot;);
 %&gt;
 
 With a bit of effort, I separate the soap from the bench.
@@ -644,7 +644,7 @@ Where the hell am I, and what the fuck is in my arm?!
 
 &lt;/i&gt;
 
-&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="35" name="C1P9V3" tags="" position="2200,2750" size="100,100">&lt;% window.story.achievement(&quot;Chapter0&quot;, &quot;Filter&quot;, &quot;No Filter&quot;, &quot;Speaking your mind, *even when you shouldn&#39;t.*&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="35" name="C1P9V3" tags="" position="2200,2750" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Filter&quot;, &quot;No Filter&quot;, &quot;Speaking your mind, *even when you shouldn&#39;t.*&quot;) %&gt;
 
 &lt;i&gt;
 
@@ -825,7 +825,7 @@ Well, this is awkward... I maintain eye contact with her.
 
 &quot;Don&#39;t sweat it, we only set up shop here a few days ago ourselves&quot;, Lucy remarks.&quot;
 
-&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="C1P19V3" tags="" position="2125,5175" size="100,100">&lt;% window.story.setChoice(&quot;Chapter0&quot;, &quot;NoChoice&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="C1P19V3" tags="" position="2125,5175" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;) %&gt;
 
 &quot;I didn&#39;t have much of a choice, if I stayed out there I would have been a meal for the walkers by the end of the day&quot;, I remark.
 
@@ -873,27 +873,17 @@ Lucy sits there for a moment, then her slight smile drops as she realizes I wasn
 
 [[...|C1P22V12]]&lt;br&gt;
 [[Yes, it was unprovoked|C1P22V11]]&lt;br&gt;
-[[No, wrong place wrong time|C1P22V13]]</tw-passagedata><tw-passagedata pid="80" name="C1P22V2" tags="" position="2125,5625" size="100,100">&quot;I cut myself climbing a fence&quot;, I say; **improv is not my strong suit**.
+[[No, wrong place wrong time|C1P22V13]]</tw-passagedata><tw-passagedata pid="80" name="C1P22V2" tags="" position="2125,5625" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;) %&gt;
+
+&quot;I cut myself climbing a fence&quot;, I say; **I&#39;m not good at Lying**.
 
 &quot;Uh-huh&quot;, Lucy says, clearly unconvinced.
 
 &quot;Must have been a hellova fence&quot;, she adds.
 
-&quot;It was. I was trying to get away from a pack of walkers, got cornered, and had to climb a chainlink fence with wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I try to justify.
-
-&lt;% if (window.story.getChoice(&quot;Chapter0&quot;, &quot;NoChoice&quot;)) { %&gt;
-
-&quot;Seems to be a running theme with you&quot;, Lucy remarks.
-
-&lt;% } %&gt;
-
-&quot;Look, kid- what&#39;s your name?&quot;, Lucy asks.
-
-&quot;It&#39;s Sarah&quot;, I say.
-
-&quot;Ok, Sarah, before the world went to hell in a handbasket, I was Wound Care Nurse for 9 years, so I know my cuts pretty well, well enough to know you&#39;re full of shit&quot;, Lucy states.
-
-&quot;I don&#39;t really care about how you hurt your leg, if you want to keep that to yourself, that&#39;s fine. Only one thing matters to me, and she&#39;s probably standing on the other side of that door listening right now, so, be straight with me: are you going to get my little girl killed? Because if the answer is yes, I&#39;ll just kill you now, save us both the hassle&quot;, Lucy says, as she pulls a knife out from behind her back and rests it on her legs.</tw-passagedata><tw-passagedata pid="81" name="C1P9V2" tags="" position="2050,2750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
+[[Yeah.|C1P22V21]]&lt;br&gt;
+[[It was.|C1P22V22]]&lt;br&gt;
+[[It was huge.|C1P22V23]]</tw-passagedata><tw-passagedata pid="81" name="C1P9V2" tags="" position="2050,2750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
 &lt;i&gt;
 
@@ -908,7 +898,7 @@ Ragged CSS Edges - Tymn Urban &amp; Stephen Melvin
 https://stackoverflow.com/a/47085434
 
 SimpleNotification - Glagan &amp; ajmeese7
-https://github.com/Glagan/SimpleNotification</tw-passagedata><tw-passagedata pid="83" name="F: Stay in bed" tags="" position="2425,2750" size="100,100">[[[Stay in bed]|C1P11]]</tw-passagedata><tw-passagedata pid="84" name="F: Roll over" tags="" position="2425,3075" size="100,100">[[[Roll over]|C1P12]]</tw-passagedata><tw-passagedata pid="85" name="C1P11V2" tags="" position="2050,3075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;) %&gt;
+https://github.com/Glagan/SimpleNotification</tw-passagedata><tw-passagedata pid="83" name="F: Stay in bed" tags="" position="2400,2750" size="100,100">[[[Stay in bed]|C1P11]]</tw-passagedata><tw-passagedata pid="84" name="F: Roll over" tags="" position="2400,3075" size="100,100">[[[Roll over]|C1P12]]</tw-passagedata><tw-passagedata pid="85" name="C1P11V2" tags="" position="2050,3075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;) %&gt;
 
 I huff and ignore her.
 
@@ -926,7 +916,7 @@ if (
 ) {
 	verbal = false;
 
-	window.story.achievement(&quot;Chapter0&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;, &quot;You have the right to remain silent...&quot;);
+	window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;, &quot;You have the right to remain silent...&quot;);
 }
 %&gt;
 
@@ -1003,9 +993,55 @@ Lucy crosses her arms.
 
 &quot;It&#39;s Sarah&quot;, I say.
 
-&quot;Sarah... I had a cousin named Sarah&quot;, Lucy says.</tw-passagedata><tw-passagedata pid="100" name="Random Ideas" tags="" position="2550,375" size="200,200">- Tiffany gets hurt and you use the ducktape and or white shirt to bandage the wound up. If you don&#39;t have it or don&#39;t use it, Tiff passes out and you carry her, if you do, she spots some or something useful.
+&quot;Sarah... that&#39;s a nice name&quot;, Lucy trails off.
 
-- Learn first aid from Lucy</tw-passagedata></tw-storydata>
+We sit in silence for a moment.
+
+[[She must mean a lot to you||C1P24]]</tw-passagedata><tw-passagedata pid="100" name="Random Ideas" tags="" position="2550,375" size="200,200">- Tiffany gets hurt and you use the ducktape and or white shirt to bandage the wound up. If you don&#39;t have it or don&#39;t use it, Tiff passes out and you carry her, if you do, she spots some or something useful.
+
+- Learn first aid from Lucy</tw-passagedata><tw-passagedata pid="101" name="C1P24" tags="" position="2050,6075" size="100,100">&quot;She must mean a lot to you&quot;, I say.
+
+&quot;She means everything to me&quot;, Lucy replies.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
+
+The tension in the air feels like it&#39;s going back down a notch.
+
+&lt;% } else { %&gt;
+
+We both sit quietly for a moment.
+
+&lt;% } %&gt;
+
+[[Tell me about Tiff|C1P25]]</tw-passagedata><tw-passagedata pid="102" name="F: Got cornered" tags="" position="2625,5775" size="100,100">I was trying to get away from a pack of walkers, got cornered, and had to climb it, but it had wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I say, trying to sound convincing.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;)) { %&gt;
+
+&quot;Seems to be a running theme with you&quot;, Lucy remarks.
+
+&lt;% } %&gt;
+
+Lucy sighs.
+
+&quot;Look, kid- what&#39;s your name?&quot;, Lucy asks.
+
+[[Sarah.|C1P22V3]]</tw-passagedata><tw-passagedata pid="103" name="C1P22V22" tags="" position="2275,5775" size="100,100">&quot;Oh it was. &lt;%= window.story.render(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="104" name="C1P22V21" tags="" position="2125,5775" size="100,100">&quot;Yeah, hellova fence. &lt;%= window.story.render(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="105" name="C1P22V23" tags="" position="2425,5775" size="100,100">&quot;It was crazy, biggest fence I&#39;d ever seen. &lt;%= window.story.render(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="106" name="C1P22V3" tags="" position="2275,5925" size="100,100">&quot;It&#39;s Sarah&quot;, I say.
+
+No point in giving a fake name, I&#39;d probably just forgot it anyway.
+
+&quot;Ok, Sarah, before the world went to hell in a handbasket, I was Wound Care Nurse for 9 years, so I know my cuts pretty well, well enough to know you&#39;re full of shit&quot;, Lucy states.
+
+Oh boy, not good.
+
+&quot;I don&#39;t really care about how you hurt your leg, if you want to keep that to yourself, that&#39;s fine. Only one thing matters to me, and she&#39;s likely standing on the other side of that door listening right now, so, be straight with me: are you going to do something to get my little girl hurt? Because if the answer is yes... &quot;, Lucy says, as she pulls a knife out from behind her back and rests it on her legs.
+
+&quot;I&#39;ll just kill you now, save us both the hassle&quot;, she finishes in a monotone voice.
+
+We stare at each other for a moment.
+
+[[She must mean a lot to you|C1P24]]</tw-passagedata><tw-passagedata pid="107" name="C1P25" tags="" position="2050,6225" size="100,100">&quot;Tell me about Tiff&quot;, I say&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) print(&quot;, trying to change the subject&quot;) %&gt;.
+
+&quot;Tiff*any* is the only good thing left in this world&quot;, Sarah remarks.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
