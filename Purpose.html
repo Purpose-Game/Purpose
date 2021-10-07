@@ -80,10 +80,13 @@ a:active {
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">//
 // Variables
 //
+const debug = true;
 const state = window.story.state;
 
 state.choices = {};
 state.achievements = {};
+
+let debugNotification;
 
 //
 // Events
@@ -92,6 +95,10 @@ $(document).on("sm.passage.showing", function(event, data) {
 	if (data.passage === undefined) return;
 	
 	const passage = data.passage;
+	
+	if (debug && debugNotification) {
+		debugNotification.setText(`Content subject to change!\nCurrent Passage: ${passage.name}`);
+	}
 		
 	if (passage.tags) {
 		if (passage.tags.includes("noSave")) {
@@ -203,17 +210,19 @@ $(function () {
 		document.head.append(style);
 		window.story.popup = SimpleNotification;
 		
-		_.delay(function() {
-			window.story.popup.message({
-				title: "Pre-Alpha Build",
-				text: "Content subject to change!",
-			}, {
-				position: "bottom-right",
-				sticky: true,
-				closeButton: false,
-				closeOnClick: false
-			});
-		}, 1000);
+		if (debug) {
+			_.delay(function() {
+				debugNotification = window.story.popup.message({
+					title: "Pre-Alpha Build",
+					text: "Content subject to change!",
+				}, {
+					position: "bottom-right",
+					sticky: true,
+					closeButton: false,
+					closeOnClick: false
+				});
+			}, 1000);
+		}
 	});
 });</script><tw-tag name="floater" color="purple"></tw-tag>,<tw-tag name="info" color="green"></tw-tag>,<tw-tag name="noFade" color="red"></tw-tag>,<tw-tag name="noSave" color="red"></tw-tag>,<tw-tag name="page" color="blue"></tw-tag>,<tw-tag name="redirect" color="orange"></tw-tag>,<tw-tag name="variation" color="yellow"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page" position="2050,500" size="100,100">### Chapter One
 #### Poor Choices
@@ -1110,7 +1119,7 @@ floater: Passage acts as a template to be included in other passages.
 
 redirect: Passage redirects to another passage after a given period of time.
 
-info: Passage is developer reference, not for use in-game.</tw-passagedata><tw-passagedata pid="114" name="C1P26" tags="page" position="2050,6525" size="100,100">I pause for a moment. It feels like she just slapped me across the face.
+info: Passage is for developer reference, not for use in-game.</tw-passagedata><tw-passagedata pid="114" name="C1P26" tags="page" position="2050,6525" size="100,100">I pause for a moment. It feels like she just slapped me across the face.
 
 Sophia, my little sister... how does she even know about her? Why does she want to know about her?
 
