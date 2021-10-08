@@ -105,7 +105,7 @@ $(document).on("sm.passage.showing", function(event, data) {
 			state.lastPassage = passage.name;
 		}
 
-		if (passage.tags.includes("noFade")) {
+		if (passage.tags.includes("noFade") || passage.tags.includes("redirect")) {
 			return;
 		}
 	}
@@ -190,6 +190,15 @@ window.story.getChoices = function (chapter) {
 	}
 }
 
+// Returns the name picked for Tiffany
+window.story.tiffany = function () {
+	try {
+		return state.choices["Chapter1"]["TiffanyName"];
+	} catch (_) {
+		return "Tiffany";
+	}
+}
+
 //
 // External Scripts
 //
@@ -229,13 +238,11 @@ $(function () {
 // toggleFullscreen.js
 // https://gist.github.com/demonixis/5188326
 window.story.toggleFullscreen = function (event) {
-  var element = document.documentElement;
+	const element = document.documentElement;
 
-	if (event instanceof HTMLElement) {
-		element = event;
-	}
+	if (event instanceof HTMLElement) element = event;
 
-	var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
+	const isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
 
 	element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
 	document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
@@ -664,13 +671,13 @@ They&#39;re right up close to my face now, I can feel their breathing.
 
 &quot;If you don&#39;t get up, you&#39;ll die&quot;, the girl says in a low monotone voice.
 
-&quot;What the fuck&quot;, I whisper as I rollover and open my eyes.
+&quot;What the fuck&quot;, I whisper as I roll over and open my eyes.
 
 My sister is right there, inches from my face, staring. But, something wrong: her eyes, they&#39;re like two little pinpricks burning into my soul.
 
 &quot;Get off me Sophia&quot;, I say as I try to move here; but I can&#39;t, I don&#39;t have the strength. She&#39;s like a dead weight on my chest.
 
-&quot;We can be together, forever: just let go.&quot;, Sophia says.
+&quot;We can be together, forever: just let go.&quot;, Sophia says, her hazel eyes still locked with mine.
 
 &lt;/i&gt;
 
@@ -824,7 +831,7 @@ I stare into her eyes for a moment longer.
 
 &lt;%= window.story.render(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P17V3" tags="variation page" position="2200,4575" size="100,100">&quot;What&#39;s your name?&quot;, &lt;%= window.story.render(&quot;F: Dry mouth, need drink&quot;) %&gt;.
 
-&lt;%= window.story.render(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="floater" position="2550,4575" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="page" position="2050,4725" size="100,100">The voices stop, there are more footsteps- the door is opening. A woman steps through: she&#39;s has short brown hair, soft brown eyes, and is in her mid 30s if I had to guess. She has a sort of weathered look about her.
+&lt;%= window.story.render(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="floater" position="2550,4575" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="page" position="2050,4725" size="100,100">The voices stop, there are more footsteps- the door is opening. A woman steps through: she has brown hair done up in a bun, soft brown eyes, is wearing cargo pants and a tshirt, and is in her mid-30s if I had to guess. She has a sort of weathered look about her.
 
 &quot;Sizing me up are you?&quot;, she asks.
 
@@ -873,11 +880,21 @@ Guess that explains where I am.
 	print(&quot;[[I did knock.|C1P19V4]]&quot;);
 } %&gt;</tw-passagedata><tw-passagedata pid="69" name="Characters" tags="info noSave" position="2275,350" size="200,100">Protagonist: Sarah - 20 years old
 
-Dead Sister: Sophia - 7 years old
+Dead Sister - Sophia:
+- 7 years old
+- Hazel eyes
 
-Young Girl: Tiffany - 6 years old
+Young Girl - Tiffany:
+- 6 years old
+- Long brown hair, ponytail
+- Bright blue eyes
+- Dark blue dress
 
-Mother: Lucy - 34 years old</tw-passagedata><tw-passagedata pid="70" name="C1P19V2" tags="variation page" position="1975,5175" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
+Mother - Lucy:
+- 34 years old
+- Brown hair, done up in a bun
+- Soft brown eyes
+- Cargo pants, tshirt</tw-passagedata><tw-passagedata pid="70" name="C1P19V2" tags="variation page" position="1975,5175" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
 
 Well, this is awkward... I maintain eye contact with her.
 
@@ -1231,7 +1248,7 @@ I&#39;m exhausted... mentally and physically.
 
 The world would be better off without me. People like that guy I killed can attest to that...
 
-[[[Cry yourself to sleep]|C1P34]]</tw-passagedata><tw-passagedata pid="125" name="C1P33V2" tags="variation" position="2125,7575" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;) %&gt;
+[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="125" name="C1P33V2" tags="variation" position="2125,7575" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;) %&gt;
 
 I need a new purpose in life. Something worth living for. Surviving by itself isn&#39;t good enough; it&#39;s an excuse.
 
@@ -1239,7 +1256,7 @@ I need to atone for what I did.
 
 I can&#39;t bring Sophia back... but maybe I find something good in this world to dedicate myself to, in her name. 
 
-[[[Cry yourself to sleep]|C1P34]]</tw-passagedata><tw-passagedata pid="126" name="C1P34" tags="" position="2050,7725" size="100,100">Wake up she in your face</tw-passagedata><tw-passagedata pid="127" name="Choices" tags="info noSave" position="2275,800" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot; - Knocked on the door to see if anyone was home
+[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="126" name="C1P33R1" tags="redirect" position="2050,7725" size="100,100">&lt;% window.story.redirect(&quot;C1P34&quot;, 7) %&gt;</tw-passagedata><tw-passagedata pid="127" name="Choices" tags="info noSave" position="2275,800" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot; - Knocked on the door to see if anyone was home
 
 &quot;Chapter1&quot;, &quot;Kicked&quot; - Kicked the door in to get inside
 
@@ -1289,7 +1306,72 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 !&quot;Chapter1&quot;, &quot;NewPurpose&quot; - Told yourself you have no purpose in life and should kill yourself</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="noSave" position="1725,350" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
-[[Back|Title Screen]]</tw-passagedata></tw-storydata>
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page" position="2050,7875" size="100,100">There&#39;s someone near my face again... Sophia back to haunt me?
+
+I squint, it&#39;s bright and my vision is blurry. There&#39;s a face, eyes, but- they&#39;re blue, very blue.
+
+[[Rub eyes|C1P35]]</tw-passagedata><tw-passagedata pid="130" name="C1P35" tags="page" position="2050,8025" size="100,100">I rub my eyes and open them again.
+
+It&#39;s Tiffany. She&#39;s sitting on the coffee table, watching me.
+
+[[...|C1P35V2]]&lt;br&gt;
+[[Morning...?|C1P35V1]]&lt;br&gt;
+[[Lose something?|C1P35V3]]</tw-passagedata><tw-passagedata pid="131" name="C1P35V2" tags="variation" position="2050,8175" size="100,100">I stare back at here for a moment.
+
+&lt;%= window.story.render(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="132" name="C1P35V1" tags="variation" position="1900,8175" size="100,100">&quot;Um...&quot;, I start. My throat is still dry. I cough to clear it a little.
+
+&quot;Good morning...?&quot;, I say, a hint of uncertainty in my voice.
+
+&quot;Good morning!&quot;, she replies in a cherry, high pitch voice.
+
+&quot;Did you sleep OK?&quot;, she asks.
+
+&quot;Yeah, actually. Like a log&quot;, I reply.
+
+A slightly puzzled look appears across her face.
+
+&quot;Logs don&#39;t sleep, they&#39;re not alive&quot;, she states.
+
+&quot;No, I meant- never mind&quot;, I say; it&#39;s too early to even try to explain.
+
+She shrugs.
+
+&lt;%= window.story.render(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="133" name="C1P35V3" tags="variation" position="2200,8175" size="100,100">&quot;Did you lose something over here?&quot;, I remark.
+
+A puzzled look appears on her face.
+
+&quot;I don&#39;t think so&quot;, she replies in a high-pitched voice.
+
+I chuckle a little.
+
+The puzzled look intensifies.
+
+&quot;What, what&#39;s funny?&quot;, she asks.
+
+&quot;Nothing, nothing&quot;, I reply, holding back my laughter.
+
+She shakes her head.
+
+&lt;%= window.story.render(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="134" name="F: Breakfast?" tags="floater" position="2400,8175" size="100,100">&quot;Would you like some breakfast?&quot;, she asks, a hint of excitment in her voice.
+
+I&#39;m starving, I hadn&#39;t had a proper meal for days before I got here, and who knows how long I&#39;ve been on this soda for.
+
+[[**Yeah, thanks Tiff**|C1P35R1]]
+[[**Yeah, thanks Tiffany**|C1P35R2]]</tw-passagedata><tw-passagedata pid="135" name="C1P35R1" tags="redirect" position="1975,8325" size="100,100">&lt;%
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiff&quot;);
+window.story.redirect(&quot;C1P36&quot;, 1);
+%&gt;</tw-passagedata><tw-passagedata pid="136" name="C1P35R2" tags="redirect" position="2125,8325" size="100,100">&lt;%
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiffany&quot;);
+window.story.redirect(&quot;C1P36&quot;, 1);
+%&gt;</tw-passagedata><tw-passagedata pid="137" name="C1P36" tags="page" position="2050,8475" size="100,100">&quot;Yeah, thanks &lt;% print(window.story.tiffany()) %&gt;&quot;, I say.
+
+Her face lights up with a smile. I think she likes that I know her name.
+
+&quot;Come on then!&quot;, she says, jumping up from the table and heading for the door.
+
+&quot;Hey, &lt;% print(window.story.tiffany()) %&gt;, wait!&quot;, I say, but she&#39;s already out the door by the time the words leave my mouth.
+
+I still have this thing in my arm, what did Lucy call it? A cann-u-la I think.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
