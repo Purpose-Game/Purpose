@@ -193,7 +193,7 @@ window.story.getChoices = function (chapter) {
 // Returns the name picked for Tiffany
 window.story.tiffany = function () {
 	try {
-		return state.choices["Chapter1"]["TiffanyName"];
+		return state.choices["Chapter1"]["TiffanyName"] || "Tiffany";
 	} catch (_) {
 		return "Tiffany";
 	}
@@ -340,13 +340,17 @@ Still locked. I need to find a way into this place, and fast.
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;);
 %&gt;
 
-I muster what little strength I have left, and kick the door with my good leg. The door shuddered but didn&#39;t open. **That was pretty load too**.
+I muster what little strength I have left, and kick the door with my good leg. The door shuddered but didn&#39;t open. **That was pretty loud too**.
 
 Well, I&#39;ve committed to this now, so I might as well kick it again, what the hell. I take a breath, pause, then kick the door with all my strength.
 
 I lose my balance and fall backward, sliding down the patio steps, landing directly on my leg wound, &lt;%= window.story.render(&quot;F: Mother Comments&quot;) %&gt;, but, at least the door opened. I lie there for a moment while the pain subsides.
 
-[[[Get up, and go inside]|C1P6]]</tw-passagedata><tw-passagedata pid="10" name="C1P5V21" tags="variation" position="2125,1250" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
+[[[Get up, and go inside]|C1P6]]</tw-passagedata><tw-passagedata pid="10" name="C1P5V21" tags="variation" position="2125,1250" size="100,100">&lt;%
+window.story.setChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;);
+
+if (!window.passage.tried) {
+%&gt;
 
 I place my head against the window; the cold glass provides a refreshing moment of relief... Then I open my eyes.
 
@@ -402,7 +406,7 @@ I crawl through the window, making sure not to touch any of the broken glass as 
 
 &lt;% } %&gt;
 
-I wait a moment for my eyes to adjust to the dark, then I look around the room. It is definitely a laundry room, there&#39;s a washing machine and dryer in the corner, and an ironing board propped up against one of the walls. The room looks safe for now.
+I wait a moment for my eyes to adjust to the dark, then I look around the room. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;)) { print(&quot;It is definitely&quot;) } else { print(&quot;Looks like&quot;) } %&gt; a laundry room, there&#39;s a washing machine and dryer in the corner, and an ironing board propped up against one of the walls. The room looks safe for now.
 
 Now that I&#39;m inside, I need to deal with my leg; to do that, I&#39;m going to need some supplies:
 
@@ -694,7 +698,7 @@ I try to open my eyes, but they&#39;re so heavy: it&#39;s blurry, and I can&#39;
 
 [[[Pass out]|C1P14R1]]</tw-passagedata><tw-passagedata pid="33" name="C1P15" tags="page" position="2050,3975" size="100,100">I wake with a jolt. I look around, I don&#39;t recognize where I am. I&#39;m laying down on a sofa, it smells terrible... actually, that might be me.
 
-It&#39;s dark, evening I think? I&#39;m in some kind of living room, there&#39;s another sofa across from me, an armchair, and a coffee table in the middle of the room. There&#39;s a TV on one wall, a window on another, and doors on the other two. 
+It&#39;s dark, evening I think? I&#39;m in some kind of living room, there&#39;s another sofa across from me, an armchair, and a coffee table in the middle of the room. There&#39;s a TV and cabinet on one wall, a window on another, and doors on the other two. 
 
 I raise my arm to my head and- what the hell? There&#39;s something sticking into my hand, and there&#39;s a tube attached; I follow it with my eyes to a bag of clear fluid hanging from what looks like an old hat hanger.
 
@@ -1100,7 +1104,9 @@ We both sit quietly for a moment.
 
 [[Tell me about Tiff|C1P25]]</tw-passagedata><tw-passagedata pid="102" name="F: Got cornered" tags="floater" position="2625,5775" size="100,100">I was trying to get away from a pack of walkers, got cornered, and had to climb it, but it had wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I say, trying to sound convincing.
 
-&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;)) { %&gt;
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;)) {
+	window.story.achievement(&quot;Chapter1&quot;, &quot;NoChoice&quot;, &quot;Broken Record&quot;, &quot;You need some new material.&quot;);
+%&gt;
 
 &quot;Seems to be a running theme with you&quot;, Lucy remarks.
 
@@ -1264,6 +1270,8 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 !&quot;Chapter1&quot;, &quot;Kicked&quot; - Broke the window to get inside
 
+&quot;Chapter1&quot;, &quot;LookedIn&quot; - Looked inside the house before entering
+
 &quot;Chapter1&quot;, &quot;Sink&quot; - Searched the entire sink
 
 &quot;Chapter1&quot;, &quot;Soap&quot; - Picked up the bar of old soap
@@ -1306,7 +1314,21 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;NewPurpose&quot; - Told yourself you needed to find a new purpose in life
 
-!&quot;Chapter1&quot;, &quot;NewPurpose&quot; - Told yourself you have no purpose in life and should kill yourself</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="noSave" position="1725,350" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
+!&quot;Chapter1&quot;, &quot;NewPurpose&quot; - Told yourself you have no purpose in life and should kill yourself
+
+&quot;Chapter1&quot;, &quot;Laughed&quot; - Had a good laugh
+
+&quot;Chapter1&quot;, &quot;Door2&quot; - Looked at the other door in the room
+
+&quot;Chapter1&quot;, &quot;LivingWindow&quot; - Looked at the window onto the street
+
+&quot;Chapter1&quot;, &quot;CoffeeTable&quot; - Looked at the coffee table and got a craving
+
+&quot;Chapter1&quot;, &quot;Saline&quot; - Looked at the bag of saline
+
+&quot;Chapter1&quot;, &quot;TVandC&quot; - Looked at the TV and cabinet
+
+&quot;Chapter1&quot;, &quot;SpinningTop&quot; - Picked up the spinning top</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="noSave" position="1725,350" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
 [[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page" position="2050,7875" size="100,100">There&#39;s someone near my face again... Sophia back to haunt me?
 
@@ -1429,7 +1451,9 @@ I roll my eyes at her.
 
 &quot;Yeah, I guess that was&quot;, I say as I chuckle.
 
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;)) { %&gt;
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;)) {
+	window.story.setChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;);
+%&gt;
 
 I can&#39;t remember the last time I laughed...
 
@@ -1471,11 +1495,84 @@ I think it was pretty funny.
 
 &quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;, &quot;You have the right to remain silent...&quot;
 
-&quot;Chapter1&quot;, &quot;Drama&quot;, &quot;Drama Queen&quot;, &quot;You should have been an actor.&quot;</tw-passagedata><tw-passagedata pid="150" name="F: Breakfast time!" tags="floater" position="2400,8925" size="100,100">&quot;Alright, you&#39;re good to go&quot;, Lucy says, removing the cotten wall ball.
+&quot;Chapter1&quot;, &quot;Drama&quot;, &quot;Drama Queen&quot;, &quot;You should have been an actor.&quot;</tw-passagedata><tw-passagedata pid="150" name="F: Breakfast time!" tags="floater" position="2400,8925" size="100,100">&quot;Alright, you&#39;re good to go&quot;, Lucy says, removing the cotton wall ball.
 
 &quot;Let&#39;s get some food in you&quot;, she says as she gets up heads towards the door.
 
-[[Follow Lucy|C1P39]]</tw-passagedata><tw-passagedata pid="151" name="C1P39" tags="page" position="2050,9075" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+I slowly get up off the sofa.
+
+&quot;Through here and down this hallway, when you&#39;re ready&quot;, Lucy says as she reaches the door, then goes through it, leaving me alone.
+
+That sounded like an invitation to have a look around.
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="F: Living room search options" tags="floater" position="2550,8950" size="100,200">&lt;%
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) {
+	print(&quot;[[[Go through second door]|C1P39V1]]&lt;br&gt;&quot;);
+}
+
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) {
+	print(&quot;[[[Look out of the window]|C1P39V2]]&lt;br&gt;&quot;);
+}
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) {
+	print(&quot;[[[Look at the coffee table]|C1P39V3]]&lt;br&gt;&quot;);
+}
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Saline&quot;)) {
+	print(&quot;[[[Look at bag of clear fluid]|C1P39V4]]&lt;br&gt;&quot;);
+}
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) {
+	print(&quot;[[[Look at the TV and cabinet]|C1P39V5]]&lt;br&gt;&quot;);
+}
+%&gt;
+
+[[[**Go through door and down hallway**]|C1P40]]</tw-passagedata><tw-passagedata pid="152" name="C1P39V1" tags="variation" position="1750,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
+
+I walk around to the other door and open it. Huh, a familiar sight: it&#39;s the laundry room.
+
+There&#39;s a red stain on the floor just near the door, I guess that&#39;s where I passed out... good thing I didn&#39;t hit my head.
+
+I close the door.
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="153" name="C1P39V3" tags="variation" position="2050,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;) %&gt;
+
+I walk up to the coffee table. It&#39;s pretty ordinary, a few coffee stains here and there, otherwise in good shape.
+
+I wonder if Lucy has any coffee? I haven&#39;t had any in years.
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="154" name="C1P39V5" tags="variation" position="2350,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;) %&gt;
+
+I walk over to the TV and cabinet. The TV looks reasonably new, one of those fancy new super flat ones. Well, I guess not new anymore.
+
+I bend down and open the cabinet. There&#39;s a load of old TV crap, set-top boxes and what have you, and- what&#39;s this: a spinning top. What&#39;s this doing in here?
+
+[[[Take spinning top]|C1P39V51]]
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="155" name="C1P39V4" tags="variation" position="2200,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Saline&quot;) %&gt;
+
+I walk up to the hat hanger and look at the clear bag of fluid, what&#39;s left of it anyway.
+
+I take it off the hanger, it&#39;s a long, crumpled up, clear bag, and it looks rather worn. There&#39;s some writing on it I can still make out though, &quot;Sodium Chloride 0.9% 1000ml - For Intravenous Infusion&quot;. I thought Lucy said it was just salty water...
+
+There&#39;s more writing near the bottom, &quot;Sterile non-pyrogenic... osmolality 308 mOsm/kg water... isotonic... pH 4.5 - 7&quot;, OK I feel like I&#39;m back in highschool science class again, I have no clue what all this means.
+
+I put the bag back on the hanger.
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40" tags="page" position="2050,9375" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="157" name="C1P39V2" tags="variation" position="1900,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
+
+I walk over to the window. It&#39;s been boarded up from the outside, but there are a few cracks I can look through. I squat down and have a look through one.
+
+It looks out onto a small front garden and the street, and- whoa, that&#39;s actually quite a lot of walkers. They&#39;re not really moving either, they&#39;re just, hanging around out on the street. There are maybe 20 or 30 of them. I should probably let Lucy know.
+
+I stand up again.
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="158" name="C1P39V51" tags="variation" position="2350,9225" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;) %&gt;
+
+I pick up the spinning top. &lt;% print(window.story.tiffany()) %&gt; might like this.
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
