@@ -1094,12 +1094,6 @@ We sit in silence for a moment.
 
 &quot;She means everything to me&quot;, Lucy replies.
 
-&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
-
-I&#39;m glace at her knife, it looks like an old kitchen knife. Lucy has noticed I&#39;m staring at it. She looks down at it, then back at me. She puts it away back behind her back.
-
-&lt;% } %&gt;
-
 We both sit quietly for a moment.
 
 [[Tell me about Tiff|C1P25]]</tw-passagedata><tw-passagedata pid="102" name="F: Got cornered" tags="floater" position="2625,5775" size="100,100">I was trying to get away from a pack of walkers, got cornered, and had to climb it, but it had wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I say, trying to sound convincing.
@@ -1124,7 +1118,7 @@ No point in giving a fake name, I&#39;d probably just forgot it anyway.
 
 Oh boy, not good.
 
-&quot;I don&#39;t really care about how you hurt your leg, if you want to keep that to yourself, that&#39;s fine. Only one thing matters to me, and she&#39;s likely standing on the other side of that door listening right now, so, be straight with me: are you going to do something to get my little girl hurt? Because if the answer is yes... &quot;, Lucy says, as she pulls a knife out from behind her back and rests it on her legs.
+&quot;I don&#39;t really care about how you hurt your leg, if you want to keep that to yourself, that&#39;s fine. Only one thing matters to me, and she&#39;s likely standing on the other side of that door listening right now, so, be straight with me: are you going to do something to get my little girl hurt? Because if the answer is yes... &quot;, Lucy says, as she pulls a knife out from behind her back and rests it on her legs. It looks like an old kitchen knife.
 
 &quot;I&#39;ll just kill you now, save us both the hassle&quot;, she finishes in a monotone voice.
 
@@ -1217,6 +1211,12 @@ I pause for a moment, then reply.
 &quot;Seven&quot;, I say.
 
 Lucy puts her hand to her mouth, then looks towards the closed door on the other side of the room. The strong &quot;I could kill you where you sit right now&quot; woman from a few minutes ago is gone; replaced by... a mother.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
+
+I&#39;m glace at her knife. Lucy notices, she looks down at it, then back at me. She puts it away back behind her back.
+
+&lt;% } %&gt;
 
 [[[Weep quietly]|C1P28]]</tw-passagedata><tw-passagedata pid="119" name="C1P28" tags="page" position="2050,6825" size="100,100">I quietly let my emotions run. It&#39;s been a long time since I&#39;ve thought about her.
 
@@ -1328,7 +1328,13 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;TVandC&quot; - Looked at the TV and cabinet
 
-&quot;Chapter1&quot;, &quot;SpinningTop&quot; - Picked up the spinning top</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="noSave" position="1725,350" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
+&quot;Chapter1&quot;, &quot;SpinningTop&quot; - Picked up the spinning top
+
+&quot;Chapter1&quot;, &quot;Stairs&quot; - Thought about going up the stairs
+
+&quot;Chapter1&quot;, &quot;Bathroom&quot; - Went into the bathroom
+
+&quot;Chapter1&quot;, &quot;Frontdoor&quot; - Looked at the frontdoor</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="noSave" position="1725,350" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
 [[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page" position="2050,7875" size="100,100">There&#39;s someone near my face again... Sophia back to haunt me?
 
@@ -1403,7 +1409,7 @@ I still have this thing in my arm, what did Lucy call it? A cann-u-la, I think.
 
 The other door swings open, speak of the devil. Lucy walks in.
 
-&quot;Morning, how are you feeling?&quot;, she asks, closing the door behind her.
+&quot;Morning, didn&#39;t think you&#39;d be awake this early. How are you feeling?&quot;, she asks, closing the door behind her.
 
 [[Better|C1P36V1]]&lt;br&gt;
 [[I&#39;ll live|C1P36V2]]&lt;br&gt;
@@ -1510,7 +1516,6 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) {
 	print(&quot;[[[Go through second door]|C1P39V1]]&lt;br&gt;&quot;);
 }
 
-
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) {
 	print(&quot;[[[Look out of the window]|C1P39V2]]&lt;br&gt;&quot;);
 }
@@ -1528,7 +1533,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) {
 }
 %&gt;
 
-[[[**Go through door and down hallway**]|C1P40]]</tw-passagedata><tw-passagedata pid="152" name="C1P39V1" tags="variation" position="1750,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
+[[[**Go through door to the hallway**]|C1P40]]</tw-passagedata><tw-passagedata pid="152" name="C1P39V1" tags="variation" position="1750,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
 
 I walk around to the other door and open it. Huh, a familiar sight: it&#39;s the laundry room.
 
@@ -1560,7 +1565,11 @@ There&#39;s more writing near the bottom, &quot;Sterile non-pyrogenic... osmolal
 
 I put the bag back on the hanger.
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40" tags="page" position="2050,9375" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="157" name="C1P39V2" tags="variation" position="1900,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40" tags="page" position="2050,9375" size="100,100">I go through the door to the hallway. The hallway is a long rectangle, there are doors on all four sides, and a set of stairs on one side.
+
+*&quot;Tiffany, stop playing with your food...&quot;*, I hear Lucy say somewhere behind the furthest door. That must be to the kitchen.
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="C1P39V2" tags="variation" position="1900,9075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
 
 I walk over to the window. It&#39;s been boarded up from the outside, but there are a few cracks I can look through. I squat down and have a look through one.
 
@@ -1572,7 +1581,50 @@ I stand up again.
 
 I pick up the spinning top. &lt;% print(window.story.tiffany()) %&gt; might like this.
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata></tw-storydata>
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="C1P40V1" tags="variation" position="1900,9525" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;) %&gt;
+
+I walk up to the stairs, they bend and go to the left as they go up. I better not go up there, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { print(&quot;Lucy doesn&#39;t trust me as it is, no need to give her another excuse&quot;) } else { print(&quot;don&#39;t want to push my luck and risk a free meal&quot;) } %&gt;.
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="160" name="C1P40V2" tags="variation" position="2050,9525" size="100,100">I walk up to the door on the left and open it. It&#39;s a bathroom! I could really use a freshening up...
+
+[[[Enter bathroom]|C1P40V21]]
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="161" name="C1P40V3" tags="variation" position="2200,9525" size="100,100">LivingWindow
+I walk up to the door, it&#39;s large than the other doors, and has locks on it: this must be the front door.
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="162" name="C1P41" tags="page" position="2050,9975" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="163" name="F: Hallway search options" tags="floater" position="2400,9400" size="100,200">&lt;%
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) {
+	print(&quot;[[[Look at stairs]|C1P40V1]]&lt;br&gt;&quot;);
+}
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) &amp;&amp; window.passage.name != &quot;C1P40V2&quot;) {
+	print(&quot;[[[Look at door on the left]|C1P40V2]]&lt;br&gt;&quot;);
+}
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) {
+	print(&quot;[[[Look at door on the right]|C1P40V3]]&lt;br&gt;&quot;);
+}
+%&gt;
+
+[[[**Go through kitchen door**|C1P41]]]</tw-passagedata><tw-passagedata pid="164" name="C1P40V21" tags="variation" position="2050,9675" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
+
+I step inside. There&#39;s a sink with some water in it, it looks pretty clean too. I walk over to it, dip my hands in, and run my hands over my face. Wow, that feels great, I don&#39;t recall the last time I had a wash.
+
+I give my face and arms a good scrub, the water turns a nasty brown color. I look at the mirror above the sink. My brown eyes are plagued by red lines. My short, brown messy hair is in complete disarray; it&#39;s getting a bit long for my liking too.
+
+I wonder if there is a pair of scissors around here?
+
+[[[Leave bathroom]|C1P40V211]]&lt;br&gt;
+[[[Search for scissors]|C1P40V212]]</tw-passagedata><tw-passagedata pid="165" name="C1P40V211" tags="variation" position="1975,9825" size="100,100">Ah well, another time. I let out the water in the sink and leave the bathroom.
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="166" name="C1P40V212" tags="variation" position="2125,9825" size="100,100">I search around the bathroom. I find a small vanity box and open it, it contains some bits and bobs, and- perfect, a pair of scissors.
+
+I walk back over to the sink, and start cutting my hair. Doesn&#39;t need to be pretty, just functional... There we go, that&#39;s a bit better.
+
+I pocket the scissors, I doubt that box was Lucy&#39;s, judging by the dust on it, and finding a pair is not easy these days.
+
+I let the water in the sink go, and head back into the hallway.
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
