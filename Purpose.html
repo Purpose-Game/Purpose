@@ -1399,7 +1399,9 @@ She pauses for a moment.
 
 &quot;Tell me who Sophia is&quot;, she says.
 
-[[[Pause in shock]|C1P26]]</tw-passagedata><tw-passagedata pid="113" name="Tags" tags="info" position="1225,875" size="200,100">save: Auto-save at this page.
+[[[Pause in shock]|C1P26]]</tw-passagedata><tw-passagedata pid="113" name="Tags" tags="info" position="1225,875" size="200,100">No Tag: Title Screen/Menu/Miscellaneous player interaction stuff.
+
+save: Auto-save when player reaches this page.
 
 noFade: Do not fade this passage in when swapping passages, it will handle the transition itself.
 
@@ -1411,9 +1413,7 @@ floater: Passage acts as a template to be included in other passages.
 
 redirect: Passage redirects to another passage after a given period of time.
 
-info: Passage is for developer reference, not for use in-game.
-
-&#96;</tw-passagedata><tw-passagedata pid="114" name="C1P26" tags="page" position="3075,6600" size="100,100">I pause for a moment. It feels like she just slapped me across the face.
+info: Passage is for developer reference, not for use in-game.</tw-passagedata><tw-passagedata pid="114" name="C1P26" tags="page" position="3075,6600" size="100,100">I pause for a moment. It feels like she just slapped me across the face.
 
 Sophia, my little sister... how does she even know about her? Why does she want to know about her?
 
@@ -1856,7 +1856,7 @@ I walk to the end of the hallway, and go through the kitchen door.
 
 &quot;Come sit here!&quot;, &lt;% print(tiffany) %&gt; says, gesturing to the chair next to her. I look over at Lucy, she gives a slight smile and nods her approval.
 
-[[[Sit next to print(tiffany)]|C1P42]]</tw-passagedata><tw-passagedata pid="163" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;%
+[[[Sit next to &lt;% print(tiffany) %&gt;]|C1P42]]</tw-passagedata><tw-passagedata pid="163" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;%
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) {
 	print(&quot;[[[Look at stairs]|C1P40V1]]&lt;br&gt;&quot;);
 }
@@ -1895,7 +1895,7 @@ I let the water in the sink go, and head back into the hallway.
 
 I sit down at the table.
 
-&quot;It&#39;ll fill you a bowel&quot;, Lucy says as she stands up from the table.
+&quot;I&#39;ll fill you a bowel&quot;, Lucy says as she stands up from the table.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
@@ -1915,21 +1915,37 @@ I sit down at the table.
 
 &lt;% print(tiffany) %&gt; takes a breath about to say something, but Lucy walks over and saves me.
 
+&lt;% } else { %&gt;
+
+She walks over to the portable stove, and fills a bowel with the contents of the can. She walks back over to me.
+
 &lt;% } %&gt;
 
 &quot;Here you go, Beans and Cheese!&quot;, Lucy exclaims.
 
-[[[Take the bowel]|C1P43]]</tw-passagedata><tw-passagedata pid="168" name="C1P43" tags="page" position="3075,10350" size="100,100">I take the bowel and set it down.
+[[[Take the bowel]|C1P43]]</tw-passagedata><tw-passagedata pid="168" name="C1P43" tags="page" position="3075,10350" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+I take the bowel and set it down.
 
 &quot;Thanks, I haven&#39;t had a hot meal in... well, a long time&quot;, I remark.
 
 I&#39;m starving, I dig right in.
 
-// TODO: Never know when you next meal will be</tw-passagedata><tw-passagedata pid="169" name="Saved Games" tags="" position="2250,850" size="200,100">&lt;img.titleImage&gt;
+I can feel &lt;% print(tiffany) %&gt; staring at me, I stop eating and look at her. She has a hilariously cute look of disgust on her face.
+
+&quot;How can you eat *that*?&quot;, she asks unapologetically.
+
+I nearly choke laughing; Lucy was not so impressed.
+
+&quot;You&#39;re free to go find your own meal little miss picky&quot;, she replies, rolling her eyes.
+
+[[Eat, it tastes good|C1P43V1]]&lt;br&gt;
+[[What do you like to eat?|C1P43V2]]&lt;br&gt;
+[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="169" name="Saved Games" tags="" position="2250,850" size="200,100">&lt;img.titleImage&gt;
 
 &lt;div#savesContainer&gt;&lt;/div&gt;
 
-[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="170" name="Come chat // I broke out deal (I tell you you tell me), then attack" tags="" position="3300,10250" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="171" name="Save Options" tags="" position="2000,700" size="200,100">&lt;img.titleImage&gt;
+[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="170" name="Come chat // I broke our deal (I tell you you tell me), then attack" tags="" position="3225,10950" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="171" name="Save Options" tags="" position="2000,700" size="200,100">&lt;img.titleImage&gt;
 
 This game has an optional Cloud Saving feature, to enable it, click the button below and follow the instructions. itch.io account required.
 
@@ -1996,7 +2012,143 @@ Select a Save Slot to start a new game.
   &lt;button0#selectSlotButton onclick=&quot;window.story.selectSlot()&quot;&gt;Select Slot and Start Game&lt;/button&gt;
 &lt;/form&gt;
 
-[[Back|Game Options]]</tw-passagedata></tw-storydata>
+[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="176" name="C1P43V1" tags="variation" position="2925,10500" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+&quot;Eat up, it tastes good&quot;, I say with a mouthful.
+
+&quot;It&#39;s all gluggy and gross&quot;, &lt;% print(tiffany) %&gt; replies.
+
+&quot;That&#39;s because you let it go cold...&quot;, Lucy says with a sigh.
+
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="177" name="C1P43V2" tags="variation" position="3075,10500" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+&quot;What do you like to eat?&quot;, I ask &lt;% print(tiffany) %&gt;.
+
+&quot;Pizza, and peanut butter sandwiches!&quot;, she replies excitedly.
+
+&quot;Not much of that around these days&quot;, I remark.
+
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="C1P43V3" tags="variation" position="3225,10500" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;Eating&quot;);
+%&gt;
+
+&quot;Eat up, you need food for strength&quot;, I say.
+
+&quot;But it&#39;s all gluggy and gross&quot;, &lt;% print(tiffany) %&gt; replies.
+
+&quot;Doesn&#39;t matter, you never know when you&#39;re going to get your next meal. Have to eat while you can&quot;, I remark.
+
+I glance at Lucy. She looks back uncomfortably, but doesn&#39;t say anything.
+
+&quot;Hmm, I guess that makes sense&quot;, &lt;% print(tiffany) %&gt; says, sounding defeated.
+
+&lt;% print(tiffany) %&gt; starts to eat, I think **I taught her something important**.
+
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="F: Come chat" tags="floater" position="3375,10500" size="100,100">I get back to my bowel.
+
+&quot;Sarah, come chat with me when you&#39;re finish&quot;, Lucy says, and she stands up and heads for the other door.
+
+&quot;Yeah, sure&quot;, I reply.
+
+Lucy leaves the room.
+
+[[[Keep eating]|C1P44]]</tw-passagedata><tw-passagedata pid="180" name="C1P44" tags="page" position="3075,10650" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+I scrape the last drops out of the bowel: all finished.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
+
+I look over at &lt;% print(tiffany) %&gt;, she&#39;s actually making decent process on her meal. Good.
+
+&lt;% } else { %&gt;
+
+I look over at &lt;% print(tiffany) %&gt;, she&#39;s still playing with her food...
+
+&lt;% } %&gt;
+
+[[Where&#39;s your dad?|C1P44V1]]&lt;br&gt;
+[[Where have you guys been staying?|C1P44V2]]&lt;br&gt;
+[[How many walkers have you killed?|C1P44V3]]&lt;br&gt;
+
+[[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="181" name="C1P44V1" tags="variation" position="2925,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+&quot;So, uh, where&#39;s your dad?&quot;, I ask &lt;% print(tiffany) %&gt;.
+
+She looks up from her meal.
+
+&quot;He got eaten by monsters&quot;, she replies, sounding a little downtrodden.
+
+&quot;Sorry to hear that&quot;, I reply.
+
+&quot;Don&#39;t be, he was being silly&quot;, she adds.
+
+&quot;How so?&quot;, I ask.
+
+&quot;He was really sad all the time, and kept making silly mistakes. One day we were down in this cool underground train station, and we walked into a bunch of monsters. Mom picked me up and ran away, but dad just stood there, Mom tried to shout at him to move, but he didn&#39;t&quot;, she remarks.
+
+We sit for a moment, while I process what this little girl just described to me.
+
+&quot;Anyway, where&#39;s your dad?&quot;, she asks cheerfully.
+
+&quot;I&#39;m not sure, I couldn&#39;t get back to him or my mom after everything went to shit. I like to think they&#39;re out there somewhere, but it&#39;s unlikely&quot;, I reply.
+
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P44V2" tags="variation" position="3075,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+&quot;So, where have you guys been staying, have you moved around a lot?&quot;, I ask &lt;% print(tiffany) %&gt;.
+
+She looks up from her meal.
+
+&quot;We move houses every few days, sometimes we stay longer, but mostly not. Mom finds a safe house, and then leaves me there during the day to go out looking for food and stuff&quot;, she replies.
+
+&quot;That, must be lonely&quot;, I say, feeling bad for her.
+
+&quot;Yeah it is, but mom says that it&#39;s too dangerous outside for me to come with her, except when we move houses&quot;, she replies, sounding a little annoyed.
+
+&quot;What about you?&quot;, &lt;% print(tiffany) %&gt; asks.
+
+&quot;Um, I move around a lot. Sometimes I&#39;ll stay in a house, like you, but most of the time I just sleep wherever it&#39;s safest. Being by myself means it&#39;s pretty easy to pack up and go at a moment&#39;s notice, which has its perks&quot;, I explain.
+
+&quot;Don&#39;t you get lonely too?&quot;, she asks.
+
+&quot;Sometimes, but I&#39;m used to it. I&#39;ve been on my own for a shit long time&quot;, I reply.
+
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="183" name="C1P44V3" tags="variation" position="3225,10800" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;HowToKill&quot;)
+%&gt;
+
+&quot;So, how many walkers have you killed?&quot;, I ask &lt;% print(tiffany) %&gt;.
+
+She looks up from her meal.
+
+&quot;Walker? Is that what you call the monsters?&quot;, she asks, sounding a little confused.
+
+&quot;Yeah, the monsters. How many have you killed?&quot;, I reply.
+
+&quot;Oh, I hadn&#39;t killed any... I don&#39;t know how&quot;, she replies, sounding uneasy.
+
+&quot;It&#39;s not hard, you just have to aim for the head&quot;, I reply, looking at her.
+
+&quot;Might be a little hard, considering how little you are, but don&#39;t let that stop you!&quot;, I remark.
+
+print(tiffany) looks away for a moment, like she&#39;s thinking.
+
+&quot;Why do you call them walkers?&quot;, she asks.
+
+Still caught up on that, gee.
+
+&quot;Because they bloody walk everywhere&quot;, I reply.
+
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45" tags="page" position="3075,10950" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="185" name="F: Better get going" tags="floater" position="3375,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+&quot;Swear!&quot;, &lt;% print(tiffany) %&gt; exclaims.
+
+There&#39;s an akward pause.
+
+&quot;Um, sorry?&quot;, I reply.
+
+[[Better go chat with your mom|C1P45]]</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
