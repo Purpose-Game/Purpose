@@ -391,6 +391,20 @@ window.story.selectSlot = function () {
 	}, 1000);
 }
 
+// Shows an example save notification
+window.story.exampleSave = function () {
+	saveNotification = window.story.popup.info({
+		title: "Auto-Saving..."
+	}, {
+		position: "bottom-right"
+	});
+	
+	_.delay(function() {
+		saveNotification.setType("success");
+		saveNotification.setTitle("Auto-Save Complete!");
+	}, 1000);
+}
+
 //
 // External Scripts
 //
@@ -567,6 +581,8 @@ The board comes right off, pulling bits of the moldy window frame it was nailed 
 The choices you make have an impact on the story.
 
 Important story information is **in bold**. Irreversible actions are &lt;a0&gt;**in bold**&lt;/a&gt;.
+
+&lt;% if (window.story.saving) print(&quot;A notification will appear each time the game saves; the game saves every few passages. If you refresh or close the game, you will be able to pick up from the passage the game last showed a save notification at. &lt;a.normalLink onclick=\&quot;window.story.exampleSave()\&quot;&gt;Click here&lt;/a&gt; to view an example save notification.&quot;) %&gt;
 
 This game has no sound; &lt;a.normalLink href=&quot;https://www.youtube.com/watch?v=_Rn3_ZaG678&quot; target=&quot;_blank&quot;&gt;click here&lt;/a&gt; for suggested, optional background music.
 
@@ -1911,7 +1927,8 @@ If you choose not to enable Cloud Saving, your progress will be lost when you re
 
 You will need to re-link your account each time you play the game.
 
-[[Continue|Game Options]]</tw-passagedata><tw-passagedata pid="174" name="Game Options" tags="" position="2000,850" size="200,100">&lt;div#titleButton&gt;
+[[Continue|Game Options]]&lt;br&gt;
+&lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;</tw-passagedata><tw-passagedata pid="174" name="Game Options" tags="" position="2000,850" size="200,100">&lt;div#titleButton&gt;
 &lt;% if (window.story.saving) {
 	print(&quot;[[New Game|New Game]]&lt;br&gt;&quot;);
 	print(&quot;&lt;a0 onclick=\&quot;window.story.loadSaves()\&quot;&gt;Saved Games&lt;/a&gt;&quot;);
