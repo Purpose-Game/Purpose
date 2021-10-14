@@ -68,6 +68,7 @@ a:active, button:active {
   margin-top: initial;
   margin-right: initial;
   clip-path: initial;
+  text-decoration: underline;
 }
 
 .gn-notification h1 {
@@ -126,7 +127,7 @@ $(document).on("sm.passage.showing", function(event, data) {
 		
 	if (passage.tags) {
 		if (!passage.tags.includes("noFade") && !passage.tags.includes("redirect")) {
-			$("tw-passage").hide(0).fadeIn(1000);
+			$("tw-passage").hide(0).fadeIn(500);
 		}
 		
 		if (window.story.saving && passage.tags.includes("save")) {
@@ -137,28 +138,7 @@ $(document).on("sm.passage.showing", function(event, data) {
 			}
 			
 			window.story.state.lastPassage = passage.name;
-			
-			saveNotification = window.story.popup.info({
-				title: "Auto-Saving..."
-			}, {
-				position: "bottom-right"
-			});
-			
-			$.post("https://purpose-game.com/save", {
-				key: window.story.player.key,
-				data: {
-					chapter: 1,
-					saveSlot: window.story.saveSlot,
-					saveData: JSON.stringify(window.story.state)
-				}
-			}).done(function() {
-				saveNotification.setType("success");
-				saveNotification.setTitle("Auto-Save Complete!");
-			}).catch(function(error) {
-				saveNotification.setType("error");
-				saveNotification.setTitle("Auto-Save Failed!");
-				saveNotification.setText(error.responseText);
-			});
+			window.story.saveGame();
 		}
 	}
 });
@@ -306,39 +286,74 @@ window.story.linkCode = function () {
 	});
 }
 
-// Loads all player saves
-window.story.loadSaves = function () {
+// Saves player's game
+window.story.saveGame = function () {
 	saveNotification = window.story.popup.info({
-		title: "Loading Saves..."
+		title: "Auto-Saving..."
 	}, {
 		position: "bottom-right"
 	});
+
+	$.post("https://purpose-game.com/save", {
+		key: window.story.player.key,
+		data: {
+			saveSlot: window.story.saveSlot,
+			saveData: JSON.stringify(window.story.state)
+		}
+	}).done(function() {
+		saveNotification.setType("success");
+		saveNotification.setTitle("Auto-Save Complete!");
+	}).catch(function(error) {
+		saveNotification.setType("error");
+		saveNotification.setTitle("Auto-Save Failed!");
+		saveNotification.setText(error.responseText);
+	});
+}
+
+// Loads all player saves
+window.story.loadSaves = function (check = false) {
+	if (!check) {
+		saveNotification = window.story.popup.info({
+			title: "Loading Saves..."
+		}, {
+			position: "bottom-right"
+		});
+	}
 	
 	$.post("https://purpose-game.com/saves", {
-		key: window.story.player.key,
-		chapter: 1
+		key: window.story.player.key
 	}).done(function(data) {
-		if (data.length === 0) {
+		$("#slotsLoading").hide();
+		$("#saveSlotSelector").show(500);
+		
+		if (data.length === 0 && !check) {
 			saveNotification.setType("message");
 			saveNotification.setTitle("No Saved Games!");
 			return;
 		}
-		
-		saveNotification.setType("success");
-		saveNotification.setTitle("Saves Loaded!");
 
-		_.delay(function() {
-			story.show("Saved Games");
-			
-			$.each( data, function( _, value ) {
-				$("#savesContainer").append(`<a onclick="window.story.loadSave(${value.slot})">Save Slot ${value.slot}. Chapter: ${value.chapter}, Last passage: ${value.passage}</a><br>`);
-			});
-		}, 1000);
-	}).catch(function(error) {
-		saveNotification.setType("error");
-		saveNotification.setTitle("Load Failed!");
-		saveNotification.setText(error.responseText);
-	});
+		if (!check) {
+			saveNotification.setType("success");
+			saveNotification.setTitle("Saves Loaded!");
+
+			_.delay(function() {
+				story.show("Saved Games");
+
+				$.each( data, function( _, value ) {
+					const lastUsed = new Date(value.lastActive);
+					$("#savesContainer").append(`<a onclick="window.story.loadSave(${value.slot})"><u>Save Slot ${value.slot}</u><br>Chapter: ${value.data.lastPassage.charAt(1)}<br>Last passage: ${value.data.lastPassage}<br>Last Used: ${lastUsed.toLocaleDateString()}</a>`);
+				});
+			}, 1000);
+        } else {
+					$.each( data, function( _, value ) {
+						$("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (Used)");
+					});
+        }
+    }).catch(function(error) {
+        saveNotification.setType("error");
+        saveNotification.setTitle("Load Failed!");
+        saveNotification.setText(error.responseText);
+    });
 }
 
 // Loads a player's save
@@ -353,8 +368,7 @@ window.story.loadSave = function (saveSlot) {
 	
 	$.post("https://purpose-game.com/load", {
 		key: window.story.player.key,
-		saveSlot: saveSlot,
-		chapter: 1	
+		saveSlot: saveSlot,	
 	}).done(function(data) {
 		window.story.state = data;
 		window.story.saveSlot = saveSlot;
@@ -532,7 +546,7 @@ I go back up the patio steps and head to the back door.
 
 &lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="6" name="C1P5V2" tags="variation" position="3150,1175" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
 
-As I limp up to the window, I can see it has been partially boarded up. The boards look old and rotted, and it doesn&#39;t look like they were not put up very well in the first place. I shouldn&#39;t have any trouble pulling them off.
+As I limp up to the window, I can see it has been partially boarded up. The boards look old and rotted, and it doesn&#39;t look like they were put up very well in the first place. I shouldn&#39;t have any trouble pulling them off.
 
 &lt;% } else { %&gt;
 
@@ -621,10 +635,10 @@ This game has no sound; &lt;a.normalLink href=&quot;https://www.youtube.com/watc
 
 I look around, I see a small rock I could use to break the glass... or, I could use my elbow. The rock would lower my chances of cutting myself, but my elbow might be quieter.
 
-[[[Use the rock]|C1P5V2211]]&lt;br&gt;
-[[[Use your elbow]|C1P5V2212]]</tw-passagedata><tw-passagedata pid="14" name="C1P5V2211" tags="variation" position="3300,1625" size="100,100">I pick up the rock and throw it at the glass. The glass bursts into shinny dust, and lo and behold, **it made a lot of noise**.
+[[[Use the rock]|C1P5V2212]]&lt;br&gt;
+[[[Use elbow]|C1P5V2211]]</tw-passagedata><tw-passagedata pid="14" name="C1P5V2212" tags="variation" position="3450,1625" size="100,100">I pick up the rock and throw it at the glass. The glass bursts into shinny dust, and lo and behold, **it made a lot of noise**.
 
-&lt;%= window.story.render(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="15" name="C1P5V2212" tags="variation" position="3450,1625" size="100,100">This is probably a bad idea, but what the hell. I bunch up my sleeve for extra padding, brace my elbow, then push.
+&lt;%= window.story.render(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="15" name="C1P5V2211" tags="variation" position="3300,1625" size="100,100">This is probably a bad idea, but what the hell. I bunch up my sleeve for extra padding, brace my elbow, then push.
 
 The glass was not very strong and gave way easily, but the bits of broken glass hitting the floor inside **was still loud**. I pull my arm back, looks like I tore my sleeve a little bit, but didn&#39;t cut myself. 
 
@@ -1051,7 +1065,7 @@ if (window.passage.name != &quot;C1P5V12&quot;) {
 
 The door is open far enough now that I can see a person, a very small person: a child, a girl.
 
-She can&#39;t be more than 6 or 7 years old... I can just make out a long, messy brown ponytail, bright blue eyes, and a dark blue dress.
+She can&#39;t be more than 6 or 7 years old... I can just make out shoulder-length blonde hair, bright blue eyes, and a dark blue dress with white dots.
 
 Our eyes meet and we stare at each other for a moment, but it feels like an eternity. There&#39;s not a hint of fear in her eyes, just pure curiosity.
 
@@ -1129,9 +1143,9 @@ Dead Sister - Sophia:
 
 Young Girl - Tiffany:
 - 6 years old
-- Long brown hair, ponytail
+- Shoulder-length blonde hair
 - Bright blue eyes
-- Dark blue dress
+- Dark blue dress with white dots
 
 Mother - Lucy:
 - 34 years old
@@ -1211,7 +1225,7 @@ I couldn&#39;t care less...
 
 &lt;/i&gt;
 
-&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="82" name="Credits" tags="info" position="1225,725" size="200,100">Game by Christopher &quot;Inferno&quot; M.&lt;br&gt;
+&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="82" name="Credits" tags="info" position="1225,725" size="200,100">Game &amp; Infrastructure by Christopher &quot;Inferno&quot; M.&lt;br&gt;
 https://purpose-game.com&lt;br&gt;&lt;br&gt;
 
 Dead Font Walking Font - Allison James&lt;br&gt;
@@ -1220,14 +1234,17 @@ https://www.1001fonts.com/dead-font-walking-font.html
 Ragged CSS Edges - Tymn Urban &amp; Stephen Melvin&lt;br&gt;
 https://stackoverflow.com/a/47085434
 
-SimpleNotification - Glagan &amp; ajmeese7&lt;br&gt;
+SimpleNotification - Glagan &amp; Contributors&lt;br&gt;
 https://github.com/Glagan/SimpleNotification
 
 toggleFullscreen.js - demonixis&lt;br&gt;
 https://gist.github.com/demonixis/5188326
 
-jQuery - OpenJS Foundation &amp; jQuery contributors&lt;br&gt;
+jQuery - OpenJS Foundation &amp; Contributors&lt;br&gt;
 https://jquery.com/
+
+Snowman 2 - videlais &amp; Contributors&lt;br&gt;
+https://github.com/videlais/snowman
 
 Twine 2 - Twine and Twee&lt;br&gt;
 https://twinery.org/</tw-passagedata><tw-passagedata pid="83" name="F: Stay in bed" tags="floater" position="3425,2825" size="100,100">[[[Stay in bed]|C1P11]]</tw-passagedata><tw-passagedata pid="84" name="F: Roll over" tags="floater" position="3425,3150" size="100,100">[[[Roll over]|C1P12]]</tw-passagedata><tw-passagedata pid="85" name="C1P11V2" tags="variation" position="3075,3150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;) %&gt;
@@ -1473,7 +1490,7 @@ We sit in silence for a few minutes, then without saying a word, Lucy gets up an
 
 With Lucy gone, I don&#39;t have a reason to hold back anymore. I lay back on the sofa, and close my eyes.
 
-[[[Bawl your eyes out]|C1P29]]</tw-passagedata><tw-passagedata pid="120" name="C1P29" tags="page" position="3075,7050" size="100,100">I begin to bawl.
+[[[Bawl eyes out]|C1P29]]</tw-passagedata><tw-passagedata pid="120" name="C1P29" tags="page" position="3075,7050" size="100,100">I begin to bawl.
 
 Raw, hard, tears.
 
@@ -1951,7 +1968,7 @@ This game has an optional Cloud Saving feature, to enable it, click the button b
 
 &lt;div#titleButton&gt;[[Enable Cloud Saving|Linking]]&lt;/div&gt;
 
-If you choose not to enable Cloud Saving, your progress will be lost when you refresh or leave the game page.
+If you choose not to enable Cloud Saving, your progress will be lost when you refresh or leave the game.
 
 &lt;div#titleButton&gt;[[Continue without Saving|Game Options]]&lt;/div&gt;
 
@@ -1961,7 +1978,7 @@ Clicking the button below will open a new tab, ask you to authorize Purpose (thi
 
 &lt;u&gt;NOTE: Treat your Linking Code like a password, do not share it, and if you are recording or streaming, do not show it to your audience. Linking Codes are one use, and expire if not used.&lt;/u&gt;
 
-&lt;hr&gt;&lt;br&gt;
+&lt;hr&gt;
 
 &lt;div#titleButton&gt;
 	&lt;a#generateButton href=&quot;https://purpose-game.com/auth&quot; target=&quot;_blank&quot; onclick=&quot;window.story.toggleLinkingDisplays()&quot;&gt;Generate Linking Code&lt;/a&gt;
@@ -1994,19 +2011,23 @@ You will need to re-link your account each time you play the game.
 }
 %&gt;
 &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="New Game" tags="" position="2000,1000" size="200,100">&lt;img.titleImage&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="New Game" tags="" position="2000,1000" size="200,100">&lt;% window.story.loadSaves(true) %&gt;
+
+&lt;img.titleImage&gt;
 
 Select a Save Slot to start a new game.
 
 &lt;u&gt;NOTE: Selecting a Save Slot that is already in use will override any saved data. You can check which Save Slots are in use by looking at the &quot;Saved Games&quot; passage.&lt;/u&gt;
 
-&lt;form action=&quot;javascript:void(0)&quot;&gt;
+&lt;span#slotsLoading&gt;Loading...&lt;/span&gt;
+
+&lt;form-#saveSlotSelector action=&quot;javascript:void(0)&quot;&gt;
   &lt;label for=&quot;slots&quot;&gt;Choose a Save Slot:&lt;/label&gt;
-  &lt;select id=&quot;slots&quot; name=&quot;slots&quot;&gt;
-    &lt;option value=&quot;1&quot;&gt;Save Slot 1&lt;/option&gt;
-    &lt;option value=&quot;2&quot;&gt;Save Slot 2&lt;/option&gt;
-    &lt;option value=&quot;3&quot;&gt;Save Slot 3&lt;/option&gt;
-    &lt;option value=&quot;4&quot;&gt;Save Slot 4&lt;/option&gt;
+  &lt;select#slots name=&quot;slots&quot;&gt;
+    &lt;option#saveSlot1 value=&quot;1&quot;&gt;Save Slot 1&lt;/option&gt;
+    &lt;option#saveSlot2 value=&quot;2&quot;&gt;Save Slot 2&lt;/option&gt;
+    &lt;option#saveSlot3 value=&quot;3&quot;&gt;Save Slot 3&lt;/option&gt;
+    &lt;option#saveSlot4 value=&quot;4&quot;&gt;Save Slot 4&lt;/option&gt;
   &lt;/select&gt;
   
   &lt;button0#selectSlotButton onclick=&quot;window.story.selectSlot()&quot;&gt;Select Slot and Start Game&lt;/button&gt;
@@ -2140,7 +2161,7 @@ Still caught up on that, gee.
 
 &quot;Because they bloody walk everywhere&quot;, I reply.
 
-&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45" tags="page" position="3075,10950" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="185" name="F: Better get going" tags="floater" position="3375,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45" tags="page" position="3075,10950" size="100,100">&quot;I uh, better go chat with your mom&quot;</tw-passagedata><tw-passagedata pid="185" name="F: Better get going" tags="floater" position="3375,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 &quot;Swear!&quot;, &lt;% print(tiffany) %&gt; exclaims.
 
@@ -2148,7 +2169,7 @@ There&#39;s an akward pause.
 
 &quot;Um, sorry?&quot;, I reply.
 
-[[Better go chat with your mom|C1P45]]</tw-passagedata></tw-storydata>
+[[Better go talk to Lucy|C1P45]]</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
