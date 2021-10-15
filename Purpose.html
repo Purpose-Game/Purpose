@@ -336,7 +336,7 @@ window.story.loadSaves = function (newGame = false) {
 			});
 		} else {
 			$.each( data, function( _, value ) {
-				$("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (Used)");
+				$("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (In Use)");
 			});
 		}
 		
@@ -2001,7 +2001,7 @@ If you choose not to enable Cloud Saving, your progress will be lost when you re
 
 [[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="171" name="Linking" tags="menu" position="2250,700" size="200,100">&lt;img.titleImage&gt;
 
-Clicking the button below will open a new tab, ask you to authorize Purpose (this game) to access your public itch.io information, and will then give you a temporary &quot;Linking Code&quot; to use below. Purpose only uses your itch.io unique id for saving your game progress, and optional Discord integration if you join our Discord. Your public display name is also stored to address you properly. Purpose does not have access to your E-Mail, Password, or any other personal information.
+Clicking the button below will open a new tab, ask you to authorize Purpose (this game) to access your public itch.io information, and will then give you a temporary &quot;Linking Code&quot; to use below. Purpose only uses your itch.io information for saving your game progress. Purpose does not have access to your E-Mail, Password, or any other personal information.
 
 &lt;u&gt;NOTE: Treat your Linking Code like a password, do not share it, and if you are recording or streaming, do not show it to your audience. Linking Codes are one use, and expire if not used.&lt;/u&gt;
 
@@ -2044,7 +2044,7 @@ You will need to re-link your account each time you play the game.
 
 Select a Save Slot to start a new game.
 
-&lt;u&gt;NOTE: Selecting a Save Slot that is already in use will override any saved data. You can check which Save Slots are in use by looking at the &quot;Saved Games&quot; passage.&lt;/u&gt;
+&lt;u&gt;NOTE: Selecting a Save Slot that is already in use will override any saved data.&lt;/u&gt;
 
 &lt;span#slotsLoading&gt;Loading...&lt;/span&gt;
 
