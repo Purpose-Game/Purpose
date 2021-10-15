@@ -814,6 +814,8 @@ const iFound =
 	itemsCollected === 3 ? &quot;I found a handful of useful things&quot; :
 	&quot;I didn&#39;t find anything&quot;;
 	
+window.story.setChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;, itemsCollected);
+	
 window.story.delayedText(10000);
 %&gt;
 
@@ -1066,7 +1068,7 @@ if (window.passage.name != &quot;C1P5V12&quot;) {
 
 The door is open far enough now that I can see a person, a very small person: a child, a girl.
 
-She can&#39;t be more than 6 or 7 years old... I can just make out shoulder-length blonde hair, bright blue eyes, and a dark blue dress with white dots.
+She can&#39;t be more than 7 or 8 years old... I can just make out shoulder-length blonde hair, bright blue eyes, and a dark blue dress with white dots.
 
 Our eyes meet and we stare at each other for a moment, but it feels like an eternity. There&#39;s not a hint of fear in her eyes, just pure curiosity.
 
@@ -1143,7 +1145,7 @@ Dead Sister - Sophia:
 - Hazel eyes
 
 Young Girl - Tiffany:
-- 6 years old
+- 7 years old
 - Shoulder-length blonde hair
 - Bright blue eyes
 - Dark blue dress with white dots
@@ -1611,7 +1613,15 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;Frontdoor&quot; - Looked at the frontdoor
 
-&quot;Chapter1&quot;, &quot;Haircut&quot; - Gave yourself a haircut</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,550" size="200,100">&lt;img.titleImage&gt;
+&quot;Chapter1&quot;, &quot;Haircut&quot; - Gave yourself a haircut
+
+&quot;Chapter1&quot;, &quot;Eating&quot; - Telling Tiffany it&#39;s important to eat when you can
+
+&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot; - Found out about Tiffany&#39;s dad
+
+&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot; - Found out Tiffany is lonely
+
+&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot; - Found out Tiffany hasn&#39;t killed any walkers</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,550" size="200,100">&lt;img.titleImage&gt;
 
 &lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
@@ -2083,7 +2093,7 @@ I glance at Lucy. She looks back uncomfortably, but doesn&#39;t say anything.
 
 &lt;% print(tiffany) %&gt; starts to eat, I think **I taught her something important**.
 
-&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="F: Come chat" tags="floater" position="3375,10500" size="100,100">I get back to my bowel.
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="F: Come chat" tags="floater" position="3425,10500" size="100,100">I get back to my bowel.
 
 &quot;Sarah, come chat with me when you&#39;re finish&quot;, Lucy says, and she stands up and heads for the other door.
 
@@ -2091,7 +2101,7 @@ I glance at Lucy. She looks back uncomfortably, but doesn&#39;t say anything.
 
 Lucy leaves the room.
 
-[[[Keep eating]|C1P44]]</tw-passagedata><tw-passagedata pid="179" name="C1P44" tags="page" position="3075,10650" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[[Keep eating]|C1P44]]</tw-passagedata><tw-passagedata pid="179" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 I scrape the last drops out of the bowel: all finished.
 
@@ -2207,7 +2217,7 @@ Lucy turns to look at me as I close the door. She looks away again, back at the 
 
 [[...|C1P45V1]]&lt;br&gt;
 [[No stress|C1P45V2]]&lt;br&gt;
-[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="184" name="F: Better get going" tags="floater" position="3375,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="184" name="F: Better get going" tags="floater" position="3425,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 &lt;% print(tiffany) %&gt;&#39;s face contorts into a look of shock.
 
@@ -2225,7 +2235,7 @@ Another akward pause.
 
 &lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="187" name="C1P45V3" tags="variation" position="3225,11100" size="100,100">&quot;You broke our deal&quot;, I remark.
 
-&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="188" name="F: Broke our deal" tags="floater" position="3375,11100" size="100,100">Lucy puts the picture frame down, and turns to face me.
+&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="188" name="F: Broke our deal" tags="floater" position="3425,11100" size="100,100">Lucy puts the picture frame down, and turns to face me.
 
 &quot;&lt;% if (window.passage.name === &quot;C1P45V3&quot;) { print(&quot;Yes, I did.&quot;) } else { print(&quot;I broke our deal, last night.&quot;) } %&gt; That&#39;s why I wanted to talk to you&quot;, Lucy sighs.
 
@@ -2253,7 +2263,7 @@ I walk over to Lucy. I glance down at the picture frames she was looking at, the
 
 &lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P46V3" tags="variation" position="3225,11400" size="100,100">&quot;You still love her, she has that&quot;, I say.
 
-&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="193" name="F: Happy cuz of you" tags="floater" position="3375,11400" size="100,100">&quot;&lt;% if (window.passage.name === &quot;C1P46V2&quot;) { print (&quot;She&#39;s happy because of you.&quot;) } else { print(&quot;And that&#39;s not enough.&quot;) } %&gt;&quot;, Lucy remarks.
+&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="193" name="F: Happy cuz of you" tags="floater" position="3575,11400" size="100,100">&quot;&lt;% if (window.passage.name === &quot;C1P46V2&quot;) { print (&quot;She&#39;s happy because of you.&quot;) } else { print(&quot;And that&#39;s not enough.&quot;) } %&gt;&quot;, Lucy remarks.
 
 &quot;You are the first thing, the first *person* to bring any joy into her life in a very long time. I try to keep her happy, but I&#39;m so busy trying to keep her alive and fed, I just don&#39;t have the time. You don&#39;t even need to do anything, just being around you is enough to lift her spirits!&quot;, Lucy exclaims.
 
@@ -2273,15 +2283,21 @@ switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;))
 		print(&quot;[[You don&#39;t involve her enough|C1P47V33]]&quot;);
 		break;
 }
-%&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V1" tags="" position="2925,11550" size="100,100">I&#39;m not sure where this is going...</tw-passagedata><tw-passagedata pid="195" name="C1P47V2" tags="" position="3075,11550" size="100,100">&quot;Jealous?&quot;, I ask?
+%&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">I&#39;m not sure where this is going...
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="195" name="C1P47V2" tags="variation" position="2925,11550" size="100,100">&quot;Jealous?&quot;, I ask?
 
 Lucy scoffs.
 
-&quot;Yeah, I guess I am a little bit&quot;, she says, smilling slightly.</tw-passagedata><tw-passagedata pid="196" name="C1P47V31" tags="" position="3225,11550" size="100,100">&quot;She&#39;s just lonely. And I mean can you blame her, when she&#39;s left alone all day long?&quot;, I remark. I didn&#39;t realize how rude that sounded till the words left my mouth.
+&quot;Yeah, I guess I am a little bit&quot;, she says, smilling slightly.
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="196" name="C1P47V31" tags="variation" position="3075,11550" size="100,100">&quot;She&#39;s just lonely. And I mean can you blame her, when she&#39;s left alone all day long?&quot;, I remark. I didn&#39;t realize how rude that sounded till the words left my mouth.
 
 Lucy turns to me with a mixture of anger and shock, but it quickly fades away to a look of pain.
 
-She knows I&#39;m right.</tw-passagedata><tw-passagedata pid="197" name="C1P47V32" tags="" position="3375,11550" size="100,100">&quot;She just misses her dad; it sounded like he was going through al-&quot;, I start.
+She knows I&#39;m right.
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="197" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&quot;She just misses her dad; it sounded like he was going through al-&quot;, I start.
 
 &quot;Don&#39;t talk about my husband&quot;, Lucy snaps.
 
@@ -2289,13 +2305,100 @@ I&#39;m caught off guard, I bite my tongue.
 
 &quot;He abandoned us, abandoned *Tiffany*, when she needed him most. That&#39;s it, end of story&quot;, Lucy spits out.
 
-There&#39;s an awkward silence.</tw-passagedata><tw-passagedata pid="198" name="C1P47V33" tags="" position="3525,11550" size="100,100">&quot;You don&#39;t get her involved enough&quot;, I say,
+There&#39;s an awkward silence. I guess she either doesn&#39;t understand, or doesn&#39;t want to understand it from his perspective.
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="198" name="C1P47V33" tags="variation" position="3375,11550" size="100,100">&quot;You don&#39;t get her involved enough&quot;, I say,
 
 Lucy looks at me in confusion.
 
 &quot;She said she hasn&#39;t even killed a Walker&quot;, I explain.
 
-&quot;How can you expect her to be happy, when you don&#39;t let her do anything?&quot;, I ask.</tw-passagedata></tw-storydata>
+&quot;How can you expect her to be happy, when you don&#39;t let her do anything?&quot;, I ask.
+
+Lucy takes a breath as if to say something, but stops, then looks away.
+
+She knows I&#39;m right.
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="199" name="F: Tiff is a child" tags="floater" position="3575,11550" size="100,100">Lucy moves away towards the window.
+
+&quot;She&#39;s just a child. She didn&#39;t even get the chance to go to school...&quot;, Lucy trails off.
+
+&quot;I&#39;m doing the best I can to keep her alive; there&#39;s not exactly a handbook on &#39;How to raise a child in the apocalypse&#39;&quot;, she remarks.
+
+[[Why did you save me?|C1P48]]</tw-passagedata><tw-passagedata pid="200" name="C1P48" tags="page" position="3075,11700" size="100,100">&quot;Why did you save me, really&quot;, I ask.
+
+Lucy is silent for a moment.
+
+&quot;I saved you, because one day, maybe soon, that might be my little girl, running around out there, needing help...&quot;, she trails off.
+
+She&#39;s still facing away from me, but I hear a sniffle.
+
+&quot;And I can only hope that people are as kind to her, as I have been to you&quot;, she finishes.
+
+She turns to face me, tears streaking down her eyes.
+
+[[...|C1P48V1]]&lt;br&gt;
+[[They will be|C1P48V2]]&lt;br&gt;
+[[They won&#39;t be|C1P48V3]]</tw-passagedata><tw-passagedata pid="201" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">I&#39;m not sure what to say.
+
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="202" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&quot;They will be&quot;, I say.
+
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="203" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&quot;They won&#39;t be&quot;, I say.
+
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="204" name="F: Stay" tags="floater" position="3425,11850" size="100,100">&lt;% if (window.passage.name === &quot;C1P48V1&quot;) { %&gt;
+
+Lucy takes a breath, wiping her tears away.
+
+&lt;% } else if (window.passage.name === &quot;C1P48V2&quot;) { %&gt;
+
+&quot;Do you really think so?&quot;, she asks, taking a breath, wiping her tears away.
+
+&quot;I do&quot;, I say confidently.
+
+&lt;% } else if (window.passage.name === &quot;C1P48V3&quot;) { %&gt;
+
+&quot;Deep down, I think I know that&quot;, she says, taking a breath, wiping her tears away.
+
+&lt;% } %&gt;
+
+Lucy takes a moment to center herself.
+
+&quot;I&#39;m not sure how to say this, so I&#39;ll just say it: I&#39;d like it if you stayed with us&quot;, Lucy says.
+
+My heart skips a beat, I haven&#39;t been with other people long term since... Sophia.
+
+&quot;I know it&#39;s a lot to lay on you all at once, but, I&#39;ve thought about it;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;) &gt; 0) print(&quot; you&#39;re resourceful,&quot;) %&gt; you clearly know how to survive out there, you can pull your own weight, and you&#39;ll have an influence on Tiffany&quot;, she explains.
+
+&quot;Don&#39;t know if it will be a good or bad influence, we&#39;ll have to find out, together&quot;, she says with a slight smile.
+
+This is a lot to process, I have to think about this for a minute.
+
+[[[Think about Lucy&#39;s offer]|C1P49]]</tw-passagedata><tw-passagedata pid="205" name="C1P49" tags="page" position="3075,12000" size="100,100">&lt;% const tiffany = window.story.tiffany %&gt;
+
+I think about it for a minute, Lucy staring at me all the while.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;)) { %&gt;
+
+Well, I said I needed a new purpose; this isn&#39;t exactly what I had in mind, but...
+
+I can&#39;t bring Sophia back, but maybe I can honor her through helping &lt;% print(tiffany) %&gt;.
+
+&lt;% } else { %&gt;
+
+I don&#39;t know... I don&#39;t want, no, I *can&#39;t* have another little girl&#39;s blood on my hands. &lt;% print(tiffany) %&gt; might be better off without me.
+
+&lt;% } %&gt;
+
+[[I&#39;ll stay|C1P50]] [[I&#39;m not staying|C1P50]]</tw-passagedata><tw-passagedata pid="206" name="C1P50" tags="page save" position="3075,12150" size="100,100">&lt;% const tiffany = window.story.tiffany %&gt;
+
+&quot;I-&quot;, I start to say.
+
+*&quot;AAARGH!&quot;*, someone, or something, screams from outside.
+
+Lucy and I both look towards the direction of the source. It sounded like it came from somewhere outside the front of the house.
+
+[[I got &lt;% print(tiffany) %&gt;, go!|C1P50V1]]
+[[Get &lt;% print(tiffany) %&gt;, I&#39;ll go!|C1P50V2]]</tw-passagedata><tw-passagedata pid="207" name="C1P50V1" tags="variation" position="3000,12300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="208" name="C1P50V2" tags="variation" position="3150,12300" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
