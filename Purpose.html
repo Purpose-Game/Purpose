@@ -242,7 +242,7 @@ window.story.linkCode = function () {
 	});
 	
 	input.prop("disabled", true);
-	button.prop("disabled", true);
+	button.attr("onclick", "");
 	
 	if (!code || code === "") {
 		saveNotification.setType("error");
@@ -250,7 +250,7 @@ window.story.linkCode = function () {
 		saveNotification.setText("No code entered!");
 		
 		input.prop("disabled", false);
-		button.prop("disabled", false);
+		button.attr("onclick", "window.story.linkCode()");
 		return;
 	}
 	
@@ -259,7 +259,7 @@ window.story.linkCode = function () {
 		saveNotification.setTitle("Error: Invalid Code");
 		saveNotification.setText("Entered code is invalid!");
 		input.prop("disabled", false);
-		button.prop("disabled", false);
+		button.attr("onclick", "window.story.linkCode()");
 		return;
 	}
 	
@@ -279,10 +279,12 @@ window.story.linkCode = function () {
 	}).catch(function(error) {
 		window.story.popup.error({
 			title: `Error: ${error.status}`,
-			text: error.responseText,
-		});
+			text: error.responseText
+		}, {
+            position: "bottom-right"
+        });
 		input.prop("disabled", false);
-		button.prop("disabled", false);
+		button.attr("onclick", "window.story.linkCode()");
 	});
 }
 
@@ -311,49 +313,46 @@ window.story.saveGame = function () {
 }
 
 // Loads all player saves
-window.story.loadSaves = function (check = false) {
-	if (!check) {
-		saveNotification = window.story.popup.info({
-			title: "Loading Saves..."
-		}, {
-			position: "bottom-right"
-		});
-	}
-	
+window.story.loadSaves = function (newGame = false) {
 	$.post("https://purpose-game.com/saves", {
 		key: window.story.player.key
 	}).done(function(data) {
 		$("#slotsLoading").hide();
-		$("#saveSlotSelector").show(500);
 		
-		if (data.length === 0 && !check) {
-			saveNotification.setType("message");
-			saveNotification.setTitle("No Saved Games!");
+		if (data.length === 0 && !newGame) {
+			saveNotification = window.story.popup.message({
+				title: "No Saved Games!",
+				text: error.responseText
+			}, {
+				position: "bottom-right"
+			});
 			return;
 		}
 
-		if (!check) {
-			saveNotification.setType("success");
-			saveNotification.setTitle("Saves Loaded!");
-
-			_.delay(function() {
-				story.show("Saved Games");
-
-				$.each( data, function( _, value ) {
-					const lastUsed = new Date(value.lastActive);
-					$("#savesContainer").append(`<a onclick="window.story.loadSave(${value.slot})"><u>Save Slot ${value.slot}</u><br>Chapter: ${value.data.lastPassage.charAt(1)}<br>Last passage: ${value.data.lastPassage}<br>Last Used: ${lastUsed.toLocaleDateString()}</a>`);
-				});
-			}, 1000);
-        } else {
-					$.each( data, function( _, value ) {
-						$("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (Used)");
-					});
-        }
-    }).catch(function(error) {
-        saveNotification.setType("error");
-        saveNotification.setTitle("Load Failed!");
-        saveNotification.setText(error.responseText);
-    });
+		if (!newGame) {
+			$.each( data, function( _, value ) {
+				const lastUsed = new Date(value.lastActive);
+				$("#savesContainer").append(`<a onclick="window.story.loadSave(${value.slot})"><u>Save Slot ${value.slot}</u><br>Chapter: ${value.data.lastPassage.charAt(1)}<br>Last passage: ${value.data.lastPassage}<br>Last Used: ${lastUsed.toLocaleDateString()}</a>`);
+			});
+		} else {
+			$.each( data, function( _, value ) {
+				$("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (Used)");
+			});
+		}
+		
+		if (newGame) {
+			$("#saveSlotSelector").fadeIn(500);	
+		} else {
+			$("#savesContainer").fadeIn(500);
+		}
+	}).catch(function(error) {
+		saveNotification = window.story.popup.error({
+			title: "Load Failed!",
+			text: error.responseText
+		}, {
+			position: "bottom-right"
+		});
+	});
 }
 
 // Loads a player's save
@@ -1409,7 +1408,9 @@ She pauses for a moment.
 [[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="108" name="Title Screen" tags="menu" position="2000,550" size="200,100">&lt;img.titleImage&gt;
 
 &lt;div#titleButton&gt;
-[[Begin|Save Options]]
+[[Play Game|Save Options]]
+&lt;a href=&quot;https://purpose-game.com&quot; target=&quot;_blank&quot;&gt;Website&lt;/a&gt;
+&lt;a href=&quot;https://discordapp.com&quot; target=&quot;_blank&quot;&gt;Discord&lt;/a&gt;
 [[Credits|Global Credits]]
 &lt;a onclick=&quot;window.story.toggleDebug()&quot;&gt;Toggle Debug Mode&lt;br&gt;&lt;span.smaller&gt;(Recommended for Mobile Users)&lt;/span&gt;&lt;/a&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="C1P25V2" tags="variation" position="3075,6450" size="100,100">Lucy pauses again, then looks at me with an almost apologetic look.
@@ -1970,9 +1971,13 @@ I nearly choke laughing; Lucy was not so impressed.
 
 [[Eat, it tastes good|C1P43V1]]&lt;br&gt;
 [[What do you like to eat?|C1P43V2]]&lt;br&gt;
-[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="169" name="Saved Games" tags="menu" position="2250,850" size="200,100">&lt;img.titleImage&gt;
+[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="169" name="Saved Games" tags="menu" position="2250,850" size="200,100">&lt;% window.story.loadSaves() %&gt;
 
-&lt;div#savesContainer&gt;&lt;/div&gt;
+&lt;img.titleImage&gt;
+
+&lt;span#slotsLoading&gt;Loading...&lt;/span&gt;
+
+&lt;div-#savesContainer&gt;&lt;/div&gt;
 
 [[Back|Game Options]]</tw-passagedata><tw-passagedata pid="170" name="Save Options" tags="menu" position="2000,700" size="200,100">&lt;img.titleImage&gt;
 
@@ -2016,7 +2021,7 @@ You will need to re-link your account each time you play the game.
 &lt;div#titleButton&gt;
 &lt;% if (window.story.saving) {
 	print(&quot;[[New Game|New Game]]&quot;);
-	print(&quot;&lt;a0 onclick=\&quot;window.story.loadSaves()\&quot;&gt;Saved Games&lt;/a&gt;&quot;);
+	print(&quot;[[Saved Games|Saved Games]]&quot;);
 } else {
 	print(&quot;[[New Game|Introduction]]&quot;);
 	print(&quot;[[Enable Saving|Save Options]]&quot;);
