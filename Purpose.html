@@ -2111,7 +2111,7 @@ I look over at &lt;% print(tiffany) %&gt;, she&#39;s still playing with her food
 
 [[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="180" name="C1P44V1" tags="variation" position="2925,10800" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
-window.story.setChoice(&quot;Chapter1&quot;, &quot;Dad&quot;);
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;);
 %&gt;
 
 &quot;So, uh, where&#39;s your dad?&quot;, I ask &lt;% print(tiffany) %&gt;.
@@ -2136,7 +2136,7 @@ We sit for a moment, while I process what this little girl just described to me.
 
 &lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="181" name="C1P44V2" tags="variation" position="3075,10800" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
-window.story.setChoice(&quot;Chapter1&quot;, &quot;Lonely&quot;);
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot;);
 %&gt;
 
 &quot;So, where have you guys been staying, have you moved around a lot?&quot;, I ask &lt;% print(tiffany) %&gt;.
@@ -2159,7 +2159,8 @@ She looks up from her meal.
 
 &lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P44V3" tags="variation" position="3225,10800" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
-window.story.setChoice(&quot;Chapter1&quot;, &quot;HowToKill&quot;)
+window.story.setChoice(&quot;Chapter1&quot;, &quot;HowToKill&quot;);
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;);
 %&gt;
 
 &quot;So, how many walkers have you killed?&quot;, I ask &lt;% print(tiffany) %&gt;.
@@ -2170,7 +2171,7 @@ She looks up from her meal.
 
 &quot;Yeah, the monsters. How many have you killed?&quot;, I reply.
 
-&quot;Oh, I hadn&#39;t killed any... I don&#39;t know how&quot;, she replies, sounding uneasy.
+&quot;Oh, I hasvn&#39;t killed any... I don&#39;t know how&quot;, she replies, sounding uneasy.
 
 &quot;It&#39;s not hard, you just have to aim for the head&quot;, I reply, looking at her.
 
@@ -2258,11 +2259,43 @@ I walk over to Lucy. I glance down at the picture frames she was looking at, the
 
 [[...|C1P47V1]]&lt;br&gt;
 [[Jealous?|C1P47V2]]&lt;br&gt;
-[[She&#39;d grow tired of me|C1P47V3]]</tw-passagedata><tw-passagedata pid="194" name="C1P47V1" tags="" position="2925,11550" size="100,100">I&#39;m not sure where this is going...</tw-passagedata><tw-passagedata pid="195" name="C1P47V2" tags="" position="3075,11550" size="100,100">&quot;Jealous?&quot;, I ask?
+&lt;%
+switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;)) {
+	case &quot;Lonely&quot;:
+		print(&quot;[[She&#39;s lonely|C1P47V31]]&quot;);
+		break;
+		
+	case &quot;Dad&quot;:
+		print(&quot;[[She misses her dad|C1P47V32]]&quot;);
+		break;
+		
+	case &quot;Killing&quot;:
+		print(&quot;[[You don&#39;t involve her enough|C1P47V33]]&quot;);
+		break;
+}
+%&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V1" tags="" position="2925,11550" size="100,100">I&#39;m not sure where this is going...</tw-passagedata><tw-passagedata pid="195" name="C1P47V2" tags="" position="3075,11550" size="100,100">&quot;Jealous?&quot;, I ask?
 
 Lucy scoffs.
 
-&quot;Yeah, I guess I am a little bit&quot;, she says, smilling slightly.</tw-passagedata><tw-passagedata pid="196" name="C1P47V3" tags="" position="3225,11550" size="100,100">&quot;&quot;</tw-passagedata><tw-passagedata pid="197" name="Untitled Passage" tags="" position="3375,11550" size="200,200">Dad // Lonely // Killing</tw-passagedata></tw-storydata>
+&quot;Yeah, I guess I am a little bit&quot;, she says, smilling slightly.</tw-passagedata><tw-passagedata pid="196" name="C1P47V31" tags="" position="3225,11550" size="100,100">&quot;She&#39;s just lonely. And I mean can you blame her, when she&#39;s left alone all day long?&quot;, I remark. I didn&#39;t realize how rude that sounded till the words left my mouth.
+
+Lucy turns to me with a mixture of anger and shock, but it quickly fades away to a look of pain.
+
+She knows I&#39;m right.</tw-passagedata><tw-passagedata pid="197" name="C1P47V32" tags="" position="3375,11550" size="100,100">&quot;She just misses her dad; it sounded like he was going through al-&quot;, I start.
+
+&quot;Don&#39;t talk about my husband&quot;, Lucy snaps.
+
+I&#39;m caught off guard, I bite my tongue.
+
+&quot;He abandoned us, abandoned *Tiffany*, when she needed him most. That&#39;s it, end of story&quot;, Lucy spits out.
+
+There&#39;s an awkward silence.</tw-passagedata><tw-passagedata pid="198" name="C1P47V33" tags="" position="3525,11550" size="100,100">&quot;You don&#39;t get her involved enough&quot;, I say,
+
+Lucy looks at me in confusion.
+
+&quot;She said she hasn&#39;t even killed a Walker&quot;, I explain.
+
+&quot;How can you expect her to be happy, when you don&#39;t let her do anything?&quot;, I ask.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
