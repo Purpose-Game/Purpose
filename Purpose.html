@@ -1639,17 +1639,31 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot; - Found out Tiffany is lonely
 
-&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot; - Found out Tiffany hasn&#39;t killed any walkers</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,550" size="200,100">&lt;img.titleImage&gt;
+&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot; - Found out Tiffany hasn&#39;t killed any walkers
+
+&quot;Chapter1&quot;, &quot;Protect&quot; - Protected Tiffany
+
+!&quot;Chapter1&quot;, &quot;Protect&quot; - Investigated the noise
+
+&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will help Tiffany in her time of need
+
+!&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will not help Tiffany in her time of need</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,550" size="200,100">&lt;img.titleImage&gt;
 
 &lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page save" position="3075,7950" size="100,100">There&#39;s someone near my face again... Sophia back to haunt me?
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;i&gt;&quot;Sarah?&quot;&lt;/i&gt;, a voice says. I start to stir from my sleep.
+
+There&#39;s someone near my face again... Sophia back to haunt me?
 
 I squint, it&#39;s bright and my vision is blurry. There&#39;s a face, eyes, but... they&#39;re blue, very blue.
 
 [[Rub eyes|C1P35]]</tw-passagedata><tw-passagedata pid="130" name="C1P35" tags="page" position="3075,8100" size="100,100">I rub my eyes and open them again.
 
+&quot;Sarah?&quot;, the voice says again.
+
 It&#39;s Tiffany. She&#39;s sitting on the coffee table, watching me.
+
+How does she know my name? Lucy must have told her...
 
 [[...|C1P35V2]]&lt;br&gt;
 [[Morning...?|C1P35V1]]&lt;br&gt;
@@ -2373,7 +2387,9 @@ She turns to face me, tears streaking down her eyes.
 [[They will be|C1P48V2]]&lt;br&gt;
 [[They won&#39;t be|C1P48V3]]</tw-passagedata><tw-passagedata pid="201" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">I&#39;m not sure what to say.
 
-&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="202" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&quot;They will be&quot;, I say.
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="202" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) %&gt;
+
+&quot;They will be&quot;, I say.
 
 &lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="203" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&quot;They won&#39;t be&quot;, I say.
 
@@ -2421,16 +2437,70 @@ I don&#39;t know... I don&#39;t want, no, I *can&#39;t* have another little girl
 
 &lt;% } %&gt;
 
-[[I&#39;ll stay|C1P50]] [[I&#39;m not staying|C1P50]]</tw-passagedata><tw-passagedata pid="206" name="C1P50" tags="page save" position="3075,12150" size="100,100">&lt;% const tiffany = window.story.tiffany %&gt;
+[[I&#39;ll stay|C1P50]] [[I&#39;m not staying|C1P50]]</tw-passagedata><tw-passagedata pid="206" name="C1P50" tags="page save" position="3075,12150" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 &quot;I-&quot;, I start to say.
 
-*&quot;AAARGH!&quot;*, someone, or something, screams from outside.
+
+&lt;i&gt;&quot;AAARGH!&quot;&lt;/i&gt;, someone, or something, screams from outside.
 
 Lucy and I both look towards the direction of the source. It sounded like it came from somewhere outside the front of the house.
 
 [[I got &lt;% print(tiffany) %&gt;, go!|C1P50V1]]
-[[Get &lt;% print(tiffany) %&gt;, I&#39;ll go!|C1P50V2]]</tw-passagedata><tw-passagedata pid="207" name="C1P50V1" tags="variation" position="3000,12300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="208" name="C1P50V2" tags="variation" position="3150,12300" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+[[Watch &lt;% print(tiffany) %&gt;, I&#39;ll go!|C1P50V2]]</tw-passagedata><tw-passagedata pid="207" name="C1P50V1" tags="variation" position="3000,12300" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;);
+%&gt;
+
+&quot;I&#39;ll protect &lt;% print(tiffany) %&gt;, go find out what the fuck that was!&quot;, I exclaim.
+
+Lucy looks at me and nods, then runs out the door, I go right behind her.
+
+[[Go to &lt;% print(tiffany) %&gt;|C1P50V11]]</tw-passagedata><tw-passagedata pid="208" name="C1P50V2" tags="variation" position="3150,12300" size="100,100">&quot;You protect &lt;% print(window.story.tiffany()) %&gt;, I&#39;ll go find out what the fuck that was!&quot;, I exclaim as I head for the door.
+
+&quot;Right!&quot;, I hear Lucy say behind me.
+
+[[Head for the hallway|C1P50V21]]</tw-passagedata><tw-passagedata pid="209" name="C1P50V11" tags="variation" position="3000,12450" size="100,100">&lt;% const tiffany = window.story.tiffany %&gt;
+
+I walk through the doorway back into the Kitchen, Lucy is already at the door to the hallway.
+
+&quot;Mom?!&quot;, &lt;% print(tiffany) %&gt; says, clearly distressed.
+
+&lt;i&gt;&quot;Oh fuck, help!&quot;&lt;/i&gt;, the voice screams from outside. It sounds like guy.
+
+&quot;Don&#39;t worry, she&#39;s handling it&quot;, I say as I approach &lt;% print(tiffany) %&gt;.
+
+&quot;Handling what?&quot;, she asks, fear in her eyes.
+
+&quot;Nothing good...&quot;, I reply.
+
+I walk to the corner of the room so I can see down the hallway.
+
+[[Look at Lucy|C1P50V111]]</tw-passagedata><tw-passagedata pid="210" name="C1P50V21" tags="variation" position="3150,12450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="211" name="C1P50V111" tags="variation" position="3000,12600" size="100,100">I look down the hallway, I can see Lucy standing at the front door. She&#39;s looking through the peephole.
+
+&lt;i&gt;&quot;Someone, please!&quot;&lt;/i&gt;, the voice screams again.
+
+Lucy steps back from the door, and looks at me. Our eyes lock: what is she going to do?
+
+&lt;%
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) {
+	window.story.render(&quot;F: Lucy stays inside&quot;);
+} else {
+	window.story.render(&quot;F: Lucy goes outside&quot;);
+}
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="3175,12675" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+
+Lucy stays inside // Rando forces way in // Rando kills Lucy?
+
+Sarah goes outside // Fights with scissors or with pushing // Helps rando inside // Luct gets grabbed on way up stairs?
+
+Sarah stays inside // Rando forces way in // Fights with Sarah, Lucy gets stabbed by accident?
+
+=================
+Lucy dies one way or another
+Escape upstairs, on the pattio, then over the wall
+Tiffany cries and won&#39;t go over the wall
+If saved rando, survive till start of next episode?</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
