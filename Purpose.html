@@ -45,6 +45,11 @@ a:active, button:active {
   text-decoration-color: #cc8929;
 }
 
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 #linkingCode {
   -webkit-text-security: disc
 }
@@ -82,6 +87,14 @@ a:active, button:active {
   font-size: 15px !important; 
 }
 
+.didBar::-webkit-progress-value {
+  background: green;
+}
+
+.didNotBar::-webkit-progress-value {
+  background: red;
+}
+
 .titleImage {
   width: 95%;
   border: 20px solid rgba(0, 0, 0, 0.3);
@@ -90,7 +103,8 @@ a:active, button:active {
 
 /*
 SimpleNotification
-https://github.com/Glagan/SimpleNotification 
+https://github.com/Glagan/SimpleNotification
+https://github.com/Glagan/SimpleNotification/blob/master/LICENSE
 */
 @keyframes insert-left{from{transform:rotateY(-70deg);transform-origin:left}to{transform:rotateY(0deg);transform-origin:left}}@keyframes insert-top{from{transform:rotateX(70deg);transform-origin:top}to{transform:rotateX(0deg);transform-origin:top}}@keyframes insert-bottom{from{transform:rotateX(-70deg);transform-origin:bottom}to{transform:rotateX(0deg);transform-origin:bottom}}@keyframes insert-right{from{transform:rotateY(-70deg);transform-origin:right}to{transform:rotateY(0deg);transform-origin:right}}@keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes fadeout{from{opacity:1}to{opacity:0}}@keyframes scalein{from{transform:scale(0)}to{transform:scale(1)}}@keyframes scaleout{from{transform:scale(1)}to{transform:scale(0)}}@keyframes rotatein{from{transform:rotate(0) scale(0)}to{transform:rotate(360deg) scale(1)}}@keyframes rotateout{from{transform:rotate(0) scale(1)}to{transform:rotate(-360deg) scale(0)}}@keyframes shorten{from{width:100%}to{width:0}}.gn-wrapper{position:fixed;pointer-events:none;display:flex;flex-direction:column;flex-wrap:nowrap;z-index:1080;top:0;left:0;right:0;bottom:0}.gn-bottom-right,.gn-top-right{align-items:flex-end}.gn-bottom-right{justify-content:flex-end}.gn-bottom-left,.gn-top-left{align-items:flex-start}.gn-bottom-left{justify-content:flex-end}.gn-bottom-center,.gn-top-center{align-items:center}.gn-top-center{justify-content:flex-start}.gn-bottom-center{justify-content:flex-end}.gn-notification{flex-shrink:0;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;box-shadow:1px 1px 3px black;border-radius:3px;overflow:hidden;margin:1rem;cursor:default;pointer-events:all;min-width:10rem;max-width:25rem;position:relative;transition:background-color 0.2s ease-in-out}.gn-insert{animation-timing-function:cubic-bezier(0.23, 1, 0.32, 1);animation-fill-mode:forwards}.gn-close-on-click{cursor:pointer}.gn-close{position:absolute;top:0;right:0;font-size:1rem;padding:0.5rem;border-left:1px solid rgba(0, 0, 0, 0.4);border-bottom:1px solid rgba(0, 0, 0, 0.4);border-bottom-left-radius:3px;background:rgba(0, 0, 0, 0.2);opacity:0;transition:all 100ms ease-in;cursor:pointer;user-select:none;-moz-user-select:none}.gn-notification:hover .gn-close{opacity:1}.gn-close:hover{background:rgba(0, 0, 0, 0.6)}.gn-close.gn-close-title{display:flex;align-items:center;bottom:0;border-bottom:0;border-bottom-left-radius:0}.gn-notification > h1{background-color:rgba(0, 0, 0, 0.2);border-bottom:1px solid rgba(0, 0, 0, 0.4);overflow:hidden;text-overflow:ellipsis;position:relative}.gn-remove{animation-timing-function:linear;animation-fill-mode:forwards}.gn-lifespan{display:block;height:3px;width:100%;background-color:#4dd0e1;transition:height 0.4s ease-in-out, width 0s linear}.gn-extinguish{animation-duration:1000ms;animation-name:shorten;animation-timing-function:linear;animation-fill-mode:forwards}.gn-lifespan.gn-retire{height:0}.gn-success{background-color:#689f38;color:white}.gn-info{background-color:#0288d1;color:white}.gn-error{background-color:#b42f2d;color:white}.gn-warning{background-color:#d87a00;color:white}.gn-message{background-color:#333333;color:white}.gn-content{display:flex;flex:1;align-content:space-between;align-items:center}.gn-content > img{max-width:30%;max-height:20rem;flex-shrink:0;display:inline-block}.gn-content .gn-text{max-width:100%;word-break:break-word}.gn-content .gn-text:only-child,.gn-content > img:only-child{max-width:100%}.gn-content .gn-text,.gn-notification > h1{padding:0.5rem;margin:0;width:100%}.gn-content .gn-text a{color:rgba(255, 255, 255, 0.8);transition:all 0.2s ease-in-out}.gn-content .gn-text a:hover{text-shadow:1px 0 1px rgba(255, 255, 255, 0.8);border-radius:2px}.gn-content .gn-text h1,.gn-content .gn-text h2{margin:0.5rem 0}.gn-content .gn-text h1{font-size:1.2rem}.gn-content .gn-text h2{font-size:1.1rem}.gn-content .gn-text img{height:auto;max-width:100%;margin:0.1rem 0}.gn-bold{font-weight:bold}.gn-italic{font-style:italic}.gn-code{font-family:SFMono-Regular, Menlo, 'Lucida Console', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;padding:0.1rem 0.2rem;background-color:#333333;color:#f7f7f7;line-height:1.4;border-radius:2px;box-shadow:0 0 1px #333333}.gn-message .gn-code{background-color:#4d4d4d;box-shadow:0 0 1px #4d4d4d}.gn-separator{display:block;width:100%;border-bottom:1px solid white;border-radius:4px;height:2px;line-height:0;margin:0.75rem 0}.gn-buttons{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:stretch;align-items:stretch;align-content:stretch;text-align:center;border-top:1px solid rgba(0, 0, 0, 0.4)}.gn-button{width:100%;padding:0.5rem;border:0;cursor:pointer;border-right:1px solid rgba(0, 0, 0, 0.4);transition:all 0.1s ease-in;font-size:1rem}.gn-button:hover{background:rgba(0, 0, 0, 0.6)}.gn-button:disabled{background:rgba(0, 0, 0, 0.6);filter: grayscale(60%)}.gn-button:last-child{border-right:0}.gn-float-right{float:right}
 
@@ -110,11 +124,25 @@ https://www.1001fonts.com/dead-font-walking-font.html
 window.story.state.choices = {};
 window.story.state.achievements = {};
 
+window.story.choiceDescriptions = {
+	"Chapter1": {
+		"Kicked": [
+			"kicked the door in to get inside",
+			"broke the window to get inside"
+		],
+		"Soap": [
+			"picked up the bar of old soap",
+			"did not pick up the bar of old soap"
+		]
+	}
+};
+
 window.story.player = {};
 window.story.player.name = "Player";
 window.story.player.id = "0";
 window.story.player.key = "0";
 
+window.story.chapter = "";
 window.story.saving = false;
 window.story.saveSlot = 1;
 window.story.network = false;
@@ -473,6 +501,37 @@ window.story.toggleDebug = function () {
 	}
 }
 
+// Loads statistics
+window.story.loadStats = function () {
+	$.post("https://purpose-game.com/stats", {
+		key: window.story.player.key,
+		chapter: window.story.chapter
+	}).done(function(data) {
+		$("#statsLoading").hide();
+		
+		for (const stat in data) {
+			let message;
+			
+			if (window.story.getChoice(window.story.chapter, stat)) {
+				message = `You and ${data[stat][0]} of players ${window.story.choiceDescriptions[window.story.chapter][stat][0]}`;
+			} else {
+				message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[window.story.chapter][stat][1]}`;
+			}
+			
+			$("#statsContainer").append(`<p>${message}</p><progress class="didBar" value="${data[stat][0].slice(0, -1)}" max="100"></progress><br><progress class="didNotBar" value="${data[stat][1].slice(0, -1)}" max="100"></progress>`);	
+		}
+		
+		$("#statsContainer").fadeIn(500);
+	}).catch(function(error) {
+		saveNotification = SimpleNotification.error({
+			title: "Load Failed!",
+			text: error.responseText
+		}, {
+			position: "bottom-right"
+		});
+	});
+}
+
 //
 // External Scripts
 //
@@ -494,6 +553,7 @@ window.story.toggleFullscreen = function (event) {
 
 // SimpleNotification
 // https://github.com/Glagan/SimpleNotification
+// https://github.com/Glagan/SimpleNotification/blob/master/LICENSE
 var SimpleNotification=function(){"use strict";class SimpleNotification{constructor(t){this.fragment=new DocumentFragment,this.options=t,null==this.options&&(this.options=SimpleNotification.deepAssign({},SimpleNotification._options)),this.events=this.options.events,this.node=void 0,this.title=void 0,this.closeButton=void 0,this.body=void 0,this.image=void 0,this.text=void 0,this.buttons=void 0,this.progressBar=void 0,this.addExtinguish=this.addExtinguishFct.bind(this),this.removeExtinguish=this.removeExtinguishFct.bind(this)}static deepAssign(t,...e){for(let s=0,n=e.length;s<n;s++)for(var i in e[s])null!=e[s][i]&&"object"==typeof e[s][i]?t[i]=SimpleNotification.deepAssign(t[i]?t[i]:{},e[s][i]):t[i]=e[s][i];return t}static options(t){SimpleNotification._options=SimpleNotification.deepAssign({},SimpleNotification._options,t)}static makeWrapper(t){let e=document.createElement("div");e.className=`gn-wrapper gn-${t}`,document.body.appendChild(e),SimpleNotification.wrappers[t]=e}static firstUnbreakChar(t,e,i=0){let s;for(i<0&&(i=0);i>=0;)s=t.indexOf(e,i),i=s>0&&"\\"==t[s-1]?s+1:-1;return s}static searchToken(t,e,i){let s=[i[0],i[1]];for(let i=t.length;s[0]<i;s[0]++){if("string"==typeof t[s[0]]&&(s[1]=t[s[0]].indexOf(e,s[1]))>-1)return s;s[1]=0}return[-1,-1]}static breakString(t,e,i,s){let n=e.open.length,o=e.close.length;if(i[0]!=s[0]){let a={tag:e,str:[t[i[0]].substring(i[1])]},r=0;for(let e=i[0]+1;e<s[0];e++,r++)a.str.push(t[e]);return a.str.push(t[s[0]].substring(0,s[1])),a.str=[this.joinString(a.str)],t.splice(i[0]+1,r,a),s[0]=i[0]+2,t[i[0]]=t[i[0]].substring(0,i[1]-n),t[s[0]]=t[s[0]].substring(s[1]+o),[s[0],0]}return t.splice(i[0]+1,0,{tag:e,str:[t[i[0]].substring(i[1],s[1])]},t[i[0]].substring(s[1]+o)),t[i[0]]=t[i[0]].substring(0,i[1]-n),[i[0]+2,0]}static joinString(t){let e=[];for(let i=0,s=t.length;i<s;i++)"string"==typeof t[i]?e.push(t[i]):(e.push(t[i].tag.open),e.push(this.joinString(t[i].str)),e.push(t[i].tag.close));return e.join("")}static buildNode(t,e){for(let i=0;i<t.length;i++)if("string"==typeof t[i])t[i].length>0&&e.appendChild(document.createTextNode(t[i]));else{let s,n=t[i].tag,o=document.createElement(n.type);"a"!=n.type&&"button"!=n.type||o.addEventListener("click",(t=>{t.stopPropagation()}));let a=this.joinString(t[i].str);if("title"in n&&n.title&&a.length>0)if(0==a.indexOf("!"))a=a.substring(1);else{let t=this.firstUnbreakChar(a,"|");a=a.replace("\\|","|"),t>-1&&(s=a.substring(0,t),a=a.substring(t+1))}if(null==s&&(s=a),"attributes"in n){let t=Object.keys(n.attributes);for(let e=0,i=t.length;e<i;e++){let i=n.attributes[t[e]].replace("$content",a).replace("$title",s);o.setAttribute(t[e],i)}}if(n.textContent?o.textContent=n.textContent.replace("$content",a).replace("$title",s):0!=n.textContent&&this.textToNode(t[i].str,o),n.class)if(Array.isArray(n.class))for(let t=0,e=n.class.length;t<e;t++)o.classList.add(n.class[t]);else o.className=n.class;e.appendChild(o)}return e}static textToNode(t,e){if(null==t)return;let i;i=Array.isArray(t)?t:[t=t.replace(/(\r?\n|\r)/gm,"\n")],null!=this.tokens&&null==this.refreshTokens||(this.tokens=Object.keys(SimpleNotification.tags),this.refreshTokens=void 0);for(let t=0,e=this.tokens.length;t<e;t++){let e=SimpleNotification.tags[this.tokens[t]],s={open:e.open.length,close:e.close.length},n=[0,0],o=[0,0],a=[0,0];for(;(o=this.searchToken(i,e.open,n))[0]>-1;)o[1]+=s.open,n=(a=this.searchToken(i,e.close,o))[0]>-1?this.breakString(i,e,o,a):o}return this.buildNode(i,e)}make(t){if(this.node=document.createElement("div"),this.fragment.appendChild(this.node),this.node.className="gn-notification gn-insert","default-insert"==this.options.insertAnimation.name)switch(this.options.position){case"top-left":case"bottom-left":this.options.insertAnimation.name="insert-left";break;case"top-right":case"bottom-right":this.options.insertAnimation.name="insert-right";break;case"top-center":this.options.insertAnimation.name="insert-top";break;case"bottom-center":this.options.insertAnimation.name="insert-bottom"}this.options.insertAnimation.name==this.options.removeAnimation.name&&("fadeout"==this.options.insertAnimation.name?this.options.removeAnimation.name="rotateout":this.options.removeAnimation.name="fadeout"),this.node.style.animationName=this.options.insertAnimation.name,this.node.style.animationDuration=`${this.options.insertAnimation.duration}ms`,t.forEach((t=>{this.node.classList.add(t)})),this.node.addEventListener("animationend",(t=>{if(t.animationName==this.options.removeAnimation.name)this.close(!1);else if(t.animationName==this.options.insertAnimation.name){if(this.node.classList.remove("gn-insert"),!this.options.sticky&&this.options.pauseOnHover&&(this.node.addEventListener("mouseenter",this.removeExtinguish),this.node.addEventListener("mouseleave",this.addExtinguish)),this.progressBar)if(this.progressBar.style.animationDuration=`${this.options.duration}ms`,document.hasFocus())this.progressBar.classList.add("gn-extinguish");else{let t=()=>{this.progressBar.classList.add("gn-extinguish"),document.removeEventListener("focus",t)};document.addEventListener("focus",t)}}else"shorten"==t.animationName&&this.progressBar&&(!this.options.sticky&&this.options.pauseOnHover&&(this.node.removeEventListener("mouseenter",this.removeExtinguish),this.node.removeEventListener("mouseleave",this.addExtinguish)),this.progressBar.classList.add("gn-retire"),this.events.onDeath?this.events.onDeath(this):(this.disableButtons(),this.closeAnimated()))})),this.options.closeOnClick&&(this.node.title="Click to close.",this.node.classList.add("gn-close-on-click"),this.node.addEventListener("click",(()=>{this.close(!0)}))),this.events.onCreate&&this.events.onCreate(this)}setType(t){if(this.node){let e=this.node.classList.contains("gn-close-on-click");this.node.className=`gn-notification gn-${t}`,e&&this.node.classList.add("gn-close-on-click")}}setTitle(t){null==this.title&&(this.title=document.createElement("h1"),this.node.insertBefore(this.title,this.node.firstElementChild),this.closeButton&&this.title.appendChild(this.closeButton)),this.title.title=t,this.title.textContent=t}addCloseButton(){let t=document.createElement("span");t.title="Click to close.",t.className="gn-close",t.textContent="âŒ",t.addEventListener("click",(()=>{this.close(!0)})),this.title?(t.classList.add("gn-close-title"),this.title.appendChild(t)):this.node.insertBefore(t,this.node.firstElementChild)}addBody(){this.body=document.createElement("div"),this.body.className="gn-content",this.node.appendChild(this.body),this.buttons?this.node.insertBefore(this.body,this.buttons):this.progressBar?this.node.insertBefore(this.body,this.progressBar):this.node.appendChild(this.body)}setImage(t){null==this.image&&(this.image=document.createElement("img"),this.text?this.body.insertBefore(this.image,this.text):(this.body||this.addBody(),this.body.appendChild(this.image))),this.image.src=t}setText(t){if(null==this.text)this.text=document.createElement("div"),this.text.className="gn-text",this.body||this.addBody(),this.body.appendChild(this.text);else for(;this.text.firstChild;)this.text.removeChild(this.text.firstChild);SimpleNotification.textToNode(t,this.text)}addButton(t){if(!t.type||!t.value)return;null==this.buttons&&(this.buttons=document.createElement("div"),this.buttons.className="gn-buttons",this.progressBar?this.node.insertBefore(this.buttons,this.progressBar):this.node.appendChild(this.buttons));let e=document.createElement("button");SimpleNotification.textToNode(t.value,e),e.className=`gn-button gn-${t.type}`,t.onClick&&e.addEventListener("click",(e=>{e.stopPropagation(),t.onClick(this)})),this.buttons.appendChild(e)}removeButtons(){this.buttons&&(this.node.removeChild(this.buttons),this.buttons=void 0)}addProgressBar(){this.progressBar=document.createElement("span"),this.progressBar.className="gn-lifespan",this.node.appendChild(this.progressBar)}display(){if(this.node){if(this.options.removeAllOnDisplay)SimpleNotification.displayed.forEach((t=>{t.remove()}));else if(this.options.maxNotifications>0){let t=-(this.options.maxNotifications-(SimpleNotification.displayed.length+1));if(t>0)for(let e=0,i=t;e<i;e++)SimpleNotification.displayed[e].remove()}SimpleNotification.wrappers[this.options.position]||SimpleNotification.makeWrapper(this.options.position),SimpleNotification.wrappers[this.options.position].appendChild(this.fragment),SimpleNotification.displayed.push(this),this.events.onDisplay&&this.events.onDisplay(this)}}remove(){if(null!=this.node){this.node.remove(),this.node=void 0;let t=SimpleNotification.displayed.indexOf(this);return t&&SimpleNotification.displayed.splice(t,1),!0}return!1}close(t=!1){this.remove()&&this.events.onClose&&this.events.onClose(this,t)}closeAnimated(){this.node.classList.add("gn-remove"),this.node.style.animationName=this.options.removeAnimation.name,this.node.style.animationDuration=`${this.options.removeAnimation.duration}ms`,this.node.addEventListener("mouseenter",(t=>{t.target.classList.remove("gn-remove")})),this.node.addEventListener("mouseleave",(t=>{t.target.classList.add("gn-remove")}))}addExtinguishFct(){this.progressBar.classList.add("gn-extinguish")}removeExtinguishFct(){this.progressBar.classList.remove("gn-extinguish")}disableButtons(){if(this.buttons)for(let t=0,e=this.buttons.childNodes.length;t<e;t++)this.buttons.childNodes[t].disabled=!0}static create(t,e,i={}){let s="image"in e&&e.image,n="text"in e&&e.text,o="title"in e&&e.title,a="buttons"in e;if(!(s||o||n||a))return;let r=SimpleNotification.deepAssign({},SimpleNotification._options,i),l=new SimpleNotification(r);if(l.make(t),o&&l.setTitle(e.title),r.closeButton&&l.addCloseButton(),s&&l.setImage(e.image),n&&l.setText(e.text),a){Array.isArray(e.buttons)||(e.buttons=[e.buttons]);for(let t=0,i=e.buttons.length;t<i;t++)l.addButton(e.buttons[t])}return r.sticky||l.addProgressBar(),"display"in r&&!r.display||l.display(),l}static success(t,e={}){return this.create(["gn-success"],t,e)}static info(t,e={}){return this.create(["gn-info"],t,e)}static error(t,e={}){return this.create(["gn-error"],t,e)}static warning(t,e={}){return this.create(["gn-warning"],t,e)}static message(t,e={}){return this.create(["gn-message"],t,e)}static custom(t,e,i={}){return this.create(t,e,i)}static addTag(t,e){this.tags[t]=e,this.refreshTokens=!0}}return SimpleNotification.wrappers={},SimpleNotification.displayed=[],SimpleNotification._options={position:"top-right",maxNotifications:0,removeAllOnDisplay:!1,pauseOnHover:!0,closeOnClick:!0,closeButton:!0,duration:4e3,sticky:!1,events:{onCreate:void 0,onDisplay:void 0,onDeath:void 0,onClose:void 0},insertAnimation:{name:"default-insert",duration:250},removeAnimation:{name:"fadeout",duration:400}},SimpleNotification.tags={code:{type:"code",class:"gn-code",open:"``",close:"``",textContent:"$content"},header2:{type:"h2",class:"gn-header",open:"## ",close:"\n"},header1:{type:"h1",class:"gn-header",open:"# ",close:"\n"},image:{type:"img",title:!0,attributes:{src:"$content",title:"$title"},textContent:!1,open:"![",close:"]"},link:{type:"a",title:!0,attributes:{href:"$content",target:"blank",title:"$title"},textContent:"$title",open:"{{",close:"}}"},color:{type:"span",title:!0,attributes:{class:"$title"},textContent:"$content",open:"__",close:"__"},bold:{type:"span",class:"gn-bold",open:"**",close:"**"},floatRight:{type:"span",class:"gn-float-right",open:">*>",close:"<"},italic:{type:"span",class:"gn-italic",open:"*",close:"*"},separator:{type:"div",class:"gn-separator",textContent:!1,open:"\n---\n",close:""},linejump:{type:"br",textContent:!1,open:"\n",close:""}},SimpleNotification}();
 
 ///
@@ -518,6 +578,8 @@ $.get("https://purpose-game.com/status").done(function() {
 #### Poor Choices
 
 &lt;%
+window.story.chapter = &quot;Chapter1&quot;;
+
 window.story.delayedText(2000, &quot;one&quot;, 0);
 window.story.delayedText(3000, &quot;two&quot;, 0);
 window.story.delayedText(4000, &quot;three&quot;, 0);
@@ -2421,7 +2483,7 @@ My heart skips a beat, I haven&#39;t been with other people long term since... S
 
 This is a lot to process, I have to think about this for a minute.
 
-[[[Think about Lucy&#39;s offer]|C1P49]]</tw-passagedata><tw-passagedata pid="205" name="C1P49" tags="page" position="3075,12000" size="100,100">&lt;% const tiffany = window.story.tiffany %&gt;
+[[[Think about Lucy&#39;s offer]|C1P49]]</tw-passagedata><tw-passagedata pid="205" name="C1P49" tags="page" position="3075,12000" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 I think about it for a minute, Lucy staring at me all the while.
 
@@ -2460,7 +2522,7 @@ Lucy looks at me and nods, then runs out the door, I go right behind her.
 
 &quot;Right!&quot;, I hear Lucy say behind me.
 
-[[Head for the hallway|C1P50V21]]</tw-passagedata><tw-passagedata pid="209" name="C1P50V11" tags="variation" position="3000,12450" size="100,100">&lt;% const tiffany = window.story.tiffany %&gt;
+[[Head for the hallway|C1P50V21]]</tw-passagedata><tw-passagedata pid="209" name="C1P50V11" tags="variation" position="3000,12450" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 I walk through the doorway back into the Kitchen, Lucy is already at the door to the hallway.
 
@@ -2488,7 +2550,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	window.story.render(&quot;F: Lucy goes outside&quot;);
 }
-%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="3175,12675" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2160,12318" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -2500,7 +2562,18 @@ Sarah stays inside // Rando forces way in // Fights with Sarah, Lucy gets stabbe
 Lucy dies one way or another
 Escape upstairs, on the pattio, then over the wall
 Tiffany cries and won&#39;t go over the wall
-If saved rando, survive till start of next episode?</tw-passagedata></tw-storydata>
+If saved rando, survive till start of next episode?</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="2425,1050" size="200,200">&lt;%
+window.story.player.key = &quot;uTS6kD5qI7i9vpHHkXpudlthxR4WRxQy6ah8YQjdMm2bf6TI8OJ37BCZ5v86Z1TF&quot;;
+window.story.chapter = &quot;Chapter1&quot;;
+
+window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
+%&gt;
+
+&lt;% window.story.loadStats() %&gt;
+
+&lt;span#statsLoading&gt;Loading...&lt;/span&gt;
+
+&lt;div-#statsContainer&gt;&lt;/div&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
