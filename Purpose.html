@@ -166,7 +166,7 @@ $(document).on("sm.passage.showing", function(event, data) {
 	if (debug) {
 		if (!debugNotification) {
 			debugNotification = SimpleNotification.message({
-				title: "Pre-Alpha Build"
+				title: "Alpha Build"
 			}, {
 				position: "bottom-right",
 				sticky: true,
@@ -201,7 +201,7 @@ $(document).on("sm.passage.showing", function(event, data) {
 //
 
 // Checks network connection
-window.story.networkCheck = function () {
+window.story.networkCheck = function (nextPassage) {
 	$.get("https://purpose-game.com/status").done(function() {
 		window.story.network = true;
 	}).catch(function(error) {
@@ -213,7 +213,7 @@ window.story.networkCheck = function () {
 			position: "bottom-right"
 		});
 	}).then(function() {
-		window.story.show("Title Screen");
+		window.story.show(nextPassage);
 	});
 }
 
@@ -710,7 +710,7 @@ It&#39;s still too dark inside properly. It looks like a laundry room?
 
 The board comes right off, pulling bits of the moldy window frame it was nailed to with it. I fall backward, and narrowly avoid hitting my head on a large tree root. I did, however, manage to land directly on my leg wound. &lt;%= window.story.render(&quot;F: Mother Comments&quot;) %&gt;.
 
-[[[Get up, and go to the window]|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="Introduction" tags="noFade menu" position="2000,1150" size="200,100">&lt;% window.story.delayedText(2000, &quot;delayed&quot;, 5000) %&gt;
+[[[Get up, and go to the window]|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="Introduction" tags="noFade menu" position="2000,1325" size="200,100">&lt;% window.story.delayedText(2000, &quot;delayed&quot;, 5000) %&gt;
 	
 &lt;div-#delayed&gt;
 
@@ -1501,7 +1501,7 @@ She pauses for a moment.
 
 [[...|C1P25V2]]&lt;br&gt;
 [[Go on...|C1P25V1]]&lt;br&gt;
-[[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="108" name="Title Screen" tags="menu" position="2000,550" size="200,100">&lt;img.titleImage&gt;
+[[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="108" name="Title Screen" tags="menu" position="2000,725" size="200,100">&lt;img.titleImage&gt;
 
 &lt;div#titleButton&gt;
 [[Play Game|Save Options]]
@@ -1723,7 +1723,7 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will help Tiffany in her time of need
 
-!&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will not help Tiffany in her time of need</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,550" size="200,100">&lt;img.titleImage&gt;
+!&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will not help Tiffany in her time of need</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,725" size="200,100">&lt;img.titleImage&gt;
 
 &lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
@@ -2093,7 +2093,7 @@ I nearly choke laughing; Lucy was not so impressed.
 
 [[Eat, it tastes good|C1P43V1]]&lt;br&gt;
 [[What do you like to eat?|C1P43V2]]&lt;br&gt;
-[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="169" name="Saved Games" tags="menu" position="2250,850" size="200,100">&lt;% window.story.loadSaves() %&gt;
+[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="169" name="Saved Games" tags="menu" position="2250,1025" size="200,100">&lt;% window.story.loadSaves() %&gt;
 
 &lt;img.titleImage&gt;
 
@@ -2101,7 +2101,7 @@ I nearly choke laughing; Lucy was not so impressed.
 
 &lt;div-#savesContainer&gt;&lt;/div&gt;
 
-[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="170" name="Save Options" tags="menu" position="2000,700" size="200,100">&lt;img.titleImage&gt;
+[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="170" name="Save Options" tags="menu" position="2000,875" size="200,100">&lt;img.titleImage&gt;
 
 This game has an optional Cloud Saving feature, to enable it, click the button below and follow the instructions. itch.io account required.
 
@@ -2119,7 +2119,7 @@ If you choose not to enable Cloud Saving, your progress will be lost when you re
 
 &lt;div#titleButton&gt;[[Continue without Saving|Game Options]]&lt;/div&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="171" name="Linking" tags="menu" position="2250,700" size="200,100">&lt;img.titleImage&gt;
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="171" name="Linking" tags="menu" position="2250,875" size="200,100">&lt;img.titleImage&gt;
 
 Clicking the button below will open a new tab, ask you to authorize Purpose (this game) to access your public itch.io information, and will then give you a temporary &quot;Linking Code&quot; to use below. Purpose only uses your itch.io information for saving your game progress. Purpose does not have access to your E-Mail, Password, or any other personal information.
 
@@ -2140,13 +2140,13 @@ Clicking the button below will open a new tab, ask you to authorize Purpose (thi
 	&lt;a.small.normalLink onclick=&quot;window.story.toggleLinkingDisplays(true)&quot;&gt;I need another Linking Code&lt;/a&gt;
 &lt;/form&gt;
 
-[[Back|Save Options]]</tw-passagedata><tw-passagedata pid="172" name="Linked" tags="menu" position="2500,700" size="200,100">&lt;img.titleImage&gt;
+[[Back|Save Options]]</tw-passagedata><tw-passagedata pid="172" name="Linked" tags="menu" position="2500,875" size="200,100">&lt;img.titleImage&gt;
 
 Thanks for linking your itch.io account with Purpose, &lt;% print(window.story.player.name) %&gt;. Your story progress and achievements will now be saved to the Cloud.
 
 You will need to re-link your account each time you play the game.
 
-&lt;div#titleButton&gt;[[Continue|Game Options]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="Game Options" tags="menu" position="2000,850" size="200,100">&lt;img.titleImage&gt;
+&lt;div#titleButton&gt;[[Continue|Game Options]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="Game Options" tags="menu" position="2000,1025" size="200,100">&lt;img.titleImage&gt;
 
 &lt;div#titleButton&gt;
 &lt;% if (window.story.saving) {
@@ -2158,7 +2158,7 @@ You will need to re-link your account each time you play the game.
 }
 %&gt;
 &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="New Game" tags="menu" position="2000,1000" size="200,100">&lt;% window.story.loadSaves(true) %&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="174" name="New Game" tags="menu" position="2000,1175" size="200,100">&lt;% window.story.loadSaves(true) %&gt;
 
 &lt;img.titleImage&gt;
 
@@ -2564,7 +2564,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	window.story.render(&quot;F: Lucy goes outside&quot;);
 }
-%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2160,12318" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2150,12325" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -2576,7 +2576,7 @@ Sarah stays inside // Rando forces way in // Fights with Sarah, Lucy gets stabbe
 Lucy dies one way or another
 Escape upstairs, on the pattio, then over the wall
 Tiffany cries and won&#39;t go over the wall
-If saved rando, survive till start of next episode?</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="2425,1050" size="200,200">&lt;%
+If saved rando, survive till start of next episode?</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
 window.story.player.key = &quot;uTS6kD5qI7i9vpHHkXpudlthxR4WRxQy6ah8YQjdMm2bf6TI8OJ37BCZ5v86Z1TF&quot;;
 window.story.chapter = &quot;Chapter1&quot;;
 
@@ -2587,9 +2587,11 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
 
 &lt;span#statsLoading&gt;Loading...&lt;/span&gt;
 
-&lt;div-#statsContainer&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="216" name="Network Check" tags="" position="2000,400" size="200,100">&lt;% window.story.networkCheck() %&gt;
+&lt;div-#statsContainer&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="216" name="Network Check" tags="noFade menu" position="2000,425" size="200,100">&lt;% window.story.networkCheck(&quot;Alpha&quot;) %&gt;
 
-Loading, please wait...</tw-passagedata></tw-storydata>
+Loading, please wait...</tw-passagedata><tw-passagedata pid="217" name="Alpha" tags="menu" position="2000,575" size="200,100">This game is in an alpha state, all content is subject to change.
+
+[[Understood|Title Screen]]</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
