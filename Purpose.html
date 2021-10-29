@@ -1729,7 +1729,15 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will help Tiffany in her time of need
 
-!&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will not help Tiffany in her time of need</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,725" size="200,100">&lt;img.titleImage&gt;
+!&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will not help Tiffany in her time of need
+
+&quot;Chapter1&quot;, &quot;SaveStranger&quot; - Went outside to save the stranger
+
+!&quot;Chapter1&quot;, &quot;SaveStranger&quot; - Stayed inside and tried to keep the stranger out
+
+&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot; - Tried to save Lucy, let Tiffany watch her mom die
+
+!&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot; - Did as Lucy asked, took Tiffany and went</tw-passagedata><tw-passagedata pid="128" name="Global Credits" tags="menu" position="1750,725" size="200,100">&lt;img.titleImage&gt;
 
 &lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
@@ -2588,7 +2596,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	window.story.render(&quot;F: Lucy goes outside&quot;);
 }
-%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2550,12825" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="3025,13625" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -2601,7 +2609,8 @@ Lucy dies one way or another
 Escape upstairs, on the pattio, then over the wall
 Tiffany cries and won&#39;t go over the wall
 If saved rando, survive till start of next episode?
-Sarah hurts her leg one way or another</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
+Sarah hurts her leg one way or another
+Tiff saves </tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
 window.story.player.key = &quot;uTS6kD5qI7i9vpHHkXpudlthxR4WRxQy6ah8YQjdMm2bf6TI8OJ37BCZ5v86Z1TF&quot;;
 window.story.chapter = &quot;Chapter1&quot;;
 
@@ -2631,7 +2640,9 @@ I step back from the peephole and look towards the end of the hallway. Lucy is s
 I look back towards the door.&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) print (&quot; I told Lucy people still help each other out, might be time to put my money where my mouth is.&quot;) %&gt; I could go out and help him... or, I can make sure nothing gets through this door.
 
 [[[Help the stranger]|C1P53V21]]
-[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="219" name="C1P53V21" tags="variation" position="3300,12750" size="100,100">Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she nodes&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;, she understands what I&#39;m about to do. I unlock the door, open it, and step outside.
+[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="219" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) %&gt;
+
+Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she nodes&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;, she understands what I&#39;m about to do. I unlock the door, open it, and step outside.
 
 I close the door behind me and immediately get slapped by the rain. It&#39;s pouring out here. I reach down for my knife- fuck, I forgot I don&#39;t have it!
 
@@ -2650,7 +2661,7 @@ I look for the guy, he&#39;s in the middle of the street a couple of meters away
 They must be at least 20 or 30 walkers, no way we can take them all out, not without proper weapons. My options are limited here: maybe I can get his attention from here and have him come over here to the house, save having to fight my way to him; or, I can try and clear a path to him, and get his attention when I&#39;m closer to him.
 
 [[[Yell at him]|C1P53V211]]
-[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="220" name="C1P53V22" tags="variation" position="4000,12750" size="100,100">No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;.
+[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="220" name="C1P53V22" tags="variation" position="4025,12750" size="100,100">No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;.
 
 I look at the door, there&#39;s not much in the way of locking, in fact, the lock looks busted. I guess that&#39;s how Lucy got in. If I could move a chair or a table in front of the door, that might be enough to-
 
@@ -2663,7 +2674,7 @@ What the hell, that was on the other side of the door, how&#39;d a walker get up
 Shit! Now what?! It won&#39;t take him long to figure out it&#39;s not fucking locked!
 
 [[Go away!|C1P53V221]]&lt;br&gt;
-[[&lt;% print (&#96;${window.story.tiffany()} run!&#96;) %&gt;|C1P53V222]]&lt;br&gt;
+[[&lt;% print (window.story.tiffany()) %&gt; run!|C1P53V222]]&lt;br&gt;
 [[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="221" name="C1P53V211" tags="variation" position="3225,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;) %&gt;
 
 I don&#39;t want to have to go over to him, too dangerous.
@@ -2682,7 +2693,7 @@ Uh-oh, that drew some unwanted attention as well. A few walkers have started hea
 [[[Use Scissors]|C1P53V2111]]
 &lt;% } else { %&gt;
 [[[Look around for a weapon]|C1P53V2112]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="222" name="C1P53V212" tags="variation" position="3450,12900" size="100,100">I had better go over to him, no point yelling and drawing more walkers.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="222" name="C1P53V212" tags="variation" position="3475,12900" size="100,100">I had better go over to him, no point yelling and drawing more walkers.
 
 The path between him and I is actually pretty clear, most of the walkers are on the street, there&#39;s only one walker directly in my way. I start towards it, the rain is covering up the sound of my walking, so I&#39;ve got that going for me at least.
 
@@ -2706,7 +2717,7 @@ Wait, the plant, that could do. I walk over to it and start to pick it up. It&#3
 
 The pot connects with the walker&#39;s head and shatters. The walker goes down like a sack of potatoes. 
 
-&lt;%= window.story.render(&quot;Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="225" name="F: Ow my leg" tags="floater" position="3650,13050" size="100,100">Fuck, I forgot about my leg, argh! That really hurt. I look up, there are still two walkers headed for me, shit. I take a step back- ARGH, shit, I&#39;ve properly buggered my leg: this isn&#39;t good.
+&lt;%= window.story.render(&quot;Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="225" name="F: Ow my leg" tags="floater" position="3675,13050" size="100,100">Fuck, I forgot about my leg, argh! That really hurt. I look up, there are still two walkers headed for me, shit. I take a step back- ARGH, shit, I&#39;ve properly buggered my leg: this isn&#39;t good.
 
 I start to hobble back towards the door and look back over at the stranger. We make eye contact for a moment, he sees I&#39;m hurt and I&#39;m being followed. There&#39;s a moment of panic in his eyes, then he must have had a thought, because he smiles.
 
@@ -2724,7 +2735,19 @@ He must be crazy, but it&#39;s working.
 
 He takes one final swing, then bolts towards the door. I step inside and out of the way, right as him comes crashing in. I slam the door beind him.
 
-We both stand there for a moment, soaking wet, and panting.</tw-passagedata><tw-passagedata pid="227" name="F: Scissor takedown" tags="floater" position="3650,12900" size="100,100">I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally. The walker tumbles to its knees, its head bent over, perfectly within reach. I take the scissors and drive them deep into the back of its head, then pull them out. It makes a horrid gurgling sound, then flops to the ground.</tw-passagedata><tw-passagedata pid="228" name="C1P53V2121" tags="variation" position="3450,13050" size="100,100">I take a step towards the stranger- ARGH, shit! I forgot about my leg; I&#39;ve properly buggered it taking down that walker.
+We both stand there for a moment, soaking wet, and panting.
+
+&quot;Thanks...&quot;, he manages to say, between breathes.
+
+&quot;Don&#39;t mention it&quot;, I reply.
+
+&quot;My name&#39;s Charles&quot;, he says.
+
+&quot;Sarah, and that&#39;s Lucy&quot;, I say as I gesture over my shoulder back towards the kitchen.
+
+Charles jumps a little, he must not of seen her; but he quickly recovers and gives a little wave.
+
+[[[Turn towards Lucy]|C1P53V211111]]</tw-passagedata><tw-passagedata pid="227" name="F: Scissor takedown" tags="floater" position="3675,12900" size="100,100">I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally. The walker tumbles to its knees, its head bent over, perfectly within reach. I take the scissors and drive them deep into the back of its head, then pull them out. It makes a horrid gurgling sound, then flops to the ground.</tw-passagedata><tw-passagedata pid="228" name="C1P53V2121" tags="variation" position="3475,13050" size="100,100">I take a step towards the stranger- ARGH, shit! I forgot about my leg; I&#39;ve properly buggered it taking down that walker.
 
 I&#39;m not as close to him as I would have liked, but this will have to do.
 
@@ -2738,13 +2761,13 @@ He stops swinging his bat for a moment and looks at me, with the expression on h
 
 He nods and starts heading towards me, swinging as he goes.
 
-[[[Head back to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="229" name="C1P53V221" tags="variation" position="3850,12900" size="100,100">&quot;Go aw-&quot;, I start to say.
+[[[Head back to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="229" name="C1P53V221" tags="variation" position="3875,12900" size="100,100">&quot;Go aw-&quot;, I start to say.
 
-&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="230" name="C1P53V222" tags="variation" position="4000,12900" size="100,100">&quot;${window.story.tiffany()} ru-&quot;, I start to say.
+&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="230" name="C1P53V222" tags="variation" position="4025,12900" size="100,100">&quot;&lt;% print(window.story.tiffany()) %&gt; ru-&quot;, I start to say.
 
-&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="231" name="C1P53V223" tags="variation" position="4150,12900" size="100,100">I lean on the door-
+&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="231" name="C1P53V223" tags="variation" position="4175,12900" size="100,100">I lean on the door-
 
-&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="232" name="F: Door swings open" tags="floater" position="4350,12900" size="100,100">Suddenly, the door swings open, and a man comes crashing through. I get knocked to the ground by the door and land awkwardly on my bad leg. Argh, fuck&#39;s sake.
+&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="232" name="F: Door swings open" tags="floater" position="4375,12900" size="100,100">Suddenly, the door swings open, and a man comes crashing through. I get knocked to the ground by the door and land awkwardly on my bad leg. Argh, fuck&#39;s sake.
 
 I get onto my knees and look at the man, he props himself up as well and our eyes meet, a look of shock on his face. He&#39;s got light green eyes, and long black hair in a ponytail; he&#39;s soaking wet.
 
@@ -2754,11 +2777,148 @@ There&#39;s a moment of silence. His expression turns to one of anger.
 
 [[I don&#39;t know you!|C1P53V2211]]&lt;br&gt;
 [[You were going to get yourself killed!|C1P53V2212]]&lt;br&gt;
-[[I was going to! [Lie]|C1P53V2213]]</tw-passagedata><tw-passagedata pid="233" name="C1P53V2211" tags="variation" position="3850,13050" size="100,100">Who the hell does this guy think he is?
+[[I was going to! [Lie]|C1P53V2213]]</tw-passagedata><tw-passagedata pid="233" name="C1P53V2211" tags="variation" position="3875,13050" size="100,100">Who the hell does this guy think he is?
 
-&quot;I don&#39;t know you, and I don&#39;t owe you shit!&quot;, I snap back.</tw-passagedata><tw-passagedata pid="234" name="C1P53V2212" tags="variation" position="4000,13050" size="100,100">Is this guy for real?
+&quot;I don&#39;t know you, and I don&#39;t owe you shit!&quot;, I snap back.
 
-&quot;You were carrying on a headless chicken! You&#39;ve pulled every walker within a half-mile, and you&#39;re looked like you were going to get themselves killed!&quot;, I snap back at him.</tw-passagedata><tw-passagedata pid="235" name="C1P53V2213" tags="variation" position="4150,13050" size="100,100">&quot;I was about to, OK?&quot;, I say; the look on his face says he&#39;s not convinced.</tw-passagedata></tw-storydata>
+&lt;%= window.story.render(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="234" name="C1P53V2212" tags="variation" position="4025,13050" size="100,100">Is this guy for real?
+
+&quot;You were carrying on a headless chicken! You&#39;ve pulled every walker within a half-mile, and you&#39;re looked like you were going to get themselves killed!&quot;, I snap back at him.
+
+&lt;%= window.story.render(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="235" name="C1P53V2213" tags="variation" position="4175,13050" size="100,100">&quot;I was about to, OK?&quot;, I say; the look on his face says he&#39;s not convinced.
+
+&lt;%= window.story.render(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="236" name="F: Not now" tags="floater" position="4375,13050" size="100,100">&quot;Hey! Now&#39;s not the time, we&#39;ve got bigger problems&quot;, Lucy says from somewhere behind me.
+
+The stranger looks startled, he must not have seen her. He takes a breath as if to say something, but doesn&#39;t. He shoots me a dirty look, then begins to stand up.
+
+What an asshole.
+
+[[[Stand up]|C1P53V22111]]</tw-passagedata><tw-passagedata pid="237" name="C1P53V22111" tags="variation" position="4025,13275" size="100,100">I get up off the floor awkwardly, getting knocked down really did a number on my leg.
+
+&lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="238" name="C1P53V211111" tags="variation" position="3225,13350" size="100,100">I akwardly spin towards Lucy, I really did a number on my leg.
+
+&lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="239" name="F: What we need to do now" tags="floater" position="3675,13350" size="100,100">&quot;Alright, what we need to do now is-&quot;, I begin to say.
+
+\*Crash\*
+
+A hand appears through one of the boarded-up windows in the hallway, between where I am and the kitchen.
+
+&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house start to be heard.
+
+[[&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles,&quot;) } else { print(&quot;The&quot;) } %&gt; Bat!|C1P54V21]]&lt;br&gt;
+[[Upstairs, quickly!|C1P54V22]]&lt;br&gt;
+[[[Run to the kitchen]|C1P54V23]]</tw-passagedata><tw-passagedata pid="240" name="C1P54V21" tags="variation" position="3525,13500" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
+&quot;Charles, the bat!&quot;, I turn and shout.
+&lt;% } else { %&gt;
+&quot;Charles, the bat!&quot;, I turn and shout.
+&lt;% } %&gt;
+
+He grabs it and throws it in my direction, I catch it, and head towards the window, pushing through the pain in my leg. As I approach, I raise the bat well above my head and bring it down on the arm with all my strength.
+
+The bat hit the arm and kept going. The arm made a horrible snapping noise, as whatever bone was left in the walker&#39;s arm turned to dust. The bat hits the ground and splits in two. The arm, pointing 90 degrees downward now, continued to twitch and wriggle.
+
+I drop the bat and look up towards the kitchen to meet Lucy&#39;s gaze.
+
+&quot;Let&#39;s, go!&quot;, I shout.
+
+Lucy grabs &lt;% print(window.story.tiffany()) %&gt; from somewhere beside her and starts booking it down the hallway towards me.
+
+[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="241" name="C1P54V22" tags="variation" position="3675,13500" size="100,100">&quot;Upstairs, quickly!&quot;, I shout.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;The stranger&quot;) } %&gt; doesn&#39;t need to be told twice, he scrambles to the stairs and starts going up.
+
+I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; and is head down the hallway towards me. As she passes the window, the hand suddenly reaches out and grabs Lucy&#39;s pants. &lt;% print(window.story.tiffany()) %&gt; screams.
+
+&quot;Come to me!&quot;, I shout at &lt;% print(window.story.tiffany()) %&gt;.
+
+&lt;% print(window.story.tiffany()) %&gt; doesn&#39;t move, but Lucy lets go of her and shoves her in my direction. &lt;% print(window.story.tiffany()) %&gt; stumbles towards me, and I catch her in a hug.
+
+I look back at Lucy, she has her knife out now. She quickly stabs the arm several times, then takes a swipe at it. The arm comes clean off.
+
+[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="242" name="C1P54V23" tags="variation" position="3825,13500" size="100,100">Without thinking I bolt for the kitchen, pushing through the pain in my leg.
+
+&quot;No!&quot;, Lucy shouts. I stop running.
+
+&quot;We&#39;ll come to you&quot;, she says. I nod, and turn back to &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;the stranger&quot;) } %&gt;.
+
+&quot;Get upstairs&quot;, I shout. He doesn&#39;t need to be told twice, he starts scrambling up the stairs.
+
+I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; in one hand, her knife in the other, and is head down the hallway towards me. As she passes the window, she makes one clean swipe at the hand and it comes clean off. Impressive.
+
+[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="243" name="C1P54V211" tags="variation" position="3675,13650" size="100,100">&lt;%
+window.story.delayedText(15 * 1000);
+const tiffany = window.story.tiffany();
+%&gt;
+
+I head for the stairs, &lt;% print(tiffany) %&gt; and Lucy right behind me. No sign of &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;the stranger&quot;) } %&gt;, he must be upstairs already.
+
+I get to the first step and stop, I look behind me to make sure the other two are still following me. &lt;% print(tiffany) %&gt; hot on my heels, Lucy just behind her.
+
+\*Bang, bang bang, bang\*
+
+The door! Lucy hears it too.
+
+&quot;Don&#39;t stop, keep going!&quot;, she exclaims, practically pushing &lt;% print(tiffany) %&gt; to the stairs. I start heading up-
+
+&lt;div-#delayed&gt;
+
+\*Crash\*
+
+&quot;Argh!&quot;, Lucy shouts behind me.
+
+I look behind me; the front door has come clean off its hinges, landed on Lucy, and there are 4 or 5 walkers piled on top of the fallen door!
+
+&quot;Shit, no!&quot;, I exclaim, as I start back down the stairs.
+
+&quot;No!&quot;, Lucy wails.
+
+&quot;Get Tiffany and go, please!&quot;, she cries out.
+
+The walkers are starting to get up. I look down at &lt;% print(tiffany) %&gt;, she&#39;s frozen in place, hands to her face, looking down at her mom.
+
+[[[Try to help Lucy]|C1P54V2111]]
+[[[Grab &lt;% print (tiffany) %&gt; and go]|C1P54V2112]]
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="C1P54V2111" tags="variation" position="3600,13800" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;);
+%&gt;
+
+Fuck that, I can&#39;t just leave her!
+
+I step past &lt;% print(tiffany) %&gt; back towards Lucy. I get to the last step right as a walker leans over and takes a massive chunk out of Lucy&#39;s neck.
+
+&quot;Argh! Ugh...&quot;, Lucy gurgles.
+
+&quot;No!&quot;, I exclaim. Not again, not again!
+
+&quot;Just... go...&quot;, Lucy manages to gargle.
+
+More walkers are going through the open doorway now. I take one last look at Lucy&#39;s lifeless body, then spin around to &lt;% print(tiffany) %&gt;.
+
+The look on her face will be burned into my brain for as long as I live. Her blue eyes staring, unblinking, tears budding in the corners of her eyes, her face slowly going pale. **She won&#39;t forget this**.
+
+[[[Grab &lt;% print (tiffany) %&gt;]|C1P54V21111]]</tw-passagedata><tw-passagedata pid="245" name="C1P54V2112" tags="variation" position="3750,13875" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+I go down the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
+
+&quot;Come on &lt;% print(tiffany) %&gt;, we need to go, now!&quot;, I say, pulling her up the stairs.
+
+&quot;No! Mom!&quot;, she screams, the pitch of her voice is piercing.
+
+&quot;Argh! Ugh...&quot;, Lucy gurgles somewhere behind me. I don&#39;t look back.
+
+&quot;&lt;% print(tiffany) %&gt;, move!&quot;, I shout, continuing to pull her up the stairs.
+
+[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="246" name="C1P54V21111" tags="variation" position="3600,13950" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+I go up the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
+
+&quot;Come on &lt;% print(tiffany) %&gt;, there&#39;s nothing we can do for her&quot;, I say, pulling her up the stairs.
+
+She doesn&#39;t say a word, she must be in shock... I guess I am too for that matter.
+
+[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3700,14100" size="100,100">Running trying to find the stranger?</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
