@@ -1248,7 +1248,13 @@ Mother - Lucy:
 - 34 years old
 - Brown hair, done up in a bun
 - Soft brown eyes
-- Cargo pants, tshirt</tw-passagedata><tw-passagedata pid="70" name="C1P19V2" tags="variation" position="3000,5250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
+- Cargo pants, tshirt
+
+Stranger - Charles:
+- 27 years old
+- Long black hair in a pony tail
+- Light green eyes
+- Tall and skinny</tw-passagedata><tw-passagedata pid="70" name="C1P19V2" tags="variation" position="3000,5250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
 
 Well, this is awkward... I maintain eye contact with her.
 
@@ -1980,7 +1986,9 @@ I put the bag back on the hanger.
 
 I walk over to the window. It&#39;s been boarded up from the outside, but there are a few cracks I can look through. I squat down and have a look through one.
 
-It looks out onto a small front garden and the street, and- Whoa, that&#39;s actually quite a lot of walkers. Looks like they&#39;re just passing through, maybe 10 or 20 of them? I should probably let Lucy know.
+It looks out onto a small front garden and the street, and- Whoa, that&#39;s actually quite a lot of walkers. Looks like they&#39;re just passing through, maybe 10 or 20 of them? I should probably let Lucy know...
+
+Anyway, the front garden is much smaller than the back garden, it&#39;s got a small fence running around it, only about half a meter high. The weather doesn&#39;t look great actually, it&#39;s pretty overcast, and I can see storm clouds rolling in. I wonder how this place will hold up in the rain.
 
 I stand up again.
 
@@ -2329,7 +2337,7 @@ Still caught up on that, gee.
 
 &lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="183" name="C1P45" tags="page" position="3075,10950" size="100,100">&quot;Anyway, uh, I had better go chat with your mom&quot;, I say, getting up from the table.
 
-I head to the other door in the room, open it, and step through.
+I head to the other door in the room. I can hear rain outside, the gentle tapping on the roof is actually pretty soothing... I get to the door and open it, then step through.
 
 It&#39;s a dining room, there&#39;s a long 8 or so seater table in the middle of the room, a window with the curtains pulled on one wall, and a display table with some picture frames on it on the far wall. Lucy is standing at the display table, holding one of the frames.
 
@@ -2580,7 +2588,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	window.story.render(&quot;F: Lucy goes outside&quot;);
 }
-%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2150,12325" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2550,12825" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -2592,7 +2600,8 @@ Sarah stays inside // Rando forces way in // Fights with Sarah, Lucy gets stabbe
 Lucy dies one way or another
 Escape upstairs, on the pattio, then over the wall
 Tiffany cries and won&#39;t go over the wall
-If saved rando, survive till start of next episode?</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
+If saved rando, survive till start of next episode?
+Sarah hurts her leg one way or another</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
 window.story.player.key = &quot;uTS6kD5qI7i9vpHHkXpudlthxR4WRxQy6ah8YQjdMm2bf6TI8OJ37BCZ5v86Z1TF&quot;;
 window.story.chapter = &quot;Chapter1&quot;;
 
@@ -2607,11 +2616,13 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
 
 Loading, please wait...</tw-passagedata><tw-passagedata pid="217" name="Alpha" tags="menu" position="2000,575" size="200,100">This game is in an alpha state, all content is subject to change.
 
-[[Understood|Title Screen]]</tw-passagedata><tw-passagedata pid="218" name="C1P53V2" tags="variation" position="3150,12600" size="100,100">I look through the peephole. There&#39;s a lot of walkers outside&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, even more than when I looked before&quot;) %&gt;, they&#39;re all focused on something in the middle of the street... it&#39;s so hard to see- there, there is a guy outside.
+[[Understood|Title Screen]]</tw-passagedata><tw-passagedata pid="218" name="C1P53V2" tags="variation" position="3150,12600" size="100,100">I look through the peephole. There&#39;s a lot of walkers outside&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, even more than when I looked before&quot;) %&gt;, they&#39;re all focused on something in the middle of the street...
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { print(&quot;The weather has gotten a lot worse too&quot;) } else { print(&quot;The weather is terriable outside&quot;) } %&gt;, the rain is coming down, it&#39;s difficult to see- there, there is a guy outside!
 
 &lt;i&gt;&quot;Get away from me!&quot;&lt;/i&gt;, he screams.
 
-He widely swinging a bat around: he&#39;s going to get himself killed.
+He&#39;s pretty tall, but skinny, wearing a trench coat or something, widely swinging a bat around: he&#39;s going to get himself killed.
 
 I step back from the peephole and look towards the end of the hallway. Lucy is standing in the corner of the Kitchen, looking at me. Our eyes lock for a moment.
 
@@ -2620,9 +2631,9 @@ I step back from the peephole and look towards the end of the hallway. Lucy is s
 I look back towards the door.&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) print (&quot; I told Lucy people still help each other out, might be time to put my money where my mouth is.&quot;) %&gt; I could go out and help him... or, I can make sure nothing gets through this door.
 
 [[[Help the stranger]|C1P53V21]]
-[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="219" name="C1P53V21" tags="variation" position="3150,12750" size="100,100">Shit. This is a bad idea. I look back at Lucy for a moment, then unlock the door, open it, and step outside.
+[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="219" name="C1P53V21" tags="variation" position="3300,12750" size="100,100">Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she nodes&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;, she understands what I&#39;m about to do. I unlock the door, open it, and step outside.
 
-I close the door behind me. I reach down for my knife- fuck, I forgot I don&#39;t have it!
+I close the door behind me, and imidiatly get slapped my the rain. It&#39;s pouring out here. I reach down for my knife- fuck, I forgot I don&#39;t have it!
 
 &lt;% if (window.story.getChoice(&quot;Haircut&quot;)) { %&gt;
 
@@ -2634,22 +2645,36 @@ I feel around in my pockets... nothing I can use as a weapon. Guess I&#39;m goin
 
 &lt;% } %&gt;
 
-I look for the guy, he&#39;s in the middle of the street a couple of meters away, he hasn&#39;t noticed me, and neither have any of the walkers. He&#39;s making so much noise that they&#39;re totally focused on him.
+I look for the guy, he&#39;s in the middle of the street a couple of meters away, he hasn&#39;t noticed me, and neither have any of the walkers. Between all the noise he&#39;s making and the rain, they&#39;re totally focused on him.
 
-They must be at least 20 or 30 walkers, no way we can talk them all out, not without proper weapons. My options are limited here: maybe I can get his attention from here and have him come over here to the house, save having to fight my way to him; or, I can try and clear a path to him, and get his attention when I&#39;m closer to him.
+They must be at least 20 or 30 walkers, no way we can take them all out, not without proper weapons. My options are limited here: maybe I can get his attention from here and have him come over here to the house, save having to fight my way to him; or, I can try and clear a path to him, and get his attention when I&#39;m closer to him.
 
 [[[Yell at him]|C1P53V211]]
-[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="220" name="C1P53V22" tags="variation" position="3450,12750" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="221" name="C1P53V211" tags="variation" position="3150,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;) %&gt;
+[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="220" name="C1P53V22" tags="variation" position="4000,12750" size="100,100">No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;.
+
+I look at the door, there&#39;s not much in the way of locking, in fact, the lock looks busted. I guess that&#39;s how Lucy got in. If I could move a chair or a table in front of the door, that might be enough to-
+
+\*Bang\*
+
+What the hell, that was on the other side of the door, how&#39;d a walker get up so quickly-
+
+&quot;Hey! Anyone in here?&quot;, a man&#39;s voice shouts from the other side of the door.
+
+Shit! Now what?! It won&#39;t take him long to figure out it&#39;s not fucking locked!
+
+[[Go away!|C1P53V221]]&lt;br&gt;
+[[&lt;% print (&#96;${window.story.tiffany()} run!&#96;) %&gt;|C1P53V222]]&lt;br&gt;
+[[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="221" name="C1P53V211" tags="variation" position="3225,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;) %&gt;
 
 I don&#39;t want to have to go over to him, too dangerours.
 
-&quot;Hey! You!&quot;, I yell.
+&quot;Hey! You!&quot;, I yell at the man.
 
-The man stop swinging his bat for a moment and looks at me, with the expression on his face you&#39;d have thought he just laid eyes on a pot of gold.
+He stops swinging his bat for a moment and looks at me, with the expression on his face you&#39;d have thought he just laid eyes on a pot of gold.
 
 &quot;Get over here!&quot;, I yell at him.
 
-He nods, and gets back to swinging.
+He nods, and gets back to swinging, slowly moving towards me.
 
 Uh-oh, that drew some unwanted attention as well. A few walkers are headed my direction now, shit!
 
@@ -2657,7 +2682,83 @@ Uh-oh, that drew some unwanted attention as well. A few walkers are headed my di
 [[[Use Scissors]|C1P53V2111]]
 &lt;% } else { %&gt;
 [[[Look around for a weapon]|C1P53V2112]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="222" name="C1P53V212" tags="variation" position="3450,12900" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="223" name="C1P53V2111" tags="variation" position="3150,13050" size="100,100">Wait till close use scissors</tw-passagedata><tw-passagedata pid="224" name="C1P53V2112" tags="variation" position="3300,13050" size="100,100">Use potted plant</tw-passagedata></tw-storydata>
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="222" name="C1P53V212" tags="variation" position="3450,12900" size="100,100">I had better go over to him, no point yelling and drawing more walkers.
+
+The path between him and I is actaully pretty clear, most of the walkers are on the street, there&#39;s only one walker directly in my way. I start towards it, the rain is covering up the sound of my walking, so I&#39;ve got that going for me at least.
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
+
+I get up right behind it, then &lt;%= window.story.render(&quot;F: Scissor takedown&quot;) %&gt;
+
+&lt;% } else { %&gt;
+
+I get up right behind it, then I quickly kick out it&#39;s left knee, it&#39;s makes a pronouced snapping noise and bends abnormally. The walker tumbles to it&#39;s knees. I push it to the ground, then stomp it&#39;s head in.
+
+I take a breath, been a while since I&#39;ve had to do that. It&#39;s head has turned to mush... and I have said mush all over my shoes; problem for later.
+
+&lt;% } %&gt;
+
+[[[Keep heading towards the stranger]|C1P53V2121]]</tw-passagedata><tw-passagedata pid="223" name="C1P53V2111" tags="variation" position="3150,13050" size="100,100">I take a few steps forward towards the closest walker, then wait for him to get within arm&#39;s length. &lt;%= window.story.render(&quot;F: Scissor takedown&quot;) %&gt;
+
+&lt;%= window.story.render(&quot;F: Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="224" name="C1P53V2112" tags="variation" position="3300,13050" size="100,100">I look around for a weapon. There&#39;s nothing out here! Just a doormat and a potted plant.
+
+Wait, the plant, that could do. I walk over to it and start to pick it up. It&#39;s got a fair bit of weight to it. I look back towards the walkers, the closest one is just a few meters from me. I brace myself, and then throw the potted plant right at it.
+
+The pot connects with the walkers head and shatters. The walker goes down like a sack of potatos. 
+
+&lt;%= window.story.render(&quot;Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="225" name="F: Ow my leg" tags="floater" position="3650,13050" size="100,100">Fuck, I forgot about my leg, argh! That really hurt. I look up, there&#39;s still two walkers headed for me, shit. I take a step back- ARGH, shit, I&#39;ve properly buggered my leg: this isn&#39;t good.
+
+I start to hobble back towards the door, and look back over at the stranger. We make eye contact for a moment, he sees I&#39;m hurt and I&#39;m being followed. There&#39;s a moment of panic in his eyes, then he must have had a thought, because he smiles.
+
+&quot;Hey! Hey dumbies, over here!&quot;, he shouts over the top of the rain.
+
+The walkers following me stop, and slowy swing back towards him.
+
+&quot;Yeah that&#39;s right idiots, over here!&quot;, he shouts again.
+
+He must be crazy, but it&#39;s working.
+
+[[[Open the door to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="226" name="C1P53V21111" tags="variation" position="3225,13200" size="100,100">I shuffle back to the front door and open it, I look back towards the stranger. He&#39;s made it most of the way over to me now.
+
+&quot;Come on!&quot;, I shout at him.
+
+He takes one final swing, then bolts towards the door. I step inside and out of the way, right as him comes crashing in. I slam the door beind him.
+
+We both stand there for a moment, soaking wet, and panting.</tw-passagedata><tw-passagedata pid="227" name="F: Scissor takedown" tags="floater" position="3650,12900" size="100,100">I quickly kick out it&#39;s left knee, it&#39;s makes a pronouced snapping noise and bends abnormally. The walker tumbles to it&#39;s knees, it&#39;s head bent over, perfectly within reach. I take the scissors and drive them deep into the back of it&#39;s head, then pull them out. It makes a hordid gurggling sound, then flops to the ground.</tw-passagedata><tw-passagedata pid="228" name="C1P53V2121" tags="variation" position="3450,13050" size="100,100">I take a step towards the stranger- ARGH, shit! I forgot about my leg; I&#39;ve properly buggered it taking down that walker.
+
+I&#39;m not as close to him as I would have liked, but this will have to do.
+
+&quot;Hey!&quot;, I shout over the rain, and wave my hands in the air.
+
+He stops swinging his bat for a moment and looks at me, with the expression on his face you&#39;d have thought he just laid eyes on a pot of gold.
+
+&quot;Hey! Someone actually heard me!&quot;, he exclaims happily.
+
+&quot;Come on, let&#39;s get inside&quot;, I say back to him.
+
+He nods, and starts heading towards me, swinging as he goes.
+
+[[[Head back to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="229" name="C1P53V221" tags="variation" position="3850,12900" size="100,100">&quot;Go aw-&quot;, I start to say.
+
+&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="230" name="C1P53V222" tags="variation" position="4000,12900" size="100,100">&quot;${window.story.tiffany()} ru-&quot;, I start to say.
+
+&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="231" name="C1P53V223" tags="variation" position="4150,12900" size="100,100">I lean on the door-
+
+&lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="232" name="F: Door swings open" tags="floater" position="4350,12900" size="100,100">Sudenly, the door swings open, and a man comes crashing through. I get knocked to the ground by the door, and land awkwardnly on my bad leg. Argh, fuck&#39;s sake.
+
+I get onto my knees and look at the man, he props himself up as well and our eyes meet, a look of shock on his face. He&#39;s got light green eyes, and long black hair in a pony tail; he&#39;s soaking wet.
+
+There&#39;s a moment of scilense. He expression turns to one of anger.
+
+&quot;Oi, why didn&#39;t you help me out there! There&#39;s no way you didn&#39;t hear me!&quot;, the stranger says angeraly.
+
+[[I don&#39;t know you!|C1P53V2211]]&lt;br&gt;
+[[You were going to get yourself killed!|C1P53V2212]]&lt;br&gt;
+[[I was going to! [Lie]|C1P53V2213]]</tw-passagedata><tw-passagedata pid="233" name="C1P53V2211" tags="variation" position="3850,13050" size="100,100">Who the hell does this guy think he is?
+
+&quot;I don&#39;t know you, and I don&#39;t owe you shit!&quot;, I snap back.</tw-passagedata><tw-passagedata pid="234" name="C1P53V2212" tags="variation" position="4000,13050" size="100,100">Is this guy for real?
+
+&quot;You were carrying on a headless chicken! You&#39;ve pulled every walker within a half mile, and you&#39;re looked like you were going to get themselves killed!&quot;, I snap back at him.</tw-passagedata><tw-passagedata pid="235" name="C1P53V2213" tags="variation" position="4150,13050" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
