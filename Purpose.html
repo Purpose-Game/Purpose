@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<tw-story tags></tw-story>
-		<tw-storydata name="Purpose" startnode="216" creator="Twine" creator-version="2.3.14" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" zoom="0.6" format="Snowman" format-version="2.0.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+		<tw-storydata name="Purpose" startnode="216" creator="Twine" creator-version="2.3.15" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" zoom="0.6" format="Snowman" format-version="2.0.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
   font: 27px "DeadWalking", Arial, sans-serif;
   color: #c8c3bc;
   background-color: #222222;
@@ -136,10 +136,34 @@ window.story.choiceDescriptions = {
 			"kicked the door in to get inside",
 			"broke the window to get inside"
 		],
-		"Soap": [
-			"picked up the bar of old soap",
-			"did not pick up the bar of old soap"
-		]
+		"Lied": [
+			"lied to Lucy about how you hurt your leg",
+			"told Lucy the truth about how you hurt your leg"
+		],
+		"NewPurpose": [
+			"told yourself you needed to find a new purpose in life",
+			"told yourself you have no purpose in life and should die"
+		],
+		"Haircut": [
+			"gave yourself a haircut and took the scissors",
+			"passed up the opportunity for a haircut"
+		],
+		"WillHelp": [
+			"told Lucy people will help Tiffany in her time of need",
+			"told Lucy people will not help Tiffany in her time of need"
+		],
+		"Protect": [
+			"chose to protected Tiffany",
+			"chose to investigate the noise"
+		],
+		"SaveStranger": [
+			"went outside to save the stranger",
+			"stayed inside and tried to keep the stranger out"
+		],
+		"TriedToSaveLucy": [
+			"tried to save Lucy, but let Tiffany watch her die",
+			"did as Lucy asked, saved Tiffany from watching her die"
+		],
 	}
 };
 
@@ -537,6 +561,10 @@ window.story.loadStats = function () {
 		$("#statsLoading").hide();
 		
 		for (const stat in data) {
+			/*if (!window.story.state.choices[window.story.chapter].hasOwnProperty(stat)) {
+				continue;
+			}*/
+			
 			let message;
 			
 			if (window.story.getChoice(window.story.chapter, stat)) {
@@ -678,9 +706,7 @@ Still locked. I need to find a way into this place, and fast.
 
 &lt;%= window.story.render(&quot;F: Door entry options&quot;) %&gt;
 
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="9" name="C1P5V13" tags="variation" position="3000,1325" size="100,100">&lt;%
-window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;);
-%&gt;
+&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="9" name="C1P5V13" tags="variation" position="3000,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;) %&gt;
 
 I muster what little strength I have left, and kick the door with my good leg. The door shuddered but didn&#39;t open. **That was pretty loud too**.
 
@@ -706,7 +732,9 @@ It&#39;s still too dark inside properly. It looks like a laundry room?
 
 &lt;%= window.story.render(&quot;F: Window entry options&quot;) %&gt;
 
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="11" name="C15V22" tags="variation" position="3300,1325" size="100,100">I grab the board with both hands and pull hard. Too hard.
+&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="11" name="C15V22" tags="variation" position="3300,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;, false) %&gt;
+
+I grab the board with both hands and pull hard. Too hard.
 
 The board comes right off, pulling bits of the moldy window frame it was nailed to with it. I fall backward, and narrowly avoid hitting my head on a large tree root. I did, however, manage to land directly on my leg wound. &lt;%= window.story.render(&quot;F: Mother Comments&quot;) %&gt;.
 
@@ -1302,7 +1330,9 @@ Lucy pauses, then sits forward in her chair.
 
 &quot;Speaking of injuries, how *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
 
-[[[**Tell Lucy the Truth**]|C1P22V1]][[[**Lie to Lucy**]|C1P22V2]]</tw-passagedata><tw-passagedata pid="79" name="C1P22V1" tags="variation" position="3000,5700" size="100,100">&quot;I killed a man&quot;, I state.
+[[[**Tell Lucy the Truth**]|C1P22V1]][[[**Lie to Lucy**]|C1P22V2]]</tw-passagedata><tw-passagedata pid="79" name="C1P22V1" tags="variation" position="3000,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;, false) %&gt;
+
+&quot;I killed a man&quot;, I state.
 
 Lucy sits there for a moment, then her slight smile drops as she realizes I wasn&#39;t joking.
 
@@ -1629,7 +1659,9 @@ I&#39;m exhausted... mentally and physically.
 
 [[[Reflect on near-death experience]|C1P32]]</tw-passagedata><tw-passagedata pid="123" name="C1P32" tags="page" position="3075,7500" size="100,100">I reflect on my near-death experience. It&#39;s made me realise that...
 
-[[I have no purpose|C1P33V1]] [[I need a new purpose|C1P33V2]]</tw-passagedata><tw-passagedata pid="124" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">I have no purpose in life. What&#39;s the point in living at all?
+[[I have no purpose|C1P33V1]] [[I need a new purpose|C1P33V2]]</tw-passagedata><tw-passagedata pid="124" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;, false) %&gt;
+
+I have no purpose in life. What&#39;s the point in living at all?
 
 The world would be better off without me. People like that guy I killed can attest to that...
 
@@ -1715,6 +1747,8 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;Haircut&quot; - Gave yourself a haircut and took the scissors
 
+!&quot;Chapter1&quot;, &quot;Haircut&quot; - Passed up the opportunity for a haircut
+
 &quot;Chapter1&quot;, &quot;Eating&quot; - Telling Tiffany it&#39;s important to eat when you can
 
 &quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot; - Found out about Tiffany&#39;s dad
@@ -1723,13 +1757,13 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot; - Found out Tiffany hasn&#39;t killed any walkers
 
-&quot;Chapter1&quot;, &quot;Protect&quot; - Protected Tiffany
-
-!&quot;Chapter1&quot;, &quot;Protect&quot; - Investigated the noise
-
 &quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will help Tiffany in her time of need
 
 !&quot;Chapter1&quot;, &quot;WillHelp&quot; - Told Lucy people will not help Tiffany in her time of need
+
+&quot;Chapter1&quot;, &quot;Protect&quot; - Chose to protected Tiffany
+
+!&quot;Chapter1&quot;, &quot;Protect&quot; - Chose to investigate the noise
 
 &quot;Chapter1&quot;, &quot;SaveStranger&quot; - Went outside to save the stranger
 
@@ -1988,7 +2022,7 @@ I put the bag back on the hanger.
 
 &lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40" tags="page save" position="3075,9450" size="100,100">I head to the door, weary of my leg. I then go through the door to the hallway; it is a long rectangle, there are doors on all four sides, and a set of stairs on one side.
 
-*&quot;Tiffany, stop playing with your food...&quot;*, I hear Lucy say somewhere behind the furthest door. That must be to the kitchen.
+&lt;i&gt;&quot;Tiffany, stop playing with your food...&quot;&lt;/i&gt;, I hear Lucy say somewhere behind the furthest door. That must be to the kitchen.
 
 &lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="C1P39V2" tags="variation" position="2925,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
 
@@ -2016,7 +2050,13 @@ I walk up to the stairs, they bend and go to the left as they go up. I better no
 
 I walk up to the door, it&#39;s large than the other doors, and has locks on it: this must be the front door. I don&#39;t really want to go out there right now&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, not with all those walkers out there&quot;) %&gt;.
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="162" name="C1P41" tags="page" position="3075,10050" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="162" name="C1P41" tags="page" position="3075,10050" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+
+if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) {
+	window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;, false);
+}
+%&gt;
 
 I walk to the end of the hallway, and go through the kitchen door.
 
@@ -2040,7 +2080,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) {
 }
 %&gt;
 
-[[[**Go through kitchen door**|C1P41]]]</tw-passagedata><tw-passagedata pid="164" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
+[[[**Go through kitchen door**]|C1P41]]</tw-passagedata><tw-passagedata pid="164" name="C1P40V21" tags="variation" position="2925,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
 
 I step inside. There&#39;s a sink with some water in it, it looks pretty clean too. I walk over to it, dip my hands in, and run my hands over my face. Wow, that feels great, I don&#39;t recall the last time I had a wash.
 
@@ -2049,9 +2089,9 @@ I give my face and arms a good scrub, the water turns a nasty brown color. I loo
 I wonder if there is a pair of scissors around here?
 
 [[[Leave bathroom]|C1P40V211]]&lt;br&gt;
-[[[Search for scissors]|C1P40V212]]</tw-passagedata><tw-passagedata pid="165" name="C1P40V211" tags="variation" position="3000,9900" size="100,100">Ah well, another time. I let out the water in the sink and leave the bathroom.
+[[[Search for scissors]|C1P40V212]]</tw-passagedata><tw-passagedata pid="165" name="C1P40V211" tags="variation" position="2775,9900" size="100,100">Ah well, another time. I let out the water in the sink and leave the bathroom.
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="166" name="C1P40V212" tags="variation" position="3150,9900" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="166" name="C1P40V212" tags="variation" position="2925,9900" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;) %&gt;
 
 I search around the bathroom. I find a small vanity box and open it, it contains some bits and bobs, and- Perfect, a pair of scissors.
 
@@ -2479,17 +2519,21 @@ She turns to face me, tears streaking down her eyes.
 
 [[...|C1P48V1]]&lt;br&gt;
 [[They will be|C1P48V2]]&lt;br&gt;
-[[They won&#39;t be|C1P48V3]]</tw-passagedata><tw-passagedata pid="201" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">I&#39;m not sure what to say.
+[[They won&#39;t be|C1P48V3]]</tw-passagedata><tw-passagedata pid="201" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
+
+I&#39;m not sure what to say.
 
 &lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="202" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) %&gt;
 
 &quot;They will be&quot;, I say.
 
-&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="203" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&quot;They won&#39;t be&quot;, I say.
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="203" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
+
+&quot;They won&#39;t be&quot;, I say.
 
 &lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="204" name="F: Stay" tags="floater" position="3425,11850" size="100,100">&lt;% if (window.passage.name === &quot;C1P48V1&quot;) { %&gt;
 
-Lucy takes a breath, wiping her tears away.
+Lucy looks as me... she understands there are not many good people left these days. She takes a breath, wiping her tears away.
 
 &lt;% } else if (window.passage.name === &quot;C1P48V2&quot;) { %&gt;
 
@@ -2550,7 +2594,9 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;);
 
 Lucy looks at me and nods, then runs out the door, I go right behind her.
 
-[[Go to &lt;% print(tiffany) %&gt;|C1P52V1]]</tw-passagedata><tw-passagedata pid="208" name="C1P51V2" tags="variation" position="3150,12300" size="100,100">&quot;You protect &lt;% print(window.story.tiffany()) %&gt;, I&#39;ll go find out what *the fuck* that was!&quot;, I exclaim as I head for the door.
+[[Go to &lt;% print(tiffany) %&gt;|C1P52V1]]</tw-passagedata><tw-passagedata pid="208" name="C1P51V2" tags="variation" position="3150,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;, false) %&gt;
+
+&quot;You protect &lt;% print(window.story.tiffany()) %&gt;, I&#39;ll go find out what *the fuck* that was!&quot;, I exclaim as I head for the door.
 
 &quot;Right!&quot;, I hear Lucy say behind me.
 
@@ -2600,18 +2646,14 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
-Sarah goes outside // Fights with scissors or with pushing // Helps rando inside // Luct gets grabbed on way up stairs?
-
-Sarah stays inside // Rando forces way in // Fights with Sarah, Lucy gets stabbed by accident?
-
 =================
 Lucy dies one way or another
+Sarah hurts her leg one way or another
+If saved rando, survive till start of next episode?
 Escape upstairs, on the pattio, then over the wall
 Tiffany cries and won&#39;t go over the wall
-If saved rando, survive till start of next episode?
-Sarah hurts her leg one way or another
-Tiff saves </tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
-window.story.player.key = &quot;uTS6kD5qI7i9vpHHkXpudlthxR4WRxQy6ah8YQjdMm2bf6TI8OJ37BCZ5v86Z1TF&quot;;
+Tiff saves Sarah if you taught her how to</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
+window.story.player.key = &quot;YlXRjGbXcSWJ8pr15iqo5r6e4PLnsAhS7fYlMZfzF59o22wIYv6zjVy997S8ejYC&quot;;
 window.story.chapter = &quot;Chapter1&quot;;
 
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
@@ -2661,7 +2703,9 @@ I look for the guy, he&#39;s in the middle of the street a couple of meters away
 They must be at least 20 or 30 walkers, no way we can take them all out, not without proper weapons. My options are limited here: maybe I can get his attention from here and have him come over here to the house, save having to fight my way to him; or, I can try and clear a path to him, and get his attention when I&#39;m closer to him.
 
 [[[Yell at him]|C1P53V211]]
-[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="220" name="C1P53V22" tags="variation" position="4025,12750" size="100,100">No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;.
+[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="220" name="C1P53V22" tags="variation" position="4025,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;, false) %&gt;
+
+No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;.
 
 I look at the door, there&#39;s not much in the way of locking, in fact, the lock looks busted. I guess that&#39;s how Lucy got in. If I could move a chair or a table in front of the door, that might be enough to-
 
@@ -2898,7 +2942,10 @@ More walkers are going through the open doorway now. I take one last look at Luc
 
 The look on her face will be burned into my brain for as long as I live. Her blue eyes staring, unblinking, tears budding in the corners of her eyes, her face slowly going pale. **She won&#39;t forget this**.
 
-[[[Grab &lt;% print (tiffany) %&gt;]|C1P54V21111]]</tw-passagedata><tw-passagedata pid="245" name="C1P54V2112" tags="variation" position="3750,13875" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[[Grab &lt;% print (tiffany) %&gt;]|C1P54V21111]]</tw-passagedata><tw-passagedata pid="245" name="C1P54V2112" tags="variation" position="3750,13875" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;, false);
+%&gt;
 
 I go down the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
 
@@ -2918,7 +2965,7 @@ I go up the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
 
 She doesn&#39;t say a word, she must be in shock... I guess I am too for that matter.
 
-[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3700,14100" size="100,100">Running trying to find the stranger?</tw-passagedata></tw-storydata>
+[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3025,14100" size="100,100">Running trying to find the stranger?</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
