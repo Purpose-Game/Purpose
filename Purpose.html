@@ -2291,13 +2291,13 @@ I look over at &lt;% print(tiffany) %&gt;, she&#39;s actually making decent proc
 
 I look over at &lt;% print(tiffany) %&gt;, she&#39;s still playing with her food...
 
-&lt;% } %&gt;
+&lt;% }
 
-[[Where&#39;s your dad?|C1P44V1]]&lt;br&gt;
-[[Where have you guys been staying?|C1P44V2]]&lt;br&gt;
-[[How many walkers have you killed?|C1P44V3]]&lt;br&gt;
+if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;)) {
+	print(&#96;[[[Give ${tiffany} the spinning top]|C1P44V4]]&#96;);
+} %&gt;
 
-[[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="180" name="C1P44V1" tags="variation" position="2925,10800" size="100,100">&lt;%
+&lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="180" name="C1P44V1" tags="variation" position="2850,10800" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;);
 %&gt;
@@ -2322,7 +2322,7 @@ We sit for a moment, while I process what this little girl just described to me.
 
 &quot;I&#39;m not sure, I couldn&#39;t get back to him or my mom after everything went to shit. I like to think they&#39;re out there somewhere, but it&#39;s unlikely&quot;, I reply.
 
-&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="181" name="C1P44V2" tags="variation" position="3075,10800" size="100,100">&lt;%
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="181" name="C1P44V2" tags="variation" position="3000,10800" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot;);
 %&gt;
@@ -2345,7 +2345,7 @@ She looks up from her meal.
 
 &quot;Sometimes, but I&#39;m used to it. I&#39;ve been on my own for a shit long time&quot;, I reply.
 
-&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P44V3" tags="variation" position="3225,10800" size="100,100">&lt;%
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
 window.story.setChoice(&quot;Chapter1&quot;, &quot;HowToKill&quot;);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;);
@@ -2395,7 +2395,7 @@ Lucy turns to look at me as I close the door. She looks away again, back at the 
 
 [[...|C1P45V1]]&lt;br&gt;
 [[No stress|C1P45V2]]&lt;br&gt;
-[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="184" name="F: Better get going" tags="floater" position="3425,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="184" name="F: Better get going" tags="floater" position="3500,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 &lt;% print(tiffany) %&gt;&#39;s face contorts into a look of shock.
 
@@ -2602,15 +2602,15 @@ Lucy looks at me and nods, then runs out the door, I go right behind her.
 
 [[Go through the door|C1P52V2]]</tw-passagedata><tw-passagedata pid="209" name="C1P52V1" tags="variation" position="3000,12450" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
-I walk through the doorway back into the Kitchen, Lucy is already at the door to the hallway.
+I go through the doorway back into the Kitchen, Lucy is already at the door to the hallway.
 
-&quot;Mom?!&quot;, &lt;% print(tiffany) %&gt; says, clearly distressed.
+&quot;Mom?!&quot;, &lt;% print(tiffany) %&gt; says, sounding distressed.
 
 &lt;i&gt;&quot;Oh fuck, help!&quot;&lt;/i&gt;, the voice screams from outside. It sounds like guy.
 
 &quot;Don&#39;t worry, she&#39;s handling it&quot;, I say as I approach &lt;% print(tiffany) %&gt;.
 
-&quot;Handling what?&quot;, she asks, fear in her eyes.
+&quot;Handling what?&quot;, she asks looking at me, fear in her eyes.
 
 &quot;Nothing good...&quot;, I reply.
 
@@ -2642,7 +2642,9 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	window.story.render(&quot;F: Lucy goes outside&quot;);
 }
-%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="3025,13625" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2800,12675" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2800,12525" size="100,100">Lucy pulls out her knife, opens the door, and disappears through it.
+
+Shit, she</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="3025,13625" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -2965,7 +2967,37 @@ I go up the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
 
 She doesn&#39;t say a word, she must be in shock... I guess I am too for that matter.
 
-[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3025,14100" size="100,100">Running trying to find the stranger?</tw-passagedata></tw-storydata>
+[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3025,14100" size="100,100">Running trying to find the stranger?</tw-passagedata><tw-passagedata pid="248" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+&quot;Hey, I got you something&quot;, I say to &lt;% print(tiffany) %&gt;, as I get the spinning top out of my pocket.
+
+&quot;You did?&quot;, she replies, her eyes lighting up as if it was Christmas.
+
+&quot;Here&quot;, I say, holding out the spinning top.
+
+&quot;What is it?&quot;, &lt;% print(tiffany) %&gt; asks, taking it in her small hands.
+
+&quot;It&#39;s called a spinning top... it&#39;s a toy, kinda&quot;, I reply.
+
+&quot;How does it work?&quot;, &lt;% print(tiffany) %&gt; says, sounding intrigued.
+
+&quot;Let me show you&quot;, I reply.
+
+I reach out and place my hand on hers, move the spinning top the correct way up, then move our hands down to the tabletop. I take my hand back.
+
+&quot;Now, grab the top, and twist&quot;, I remark.
+
+She does, and the spinning top spins.
+
+&quot;Woah&quot;, &lt;% print(tiffany) %&gt; says, as the colors on the spinning top glitter.
+
+We both sit and watch it for a moment, till it spins itself out.
+
+&lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="249" name="F: Tiff Breakfast Talk Options" tags="floater" position="3650,10675" size="100,200">[[Where&#39;s your dad?|C1P44V1]]&lt;br&gt;
+[[Where have you guys been staying?|C1P44V2]]&lt;br&gt;
+[[How many walkers have you killed?|C1P44V3]]&lt;br&gt;
+
+[[[Go talk to Lucy]|C1P45]]</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
