@@ -820,7 +820,7 @@ I wonder if there&#39;s anything else around here I can use.
 	}
 
 	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) {
-		print(&quot;[[[Look the under sink]|C1P7V12]]&lt;br&gt;&quot;);
+		print(&quot;[[[Look under the sink]|C1P7V12]]&lt;br&gt;&quot;);
 	}
 
 	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) {
@@ -975,7 +975,7 @@ if (
 }
 %&gt;</tw-passagedata><tw-passagedata pid="27" name="C1P7V22" tags="variation" position="3375,2075" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
 
-I open the drying machine- Jackpot! A &#39;clean&#39; white shirt; looks like it has been sitting in here for years, but the closed dryer door did a good job of keeping it clean. 
+I open the drying machine- Jackpot! A &#39;clean&#39; white shirt, I can use this as a bandage; looks like it has been sitting in here for years, but the closed dryer door did a good job of keeping it clean. 
 
 &lt;% } else { %&gt;
 
@@ -1010,7 +1010,7 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;);
 I take out the white shirt.
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) {
-	print(&quot;[[Search the washing machine]|C1P7V21]]&lt;br&gt;&quot;);
+	print(&quot;[[[Search the washing machine]|C1P7V21]]&lt;br&gt;&quot;);
 } %&gt;
 
 &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
@@ -1098,6 +1098,7 @@ Where the hell am I, and what the fuck is in my arm?!
 &lt;/i&gt;
 
 &lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="36" name="C1P12" tags="page" position="3075,3300" size="100,100">&lt;i&gt;
+I groan and roll over.
 
 &quot;Pleeease can you take me today? It sounds so cool!&quot;, the girl says.
 
@@ -1210,7 +1211,11 @@ I stare into her eyes for a moment longer.
 
 &lt;%= window.story.render(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P17V3" tags="variation" position="3225,4650" size="100,100">&quot;What&#39;s your name?&quot;, &lt;%= window.story.render(&quot;F: Dry mouth, need drink&quot;) %&gt;.
 
-&lt;%= window.story.render(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="floater" position="3575,4650" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="page" position="3075,4800" size="100,100">The voices stop, there are more footsteps- The door is opening. A woman steps through: she has brown hair done up in a bun, soft brown eyes, is wearing cargo pants and a tshirt, and is in her mid-30s if I had to guess. She has a sort of weathered look about her.
+&lt;%= window.story.render(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="F: Dry mouth, need drink" tags="floater" position="3575,4650" size="100,100">I croak; my mouth is so dry, I really need a drink</tw-passagedata><tw-passagedata pid="61" name="C1P18" tags="page" position="3075,4800" size="100,100">The voices stop, there are more footsteps- The door is opening.
+
+A woman steps through: she has brown hair done up in a bun, soft brown eyes, is wearing cargo pants and a tshirt, and is in her mid-30s if I had to guess. She has a sort of weathered look about her.
+
+She notices I am looking her over.
 
 &quot;Sizing me up are you?&quot;, she asks.
 
@@ -1408,7 +1413,7 @@ Lucy crosses her arms.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) { %&gt;
 
-&quot;You know that disinfectant you had on you is for cleaning, right?&quot;, Lucy remarks.
+&quot;You know that disinfectant you had on you is for cleaning floors, right?&quot;, Lucy remarks.
 
 &quot;Yeah I know, but it was all I could find. Couldn&#39;t exactly take myself down to the local chemist&quot;, I reply.
 
@@ -1560,7 +1565,7 @@ She pauses for a moment.
 
 &quot;Sophia&quot;, she finally says.
 
-&quot;Tell me who Sophia is&quot;, she says.
+&quot;If you tell me who Sophia is&quot;, she says.
 
 [[[Pause in shock]|C1P26]]</tw-passagedata><tw-passagedata pid="113" name="Tags" tags="info" position="3875,875" size="200,100">menu: Title Screen/Menu/Miscellaneous player interaction stuff.
 
@@ -1582,17 +1587,17 @@ Sophia, my little sister... how does she even know about her? Why does she want 
 
 &quot;It&#39;s pretty clear she&#39;s important to you&quot;, Lucy says, interrupting my thoughts.
 
-&quot;You want to know about what&#39;s important in my life, so it seems only fair you tell me about what&#39;s important in your&quot;, she stipulates.
+&quot;You want to know about what&#39;s important in my life, so it seems only fair you tell me about what&#39;s important in yours&quot;, she stipulates.
 
 I look at her with a mixture of emotions showing.
 
-&quot;How... how do you know about-&quot;, I start to say.
+&quot;How... how do you know-&quot;, I start to say.
 
 &quot;You were calling out to her, while you were under. You were on death&#39;s doorstep, and that&#39;s who was in your mind...&quot;, she explains.
 
 [[She&#39;s dead.|C1P27V1]]&lt;br&gt;
 [[I loved her, very much.|C1P27V2]]&lt;br&gt;
-[[She gave up, a long time ago.|C1P27V3]]</tw-passagedata><tw-passagedata pid="115" name="C1P27V1" tags="variation" position="2925,6750" size="100,100">&quot;She was my sister&quot;, I say in a quivering tone, with tears starting to form.
+[[She gave up a long time ago.|C1P27V3]]</tw-passagedata><tw-passagedata pid="115" name="C1P27V1" tags="variation" position="2925,6750" size="100,100">&quot;She was my sister&quot;, I say in a quivering tone, with tears starting to form.
 
 I take a deep breath to center myself.
 
@@ -1646,7 +1651,7 @@ I never had the chance to properly mourner her, I was too busy focusing on my ow
 
 I think about her while I&#39;m laying here.
 
-Maybe the reason I never death with her death, was because I was scared. Scared that I&#39;d realize that I-
+Maybe the reason I never dealt with her death, was because I was scared. Scared that I&#39;d realize that I-
 
 &lt;div-#delayed&gt;
 
@@ -1676,7 +1681,7 @@ I need a new purpose in life. Something worth living for. Surviving by itself is
 
 I need to atone for what I did.
 
-I can&#39;t bring Sophia back... but maybe I find something good in this world to dedicate myself to, in her name. 
+I can&#39;t bring Sophia back... but maybe I can find something good in this world to dedicate myself to, in her name. 
 
 [[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="126" name="C1P33R1" tags="redirect" position="3075,7800" size="100,100">&lt;% window.story.redirect(&quot;C1P34&quot;, 7) %&gt;</tw-passagedata><tw-passagedata pid="127" name="Choices" tags="info" position="3875,1025" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot; - Knocked on the door to see if anyone was home
 
@@ -1780,7 +1785,7 @@ I can&#39;t bring Sophia back... but maybe I find something good in this world t
 
 &lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;i&gt;&quot;Sarah?&quot;&lt;/i&gt;, a voice says. I start to stir from my sleep.
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="129" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;i&gt;&quot;Sarah?&quot;&lt;/i&gt;, a voice says softly. I start to stir from my sleep.
 
 There&#39;s someone near my face again... Sophia back to haunt me?
 
@@ -1796,7 +1801,7 @@ How does she know my name? Lucy must have told her...
 
 [[...|C1P35V2]]&lt;br&gt;
 [[Morning...?|C1P35V1]]&lt;br&gt;
-[[Lose something?|C1P35V3]]</tw-passagedata><tw-passagedata pid="131" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">I stare back at here for a moment.
+[[Lose something over here?|C1P35V3]]</tw-passagedata><tw-passagedata pid="131" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">I stare back at here for a moment.
 
 &lt;%= window.story.render(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="132" name="C1P35V1" tags="variation" position="2925,8250" size="100,100">&quot;Um...&quot;, I start. My throat is still dry. I cough to clear it a little.
 
@@ -1873,7 +1878,9 @@ The other door swings open, speak of the devil. Lucy walks in.
 
 &lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="140" name="C1P36V3" tags="variation" position="3225,8700" size="100,100">&quot;Like shit&quot;, I say.
 
-&quot;Hmm, you haven&#39;t had any to eat in days. Once you get some food in you you&#39;ll feel better. But first&quot;, she says.
+She takes a breath as if to say something, but stops, then shakes her head.
+
+&quot;Hmm, you haven&#39;t had anything to eat in days. Once you get some food in you you&#39;ll feel better. But first&quot;, she says.
 
 &lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="141" name="F: Get that out" tags="floater" position="3425,8700" size="100,100">Lucy points at my arm.
 
@@ -1959,7 +1966,7 @@ I thought it was pretty funny.
 
 &quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;</tw-passagedata><tw-passagedata pid="150" name="F: Breakfast time!" tags="floater" position="3425,9000" size="100,100">&quot;Alright, you&#39;re good to go&quot;, Lucy says, removing the cotton wall ball.
 
-&quot;Let&#39;s get some food in you&quot;, she says as she gets up heads towards the door.
+&quot;Let&#39;s get some food in you&quot;, she says as she gets up and heads towards the door.
 
 I slowly get up off the sofa.
 
@@ -1967,7 +1974,7 @@ I slowly get up off the sofa.
 
 That sounded like an invitation to have a look around.
 
-I stand up- Woah, my right leg is, like, stiff? It feels kinda like when you set on it for too long and you cut all the blood off from it.
+I stand up- Woah, my right leg is, like, stiff? It feels kinda like when you sit on it for too long and you cut all the blood off from it.
 
 I slowly take a few steps; yeah, I can manage this. She&#39;ll be right.
 
@@ -2021,7 +2028,7 @@ I walk up to the hat hanger and look at the clear bag of fluid, what&#39;s left 
 
 I take it off the hanger, it&#39;s a long, crumpled up, clear bag, and it looks rather worn. There&#39;s some writing on it I can still make out though, &quot;Sodium Chloride 0.9% 1000ml - For Intravenous Infusion&quot;. I thought Lucy said it was just salty water...
 
-There&#39;s more writing near the bottom, &quot;Sterile non-pyrogenic... osmolality 308 mOsm/kg water... isotonic... pH 4.5 - 7&quot;, OK I feel like I&#39;m back in highschool science class again, I have no clue what all this means.
+There&#39;s more writing near the bottom, &quot;Sterile non-pyrogenic... osmolality 308 mOsm/kg water... isotonic... pH 4.5 - 7&quot;, OK I feel like I&#39;m back in highschool science class again, I have no clue what any of this means.
 
 I put the bag back on the hanger.
 
@@ -2110,7 +2117,7 @@ I let the water in the sink go, and head back into the hallway.
 
 I sit down at the table.
 
-&quot;I&#39;ll fill you a bowel&quot;, Lucy says as she stands up from the table.
+&quot;I&#39;ll fix you a bowel&quot;, Lucy says as she stands up from the table.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
@@ -2278,7 +2285,7 @@ I glance at Lucy. She looks back uncomfortably, but doesn&#39;t say anything.
 
 &lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="F: Come chat" tags="floater" position="3425,10500" size="100,100">I get back to my bowel.
 
-&quot;Sarah, come chat with me when you&#39;re finish&quot;, Lucy says, and she stands up and heads for the other door.
+&quot;Sarah, come chat with me when you&#39;re finished&quot;, Lucy says, and she stands up and heads for the other door.
 
 &quot;Yeah, sure&quot;, I reply.
 
@@ -2442,7 +2449,7 @@ I walk over to Lucy. I glance down at the picture frames she was looking at, the
 [[She&#39;s still happy|C1P46V2]]&lt;br&gt;
 [[You still love her|C1P46V3]]</tw-passagedata><tw-passagedata pid="190" name="C1P46V1" tags="variation" position="2925,11400" size="100,100">I look at Lucy, then back at the frames.
 
-&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P46V2" tags="variation" position="3075,11400" size="100,100">&quot;She still look pretty happy to me&quot;, I state.
+&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P46V2" tags="variation" position="3075,11400" size="100,100">&quot;She still looks pretty happy to me&quot;, I state.
 
 &lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P46V3" tags="variation" position="3225,11400" size="100,100">&quot;You still love her, she has that&quot;, I say.
 
@@ -2510,6 +2517,8 @@ She knows I&#39;m right.
 
 &quot;I&#39;m doing the best I can to keep her alive; there&#39;s not exactly a handbook on &#39;How to raise a child in the apocalypse&#39;&quot;, she remarks.
 
+She looks out towards the window for a few moments.
+
 [[Why did you save me?|C1P48]]</tw-passagedata><tw-passagedata pid="200" name="C1P48" tags="page" position="3075,11700" size="100,100">&quot;Why did you save me, really&quot;, I ask.
 
 Lucy is silent for a moment.
@@ -2558,7 +2567,7 @@ Lucy takes a moment to center herself.
 
 My heart skips a beat, I haven&#39;t been with other people long term since... Sophia.
 
-&quot;I know it&#39;s a lot to lay on you all at once, but, I&#39;ve thought about it;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;) &gt; 0) print(&quot; you&#39;re resourceful,&quot;) %&gt; you clearly know how to survive out there, you can pull your own weight, and you&#39;ll have an influence on Tiffany&quot;, she explains.
+&quot;I know it&#39;s a lot to lay on you all at once, but, I&#39;ve thought about it;&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;) &gt; 0) print(&quot; you&#39;re resourceful,&quot;) %&gt; you clearly know how to survive out there, you can pull your own weight, and you&#39;ll have an influence on Tiffany&quot;, she explains.
 
 &quot;Don&#39;t know if it will be a good or bad influence, we&#39;ll have to find out, together&quot;, she says with a slight smile.
 
@@ -2703,7 +2712,7 @@ Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.sto
 
 I close the door behind me and immediately get slapped by the rain. It&#39;s pouring out here. I reach down for my knife- fuck, I forgot I don&#39;t have it!
 
-&lt;% if (window.story.getChoice(&quot;Haircut&quot;)) { %&gt;
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
 I feel around in my pockets, ah! The scissors! Seems like a waste, they&#39;ll be ruined, but better than going out here with my bare hands...
 
@@ -2874,7 +2883,7 @@ A hand appears through one of the boarded-up windows in the hallway, between whe
 
 He grabs it and throws it in my direction, I catch it, and head towards the window, pushing through the pain in my leg. As I approach, I raise the bat well above my head and bring it down on the arm with all my strength.
 
-The bat hit the arm and kept going. The arm made a horrible snapping noise, as whatever bone was left in the walker&#39;s arm turned to dust. The bat hits the ground and splits in two. The arm, pointing 90 degrees downward now, continued to twitch and wriggle.
+The bat hits the arm and keeps going; the arm makes a horrible snapping noise, as whatever bones were left in the walker&#39;s arm turned to dust. The bat hits the ground and splits in two. The arm, pointing 90 degrees downward now, continues to twitch and wriggle.
 
 I drop the bat and look up towards the kitchen to meet Lucy&#39;s gaze.
 
@@ -2905,7 +2914,7 @@ I look back at Lucy, she has her knife out now. She quickly stabs the arm severa
 I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; in one hand, her knife in the other, and is head down the hallway towards me. As she passes the window, she makes one clean swipe at the hand and it comes clean off. Impressive.
 
 [[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="243" name="C1P54V211" tags="variation" position="3725,13800" size="100,100">&lt;%
-window.story.delayedText(15 * 1000);
+window.story.delayedText(20 * 1000);
 const tiffany = window.story.tiffany();
 %&gt;
 
@@ -2945,7 +2954,7 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;);
 
 Fuck that, I can&#39;t just leave her!
 
-I step past &lt;% print(tiffany) %&gt; back towards Lucy. I get to the last step right as a walker leans over and takes a massive chunk out of Lucy&#39;s neck.
+I step past &lt;% print(tiffany) %&gt; back towards Lucy. I get to the last step right as one of the fallen walkers leans over and takes a massive chunk out of Lucy&#39;s neck.
 
 &quot;Argh! Ugh...&quot;, Lucy gurgles.
 
@@ -2953,7 +2962,7 @@ I step past &lt;% print(tiffany) %&gt; back towards Lucy. I get to the last step
 
 &quot;Just... go...&quot;, Lucy manages to gargle.
 
-More walkers are going through the open doorway now. I take one last look at Lucy&#39;s lifeless body, then spin around to &lt;% print(tiffany) %&gt;.
+More walkers are going through the open doorway now. I take one last look Lucy, then spin around to &lt;% print(tiffany) %&gt;.
 
 The look on her face will be burned into my brain for as long as I live. Her blue eyes staring, unblinking, tears budding in the corners of her eyes, her face slowly going pale. **She won&#39;t forget this**.
 
@@ -2979,6 +2988,8 @@ I go up the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
 &quot;Come on &lt;% print(tiffany) %&gt;, there&#39;s nothing we can do for her&quot;, I say, pulling her up the stairs.
 
 She doesn&#39;t say a word, she must be in shock... I guess I am too for that matter.
+
+&quot;Ugh, ugh...&quot;, Lucy gurgles somewhere behind me. I don&#39;t look back.
 
 [[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3025,14100" size="100,100">Running trying to find the stranger?</tw-passagedata><tw-passagedata pid="248" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
@@ -3010,7 +3021,7 @@ We both sit and watch it for a moment, till it spins itself out.
 [[Where have you guys been staying?|C1P44V2]]&lt;br&gt;
 [[How many walkers have you killed?|C1P44V3]]&lt;br&gt;
 
-[[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="250" name="C1P53V11" tags="variation" position="2350,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
+[[[**Go talk to Lucy**]|C1P45]]</tw-passagedata><tw-passagedata pid="250" name="C1P53V11" tags="variation" position="2350,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
 
 She slowly nods her head, but I think she&#39;s only doing that for my benefit...
 
