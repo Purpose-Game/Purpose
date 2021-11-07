@@ -127,6 +127,7 @@ let justLoaded;
 let debugNotification;
 let saveNotification;
 
+window.story.state.chapter = "";
 window.story.state.choices = {};
 window.story.state.achievements = {};
 
@@ -172,7 +173,6 @@ window.story.player.name = "Player";
 window.story.player.id = "0";
 window.story.player.key = "0";
 
-window.story.chapter = "";
 window.story.saving;
 window.story.saveSlot = 1;
 window.story.network;
@@ -556,21 +556,21 @@ window.story.toggleDebug = function () {
 window.story.loadStats = function () {
 	$.post("https://purpose-game.com/stats", {
 		key: window.story.player.key,
-		chapter: window.story.chapter
+		chapter: window.story.state.chapter
 	}).done(function(data) {
 		$("#statsLoading").hide();
 		
 		for (const stat in data) {
-			/*if (!window.story.state.choices[window.story.chapter].hasOwnProperty(stat)) {
+			if (!window.story.state.choices[window.story.state.chapter] || !window.story.state.choices[window.story.state.chapter].hasOwnProperty(stat)) {
 				continue;
-			}*/
+			}
 			
 			let message;
 			
-			if (window.story.getChoice(window.story.chapter, stat)) {
-				message = `You and ${data[stat][0]} of players ${window.story.choiceDescriptions[window.story.chapter][stat][0]}`;
+			if (window.story.getChoice(window.story.state.chapter, stat)) {
+				message = `You and ${data[stat][0]} of players ${window.story.choiceDescriptions[window.story.state.chapter][stat][0]}`;
 			} else {
-				message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[window.story.chapter][stat][1]}`;
+				message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[window.story.state.chapter][stat][1]}`;
 			}
 			
 			$("#statsContainer").append(`<p>${message}</p><progress class="didBar" value="${data[stat][0].slice(0, -1)}" max="100"></progress><br><progress class="didNotBar" value="${data[stat][1].slice(0, -1)}" max="100"></progress>`);	
@@ -620,7 +620,7 @@ $("head").append('<link rel="apple-touch-icon" sizes="180x180" href="data:image/
 #### Poor Choices
 
 &lt;%
-window.story.chapter = &quot;Chapter1&quot;;
+window.story.state.chapter = &quot;Chapter1&quot;;
 
 window.story.delayedText(2000, &quot;one&quot;, 0);
 window.story.delayedText(3000, &quot;two&quot;, 0);
@@ -2676,14 +2676,7 @@ Sarah hurts her leg one way or another
 If saved rando, survive till start of next episode?
 Escape upstairs, on the pattio, then over the wall
 Tiffany cries and won&#39;t go over the wall
-Tiff saves Sarah if you taught her how to</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;%
-window.story.player.key = &quot;YlXRjGbXcSWJ8pr15iqo5r6e4PLnsAhS7fYlMZfzF59o22wIYv6zjVy997S8ejYC&quot;;
-window.story.chapter = &quot;Chapter1&quot;;
-
-window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
-%&gt;
-
-&lt;% window.story.loadStats() %&gt;
+Tiff saves Sarah if you taught her how to</tw-passagedata><tw-passagedata pid="215" name="Stats Test" tags="" position="3450,750" size="200,200">&lt;% window.story.loadStats() %&gt;
 
 &lt;span#statsLoading&gt;Loading...&lt;/span&gt;
 
