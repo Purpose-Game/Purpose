@@ -161,6 +161,10 @@ window.story.choiceDescriptions = {
 			"went outside to save the stranger",
 			"stayed inside and tried to keep the stranger out"
 		],
+		"LucySavesStranger": [
+			"influenced Lucy to save the stranger",
+			"influenced Lucy to try and keep the stranger out"
+		],
 		"TriedToSaveLucy": [
 			"tried to save Lucy, but let Tiffany watch her die",
 			"did as Lucy asked, saved Tiffany from watching her die"
@@ -2652,7 +2656,10 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	window.story.render(&quot;F: Lucy goes outside&quot;);
 }
-%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2825,12750" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+%&gt;</tw-passagedata><tw-passagedata pid="212" name="F: Lucy stays inside" tags="floater" position="2825,12750" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;, false);
+%&gt;
 
 She holds eye contact for a moment, then looks back at the door, and looks around it. Is she looking for a way to lock it? I guess she&#39;s not going out there. Probably for the best.
 
@@ -2660,7 +2667,10 @@ She holds eye contact for a moment, then looks back at the door, and looks aroun
 
 [[...|C1P53V122]]&lt;br&gt;
 [[She&#39;s keeping us safe|C1P53V121]]&lt;br&gt;
-[[She&#39;s helping someone outside [Lie]|C1P53V123]]</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2125,12750" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[She&#39;s helping someone outside [Lie]|C1P53V123]]</tw-passagedata><tw-passagedata pid="213" name="F: Lucy goes outside" tags="floater" position="2125,12750" size="100,100">&lt;%
+const tiffany = window.story.tiffany();
+window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;);
+%&gt;
 
 Lucy pulls out her knife, opens the door, and disappears through it.
 
@@ -2670,7 +2680,7 @@ I look back at &lt;% print(tiffany) %&gt;, she&#39;s still sitting at the table,
 
 [[...|C1P53V112]]&lt;br&gt;
 [[She&#39;ll be fine &lt;% print(tiffany) %&gt;|C1P53V111]]&lt;br&gt;
-[[[Extend hand out to &lt;% print(tiffany) %&gt;]|C1P53V113]]</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2425,13100" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+[[[Extend hand out to &lt;% print(tiffany) %&gt;]|C1P53V113]]</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2400,13100" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -3074,7 +3084,7 @@ She gets to the doorway.
 
 &quot;Let&#39;s go&quot;, she says. &lt;% print(tiffany) %&gt; and I file out of the room, Lucy follows behind us
 
-[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="256" name="F: Walkers!" tags="floater" position="3075,13300" size="100,200">&quot;Alright, what we need to do now is-&quot;, I begin to say.
+[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="256" name="F: Walkers!" tags="floater" position="1775,13200" size="100,200">&quot;Alright, what we need to do now is-&quot;, I begin to say.
 
 \*Crash\*
 
@@ -3118,7 +3128,11 @@ He props himself up, a look of shock on his face. I don&#39;t think he knew we w
 
 There&#39;s a moment of silence. His expression turns to one of anger.
 
-&quot;Oi, why didn&#39;t you-&quot;, the stranger starts to say angrily, but before he can finish, Lucy is back on her feet, and lunging towards him with her knife.</tw-passagedata></tw-storydata>
+&quot;Oi, why didn&#39;t you-&quot;, the stranger starts to say angrily, but before he can finish, Lucy is back on her feet, and lunging towards him with her knife.
+
+[[...|C1P54V1212]]&lt;br&gt;
+[[Lucy stop!|C1P54V1211]]&lt;br&gt;
+[[Watch out for the bat!|C1P54V1213]]</tw-passagedata><tw-passagedata pid="262" name="C1P54V1211" tags="variation" position="2675,13200" size="100,100">&quot;Lucy stop!&quot;, I shout at her. What the hell is she doing?!</tw-passagedata><tw-passagedata pid="263" name="C1P54V1212" tags="variation" position="2825,13200" size="100,100">I don&#39;t know what the hell she&#39;s doing, but now is not the time to interrupt.</tw-passagedata><tw-passagedata pid="264" name="C1P54V1213" tags="variation" position="2975,13200" size="100,100">&quot;Watch out for the bat!&quot;, I shout.</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
