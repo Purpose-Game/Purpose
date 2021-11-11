@@ -2677,13 +2677,13 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;);
 
 Lucy pulls out her knife, opens the door, and disappears through it.
 
-What the hell is she doing?! I turn to the boarded-up window on my left, I try to find a gap to look through, but between the boards and the rain outside, I can&#39;t see jack shit.
+What the hell is she doing?! I turn to the boarded-up window on my left, I try to find a gap to look through, but between the boards and the rain outside, I can&#39;t see jack shit... just, walkers.
 
 I look back at &lt;% print(tiffany) %&gt;, she&#39;s still sitting at the table, looking terrified.
 
 [[...|C1P53V112]]&lt;br&gt;
 [[She&#39;ll be fine &lt;% print(tiffany) %&gt;|C1P53V111]]&lt;br&gt;
-[[[Extend hand out to &lt;% print(tiffany) %&gt;]|C1P53V113]]</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="2200,13625" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
+[[[Extend hand out to &lt;% print(tiffany) %&gt;]|C1P53V113]]</tw-passagedata><tw-passagedata pid="214" name="" tags="" position="1625,13650" size="200,200">Lucy goes outside // Fight outside // Rando comes in // Lucy dies outside?
 
 Lucy stays inside // Rando forces way in // Rando kills Lucy?
 
@@ -2879,7 +2879,13 @@ What an asshole.
 
 &lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="238" name="C1P53V211111" tags="variation" position="3350,13350" size="100,100">I awkwardly spin towards Lucy, I really did a number on my leg.
 
-&lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="239" name="F: What we need to do now" tags="floater" position="3725,13500" size="100,100">&lt;%= window.story.render(&quot;F: Walkers!&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="239" name="F: What we need to do now" tags="floater" position="3725,13500" size="100,100">&quot;Alright, what we need to do now is-&quot;, I begin to say.
+
+\*Crash\*
+
+A hand appears through one of the boarded-up windows in the hallway, between the front door and the kitchen.
+
+&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house starts to be heard.
 
 [[&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles,&quot;) } else { print(&quot;The&quot;) } %&gt; Bat!|C1P54V21]]&lt;br&gt;
 [[Upstairs, quickly!|C1P54V22]]&lt;br&gt;
@@ -2899,7 +2905,7 @@ I drop the bat and look up towards the kitchen to meet Lucy&#39;s gaze.
 
 Lucy grabs &lt;% print(window.story.tiffany()) %&gt; from somewhere beside her and starts booking it down the hallway towards me.
 
-[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="241" name="C1P54V22" tags="variation" position="3725,13650" size="100,100">&quot;Upstairs, quickly!&quot;, I shout.
+[[Head for the stairs|C1P55]]</tw-passagedata><tw-passagedata pid="241" name="C1P54V22" tags="variation" position="3725,13650" size="100,100">&quot;Upstairs, quickly!&quot;, I shout.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;The stranger&quot;) } %&gt; doesn&#39;t need to be told twice, he scrambles to the stairs and starts going up.
 
@@ -2911,7 +2917,7 @@ I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; and
 
 I look back at Lucy, she has her knife out now. She quickly stabs the arm several times, then takes a swipe at it. The arm comes clean off.
 
-[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="242" name="C1P54V23" tags="variation" position="3875,13650" size="100,100">Without thinking I bolt for the kitchen, pushing through the pain in my leg.
+[[Head for the stairs|C1P55]]</tw-passagedata><tw-passagedata pid="242" name="C1P54V23" tags="variation" position="3875,13650" size="100,100">Without thinking I bolt for the kitchen, pushing through the pain in my leg.
 
 &quot;No!&quot;, Lucy shouts. I stop running.
 
@@ -2921,12 +2927,12 @@ I look back at Lucy, she has her knife out now. She quickly stabs the arm severa
 
 I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; in one hand, her knife in the other, and is head down the hallway towards me. As she passes the window, she makes one clean swipe at the hand and it comes clean off. Impressive.
 
-[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="243" name="C1P54V211" tags="variation" position="3075,13850" size="100,100">&lt;%
+[[Head for the stairs|C1P55]]</tw-passagedata><tw-passagedata pid="243" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;%
 window.story.delayedText(20 * 1000);
 const tiffany = window.story.tiffany();
 %&gt;
 
-I head for the stairs, &lt;% print(tiffany) %&gt; and Lucy right behind me. No sign of &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;the stranger&quot;) } %&gt;, he must be upstairs already.
+I head for the stairs, &lt;% print(tiffany) %&gt; and Lucy right behind me. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;No sign of Charles, he must be upstairs already.&quot;) } %&gt;
 
 I get to the first step and stop, I look behind me to make sure the other two are still following me. &lt;% print(tiffany) %&gt; hot on my heels, Lucy just behind her.
 
@@ -2938,15 +2944,13 @@ The door! Lucy hears it too.
 
 &lt;div-#delayed&gt;
 
-\*Crash\*
+\*Crash, bang\*
 
 &quot;Argh!&quot;, Lucy shouts behind me.
 
 I look behind me; the front door has come clean off its hinges, landed on Lucy, and there are 4 or 5 walkers piled on top of the fallen door! 
 
-Lucy must have dropped her knife, because it&#39;s laying on the stairs in front of her.
-
-&quot;Shit, no!&quot;, I exclaim, as I head back down the stairs. I pick up the knife and start towards the walkers.
+&quot;Shit, no!&quot;, I exclaim, as I head back down the stairs. Lucy must have dropped her knife, because it&#39;s laying on the stairs in front of her. I pick it up and start towards the walkers.
 
 &quot;No!&quot;, Lucy wails.
 
@@ -2954,10 +2958,10 @@ Lucy must have dropped her knife, because it&#39;s laying on the stairs in front
 
 The walkers are starting to get up. I look down at &lt;% print(tiffany) %&gt;, she&#39;s frozen in place, hands to her face, looking down at her mom.
 
-[[[Try to help Lucy]|C1P54V2111]]
-[[[Grab &lt;% print (tiffany) %&gt; and go]|C1P54V2112]]
+[[[Try to help Lucy]|C1P55V1]]
+[[[Grab &lt;% print (tiffany) %&gt; and go]|C1P55V2]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="C1P54V2111" tags="variation" position="3000,14000" size="100,100">&lt;%
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="244" name="C1P55V1" tags="variation" position="3000,14000" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;);
 %&gt;
@@ -2976,7 +2980,7 @@ More walkers are going through the open doorway now. I take one last look Lucy, 
 
 The look on her face will be burned into my brain for as long as I live. Her blue eyes staring, unblinking, tears budding in the corners of her eyes, her face slowly going pale. **She won&#39;t forget this**.
 
-[[[Grab &lt;% print (tiffany) %&gt;]|C1P54V21111]]</tw-passagedata><tw-passagedata pid="245" name="C1P54V2112" tags="variation" position="3150,14075" size="100,100">&lt;%
+[[[Grab &lt;% print (tiffany) %&gt;]|C1P55V11]]</tw-passagedata><tw-passagedata pid="245" name="C1P55V2" tags="variation" position="3150,14075" size="100,100">&lt;%
 const tiffany = window.story.tiffany();
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;, false);
 %&gt;
@@ -2991,7 +2995,7 @@ I go down the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand
 
 &quot;&lt;% print(tiffany) %&gt;, move!&quot;, I shout, continuing to pull her up the stairs.
 
-[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="246" name="C1P54V21111" tags="variation" position="3000,14150" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[[Go up the stairs]|C1P56]]</tw-passagedata><tw-passagedata pid="246" name="C1P55V11" tags="variation" position="3000,14150" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 I go up the stairs towards &lt;% print(tiffany) %&gt; and grab her by the hand.
 
@@ -3001,7 +3005,7 @@ She doesn&#39;t say a word, she must be in shock... I guess I am too for that ma
 
 &quot;Ugh, ugh...&quot;, Lucy gurgles somewhere behind me. I don&#39;t look back.
 
-[[[Go up the stairs]|C1P55V2]]</tw-passagedata><tw-passagedata pid="247" name="C1P55V2" tags="variation" position="3075,14300" size="100,100">Running trying to find the stranger?</tw-passagedata><tw-passagedata pid="248" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[[Go up the stairs]|C1P56]]</tw-passagedata><tw-passagedata pid="247" name="C1P56" tags="page" position="3075,14300" size="100,100">Running trying to find the stranger?</tw-passagedata><tw-passagedata pid="248" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 &quot;Hey, I got you something&quot;, I say to &lt;% print(tiffany) %&gt;, as I get the spinning top out of my pocket.
 
@@ -3070,42 +3074,20 @@ She moves to the door, looking ready to close it. Suddently, and man comes bolti
 Charles jumps a little, he must not have seen me; but he quickly recovers and gives me a little slow-wave.
 
 [[We need to hide|C1P54V111]]&lt;br&gt;
-[[We need to get out of here|C1P54V111]]&lt;br&gt;
-[[We need to fortify this place|C1P54V111]]</tw-passagedata><tw-passagedata pid="255" name="C1P54V111" tags="variation" position="2125,13200" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[We need to get out of here|C1P54V112]]&lt;br&gt;
+[[We need to fortify this place|C1P54V113]]</tw-passagedata><tw-passagedata pid="255" name="C1P54V111" tags="variation" position="1975,13200" size="100,100">&quot;We need to hide, and quickly. Those walkers will be on us any minute.&quot;, I say.
 
-&lt;%= window.story.render(&quot;F: Walkers!&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="256" name="C1P53V122" tags="variation" position="2825,12900" size="100,100">I don&#39;t know how to explain to her Lucy isn&#39;t helping whoever&#39;s outside...
 
-&quot;We&#39;ll go around!&quot;, I shout to Lucy, as I move towards &lt;% print(tiffany) %&gt;.
-
-&quot;No time!&quot;, Lucy shouts back, I stop. Lucy turns back to look at Charles.
-
-&quot;Get upstairs&quot;, she says. He doesn&#39;t need to be told twice, he starts scrambling up the stairs.
-
-Lucy turns back and starts down the hallway towards us, she pulls her knife out. As she passes the window, she makes one clean swipe at the hand and it comes clean off. Impressive.
-
-I look over at &lt;% print(tiffany) %&gt;, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified.
-
-Lucy gets to the doorway.
-
-&quot;Let&#39;s go&quot;, she says.
-
-&lt;%= window.story.render(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="256" name="F: Walkers!" tags="floater" position="1775,13200" size="100,200">&quot;Alright, what we need to do now is-&quot;, I begin to say.
-
-\*Crash\*
-
-A hand appears through one of the boarded-up windows in the hallway, between the front door and the kitchen.
-
-&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house start to be heard.</tw-passagedata><tw-passagedata pid="257" name="C1P53V122" tags="variation" position="2825,12900" size="100,100">I don&#39;t know how to explain to her Lucy isn&#39;t helping whoever&#39;s outside...
-
-&lt;%= window.story.render(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="258" name="C1P53V121" tags="variation" position="2675,12900" size="100,100">&quot;She&#39;s making sure we stay safe, OK?&quot;, I reply, trying to sound reassuring.
+&lt;%= window.story.render(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="257" name="C1P53V121" tags="variation" position="2675,12900" size="100,100">&quot;She&#39;s making sure we stay safe, OK?&quot;, I reply, trying to sound reassuring.
 
 She slowly nods her head, but I think she&#39;s convinced.
 
-&lt;%= window.story.render(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="259" name="C1P53V123" tags="variation" position="2975,12900" size="100,100">&quot;She&#39;s just, um, helping someone outside, OK&quot;?, I say.
+&lt;%= window.story.render(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="258" name="C1P53V123" tags="variation" position="2975,12900" size="100,100">&quot;She&#39;s just, um, helping someone outside, OK&quot;?, I say.
 
 I look back down the hallway, Lucy&#39;s looking at me, an uneasy expression on her face, but she quickly gets back to the door.
 
-&lt;%= window.story.render(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="260" name="F: Let me in!" tags="floater" position="2475,12900" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+&lt;%= window.story.render(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="259" name="F: Let me in!" tags="floater" position="2475,12900" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 \*Bang, bang, bang\*
 
@@ -3121,7 +3103,7 @@ Oh fuck, what is she going to do?
 
 [[&lt;% print (window.story.tiffany()) %&gt; run!|C1P54V12]]&lt;br&gt;
 [[Lucy, be careful!|C1P54V12]]&lt;br&gt;
-[[Lucy, don&#39;t do it!|C1P54V12]]</tw-passagedata><tw-passagedata pid="261" name="C1P54V12" tags="variation" position="2825,13050" size="100,100">I take a breath to speak-
+[[Lucy, don&#39;t do it!|C1P54V12]]</tw-passagedata><tw-passagedata pid="260" name="C1P54V12" tags="variation" position="2825,13050" size="100,100">I take a breath to speak-
 
 \*Crash\*
 
@@ -3137,13 +3119,13 @@ There&#39;s a moment of silence. His expression turns to one of anger.
 
 [[...|C1P54V1212]]&lt;br&gt;
 [[Lucy stop!|C1P54V1211]]&lt;br&gt;
-[[Watch out for the bat!|C1P54V1213]]</tw-passagedata><tw-passagedata pid="262" name="C1P54V1211" tags="variation" position="2675,13200" size="100,100">&quot;Lucy stop!&quot;, I shout at her. What the hell is she doing?!
+[[Watch out for the bat!|C1P54V1213]]</tw-passagedata><tw-passagedata pid="261" name="C1P54V1211" tags="variation" position="2675,13200" size="100,100">&quot;Lucy stop!&quot;, I shout at her. What the hell is she doing?!
 
-&lt;%= window.story.render(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="263" name="C1P54V1212" tags="variation" position="2825,13200" size="100,100">I don&#39;t know what the hell she&#39;s doing, but now is not the time to interrupt.
+&lt;%= window.story.render(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="262" name="C1P54V1212" tags="variation" position="2825,13200" size="100,100">I don&#39;t know what the hell she&#39;s doing, but now is not the time to interrupt.
 
-&lt;%= window.story.render(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="264" name="C1P54V1213" tags="variation" position="2975,13200" size="100,100">&quot;Watch out for the bat!&quot;, I shout.
+&lt;%= window.story.render(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="263" name="C1P54V1213" tags="variation" position="2975,13200" size="100,100">&quot;Watch out for the bat!&quot;, I shout.
 
-&lt;%= window.story.render(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="265" name="F: wtf" tags="floater" position="2475,13200" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+&lt;%= window.story.render(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="264" name="F: wtf" tags="floater" position="2475,13200" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 &quot;What the- argh, FUCK, are you doing?!&quot;, the man shouts, while tumbling around with Lucy.
 
@@ -3155,7 +3137,7 @@ Lucy backs off, the stranger, still on the floor, crawling backwards down the ha
 
 Lucy takes a defensive stance, staying between us and the man.
 
-[[[Look at &lt;% print(tiffany) %&gt;]|C1P54V12111]]</tw-passagedata><tw-passagedata pid="266" name="C1P54V12111" tags="variation" position="2825,13350" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+[[[Look at &lt;% print(tiffany) %&gt;]|C1P54V12111]]</tw-passagedata><tw-passagedata pid="265" name="C1P54V12111" tags="variation" position="2825,13350" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
 I look over at &lt;% print(tiffany) %&gt;, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified. I take a step towards her-
 
@@ -3163,25 +3145,81 @@ I look over at &lt;% print(tiffany) %&gt;, she&#39;s got her feet up on the seat
 
 Oh god is Lucy alright? I quickly look back down the hallway.
 
-A hand has appeared through one of the boarded-up windows in the hallway, and grabbed the stranger by his injuired arm.
+A hand has appeared through one of the boarded-up windows in the hallway and grabbed the stranger by his injured arm.
 
-&quot;Oh god, no!&quot;, he cries out.
+&quot;Oh god, no!&quot;, he cries out, as he gets pulled to the window, and a walker forces its head through the glass.
 
-&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house start to be heard.
+&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house starts to be heard.
 
-&lt;%= window.story.render(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="267" name="F: You&#39;re heavy" tags="floater" position="2475,13350" size="100,100">&quot;Come on &lt;% print(tiffany) %&gt;, we need to move&quot;, I say as I get up to her.
+&quot;AAAHHH!&quot;, the man screams, as the walker takes a bite out of his elbow.
 
-She moves her head up, but doesn&#39;t move; she looks shaken.
+Lucy starts running down the hallway towards us.
 
-&quot;Come on!&quot;, I repeat, but she just looks at me.
+&lt;%= window.story.render(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="266" name="F: You&#39;re heavy" tags="floater" position="2475,13350" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
 
-We don&#39;t have time for this, I stretch my arms out toward her and beckon. She turns and puts her hands up, I grab her and pick her up. My god she&#39;s heavier then she looks.
+&quot;Come on &lt;% print(tiffany) %&gt;, we need to move&quot;, I say as I get up to her.
 
-I balance her properly so she&#39;s sitting on my hips, as she wraps her hands around my neck to hold herself. I take a step towards the door- argh! I forgot about my leg, that hurt.
+She looks up at me, scared, but doesn&#39;t move.
 
-Come on, you got this. I take another step- ARGH, shit! Come on: push, through, it.
+&quot;Come on!&quot;, I repeat, but she just stares back at me.
 
-[[Head for the stairs|C1P54V211]]</tw-passagedata><tw-passagedata pid="268" name="Needs a better transition to hallway" tags="" position="2425,13475" size="200,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+We don&#39;t have time for this, I stretch my arms out toward her and beckon. She turns and puts her hands up, I grab her and pick her up. My goodness she&#39;s heavier than she looks.
+
+I balance her properly so she&#39;s sitting on my hips, as she wraps her hands around my neck to hold herself. I take a step towards the door- oof, I forgot about my leg, this could be interesting.
+
+[[Head down the hallway|C1P54V11111]]</tw-passagedata><tw-passagedata pid="267" name="C1P54V11111" tags="variation" position="2475,13500" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+I get to the doorway and start down the hallway, &lt;% print(tiffany) %&gt; in tow. Lucy and I exchange brief glances: she looks grateful.
+
+I&#39;m halfway down the hallway, Lucy right behind me-
+
+&quot;AAAAAHHHH!&quot;, &lt;% print(tiffany) %&gt; screams from behind me. Before I have a chance to stop, her arms around my neck pull back, tight. I choke and fall backward.
+
+\*Smack\*
+
+I hit the ground. Argh, my leg, again! Can&#39;t catch a break... I&#39;ve landed on my bad leg, and bumped my head. I quickly refocus my vision, and look around for &lt;% print(tiffany) %&gt;.
+
+A hand has come through one of the windows and grabbed her leg, that must be why she screamed and fell. I gotta get up and-
+
+Lucy appears with her knife, takes one swipe at the hand, and detaches it from the arm it was connected to. Impressive.
+
+&quot;No time for a nap Sarah&quot;, Lucy says to me, as she helps &lt;% print(tiffany) %&gt; up.
+
+&quot;Move!&quot;, she shouts.
+
+She&#39;s right, this is not a good spot to be in. I manage to get on my knees, pain shooting up my leg, but I push through it and manage to stand.
+
+[[Head for the stairs|C1P55]]</tw-passagedata><tw-passagedata pid="268" name="C1P54V112" tags="variation" position="2125,13200" size="100,100">&quot;We need to get out of, fast. Those walkers won&#39;t take long to get in here.&quot;, I say.
+
+&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="269" name="C1P54V113" tags="variation" position="2275,13200" size="100,100">&quot;We need to fortify this place, ASAP. Those walkers will make quick work of those shitty windows.&quot;, I say.
+
+&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="270" name="C1P54V1111" tags="variation" position="2125,13350" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+I look over at &lt;% print(tiffany) %&gt;, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified.
+
+&quot;I&#39;m coming&quot;, I hear Lucy shout from the hallway.
+
+&lt;%= window.story.render(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="271" name="F: Smash" tags="floater" position="1775,13200" size="100,100">&lt;% const tiffany = window.story.tiffany() %&gt;
+
+Charles looks up.
+
+&quot;She&#39;s right&quot;, he says.
+
+\*Smash\*
+
+A hand suddenly appears through one of the boarded-up windows in the hallway, near Charles.
+
+&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house starts to be heard.
+
+&quot;Shit!&quot;, Charles shouts.
+
+Lucy moves towards him to help.
+
+&quot;Head upstairs&quot;, Lucy shouts over her shoulder.
+
+We need to get going, now.
+
+[[[Get &lt;% print(tiffany) %&gt;]|C1P54V1111]]</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
