@@ -22,3 +22,6 @@ Made in [Twine 2](https://twinery.org/) with [Snowman 2](https://github.com/vide
 ### [Join Our Discord](https://discord.gg/jNgAEjW7gd)
 
 ##### Content Warning: Mature themes including trauma, depression, suicidal ideation, and written depictions of death and gore, in a post-apocalyptic setting.
+
+## Contributing
+If you have a story related suggestion, the best place to put it is in our Discord. If you have a technical suggestion or contribution, feel free to make a PR.
