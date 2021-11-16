@@ -1,0 +1,23 @@
+name: Butler Push
+on: push
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - name: Install Butler and Push
+      uses: josephbmanley/butler-publish-itchio-action@master
+      env:
+        BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+        CHANNEL: html5
+        ITCH_GAME: purpose
+        ITCH_USER: infernochris
+        PACKAGE: index.html
+    - name: Fire Discord Webhook
+      uses: sarisia/actions-status-discord@v1
+      if: always()
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
