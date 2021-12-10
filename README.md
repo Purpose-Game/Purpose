@@ -1,10 +1,10 @@
-![Banner](https://i.imgur.com/pecrgc8.png)
+![Banner](https://i.imgur.com/YcvSwDo.png)
 
 # Purpose
 
 Play as Sarah, a young woman struggling to survive and find purpose in a post-apocalyptic world. Her life is changed forever when she meets a little girl named Tiffany.
 
-*Purpose* is an episodic story about a young woman struggling with the loss of her sister in the Walker-infested post-apocalyptic world. Join her on her journey as you make decisions that influence the outcome of the story, in this text-based multiple-choice adventure inspired by Telltale Games' The Walking Dead.
+*Purpose* is an episodic story about a young woman struggling with the loss of her sister in the Walker-infested post-apocalyptic world. Join her on her journey as you make decisions that influence the outcome of the story, in this choice-based text story inspired by Telltale Games' The Walking Dead.
 
 Features:
 - 22,500 words (Chapter 1)
