@@ -4,7 +4,7 @@ on: push
 jobs:
   push:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' && contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
+    if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
       env:
         BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
         CHANNEL: html5
-        ITCH_GAME: ${{ github.ref == 'refs/heads/master' && 'purpose' || 'purpose-dev' }}
+        ITCH_GAME: ${{ contains(github.ref, 'refs/tags/') && 'purpose' || 'purpose-dev' }}
         ITCH_USER: infernochris
         PACKAGE: dist
         VERSION: ${{ env.GITHUB_REF_NAME }}
