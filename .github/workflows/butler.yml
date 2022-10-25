@@ -4,7 +4,7 @@ on: push
 jobs:
   push:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' && contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/feature/structure'
+    if: github.ref == 'refs/heads/master' && contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
