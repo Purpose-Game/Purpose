@@ -4,19 +4,30 @@ on: push
 jobs:
   push:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-    - name: Install Butler and Push
+    - name: Copy Twine File to Dist
+      uses: canastro/copy-file-action@master
+      with:
+        source: "Purpose.html"
+        target: "dist/index.html"
+    - name: Minify JS & CSS Dist files
+      uses: nizarmah/auto-minify@v2.1
+      with:
+        overwrite: true
+        directory: 'dist'
+    - name: Deploy to itch.io
       uses: josephbmanley/butler-publish-itchio-action@master
       env:
         BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
         CHANNEL: html5
-        ITCH_GAME: purpose
+        ITCH_GAME: ${{ github.ref == 'refs/heads/master' && 'purpose' || 'purpose-dev' }}
         ITCH_USER: infernochris
-        PACKAGE: index.html
-    - name: Fire Discord Webhook
+        PACKAGE: dist
+        VERSION: ${{ env.GITHUB_REF_NAME }}
+    - name: Trigger Discord Webhook
       uses: sarisia/actions-status-discord@v1
       if: always()
       with:
