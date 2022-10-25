@@ -8,11 +8,16 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-    - name: Prepare Deploy Files
+    - name: Copy Twine File to Dist
       uses: canastro/copy-file-action@master
       with:
         source: "Purpose.html"
         target: "dist/index.html"
+    - name: Minify JS & CSS Dist files
+      uses: nizarmah/auto-minify@v2.1
+      with:
+        overwrite: true
+        directory: 'dist'
     - name: Deploy to itch.io
       uses: josephbmanley/butler-publish-itchio-action@master
       env:
