@@ -1,3 +1,5 @@
+/* global _, SimpleNotification */
+
 //
 // Variables
 //
@@ -47,9 +49,9 @@ window.story.network = false;
 //		"did some opposite actions or made some other choice"
 //	],
 window.story.choiceDescriptions = {
-  	"": {
-      // Empty for debugging
-    },
+	"": {
+		// Empty for debugging
+	},
 	"Chapter1": {
 		"Lied": [
 			"lied to Lucy about how you hurt your leg",
@@ -59,7 +61,7 @@ window.story.choiceDescriptions = {
 			"told yourself you needed to find a new purpose in life",
 			"told yourself you have no purpose in life and should die"
 		],
-        "Laughed": [
+		"Laughed": [
 			"found the time to have a laugh",
 			"did not find the time to have a laugh"
 		],
@@ -103,9 +105,9 @@ window.story.choiceDescriptions = {
 //		"Achievement Name", "Achievement Description"
 //	],
 window.story.achievementDescriptions = {
-  	"": {
-      // Empty for debugging
-    },
+	"": {
+		// Empty for debugging
+	},
 	"Chapter1": {
 		"Knocked": [
 			"Knock, knock", "Who's *there?*"
@@ -147,7 +149,7 @@ $(document).on("sm.passage.showing", function(_, data) {
 	if (data.passage === undefined) return;
 	
 	const passage = data.passage;
-    const twPassage = $("tw-passage");
+	const twPassage = $("tw-passage");
 
 	debugMessage(`Passage changed to ${passage.name}`);
 	
@@ -170,7 +172,7 @@ $(document).on("sm.passage.showing", function(_, data) {
 		
 		debugNotification.setText(`Content subject to change!\nCurrent Passage: \`\`${passage.name}\`\``);
 	}
-  
+
 	if (passage.tags) {
 		if (!passage.tags.includes("noFade") && !passage.tags.includes("redirect")) {
 			twPassage.hide(0).fadeIn(500);
@@ -193,21 +195,21 @@ $(document).on("sm.passage.showing", function(_, data) {
 
 			debugMessage(`Game saved at ${passage.name}`);
 
-            window.story.state.lastPassage = passage.name;
+			window.story.state.lastPassage = passage.name;
 			window.story.saveGame();
 		}
 	}
 });
 
 $(document).on("sm.passage.shown", function(_, data) {
-    const passage = data.passage;
-    const twPassage = $("tw-passage");
-    const pauseMenuHTML = '<p class="small right"><a href="javascript:void(0)" class="normalLink" onclick="window.story.pauseMenu()">Pause Menu</a></p><hr>';
+	const passage = data.passage;
+	const twPassage = $("tw-passage");
+	const pauseMenuHTML = '<p class="small right"><a href="javascript:void(0)" class="normalLink" onclick="window.story.pauseMenu()">Pause Menu</a></p><hr>';
 
-    // Inject pause menu button into all story passages
-    if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
-        twPassage.html(pauseMenuHTML + twPassage.html());
-    }
+	// Inject pause menu button into all story passages
+	if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
+		twPassage.html(pauseMenuHTML + twPassage.html());
+	}
 });
 
 //
@@ -259,7 +261,7 @@ window.story.redirect = function (pageName, time = 5) {
 	let timeLeft = time;
 
 	function tick() {
-		if (--timeLeft === 0) story.show(pageName);
+		if (--timeLeft === 0) window.story.show(pageName);
 
 		_.delay(tick, 1000);
 	}
@@ -279,12 +281,12 @@ window.story.delayedText = function (time = 1000, id = "delayed", fadeIn = 1000)
 // Sets an achievement and shows a popup
 window.story.achievement = function (chapter, shorthand, title, text) {
 	try {
-        if (window.story.state.achievements[chapter][shorthand]) {
-            debugMessage(`Chapter ${chapter} achievement ${shorthand} already earned`);
-            return;
-        } else {
-            debugMessage(`Chapter ${chapter} achievement ${shorthand} earned, showing ${achievements}`);
-        }
+		if (window.story.state.achievements[chapter][shorthand]) {
+			debugMessage(`Chapter ${chapter} achievement ${shorthand} already earned`);
+			return;
+		} else {
+			debugMessage(`Chapter ${chapter} achievement ${shorthand} earned, showing ${achievements}`);
+		}
 
 		window.story.state.achievements[chapter][shorthand] = true;
 	} catch (_) {
@@ -402,7 +404,7 @@ window.story.linkCode = function () {
 		
 		window.story.saving = true;
 		
-		story.show("Linked");
+		window.story.show("Linked");
 	}).catch(function(error) {
 		debugMessage(`Account failed to link with code ${code}: ` + error);
 
@@ -410,8 +412,8 @@ window.story.linkCode = function () {
 			title: `Error: ${error.status}`,
 			text: error.responseText
 		}, {
-            position: "bottom-right"
-        });
+			position: "bottom-right"
+		});
 
 		input.prop("disabled", false);
 		button.attr("onclick", "window.story.linkCode()");
@@ -494,7 +496,7 @@ window.story.loadSaves = function (newGame = false) {
 
 // Loads a player's save
 window.story.loadSave = function (saveSlot) {
-	story.show("Loading Save");
+	window.story.show("Loading Save");
 
 	saveNotification = SimpleNotification.info({
 		title: "Loading Save..."
@@ -517,7 +519,7 @@ window.story.loadSave = function (saveSlot) {
 		saveNotification.setTitle("Save Loaded!");
 
 		_.delay(function() {
-			story.show(window.story.state.lastPassage);
+			window.story.show(window.story.state.lastPassage);
 		}, 1000);
 	}).catch(function(error) {
 		debugMessage(`Failed to load save ${saveSlot} for ${window.story.player.key}: ` + error);
@@ -527,7 +529,7 @@ window.story.loadSave = function (saveSlot) {
 		saveNotification.setText(error.responseText);
 		
 		_.delay(function() {
-			story.show("Saved Games");
+			window.story.show("Saved Games");
 		}, 1000);
 	});
 }
@@ -558,7 +560,7 @@ window.story.selectSlot = function () {
 	});
 	
 	_.delay(function() {
-		story.show("C1 Intro");
+		window.story.show("C1 Intro");
 	}, 1000);
 }
 
@@ -648,7 +650,7 @@ window.story.loadStats = function () {
 			if (
 				!window.story.state.choices[window.story.state.chapter] ||
 				// If choice was never set, not to be confused with choice being set to false
-				!window.story.state.choices[window.story.state.chapter].hasOwnProperty(stat)
+				!Object.prototype.hasOwnProperty.call(window.story.state.choices[window.story.state.chapter], stat)
 			) {
 				continue;
 			}
@@ -685,8 +687,8 @@ window.story.loadAchievements = function () {
 
 		let earnedAchievements = 0;
 		const totalAchievements = Object.entries(window.story.achievementDescriptions[window.story.state.chapter]).length;
-      
-      	$("#achievementsCounter").text(`${earnedAchievements}/${totalAchievements} Achievements Earned`);
+
+		$("#achievementsCounter").text(`${earnedAchievements}/${totalAchievements} Achievements Earned`);
 
 		for (const [internal, [name, description]] of Object.entries(window.story.achievementDescriptions[window.story.state.chapter])) {
 			if (!window.story.state.achievements[window.story.state.chapter] || !window.story.state.achievements[window.story.state.chapter][internal]) {
@@ -712,9 +714,9 @@ window.story.pauseMenu = function () {
 	if (prePausePassage == null) {
 		prePausePassage = window.passage.name;
 
-		story.show("Pause Menu");
+		window.story.show("Pause Menu");
 	} else {
-		story.show(prePausePassage);
+		window.story.show(prePausePassage);
 
 		prePausePassage = null;
 	}
@@ -738,14 +740,14 @@ window.story.toggleAchievements = function () {
 
 // Renders a passage and replaces text
 window.story.customRender = function (passageName) {
-	const passage = story.passage(passageName);
+	const passage = window.story.passage(passageName);
 
 	// Replace %Tiffany% with what the player chose to call Tiffany
 	if (passage.source.includes("%Tiffany%")) {
 		passage.source = passage.source.replaceAll("%Tiffany%", window.story.tiffany());
 	}
 	
-	return story.render(passageName);
+	return window.story.render(passageName);
 }
 
 //
@@ -755,7 +757,7 @@ window.story.customRender = function (passageName) {
 // toggleFullscreen.js
 // https://gist.github.com/demonixis/5188326
 window.story.toggleFullscreen = function (event) {
-	const element = document.documentElement;
+	let element = document.documentElement;
 
 	if (event instanceof HTMLElement) element = event;
 
@@ -782,4 +784,4 @@ document.head.appendChild(simpleNotification);
 ///
 
 // Adds Favicons
-$("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512"  href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192"  href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
+$("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');

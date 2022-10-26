@@ -1,19 +1,36 @@
-name: Butler Push
+name: Lint & Deploy
 on: push
 
 jobs:
-  push:
+  lint:
+    name: Run Javascript Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: npm Install
+        run: npm ci
+      - name: Lint Javascript
+        run: npm run lint
+  deploy:
+    name: Deploy to itch.io
+    needs: lint
     runs-on: ubuntu-latest
     if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-    - name: Copy Twine File to Dist
+    - name: Copy Twine File to dist
       uses: canastro/copy-file-action@master
       with:
         source: "Purpose.html"
         target: "dist/index.html"
-    - name: Minify JS & CSS Dist files
+    - name: Copy Javascript File to dist
+      uses: canastro/copy-file-action@master
+      with:
+        source: "index.js"
+        target: "dist/assets/javascript/index.js"
+    - name: Minify JS & CSS dist files
       uses: nizarmah/auto-minify@v2.1
       with:
         overwrite: true
