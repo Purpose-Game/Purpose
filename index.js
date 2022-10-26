@@ -230,7 +230,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 			if (e.keyCode == 32){
 				twPassage.find("story:visible:first").trigger("click");
 			}
-		 });
+		});
 	
 		$(".story-box.container").click(function() {
 			const element = $(this);
@@ -239,7 +239,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 			if (nextElement.length) {
 				element.fadeOut(function() {
 					nextElement.fadeIn();
-			   });
+			});
 			}
 		});
 	}
