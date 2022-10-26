@@ -1,2 +1,4 @@
 .DS_Store
+node_modules
 dist/Purpose.html
+dist/assets/javascript/index.js
