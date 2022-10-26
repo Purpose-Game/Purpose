@@ -5,7 +5,7 @@
 //
 
 // Game Version
-const version = "1.1.0";
+const version = "1.1.1";
 // API URL Root
 const apiUrl = "https://purpose-game.com/api/";
 
@@ -663,7 +663,7 @@ window.story.loadStats = function () {
 				message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[window.story.state.chapter][stat][1]}`;
 			}
 			
-			$("#statsContainer").append(`<p>${message}</p><progress class="didBar" value="${data[stat][0].slice(0, -1)}" max="100"></progress><br><progress class="didNotBar" value="${data[stat][1].slice(0, -1)}" max="100"></progress>`);	
+			$("#statsContainer").append(`<p>${message}</p><progress class="did-bar" value="${data[stat][0].slice(0, -1)}" max="100"></progress><br><progress class="did-not-bar" value="${data[stat][1].slice(0, -1)}" max="100"></progress>`);	
 		}
 		
 		$("#statsContainer").fadeIn(500);
