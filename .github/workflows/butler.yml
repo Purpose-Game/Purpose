@@ -1,19 +1,55 @@
-name: Butler Push
+name: Lint & Deploy
 on: push
 
 jobs:
-  push:
+  jsLint:
+    name: Run Javascript Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Cache npm Directory
+        uses: c-hive/gha-npm-cache@v1
+      - name: npm Install
+        run: npm ci
+      - name: Lint Javascript
+        run: npm run jslint
+  cssLint:
+    name: Run CSS Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Cache npm Directory
+        uses: c-hive/gha-npm-cache@v1
+      - name: npm Install
+        run: npm ci
+      - name: Lint Javascript
+        run: npm run csslint
+  deploy:
+    name: Deploy to itch.io
+    needs: [jsLint, cssLint]
     runs-on: ubuntu-latest
     if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
-    - name: Checkout Repo
+    - name: Checkout Repository
       uses: actions/checkout@v2
-    - name: Copy Twine File to Dist
+    - name: Copy Twine File to dist
       uses: canastro/copy-file-action@master
       with:
         source: "Purpose.html"
         target: "dist/index.html"
-    - name: Minify JS & CSS Dist files
+    - name: Copy Javascript File to dist
+      uses: canastro/copy-file-action@master
+      with:
+        source: "index.js"
+        target: "dist/assets/javascript/index.js"
+    - name: Copy CSS File to dist
+      uses: canastro/copy-file-action@master
+      with:
+        source: "style.css"
+        target: "dist/assets/css/style.css"
+    - name: Minify JS & CSS dist files
       uses: nizarmah/auto-minify@v2.1
       with:
         overwrite: true
@@ -27,8 +63,14 @@ jobs:
         ITCH_USER: infernochris
         PACKAGE: dist
         VERSION: ${{ env.GITHUB_REF_NAME }}
-    - name: Trigger Discord Webhook
-      uses: sarisia/actions-status-discord@v1
-      if: always()
-      with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+  webhook:
+    name: Trigger Discord Webhook
+    if: ${{ always() }}
+    needs: [jsLint, cssLint, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Discord Webhook
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
