@@ -26,7 +26,7 @@ body {
   background-image: url("../../assets/images/ui/background.png");
 }
 
-/* a, */
+a,
 button {
   text-shadow: 1px 1px 3px #000;
   color: #f7f8f3;
@@ -130,13 +130,11 @@ tw-story {
 }
 
 .sarah-image {
-  width: 100%;
-  content: url("../../assets/images/ui/characters/sarah.png");
+  background-image: url("../../assets/images/ui/characters/sarah.png") !important;
 }
 
 .tiffany-image {
-  width: 100%;
-  content: url("../../assets/images/ui/characters/tiffany.png");
+  background-image: url("../../assets/images/ui/characters/tiffany.png") !important;
 }
 
 .container {
@@ -162,13 +160,6 @@ tw-story {
   left: 0;
 }
 
-.character-left > .character-slot {
-  width: 80%;
-  background-size: contain;
-  content: url("../../assets/images/ui/story-box/character-slot-outline.png");
-  background-image: url("../../assets/images/ui/story-box/character-slot.png");
-}
-
 .character-right {
   grid-area: character-right;
   padding: 1vh;
@@ -178,9 +169,10 @@ tw-story {
   left: 0;
 }
 
+.character-left > .character-slot,
 .character-right > .character-slot {
   width: 80%;
-  background-size: contain;
+  background-size: cover;
   content: url("../../assets/images/ui/story-box/character-slot-outline.png");
   background-image: url("../../assets/images/ui/story-box/character-slot.png");
 }

@@ -8,6 +8,8 @@
 const version = "2.0.0";
 // API URL Root
 const apiUrl = "https://purpose-game.com/api/";
+// Keys that progress the story
+const progressKeys = [13, 32, 39, 40];
 
 // Shows debug notification when true
 let debug = false;
@@ -194,28 +196,34 @@ $(document).on("sm.passage.showing", function(_, data) {
 	}
 });
 
-$(document).on("sm.passage.shown", function(/*_, data*/) {
-	//const passage = data.passage;
+$(document).on("sm.passage.shown", function(_, data) {
+	const passage = data.passage;
     const twPassage = $("tw-passage");
     //const pauseMenuHTML = '<p class="small right"><a href="javascript:void(0)" class="normalLink" onclick="window.story.pauseMenu()">Pause Menu</a></p><hr>';
-    /*if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
+
+    if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
 		// Inject pause menu button into all story passages
-        twPassage.html(pauseMenuHTML + twPassage.html());
+        //twPassage.html(pauseMenuHTML + twPassage.html());
 		// Replace %Tiffany% with what the player chose to call Tiffany
 		if (twPassage.html().includes("%Tiffany%")) {
 			twPassage.html(twPassage.html().replaceAll("%Tiffany%", window.story.tiffany()));
 		}
-    }*/
+    }
+
 	const steps = [];
-	const storyBox = $("tw-passage story");
-	if (storyBox.length) {
-		storyBox.children().each(function() {
+
+	let lastText;
+	let currentStep = 0;
+	let typewriting = [];
+	
+	if (twPassage.length) {
+		twPassage.find("character, action, speech, choices").each(function() {
 			const element = $(this);
+
 			steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
 		});
 	
-		storyBox.remove();
-
+		twPassage.empty();
 		twPassage.append(`
 			<div class="container">
 
@@ -225,59 +233,112 @@ $(document).on("sm.passage.shown", function(/*_, data*/) {
 				</div>
 
 				<div class="character-left">
-					<img class="character-slot">
+					<img id="character-one-image" class="character-slot">
 				</div>
 
 				<div class="character-right">
-					<img class="character-slot">
+					<img id="character-two-image" class="character-slot">
 				</div>
 
 				<div class="text-area">
 					<div class="character-name character-name-left">
 						<img class="character-name">
-						<div>Sarah</div>
+						<div id="character-one"></div>
 					</div>
 
 					<div class="character-name character-name-right">
 						<img class="character-name">
-						<div>Tiffany</div>
+						<div id="character-two"></div>
 					</div>
 
 					<div class="text-area-main">
 						<img>
-						<div>This is an example of some text that would appear on the screen for the player to read!</div>
 					</div>
 				</div>
 
 			</div>
 		`);
-	
-		/*for (const [index, [type, value, character]] of steps.entries()) {
-			const isSpeech = type === "SPEECH";
-			twPassage.append(`
-				<story id="box${index}" class="story-box container" ${index > 0 ? 'style="display: none"' : ""}>
-					<p class="story-box contents image">${isSpeech ? `<img class="${character}">` : ""}</p>
-					<p class="story-box contents ${!isSpeech ? "textonly" : "text"}">${isSpeech && !value.includes('"') ? `"${value}"` : value}</p>
-				</story>
-			`);
-		}*/
-	
-		$("body").keyup(function(e){
-			if (e.keyCode == 32){
-				twPassage.find("story:visible:first").trigger("click");
-			}
+
+		const textAreaMain = $(".text-area-main");
+
+		$("body").keyup(function(e) {
+			if (progressKeys.includes(e.keyCode)) textAreaMain.trigger("click");
 		});
-	
-		$(".story-box.container").click(function() {
-			const element = $(this);
-			const nextElement = $(`#box${+element.attr("id").match(/[0-9]+$/) + 1}`);
+
+		textAreaMain.click(function() {
+			const lastStep = currentStep - 1;
 			
-			if (nextElement.length) {
-				element.fadeOut(function() {
-					nextElement.fadeIn();
-			});
+			if (!typewriting.includes(lastStep) && steps[currentStep]) {
+				const step = currentStep;
+				const [type, content, extra] = steps[step];
+
+				let characterOne = $("#character-one").text();
+				let characterTwo = $("#character-two").text();
+
+				if (lastText?.length) lastText.remove();
+				if (characterOne === "Tiff") characterOne = "Tiffany";
+				if (characterTwo === "Tiff") characterTwo = "Tiffany";
+
+				currentStep++;
+
+				switch (type) {
+					case "CHARACTER":
+						if (extra === "one") {
+							$("#character-one").text(content);
+
+							if (content === "") $("#character-one-image").attr("class", "character-slot");
+						} else {
+							$("#character-two").text(content);
+
+							if (content === "") $("#character-two-image").attr("class", "character-slot");
+						}
+
+						textAreaMain.trigger("click");
+						break;
+
+					default:
+						typewriting.push(step);
+						textAreaMain.append(`<div id="text-area-main-${step}"></div>`);
+						lastText = $(`#text-area-main-${step}`);
+
+						if (characterOne === extra) {
+							$("#character-one-image").addClass(`${extra.toLowerCase()}-image`);
+						} else if (content === "") {
+							$("#character-one-image").attr("class", "character-slot");
+						}
+						
+						if (characterTwo === extra) {
+							$("#character-two-image").addClass(`${extra.toLowerCase()}-image`);
+						}
+
+						$("#character-one-image").css("opacity", extra !== characterOne ? "0.5" : "1");
+						$("#character-two-image").css("opacity", extra !== characterTwo ? "0.5" : "1");
+						
+						lastText.html(type === "SPEECH" ? `"${content}"` : content);
+						
+						if (type !== "CHOICES") {
+							lastText.typeWrite({
+								speed: 50,
+								cursor: false,
+								color: "#c8c3bc"
+							}).then(() => typewriting.splice(typewriting.indexOf(step), 1));
+						}
+						break;
+				}
+			} else {
+				const [type, content] = steps[lastStep];
+
+				lastText.remove();
+				
+				textAreaMain.append(`<div id="text-area-main-${lastStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+
+				lastText = $(`#text-area-main-${lastStep}-skipped`);
+
+				typewriting.splice(typewriting.indexOf(lastStep), 1);
 			}
 		});
+
+		textAreaMain.trigger("click");
 	}
 });
 
@@ -847,6 +908,14 @@ const simpleNotification = document.createElement("script");
 simpleNotification.src = "assets/javascript/simpleNotification.min.js";
 
 document.head.appendChild(simpleNotification);
+
+// jquery-typewriter-plugin
+// https://github.com/0xPranavDoshi/jquery-typewriter
+// https://github.com/0xPranavDoshi/jquery-typewriter/blob/master/LICENSE
+const typewriter = document.createElement("script");
+typewriter.src = "assets/javascript/jquery.typewriter.min.js";
+
+document.head.appendChild(typewriter);
 
 ///
 /// Initialization
