@@ -10,7 +10,7 @@ const version = "2.0.0";
 const apiUrl = "https://purpose-game.com/api/";
 
 // Shows debug notification when true
-let debug = true;
+let debug = false;
 // Shows achievement notifications when true
 let achievements = true;
 // Uses custom font when true
@@ -194,18 +194,18 @@ $(document).on("sm.passage.showing", function(_, data) {
 	}
 });
 
-$(document).on("sm.passage.shown", function(_, data) {
-	const passage = data.passage;
+$(document).on("sm.passage.shown", function(/*_, data*/) {
+	//const passage = data.passage;
     const twPassage = $("tw-passage");
-    const pauseMenuHTML = '<p class="small right"><a href="javascript:void(0)" class="normalLink" onclick="window.story.pauseMenu()">Pause Menu</a></p><hr>';
-    if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
+    //const pauseMenuHTML = '<p class="small right"><a href="javascript:void(0)" class="normalLink" onclick="window.story.pauseMenu()">Pause Menu</a></p><hr>';
+    /*if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
 		// Inject pause menu button into all story passages
         twPassage.html(pauseMenuHTML + twPassage.html());
 		// Replace %Tiffany% with what the player chose to call Tiffany
 		if (twPassage.html().includes("%Tiffany%")) {
 			twPassage.html(twPassage.html().replaceAll("%Tiffany%", window.story.tiffany()));
 		}
-    }
+    }*/
 	const steps = [];
 	const storyBox = $("tw-passage story");
 	if (storyBox.length) {
@@ -218,18 +218,37 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 		twPassage.append(`
 			<div class="container">
-				<div class="character-left">
-					<img class="sarah">
+
+				<div class="menu-options">
+					<div class="option-one"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+					<div class="option-two"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
 				</div>
+
+				<div class="character-left">
+					<img class="character-slot">
+				</div>
+
 				<div class="character-right">
-					<img class="tiffany">
+					<img class="character-slot">
 				</div>
 
 				<div class="text-area">
-					<div class="character-name-left"><span>Sarah</span></div>
-					<div class="character-name-right"><span>Tiffany</span></div>
-					<div class="text-area-main">This is an example of a story bit!</div>
+					<div class="character-name-left">
+						<img class="character-name">
+						<div>Sarah</div>
+					</div>
+
+					<div class="character-name-right">
+						<img class="character-name">
+						<div>Tiffany</div>
+					</div>
+
+					<div class="text-area-main">
+						<img>
+						<div>This is an example of some text that would appear on the screen for the player to read!</div>
+					</div>
 				</div>
+
 			</div>
 		`);
 	
