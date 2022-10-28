@@ -63,14 +63,3 @@ jobs:
         ITCH_USER: infernochris
         PACKAGE: dist
         VERSION: ${{ env.GITHUB_REF_NAME }}
-  webhook:
-    name: Trigger Discord Webhook
-    if: ${{ always() }}
-    needs: [jsLint, cssLint, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Discord Webhook
-        uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
