@@ -233,12 +233,12 @@ $(document).on("sm.passage.shown", function(/*_, data*/) {
 				</div>
 
 				<div class="text-area">
-					<div class="character-name-left">
+					<div class="character-name character-name-left">
 						<img class="character-name">
 						<div>Sarah</div>
 					</div>
 
-					<div class="character-name-right">
+					<div class="character-name character-name-right">
 						<img class="character-name">
 						<div>Tiffany</div>
 					</div>

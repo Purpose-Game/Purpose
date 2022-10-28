@@ -153,52 +153,6 @@ tw-story {
   /* stylelint-enable */
 }
 
-.menu-options {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 1.5fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0 0;
-  /* stylelint-disable */
-  grid-template-areas:
-    "option-one option-one option-two"
-    "option-one option-one option-two"
-    "option-one option-one option-two";
-  grid-area: menu-options;
-  /* stylelint-enable */
-}
-
-.option-one {
-  grid-area: option-one;
-  text-align: right;
-  padding: 0 1vw 0 0;
-}
-
-.option-one > img {
-  width: 35%;
-  content: url("../../assets/images/ui/buttons/save.png");
-}
-
-.option-one > img:hover {
-  width: 35%;
-  content: url("../../assets/images/ui/buttons/save-active.png");
-}
-
-.option-two {
-  grid-area: option-two;
-  text-align: left;
-  padding: 0 1vw 0 0;
-}
-
-.option-two > img {
-  width: 35%;
-  content: url("../../assets/images/ui/buttons/options.png");
-}
-
-.option-two > img:hover {
-  width: 35%;
-  content: url("../../assets/images/ui/buttons/options-active.png");
-}
-
 .character-left {
   grid-area: character-left;
   padding: 1vh;
@@ -229,6 +183,12 @@ tw-story {
   background-size: contain;
   content: url("../../assets/images/ui/story-box/character-slot-outline.png");
   background-image: url("../../assets/images/ui/story-box/character-slot.png");
+}
+
+.character-name {
+  color: #0d0e0f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .character-name-left {
@@ -321,4 +281,50 @@ tw-story {
   font-size: 2vw;
   padding: 0 2.5vw;
   left: 0;
+}
+
+.menu-options {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0 0;
+  /* stylelint-disable */
+  grid-template-areas:
+    "option-one option-one option-two"
+    "option-one option-one option-two"
+    "option-one option-one option-two";
+  grid-area: menu-options;
+  /* stylelint-enable */
+}
+
+.option-one {
+  grid-area: option-one;
+  text-align: right;
+  padding: 0 1vw 0 0;
+}
+
+.option-one > img {
+  width: 35%;
+  content: url("../../assets/images/ui/buttons/save.png");
+}
+
+.option-two {
+  grid-area: option-two;
+  text-align: left;
+  padding: 0 1vw 0 0;
+}
+
+.option-two > img {
+  width: 35%;
+  content: url("../../assets/images/ui/buttons/options.png");
+}
+
+.option-one > img:hover {
+  width: 35%;
+  content: url("../../assets/images/ui/buttons/save-active.png");
+}
+
+.option-two > img:hover {
+  width: 35%;
+  content: url("../../assets/images/ui/buttons/options-active.png");
 }
