@@ -215,8 +215,25 @@ $(document).on("sm.passage.shown", function(_, data) {
 		});
 	
 		storyBox.remove();
+
+		twPassage.append(`
+			<div class="container">
+				<div class="character-left">
+					<img class="sarah">
+				</div>
+				<div class="character-right">
+					<img class="tiffany">
+				</div>
+
+				<div class="text-area">
+					<div class="character-name-left"><span>Sarah</span></div>
+					<div class="character-name-right"><span>Tiffany</span></div>
+					<div class="text-area-main">This is an example of a story bit!</div>
+				</div>
+			</div>
+		`);
 	
-		for (const [index, [type, value, character]] of steps.entries()) {
+		/*for (const [index, [type, value, character]] of steps.entries()) {
 			const isSpeech = type === "SPEECH";
 			twPassage.append(`
 				<story id="box${index}" class="story-box container" ${index > 0 ? 'style="display: none"' : ""}>
@@ -224,7 +241,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 					<p class="story-box contents ${!isSpeech ? "textonly" : "text"}">${isSpeech && !value.includes('"') ? `"${value}"` : value}</p>
 				</story>
 			`);
-		}
+		}*/
 	
 		$("body").keyup(function(e){
 			if (e.keyCode == 32){

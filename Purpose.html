@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<tw-story tags></tw-story>
-		<tw-storydata name="Purpose" startnode="318" creator="Twine" creator-version="2.5.1" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
+		<tw-storydata name="Purpose" startnode="320" creator="Twine" creator-version="2.5.1" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
 script.src = "assets/javascript/index.js";
 
 document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page" position="3075,575" size="100,100">&lt;h1&gt;Chapter One&lt;/h1&gt;
@@ -3190,7 +3190,7 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
   &lt;a onclick=&quot;window.story.toggleAchievements()&quot;&gt;Toggle Achievements&lt;/a&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="318" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
 	[[Launch Game|Network Check]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Test Passage" tags="" position="2550,100" size="100,100">&lt;story&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Test Passage" tags="page" position="2550,100" size="100,100">&lt;story&gt;
     &lt;action&gt;I sit down at the table.&lt;/action&gt;
     
     &lt;speech.temp&gt;I&#39;ll fix you a bowl&lt;/speech&gt;
@@ -3222,7 +3222,7 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
     &lt;% } %&gt;
 
     &lt;speech.temp&gt;&quot;Here you go, Beans and Cheese!&quot;&lt;br&gt;[[[Take the bowl]|C1P43]]&lt;/speech&gt;
-&lt;/story&gt;</tw-passagedata></tw-storydata>
+&lt;/story&gt;</tw-passagedata><tw-passagedata pid="320" name="Test" tags="" position="2375,100" size="100,100">[[Test|Test Passage]]</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
