@@ -10,6 +10,71 @@ const version = "2.0.0";
 const apiUrl = "https://purpose-game.com/api/";
 // Keys that progress the story
 const progressKeys = [13, 32, 39, 40];
+// Standard UI
+const standardUI = `
+<div class="container">
+
+	<div class="menu-options">
+		<div class="option-one"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+		<div class="option-two"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+	</div>
+
+	<div class="character-left">
+		<img id="character-one-image" class="character-slot">
+	</div>
+
+	<div class="character-right">
+		<img id="character-two-image" class="character-slot">
+	</div>
+
+	<div class="text-area">
+		<div class="character-name character-name-left">
+			<img class="character-name">
+			<div id="character-one"></div>
+		</div>
+
+		<div class="character-name character-name-right">
+			<img class="character-name">
+			<div id="character-two"></div>
+		</div>
+
+		<div class="text-area-main">
+			<img>
+		</div>
+	</div>
+
+</div>
+`;
+// Special UI
+const specialUI = `
+<div class="container">
+
+	<div class="menu-options">
+		<div class="option-one"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+		<div class="option-two"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+	</div>
+
+	<div class="character-left">
+		<img id="character-one-image" class="character-slot">
+	</div>
+
+	<div class="special-right">
+		<img id="special-image" class="special-image">
+	</div>
+
+	<div class="text-area">
+		<div class="character-name character-name-left">
+			<img class="character-name">
+			<div id="character-one"></div>
+		</div>
+
+		<div class="text-area-special">
+			<img>
+		</div>
+	</div>
+
+</div>
+`;
 
 // Shows debug notification when true
 let debug = false;
@@ -224,42 +289,10 @@ $(document).on("sm.passage.shown", function(_, data) {
 		});
 	
 		twPassage.empty();
-		twPassage.append(`
-			<div class="container">
+		twPassage.append(specialUI);
 
-				<div class="menu-options">
-					<div class="option-one"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
-					<div class="option-two"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
-				</div>
-
-				<div class="character-left">
-					<img id="character-one-image" class="character-slot">
-				</div>
-
-				<div class="character-right">
-					<img id="character-two-image" class="character-slot">
-				</div>
-
-				<div class="text-area">
-					<div class="character-name character-name-left">
-						<img class="character-name">
-						<div id="character-one"></div>
-					</div>
-
-					<div class="character-name character-name-right">
-						<img class="character-name">
-						<div id="character-two"></div>
-					</div>
-
-					<div class="text-area-main">
-						<img>
-					</div>
-				</div>
-
-			</div>
-		`);
-
-		const textAreaMain = $(".text-area-main");
+		const specialPassage = true;
+		const textAreaMain = specialPassage ?  $(".text-area-special") : $(".text-area-main");
 
 		$("body").keyup(function(e) {
 			if (progressKeys.includes(e.keyCode)) textAreaMain.trigger("click");
