@@ -273,106 +273,113 @@ $(document).on("sm.passage.shown", function(_, data) {
 		if (twPassage.html().includes("%Tiffany%")) {
 			twPassage.html(twPassage.html().replaceAll("%Tiffany%", window.story.tiffany()));
 		}
-    }
 
-	const steps = [];
-
-	let lastText;
-	let currentStep = 0;
-	let typewriting = [];
+		if (twPassage.length) {
+			const steps = [];
+			const typewriting = [];
 	
-	if (twPassage.length) {
-		twPassage.find("character, action, speech, choices").each(function() {
-			const element = $(this);
-
-			steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
-		});
+			let uiType;
+			let lastText;
+			let textArea;
+			let currentStep = 0;
 	
-		twPassage.empty();
-		twPassage.append(specialUI);
-
-		const specialPassage = true;
-		const textAreaMain = specialPassage ?  $(".text-area-special") : $(".text-area-main");
-
-		$("body").keyup(function(e) {
-			if (progressKeys.includes(e.keyCode)) textAreaMain.trigger("click");
-		});
-
-		textAreaMain.click(function() {
-			const lastStep = currentStep - 1;
-			
-			if (!typewriting.includes(lastStep) && steps[currentStep]) {
-				const step = currentStep;
-				const [type, content, extra] = steps[step];
-
-				let characterOne = $("#character-one").text();
-				let characterTwo = $("#character-two").text();
-
-				if (lastText?.length) lastText.remove();
-				if (characterOne === "Tiff") characterOne = "Tiffany";
-				if (characterTwo === "Tiff") characterTwo = "Tiffany";
-
-				currentStep++;
-
-				switch (type) {
-					case "CHARACTER":
-						if (extra === "one") {
-							$("#character-one").text(content);
-
-							if (content === "") $("#character-one-image").attr("class", "character-slot");
-						} else {
-							$("#character-two").text(content);
-
-							if (content === "") $("#character-two-image").attr("class", "character-slot");
-						}
-
-						textAreaMain.trigger("click");
-						break;
-
-					default:
-						typewriting.push(step);
-						textAreaMain.append(`<div id="text-area-main-${step}"></div>`);
-						lastText = $(`#text-area-main-${step}`);
-
-						if (characterOne === extra) {
-							$("#character-one-image").addClass(`${extra.toLowerCase()}-image`);
-						} else if (content === "") {
-							$("#character-one-image").attr("class", "character-slot");
-						}
-						
-						if (characterTwo === extra) {
-							$("#character-two-image").addClass(`${extra.toLowerCase()}-image`);
-						}
-
-						$("#character-one-image").css("opacity", extra !== characterOne ? "0.5" : "1");
-						$("#character-two-image").css("opacity", extra !== characterTwo ? "0.5" : "1");
-						
-						lastText.html(type === "SPEECH" ? `"${content}"` : content);
-						
-						if (type !== "CHOICES") {
-							lastText.typeWrite({
-								speed: 50,
-								cursor: false,
-								color: "#c8c3bc"
-							}).then(() => typewriting.splice(typewriting.indexOf(step), 1));
-						}
-						break;
-				}
-			} else {
-				const [type, content] = steps[lastStep];
-
-				lastText.remove();
+			twPassage.find("ui, character, special, action, speech, choices").each(function() {
+				const element = $(this);
+	
+				steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
+			});
+		
+			twPassage.empty();
+			twPassage.append(`<div class="story-box"></div>`);
+	
+			const storyBox = $(".story-box");
+		
+			storyBox.click(() => stepPassage());
+	
+			$("body").keyup(function(e) {
+				if (progressKeys.includes(e.keyCode)) stepPassage();
+			});
+	
+			stepPassage();
+	
+			/* eslint-disable no-inner-declarations */
+			function stepPassage() {
+				const lastStep = currentStep - 1;
+				const ui = uiType === "standard" ? "main" : "special";
 				
-				textAreaMain.append(`<div id="text-area-main-${lastStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+				if (!typewriting.includes(lastStep) && steps[currentStep]) {
+					const step = currentStep;
+					let [type, content, extra] = steps[step];
 
-				lastText = $(`#text-area-main-${lastStep}-skipped`);
+					if (extra === "Tiff") extra = "Tiffany";
+					if (content === "Tiff") content = "Tiffany";
+					
+					currentStep++;
 
-				typewriting.splice(typewriting.indexOf(lastStep), 1);
+					switch (type) {
+						case "UI":
+							storyBox.empty();
+							storyBox.append(content === "standard" ? standardUI : specialUI);
+	
+							textArea = (uiType = content) === "standard" ? $(".text-area-main") : $(".text-area-special");
+
+							stepPassage();
+							break;
+						case "CHARACTER":
+							if (extra === "one") {
+								$("#character-one").text(content);
+								$("#character-one-image").attr("class", "character-slot");
+								$("#character-one-image").addClass(`${content.toLowerCase()}-image`);
+							} else {
+								$("#character-two").text(content);
+								$("#character-two-image").attr("class", "character-slot");
+								$("#character-two-image").addClass(`${content.toLowerCase()}-image`);
+							}
+			
+							stepPassage();
+							break;
+
+						case "SPECIAL":
+							$("#special-image").attr("class", "special-image");
+							$("#special-image").addClass(`${content.toLowerCase()}-image`);
+
+							stepPassage();
+							break;
+			
+						default:
+							if (lastText) lastText.remove();
+
+							typewriting.push(step);
+							textArea.append(`<div id="text-area-${ui}-${step}"></div>`);
+							lastText = $(`#text-area-${ui}-${step}`);
+			
+							$("#character-one-image").css("opacity", extra !== $("#character-one").text() ? "0.5" : "1");
+							$("#character-two-image").css("opacity", extra !== $("#character-two").text() ? "0.5" : "1");
+							
+							lastText.html(type === "SPEECH" ? `"${content}"` : content);
+							
+							if (type !== "CHOICES") {
+								lastText.typeWrite({
+									speed: 50,
+									cursor: false,
+									color: "#c8c3bc"
+								}).then(() => typewriting.splice(typewriting.indexOf(step), 1));
+							}
+							break;
+					}
+				} else {
+					const [type, content] = steps[lastStep];			
+					lastText.remove();
+					
+					textArea.append(`<div id="text-area-${ui}-${lastStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+			
+					lastText = $(`#text-area-${ui}-${lastStep}-skipped`);
+			
+					typewriting.splice(typewriting.indexOf(lastStep), 1);
+				}
 			}
-		});
-
-		textAreaMain.trigger("click");
-	}
+		}
+    }
 });
 
 //

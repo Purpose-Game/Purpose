@@ -137,6 +137,26 @@ tw-story {
   background-image: url("../../assets/images/ui/characters/tiffany.png") !important;
 }
 
+.lucy-image {
+  background-image: url("../../assets/images/temp/lucy.png") !important;
+}
+
+.beans-image {
+  background-image: url("../../assets/images/temp/beans.png") !important;
+}
+
+.dirty-image {
+  background-image: url("../../assets/images/temp/dirty.png") !important;
+}
+
+.puzzled-image {
+  background-image: url("../../assets/images/temp/puzzled.png") !important;
+}
+
+.table-image {
+  background-image: url("../../assets/images/temp/table.png") !important;
+}
+
 .container {
   display: grid;
   grid-template-columns: 0.8fr 1.4fr 0.8fr;

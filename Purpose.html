@@ -768,7 +768,7 @@ I couldn&#39;t care less...
 &lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="81" name="Credits" tags="info floater" position="3875,725" size="200,100">Game &amp; Infrastructure - Christopher &quot;Inferno&quot; M.&lt;br&gt;
 &lt;a href=&quot;https://purpose-game.com&quot; target=&quot;_blank&quot;&gt;https://purpose-game.com&lt;/a&gt;&lt;br&gt;&lt;br&gt;
 
-Artwork - Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
+Artwork &amp; UI Design - Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
 &lt;a href=&quot;https://www.artstation.com/darkcan&quot; target=&quot;_blank&quot;&gt;https://www.artstation.com/darkcan&lt;/a&gt;
 
 Dead Font Walking Font - Allison James&lt;br&gt;
@@ -780,8 +780,11 @@ Ragged CSS Edges - Tymn Urban &amp; Stephen Melvin&lt;br&gt;
 SimpleNotification - Glagan &amp; Contributors&lt;br&gt;
 &lt;a href=&quot;https://github.com/Glagan/SimpleNotification&quot; target=&quot;_blank&quot;&gt;https://github.com/Glagan/SimpleNotification&lt;/a&gt;
 
-toggleFullscreen.js - demonixis&lt;br&gt;
-&lt;a href=&quot;https://gist.github.com/demonixis/5188326&quot; target=&quot;_blank&quot;&gt;https://gist.github.com/demonixis/5188326&lt;/a&gt;
+SimpleNotification - Glagan &amp; Contributors&lt;br&gt;
+&lt;a href=&quot;https://github.com/Glagan/SimpleNotification&quot; target=&quot;_blank&quot;&gt;https://github.com/Glagan/SimpleNotification&lt;/a&gt;
+
+jquery-typewriter-plugin - 0xPranavDoshi&lt;br&gt;
+&lt;a href=&quot;https://github.com/0xPranavDoshi/jquery-typewriter&quot; target=&quot;_blank&quot;&gt;https://github.com/0xPranavDoshi/jquery-typewriter&lt;/a&gt;
 
 jQuery - OpenJS Foundation &amp; Contributors&lt;br&gt;
 &lt;a href=&quot;https://jquery.com/&quot; target=&quot;_blank&quot;&gt;https://jquery.com/&lt;/a&gt;
@@ -3190,47 +3193,55 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
   &lt;a onclick=&quot;window.story.toggleAchievements()&quot;&gt;Toggle Achievements&lt;/a&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="318" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
 	[[Launch Game|Network Check]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Test Passage" tags="page" position="2550,100" size="100,100">&lt;action&gt;I sit down at the table.&lt;/action&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Test Passage" tags="page" position="2550,100" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;special&gt;table&lt;/special&gt;
 
+&lt;action&gt;I sit down at the table.&lt;/action&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
 
 &lt;speech.Lucy&gt;I&#39;ll fix you a bowl.&lt;/speech&gt;
 
-&lt;character.two&gt;&lt;/character&gt;
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;table&lt;/special&gt;
+&lt;character.one&gt;Lucy&lt;/character&gt;
 
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
+&lt;action&gt;Lucy stands up from the table.&lt;/action&gt;
 
-&lt;action&gt;Lucy stands up from the table. %Tiffany% looks at me, puzzled.&lt;/action&gt;
+&lt;special&gt;puzzled&lt;/special&gt;
+&lt;character.one&gt;%Tiffany%&lt;/character&gt;
 
+&lt;action&gt;%Tiffany% looks at me, puzzled.&lt;/action&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;%Tiffany%&lt;/character&gt;
 
 &lt;speech.Tiffany&gt;You look different.&lt;/speech&gt;
-
-&lt;character.one&gt;Sarah&lt;/character&gt;
-
 &lt;speech.Sarah&gt;I cut my hair; it&#39;s important to keep your hair short.&lt;/speech&gt;
-
 &lt;speech.Tiffany&gt;Why?&lt;/speech&gt;
-
-&lt;speech.Sarah&gt;So, um, &lt;i&gt;bad people&lt;/i&gt;, can&#39;t grab you as easily.&lt;/speech&gt;
-
+&lt;speech.Sarah&gt;So, um, &#39;bad people&#39;, can&#39;t grab you as easily.&lt;/speech&gt;
 &lt;speech.Tiffany&gt;Like the monsters?&lt;/speech&gt;
-
 &lt;speech.Sarah&gt;Well yeah, but also-&lt;/speech&gt;
 
-&lt;character.two&gt;&lt;/character&gt;
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;dirty&lt;/special&gt;
+&lt;character.one&gt;Lucy&lt;/character&gt;
 
 &lt;action&gt;Lucy is walking back over, shooting me a dirty look.&lt;/action&gt;
 
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;%Tiffany%&lt;/character&gt;
+
 &lt;speech.Sarah&gt;...&lt;/speech&gt;
 
-&lt;% } else { %&gt;
-
-&lt;action&gt;Lucy stands up from the table. She walks over to the portable stove and fills a bowl with the contents of the can. %Tiffany% staring and smiling at me the whole time. Lucy walks back over to me.&lt;/action&gt;
-
-&lt;% } %&gt;
-
-&lt;character.two&gt;Lucy&lt;/character&gt;
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;beans&lt;/special&gt;
+&lt;character.one&gt;Lucy&lt;/character&gt;
 
 &lt;speech.Lucy&gt;Here you go, Beans and Cheese!&lt;/speech&gt;
 
