@@ -10,14 +10,18 @@ const version = "2.0.0";
 const apiUrl = "https://purpose-game.com/api/";
 // Keys that progress the story
 const progressKeys = [13, 32, 39, 40];
+// Save Options UI
+const saveOptions = `
+<div class="menu-options">
+	<div class="option-one"><img id="option-one" href="javascript:void(0)" onclick="window.story.saveGame()"></div>
+	<div class="option-two"><img id="option-two" href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+</div>
+`;
 // Standard UI
 const standardUI = `
 <div class="container">
 
-	<div class="menu-options">
-		<div class="option-one"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
-		<div class="option-two"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
-	</div>
+	${saveOptions}
 
 	<div class="character-left">
 		<img id="character-one-image" class="character-slot">
@@ -49,10 +53,7 @@ const standardUI = `
 const specialUI = `
 <div class="container">
 
-	<div class="menu-options">
-		<div class="option-one"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
-		<div class="option-two"><img href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
-	</div>
+	${saveOptions}
 
 	<div class="character-left">
 		<img id="character-one-image" class="character-slot">
@@ -264,14 +265,12 @@ $(document).on("sm.passage.showing", function(_, data) {
 $(document).on("sm.passage.shown", function(_, data) {
 	const passage = data.passage;
     const twPassage = $("tw-passage");
-    //const pauseMenuHTML = '<p class="small right"><a href="javascript:void(0)" class="normalLink" onclick="window.story.pauseMenu()">Pause Menu</a></p><hr>';
 
     if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
-		// Inject pause menu button into all story passages
-        //twPassage.html(pauseMenuHTML + twPassage.html());
+		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
-		if (twPassage.html().includes("%Tiffany%")) {
-			twPassage.html(twPassage.html().replaceAll("%Tiffany%", window.story.tiffany()));
+		if (pageHTML.includes("%Tiffany%")) {
+			twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
 		}
 
 		if (twPassage.length) {
@@ -284,6 +283,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 			let lastTextStep = 0;
 			let typewriting = [];
 	
+			// Populate steps list
 			twPassage.find("ui, character, special, action, speech, choices").each(function() {
 				const element = $(this);
 	
@@ -295,7 +295,11 @@ $(document).on("sm.passage.shown", function(_, data) {
 	
 			const storyBox = $(".story-box");
 		
-			storyBox.click(() => stepPassage());
+			storyBox.click((e) => {
+				const ignoreClick = ["option-one", "option-two"];
+
+				if (!ignoreClick.includes(e.target.id)) stepPassage();
+			});
 	
 			$("body").keyup(function(e) {
 				if (progressKeys.includes(e.keyCode)) stepPassage();
@@ -596,6 +600,15 @@ window.story.linkCode = function () {
 
 // Saves player's game
 window.story.saveGame = function () {
+	if (!window.story.saving) {
+		SimpleNotification.error({
+			title: `Error: Saving Not Enabled`
+		}, {
+			position: "bottom-right"
+		});
+		return;
+	}
+
 	saveNotification = SimpleNotification.info({
 		title: "Auto-Saving..."
 	}, {
