@@ -276,12 +276,13 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 		if (twPassage.length) {
 			const steps = [];
-			const typewriting = [];
 	
 			let uiType;
 			let lastText;
 			let textArea;
 			let currentStep = 0;
+			let lastTextStep = 0;
+			let typewriting = [];
 	
 			twPassage.find("ui, character, special, action, speech, choices").each(function() {
 				const element = $(this);
@@ -304,11 +305,21 @@ $(document).on("sm.passage.shown", function(_, data) {
 	
 			/* eslint-disable no-inner-declarations */
 			function stepPassage() {
-				const lastStep = currentStep - 1;
 				const ui = uiType === "standard" ? "main" : "special";
-				
-				if (!typewriting.includes(lastStep) && steps[currentStep]) {
+
+				if (typewriting.includes(lastTextStep)) {
+					if (lastText) lastText.remove();
+
+					const [type, content] = steps[lastTextStep];
+					
+					textArea.append(`<div id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+			
+					lastText = $(`#text-area-${ui}-${lastTextStep}-skipped`);
+			
+					typewriting = typewriting.filter(i => i !== lastTextStep)
+				} else if (steps[currentStep]) {
 					const step = currentStep;
+					
 					let [type, content, extra] = steps[step];
 
 					if (extra === "Tiff") extra = "Tiffany";
@@ -351,6 +362,8 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 							typewriting.push(step);
 							textArea.append(`<div id="text-area-${ui}-${step}"></div>`);
+
+							lastTextStep = step;
 							lastText = $(`#text-area-${ui}-${step}`);
 			
 							$("#character-one-image").css("opacity", extra !== $("#character-one").text() ? "0.5" : "1");
@@ -363,19 +376,10 @@ $(document).on("sm.passage.shown", function(_, data) {
 									speed: 50,
 									cursor: false,
 									color: "#c8c3bc"
-								}).then(() => typewriting.splice(typewriting.indexOf(step), 1));
+								}).then(() => typewriting = typewriting.filter(i => i !== step));
 							}
 							break;
 					}
-				} else {
-					const [type, content] = steps[lastStep];			
-					lastText.remove();
-					
-					textArea.append(`<div id="text-area-${ui}-${lastStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
-			
-					lastText = $(`#text-area-${ui}-${lastStep}-skipped`);
-			
-					typewriting.splice(typewriting.indexOf(lastStep), 1);
 				}
 			}
 		}
