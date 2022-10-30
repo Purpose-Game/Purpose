@@ -1,8 +1,11 @@
 Game & Infrastructure - Christopher "Inferno" M.
 > https://purpose-game.com/
 
-Artwork - Daniel "DanDarkDesigns" Ayala
+Character Artwork & UI Design - Daniel "DanDarkDesigns" Ayala
 > https://www.artstation.com/darkcan
+
+Item & Location Artwork - NovelAI (Anlatan)
+> https://novelai.net
 
 Dead Font Walking Font - Allison James
 > https://www.1001fonts.com/dead-font-walking-font.html
@@ -15,6 +18,9 @@ SimpleNotification - Glagan & Contributors
 
 toggleFullscreen.js - demonixis
 > https://gist.github.com/demonixis/5188326
+
+jquery-typewriter-plugin - 0xPranavDoshi
+> https://github.com/0xPranavDoshi/jquery-typewriter
 
 jQuery - OpenJS Foundation & Contributors
 > https://jquery.com/

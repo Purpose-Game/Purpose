@@ -1,4 +1,4 @@
-name: Lint & Deploy
+name: Lint, Copy, & Deploy
 on: push
 
 jobs:
@@ -24,11 +24,25 @@ jobs:
         uses: c-hive/gha-npm-cache@v1
       - name: npm Install
         run: npm ci
-      - name: Lint Javascript
+      - name: Lint CSS
         run: npm run csslint
+  copy:
+    name: Copy Files To dist
+    needs: [jsLint, cssLint]
+    runs-on: ubuntu-latest
+    if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Cache npm Directory
+        uses: c-hive/gha-npm-cache@v1
+      - name: npm Install
+        run: npm ci
+      - name: Copy Files To dist
+        run: npm run copy
   deploy:
     name: Deploy to itch.io
-    needs: [jsLint, cssLint]
+    needs: copy
     runs-on: ubuntu-latest
     if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
@@ -39,16 +53,6 @@ jobs:
       with:
         source: "Purpose.html"
         target: "dist/index.html"
-    - name: Copy Javascript File to dist
-      uses: canastro/copy-file-action@master
-      with:
-        source: "index.js"
-        target: "dist/assets/javascript/index.js"
-    - name: Copy CSS File to dist
-      uses: canastro/copy-file-action@master
-      with:
-        source: "style.css"
-        target: "dist/assets/css/style.css"
     - name: Minify JS & CSS dist files
       uses: nizarmah/auto-minify@v2.1
       with:
