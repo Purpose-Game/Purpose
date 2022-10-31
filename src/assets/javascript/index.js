@@ -86,6 +86,10 @@ let font = true;
 // Prevents saving of last saved page
 let justLoaded = false;
 
+let gamepadInputCheck;
+let gamepadCheckInterval;
+let anyGamepadButtonPressed = false;
+
 let debugNotification;
 let saveNotification;
 
@@ -390,14 +394,113 @@ $(document).on("sm.passage.shown", function(_, data) {
     }
 });
 
+$(document).on("gamepadconnected", function() {
+	checkForGamepadInput();
+});
+
+$(document).on("gamepaddisconnected", function() {
+	cancelAnimationFrame(gamepadInputCheck);
+
+	gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);
+});
+
 //
 // Helpers
 //
 
+// Returns all gamepads
+const getGamepads = () => navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
+
+// Cross-platform requestAnimationFrame
+const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame; // eslint-disable-line no-redeclare
+
+// Cross-platform cancelAnimationFrame
+const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame; // eslint-disable-line no-redeclare
+
 // Prints a debug message to the console if in debug mode
-function debugMessage(message) {
-	if (debug) console.log("DEBUG: " + message);
+const debugMessage = (message) => { if (debug) console.log("DEBUG: " + message); };
+
+// Polls for gamepads
+function pollGamepads() {
+	const gamepads = getGamepads();
+
+	for (const gp of gamepads) {
+		if (!gp) return;
+
+		checkForGamepadInput();
+		clearInterval(gamepadCheckInterval);
+	}
 }
+
+// Checks if gamepad button pressed
+function buttonPressed(b) {
+	if (typeof b === "object") {
+		return b.pressed;
+	}
+	
+	return b === 1.0;
+}
+
+// Checks for gamepad input
+function checkForGamepadInput() {
+	const gamepads = getGamepads();
+	
+	if (!gamepads) return;
+
+	const gp = gamepads[0];
+
+	if (!gp) return;
+
+	// Step story
+	if (buttonPressed(gp.buttons[0])) {
+		if (!anyGamepadButtonPressed) $(".story-box").trigger("click");
+		anyGamepadButtonPressed = true;
+	// Pause Game
+	} else if (buttonPressed(gp.buttons[1])) {
+		if (!anyGamepadButtonPressed) window.story.pauseMenu();
+
+		anyGamepadButtonPressed = true;
+	} else {
+		anyGamepadButtonPressed = false;
+	}
+
+	let a = 0;
+	let b = 0;
+	
+	if (gp.axes[0] !== 0) b -= gp.axes[0];
+	
+	if (gp.axes[1] !== 0) a += gp.axes[1];
+	
+	if (gp.axes[2] !== 0) b += gp.axes[2];
+	
+	if (gp.axes[3] !== 0) a -= gp.axes[3];
+
+	const [left, right, up, down] = [b > 0.75, b < -0.75, a < -0.75, a > 0.75];
+
+	$("#gamepadTest").html(`Up: ${up}<br>Down: ${down}<br>Left: ${left}<br>Right: ${right}`);
+
+	gamepadInputCheck = requestAnimationFrame(checkForGamepadInput);
+}
+
+/*async function gamepadRumble(weak, strong) {
+	const gamepads = getGamepads();
+	
+	if (!gamepads) return;
+
+	const gp = gamepads[0];
+
+	if (!gp) return;
+
+	// To cover both
+	// .hapticActuators[0].pulse(1.0, 200);
+
+	await gp.vibrationActuator.playEffect("dual-rumble", {
+		startDelay: 0,
+		duration: 500,
+		weakMagnitude: weak,
+		strongMagnitude: strong,
+	});
+}*/
 
 // Checks network connection
 window.story.networkCheck = function (nextPassage) {
@@ -980,3 +1083,6 @@ document.head.appendChild(typewriter);
 
 // Adds Favicons
 $("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
+
+// Polls for gamepad every 2 seconds
+if (!("ongamepadconnected" in window)) gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);
