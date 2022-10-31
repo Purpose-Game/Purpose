@@ -395,10 +395,12 @@ $(document).on("sm.passage.shown", function(_, data) {
 });
 
 $(document).on("gamepadconnected", function() {
+	debugMessage("Gamepad connected");
 	checkForGamepadInput();
 });
 
 $(document).on("gamepaddisconnected", function() {
+	debugMessage("Gamepad disconnected");
 	cancelAnimationFrame(gamepadInputCheck);
 
 	gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);
@@ -427,6 +429,7 @@ function pollGamepads() {
 	for (const gp of gamepads) {
 		if (!gp) return;
 
+		debugMessage("Gamepad polled");
 		checkForGamepadInput();
 		clearInterval(gamepadCheckInterval);
 	}
@@ -444,12 +447,13 @@ function buttonPressed(b) {
 // Checks for gamepad input
 function checkForGamepadInput() {
 	const gamepads = getGamepads();
-	
-	if (!gamepads) return;
-
 	const gp = gamepads[0];
 
-	if (!gp) return;
+	if (!gp) {
+		debugMessage("Gamepad connection lost");
+		gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);
+		return;
+	}
 
 	// Step story
 	if (buttonPressed(gp.buttons[0])) {
@@ -476,8 +480,6 @@ function checkForGamepadInput() {
 	if (gp.axes[3] !== 0) a -= gp.axes[3];
 
 	const [left, right, up, down] = [b > 0.75, b < -0.75, a < -0.75, a > 0.75];
-
-	$("#gamepadTest").html(`Up: ${up}<br>Down: ${down}<br>Left: ${left}<br>Right: ${right}`);
 
 	gamepadInputCheck = requestAnimationFrame(checkForGamepadInput);
 }
