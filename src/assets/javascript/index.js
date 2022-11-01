@@ -1,4 +1,4 @@
-/* global _, SimpleNotification */
+/* global _, SimpleNotification, GamePad */
 
 //
 // Variables
@@ -86,10 +86,6 @@ let font = true;
 // Prevents saving of last saved page
 let justLoaded = false;
 
-let gamepadInputCheck;
-let gamepadCheckInterval;
-let anyGamepadButtonPressed = false;
-
 let debugNotification;
 let saveNotification;
 
@@ -112,6 +108,8 @@ window.story.saving = false;
 window.story.saveSlot = 1;
 // If game is being played online
 window.story.network = false;
+// Is player making a choice
+window.story.makingChoice = false;
 
 // Used for statistics passages, see "Choices" passage for all choices
 //	"Choice Internal Name": [
@@ -270,6 +268,8 @@ $(document).on("sm.passage.shown", function(_, data) {
 	const passage = data.passage;
     const twPassage = $("tw-passage");
 
+	window.story.makingChoice = false;
+
     if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
 		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
@@ -286,6 +286,8 @@ $(document).on("sm.passage.shown", function(_, data) {
 			let currentStep = 0;
 			let lastTextStep = 0;
 			let typewriting = [];
+			let maxChoiceIndex = 0;
+			let currentChoiceIndex = -1;
 	
 			// Populate steps list
 			twPassage.find("ui, character, special, action, speech, choices").each(function() {
@@ -306,7 +308,36 @@ $(document).on("sm.passage.shown", function(_, data) {
 			});
 	
 			$("body").keyup(function(e) {
-				if (progressKeys.includes(e.keyCode)) stepPassage();
+				if (!window.story.makingChoice) {
+					if (progressKeys.includes(e.keyCode)) stepPassage();
+				} else {
+					if (currentChoiceIndex === -1) {
+						currentChoiceIndex = 0;
+					} else {
+						$(`#choice-${currentChoiceIndex}`).removeClass("hovered");
+
+						switch (e.keyCode) {
+							// Enter
+							case 13:
+								$(`#choice-${currentChoiceIndex}`).trigger("click");
+								return;
+	
+							// Up
+							case 38:
+								if (currentChoiceIndex > 0) --currentChoiceIndex;
+								break;
+	
+							// Down
+							case 40:
+								if (currentChoiceIndex < maxChoiceIndex) currentChoiceIndex++;
+								break;
+						}
+					}
+
+					GamePad.gamepadRumble(0.5, 0, 200);
+
+					$(`#choice-${currentChoiceIndex}`).addClass("hovered");
+				}
 			});
 	
 			stepPassage();
@@ -368,7 +399,8 @@ $(document).on("sm.passage.shown", function(_, data) {
 						default:
 							if (lastText) lastText.remove();
 
-							typewriting.push(step);
+							if (type !== "CHOICES") typewriting.push(step);
+
 							textArea.append(`<div id="text-area-${ui}-${step}"></div>`);
 
 							lastTextStep = step;
@@ -378,13 +410,20 @@ $(document).on("sm.passage.shown", function(_, data) {
 							$("#character-two-image").css("opacity", extra !== $("#character-two").text() ? "0.5" : "1");
 							
 							lastText.html(type === "SPEECH" ? `"${content}"` : content);
-							
+
 							if (type !== "CHOICES") {
 								lastText.typeWrite({
 									speed: 50,
 									cursor: false,
 									color: "#c8c3bc"
 								}).then(() => typewriting = typewriting.filter(i => i !== step));
+							} else {
+								window.story.makingChoice = true;
+
+								lastText.children().each((index, element) => {
+									maxChoiceIndex = index;
+									$(element).attr("id", `choice-${index}`);
+								});
 							}
 							break;
 					}
@@ -394,115 +433,12 @@ $(document).on("sm.passage.shown", function(_, data) {
     }
 });
 
-$(document).on("gamepadconnected", function() {
-	debugMessage("Gamepad connected");
-	checkForGamepadInput();
-});
-
-$(document).on("gamepaddisconnected", function() {
-	debugMessage("Gamepad disconnected");
-	cancelAnimationFrame(gamepadInputCheck);
-
-	gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);
-});
-
 //
 // Helpers
 //
 
-// Returns all gamepads
-const getGamepads = () => navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
-
-// Cross-platform requestAnimationFrame
-const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame; // eslint-disable-line no-redeclare
-
-// Cross-platform cancelAnimationFrame
-const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame; // eslint-disable-line no-redeclare
-
 // Prints a debug message to the console if in debug mode
 const debugMessage = (message) => { if (debug) console.log("DEBUG: " + message); };
-
-// Polls for gamepads
-function pollGamepads() {
-	const gamepads = getGamepads();
-
-	for (const gp of gamepads) {
-		if (!gp) return;
-
-		debugMessage("Gamepad polled");
-		checkForGamepadInput();
-		clearInterval(gamepadCheckInterval);
-	}
-}
-
-// Checks if gamepad button pressed
-function buttonPressed(b) {
-	if (typeof b === "object") {
-		return b.pressed;
-	}
-	
-	return b === 1.0;
-}
-
-// Checks for gamepad input
-function checkForGamepadInput() {
-	const gamepads = getGamepads();
-	const gp = gamepads[0];
-
-	if (!gp) {
-		debugMessage("Gamepad connection lost");
-		gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);
-		return;
-	}
-
-	// Step story
-	if (buttonPressed(gp.buttons[0])) {
-		if (!anyGamepadButtonPressed) $(".story-box").trigger("click");
-		anyGamepadButtonPressed = true;
-	// Pause Game
-	} else if (buttonPressed(gp.buttons[1])) {
-		if (!anyGamepadButtonPressed) window.story.pauseMenu();
-
-		anyGamepadButtonPressed = true;
-	} else {
-		anyGamepadButtonPressed = false;
-	}
-
-	let a = 0;
-	let b = 0;
-	
-	if (gp.axes[0] !== 0) b -= gp.axes[0];
-	
-	if (gp.axes[1] !== 0) a += gp.axes[1];
-	
-	if (gp.axes[2] !== 0) b += gp.axes[2];
-	
-	if (gp.axes[3] !== 0) a -= gp.axes[3];
-
-	const [left, right, up, down] = [b > 0.75, b < -0.75, a < -0.75, a > 0.75];
-
-	gamepadInputCheck = requestAnimationFrame(checkForGamepadInput);
-}
-
-/*async function gamepadRumble(weak, strong) {
-	const gamepads = getGamepads();
-	
-	if (!gamepads) return;
-
-	const gp = gamepads[0];
-
-	if (!gp) return;
-
-	// To cover both
-	// .hapticActuators[0].pulse(1.0, 200);
-
-	await gp.vibrationActuator.playEffect("dual-rumble", {
-		startDelay: 0,
-		duration: 500,
-		weakMagnitude: weak,
-		strongMagnitude: strong,
-	});
-}*/
 
 // Checks network connection
 window.story.networkCheck = function (nextPassage) {
@@ -1043,6 +979,15 @@ window.story.customRender = function (passageName) {
 }
 
 //
+// Scripts
+//
+
+const gamepad = document.createElement("script");
+gamepad.src = "assets/javascript/gamepad.js";
+
+document.head.appendChild(gamepad);
+
+//
 // External Scripts
 //
 
@@ -1085,6 +1030,3 @@ document.head.appendChild(typewriter);
 
 // Adds Favicons
 $("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
-
-// Polls for gamepad every 2 seconds
-if (!("ongamepadconnected" in window)) gamepadCheckInterval = setInterval(pollGamepads, 2 * 1000);

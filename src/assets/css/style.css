@@ -59,6 +59,7 @@ button {
 }
 
 a:hover,
+a.hovered,
 button:hover {
   color: #010101;
   background: #898989;
