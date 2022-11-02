@@ -1,3 +1,49 @@
-.tiffany-image {
-  background-image: url("../../../assets/images/ui/characters/tiffany.png") !important;
+/* Stance */
+
+.tiffany-stance-neutral {
+  background-image: url("../../../assets/images/ui/characters/tiffany/stance/neutral.png");
+}
+
+.tiffany-stance-neutral-backpack {
+  background-image: url("../../../assets/images/ui/characters/tiffany/stance/neutral_backpack.png");
+}
+
+/* Eyes */
+
+.tiffany-eyes-confused {
+  background-image: url("../../../assets/images/ui/characters/tiffany/eyes/confused.gif");
+}
+
+.tiffany-eyes-happy {
+  background-image: url("../../../assets/images/ui/characters/tiffany/eyes/happy.gif");
+}
+
+.tiffany-eyes-neutral {
+  background-image: url("../../../assets/images/ui/characters/tiffany/eyes/neutral.gif");
+}
+
+.tiffany-eyes-sad {
+  background-image: url("../../../assets/images/ui/characters/tiffany/eyes/sad.gif");
+}
+
+/* Mouth */
+
+.tiffany-mouth-talking {
+  background-image: url("../../../assets/images/ui/characters/tiffany/mouth/talking.gif");
+}
+
+.tiffany-mouth-confused {
+  background-image: url("../../../assets/images/ui/characters/tiffany/mouth/confused.png");
+}
+
+.tiffany-mouth-happy {
+  background-image: url("../../../assets/images/ui/characters/tiffany/mouth/happy.png");
+}
+
+.tiffany-mouth-neutral {
+  background-image: url("../../../assets/images/ui/characters/tiffany/mouth/neutral.png");
+}
+
+.tiffany-mouth-sad {
+  background-image: url("../../../assets/images/ui/characters/tiffany/mouth/sad.png");
 }

@@ -1,3 +1,49 @@
-.lucy-image {
-  background-image: url("../../../assets/images/ui/characters/lucy.png") !important;
+/* Stance */
+
+.lucy-stance-neutral {
+  background-image: url("../../../assets/images/ui/characters/lucy/stance/neutral.png");
+}
+
+.lucy-stance-fighting {
+  background-image: url("../../../assets/images/ui/characters/lucy/stance/fighting.png");
+}
+
+/* Eyes */
+
+.lucy-eyes-concern {
+  background-image: url("../../../assets/images/ui/characters/lucy/eyes/concern.gif");
+}
+
+.lucy-eyes-happy {
+  background-image: url("../../../assets/images/ui/characters/lucy/eyes/happy.gif");
+}
+
+.lucy-eyes-neutral {
+  background-image: url("../../../assets/images/ui/characters/lucy/eyes/neutral.gif");
+}
+
+.lucy-eyes-sad {
+  background-image: url("../../../assets/images/ui/characters/lucy/eyes/sad.gif");
+}
+
+/* Mouth */
+
+.lucy-mouth-talking {
+  background-image: url("../../../assets/images/ui/characters/lucy/mouth/talking.gif");
+}
+
+.lucy-mouth-concern {
+  background-image: url("../../../assets/images/ui/characters/lucy/mouth/concern.png");
+}
+
+.lucy-mouth-happy {
+  background-image: url("../../../assets/images/ui/characters/lucy/mouth/happy.png");
+}
+
+.lucy-mouth-neutral {
+  background-image: url("../../../assets/images/ui/characters/lucy/mouth/neutral.png");
+}
+
+.lucy-mouth-sad {
+  background-image: url("../../../assets/images/ui/characters/lucy/mouth/sad.png");
 }

@@ -183,6 +183,10 @@ tw-story {
   background-image: url("../../assets/images/ui/story-box/character-slot.png");
 }
 
+.character-right > .character-slot {
+  transform: scaleX(-1);
+}
+
 .character-name {
   color: #0d0e0f;
   font-family: Arial, Helvetica, sans-serif;

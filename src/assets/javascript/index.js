@@ -280,15 +280,18 @@ $(document).on("sm.passage.shown", function(_, data) {
 		if (twPassage.length) {
 			const steps = [];
 	
+			let images;
 			let uiType;
+			let speaker;
 			let lastText;
 			let textArea;
+			let originalImages;
 			let currentStep = 0;
 			let lastTextStep = 0;
 			let typewriting = [];
 			let maxChoiceIndex = 0;
 			let currentChoiceIndex = -1;
-	
+
 			// Populate steps list
 			twPassage.find("ui, character, special, action, speech, choices").each(function() {
 				const element = $(this);
@@ -350,6 +353,11 @@ $(document).on("sm.passage.shown", function(_, data) {
 					if (lastText) lastText.remove();
 
 					const [type, content] = steps[lastTextStep];
+
+					if (type === "SPEECH" && speaker && originalImages) {
+						speaker.attr("class", "character-slot");
+						speaker.css("background-image", originalImages.join(", "));
+					}
 					
 					textArea.append(`<div id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
 			
@@ -375,20 +383,68 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 							stepPassage();
 							break;
-						case "CHARACTER":
-							if (extra === "one") {
-								$("#character-one").text(content);
-								$("#character-one-image").attr("class", "character-slot");
-								$("#character-one-image").addClass(`${content.toLowerCase()}-image`);
-							} else {
-								$("#character-two").text(content);
-								$("#character-two-image").attr("class", "character-slot");
-								$("#character-two-image").addClass(`${content.toLowerCase()}-image`);
+						case "CHARACTER": {
+							const extras = extra.split(" ");
+							const slot = extras.shift();
+							const character = content.toLowerCase();
+							const mixer = document.createElement("span");
+							
+							mixer.id = "mixer-image";
+							document.head.appendChild(mixer);
+						
+							let parts = [];
+							let images = [];
+							let parent = $(`#character-${slot}`);
+							let mixerImage = $(`#mixer-image`);
+							let parentImage = $(`#character-${slot}-image`);
+
+							switch (extras.length) {
+								case 0:
+									parts = [
+										`${character}-eyes-neutral`,
+										`${character}-mouth-neutral`,
+										`${character}-stance-neutral`
+									];
+									break;
+
+								case 1:
+									parts = [
+										`${character}-eyes-${extras[0]}`,
+										`${character}-mouth-${extras[0]}`,
+										`${character}-stance-neutral`
+									];
+									break;
+
+								case 2:
+									parts = [
+										`${character}-eyes-${extras[0]}`,
+										`${character}-mouth-${extras[1]}`,
+										`${character}-stance-neutral`
+									];
+									break;
+
+								case 3:
+									parts = [
+										`${character}-eyes-${extras[0]}`,
+										`${character}-mouth-${extras[1]}`,
+										`${character}-stance-${extras[2]}`
+									];
+									break;
 							}
-			
+
+							for (const part of parts) {
+								mixerImage.attr("class", part);
+								images.push(mixerImage.css("background-image"));
+							}
+
+							parent.text(content);
+							parentImage.attr("class", "character-slot");
+							parentImage.css("background-image", images.join(", "));
+							mixerImage.remove();
+
 							stepPassage();
 							break;
-
+						}
 						case "SPECIAL":
 							$("#special-image").attr("class", "special-image");
 							$("#special-image").addClass(`${content.toLowerCase()}-image`);
@@ -396,7 +452,9 @@ $(document).on("sm.passage.shown", function(_, data) {
 							stepPassage();
 							break;
 			
-						default:
+						default: {
+							const character = extra?.toLowerCase() ?? "";
+
 							if (lastText) lastText.remove();
 
 							if (type !== "CHOICES") typewriting.push(step);
@@ -405,18 +463,50 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 							lastTextStep = step;
 							lastText = $(`#text-area-${ui}-${step}`);
+
+							let characterOne = $("#character-one").text().toLowerCase();
+							let characterTwo = $("#character-two").text().toLowerCase();
 			
-							$("#character-one-image").css("opacity", extra !== $("#character-one").text() ? "0.5" : "1");
-							$("#character-two-image").css("opacity", extra !== $("#character-two").text() ? "0.5" : "1");
+							$("#character-one-image").css("opacity", character !== characterOne ? "0.7" : "1");
+							$("#character-two-image").css("opacity", character !== characterTwo ? "0.7" : "1");
 							
 							lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
 							if (type !== "CHOICES") {
+								if (type === "SPEECH") {
+									speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
+
+									images = speaker.css("background-image").split(", ");
+									originalImages = images.slice();
+								
+									const mixer = document.createElement("span");
+								
+									mixer.id = "mixer-image";
+									document.head.appendChild(mixer);
+
+									let mixerImage = $(`#mixer-image`);
+
+									mixerImage.attr("class", `${character}-mouth-talking`);
+									images[1] = mixerImage.css("background-image");
+
+									speaker.attr("class", "character-slot");
+									speaker.css("background-image", images.join(", "));
+
+									mixerImage.remove();
+								}
+
 								lastText.typeWrite({
 									speed: 50,
 									cursor: false,
 									color: "#c8c3bc"
-								}).then(() => typewriting = typewriting.filter(i => i !== step));
+								}).then(() => {
+									if (type === "SPEECH" && speaker && originalImages && typewriting.includes(step)) {
+										speaker.attr("class", "character-slot");
+										speaker.css("background-image", originalImages.join(", "));
+									}
+
+									typewriting = typewriting.filter(i => i !== step);
+								});
 							} else {
 								window.story.makingChoice = true;
 
@@ -426,6 +516,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 								});
 							}
 							break;
+						}
 					}
 				}
 			}
