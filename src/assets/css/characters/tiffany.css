@@ -8,6 +8,14 @@
   background-image: url("../../../assets/images/ui/characters/tiffany/stance/neutral_backpack.png");
 }
 
+.tiffany-stance-scared {
+  background-image: url("../../../assets/images/ui/characters/tiffany/stance/scared.png");
+}
+
+.tiffany-stance-scared-backpack {
+  background-image: url("../../../assets/images/ui/characters/tiffany/stance/scared_backpack.png");
+}
+
 /* Eyes */
 
 .tiffany-eyes-confused {
@@ -24,6 +32,10 @@
 
 .tiffany-eyes-sad {
   background-image: url("../../../assets/images/ui/characters/tiffany/eyes/sad.gif");
+}
+
+.tiffany-eyes-scared {
+  background-image: url("../../../assets/images/ui/characters/tiffany/eyes/scared.gif");
 }
 
 /* Mouth */
@@ -46,4 +58,9 @@
 
 .tiffany-mouth-sad {
   background-image: url("../../../assets/images/ui/characters/tiffany/mouth/sad.png");
+}
+
+/* Mouth is covered, no image required */
+.tiffany-mouth-scared {
+  background-image: url("");
 }

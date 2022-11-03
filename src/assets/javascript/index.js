@@ -499,23 +499,30 @@ $(document).on("sm.passage.shown", function(_, data) {
 								if (type === "SPEECH") {
 									speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
 
-									images = speaker.css("background-image").split(", ");
-									originalImages = images.slice();
-								
-									const mixer = document.createElement("span");
-								
-									mixer.id = "mixer-image";
-									document.head.appendChild(mixer);
+									let backgroundImages = speaker.css("background-image");
 
-									let mixerImage = $(`#mixer-image`);
+									// Scared Tiffany has her mouth covered
+									if (character !== "Tiffany" && !backgroundImages.includes("stance/scared")) {
+										images = backgroundImages.split(", ");
+										originalImages = images.slice();
 
-									mixerImage.attr("class", `${character}-mouth-talking`);
-									images[1] = mixerImage.css("background-image");
+										const mixer = document.createElement("span");
 
-									speaker.attr("class", "character-slot");
-									speaker.css("background-image", images.join(", "));
+										mixer.id = "mixer-image";
+										document.head.appendChild(mixer);
 
-									mixerImage.remove();
+										let mixerImage = $(`#mixer-image`);
+
+										mixerImage.attr("class", `${character}-mouth-talking`);
+										images[1] = mixerImage.css("background-image");
+
+										speaker.attr("class", "character-slot");
+										speaker.css("background-image", images.join(", "));
+
+										mixerImage.remove();
+									} else {
+										speaker = null;
+									}
 								}
 
 								lastText.typeWrite({
