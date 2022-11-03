@@ -13,7 +13,7 @@ const progressKeys = [13, 32, 39, 40];
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
-	<div class="option-one"><img id="option-one" href="javascript:void(0)" onclick="window.story.saveGame()"></div>
+	<div class="option-one"><img id="option-one" href="javascript:void(0)" onclick="window.story.saveGame(true)"></div>
 	<div class="option-two"><img id="option-two" href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
 </div>
 `;
@@ -84,7 +84,7 @@ let achievements = true;
 // Uses custom font when true
 let font = true;
 // Prevents saving of last saved page
-let justLoaded = false;
+let justSaved = false;
 
 let debugNotification;
 let saveNotification;
@@ -250,9 +250,8 @@ $(document).on("sm.passage.showing", function(_, data) {
 
 		if (window.story.saving && passage.tags.includes("save")) {
 			// Stop saving of the page we just loaded back into
-			if (justLoaded) {
+			if (justSaved) {
 				debugMessage(`Not saving ${passage.name} as justLoaded is ${true}`);
-				justLoaded = false;
 				return;
 			}
 
@@ -342,6 +341,8 @@ $(document).on("sm.passage.shown", function(_, data) {
 					$(`#choice-${currentChoiceIndex}`).addClass("hovered");
 				}
 			});
+
+			justSaved = false;
 	
 			stepPassage();
 	
@@ -731,7 +732,7 @@ window.story.linkCode = function () {
 }
 
 // Saves player's game
-window.story.saveGame = function () {
+window.story.saveGame = function (manual = false) {
 	if (!window.story.saving) {
 		SimpleNotification.error({
 			title: `Error: Saving Not Enabled`
@@ -742,7 +743,7 @@ window.story.saveGame = function () {
 	}
 
 	saveNotification = SimpleNotification.info({
-		title: "Auto-Saving..."
+		title: `${manual ? "" : "Auto-"}Saving...`
 	}, {
 		position: "bottom-right"
 	});
@@ -757,12 +758,12 @@ window.story.saveGame = function () {
 		debugMessage("Game saved");
 
 		saveNotification.setType("success");
-		saveNotification.setTitle("Auto-Save Complete!");
+		saveNotification.setTitle(`${manual ? "" : "Auto-"}Save Complete!`);
 	}).catch(function(error) {
 		debugMessage("Game failed to save: " + error);
 
 		saveNotification.setType("error");
-		saveNotification.setTitle("Auto-Save Failed!");
+		saveNotification.setTitle(`${manual ? "" : "Auto-"}Save Failed!`);
 		saveNotification.setText(error.responseText);
 	});
 }
@@ -829,7 +830,7 @@ window.story.loadSave = function (saveSlot) {
 	}).done(function(data) {
 		debugMessage(`Loaded save ${saveSlot} for ${window.story.player.key}`);
 
-		justLoaded = true;
+		justSaved = true;
 
 		window.story.state = data;
 		window.story.saveSlot = saveSlot;

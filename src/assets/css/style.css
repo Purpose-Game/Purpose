@@ -34,6 +34,7 @@ https://www.1001fonts.com/dead-font-walking-font.html
 body {
   font: 27px DeadWalking, Arial, sans-serif;
   color: #c8c3bc;
+  user-select: none;
   background-color: #222;
   letter-spacing: 1.5px;
   background-image: url("../../assets/images/ui/background.png");
