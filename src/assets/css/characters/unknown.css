@@ -1,1 +1,19 @@
-/* Placeholder */
+/* Stance */
+
+.unknown-stance-neutral {
+  background-image: url("../../../assets/images/ui/characters/unknown/neutral.png");
+}
+
+/* Eyes */
+
+/* No image required */
+.unknown-eyes-neutral {
+  background-image: url("");
+}
+
+/* Mouth */
+
+/* No image required */
+.unknown-mouth-neutral {
+  background-image: url("");
+}
