@@ -78,6 +78,34 @@ const specialUI = `
 `;
 // Body Element
 const body = $("body");
+// Audio Library
+const audioLibrary = {
+	// UI Sounds
+	ui: {
+		button: new Audio("assets/audio/ui/button.mp3"),
+		click: new Audio("assets/audio/ui/click.mp3"),
+		confirm: new Audio("assets/audio/ui/confirm.mp3")
+	},
+
+	// Sound effects
+	sfx: {
+		"chair": new Audio("assets/audio/sfx/chair.mp3"),
+		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
+		"bowl": new Audio("assets/audio/sfx/bowl.mp3")
+	},
+
+	// Music
+	music: {
+		// Menu Music
+		menu: {
+			main_menu: new Audio("assets/audio/music/menu/main_menu.mp3"),
+			pause_menu: new Audio("assets/audio/music/menu/pause_menu.mp3"),
+		},
+		
+		// Game Music
+		"calm": new Audio("assets/audio/music/calm.mp3"),
+	}
+}
 
 // Shows debug notification when true
 let debug = false;
@@ -300,7 +328,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 			let currentChoiceIndex = -1;
 
 			// Populate steps list
-			twPassage.find("ui, character, special, action, speech, sound, choices").each(function() {
+			twPassage.find("ui, character, special, action, speech, sound, music, choices").each(function() {
 				const element = $(this);
 	
 				steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
@@ -351,7 +379,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 				}
 
 				if (oldChoiceIndex != currentChoiceIndex) {
-					audioHelpers.playAudio(audioHelpers.ui.click);
+					audioHelpers.playAudio(audioLibrary.ui.click);
 					GamePad.gamepadRumble(0.5, 0, 200);
 				}		
 
@@ -365,7 +393,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 			stepPassage();
 	
 			/* eslint-disable no-inner-declarations */
-			function stepPassage() {
+			async function stepPassage() {
 				const ui = uiType === "standard" ? "main" : "special";
 
 				if (typewriting.includes(lastTextStep)) {
@@ -474,7 +502,21 @@ $(document).on("sm.passage.shown", function(_, data) {
 							break;
 
 						case "SOUND":
-							audioHelpers.playAudio(audioHelpers.sfx[content]);
+							audioHelpers.playAudio(audioLibrary.sfx[content]);
+
+							stepPassage();
+							break;
+
+						case "MUSIC":
+							if (backgroundMusic) return;
+
+							backgroundMusic = await audioHelpers.playMusic(audioLibrary.music[content]);
+
+							stepPassage();
+							break;
+
+						case "STOPMUSIC":
+							if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
 
 							stepPassage();
 							break;
@@ -568,7 +610,7 @@ body.on("mouseover", function (e) {
 		keybindSelectedElement = null;
 	}
 
-	audioHelpers.playAudio(audioHelpers.ui.button);
+	audioHelpers.playAudio(audioLibrary.ui.button);
 });
 
 body.on("click", function (e) {
@@ -579,11 +621,11 @@ body.on("click", function (e) {
 
 	switch (elementClass) {
 		case "sound-confirm":
-			audioHelpers.playAudio(audioHelpers.ui.confirm);
+			audioHelpers.playAudio(audioLibrary.ui.confirm);
 			break;
 
 		default:
-			audioHelpers.playAudio(audioHelpers.ui.click);
+			audioHelpers.playAudio(audioLibrary.ui.click);
 			break;
 	}
 });
@@ -597,6 +639,81 @@ const debugMessage = (message) => { if (debug) console.log("DEBUG: " + message);
 
 // Delays script execution for X ms
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// Audio functions
+const audioHelpers = {
+	play: (music) => {
+		music.volume = 0;
+		music.play();
+		music.loop = true;
+
+		audioHelpers.fadeIn(music);
+	},
+
+	// Duplicates audio then plays
+	playAudio: (audio) => audio.cloneNode().play(),
+
+	playMusic: async (audio) => {
+		const music = audio.cloneNode();
+
+		audioHelpers.play(music);
+
+		return music;
+	},
+
+	togglePauseMusic: async (music) => {
+		if (!music) return;
+
+		if (music.paused) {
+			audioHelpers.play(music);
+		} else {
+			await audioHelpers.killMusic(music);
+		}
+	},
+
+	stopMusic: async (music) => {
+		killFade = true;
+
+		// Wait for any fade-ins to die
+		sleep(550);
+
+		killFade = false;
+
+		audioHelpers.fadeOut(music);
+	},
+
+	killMusic: async (music) => {
+		while (music.volume > 0) {
+			music.volume = Math.max(0, music.volume - 0.2);
+			
+			await sleep(200);
+		}
+
+		music.pause();
+	},
+
+	fadeIn: async (music) => {
+		while (!killFade && music.volume < 1) {
+			music.volume = Math.min(1, music.volume + 0.025);
+
+			await sleep(500);
+		}
+	},
+
+	fadeOut: async (music) => {
+		while (!killFade && music.volume > 0) {
+			music.volume = Math.max(0, music.volume - 0.05);
+			
+			await sleep(250);
+		}
+
+		music.pause();
+	}
+};
+
+//
+//	Window Helpers
+//
 
 // Checks network connection
 window.story.networkCheck = function (nextPassage) {
@@ -1094,17 +1211,22 @@ window.story.loadAchievements = function () {
 }
 
 // Toggles opening of pause menu
-window.story.pauseMenu = function () {
+window.story.pauseMenu = async function () {
 	debugMessage(`Pause menu toggled (${prePausePassage == null})`);
 
 	if (prePausePassage == null) {
 		prePausePassage = window.passage.name;
 
 		window.story.show("Pause Menu");
+
+		await audioHelpers.togglePauseMusic(backgroundMusic);
+
 		window.story.startMenuMusic(true);
 	} else {
 		window.story.show(prePausePassage);
 		window.story.stopMenuMusic(menuMusic);
+
+		audioHelpers.togglePauseMusic(backgroundMusic);
 
 		prePausePassage = null;
 	}
@@ -1144,7 +1266,7 @@ window.story.startMenuMusic = async function (pauseMenu = false) {
 
 	debugMessage("Main menu music started");
 
-	menuMusic = await audioHelpers.playMusic(!pauseMenu ? audioHelpers.music.menu.main_menu : audioHelpers.music.menu.pause_menu);
+	menuMusic = await audioHelpers.playMusic(!pauseMenu ? audioLibrary.music.menu.main_menu : audioLibrary.music.menu.pause_menu);
 }
 
 // Stops the menu music
@@ -1210,81 +1332,3 @@ document.head.appendChild(typewriter);
 
 // Adds Favicons
 $("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
-
-// Create Audio functions
-const audioHelpers = {
-	// Duplicates audio then plays
-	playAudio: (audio) => audio.cloneNode().play(),
-
-	playMusic: async (audio) => {
-		const music = audio.cloneNode();
-
-		music.volume = 0;
-		music.play();
-		music.loop = true;
-
-		audioHelpers.fadeIn(music);
-
-		return music;
-	},
-
-	stopMusic: async (music) => {
-		killFade = true;
-
-		sleep(550);
-
-		killFade = false;
-
-		audioHelpers.fadeOut(music);
-	},
-
-	killMusic: async (music) => {
-		while (music.volume > 0) {
-			music.volume = Math.max(0, music.volume - 0.2);
-			
-			await sleep(200);
-		}
-
-		music.pause();
-	},
-
-	fadeIn: async (music) => {
-		while (!killFade && music.volume < 1) {
-			music.volume = Math.min(1, music.volume + 0.025);
-
-			await sleep(500);
-		}
-	},
-
-	fadeOut: async (music) => {
-		while (!killFade && music.volume > 0) {
-			music.volume = Math.max(0, music.volume - 0.05);
-			
-			await sleep(250);
-		}
-
-		music.pause();
-	},
-
-	// UI Sounds
-	ui: {
-		button: new Audio("assets/audio/ui/button.mp3"),
-		click: new Audio("assets/audio/ui/click.mp3"),
-		confirm: new Audio("assets/audio/ui/confirm.mp3")
-	},
-
-	// Sound effects
-	sfx: {
-		"chair": new Audio("assets/audio/sfx/chair.mp3"),
-		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
-		"bowl": new Audio("assets/audio/sfx/bowl.mp3")
-	},
-
-	music: {
-		menu: {
-			main_menu: new Audio("assets/audio/music/menu/main_menu.mp3"),
-			pause_menu: new Audio("assets/audio/music/menu/pause_menu.mp3"),
-		},
-		
-	}
-};
