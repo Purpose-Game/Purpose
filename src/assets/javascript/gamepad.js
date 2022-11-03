@@ -4,7 +4,6 @@
 //	Variables
 //
 
-
 let gamepadInputCheck;
 let gamepadCheckInterval;
 let anyGamepadAxisPressed = false;

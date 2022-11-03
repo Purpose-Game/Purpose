@@ -9,7 +9,7 @@ const version = "2.0.0";
 // API URL Root
 const apiUrl = "https://purpose-game.com/api/";
 // Keys that progress the story
-const progressKeys = [13, 32, 39, 40];
+const progressKeys = [13, 32, 38, 39, 40];
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
@@ -92,6 +92,8 @@ let debugNotification;
 let saveNotification;
 
 let prePausePassage;
+
+let keybindSelectedElement;
 
 window.story.version = version;
 
@@ -312,36 +314,46 @@ $(document).on("sm.passage.shown", function(_, data) {
 			});
 	
 			body.keyup(function(e) {
+				if (!progressKeys.includes(e.keyCode)) return;
+
 				if (!window.story.makingChoice) {
-					if (progressKeys.includes(e.keyCode)) stepPassage();
-				} else {
-					if (currentChoiceIndex === -1) {
-						currentChoiceIndex = 0;
-					} else {
-						$(`#choice-${currentChoiceIndex}`).removeClass("hovered");
-
-						switch (e.keyCode) {
-							// Enter
-							case 13:
-								$(`#choice-${currentChoiceIndex}`).trigger("click");
-								return;
-	
-							// Up
-							case 38:
-								if (currentChoiceIndex > 0) --currentChoiceIndex;
-								break;
-	
-							// Down
-							case 40:
-								if (currentChoiceIndex < maxChoiceIndex) currentChoiceIndex++;
-								break;
-						}
-					}
-
-					GamePad.gamepadRumble(0.5, 0, 200);
-
-					$(`#choice-${currentChoiceIndex}`).addClass("hovered");
+					stepPassage();
+					return;
 				}
+
+				let oldChoiceIndex = currentChoiceIndex;
+
+				if (currentChoiceIndex === -1 || !keybindSelectedElement) {
+					currentChoiceIndex = 0;
+				} else {
+					$(`#choice-${currentChoiceIndex}`).removeClass("hovered");
+
+					switch (e.keyCode) {
+						// Enter
+						case 13:
+							$(`#choice-${currentChoiceIndex}`).trigger("click");
+							return;
+
+						// Up
+						case 38:
+							if (currentChoiceIndex > 0) --currentChoiceIndex;
+							break;
+
+						// Down
+						case 40:
+							if (currentChoiceIndex < maxChoiceIndex) currentChoiceIndex++;
+							break;
+					}
+				}
+
+				if (oldChoiceIndex != currentChoiceIndex) {
+					audioHelpers.playAudio(audioHelpers.ui.click);
+					GamePad.gamepadRumble(0.5, 0, 200);
+				}		
+
+				$(`#choice-${currentChoiceIndex}`).addClass("hovered");
+
+				keybindSelectedElement = $(`#choice-${currentChoiceIndex}`);		
 			});
 
 			justSaved = false;
@@ -537,6 +549,11 @@ body.on("mouseover", function (e) {
 	const element = $(e.target);
 
     if (!element.is("a") && !element.attr("class")?.includes("sound-")) return;
+
+	if (keybindSelectedElement) {
+		keybindSelectedElement.removeClass("hovered");
+		keybindSelectedElement = null;
+	}
 
 	audioHelpers.playAudio(audioHelpers.ui.button);
 });
