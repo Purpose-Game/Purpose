@@ -135,7 +135,10 @@ I grab the board with both hands and pull hard. Too hard.
 
 The board comes right off, pulling bits of the moldy window frame it was nailed to with it. I fall backward, and narrowly avoid hitting my head on a large tree root. I did, however, manage to land directly on my leg wound. &lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;.
 
-[[[Get up, and go to the window]|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="C1 Intro" tags="noFade menu" position="3025,425" size="200,100">&lt;% window.story.delayedText(2000, &quot;delayed&quot;, 5000) %&gt;
+[[[Get up, and go to the window]|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="C1 Intro" tags="noFade menu" position="3025,425" size="200,100">&lt;%
+window.story.stopMenuMusic();
+window.story.delayedText(2000, &quot;delayed&quot;, 5000);
+%&gt;
 
 &lt;div-#delayed&gt;
 
@@ -143,11 +146,9 @@ The choices you make have an impact on the story.
 
 &lt;% if (window.story.saving) { %&gt;
 
-print(&quot;A notification will appear each time the game saves; the game saves every few passages. If you refresh or close the game, you will be able to pick up from the passage the game last showed a save notification at. &lt;a.normal-link onclick=\&quot;window.story.exampleSave()\&quot;&gt;Click here&lt;/a&gt; to view an example save notification.&quot;)
+A notification will appear each time the game saves; the game saves every few passages. If you refresh or close the game, you will be able to pick up from the passage the game last showed a save notification at. &lt;a.normal-link onclick=\&quot;window.story.exampleSave()\&quot;&gt;Click here&lt;/a&gt; to view an example save notification. You can also save manually using the save button at the top of the screen.
 
 &lt;% } %&gt;
-
-This game has no sound; &lt;a.normal-link href=&quot;https://www.youtube.com/watch?v=_Rn3_ZaG678&quot; target=&quot;_blank&quot;&gt;click here&lt;/a&gt; for suggested, optional background music.
 
 [[Start Game|C1P1]]
 </tw-passagedata><tw-passagedata pid="13" name="C1P5V221" tags="variation" position="3375,1475" size="100,100">Looking at the window, there&#39;s just enough room to squeeze through, one problem though: the glass is still intact. Normally I&#39;d be looking for a more tasteful way to get in, but that fall knocked my last bit of &quot;taste&quot; out of me. I&#39;m getting pretty dizzy now, things are starting to get blurry; not good. I need, to get inside, now.
@@ -785,7 +786,10 @@ SFX - Reference Individual File Metadata&lt;br&gt;
 &lt;a href=&quot;https://freesound.org/&quot; target=&quot;_blank&quot;&gt;https://freesound.org/&lt;/a&gt;
 &lt;a href=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot; target=&quot;_blank&quot;&gt;(https://creativecommons.org/publicdomain/zero/1.0/)&lt;/a&gt;
 &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot; target=&quot;_blank&quot;&gt;(https://creativecommons.org/licenses/by/3.0/)&lt;/a&gt;
-  &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot; target=&quot;_blank&quot;&gt;(https://creativecommons.org/licenses/by/4.0/)&lt;/a&gt;
+&lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot; target=&quot;_blank&quot;&gt;(https://creativecommons.org/licenses/by/4.0/)&lt;/a&gt;
+  
+Music - Reference Individual File Metadata&lt;br&gt;
+&lt;a href=&quot;https://www.humblebundle.com&quot; target=&quot;_blank&quot;&gt;https://www.humblebundle.com&lt;/a&gt;
 
 Dead Font Walking Font - Allison James&lt;br&gt;
 &lt;a href=&quot;https://www.1001fonts.com/dead-font-walking-font.html&quot; target=&quot;_blank&quot;&gt;https://www.1001fonts.com/dead-font-walking-font.html&lt;/a&gt;
@@ -974,7 +978,9 @@ She pauses for a moment.
 
 [[...|C1P25V2]]&lt;br&gt;
 [[Go on...|C1P25V1]]&lt;br&gt;
-[[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="106" name="Title Screen" tags="menu" position="2000,725" size="200,100">&lt;img.title-image&gt;
+[[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="106" name="Title Screen" tags="menu" position="2000,725" size="200,100">&lt;% window.story.startMenuMusic() %&gt;
+
+&lt;img.title-image&gt;
 
 &lt;div#title-button&gt;
 [[Play Game|Save Options]]
@@ -3211,6 +3217,7 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
   &lt;a onclick=&quot;window.story.toggleDebug()&quot;&gt;Toggle Debug Mode&lt;br&gt;&lt;span.smaller&gt;(Recommended for Mobile Users)&lt;/span&gt;&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleFont()&quot;&gt;Toggle Font&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleAchievements()&quot;&gt;Toggle Achievements&lt;/a&gt;
+  &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="318" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
 	[[Launch Game|Network Check]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Test Passage" tags="page" position="2550,100" size="100,100">&lt;ui&gt;special&lt;/ui&gt;

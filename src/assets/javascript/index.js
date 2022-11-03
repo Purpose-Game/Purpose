@@ -95,6 +95,10 @@ let prePausePassage;
 
 let keybindSelectedElement;
 
+let menuMusic;
+let backgroundMusic;
+let killFade = false;
+
 window.story.version = version;
 
 // Current Chapter, i.e. "Chapter1"
@@ -590,6 +594,9 @@ body.on("click", function (e) {
 
 // Prints a debug message to the console if in debug mode
 const debugMessage = (message) => { if (debug) console.log("DEBUG: " + message); };
+
+// Delays script execution for X ms
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Checks network connection
 window.story.networkCheck = function (nextPassage) {
@@ -1094,8 +1101,10 @@ window.story.pauseMenu = function () {
 		prePausePassage = window.passage.name;
 
 		window.story.show("Pause Menu");
+		window.story.startMenuMusic(true);
 	} else {
 		window.story.show(prePausePassage);
+		window.story.stopMenuMusic(menuMusic);
 
 		prePausePassage = null;
 	}
@@ -1127,6 +1136,26 @@ window.story.customRender = function (passageName) {
 	}
 	
 	return window.story.render(passageName);
+}
+
+// Starts menu music
+window.story.startMenuMusic = async function (pauseMenu = false) {
+	if (menuMusic) await audioHelpers.killMusic(menuMusic);
+
+	debugMessage("Main menu music started");
+
+	menuMusic = await audioHelpers.playMusic(!pauseMenu ? audioHelpers.music.menu.main_menu : audioHelpers.music.menu.pause_menu);
+}
+
+// Stops the menu music
+window.story.stopMenuMusic = async function () {
+	if (!menuMusic) return;
+
+	await audioHelpers.stopMusic(menuMusic);
+
+	menuMusic = null;
+
+	debugMessage("Main menu music stopped");
 }
 
 //
@@ -1187,6 +1216,56 @@ const audioHelpers = {
 	// Duplicates audio then plays
 	playAudio: (audio) => audio.cloneNode().play(),
 
+	playMusic: async (audio) => {
+		const music = audio.cloneNode();
+
+		music.volume = 0;
+		music.play();
+		music.loop = true;
+
+		audioHelpers.fadeIn(music);
+
+		return music;
+	},
+
+	stopMusic: async (music) => {
+		killFade = true;
+
+		sleep(550);
+
+		killFade = false;
+
+		audioHelpers.fadeOut(music);
+	},
+
+	killMusic: async (music) => {
+		while (music.volume > 0) {
+			music.volume = Math.max(0, music.volume - 0.2);
+			
+			await sleep(200);
+		}
+
+		music.pause();
+	},
+
+	fadeIn: async (music) => {
+		while (!killFade && music.volume < 1) {
+			music.volume = Math.min(1, music.volume + 0.025);
+
+			await sleep(500);
+		}
+	},
+
+	fadeOut: async (music) => {
+		while (!killFade && music.volume > 0) {
+			music.volume = Math.max(0, music.volume - 0.05);
+			
+			await sleep(250);
+		}
+
+		music.pause();
+	},
+
 	// UI Sounds
 	ui: {
 		button: new Audio("assets/audio/ui/button.mp3"),
@@ -1199,5 +1278,13 @@ const audioHelpers = {
 		"chair": new Audio("assets/audio/sfx/chair.mp3"),
 		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
 		"bowl": new Audio("assets/audio/sfx/bowl.mp3")
+	},
+
+	music: {
+		menu: {
+			main_menu: new Audio("assets/audio/music/menu/main_menu.mp3"),
+			pause_menu: new Audio("assets/audio/music/menu/pause_menu.mp3"),
+		},
+		
 	}
 };

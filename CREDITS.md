@@ -16,6 +16,9 @@ https://freesound.org/
 (https://creativecommons.org/licenses/by/3.0/)
 (https://creativecommons.org/licenses/by/4.0/)
 
+Music - Reference Individual File Metadata
+> https://www.humblebundle.com
+
 Dead Font Walking Font - Allison James
 > https://www.1001fonts.com/dead-font-walking-font.html
 
