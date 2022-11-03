@@ -1,10 +1,9 @@
-/* global debugMessage, SimpleNotification */
+/* global body, debugMessage, SimpleNotification */
 
 //
 //	Variables
 //
 
-const body = $("body");
 
 let gamepadInputCheck;
 let gamepadCheckInterval;

@@ -13,8 +13,8 @@ const progressKeys = [13, 32, 39, 40];
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
-	<div class="option-one"><img id="option-one" href="javascript:void(0)" onclick="window.story.saveGame(true)"></div>
-	<div class="option-two"><img id="option-two" href="javascript:void(0)" onclick="window.story.pauseMenu()"></div>
+	<div class="option-one"><img id="option-one" href="javascript:void(0)" class="sound-click" onclick="window.story.saveGame(true)"></div>
+	<div class="option-two"><img id="option-two" href="javascript:void(0)" class="sound-click" onclick="window.story.pauseMenu()"></div>
 </div>
 `;
 // Standard UI
@@ -76,6 +76,8 @@ const specialUI = `
 
 </div>
 `;
+// Body Element
+const body = $("body");
 
 // Shows debug notification when true
 let debug = false;
@@ -292,7 +294,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 			let currentChoiceIndex = -1;
 
 			// Populate steps list
-			twPassage.find("ui, character, special, action, speech, choices").each(function() {
+			twPassage.find("ui, character, special, action, speech, sound, choices").each(function() {
 				const element = $(this);
 	
 				steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
@@ -309,7 +311,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 				if (!ignoreClick.includes(e.target.id)) stepPassage();
 			});
 	
-			$("body").keyup(function(e) {
+			body.keyup(function(e) {
 				if (!window.story.makingChoice) {
 					if (progressKeys.includes(e.keyCode)) stepPassage();
 				} else {
@@ -384,6 +386,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 							stepPassage();
 							break;
+
 						case "CHARACTER": {
 							const extras = extra.split(" ");
 							const slot = extras.shift();
@@ -446,11 +449,16 @@ $(document).on("sm.passage.shown", function(_, data) {
 							stepPassage();
 							break;
 						}
+
 						case "SPECIAL":
 							$("#special-image").attr("class", "special-image");
 							$("#special-image").addClass(`${content.toLowerCase()}-image`);
 
 							stepPassage();
+							break;
+
+						case "SOUND":
+							console.log(type, content, extra);
 							break;
 			
 						default: {
@@ -523,6 +531,31 @@ $(document).on("sm.passage.shown", function(_, data) {
 			}
 		}
     }
+});
+
+body.on("mouseover", function (e) {
+	const element = $(e.target);
+
+    if (!element.is("a") && !element.attr("class")?.includes("sound-")) return;
+
+	audioHelpers.playAudio(audioHelpers.ui.button);
+});
+
+body.on("click", function (e) {
+	const element = $(e.target);
+	const elementClass = element.attr("class");
+
+    if (!element.is("a") && !elementClass?.includes("sound-")) return;
+
+	switch (elementClass) {
+		case "sound-confirm":
+			audioHelpers.playAudio(audioHelpers.ui.confirm);
+			break;
+
+		default:
+			audioHelpers.playAudio(audioHelpers.ui.click);
+			break;
+	}
 });
 
 //
@@ -935,12 +968,12 @@ window.story.toggleFont = function () {
 	font = !font;
 	
 	if (font) {
-		$("body").css({
+		body.css({
 			"font-size": "unset",
 			"font": "27px 'DeadWalking', Arial, sans-serif"
 		});
 	} else {
-		$("body").css({
+		body.css({
 			"font": "unset",
 			"font-size": "27px"
 		});
@@ -1122,3 +1155,21 @@ document.head.appendChild(typewriter);
 
 // Adds Favicons
 $("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
+
+// Create Audio functions
+const audioHelpers = {
+	// Duplicates audio then plays
+	playAudio: (audio) => audio.cloneNode().play(),
+
+	// UI Sounds
+	ui: {
+		button: new Audio("assets/audio/ui/button.mp3"),
+		click: new Audio("assets/audio/ui/click.mp3"),
+		confirm: new Audio("assets/audio/ui/confirm.mp3")
+	},
+
+	// Sound effects
+	sfx: {
+
+	}
+};

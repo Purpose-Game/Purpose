@@ -772,11 +772,14 @@ I couldn&#39;t care less...
 &lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="81" name="Credits" tags="info floater" position="3875,725" size="200,100">Game &amp; Infrastructure - Christopher &quot;Inferno&quot; M.&lt;br&gt;
 &lt;a href=&quot;https://purpose-game.com&quot; target=&quot;_blank&quot;&gt;https://purpose-game.com&lt;/a&gt;&lt;br&gt;&lt;br&gt;
 
-Character ItemArtwork &amp; UI Design - Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
+Character Artwork &amp; UI Design - Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
 &lt;a href=&quot;https://www.artstation.com/darkcan&quot; target=&quot;_blank&quot;&gt;https://www.artstation.com/darkcan&lt;/a&gt;
 
 Item &amp; Location Artwork - NovelAI (Anlatan)&lt;br&gt;
 &lt;a href=&quot;https://novelai.net&quot; target=&quot;_blank&quot;&gt;https://novelai.net&lt;/a&gt;
+
+UI Sound Effects - Kenney Vleugels&lt;br&gt;
+&lt;a href=&quot;https://kenney.nl&quot; target=&quot;_blank&quot;&gt;https://kenney.nl&lt;/a&gt;
 
 Dead Font Walking Font - Allison James&lt;br&gt;
 &lt;a href=&quot;https://www.1001fonts.com/dead-font-walking-font.html&quot; target=&quot;_blank&quot;&gt;https://www.1001fonts.com/dead-font-walking-font.html&lt;/a&gt;
@@ -787,11 +790,11 @@ Ragged CSS Edges - Tymn Urban &amp; Stephen Melvin&lt;br&gt;
 SimpleNotification - Glagan &amp; Contributors&lt;br&gt;
 &lt;a href=&quot;https://github.com/Glagan/SimpleNotification&quot; target=&quot;_blank&quot;&gt;https://github.com/Glagan/SimpleNotification&lt;/a&gt;
 
-SimpleNotification - Glagan &amp; Contributors&lt;br&gt;
-&lt;a href=&quot;https://github.com/Glagan/SimpleNotification&quot; target=&quot;_blank&quot;&gt;https://github.com/Glagan/SimpleNotification&lt;/a&gt;
-
 jquery-typewriter-plugin - 0xPranavDoshi&lt;br&gt;
 &lt;a href=&quot;https://github.com/0xPranavDoshi/jquery-typewriter&quot; target=&quot;_blank&quot;&gt;https://github.com/0xPranavDoshi/jquery-typewriter&lt;/a&gt;
+
+Underscore.js - DocumentCloud &amp; Contributors&lt;br&gt;
+&lt;a href=&quot;https://underscorejs.org/&quot; target=&quot;_blank&quot;&gt;https://underscorejs.org/&lt;/a&gt;
 
 jQuery - OpenJS Foundation &amp; Contributors&lt;br&gt;
 &lt;a href=&quot;https://jquery.com/&quot; target=&quot;_blank&quot;&gt;https://jquery.com/&lt;/a&gt;
@@ -3196,7 +3199,7 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 
 &lt;%= window.story.customRender(&quot;Settings&quot;) %&gt;
 
-&lt;a0 onclick=&quot;window.story.pauseMenu()&quot;&gt;Resume&lt;/a&gt;</tw-passagedata><tw-passagedata pid="317" name="Settings" tags="floater" position="4425,725" size="200,100">&lt;div#title-button&gt;
+&lt;a0.sound-confirm onclick=&quot;window.story.pauseMenu()&quot;&gt;Resume&lt;/a&gt;</tw-passagedata><tw-passagedata pid="317" name="Settings" tags="floater" position="4425,725" size="200,100">&lt;div#title-button&gt;
   &lt;p&gt;Game Version: v&lt;% print(window.story.version) %&gt;&lt;/p&gt;
   
   &lt;a onclick=&quot;window.story.toggleDebug()&quot;&gt;Toggle Debug Mode&lt;br&gt;&lt;span.smaller&gt;(Recommended for Mobile Users)&lt;/span&gt;&lt;/a&gt;
@@ -3213,6 +3216,8 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;sound&gt;chair&lt;/sound&gt;
 
 &lt;speech.Lucy&gt;I&#39;ll fix you a bowl.&lt;/speech&gt;
 
@@ -3256,6 +3261,8 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;beans&lt;/special&gt;
 &lt;character.one&gt;Lucy&lt;/character&gt;
+
+&lt;sound&gt;bowl&lt;/sound&gt;
 
 &lt;speech.Lucy&gt;Here you go, Beans and Cheese!&lt;/speech&gt;
 

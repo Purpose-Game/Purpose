@@ -7,6 +7,9 @@ Character Artwork & UI Design - Daniel "DanDarkDesigns" Ayala
 Item & Location Artwork - NovelAI (Anlatan)
 > https://novelai.net
 
+UI Sound Effects - Kenney Vleugels
+> https://kenney.nl
+
 Dead Font Walking Font - Allison James
 > https://www.1001fonts.com/dead-font-walking-font.html
 
@@ -21,6 +24,9 @@ toggleFullscreen.js - demonixis
 
 jquery-typewriter-plugin - 0xPranavDoshi
 > https://github.com/0xPranavDoshi/jquery-typewriter
+
+Underscore.js - DocumentCloud & Contributors
+> https://underscorejs.org/
 
 jQuery - OpenJS Foundation & Contributors
 > https://jquery.com/
