@@ -1,7 +1,7 @@
 Game & Infrastructure - Christopher "Inferno" M.
 > https://purpose-game.com/
 
-Character Artwork & UI Design - Daniel "DanDarkDesigns" Ayala
+Character Artwork, UI Design, & Sound Design - Daniel "DanDarkDesigns" Ayala
 > https://www.artstation.com/darkcan
 
 Item & Location Artwork - NovelAI (Anlatan)
@@ -9,6 +9,12 @@ Item & Location Artwork - NovelAI (Anlatan)
 
 UI Sound Effects - Kenney Vleugels
 > https://kenney.nl
+
+SFX - Reference Individual File Metadata
+https://freesound.org/
+(https://creativecommons.org/publicdomain/zero/1.0/)
+(https://creativecommons.org/licenses/by/3.0/)
+(https://creativecommons.org/licenses/by/4.0/)
 
 Dead Font Walking Font - Allison James
 > https://www.1001fonts.com/dead-font-walking-font.html

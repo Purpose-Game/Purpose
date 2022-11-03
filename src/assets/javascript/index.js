@@ -470,7 +470,9 @@ $(document).on("sm.passage.shown", function(_, data) {
 							break;
 
 						case "SOUND":
-							console.log(type, content, extra);
+							audioHelpers.playAudio(audioHelpers.sfx[content]);
+
+							stepPassage();
 							break;
 			
 						default: {
@@ -1187,6 +1189,8 @@ const audioHelpers = {
 
 	// Sound effects
 	sfx: {
-
+		"chair": new Audio("assets/audio/sfx/chair.mp3"),
+		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
+		"bowl": new Audio("assets/audio/sfx/bowl.mp3")
 	}
 };
