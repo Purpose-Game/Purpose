@@ -272,14 +272,16 @@ tw-story {
   top: -4vh;
 }
 
-.text-area-main > img {
+.text-area-main > img,
+.text-area-minimal > img {
   width: 95%;
   height: 103%;
   content: url("../../assets/images/ui/story-box/text-area/big/text-area-outline.png");
   background-image: url("../../assets/images/ui/story-box/text-area/big/text-area.png");
 }
 
-.text-area-main > div {
+.text-area-main > div,
+.text-area-minimal > div {
   position: absolute;
   top: calc(10%);
   font-size: 2vw;
@@ -311,6 +313,15 @@ tw-story {
   font-size: 2vw;
   padding: 0 2.5vw;
   left: 0;
+}
+
+.text-area-minimal {
+  grid-area: text-area-main;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-height: 70vh;
+  top: 12vh;
 }
 
 .special-right {

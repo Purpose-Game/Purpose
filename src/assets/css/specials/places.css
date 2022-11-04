@@ -1,3 +1,11 @@
+.backwall-image {
+  background-image: url("../../../assets/images/ui/specials/places/backwall.png") !important;
+}
+
+.garden-image {
+  background-image: url("../../../assets/images/ui/specials/places/garden.png") !important;
+}
+
 .kitchen-image {
   background-image: url("../../../assets/images/ui/specials/places/kitchen.png") !important;
 }

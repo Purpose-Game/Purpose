@@ -17,65 +17,81 @@ const saveOptions = `
 	<div class="option-two"><img id="option-two" href="javascript:void(0)" class="sound-click" onclick="window.story.pauseMenu()"></div>
 </div>
 `;
-// Standard UI
-const standardUI = `
-<div class="container">
+// UI Styles
+const uiStyles = {
+	// Standard UI
+	standard: `
+		<div class="container">
 
-	${saveOptions}
+			${saveOptions}
 
-	<div class="character-left">
-		<img id="character-one-image" class="character-slot">
-	</div>
+			<div class="character-left">
+				<img id="character-one-image" class="character-slot">
+			</div>
 
-	<div class="character-right">
-		<img id="character-two-image" class="character-slot">
-	</div>
+			<div class="character-right">
+				<img id="character-two-image" class="character-slot">
+			</div>
 
-	<div class="text-area">
-		<div class="character-name character-name-left">
-			<img class="character-name">
-			<div id="character-one"></div>
+			<div class="text-area">
+				<div class="character-name character-name-left">
+					<img class="character-name">
+					<div id="character-one"></div>
+				</div>
+
+				<div class="character-name character-name-right">
+					<img class="character-name">
+					<div id="character-two"></div>
+				</div>
+
+				<div class="text-area-main">
+					<img>
+				</div>
+			</div>
+
 		</div>
+	`,
 
-		<div class="character-name character-name-right">
-			<img class="character-name">
-			<div id="character-two"></div>
+	// Special UI
+	special: `
+		<div class="container">
+
+			${saveOptions}
+
+			<div class="character-left">
+				<img id="character-one-image" class="character-slot">
+			</div>
+
+			<div class="special-right">
+				<img id="special-image" class="special-image">
+			</div>
+
+			<div class="text-area">
+				<div class="character-name character-name-left">
+					<img class="character-name">
+					<div id="character-one"></div>
+				</div>
+
+				<div class="text-area-special">
+					<img>
+				</div>
+			</div>
+
 		</div>
+	`,
 
-		<div class="text-area-main">
-			<img>
+	minimal: `
+		<div class="container">
+
+			<div class="text-area">
+				<div class="text-area-minimal">
+					<img>
+				</div>
+			</div>
+
 		</div>
-	</div>
-
-</div>
-`;
-// Special UI
-const specialUI = `
-<div class="container">
-
-	${saveOptions}
-
-	<div class="character-left">
-		<img id="character-one-image" class="character-slot">
-	</div>
-
-	<div class="special-right">
-		<img id="special-image" class="special-image">
-	</div>
-
-	<div class="text-area">
-		<div class="character-name character-name-left">
-			<img class="character-name">
-			<div id="character-one"></div>
-		</div>
-
-		<div class="text-area-special">
-			<img>
-		</div>
-	</div>
-
-</div>
-`;
+	`,
+}
 // Body Element
 const body = $("body");
 // Audio Library
@@ -395,7 +411,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 	
 			/* eslint-disable no-inner-declarations */
 			async function stepPassage() {
-				const ui = uiType === "standard" ? "main" : "special";
+				const ui = uiType === "standard" ? "main" : uiType === "special" ? "special" : "minimal";
 
 				if (typewriting.includes(lastTextStep)) {
 					if (lastText) lastText.remove();
@@ -425,9 +441,25 @@ $(document).on("sm.passage.shown", function(_, data) {
 					switch (type) {
 						case "UI":
 							storyBox.empty();
-							storyBox.append(content === "standard" ? standardUI : specialUI);
-	
-							textArea = (uiType = content) === "standard" ? $(".text-area-main") : $(".text-area-special");
+							
+							uiType = content.toLowerCase();
+
+							switch (uiType) {
+								case "standard":
+									storyBox.append(uiStyles.standard);
+									textArea = $(".text-area-main");
+									break;
+
+								case "special":
+									storyBox.append(uiStyles.special);
+									textArea = $(".text-area-special");
+									break;
+
+								case "minimal":
+									storyBox.append(uiStyles.minimal);
+									textArea = $(".text-area-minimal");
+									break;
+							}
 
 							stepPassage();
 							break;
@@ -1065,20 +1097,6 @@ window.story.selectSlot = function () {
 	
 	_.delay(function() {
 		window.story.show("C1 Intro");
-	}, 1000);
-}
-
-// Shows an example save notification
-window.story.exampleSave = function () {
-	saveNotification = SimpleNotification.info({
-		title: "Auto-Saving..."
-	}, {
-		position: "bottom-right"
-	});
-	
-	_.delay(function() {
-		saveNotification.setType("success");
-		saveNotification.setTitle("Auto-Save Complete!");
 	}, 1000);
 }
 
