@@ -41,8 +41,29 @@ const images = [
 
     // Places
     "specials/places/kitchen.png",
+
+    // Story-Box
+    
+    "story-box/character-name.png",
+    "story-box/character-slot.png",
+    "story-box/character-slot-outline.png",
+    "story-box/special.png",
+    "story-box/special-outline.png",
+
+    // Text-Area
+    // Big
+    "story-box/text-area/big/text-area.png",
+    "story-box/text-area/big/text-area-outline.png",
+
+    // Small
+    "story-box/text-area/small/text-area.png",
+    "story-box/text-area/small/text-area-outline.png",
+
+    // Titles
+    "titles/title-image.png",
 ];
 const dir = "assets/images/ui/";
+const loadingBar = $("#loading-bar");
 
 let loaded = 0;
 let needToLoad = images.length;
@@ -61,10 +82,12 @@ for (const image of images) {
     document.head.appendChild(element);
 }
 
-function imageLoaded() {
-    ++loaded;
-    console.log(`${loaded} loaded...`);
+async function imageLoaded() {
+    loadingBar.val((++loaded / needToLoad) * 100);
+
     if (loaded == needToLoad) {
-        console.log("All images loaded!");
+        debugMessage(`Finished loading ${loaded} images`);
+
+        $("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Test Passage')">[Continue]</a>`);
     }
 }
