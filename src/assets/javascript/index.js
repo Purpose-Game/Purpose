@@ -251,6 +251,7 @@ window.story.achievementDescriptions = {
 //
 // Events
 //
+
 $(document).on("sm.passage.showing", function(_, data) {
 	if (data.passage === undefined) return;
 	
@@ -1284,10 +1285,17 @@ window.story.stopMenuMusic = async function () {
 // Scripts
 //
 
+// Game Pad
 const gamepad = document.createElement("script");
 gamepad.src = "assets/javascript/gamepad.js";
 
 document.head.appendChild(gamepad);
+
+// Preload
+const preload = document.createElement("script");
+preload.src = "assets/javascript/preload.js";
+
+const startPreload = () => document.head.appendChild(preload);
 
 //
 // External Scripts
@@ -1332,3 +1340,5 @@ document.head.appendChild(typewriter);
 
 // Adds Favicons
 $("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
+
+startPreload();
