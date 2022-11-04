@@ -6,6 +6,18 @@
   background-image: url("../../../assets/images/ui/specials/places/garden.png") !important;
 }
 
+.backdoor-image {
+  background-image: url("../../../assets/images/ui/specials/places/backdoor.png") !important;
+}
+
+.backwindow-image {
+  background-image: url("../../../assets/images/ui/specials/places/backwindow.png") !important;
+}
+
+.laundryroom-image {
+  background-image: url("../../../assets/images/ui/specials/places/laundryroom.png") !important;
+}
+
 .kitchen-image {
   background-image: url("../../../assets/images/ui/specials/places/kitchen.png") !important;
 }

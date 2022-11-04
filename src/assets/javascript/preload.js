@@ -1,6 +1,6 @@
 /* global debugMessage */
 
-const images = [
+const requiredImages = [
     // Buttons
     "buttons/options.png",
     "buttons/options-active.png",
@@ -40,6 +40,10 @@ const images = [
     "specials/items/beans.png",
 
     // Places
+    "specials/places/backdoor.png",
+    "specials/places/backwall.png",
+    "specials/places/backwindow.png",
+    "specials/places/garden.png",
     "specials/places/kitchen.png",
 
     // Story-Box
@@ -66,11 +70,11 @@ const dir = "assets/images/ui/";
 const loadingBar = $("#loading-bar");
 
 let loaded = 0;
-let needToLoad = images.length;
+let needToLoad = requiredImages.length;
 
 debugMessage(`Starting to load ${needToLoad} images`);
 
-for (const image of images) {
+for (const image of requiredImages) {
     const path = dir + image;
 
     const element = document.createElement("link");

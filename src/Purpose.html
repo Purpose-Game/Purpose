@@ -43,7 +43,7 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
 &lt;action&gt;I look around, there are a few houses dotted along either side of the suburban street.&lt;/action&gt;
 &lt;action&gt;With my previous encounter still fresh in my mind, I&#39;m not too keen to go back into one, but I don&#39;t have much of a choice.&lt;/action&gt;
 
-&lt;choices&gt;[[[Head to the closest house]|C1P4]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="4" name="C1P4" tags="page" position="3075,1025" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;[[[Head to closest house]|C1P4]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="4" name="C1P4" tags="page" position="3075,1025" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I B-line it for the nearest house.&lt;/action&gt;
@@ -60,99 +60,136 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
 
 &lt;action&gt;I hop over the wall and land in the back garden, if you could still call it that with how overgrown it is.&lt;/action&gt;
 &lt;action&gt;The garden has walls on three sides, and a house on the fourth side. It has a few trees, some with large roots, and a few overgrown flowerbeds; other than that, there&#39;s not much here.&lt;/action&gt;
-&lt;action&gt;The house is two stories, with the ground floor having a roofed patio, and the top floor a large circular window. Getting closer, I can see two ways I might be able to get in: the back door, or a window around the side of the house.&lt;/action&gt;
+&lt;action&gt;The house is two stories, with the ground floor having a roofed patio, and the top floor a large circular window.&lt;/action&gt;
+&lt;action&gt;Getting closer, I can see two ways I might be able to get in: the back door, or a window around the side of the house.&lt;/action&gt;
 
 &lt;choices&gt;
     [[[Go to the window]|C1P5V2]]
     [[[Go to the back door]|C1P5V1]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="5" name="C1P5V1" tags="variation" position="2850,1175" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="5" name="C1P5V1" tags="variation" position="2850,1175" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backdoor&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I go up the patio steps and head to the back door, it&#39;s a large, sturdy-looking wooden door.
-
-I look down, there&#39;s a doormat that reads &quot;COME BACK WHEN YOU HAVE TACOS &amp; BOOZE&quot;, I smirk; yeah, I wish. Looking around the patio, there&#39;s nothing much here, just a few dead potted plants, and some crusty old shoes.
-
-&lt;% } else { %&gt;
-
-I go back up the patio steps and head to the back door.
-
-&lt;% } %&gt;
-
-&lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;
-
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="6" name="C1P5V2" tags="variation" position="3225,1175" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
-
-As I limp up to the window, I can see it has been partially boarded up. The boards look old and rotted, and it doesn&#39;t look like they were put up very well in the first place. I shouldn&#39;t have any trouble pulling them off.
-
-&lt;% } else { %&gt;
-
-I limp back to the boarded-up window.
-
-&lt;% } %&gt;
-
-&lt;%= window.story.customRender(&quot;F: Window entry options&quot;) %&gt;
-
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="7" name="C1P5V11" tags="variation" position="2700,1325" size="100,100">&lt;%
-window.story.setChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;);
-window.story.delayedText(3000);
-
-_.delay(function() {
-		window.story.achievement(&quot;Chapter1&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;);
-	}, 3000);
-%&gt;
-
-I knock and wait...
-
-&lt;div-#delayed&gt;
-
-Yeah, well, it was worth a try I guess?
-
-&lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="C1P5V12" tags="variation" position="2850,1325" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
-
-I try the door handle: locked... shit. Well, on the bright side that might mean this place hasn&#39;t been looted yet. That&#39;s only good to me if I can get inside though.
-
-&lt;% } else { %&gt;
-
-Still locked. I need to find a way into this place and fast.
-
-&lt;% } %&gt;
-
-&lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;
-
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="9" name="C1P5V13" tags="variation" position="3000,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;) %&gt;
-
-I muster what little strength I have left, and kick the door with my good leg. The door shuddered but didn&#39;t open. That was pretty loud too.
-
-Well, I&#39;ve committed to this now, so I might as well kick it again, what the hell. I take a breath, pause, then kick the door with all my strength.
-
-I lose my balance and fall backward, sliding down the patio steps, landing directly on my leg wound, &lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;, but, at least the door opened. I lie there for a moment while the pain subsides.
-
-[[[Get up, and go inside]|C1P6]]</tw-passagedata><tw-passagedata pid="10" name="C1P5V21" tags="variation" position="3150,1325" size="100,100">&lt;%
-window.story.setChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;);
-
+&lt;%
 if (!window.passage.tried) {
+    window.passage.tried = true;
 %&gt;
 
-I place my head against the window; the cold glass provides a refreshing moment of relief... Then I open my eyes.
-
-It&#39;s dim inside, but I can make out some cupboards, a sink, and what I think is an ironing board; must be a laundry room. Nothing of particular interest sticks out, I can see where the back door enters, it doesn&#39;t appear to be blocked by anything. I can also see another door, it must lead to the next room, it&#39;s closed.
+&lt;action&gt;I go up the patio steps and head to the back door, it&#39;s a large, sturdy-looking wooden door.&lt;/action&gt;
+&lt;action&gt;I look down, there&#39;s a doormat that reads &quot;COME BACK WHEN YOU HAVE TACOS &amp; BOOZE&quot;.&lt;/action&gt;
+&lt;action&gt;I smirk; yeah, I wish.&lt;/action&gt;
+&lt;action&gt;Looking around the patio, there&#39;s nothing much here, just a few dead potted plants, and some crusty old shoes.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-It&#39;s still too dark inside properly. It looks like a laundry room maybe?
+&lt;action&gt;I go back up the patio steps and head to the back door.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Window entry options&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="6" name="C1P5V2" tags="variation" position="3225,1175" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backwindow&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="11" name="C15V22" tags="variation" position="3300,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;, false) %&gt;
+&lt;%
+if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
 
-I grab the board with both hands and pull hard. Too hard.
+&lt;action&gt;As I limp up to the window, I can see it has been partially boarded up.&lt;/action&gt;
+&lt;action&gt;The boards look old and rotted, and it doesn&#39;t look like they were put up very well in the first place.&lt;/action&gt;
+&lt;action&gt;I shouldn&#39;t have any trouble pulling them off.&lt;/action&gt;
 
-The board comes right off, pulling bits of the moldy window frame it was nailed to with it. I fall backward, and narrowly avoid hitting my head on a large tree root. I did, however, manage to land directly on my leg wound. &lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;.
+&lt;% } else { %&gt;
 
-[[[Get up, and go to the window]|C1P5V221]]</tw-passagedata><tw-passagedata pid="12" name="C1 Intro" tags="page" position="3025,425" size="200,100">&lt;% window.story.stopMenuMusic(); %&gt;
+&lt;action&gt;I limp back to the boarded-up window.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;%= window.story.customRender(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="7" name="C1P5V11" tags="variation" position="2700,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backdoor&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I knock and wait...&lt;/action&gt;
+&lt;action&gt;...&lt;/action&gt;
+&lt;action&gt;Yeah, well, it was worth a try I guess?&lt;/action&gt;
+
+&lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="8" name="C1P5V12" tags="variation" position="2850,1325" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backdoor&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;%
+if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
+
+&lt;action&gt;I try the door handle...&lt;/action&gt;
+&lt;action&gt;Locked... shit.&lt;/action&gt;
+&lt;action&gt;Well, on the bright side that might mean this place hasn&#39;t been looted yet. That&#39;s only good to me if I can get inside though.&lt;/action&gt;
+
+&lt;% } else { %&gt;
+
+&lt;action&gt;Still locked.&lt;/action&gt;
+&lt;action&gt;I need to find a way into this place and fast.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="9" name="C1P5V13" tags="variation" position="3000,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backdoor&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I muster what little strength I have left, and kick the door with my good leg.&lt;/action&gt;
+&lt;action&gt;The door shuddered but doesn&#39;t open.&lt;/action&gt;
+&lt;action&gt;That was pretty loud too...&lt;/action&gt;
+&lt;action&gt;Well, I&#39;ve committed to this now, so I might as well kick it again, what the hell.&lt;/action&gt;
+&lt;action&gt;I take a breath, pause, then kick the door with all my strength.&lt;/action&gt;
+&lt;action&gt;I lose my balance and fall backward, sliding down the patio steps, landing directly on my leg wound.&lt;/action&gt;
+&lt;action&gt;&lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;, but, at least the door opened.&lt;/action&gt;
+&lt;action&gt;I lie there for a moment while the pain subsides.&lt;/action&gt;
+
+&lt;choices&gt;[[[Get up, and go inside]|C1P6]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="10" name="C1P5V21" tags="variation" position="3150,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backwindow&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;%
+if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
+
+&lt;action&gt;I place my head against the window...&lt;/action&gt;
+&lt;action&gt;...the cold glass provides a refreshing moment of relief.&lt;/action&gt;
+&lt;action&gt;Then I open my eyes.&lt;/action&gt;
+&lt;action&gt;It&#39;s dim inside, but I can make out some cupboards, a sink, and what I think is an ironing board.&lt;/action&gt;
+&lt;action&gt;It must be a laundry room. Nothing of particular interest sticks out.&lt;/action&gt;
+&lt;action&gt;I can see where the back door enters, it doesn&#39;t appear to be blocked by anything.&lt;/action&gt;
+&lt;action&gt;I can also see another door, it must lead to the next room, it&#39;s closed.&lt;/action&gt;
+
+&lt;% } else { %&gt;
+
+&lt;action&gt;It&#39;s still too dark inside properly.&lt;/action&gt;
+&lt;action&gt;It looks like a laundry room, maybe?&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;%= window.story.customRender(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="11" name="C15V22" tags="variation" position="3300,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;, false); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backwindow&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I grab the board with both hands and pull, hard.&lt;/action&gt;
+&lt;action&gt;Too hard.&lt;/action&gt;
+&lt;action&gt;The board comes right off, pulling bits of the moldy window frame it was nailed to with it.&lt;/action&gt;
+&lt;action&gt;I fall backward, and narrowly avoid hitting my head on a large tree root.&lt;/action&gt;
+&lt;action&gt;I do, however, manage to land directly on my leg wound.&lt;/action&gt;
+&lt;action&gt;&lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;.&lt;/action&gt;
+
+&lt;choices&gt;[[[Get up]|C1P5V221]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="12" name="C1 Intro" tags="page" position="3025,425" size="200,100">&lt;% window.story.stopMenuMusic(); %&gt;
 
 &lt;ui&gt;minimal&lt;/ui&gt;
 
@@ -164,40 +201,73 @@ The board comes right off, pulling bits of the moldy window frame it was nailed 
 
 &lt;% } %&gt;
 
-&lt;choices&gt;[[Start Game|C1P1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="13" name="C1P5V221" tags="variation" position="3375,1475" size="100,100">Looking at the window, there&#39;s just enough room to squeeze through, one problem though: the glass is still intact. Normally I&#39;d be looking for a more tasteful way to get in, but that fall knocked my last bit of &quot;taste&quot; out of me. I&#39;m getting pretty dizzy now, things are starting to get blurry; not good. I need, to get inside, now.
+&lt;choices&gt;[[Start Game|C1P1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="13" name="C1P5V221" tags="variation" position="3375,1475" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backwindow&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I look around, I see a small rock I could use to break the glass... or, I could use my elbow. The rock would lower my chances of cutting myself, but my elbow might be quieter.
+&lt;action&gt;Looking at the window, there&#39;s just enough room to squeeze through.&lt;/action&gt;
+&lt;action&gt;One problem though: the glass is still intact.&lt;/action&gt;
+&lt;action&gt;Normally I&#39;d be looking for a more tasteful way to get in, but that fall knocked my last bit of &quot;taste&quot; out of me.&lt;/action&gt;
+&lt;action&gt;I&#39;m getting pretty dizzy now, things are starting to get blurry; not good.&lt;/action&gt;
+&lt;action&gt;I need, to get inside.&lt;/action&gt;
+&lt;action&gt;Now.&lt;/action&gt;
+&lt;action&gt;I look around, I see a small rock I could use to break the glass...&lt;/action&gt;
+&lt;action&gt;...or, I could use my elbow.&lt;/action&gt;
+&lt;action&gt;The rock would lower my chances of cutting myself.&lt;/action&gt;
+&lt;action&gt;But my elbow might be quieter...&lt;/action&gt;
 
-[[[Use elbow]|C1P5V2211]]&lt;br&gt;
-[[[Use the rock]|C1P5V2212]]
-</tw-passagedata><tw-passagedata pid="14" name="C1P5V2212" tags="variation" position="3450,1625" size="100,100">I pick up the rock and throw it at the glass. The glass bursts into shinny dust, and lo and behold, it made a lot of noise.
+&lt;choices&gt;
+    [[[Use elbow]|C1P5V2211]]
+    [[[Use the rock]|C1P5V2212]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="14" name="C1P5V2212" tags="variation" position="3450,1625" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backwindow&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.customRender(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="15" name="C1P5V2211" tags="variation" position="3300,1625" size="100,100">This is probably a bad idea, but what the hell. I bunch up my sleeve for extra padding, brace my elbow, then push.
+&lt;action&gt;I pick up the rock and throw it at the glass.&lt;/action&gt;
+&lt;action&gt;The glass bursts into shinny dust...&lt;/action&gt;
+&lt;action&gt;...and lo and behold, it made a lot of noise.&lt;/action&gt;
 
-The glass was not very strong and gave way easily, but the bits of broken glass hitting the floor inside was still loud. I pull my arm back, looks like I tore my sleeve a little bit, but didn&#39;t cut myself. 
+&lt;%= window.story.customRender(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="15" name="C1P5V2211" tags="variation" position="3300,1625" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;backwindow&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.customRender(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="16" name="C1P6" tags="page" position="3075,1775" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;)) { %&gt;
+&lt;action&gt;This is probably a bad idea, but what the hell.&lt;/action&gt;
+&lt;action&gt;I bunch up my sleeve for extra padding, brace my elbow, then push.&lt;/action&gt;
+&lt;action&gt;The glass was not very strong and gave way easily, but the bits of broken glass hitting the floor inside was still loud.&lt;/action&gt;
+&lt;action&gt;I pull my arm back, looks like I tore my sleeve a little bit, but didn&#39;t cut myself.&lt;/action&gt;
 
-I get up, walk back up the patio steps, then go through and close the door behind me. Looks like I&#39;ve busted the lock though, I&#39;ll need something to stop the door swinging open.
+&lt;%= window.story.customRender(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="16" name="C1P6" tags="page" position="3075,1775" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I look down and see a small doorstop, perfect. It won&#39;t stop anything from getting in, but it will stop the door from flapping in the breeze.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;)) { %&gt;
 
-Between the kicking and the fall, I&#39;m feeling very dizzy.
+&lt;action&gt;I get up, walk back up the patio steps, then go through and close the door behind me.&lt;/action&gt;
+&lt;action&gt;Looks like I&#39;ve busted the lock though, I&#39;ll need something to stop the door swinging open.&lt;/action&gt;
+&lt;action&gt;I look down and see a small doorstop, perfect.&lt;/action&gt;
+&lt;action&gt;It won&#39;t stop anything from getting in, but it will stop the door from flapping in the breeze.&lt;/action&gt;
+&lt;action&gt;Between the kicking and the fall, I&#39;m feeling very dizzy.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-I crawl through the window, making sure not to touch any of the broken glass as I get up. The window is pretty small, I was only just able to fit; I doubt a walker would be smart enough to get in, and if a human wanted to get in, well, they could always use the door.
+&lt;action&gt;I crawl through the window, making sure not to touch any of the broken glass as I get up.&lt;/action&gt;
+&lt;action&gt;The window is pretty small, I was only just able to fit...&lt;/action&gt;
+&lt;action&gt;...I doubt a walker would be smart enough to get in...&lt;/action&gt;
+&lt;action&gt;...and if a human wanted to get in, well, they could always use the door.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-I wait a moment for my eyes to adjust to the dark, then I look around the room. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;)) { print(&quot;It is definitely&quot;) } else { print(&quot;Looks like&quot;) } %&gt; a laundry room, there&#39;s a washing machine and dryer in the corner, and an ironing board propped up against one of the walls. The room looks safe for now.
+&lt;action&gt;I wait a moment for my eyes to adjust to the dark, then I look around the room. &lt;/action&gt;
 
-Now that I&#39;m inside, I need to deal with my leg; to do that, I&#39;m going to need some supplies:
+&lt;special&gt;laundryroom&lt;/special&gt;
 
-- something to clean the wound
-- something to bandage my leg with
-
-I could also use a weapon... I left my knife in that guy&#39;s head, so I won&#39;t be getting that back any time soon.
+&lt;action&gt;&lt;% print(window.story.getChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;) ? &quot;It is definitely&quot; : &quot;Looks like&quot;) %&gt; a laundry room.&lt;/action&gt;
+&lt;action&gt;There&#39;s a washing machine and dryer in the corner, and an ironing board propped up against one of the walls.&lt;/action&gt;
+&lt;action&gt;The room looks safe for now.&lt;/action&gt;
+&lt;action&gt;Now that I&#39;m inside, I need to deal with my leg.&lt;/action&gt;
+&lt;action&gt;I&#39;m going to need some supplies.&lt;/action&gt;
+&lt;action&gt;Something to clean the wound, and something to bandage my leg with.&lt;/action&gt;
+&lt;action&gt;I could also use a weapon...&lt;/action&gt;
+&lt;action&gt;I left my knife in that guy&#39;s head, so I won&#39;t be getting that back any time soon.&lt;/action&gt;
 
 &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="17" name="C1P7V1" tags="variation" position="2775,1925" size="100,100">&lt;%
 if (window.passage.name != &quot;C1P7V1&quot;){
@@ -568,38 +638,30 @@ My eyes are locked on the shadow, watching, waiting for it to move.
 
 &lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="47" name="C1P16V3" tags="variation" position="3225,4500" size="100,100">&quot;Who are you, what have you done to me? Show yourself!&quot;, I shout.
 
-&lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="48" name="F: Mother Comments" tags="floater" position="3500,1325" size="100,100">I wince and refrain from shouting several words and I&#39;m sure my mother would kill me if she heard</tw-passagedata><tw-passagedata pid="49" name="F: Here goes nothing" tags="floater" position="3650,1625" size="100,100">I carefully push out bits of glass still left attached to the frame, and take one last look inside... well shit, here goes nothing.
+&lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="48" name="F: Mother Comments" tags="floater" position="3500,1325" size="100,100">I wince and refrain from shouting several words I&#39;m sure my mother would kill me if she heard</tw-passagedata><tw-passagedata pid="49" name="F: Here goes nothing" tags="floater" position="3650,1625" size="100,100">&lt;action&gt;I carefully push out bits of glass still left attached to the frame, and take one last look inside...&lt;/action&gt;
+&lt;action&gt;Well shit, here goes nothing.&lt;/action&gt;
 
-[[[Climb in the window]|C1P6]]</tw-passagedata><tw-passagedata pid="50" name="F: Search options" tags="floater" position="3575,1950" size="100,200">&lt;%
-const passageName = window.passage.name;
-
-if (!passageName.startsWith(&quot;C1P7V1&quot;)) {
-	print(&quot;[[[Search the sink]|C1P7V1]]&lt;br&gt;&quot;);
-}
-
-if (!passageName.startsWith(&quot;C1P7V3&quot;)) {
-	print(&quot;[[[Search the cupboards]|C1P7V3]]&lt;br&gt;&quot;);
-}
-
-if (!passageName.startsWith(&quot;C1P7V2&quot;)) {
-	print(&quot;[[[Search the washing machine and dryer]|C1P7V2]]&lt;br&gt;&quot;)
-}
-%&gt;
-
-[[[Leave the laundry room]|C1P8]]</tw-passagedata><tw-passagedata pid="51" name="F: Door entry options" tags="floater" position="2650,1175" size="100,100">&lt;%
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) {
-	print(&quot;[[[Knock on the door]|C1P5V11]]&lt;br&gt;&quot;);
-}
-
-if (window.passage.name != &quot;C1P5V12&quot;) {
-	print(&quot;[[[Try the door handle]|C1P5V12]]&lt;br&gt;&quot;);
-}
-%&gt;
-[[[Go back to the window]|C1P5V2]]&lt;br&gt;
-[[[Try kicking the door in]|C1P5V13]]</tw-passagedata><tw-passagedata pid="52" name="F: Window entry options" tags="floater" position="3425,1175" size="100,100">&lt;% const currentPassage = window.passage.name %&gt;
-[[[Go back to the door]|C1P5V1]]&lt;br&gt;
-&lt;% if (currentPassage != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&lt;br&gt;&quot;) %&gt;
-[[[Try pulling the lowest board off]|C15V22]]</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
+&lt;choices&gt;[[[Climb in the window]|C1P6]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="50" name="F: Search options" tags="floater" position="3575,1950" size="100,200">&lt;choices&gt;
+    &lt;%
+    const passageName = window.passage.name;
+    
+    if (!passageName.startsWith(&quot;C1P7V1&quot;)) print(&quot;[[[Search sink]|C1P7V1]]&quot;);
+    
+    if (!passageName.startsWith(&quot;C1P7V3&quot;)) print(&quot;[[[Search cupboards]|C1P7V3]]&quot;);
+    
+    if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing machine and dryer]|C1P7V2]]&quot;);
+    %&gt;
+    [[[Leave the laundry room]|C1P8]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="51" name="F: Door entry options" tags="floater" position="2650,1175" size="100,100">&lt;choices&gt;
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) print(&quot;[[[Knock on door]|C1P5V11]]&quot;); %&gt;
+    [[[Go to window]|C1P5V2]]
+    &lt;% if (window.passage.name != &quot;C1P5V12&quot;) print(&quot;[[[Try door handle]|C1P5V12]]&quot;); %&gt;
+    [[[Kick the door in]|C1P5V13]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="52" name="F: Window entry options" tags="floater" position="3425,1175" size="100,100">&lt;choices&gt;
+    [[[Go to the door]|C1P5V1]]
+    &lt;% if (window.passage.name != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&quot;) %&gt;
+    [[[Pull off lowest board]|C15V22]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
 
 The door is open far enough now that I can see a person, a very small person: a child, a girl.
 

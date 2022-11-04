@@ -137,7 +137,19 @@ let saveNotification;
 
 let prePausePassage;
 
+let images;
+let uiType;
+let speaker;
+let lastText;
+let textArea;
+let steps = [];
+let originalImages;
+let currentStep = 0;
+let lastTextStep = 0;
+let typewriting = [];
+let maxChoiceIndex = 0;
 let keybindSelectedElement;
+let currentChoiceIndex = -1;
 
 let menuMusic;
 let backgroundMusic;
@@ -329,311 +341,11 @@ $(document).on("sm.passage.shown", function(_, data) {
 			twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
 		}
 
-		if (twPassage.length) {
-			const steps = [];
-	
-			let images;
-			let uiType;
-			let speaker;
-			let lastText;
-			let textArea;
-			let originalImages;
-			let currentStep = 0;
-			let lastTextStep = 0;
-			let typewriting = [];
-			let maxChoiceIndex = 0;
-			let currentChoiceIndex = -1;
-
-			// Populate steps list
-			twPassage.find("ui, character, special, action, speech, sound, music, choices").each(function() {
-				const element = $(this);
-	
-				steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
-			});
-		
-			twPassage.empty();
-			twPassage.append(`<div class="story-box"></div>`);
-	
-			const storyBox = $(".story-box");
-		
-			storyBox.click((e) => {
-				const ignoreClick = ["option-one", "option-two"];
-
-				if (!ignoreClick.includes(e.target.id)) stepPassage();
-			});
-	
-			body.keyup(function(e) {
-				if (!progressKeys.includes(e.keyCode)) return;
-
-				if (!window.story.makingChoice) {
-					stepPassage();
-					return;
-				}
-
-				let oldChoiceIndex = currentChoiceIndex;
-
-				if (currentChoiceIndex === -1 || !keybindSelectedElement) {
-					currentChoiceIndex = 0;
-				} else {
-					$(`#choice-${currentChoiceIndex}`).removeClass("hovered");
-
-					switch (e.keyCode) {
-						// Enter
-						case 13:
-							$(`#choice-${currentChoiceIndex}`).trigger("click");
-							return;
-
-						// Up
-						case 38:
-							if (currentChoiceIndex > 0) --currentChoiceIndex;
-							break;
-
-						// Down
-						case 40:
-							if (currentChoiceIndex < maxChoiceIndex) currentChoiceIndex++;
-							break;
-					}
-				}
-
-				if (oldChoiceIndex != currentChoiceIndex) {
-					audioHelpers.playAudio(audioLibrary.ui.click);
-					GamePad.gamepadRumble(0.5, 0, 200);
-				}		
-
-				$(`#choice-${currentChoiceIndex}`).addClass("hovered");
-
-				keybindSelectedElement = $(`#choice-${currentChoiceIndex}`);		
-			});
-
-			justSaved = false;
-	
-			stepPassage();
-	
-			/* eslint-disable no-inner-declarations */
-			async function stepPassage() {
-				const ui = uiType === "standard" ? "main" : uiType === "special" ? "special" : "minimal";
-
-				if (typewriting.includes(lastTextStep)) {
-					if (lastText) lastText.remove();
-
-					const [type, content] = steps[lastTextStep];
-
-					if (type === "SPEECH" && speaker && originalImages) {
-						speaker.attr("class", "character-slot");
-						speaker.css("background-image", originalImages.join(", "));
-					}
-					
-					textArea.append(`<div id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
-			
-					lastText = $(`#text-area-${ui}-${lastTextStep}-skipped`);
-			
-					typewriting = typewriting.filter(i => i !== lastTextStep)
-				} else if (steps[currentStep]) {
-					const step = currentStep;
-					
-					let [type, content, extra] = steps[step];
-
-					if (extra === "Tiff") extra = "Tiffany";
-					if (content === "Tiff") content = "Tiffany";
-					
-					currentStep++;
-
-					switch (type) {
-						case "UI":
-							storyBox.empty();
-							
-							uiType = content.toLowerCase();
-
-							switch (uiType) {
-								case "standard":
-									storyBox.append(uiStyles.standard);
-									textArea = $(".text-area-main");
-									break;
-
-								case "special":
-									storyBox.append(uiStyles.special);
-									textArea = $(".text-area-special");
-									break;
-
-								case "minimal":
-									storyBox.append(uiStyles.minimal);
-									textArea = $(".text-area-minimal");
-									break;
-							}
-
-							stepPassage();
-							break;
-
-						case "CHARACTER": {
-							const extras = extra.split(" ");
-							const slot = extras.shift();
-							const character = content.toLowerCase();
-							const mixer = document.createElement("span");
-							
-							mixer.id = "mixer-image";
-							document.head.appendChild(mixer);
-						
-							let parts = [];
-							let images = [];
-							let parent = $(`#character-${slot}`);
-							let mixerImage = $(`#mixer-image`);
-							let parentImage = $(`#character-${slot}-image`);
-
-							switch (extras.length) {
-								case 0:
-									parts = [
-										`${character}-eyes-neutral`,
-										`${character}-mouth-neutral`,
-										`${character}-stance-neutral`
-									];
-									break;
-
-								case 1:
-									parts = [
-										`${character}-eyes-${extras[0]}`,
-										`${character}-mouth-${extras[0]}`,
-										`${character}-stance-neutral`
-									];
-									break;
-
-								case 2:
-									parts = [
-										`${character}-eyes-${extras[0]}`,
-										`${character}-mouth-${extras[1]}`,
-										`${character}-stance-neutral`
-									];
-									break;
-
-								case 3:
-									parts = [
-										`${character}-eyes-${extras[0]}`,
-										`${character}-mouth-${extras[1]}`,
-										`${character}-stance-${extras[2]}`
-									];
-									break;
-							}
-
-							for (const part of parts) {
-								mixerImage.attr("class", part);
-								images.push(mixerImage.css("background-image"));
-							}
-
-							parent.text(content);
-							parentImage.attr("class", "character-slot");
-							parentImage.css("background-image", images.join(", "));
-							mixerImage.remove();
-
-							stepPassage();
-							break;
-						}
-
-						case "SPECIAL":
-							$("#special-image").attr("class", "special-image");
-							$("#special-image").addClass(`${content.toLowerCase()}-image`);
-
-							stepPassage();
-							break;
-
-						case "SOUND":
-							audioHelpers.playAudio(audioLibrary.sfx[content]);
-
-							stepPassage();
-							break;
-
-						case "MUSIC":
-							if (backgroundMusic) return;
-
-							backgroundMusic = await audioHelpers.playMusic(audioLibrary.music[content]);
-
-							stepPassage();
-							break;
-
-						case "STOPMUSIC":
-							if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
-
-							stepPassage();
-							break;
-			
-						default: {
-							const character = extra?.toLowerCase() ?? "";
-
-							if (lastText) lastText.remove();
-
-							if (type !== "CHOICES") typewriting.push(step);
-
-							textArea.append(`<div id="text-area-${ui}-${step}"></div>`);
-
-							lastTextStep = step;
-							lastText = $(`#text-area-${ui}-${step}`);
-
-							let characterOne = $("#character-one").text().toLowerCase();
-							let characterTwo = $("#character-two").text().toLowerCase();
-			
-							$("#character-one-image").css("opacity", character !== characterOne ? "0.7" : "1");
-							$("#character-two-image").css("opacity", character !== characterTwo ? "0.7" : "1");
-							
-							lastText.html(type === "SPEECH" ? `"${content}"` : content);
-
-							if (type !== "CHOICES") {
-								if (type === "SPEECH") {
-									speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
-
-									let backgroundImages = speaker.css("background-image");
-
-									// Scared Tiffany has her mouth covered
-									if (character !== "Tiffany" && !backgroundImages.includes("stance/scared")) {
-										images = backgroundImages.split(", ");
-										originalImages = images.slice();
-
-										const mixer = document.createElement("span");
-
-										mixer.id = "mixer-image";
-										document.head.appendChild(mixer);
-
-										let mixerImage = $(`#mixer-image`);
-
-										mixerImage.attr("class", `${character}-mouth-talking`);
-										images[1] = mixerImage.css("background-image");
-
-										speaker.attr("class", "character-slot");
-										speaker.css("background-image", images.join(", "));
-
-										mixerImage.remove();
-									} else {
-										speaker = null;
-									}
-								}
-
-								lastText.typeWrite({
-									speed: 50,
-									cursor: false,
-									color: "#c8c3bc"
-								}).then(() => {
-									if (type === "SPEECH" && speaker && originalImages && typewriting.includes(step)) {
-										speaker.attr("class", "character-slot");
-										speaker.css("background-image", originalImages.join(", "));
-									}
-
-									typewriting = typewriting.filter(i => i !== step);
-								});
-							} else {
-								window.story.makingChoice = true;
-
-								lastText.children().each((index, element) => {
-									maxChoiceIndex = index;
-									$(element).attr("id", `choice-${index}`);
-								});
-							}
-							break;
-						}
-					}
-				}
-			}
-		}
+		if (twPassage.length) processPassage(twPassage);
     }
 });
 
-body.on("mouseover", function (e) {
+body.mouseover(function (e) {
 	const element = $(e.target);
 
     if (!element.is("a") && !element.attr("class")?.includes("sound-")) return;
@@ -646,21 +358,70 @@ body.on("mouseover", function (e) {
 	audioHelpers.playAudio(audioLibrary.ui.button);
 });
 
-body.on("click", function (e) {
+body.click(function (e) {
 	const element = $(e.target);
 	const elementClass = element.attr("class");
 
-    if (!element.is("a") && !elementClass?.includes("sound-")) return;
+    if (!element.is("a") && !elementClass?.includes("sound-")) {
+		const ignoreClick = ["option-one", "option-two"];
 
-	switch (elementClass) {
-		case "sound-confirm":
-			audioHelpers.playAudio(audioLibrary.ui.confirm);
-			break;
-
-		default:
-			audioHelpers.playAudio(audioLibrary.ui.click);
-			break;
+		if (!ignoreClick.includes(e.target.id)) stepPassage();
+	} else {
+		switch (elementClass) {
+			case "sound-confirm":
+				audioHelpers.playAudio(audioLibrary.ui.confirm);
+				break;
+	
+			default:
+				audioHelpers.playAudio(audioLibrary.ui.click);
+				break;
+		}
 	}
+});
+
+body.keyup(function (e) {
+	if (!progressKeys.includes(e.keyCode)) return;
+
+	if (!window.story.makingChoice) {
+		stepPassage();
+		return;
+	}
+
+	let oldChoiceIndex = currentChoiceIndex;
+
+	if (currentChoiceIndex === -1 || !keybindSelectedElement) {
+		currentChoiceIndex = 0;
+	} else {
+		$(`#choice-${currentChoiceIndex}`).removeClass("hovered");
+
+		switch (e.keyCode) {
+			// Enter
+			case 13:
+				$(`#choice-${currentChoiceIndex}`).trigger("click");
+				return;
+
+			// Up
+			case 38:
+				if (currentChoiceIndex > 0) --currentChoiceIndex;
+				break;
+
+			// Down
+			case 40:
+				if (currentChoiceIndex < maxChoiceIndex) currentChoiceIndex++;
+				break;
+		}
+	}
+
+	const currentElement = $(`#choice-${currentChoiceIndex}`);
+
+	if (oldChoiceIndex != currentChoiceIndex) {
+		audioHelpers.playAudio(audioLibrary.ui.click);
+		GamePad.gamepadRumble(0.5, 0, 200);
+	}
+
+	currentElement.addClass("hovered");
+
+	keybindSelectedElement = currentElement;
 });
 
 //
@@ -743,6 +504,247 @@ const audioHelpers = {
 		music.pause();
 	}
 };
+
+async function stepPassage() {
+	const storyBox = $(".story-box");
+	const ui = uiType === "standard" ? "main" : uiType === "special" ? "special" : "minimal";
+
+	if (typewriting.includes(lastTextStep)) {
+		if (lastText) lastText.remove();
+
+		const [type, content] = steps[lastTextStep];
+
+		if (type === "SPEECH" && speaker && originalImages) {
+			speaker.attr("class", "character-slot");
+			speaker.css("background-image", originalImages.join(", "));
+		}
+		
+		textArea.append(`<div id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+
+		lastText = $(`#text-area-${ui}-${lastTextStep}-skipped`);
+
+		typewriting = typewriting.filter(i => i !== lastTextStep)
+	} else if (steps[currentStep]) {
+		const step = currentStep;
+		
+		let [type, content, extra] = steps[step];
+
+		if (extra === "Tiff") extra = "Tiffany";
+		if (content === "Tiff") content = "Tiffany";
+		
+		currentStep++;
+
+		switch (type) {
+			case "UI":
+				storyBox.empty();
+				
+				uiType = content.toLowerCase();
+
+				switch (uiType) {
+					case "standard":
+						storyBox.append(uiStyles.standard);
+						textArea = $(".text-area-main");
+						break;
+
+					case "special":
+						storyBox.append(uiStyles.special);
+						textArea = $(".text-area-special");
+						break;
+
+					case "minimal":
+						storyBox.append(uiStyles.minimal);
+						textArea = $(".text-area-minimal");
+						break;
+				}
+
+				stepPassage();
+				break;
+
+			case "CHARACTER": {
+				const extras = extra.split(" ");
+				const slot = extras.shift();
+				const character = content.toLowerCase();
+				const mixer = document.createElement("span");
+				
+				mixer.id = "mixer-image";
+				document.head.appendChild(mixer);
+			
+				let parts = [];
+				let images = [];
+				let parent = $(`#character-${slot}`);
+				let mixerImage = $(`#mixer-image`);
+				let parentImage = $(`#character-${slot}-image`);
+
+				switch (extras.length) {
+					case 0:
+						parts = [
+							`${character}-eyes-neutral`,
+							`${character}-mouth-neutral`,
+							`${character}-stance-neutral`
+						];
+						break;
+
+					case 1:
+						parts = [
+							`${character}-eyes-${extras[0]}`,
+							`${character}-mouth-${extras[0]}`,
+							`${character}-stance-neutral`
+						];
+						break;
+
+					case 2:
+						parts = [
+							`${character}-eyes-${extras[0]}`,
+							`${character}-mouth-${extras[1]}`,
+							`${character}-stance-neutral`
+						];
+						break;
+
+					case 3:
+						parts = [
+							`${character}-eyes-${extras[0]}`,
+							`${character}-mouth-${extras[1]}`,
+							`${character}-stance-${extras[2]}`
+						];
+						break;
+				}
+
+				for (const part of parts) {
+					mixerImage.attr("class", part);
+					images.push(mixerImage.css("background-image"));
+				}
+
+				parent.text(content);
+				parentImage.attr("class", "character-slot");
+				parentImage.css("background-image", images.join(", "));
+				mixerImage.remove();
+
+				stepPassage();
+				break;
+			}
+
+			case "SPECIAL":
+				$("#special-image").attr("class", "special-image");
+				$("#special-image").addClass(`${content.toLowerCase()}-image`);
+
+				stepPassage();
+				break;
+
+			case "SOUND":
+				audioHelpers.playAudio(audioLibrary.sfx[content]);
+
+				stepPassage();
+				break;
+
+			case "MUSIC":
+				if (backgroundMusic) return;
+
+				backgroundMusic = await audioHelpers.playMusic(audioLibrary.music[content]);
+
+				stepPassage();
+				break;
+
+			case "STOPMUSIC":
+				if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
+
+				stepPassage();
+				break;
+
+			default: {
+				const character = extra?.toLowerCase() ?? "";
+
+				if (lastText) lastText.remove();
+
+				if (type !== "CHOICES") typewriting.push(step);
+
+				textArea.append(`<div id="text-area-${ui}-${step}"></div>`);
+
+				lastTextStep = step;
+				lastText = $(`#text-area-${ui}-${step}`);
+
+				let characterOne = $("#character-one").text().toLowerCase();
+				let characterTwo = $("#character-two").text().toLowerCase();
+
+				$("#character-one-image").css("opacity", character !== characterOne ? "0.7" : "1");
+				$("#character-two-image").css("opacity", character !== characterTwo ? "0.7" : "1");
+				
+				lastText.html(type === "SPEECH" ? `"${content}"` : content);
+
+				if (type !== "CHOICES") {
+					if (type === "SPEECH") {
+						speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
+
+						let backgroundImages = speaker.css("background-image");
+
+						// Scared Tiffany has her mouth covered
+						if (character !== "Tiffany" && !backgroundImages.includes("stance/scared")) {
+							images = backgroundImages.split(", ");
+							originalImages = images.slice();
+
+							const mixer = document.createElement("span");
+
+							mixer.id = "mixer-image";
+							document.head.appendChild(mixer);
+
+							let mixerImage = $(`#mixer-image`);
+
+							mixerImage.attr("class", `${character}-mouth-talking`);
+							images[1] = mixerImage.css("background-image");
+
+							speaker.attr("class", "character-slot");
+							speaker.css("background-image", images.join(", "));
+
+							mixerImage.remove();
+						} else {
+							speaker = null;
+						}
+					}
+
+					lastText.typeWrite({
+						speed: 50,
+						cursor: false,
+						color: "#c8c3bc"
+					}).then(() => {
+						if (type === "SPEECH" && speaker && originalImages && typewriting.includes(step)) {
+							speaker.attr("class", "character-slot");
+							speaker.css("background-image", originalImages.join(", "));
+						}
+
+						typewriting = typewriting.filter(i => i !== step);
+					});
+				} else {
+					currentChoiceIndex = -1;
+					keybindSelectedElement = null;
+					window.story.makingChoice = true;
+
+					$(`#text-area-${ui}-${step} > p`).contents().unwrap();
+
+					lastText.children().each((index, element) => {
+						maxChoiceIndex = index;
+						$(element).attr("id", `choice-${index}`);
+					});
+				}
+				break;
+			}
+		}
+	}
+}
+
+function processPassage(twPassage) {
+	// Populate steps list
+	twPassage.find("ui, character, special, action, speech, sound, music, choices").each(function() {
+		const element = $(this);
+
+		steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
+	});
+
+	twPassage.empty();
+	twPassage.append(`<div class="story-box"></div>`);
+
+	justSaved = false;
+
+	stepPassage();
+}
 
 //
 //	Window Helpers
