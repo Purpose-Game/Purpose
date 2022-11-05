@@ -1,3 +1,7 @@
+.backstreet-image {
+  background-image: url("../../../assets/images/ui/specials/places/backstreet.png") !important;
+}
+
 .backwall-image {
   background-image: url("../../../assets/images/ui/specials/places/backwall.png") !important;
 }

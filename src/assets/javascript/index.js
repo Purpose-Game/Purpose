@@ -119,6 +119,7 @@ const audioLibrary = {
 		},
 		
 		// Game Music
+		"limping": new Audio("assets/audio/music/limping.mp3"),
 		"calm": new Audio("assets/audio/music/calm.mp3"),
 	}
 }
@@ -309,7 +310,13 @@ $(document).on("sm.passage.showing", function(_, data) {
 	}
 
 	if (passage.tags) {
-		if (!passage.tags.includes("noFade") && !passage.tags.includes("redirect")) {
+		if (
+			passage.tags.includes("forceFade") || (
+				!passage.tags.includes("noFade") &&
+				!passage.tags.includes("redirect") &&
+				!passage.tags.includes("page")) &&
+				!passage.tags.includes("variation")
+			) {
 			twPassage.hide(0).fadeIn(500);
 		}
 
