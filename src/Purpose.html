@@ -276,144 +276,166 @@ if (!window.passage.tried) {
 &lt;action&gt;I could also use a weapon...&lt;/action&gt;
 &lt;action&gt;I left my knife in that guy&#39;s head, so I won&#39;t be getting that back any time soon.&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="17" name="C1P7V1" tags="variation" position="2775,1925" size="100,100">&lt;%
-if (window.passage.name != &quot;C1P7V1&quot;){
-	window.passage.tried = true;
-}
+&lt;choices&gt;&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="17" name="C1P7V1" tags="variation" position="2775,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-if (
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)
-) {
-	window.story.setChoice(&quot;Chapter1&quot;, &quot;Sink&quot;)
-}
+&lt;%
+if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;Sink&quot;);
 
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Sink&quot;)) {
 	if (!window.passage.tried) {
+    	window.passage.tried = true;
 %&gt;
 
-I limp over to the sink and take a look. There&#39;s a crusty old soap bar sitting next to the tap... I don&#39;t think that&#39;s going to do me any good. There&#39;s also a shelf under the sink.
+&lt;action&gt;I limp over to the sink and take a look.&lt;/action&gt;
+&lt;action&gt;There&#39;s a crusty old soap bar sitting next to the tap...&lt;/action&gt;
+&lt;action&gt;I don&#39;t think that&#39;s going to do me any good.&lt;/action&gt;
+&lt;action&gt;There&#39;s also a shelf under the sink.&lt;/action&gt;
 
 &lt;%
 	} else {
 %&gt;
 
-I wonder if there&#39;s anything else around here I can use.
+&lt;action&gt;I wonder if there&#39;s anything else around here I can use.&lt;/action&gt;
 
 &lt;%
-
 	}
-
-	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) {
-		print(&quot;[[[Take the soap bar]|C1P7V11]]&lt;br&gt;&quot;);
-	}
-
-	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) {
-		print(&quot;[[[Look under the sink]|C1P7V12]]&lt;br&gt;&quot;);
-	}
-
-	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) {
-		print(&quot;[[[Try turning on the tap]|C1P7V13]]&lt;br&gt;&quot;);
-	}
+%&gt;
 	
-} else { %&gt;
+&lt;% } else { %&gt;
 
-Nothing else around the sink.
+&lt;action&gt;Nothing else around the sink.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;choices&gt;
+    &lt;%
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) print(&quot;[[[Take the soap bar]|C1P7V11]]&quot;);
 
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="18" name="C1P7V3" tags="variation" position="3075,1925" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) print(&quot;[[[Look under the sink]|C1P7V12]]&quot;);
 
-I walk over to the cupboards and open them. They have lots of old chemical bottles and cleaning supplies, but, I do find some &quot;Hospital Grade&quot; disinfectant; looks like a cheap home brand bottle, but it&#39;s better than nothing. I&#39;m pretty sure this is meant to be used on floors and furniture, but, it will definitely do, considering the circumstances.
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) print(&quot;[[[Try turning on the tap]|C1P7V13]]&quot;);
+    %&gt;
+
+    &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="18" name="C1P7V3" tags="variation" position="3075,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;%
+if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
+
+&lt;action&gt;I walk over to the cupboards and open them.&lt;/action&gt;
+&lt;action&gt;They have lots of old chemical bottles and cleaning supplies, but, I do find some &quot;Hospital Grade&quot; disinfectant.&lt;/action&gt;
+&lt;action&gt;Looks like a cheap home brand bottle, but it&#39;s better than nothing.&lt;/action&gt;
+&lt;action&gt;I&#39;m pretty sure this is meant to be used on floors and furniture, but, it will definitely do...&lt;/action&gt;
+&lt;action&gt;...considering the circumstances.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-I take another look, but all I find are some old chemicals and cleaning supplies&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) print(&quot;, nothing useful except maybe that disinfectant&quot;) %&gt;.
+&lt;action&gt;I take another look, but all I find are some old chemicals and cleaning supplies.&lt;/action&gt;
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) print(&quot;&lt;action&gt;Nothing useful except maybe that disinfectant.&lt;/action&gt;&quot;); %&gt;
 
 &lt;% } %&gt;
 
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) {
-	print(&quot;[[[Take the disinfectant]|C1P7V31]]&lt;br&gt;&quot;);
-} %&gt;
+&lt;choices&gt;
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) print(&quot;[[[Take the disinfectant]|C1P7V31]]&quot;); %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+    &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="19" name="C1P7V2" tags="variation" position="3300,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;machines&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="19" name="C1P7V2" tags="variation" position="3300,1925" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
+&lt;%
+if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
 
-I get up to the washing machine and dryer; they look old and dusty, but otherwise in good shape. I remember when I use to have to do my laundry... feels like a lifetime ago now.
+&lt;action&gt;I get up to the washing machine and dryer; they look old and dusty, but otherwise in good shape.&lt;/action&gt;
+&lt;action&gt;I remember when I use to have to do my laundry...&lt;/action&gt;
+&lt;action&gt;...feels like a lifetime ago now.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-Honestly surprising how good shape these things are still in.
+&lt;action&gt;Honestly surprising how good shape these things are still in.&lt;/action&gt;
 
-&lt;% }
+&lt;% } %&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) {
-	print(&quot;[[[Search the dryer]|C1P7V22]]&lt;br&gt;&quot;);
-}
+&lt;choices&gt;
+    &lt;%
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) print(&quot;[[[Search the dryer]|C1P7V22]]&quot;);
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) {
-	print(&quot;[[[Search the washing machine]|C1P7V21]]&lt;br&gt;&quot;);
-}
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;);
+    %&gt;
+    
+    &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="variation" position="2625,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
- %&gt;
-
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
-
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="variation" position="2625,2075" size="100,100">&lt;%
+&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
 window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;, &quot;Nothing wasted&quot;, &quot;You never know when it will come in handy!&quot;);
 %&gt;
 
-With a bit of effort, I separate the soap from the bench. It&#39;s hard as a rock...
+&lt;action&gt;With a bit of effort, I separate the soap from the bench.&lt;/action&gt;
+&lt;action&gt;It&#39;s hard as a rock...&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;C1P7V1&quot;) %&gt;</tw-passagedata><tw-passagedata pid="21" name="C1P7V12" tags="variation" position="2775,2075" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
+&lt;choices&gt;[[[Return to the sink]|C1P7V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="21" name="C1P7V12" tags="variation" position="2775,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I look in the cabinet under the sink- Bingo! There&#39;s some duck tape; that&#39;s always useful.
+&lt;% if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
+
+&lt;action&gt;I look in the cabinet under the sink-&lt;/action&gt;
+&lt;action&gt;Bingo! There&#39;s some duck tape; that&#39;s always useful.&lt;/action&gt;
+
+&lt;% } else if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) { %&gt;
+
+&lt;action&gt;Nothing else there.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-Still just the duck tape, not a bad find.
+&lt;action&gt;Still just the duck tape, not a bad find.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-[[[Take the duck tape]|C1P7V121]]&lt;br&gt;
-[[[Return to the sink]|C1P7V1]]
+&lt;choices&gt;
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) print(&quot;[[[Take the duck tape]|C1P7V121]]&quot;); %&gt;
+    [[[Return to the sink]|C1P7V1]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="22" name="C1P7V13" tags="variation" position="2925,2075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Tap&quot;); %&gt;
 
-&lt;% window.passage.tried = true %&gt;</tw-passagedata><tw-passagedata pid="22" name="C1P7V13" tags="variation" position="2925,2075" size="100,100">&lt;%
-window.story.setChoice(&quot;Chapter1&quot;, &quot;Tap&quot;);
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;tap&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-window.story.delayedText(2000);
-%&gt;
+&lt;action&gt;I turn on the tap.&lt;/action&gt;
+&lt;action&gt;...&lt;/action&gt;
+&lt;action&gt;Nothing: that would have been too good to be true.&lt;/action&gt;
 
-I turn on the tap.
+&lt;choices&gt;[[[Return to the sink]|C1P7V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="23" name="C1P7V121" tags="variation" position="2775,2225" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Tape&quot;); %&gt;
 
-&lt;div-#delayed&gt;
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-Nothing: that would have been too good to be true.
+&lt;action&gt;I pick up the duck tape.&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;C1P7V1&quot;) %&gt;
+&lt;choices&gt;[[[Return to the sink]|C1P7V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="24" name="C1P8" tags="page save" position="3075,2375" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="C1P7V121" tags="variation" position="2775,2225" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Tape&quot;) %&gt;
-
-I pick up the duck tape.
-
-&lt;%= window.story.customRender(&quot;C1P7V1&quot;) %&gt;</tw-passagedata><tw-passagedata pid="24" name="C1P8" tags="page save" position="3075,2375" size="100,100">&lt;%
+&lt;%
 let itemsCollected = 0;
 
 for (const [item, value] of window.story.getChoices(&quot;Chapter1&quot;)) {
 	switch (item) {
 		case &quot;Tape&quot;:
-			if (value) itemsCollected++;
-			break;
-
 		case &quot;Disinfectant&quot;:
-			if (value) itemsCollected++;
-			break;
-
 		case &quot;Shirt&quot;:
 			if (value) itemsCollected++;
 			break;
@@ -427,92 +449,94 @@ const found =
 	&quot;I didn&#39;t find anything&quot;;
 	
 window.story.setChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;, itemsCollected);
-	
-window.story.delayedText(10000);
 %&gt;
 
-&lt;% print(found) %&gt;, but that&#39;s enough searching; my head is pounding now. I&#39;ve pushed myself too far, but I didn&#39;t have much of a choice did I? I just need... I need to... um, shit, come on Sarah, stay with it.
+&lt;action&gt;&lt;% print(found) %&gt;, but that&#39;s enough searching.&lt;/action&gt;
+&lt;action&gt;My head is pounding now. &lt;/action&gt;
+&lt;action&gt;I&#39;ve pushed myself too far, but I didn&#39;t have much of a choice did I?&lt;/action&gt;
+&lt;action&gt;I just need...&lt;/action&gt;
+&lt;action&gt;...&lt;/action&gt;
+&lt;action&gt;I need to...&lt;/action&gt;
+&lt;action&gt;Um.&lt;/action&gt;
+&lt;action&gt;Shit, come on Sarah, stay with it.&lt;/action&gt;
+&lt;action&gt;I, need, to...&lt;/action&gt;
+&lt;action&gt;...just need to sit down.&lt;/action&gt;
+&lt;action&gt;For a few minutes...&lt;/action&gt;
+&lt;action&gt;Catch... my... breath...&lt;/action&gt;
 
-&lt;div#delayed style=&quot;Display: None&quot;&gt;
 
-I just need to sit down, for a few minutes... catch my breath...
+&lt;choices&gt;[[[Colapse and pass out]|C1P8R1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="25" name="C1P7V31" tags="variation" position="3075,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-[[[Colapse and pass out]|C1P8R1]]
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="C1P7V31" tags="variation" position="3075,2075" size="100,100">&lt;%
+&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Cupboards&quot;);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;);
 %&gt;
 
-I pick up the disinfectant.
+&lt;action&gt;I pick up the disinfectant.&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="26" name="C1P7V21" tags="variation" position="3225,2075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) %&gt;
+&lt;choices&gt;&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="26" name="C1P7V21" tags="variation" position="3225,2075" size="100,100">&lt;%
+window.story.setChoice(&quot;Chapter1&quot;, &quot;Washer&quot;);
+if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;);
+%&gt;
 
-I open the washing machine: whole lotta nothin.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;machines&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) {
-	print(&quot;[[[Search the dryer]|C1P7V22]]&lt;br&gt;&quot;);
-} %&gt;
+&lt;action&gt;I open the washing machine: whole lotta nothin.&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;choices&gt;
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) print(&quot;[[[Search the dryer]|C1P7V22]]&quot;); %&gt;
+    &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="27" name="C1P7V22" tags="variation" position="3375,2075" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;); %&gt;
 
-&lt;%
-if (
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)
-) {
-	window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;);
-}
-%&gt;</tw-passagedata><tw-passagedata pid="27" name="C1P7V22" tags="variation" position="3375,2075" size="100,100">&lt;% if (!window.passage.tried) { %&gt;
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;machines&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I open the dryer- Jackpot! A &#39;clean&#39; white shirt, I can use this as a bandage; looks like it has been sitting in here for years, but the closed dryer door did a good job of keeping it clean. 
+&lt;% if (!window.passage.tried) {
+    window.passage.tried = true;
+%&gt;
+
+&lt;action&gt;I open the dryer-&lt;/action&gt;
+&lt;action&gt;Jackpot!&lt;/action&gt;
+&lt;action&gt;A &#39;clean&#39; white shirt, I can use this as a bandage.&lt;/action&gt;
+&lt;action&gt;Looks like it has been sitting in here for years.&lt;/action&gt;
+&lt;action&gt;I guess the closed dryer door did a good job of keeping it clean.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-Still just that one white shirt in the dryer.
+&lt;action&gt;Still just that one white shirt in the dryer.&lt;/action&gt;
 
-&lt;% } 
+&lt;% } %&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;)) {
-	print(&quot;[[[Take the shirt]|C1P7V221]]&lt;br&gt;&quot;);
-}
+&lt;choices&gt;
+    &lt;%
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;)) print(&quot;[[[Take the shirt]|C1P7V221]]&quot;);
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;);
+    %&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) {
-	print(&quot;[[[Search the washing machine]|C1P7V21]]&lt;br&gt;&quot;);
-} %&gt;
-
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
-
-&lt;%
-if (
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)
-) {
-	window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;);
-}
-
-window.passage.tried = true;
-%&gt;</tw-passagedata><tw-passagedata pid="28" name="C1P7V221" tags="variation" position="3375,2225" size="100,100">&lt;%
+    &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="28" name="C1P7V221" tags="variation" position="3375,2225" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;);
+
+if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;);
 %&gt;
 
-I take out the white shirt.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;machines&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) {
-	print(&quot;[[[Search the washing machine]|C1P7V21]]&lt;br&gt;&quot;);
-} %&gt;
+&lt;action&gt;I take out the white shirt.&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;choices&gt;
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;); %&gt;
 
-&lt;%
-if (
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)
-) {
-	window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;);
-}
-%&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;i&gt;
+    &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;i&gt;
 
 &quot;Sarah? Get up, it&#39;s half past one in the afternoon!&quot;, a woman shouts.
 
@@ -648,18 +672,16 @@ My eyes are locked on the shadow, watching, waiting for it to move.
 &lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="48" name="F: Mother Comments" tags="floater" position="3500,1325" size="100,100">I wince and refrain from shouting several words I&#39;m sure my mother would kill me if she heard</tw-passagedata><tw-passagedata pid="49" name="F: Here goes nothing" tags="floater" position="3650,1625" size="100,100">&lt;action&gt;I carefully push out bits of glass still left attached to the frame, and take one last look inside...&lt;/action&gt;
 &lt;action&gt;Well shit, here goes nothing.&lt;/action&gt;
 
-&lt;choices&gt;[[[Climb in the window]|C1P6]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="50" name="F: Search options" tags="floater" position="3575,1950" size="100,200">&lt;choices&gt;
-    &lt;%
-    const passageName = window.passage.name;
-    
-    if (!passageName.startsWith(&quot;C1P7V1&quot;)) print(&quot;[[[Search sink]|C1P7V1]]&quot;);
-    
-    if (!passageName.startsWith(&quot;C1P7V3&quot;)) print(&quot;[[[Search cupboards]|C1P7V3]]&quot;);
-    
-    if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing machine and dryer]|C1P7V2]]&quot;);
-    %&gt;
-    [[[Leave the laundry room]|C1P8]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="51" name="F: Door entry options" tags="floater" position="2650,1175" size="100,100">&lt;choices&gt;
+&lt;choices&gt;[[[Climb in the window]|C1P6]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="50" name="F: Search options" tags="floater" position="3575,1950" size="100,200">&lt;%
+const passageName = window.passage.name;
+
+if (!passageName.startsWith(&quot;C1P7V1&quot;)) print(&quot;[[[Search sink]|C1P7V1]]&quot;);
+
+if (!passageName.startsWith(&quot;C1P7V3&quot;)) print(&quot;[[[Search cupboards]|C1P7V3]]&quot;);
+
+if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing machine and dryer]|C1P7V2]]&quot;);
+%&gt;
+[[[Leave the laundry room]|C1P8]]</tw-passagedata><tw-passagedata pid="51" name="F: Door entry options" tags="floater" position="2650,1175" size="100,100">&lt;choices&gt;
     &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) print(&quot;[[[Knock on door]|C1P5V11]]&quot;); %&gt;
     [[[Go to window]|C1P5V2]]
     &lt;% if (window.passage.name != &quot;C1P5V12&quot;) print(&quot;[[[Try door handle]|C1P5V12]]&quot;); %&gt;

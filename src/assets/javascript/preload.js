@@ -38,6 +38,7 @@ const requiredImages = [
     // Specials
     // Items
     "specials/items/beans.png",
+    "specials/items/tap.png",
 
     // Places
     "specials/places/backdoor.png",

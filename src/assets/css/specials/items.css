@@ -1,3 +1,11 @@
 .beans-image {
   background-image: url("../../../assets/images/ui/specials/items/beans.png") !important;
 }
+
+.tap-image {
+  background-image: url("../../../assets/images/ui/specials/items/tap.png") !important;
+}
+
+.machines-image {
+  background-image: url("../../../assets/images/ui/specials/items/machines.png") !important;
+}
