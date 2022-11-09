@@ -600,11 +600,20 @@ async function stepPassage() {
 						break;
 
 					case 2:
-						parts = [
-							`${character}-eyes-${extras[0]}`,
-							`${character}-mouth-${extras[1]}`,
-							`${character}-stance-neutral`
-						];
+						if (extras[1] === "ditto") {
+							parts = [
+								`${character}-eyes-${extras[0]}`,
+								`${character}-mouth-${extras[0]}`,
+								`${character}-stance-${extras[0]}`
+							];
+						} else {
+							parts = [
+								`${character}-eyes-${extras[0]}`,
+								`${character}-mouth-${extras[1]}`,
+								`${character}-stance-neutral`
+							];
+						}
+						
 						break;
 
 					case 3:
@@ -658,7 +667,17 @@ async function stepPassage() {
 				break;
 
 			default: {
-				const character = extra?.toLowerCase() ?? "";
+				let character;
+				let specificSpeech = "";
+
+				if (extra?.includes(" ")) {
+					const extras = extra.split(" ");
+
+					character = extras[0].toLowerCase() ?? "";
+					specificSpeech = `-${extras[1].toLowerCase()}`;
+				} else {
+					character = extra?.toLowerCase() ?? "";
+				}
 
 				if (lastText) lastText.remove();
 
@@ -699,7 +718,7 @@ async function stepPassage() {
 
 							let mixerImage = $(`#mixer-image`);
 
-							mixerImage.attr("class", `${character}-mouth-talking`);
+							mixerImage.attr("class", `${character}-mouth-talking${specificSpeech}`);
 							images[1] = mixerImage.css("background-image");
 
 							speaker.attr("class", "character-slot");
