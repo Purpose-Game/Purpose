@@ -36,7 +36,7 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
 
 &lt;choices&gt;[[[Continue limping]|C1P2]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="2" name="C1P2" tags="page" position="3075,725" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backstreet&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I continue to limp down the sidewalk, I&#39;m not feeling too good.&lt;/action&gt;
 &lt;action&gt;The adrenaline must be wearing off, I&#39;m starting to get dizzy.&lt;/action&gt;
@@ -44,26 +44,22 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
 
 &lt;choices&gt;[[[Look around]|C1P3]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="3" name="C1P3" tags="page" position="3075,875" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backstreet&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I look around, there are a few houses dotted along either side of the suburban street.&lt;/action&gt;
 &lt;action&gt;With my previous encounter still fresh in my mind, I&#39;m not too keen to go back into one, but I don&#39;t have much of a choice.&lt;/action&gt;
 
 &lt;choices&gt;[[[Head to closest house]|C1P4]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="4" name="C1P4" tags="page" position="3075,1025" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backstreet&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I B-line it for the nearest house.&lt;/action&gt;
 
-&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwall&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;It has a decent brick wall surrounding it; that&#39;ll do, it should be enough to keep the walkers out for now.&lt;/action&gt;
 
-&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;garden&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I hop over the wall and land in the back garden, if you could still call it that with how overgrown it is.&lt;/action&gt;
 &lt;action&gt;The garden has walls on three sides, and a house on the fourth side. It has a few trees, some with large roots, and a few overgrown flowerbeds; other than that, there&#39;s not much here.&lt;/action&gt;
@@ -75,7 +71,7 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
     [[[Go to the back door]|C1P5V1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="5" name="C1P5V1" tags="variation" position="2850,1175" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backdoor&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
@@ -84,7 +80,13 @@ if (!window.passage.tried) {
 
 &lt;action&gt;I go up the patio steps and head to the back door, it&#39;s a large, sturdy-looking wooden door.&lt;/action&gt;
 &lt;action&gt;I look down, there&#39;s a doormat that reads &quot;COME BACK WHEN YOU HAVE TACOS &amp; BOOZE&quot;.&lt;/action&gt;
+
+&lt;character.one.limping.happy.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;I smirk; yeah, I wish.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;Looking around the patio, there&#39;s nothing much here, just a few dead potted plants, and some crusty old shoes.&lt;/action&gt;
 
 &lt;% } else { %&gt;
@@ -95,7 +97,7 @@ if (!window.passage.tried) {
 
 &lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="6" name="C1P5V2" tags="variation" position="3225,1175" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
@@ -116,7 +118,7 @@ if (!window.passage.tried) {
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backdoor&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I knock and wait...&lt;/action&gt;
 &lt;action&gt;...&lt;/action&gt;
@@ -124,7 +126,7 @@ if (!window.passage.tried) {
 
 &lt;%= window.story.customRender(&quot;F: Door entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="8" name="C1P5V12" tags="variation" position="2850,1325" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backdoor&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
@@ -146,22 +148,27 @@ if (!window.passage.tried) {
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backdoor&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I muster what little strength I have left, and kick the door with my good leg.&lt;/action&gt;
 &lt;action&gt;The door shuddered but doesn&#39;t open.&lt;/action&gt;
 &lt;action&gt;That was pretty loud too...&lt;/action&gt;
 &lt;action&gt;Well, I&#39;ve committed to this now, so I might as well kick it again, what the hell.&lt;/action&gt;
 &lt;action&gt;I take a breath, pause, then kick the door with all my strength.&lt;/action&gt;
+
+&lt;character.one.limping.pain.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;I lose my balance and fall backward, sliding down the patio steps, landing directly on my leg wound.&lt;/action&gt;
 &lt;action&gt;&lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;, but, at least the door opened.&lt;/action&gt;
 &lt;action&gt;I lie there for a moment while the pain subsides.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;choices&gt;[[[Get up, and go inside]|C1P6]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="10" name="C1P5V21" tags="variation" position="3150,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LookedIn&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
@@ -187,14 +194,19 @@ if (!window.passage.tried) {
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I grab the board with both hands and pull, hard.&lt;/action&gt;
 &lt;action&gt;Too hard.&lt;/action&gt;
 &lt;action&gt;The board comes right off, pulling bits of the moldy window frame it was nailed to with it.&lt;/action&gt;
 &lt;action&gt;I fall backward, and narrowly avoid hitting my head on a large tree root.&lt;/action&gt;
+
+&lt;character.one.limping.pain.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;I do, however, manage to land directly on my leg wound.&lt;/action&gt;
 &lt;action&gt;&lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;choices&gt;[[[Get up]|C1P5V221]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="12" name="C1 Intro" tags="page forceFade" position="3025,425" size="200,100">&lt;% window.story.stopMenuMusic(); %&gt;
 
@@ -210,7 +222,7 @@ if (!window.passage.tried) {
 
 &lt;choices&gt;[[Start Game|C1P1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="13" name="C1P5V221" tags="variation" position="3375,1475" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;Looking at the window, there&#39;s just enough room to squeeze through.&lt;/action&gt;
 &lt;action&gt;One problem though: the glass is still intact.&lt;/action&gt;
@@ -228,7 +240,7 @@ if (!window.passage.tried) {
     [[[Use the rock]|C1P5V2212]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="14" name="C1P5V2212" tags="variation" position="3450,1625" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I pick up the rock and throw it at the glass.&lt;/action&gt;
 &lt;action&gt;The glass bursts into shinny dust...&lt;/action&gt;
@@ -236,7 +248,7 @@ if (!window.passage.tried) {
 
 &lt;%= window.story.customRender(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="15" name="C1P5V2211" tags="variation" position="3300,1625" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;This is probably a bad idea, but what the hell.&lt;/action&gt;
 &lt;action&gt;I bunch up my sleeve for extra padding, brace my elbow, then push.&lt;/action&gt;
@@ -244,7 +256,7 @@ if (!window.passage.tried) {
 &lt;action&gt;I pull my arm back, looks like I tore my sleeve a little bit, but didn&#39;t cut myself.&lt;/action&gt;
 
 &lt;%= window.story.customRender(&quot;F: Here goes nothing&quot;) %&gt;</tw-passagedata><tw-passagedata pid="16" name="C1P6" tags="page" position="3075,1775" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;)) { %&gt;
 
@@ -278,7 +290,7 @@ if (!window.passage.tried) {
 
 &lt;choices&gt;&lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="17" name="C1P7V1" tags="variation" position="2775,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;Sink&quot;);
@@ -321,7 +333,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Sink&quot;)) {
     &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="18" name="C1P7V3" tags="variation" position="3075,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
@@ -331,8 +343,13 @@ if (!window.passage.tried) {
 &lt;action&gt;I walk over to the cupboards and open them.&lt;/action&gt;
 &lt;action&gt;They have lots of old chemical bottles and cleaning supplies, but, I do find some &quot;Hospital Grade&quot; disinfectant.&lt;/action&gt;
 &lt;action&gt;Looks like a cheap home brand bottle, but it&#39;s better than nothing.&lt;/action&gt;
+
+&lt;character.one.limping.sad.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;I&#39;m pretty sure this is meant to be used on floors and furniture, but, it will definitely do...&lt;/action&gt;
 &lt;action&gt;...considering the circumstances.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% } else { %&gt;
 
@@ -347,7 +364,7 @@ if (!window.passage.tried) {
     &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="19" name="C1P7V2" tags="variation" position="3300,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;machines&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
@@ -374,7 +391,7 @@ if (!window.passage.tried) {
     &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="variation" position="2625,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
@@ -386,14 +403,19 @@ window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;, &quot;Nothing w
 
 &lt;choices&gt;[[[Return to the sink]|C1P7V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="21" name="C1P7V12" tags="variation" position="2775,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% if (!window.passage.tried) {
     window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I look in the cabinet under the sink-&lt;/action&gt;
+
+&lt;character.one.limping.happy.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;Bingo! There&#39;s some duck tape; that&#39;s always useful.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% } else if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) { %&gt;
 
@@ -412,22 +434,27 @@ window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;, &quot;Nothing w
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;tap&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I turn on the tap.&lt;/action&gt;
 &lt;action&gt;...&lt;/action&gt;
+
+&lt;character.one.limping.sad.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;Nothing: that would have been too good to be true.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;choices&gt;[[[Return to the sink]|C1P7V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="23" name="C1P7V121" tags="variation" position="2775,2225" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Tape&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I pick up the duck tape.&lt;/action&gt;
 
 &lt;choices&gt;[[[Return to the sink]|C1P7V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="24" name="C1P8" tags="page save" position="3075,2375" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 let itemsCollected = 0;
@@ -452,15 +479,30 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;, itemsCo
 %&gt;
 
 &lt;action&gt;&lt;% print(found) %&gt;, but that&#39;s enough searching.&lt;/action&gt;
+
+&lt;character.one.limping.sad.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;My head is pounding now. &lt;/action&gt;
 &lt;action&gt;I&#39;ve pushed myself too far, but I didn&#39;t have much of a choice did I?&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;I just need...&lt;/action&gt;
 &lt;action&gt;...&lt;/action&gt;
 &lt;action&gt;I need to...&lt;/action&gt;
 &lt;action&gt;Um.&lt;/action&gt;
+
+&lt;character.one.limping.angry.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;Shit, come on Sarah, stay with it.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;I, need, to...&lt;/action&gt;
 &lt;action&gt;...just need to sit down.&lt;/action&gt;
+
+&lt;character.one.limping.sad.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;For a few minutes...&lt;/action&gt;
 &lt;action&gt;Catch... my... breath...&lt;/action&gt;
 
@@ -468,7 +510,7 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;, itemsCo
 
 &lt;choices&gt;[[[Collapse and pass out]|C1P8R1]]&lt;/choices&gt;`</tw-passagedata><tw-passagedata pid="25" name="C1P7V31" tags="variation" position="3075,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Cupboards&quot;);
@@ -484,7 +526,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;machines&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I open the washing machine: whole lotta nothin.&lt;/action&gt;
 
@@ -495,15 +537,21 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;machines&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% if (!window.passage.tried) {
     window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I open the dryer-&lt;/action&gt;
+
+&lt;character.one.limping.happy.limping&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;Jackpot!&lt;/action&gt;
 &lt;action&gt;A &#39;clean&#39; white shirt, I can use this as a bandage.&lt;/action&gt;
+
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
+
 &lt;action&gt;Looks like it has been sitting in here for years.&lt;/action&gt;
 &lt;action&gt;I guess the closed dryer door did a good job of keeping it clean.&lt;/action&gt;
 
@@ -529,7 +577,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;machines&lt;/special&gt;
-&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I take out the white shirt.&lt;/action&gt;
 
