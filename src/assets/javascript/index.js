@@ -485,9 +485,9 @@ const audioHelpers = {
 
 	killMusic: async (music) => {
 		while (music.volume > 0) {
-			music.volume = Math.max(0, music.volume - 0.2);
+			music.volume = Math.max(0, music.volume - 0.1);
 			
-			await sleep(200);
+			await sleep(100);
 		}
 
 		music.pause();
@@ -503,9 +503,9 @@ const audioHelpers = {
 
 	fadeOut: async (music) => {
 		while (!killFade && music.volume > 0) {
-			music.volume = Math.max(0, music.volume - 0.05);
+			music.volume = Math.max(0, music.volume - 0.025);
 			
-			await sleep(250);
+			await sleep(125);
 		}
 
 		music.pause();
