@@ -621,7 +621,7 @@ async function stepPassage() {
 					images.push(mixerImage.css("background-image"));
 				}
 
-				parent.text(content);
+				parent.text(content === "Unknown" ? "???" : content);
 				parentImage.attr("class", "character-slot");
 				parentImage.css("background-image", images.join(", "));
 				mixerImage.remove();
@@ -672,11 +672,15 @@ async function stepPassage() {
 				let characterOne = $("#character-one").text().toLowerCase();
 				let characterTwo = $("#character-two").text().toLowerCase();
 
+				if (characterOne === "???") characterOne = "unknown";
+				if (characterTwo === "???") characterTwo = "unknown";
+
 				$("#character-one-image").css("opacity", character !== characterOne ? "0.7" : "1");
 				$("#character-two-image").css("opacity", character !== characterTwo ? "0.7" : "1");
 				
 				lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
+				// TODO: Make sp00ky text
 				if (type !== "CHOICES") {
 					if (type === "SPEECH") {
 						speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
@@ -729,6 +733,7 @@ async function stepPassage() {
 					lastText.children().each((index, element) => {
 						maxChoiceIndex = index;
 						$(element).attr("id", `choice-${index}`);
+						$(element).after("<br>");
 					});
 				}
 				break;
@@ -739,7 +744,7 @@ async function stepPassage() {
 
 function processPassage(twPassage) {
 	// Populate steps list
-	twPassage.find("ui, character, special, action, speech, sound, music, choices").each(function() {
+	twPassage.find("ui, character, special, action, speech, sound, music, stopmusic, choices").each(function() {
 		const element = $(this);
 
 		steps.push([element.prop("tagName"), element.html(), element.attr("class")]);

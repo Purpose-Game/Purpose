@@ -464,8 +464,9 @@ window.story.setChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;, itemsCo
 &lt;action&gt;For a few minutes...&lt;/action&gt;
 &lt;action&gt;Catch... my... breath...&lt;/action&gt;
 
+&lt;stopmusic/&gt;
 
-&lt;choices&gt;[[[Colapse and pass out]|C1P8R1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="25" name="C1P7V31" tags="variation" position="3075,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;choices&gt;[[[Collapse and pass out]|C1P8R1]]&lt;/choices&gt;`</tw-passagedata><tw-passagedata pid="25" name="C1P7V31" tags="variation" position="3075,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 
@@ -536,15 +537,19 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
     &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;); %&gt;
 
     &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;i&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Unknown&lt;/character&gt;
 
-&quot;Sarah? Get up, it&#39;s half past one in the afternoon!&quot;, a woman shouts.
+&lt;speech.unknown&gt;Sarah?&lt;/speech&gt;
+&lt;speech.unknown&gt;Sarah get up, it&#39;s half past one in the afternoon!&lt;/speech&gt;
 
-&lt;/i&gt;
+&lt;action&gt;A woman is shouting at you from somewhere downstairs.&lt;/action&gt;
 
-[[...|C1P9V2]]&lt;br&gt;
-[[No, fuck off|C1P9V3]]&lt;br&gt;
-[[It&#39;s too cold|C1P9V1]]</tw-passagedata><tw-passagedata pid="30" name="C1P11" tags="page" position="3075,2975" size="100,100">&lt;i&gt;
+&lt;choices&gt;
+	[[...|C1P9V2]]
+	[[No, fuck off|C1P9V3]]
+	[[It&#39;s too cold|C1P9V1]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="30" name="C1P11" tags="page" position="3075,2975" size="100,100">&lt;i&gt;
 
 \*Knock knock\*
 
