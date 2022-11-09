@@ -12,7 +12,31 @@ const requiredImages = [
     "characters/lucy/stance/neutral.png",
 
     // Sarah
+    "characters/sarah/eyes/angry.gif",
+    "characters/sarah/eyes/fighting.gif",
+    "characters/sarah/eyes/happy.gif",
+    "characters/sarah/eyes/limping.gif",
+    "characters/sarah/eyes/neutral.gif",
+    "characters/sarah/eyes/pain.gif",
+    "characters/sarah/eyes/sad.gif",
+
+    "characters/sarah/mouth/angry.png",
+    "characters/sarah/mouth/fighting.png",
+    "characters/sarah/mouth/happy.png",
+    "characters/sarah/mouth/limping.png",
+    "characters/sarah/mouth/neutral.png",
+    "characters/sarah/mouth/pain.png",
+    "characters/sarah/mouth/sad.png",
+    "characters/sarah/mouth/talking.gif",
+    "characters/sarah/mouth/talking_fighting.gif",
+    "characters/sarah/mouth/talking_limping.gif",
+
+    "characters/sarah/stance/fighting.png",
+    "characters/sarah/stance/fighting_backpack.png",
+    "characters/sarah/stance/limping.png",
+    "characters/sarah/stance/limping_backpack.png",
     "characters/sarah/stance/neutral.png",
+    "characters/sarah/stance/neutral_backpack.png",
 
     // Tiffany
     "characters/tiffany/eyes/confused.gif",
@@ -38,14 +62,17 @@ const requiredImages = [
     // Specials
     // Items
     "specials/items/beans.png",
+    "specials/items/machines.png",
     "specials/items/tap.png",
 
     // Places
     "specials/places/backdoor.png",
+    "specials/places/backstreet.png",
     "specials/places/backwall.png",
     "specials/places/backwindow.png",
     "specials/places/garden.png",
     "specials/places/kitchen.png",
+    "specials/places/laundryroom.png",
 
     // Story-Box
     

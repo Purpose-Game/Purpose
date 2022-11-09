@@ -46,10 +46,26 @@
   background-image: url("../../../assets/images/ui/characters/sarah/eyes/angry.gif");
 }
 
+.sarah-eyes-fighting {
+  background-image: url("../../../assets/images/ui/characters/sarah/eyes/fighting.gif");
+}
+
+.sarah-eyes-limping {
+  background-image: url("../../../assets/images/ui/characters/sarah/eyes/limping.gif");
+}
+
 /* Mouth */
 
 .sarah-mouth-talking {
   background-image: url("../../../assets/images/ui/characters/sarah/mouth/talking.gif");
+}
+
+.sarah-mouth-talking-fighting {
+  background-image: url("../../../assets/images/ui/characters/sarah/mouth/talking_fighting.gif");
+}
+
+.sarah-mouth-talking-limping {
+  background-image: url("../../../assets/images/ui/characters/sarah/mouth/talking_limping.gif");
 }
 
 .sarah-mouth-pain {
@@ -70,4 +86,12 @@
 
 .sarah-mouth-angry {
   background-image: url("../../../assets/images/ui/characters/sarah/mouth/angry.png");
+}
+
+.sarah-mouth-fighting {
+  background-image: url("../../../assets/images/ui/characters/sarah/mouth/fighting.png");
+}
+
+.sarah-mouth-limping {
+  background-image: url("../../../assets/images/ui/characters/sarah/mouth/limping.png");
 }
