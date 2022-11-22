@@ -9,7 +9,23 @@ const requiredImages = [
 
     // Characters
     // Lucy
+    "characters/lucy/eyes/concern.gif",
+    "characters/lucy/eyes/fighting.gif",
+    "characters/lucy/eyes/happy.gif",
+    "characters/lucy/eyes/neutral.gif",
+    "characters/lucy/eyes/sad.gif",
+
+    "characters/lucy/mouth/concern.png",
+    "characters/lucy/mouth/fighting.png",
+    "characters/lucy/mouth/happy.png",
+    "characters/lucy/mouth/neutral.png",
+    "characters/lucy/mouth/sad.png",
+    "characters/lucy/mouth/talking.gif",
+    "characters/lucy/mouth/talking_fighting.gif",
+
+    "characters/lucy/stance/fighting.png",
     "characters/lucy/stance/neutral.png",
+    "characters/lucy/stance/neutral_mask.png",
 
     // Sarah
     "characters/sarah/eyes/angry.gif",
