@@ -8,6 +8,19 @@ const requiredImages = [
     "buttons/save-active.png",
 
     // Characters
+    // Charles
+    "characters/charles/eyes/angry.gif",
+    "characters/charles/eyes/fighting.gif",
+    "characters/charles/eyes/neutral.gif",
+    "characters/charles/eyes/sad.gif",
+    "characters/charles/eyes/scared.gif",
+
+    "characters/charles/mouth/talking.gif",
+    "characters/charles/mouth/talking_fighting.gif",
+
+    "characters/charles/stance/fighting.png",
+    "characters/charles/stance/neutral.png",
+
     // Lucy
     "characters/lucy/eyes/concern.gif",
     "characters/lucy/eyes/fighting.gif",
