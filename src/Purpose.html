@@ -120,6 +120,13 @@ if (!window.passage.tried) {
 &lt;special&gt;backdoor&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
+&lt;rumble&gt;0.75 0 200&lt;/rumble&gt;
+&lt;wait&gt;750&lt;/wait&gt;
+&lt;rumble&gt;0.75 0 200&lt;/rumble&gt;
+&lt;wait&gt;750&lt;/wait&gt;
+&lt;rumble&gt;0.75 0 200&lt;/rumble&gt;
+&lt;wait&gt;750&lt;/wait&gt;
+
 &lt;action&gt;I knock and wait...&lt;/action&gt;
 &lt;action&gt;...&lt;/action&gt;
 &lt;action&gt;Yeah, well, it was worth a try I guess?&lt;/action&gt;
@@ -150,13 +157,20 @@ if (!window.passage.tried) {
 &lt;special&gt;backdoor&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
+&lt;rumble&gt;1 0.5 300&lt;/rumble&gt;
+
 &lt;action&gt;I muster what little strength I have left, and kick the door with my good leg.&lt;/action&gt;
 &lt;action&gt;The door shuddered but doesn&#39;t open.&lt;/action&gt;
 &lt;action&gt;That was pretty loud too...&lt;/action&gt;
 &lt;action&gt;Well, I&#39;ve committed to this now, so I might as well kick it again, what the hell.&lt;/action&gt;
+
+&lt;rumble&gt;1 1 300&lt;/rumble&gt;
+
 &lt;action&gt;I take a breath, pause, then kick the door with all my strength.&lt;/action&gt;
 
 &lt;character.one.limping.pain.limping&gt;Sarah&lt;/character&gt;
+
+&lt;rumble&gt;1 1 200&lt;/rumble&gt;
 
 &lt;action&gt;I lose my balance and fall backward, sliding down the patio steps, landing directly on my leg wound.&lt;/action&gt;
 &lt;action&gt;&lt;%= window.story.customRender(&quot;F: Mother Comments&quot;) %&gt;, but, at least the door opened.&lt;/action&gt;
@@ -190,7 +204,7 @@ if (!window.passage.tried) {
 
 &lt;% } %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="11" name="C15V22" tags="variation" position="3300,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;, false); %&gt;
+&lt;%= window.story.customRender(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="11" name="C1P5V22" tags="variation" position="3300,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;, false); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
@@ -199,6 +213,9 @@ if (!window.passage.tried) {
 &lt;action&gt;I grab the board with both hands and pull, hard.&lt;/action&gt;
 &lt;action&gt;Too hard.&lt;/action&gt;
 &lt;action&gt;The board comes right off, pulling bits of the moldy window frame it was nailed to with it.&lt;/action&gt;
+
+&lt;rumble&gt;1 1 200&lt;/rumble&gt;
+
 &lt;action&gt;I fall backward, and narrowly avoid hitting my head on a large tree root.&lt;/action&gt;
 
 &lt;character.one.limping.pain.limping&gt;Sarah&lt;/character&gt;
@@ -243,6 +260,9 @@ if (!window.passage.tried) {
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I pick up the rock and throw it at the glass.&lt;/action&gt;
+
+&lt;rumble&gt;0.5 0.5 350&lt;/rumble&gt;
+
 &lt;action&gt;The glass bursts into shinny dust...&lt;/action&gt;
 &lt;action&gt;...and lo and behold, it made a lot of noise.&lt;/action&gt;
 
@@ -252,6 +272,9 @@ if (!window.passage.tried) {
 
 &lt;action&gt;This is probably a bad idea, but what the hell.&lt;/action&gt;
 &lt;action&gt;I bunch up my sleeve for extra padding, brace my elbow, then push.&lt;/action&gt;
+
+&lt;rumble&gt;0.5 0.5 200&lt;/rumble&gt;
+
 &lt;action&gt;The glass was not very strong and gave way easily, but the bits of broken glass hitting the floor inside was still loud.&lt;/action&gt;
 &lt;action&gt;I pull my arm back, looks like I tore my sleeve a little bit, but didn&#39;t cut myself.&lt;/action&gt;
 
@@ -585,7 +608,8 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
     &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;); %&gt;
 
     &lt;%= window.story.customRender(&quot;F: Search options&quot;) %&gt;
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Sarah?&lt;/speech&gt;
@@ -742,8 +766,10 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="52" name="F: Window entry options" tags="floater" position="3425,1175" size="100,100">&lt;choices&gt;
     [[[Go to the door]|C1P5V1]]
     &lt;% if (window.passage.name != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&quot;) %&gt;
-    [[[Pull off lowest board]|C15V22]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
+    [[[Pull off lowest board]|C1P5V22]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect page" position="3075,2525" size="100,100">&lt;rumble&gt;1 1 200&lt;/rumble&gt;
+
+&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
 
 The door is open far enough now that I can see a person, a very small person: a child, a girl.
 

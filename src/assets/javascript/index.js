@@ -10,6 +10,8 @@ const version = "2.0.0";
 const apiUrl = "https://purpose-game.com/api/";
 // Keys that progress the story
 const progressKeys = [13, 32, 38, 39, 40];
+// Custom HTML Tags
+const customTags = "ui, character, special, action, speech, sound, music, stopmusic, flashback, choices, rumble, wait";
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
@@ -144,6 +146,7 @@ let speaker;
 let lastText;
 let textArea;
 let steps = [];
+let inFlashback;
 let originalImages;
 let currentStep = 0;
 let lastTextStep = 0;
@@ -341,7 +344,7 @@ $(document).on("sm.passage.shown", function(_, data) {
 
 	window.story.makingChoice = false;
 
-    if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation"))) {
+    if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation") || passage.tags.includes("redirect"))) {
 		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
 		if (pageHTML.includes("%Tiffany%")) {
@@ -526,7 +529,7 @@ async function stepPassage() {
 			speaker.css("background-image", originalImages.join(", "));
 		}
 		
-		textArea.append(`<div id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+		textArea.append(`<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
 
 		lastText = $(`#text-area-${ui}-${lastTextStep}-skipped`);
 
@@ -542,6 +545,7 @@ async function stepPassage() {
 		currentStep++;
 
 		switch (type) {
+			// Change the current UI layout
 			case "UI":
 				storyBox.empty();
 				
@@ -567,6 +571,7 @@ async function stepPassage() {
 				stepPassage();
 				break;
 
+			// Set a character to a slot
 			case "CHARACTER": {
 				const extras = extra.split(" ");
 				const slot = extras.shift();
@@ -639,6 +644,7 @@ async function stepPassage() {
 				break;
 			}
 
+			// Set the special image for the Special UI
 			case "SPECIAL":
 				$("#special-image").attr("class", "special-image");
 				$("#special-image").addClass(`${content.toLowerCase()}-image`);
@@ -646,12 +652,14 @@ async function stepPassage() {
 				stepPassage();
 				break;
 
+			// Plays a sound effect
 			case "SOUND":
 				audioHelpers.playAudio(audioLibrary.sfx[content]);
 
 				stepPassage();
 				break;
 
+			// Plays background music
 			case "MUSIC":
 				if (backgroundMusic) return;
 
@@ -660,12 +668,37 @@ async function stepPassage() {
 				stepPassage();
 				break;
 
+			// Stops background music
 			case "STOPMUSIC":
 				if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
 
 				stepPassage();
 				break;
 
+			// Sets passage as a flashback passage
+			case "FLASHBACK":
+				inFlashback = true;
+
+				stepPassage();
+				break;
+
+			// Trigger gamepad rumble
+			case "RUMBLE": {
+				GamePad.gamepadRumble(...content.split(" "));
+
+				stepPassage();
+				break;
+			}
+
+			// Pause passage progression
+			case "WAIT": {
+				await sleep(content);
+
+				stepPassage();
+				break;
+			}
+
+			// Handles SPEECH, ACTION, and CHOICES
 			default: {
 				let character;
 				let specificSpeech = "";
@@ -683,7 +716,7 @@ async function stepPassage() {
 
 				if (type !== "CHOICES") typewriting.push(step);
 
-				textArea.append(`<div id="text-area-${ui}-${step}"></div>`);
+				textArea.append(`<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${step}"></div>`);
 
 				lastTextStep = step;
 				lastText = $(`#text-area-${ui}-${step}`);
@@ -699,7 +732,6 @@ async function stepPassage() {
 				
 				lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
-				// TODO: Make sp00ky text
 				if (type !== "CHOICES") {
 					if (type === "SPEECH") {
 						speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
@@ -763,7 +795,7 @@ async function stepPassage() {
 
 function processPassage(twPassage) {
 	// Populate steps list
-	twPassage.find("ui, character, special, action, speech, sound, music, stopmusic, choices").each(function() {
+	twPassage.find(customTags).each(function() {
 		const element = $(this);
 
 		steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
@@ -773,6 +805,7 @@ function processPassage(twPassage) {
 	twPassage.append(`<div class="story-box"></div>`);
 
 	justSaved = false;
+	inFlashback = false;
 
 	stepPassage();
 }

@@ -101,6 +101,10 @@ tw-story {
   font-size: large;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .normal-link {
   color: #c8c3bc;
   text-shadow: initial;
