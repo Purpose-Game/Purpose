@@ -149,6 +149,6 @@ async function imageLoaded() {
     if (loaded == needToLoad) {
         debugMessage(`Finished loading ${loaded} images`);
 
-        $("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Test Passage')">[Continue]</a>`);
+        $("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Debug')">[Continue]</a>`);
     }
 }

@@ -60,6 +60,7 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
 &lt;action&gt;It has a decent brick wall surrounding it; that&#39;ll do, it should be enough to keep the walkers out for now.&lt;/action&gt;
 
 &lt;special&gt;garden&lt;/special&gt;
+&lt;rumble&gt;1 1 200&lt;/rumble&gt;
 
 &lt;action&gt;I hop over the wall and land in the back garden, if you could still call it that with how overgrown it is.&lt;/action&gt;
 &lt;action&gt;The garden has walls on three sides, and a house on the fourth side. It has a few trees, some with large roots, and a few overgrown flowerbeds; other than that, there&#39;s not much here.&lt;/action&gt;
@@ -767,9 +768,9 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
     [[[Go to the door]|C1P5V1]]
     &lt;% if (window.passage.name != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&quot;) %&gt;
     [[[Pull off lowest board]|C1P5V22]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect page" position="3075,2525" size="100,100">&lt;rumble&gt;1 1 200&lt;/rumble&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;rumble&gt;1 1 200&lt;/rumble&gt;
 
-&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
+&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;`</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
 
 The door is open far enough now that I can see a person, a very small person: a child, a girl.
 
@@ -3470,7 +3471,13 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 We&#39;re loading those images right now.
 Please sit tight!
 
-&lt;progress#loading-bar max=&quot;100&quot;&gt;</tw-passagedata></tw-storydata>
+&lt;progress#loading-bar max=&quot;100&quot;&gt;</tw-passagedata><tw-passagedata pid="321" name="Debug" tags="" position="2400,250" size="100,100">&lt;input#debugSelector type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot;&gt;&lt;/input&gt;
+&lt;button#debugGo&gt;Go&lt;/button&gt;
+
+&lt;script&gt;
+	console.log(&quot;asd&quot;);
+	$(&quot;#debugGo&quot;).click(() =&gt; window.story.show($(&quot;#debugSelector&quot;).val()));
+&lt;/script&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
