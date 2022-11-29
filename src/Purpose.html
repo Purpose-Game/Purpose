@@ -622,7 +622,8 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 	[[...|C1P9V2]]
 	[[No, fuck off|C1P9V3]]
 	[[It&#39;s too cold|C1P9V1]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="30" name="C1P11" tags="page" position="3075,2975" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="30" name="C1P11" tags="page" position="3075,2975" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Unknown&lt;/character&gt;
 &lt;sound&gt;knocking&lt;/sound&gt;
@@ -643,25 +644,36 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 
 &lt;speech.unknown&gt;Sis?&lt;/speech&gt;
 &lt;speech.unknown&gt;Come on, get up.&lt;/speech&gt;
-&lt;speech.unknown&gt;You said you&#39;d show me your new workplace today.&lt;/speech&gt;
-&lt;speech.unknown&gt;Remember?&lt;/speech&gt;
 
-&lt;action&gt;It&#39;s a young girl&#39;s voice.&lt;/action&gt;
+&lt;action&gt;The voice is different from before.&lt;/action&gt;
+
+&lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I crack my eyes open to look at the source of the voice.&lt;/action&gt;
+
+&lt;character.two&gt;Sophia&lt;/character&gt;
+
+&lt;action&gt;Sure enough, my sister is standing in the doorway.&lt;/action&gt;
+
+&lt;character.two.excited&gt;Sophia&lt;/character&gt;
+
+&lt;speech.sophia&gt;You said you&#39;d show me your new workplace today.&lt;/speech&gt;
+&lt;speech.sophia&gt;Remember?&lt;/speech&gt;
 
 &lt;choices&gt;
     [[...|C1P11V2]]
     [[I don&#39;t care|C1P11V1]]
     [[Ask me tomorrow|C1P11V3]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="31" name="C1P13" tags="page" position="3075,3450" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="31" name="C1P13" tags="page" position="3075,3450" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
-&lt;music&gt;flashback&lt;/music&gt;
+&lt;character.two&gt;?Sophia&lt;/character&gt;
 
 &lt;action&gt;She&#39;s right up close to my face now.&lt;/action&gt;
 &lt;action&gt;I can feel her cold breath.&lt;/action&gt;
 
-&lt;speech.unknown&gt;If you don&#39;t get up...&lt;/speech&gt;
-&lt;speech.unknown&gt;...you&#39;ll die.&lt;/speech&gt;
+&lt;speech.sophia&gt;If you don&#39;t get up...&lt;/speech&gt;
+&lt;speech.sophia&gt;...you&#39;ll die.&lt;/speech&gt;
 &lt;action&gt;She says in a low monotone voice.&lt;/action&gt;
 
 &lt;character.one.sad&gt;Sarah&lt;/character&gt;
@@ -669,7 +681,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;speech.sarah&gt;What the fuck...&lt;/speech&gt;
 &lt;action&gt;I roll over and open my eyes.&lt;/action&gt;
 
-&lt;character.two&gt;Sophia&lt;/character&gt;
+&lt;character.two.close-up.neutral-close-up.close-up&gt;Sophia&lt;/character&gt;
 &lt;rumble&gt;1 0.5 300&lt;/rumble&gt;
 &lt;sound&gt;stinger&lt;/sound&gt;
 
@@ -678,6 +690,9 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Staring.&lt;/action&gt;
 &lt;action&gt;But, something&#39;s wrong.&lt;/action&gt;
 &lt;action&gt;Her eyes...&lt;/action&gt;
+
+&lt;character.two.demonic&gt;Sophia&lt;/character&gt;
+
 &lt;action&gt;...they&#39;re like two little pinpricks burning into my soul.&lt;/action&gt;
 
 &lt;character.one.angry&gt;Sarah&lt;/character&gt;
@@ -744,7 +759,8 @@ Where the hell am I, and what the fuck is in my arm?!
 
 [[[Leave it alone]|C1P15V1]]&lt;br&gt;
 [[[Try ripping it out]|C1P15V2]]&lt;br&gt;
-[[[Try disconnecting the tubing]|C1P15V3]]</tw-passagedata><tw-passagedata pid="34" name="C1P9V1" tags="variation" position="2925,2825" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+[[[Try disconnecting the tubing]|C1P15V3]]</tw-passagedata><tw-passagedata pid="34" name="C1P9V1" tags="variation" position="2925,2825" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
 &lt;speech.sarah&gt;It&#39;s too cold... and my bed is so warm.&lt;/speech&gt;
@@ -753,6 +769,7 @@ Where the hell am I, and what the fuck is in my arm?!
     
 &lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="35" name="C1P9V3" tags="variation" position="3225,2825" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Filter&quot;, &quot;No Filter&quot;, &quot;Speaking your mind, *even when you shouldn&#39;t.*&quot;) %&gt;
 
+&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
 
@@ -763,45 +780,57 @@ Where the hell am I, and what the fuck is in my arm?!
 
 &lt;speech.unknown&gt;Watch that tone young woman or you&#39;ll be sleeping outside!&lt;/speech&gt;
     
-&lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="36" name="C1P12" tags="page" position="3075,3300" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="36" name="C1P12" tags="page" position="3075,3300" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;character.two&gt;Sophia&lt;/character&gt;
 
-&lt;action&gt;I groan and rollover.&lt;/action&gt;
+&lt;action&gt;I close my eyes, groan, and rollover.&lt;/action&gt;
 
-&lt;speech.unknown&gt;Pleeeeeease can you take me today?&lt;/speech&gt;
-&lt;speech.unknown&gt;It sounds so cool!&lt;/speech&gt;
+&lt;character.two&gt;?Sophia&lt;/character&gt;
+
+&lt;speech.sophia&gt;Pleeeeeease can you take me today?&lt;/speech&gt;
+&lt;speech.sophia&gt;It sounds so cool!&lt;/speech&gt;
+
+&lt;action&gt;I hear her ask from behind me.&lt;/action&gt;
 
 &lt;sound&gt;bed&lt;/sound&gt;
+&lt;music&gt;flashback&lt;/music&gt;
 
 &lt;action&gt;She&#39;s climbing onto my bed.&lt;/action&gt;
 &lt;action&gt;Now she&#39;s crawling up towards me.&lt;/action&gt;
 &lt;action&gt;I swear, if she gives me a wet willie, I will body slam her.&lt;/action&gt;
 &lt;action&gt;I don&#39;t care if she&#39;s a minor.&lt;/action&gt;
 
-&lt;choices&gt;[[[Brace for impact]|C1P13]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="37" name="C1P11V1" tags="variation" position="2925,3150" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;[[[Brace for impact]|C1P13]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="37" name="C1P11V1" tags="variation" position="2925,3150" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;character.two.excited&gt;Sophia&lt;/character&gt;
 
 &lt;speech.sarah&gt;I don&#39;t care...&lt;/speech&gt;
 &lt;speech.sarah&gt;I&#39;ll show you another day.&lt;/speech&gt;
 &lt;action&gt;I rub my leg, it&#39;s a bit sore.&lt;/action&gt;
 
-&lt;speech.unknown&gt;You keep saying that though!&lt;/speech&gt;
+&lt;character.two&gt;Sophia&lt;/character&gt;
+
+&lt;speech.sophia&gt;You keep saying that though!&lt;/speech&gt;
 
 &lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
 
 &lt;speech.sarah&gt;I said no, now get lost already.&lt;/speech&gt;
 
-&lt;%= window.story.customRender(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="38" name="C1P11V3" tags="variation" position="3225,3150" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;%= window.story.customRender(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="38" name="C1P11V3" tags="variation" position="3225,3150" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;character.two.excited&gt;Sophia&lt;/character&gt;
 
 &lt;speech.sarah&gt;Not today.&lt;/speech&gt;
 &lt;speech.sarah&gt;Remind me tomorrow...&lt;/speech&gt;
 &lt;action&gt;I rub my leg, it&#39;s a bit sore.&lt;/action&gt;
 
-&lt;speech.unknown&gt;That&#39;s what you said yesterday though!&lt;/speech&gt;
+&lt;character.two&gt;Sophia&lt;/character&gt;
+
+&lt;speech.sophia&gt;That&#39;s what you said yesterday though!&lt;/speech&gt;
 
 &lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
@@ -1035,6 +1064,7 @@ She pauses for a moment.
 [[It was|C1P22V22]]&lt;br&gt;
 [[Biggest ever|C1P22V23]]</tw-passagedata><tw-passagedata pid="80" name="C1P9V2" tags="variation" position="3075,2825" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
+&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
@@ -1085,9 +1115,10 @@ Snowman 2 - videlais &amp; Contributors&lt;br&gt;
 Twine 2 - Twine and Twee&lt;br&gt;
 &lt;a href=&quot;https://twinery.org/&quot; target=&quot;_blank&quot;&gt;https://twinery.org/&lt;/a&gt;</tw-passagedata><tw-passagedata pid="82" name="F: Stay in bed" tags="floater" position="3425,2825" size="100,100">&lt;choices&gt;[[[Stay in bed]|C1P11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="83" name="C1P11V2" tags="variation" position="3075,3150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;) %&gt;
 
+&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;character.two.excited&gt;Sophia&lt;/character&gt;
 
 &lt;action&gt;I huff and ignore her.&lt;/action&gt;
     

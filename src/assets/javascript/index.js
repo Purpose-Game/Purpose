@@ -580,9 +580,10 @@ async function stepPassage() {
 
 			// Set a character to a slot
 			case "CHARACTER": {
+				const knownUnknown = content.startsWith("?");
 				const extras = extra.split(" ");
 				const slot = extras.shift();
-				const character = content.toLowerCase();
+				const character = (knownUnknown ? "Unknown" : content).toLowerCase();
 				const mixer = document.createElement("span");
 				
 				mixer.id = "mixer-image";
@@ -661,7 +662,7 @@ async function stepPassage() {
 					images.push(mixerImage.css("background-image"));
 				}
 
-				parent.text(content === "Unknown" ? "???" : content);
+				parent.text(knownUnknown ? content.substring(1) : content === "Unknown" ? "???" : content);
 				parentImage.attr("class", "character-slot");
 				parentImage.css("background-image", images.join(", "));
 				mixerImage.remove();
@@ -764,11 +765,13 @@ async function stepPassage() {
 
 						let backgroundImages = speaker.css("background-image");
 
-						// Scared Tiffany has her mouth covered OR
-						// Lucy has surgical mask on
 						if (
+							// Scared Tiffany has her mouth covered OR
 							(character !== "Tiffany" && !backgroundImages.includes("stance/scared")) &&
-							(character !== "Lucy" && !backgroundImages.includes("stance/neutral_mask"))
+							// Lucy has surgical mask on
+							(character !== "Lucy" && !backgroundImages.includes("stance/neutral_mask")) &&
+							// Known Unknown has no mouth
+							(!backgroundImages.includes("unknown/neutral"))
 						) {
 							images = backgroundImages.split(", ");
 							originalImages = images.slice();
