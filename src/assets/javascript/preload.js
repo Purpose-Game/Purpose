@@ -125,6 +125,7 @@ const requiredImages = [
 ];
 const dir = "assets/images/ui/";
 const loadingBar = $("#loading-bar");
+const loadingBarLabel = $("#loading-bar-label");
 
 let loaded = 0;
 let needToLoad = requiredImages.length;
@@ -144,7 +145,9 @@ for (const image of requiredImages) {
 }
 
 async function imageLoaded() {
-    loadingBar.val((++loaded / needToLoad) * 100);
+    const percentage = (++loaded / needToLoad) * 100;
+    loadingBar.val(percentage);
+    loadingBarLabel.text(`${Math.floor(percentage)}%`);
 
     if (loaded == needToLoad) {
         debugMessage(`Finished loading ${loaded} images`);
