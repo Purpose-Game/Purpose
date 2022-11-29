@@ -107,9 +107,15 @@ const audioLibrary = {
 
 	// Sound effects
 	sfx: {
+		"knocking": new Audio("assets/audio/sfx/knocking.mp3"),
+		"bedroom": new Audio("assets/audio/sfx/bedroom.mp3"),
+		"bed": new Audio("assets/audio/sfx/bed.mp3"),
 		"chair": new Audio("assets/audio/sfx/chair.mp3"),
 		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
-		"bowl": new Audio("assets/audio/sfx/bowl.mp3")
+		"bowl": new Audio("assets/audio/sfx/bowl.mp3"),
+
+		// Non-diegetic
+		"stinger": new Audio("assets/audio/sfx/non-diegetic/stinger.mp3")
 	},
 
 	// Music
@@ -122,6 +128,7 @@ const audioLibrary = {
 		
 		// Game Music
 		"limping": new Audio("assets/audio/music/limping.mp3"),
+		"flashback": new Audio("assets/audio/music/flashback.mp3"),
 		"calm": new Audio("assets/audio/music/calm.mp3"),
 	}
 }
@@ -605,20 +612,39 @@ async function stepPassage() {
 						break;
 
 					case 2:
-						if (extras[1] === "ditto") {
-							parts = [
-								`${character}-eyes-${extras[0]}`,
-								`${character}-mouth-${extras[0]}`,
-								`${character}-stance-${extras[0]}`
-							];
-						} else {
-							parts = [
-								`${character}-eyes-${extras[0]}`,
-								`${character}-mouth-${extras[1]}`,
-								`${character}-stance-neutral`
-							];
-						}
-						
+						switch (extras[1]) {
+							case "solo":
+								parts = [
+									`${character}-eyes-${extras[0]}`,
+									`${character}-mouth-neutral`,
+									`${character}-stance-neutral`
+								];
+								break;
+
+							case "ditto":
+								parts = [
+									`${character}-eyes-${extras[0]}`,
+									`${character}-mouth-${extras[0]}`,
+									`${character}-stance-${extras[0]}`
+								];
+								break;
+
+							case "stance":
+								parts = [
+									`${character}-eyes-neutral`,
+									`${character}-mouth-neutral`,
+									`${character}-stance-${extras[0]}`
+								];
+								break;
+
+							default:
+								parts = [
+									`${character}-eyes-${extras[0]}`,
+									`${character}-mouth-${extras[1]}`,
+									`${character}-stance-neutral`
+								];
+								break;	
+						}						
 						break;
 
 					case 3:
@@ -727,8 +753,8 @@ async function stepPassage() {
 				if (characterOne === "???") characterOne = "unknown";
 				if (characterTwo === "???") characterTwo = "unknown";
 
-				$("#character-one-image").css("opacity", character !== characterOne ? "0.7" : "1");
-				$("#character-two-image").css("opacity", character !== characterTwo ? "0.7" : "1");
+				$("#character-one-image").css("opacity", character !== characterOne ? "0.6" : "1");
+				$("#character-two-image").css("opacity", character !== characterTwo ? "0.6" : "1");
 				
 				lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
@@ -738,8 +764,12 @@ async function stepPassage() {
 
 						let backgroundImages = speaker.css("background-image");
 
-						// Scared Tiffany has her mouth covered
-						if (character !== "Tiffany" && !backgroundImages.includes("stance/scared")) {
+						// Scared Tiffany has her mouth covered OR
+						// Lucy has surgical mask on
+						if (
+							(character !== "Tiffany" && !backgroundImages.includes("stance/scared")) &&
+							(character !== "Lucy" && !backgroundImages.includes("stance/neutral_mask"))
+						) {
 							images = backgroundImages.split(", ");
 							originalImages = images.slice();
 
