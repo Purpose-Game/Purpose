@@ -1,5 +1,6 @@
 /* global debugMessage */
 
+
 const requiredImages = [
     // Buttons
     "buttons/options.png",
@@ -66,6 +67,22 @@ const requiredImages = [
     "characters/sarah/stance/limping_backpack.png",
     "characters/sarah/stance/neutral.png",
     "characters/sarah/stance/neutral_backpack.png",
+
+    // Sophia
+    "characters/sophia/eyes/close_up.gif",
+    "characters/sophia/eyes/demonic.gif",
+    "characters/sophia/eyes/excited.gif",
+    "characters/sophia/eyes/neutral.gif",
+
+    "characters/sophia/mouth/demonic.png",
+    "characters/sophia/mouth/excited.png",
+    "characters/sophia/mouth/neutral.png",
+    "characters/sophia/mouth/neutral_close_up.png",
+    "characters/sophia/mouth/talking.gif",
+    "characters/sophia/mouth/talking_close_up.gif",
+    
+    "characters/sophia/stance/close_up.png",
+    "characters/sophia/stance/neutral.png",
 
     // Tiffany
     "characters/tiffany/eyes/confused.gif",
