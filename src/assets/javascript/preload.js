@@ -119,6 +119,7 @@ const requiredImages = [
     "specials/places/garden.png",
     "specials/places/kitchen.png",
     "specials/places/laundryroom.png",
+    "specials/places/living_room.png",
 
     // Story-Box
     

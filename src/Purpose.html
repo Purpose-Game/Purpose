@@ -749,17 +749,41 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;speech.lucy&gt;Shh...&lt;/speech&gt;
 &lt;speech.lucy&gt;Everything&#39;s going to be alright.&lt;/speech&gt;
 
-&lt;choices&gt;[[[Pass out]|C1P14R1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="33" name="C1P15" tags="page save" position="3075,4050" size="100,100">I wake with a jolt. I look around, I don&#39;t recognize where I am. I&#39;m laying down on a sofa, it smells terrible... actually, that might be me.
+&lt;choices&gt;[[[Pass out]|C1P14R1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="33" name="C1P15" tags="page save" position="3075,4050" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one.pain.solo&gt;Sarah&lt;/character&gt;
+&lt;music&gt;sofa&lt;/music&gt;
 
-The room is dark; it&#39;s evening perhaps? I&#39;m in some kind of living room, there&#39;s another sofa across from me, an armchair, and a coffee table in the middle of the room. There&#39;s a TV and cabinet on one wall, a window on another, and doors on the other two. 
+&lt;action&gt;I wake with a jolt.&lt;/action&gt;
+&lt;action&gt;I look around, I don&#39;t recognize where I am.&lt;/action&gt;
+&lt;action&gt;I&#39;m laying down on a sofa, it smells terrible...&lt;/action&gt;
 
-I raise my arm to my head and- What the hell? There&#39;s something sticking into my hand, and there&#39;s a tube attached; I follow it with my eyes to a bag of clear fluid hanging from what looks like an old hat hanger.
+&lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
-Where the hell am I, and what the fuck is in my arm?!
+&lt;action&gt;...actually, that might be me.&lt;/action&gt;
+&lt;action&gt;The room is dark; it&#39;s evening perhaps?&lt;/action&gt;
+&lt;action&gt;I&#39;m in some kind of living room.&lt;/action&gt;
 
-[[[Leave it alone]|C1P15V1]]&lt;br&gt;
-[[[Try ripping it out]|C1P15V2]]&lt;br&gt;
-[[[Try disconnecting the tubing]|C1P15V3]]</tw-passagedata><tw-passagedata pid="34" name="C1P9V1" tags="variation" position="2925,2825" size="100,100">&lt;flashback/&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+
+&lt;action&gt;There&#39;s another sofa across from me, an armchair, and a coffee table in the middle of the room.&lt;/action&gt;
+&lt;action&gt;There&#39;s a TV and cabinet on one wall, a window on another, and doors on the other two.&lt;/action&gt;
+&lt;action&gt;I raise my arm to my head and-&lt;/action&gt;
+
+&lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;What the hell?!&lt;/action&gt;
+
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;There&#39;s something sticking into my hand, and there&#39;s a tube attached.&lt;/action&gt;
+&lt;action&gt;I follow the tubing with my eyes to a bag of clear fluid hanging from what looks like an old coat hanger stand.&lt;/action&gt;
+&lt;action&gt;Where the hell am I, and what the fuck is in my arm?!&lt;/action&gt;
+
+&lt;choices&gt;
+    [[[Leave it alone]|C1P15V1]]
+    [[[Try ripping it out]|C1P15V2]]
+    [[[Disconnect the tubing]|C1P15V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="34" name="C1P9V1" tags="variation" position="2925,2825" size="100,100">&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
@@ -837,19 +861,42 @@ Where the hell am I, and what the fuck is in my arm?!
 &lt;speech.sarah&gt;And I&#39;ll probably say the same thing tomorrow.&lt;/speech&gt;
 &lt;action&gt;I groan under my breath.&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="39" name="C1P13R1" tags="redirect" position="3075,3600" size="100,100">&lt;% window.story.redirect(&quot;C1P14&quot;, 3) %&gt;</tw-passagedata><tw-passagedata pid="40" name="C1P14R1" tags="redirect" position="3075,3900" size="100,100">&lt;% window.story.redirect(&quot;C1P15&quot;, 7) %&gt;</tw-passagedata><tw-passagedata pid="41" name="C1P15V1" tags="variation" position="2925,4200" size="100,100">I had better not touch it; I don&#39;t need another injury. Speaking of which, I had better check my leg.
+&lt;%= window.story.customRender(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="39" name="C1P13R1" tags="redirect" position="3075,3600" size="100,100">&lt;% window.story.redirect(&quot;C1P14&quot;, 3) %&gt;</tw-passagedata><tw-passagedata pid="40" name="C1P14R1" tags="redirect" position="3075,3900" size="100,100">&lt;% window.story.redirect(&quot;C1P15&quot;, 7) %&gt;</tw-passagedata><tw-passagedata pid="41" name="C1P15V1" tags="variation" position="2925,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
-I carefully lean forward and inspect my leg. Someone has bandaged it properly...
+&lt;action&gt;I had better not touch it; I don&#39;t need another injury.&lt;/action&gt;
+&lt;action&gt;Speaking of which, I had better check on my leg.&lt;/action&gt;
+&lt;action&gt;I carefully lean forward and inspect my leg.&lt;/action&gt;
 
-[[[Inspect the dressing]|C1P16]]</tw-passagedata><tw-passagedata pid="42" name="C1P15V2" tags="variation" position="3075,4200" size="100,100">I don&#39;t what this thing is, who put it in me, or what that fluid is, but I know it&#39;s not good. This will probably hurt, so I&#39;m better off just pulling it out quickly.
+&lt;character.one.happy.solo&gt;Sarah&lt;/character&gt;
 
-Alright, deep breath, you can do this... you can do this.
+&lt;action&gt;Woah...&lt;/action&gt;
+&lt;action&gt;Someone has bandaged it properly...&lt;/action&gt;
 
-[[[Pull it out]|C1P16]]</tw-passagedata><tw-passagedata pid="43" name="C1P15V3" tags="variation" position="3225,4200" size="100,100">I don&#39;t really want to touch the thing sticking in my hand, but I must be able to disconnect this tubing.
+&lt;action&gt;[[[Inspect the dressing]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="42" name="C1P15V2" tags="variation" position="3075,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
 
-Taking a closer look, I think I can just unscrew it at the part where the tubing connects with the thing in my arm. Worth a shot, here goes nothing.
+&lt;action&gt;I don&#39;t what this thing is...&lt;/action&gt;
+&lt;action&gt;...who put it in me...&lt;/action&gt;
+&lt;action&gt;...or what that fluid is...&lt;/action&gt;
+&lt;action&gt;...but I know it&#39;s not good!&lt;/action&gt;
+&lt;action&gt;This will probably hurt, so I&#39;m better off just pulling it out quickly.&lt;/action&gt;
 
-[[[Disconnect the tubbing]|C1P16]]</tw-passagedata><tw-passagedata pid="44" name="C1P16" tags="page" position="3075,4350" size="100,100">\*Creek\*
+&lt;speech.sarah&gt;Alright, deep breath, you can do this...&lt;/speech&gt;
+&lt;speech.sarah&gt;You can do this.&lt;/speech&gt;
+
+&lt;action&gt;[[[Pull it out]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="43" name="C1P15V3" tags="variation" position="3225,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I don&#39;t really want to touch the thing sticking in my hand.&lt;/action&gt;
+&lt;action&gt;But there must be a way to disconnect this tubing?&lt;/action&gt;
+&lt;action&gt;Taking a closer look, I think I can just unscrew it at the part where the tubing connects with the thing in my hand.&lt;/action&gt;
+&lt;action&gt;Worth a shot, here goes nothing.&lt;/action&gt;
+
+&lt;action&gt;[[[Disconnect the tubbing]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="44" name="C1P16" tags="page" position="3075,4350" size="100,100">\*Creek\*
 
 I freeze for a moment, then look behind me: there&#39;s a closed door, but I can see a shadow underneath- someone&#39;s standing on the other side.
 

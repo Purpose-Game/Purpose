@@ -22,6 +22,10 @@
   background-image: url("../../../assets/images/ui/specials/places/laundryroom.png") !important;
 }
 
+.living-room-image {
+  background-image: url("../../../assets/images/ui/specials/places/living_room.png") !important;
+}
+
 .kitchen-image {
   background-image: url("../../../assets/images/ui/specials/places/kitchen.png") !important;
 }

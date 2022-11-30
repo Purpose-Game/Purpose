@@ -107,6 +107,7 @@ const audioLibrary = {
 
 	// Sound effects
 	sfx: {
+		// Diegetic
 		"knocking": new Audio("assets/audio/sfx/knocking.mp3"),
 		"bedroom": new Audio("assets/audio/sfx/bedroom.mp3"),
 		"bed": new Audio("assets/audio/sfx/bed.mp3"),
@@ -129,6 +130,7 @@ const audioLibrary = {
 		// Game Music
 		"limping": new Audio("assets/audio/music/limping.mp3"),
 		"flashback": new Audio("assets/audio/music/flashback.mp3"),
+		"sofa": new Audio("assets/audio/music/sofa.mp3"),
 		"calm": new Audio("assets/audio/music/calm.mp3"),
 	}
 }
