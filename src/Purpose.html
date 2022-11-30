@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<tw-story tags></tw-story>
-		<tw-storydata name="Purpose" startnode="320" creator="Twine" creator-version="2.5.1" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
+		<tw-storydata name="Purpose" startnode="319" creator="Twine" creator-version="2.5.1" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
 script.src = "assets/javascript/index.js";
 
 document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
@@ -896,19 +896,44 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Taking a closer look, I think I can just unscrew it at the part where the tubing connects with the thing in my hand.&lt;/action&gt;
 &lt;action&gt;Worth a shot, here goes nothing.&lt;/action&gt;
 
-&lt;action&gt;[[[Disconnect the tubbing]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="44" name="C1P16" tags="page" position="3075,4350" size="100,100">\*Creek\*
+&lt;action&gt;[[[Disconnect the tubbing]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="44" name="C1P16" tags="page" position="3075,4350" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I freeze for a moment, then look behind me: there&#39;s a closed door, but I can see a shadow underneath- someone&#39;s standing on the other side.
+&lt;sound&gt;floorboard&lt;/sound&gt;
 
-[[...|C1P16V2]]&lt;br&gt;
-[[I&#39;m armed, back off! [Lie]|C1P16V1]]&lt;br&gt;
-[[Who are you? Show yourself!|C1P16V3]]</tw-passagedata><tw-passagedata pid="45" name="C1P16V2" tags="variation" position="3075,4500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) %&gt;
+&lt;action&gt;I hear something behind me.&lt;/action&gt;
+&lt;action&gt;I freeze for a moment, then look behind me.&lt;/action&gt;
 
-My eyes are locked on the shadow, watching, waiting for it to move.
+&lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="46" name="C1P16V1" tags="variation" position="2925,4500" size="100,100">&quot;I have a weapon, stay away, or I&#39;ll kill you!&quot;, I shout.
+&lt;action&gt;There&#39;s a closed door, but I can see a shadow underneath-&lt;/action&gt;
 
-&lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="47" name="C1P16V3" tags="variation" position="3225,4500" size="100,100">&quot;Who are you, what have you done to me? Show yourself!&quot;, I shout.
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Someone&#39;s standing on the other side.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[...|C1P16V2]]
+    [[I&#39;m armed, back off! [Lie]|C1P16V1]]
+    [[Who are you? Show yourself!|C1P16V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="45" name="C1P16V2" tags="variation" position="3075,4500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;My eyes are locked on the shadow, watching, waiting for it to move.&lt;/action&gt;
+
+&lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="46" name="C1P16V1" tags="variation" position="2925,4500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;I have a weapon, stay away, or I&#39;ll kill you!&lt;/speech&gt;
+
+&lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="47" name="C1P16V3" tags="variation" position="3225,4500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Who are you, what have you done to me?&lt;/speech&gt;
+&lt;speech.sarah&gt;Show yourself!&lt;/speech&gt;
 
 &lt;%= window.story.customRender(&quot;F: Meeting Tiffany&quot;) %&gt;</tw-passagedata><tw-passagedata pid="48" name="F: Mother Comments" tags="floater" position="3500,1325" size="100,100">I wince and refrain from shouting several words I&#39;m sure my mother would kill me if she heard</tw-passagedata><tw-passagedata pid="49" name="F: Here goes nothing" tags="floater" position="3650,1625" size="100,100">&lt;action&gt;I carefully push out bits of glass still left attached to the frame, and take one last look inside...&lt;/action&gt;
 &lt;action&gt;Well shit, here goes nothing.&lt;/action&gt;
@@ -933,15 +958,32 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
     [[[Pull off lowest board]|C1P5V22]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;rumble&gt;1 1 200&lt;/rumble&gt;
 
-&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">The door is starting to open slowly, I tense up ready to fight.
+&lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">&lt;action&gt;The door is starting to open slowly.&lt;/action&gt;
 
-The door is open far enough now that I can see a person, a very small person: a child, a girl.
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
-She can&#39;t be more than 7 or 8 years old... I can just make out shoulder-length blonde hair, bright blue eyes, a dark blue dress with white dots, and some kind of stuffed toy in her hands.
+&lt;action&gt;I tense up ready to fight.&lt;/action&gt;
+&lt;action&gt;The door is open far enough now that I can see a person-&lt;/action&gt;
+&lt;action&gt;A very small person...&lt;/action&gt;
 
-Our eyes meet and we stare at each other for a moment, there&#39;s not a hint of fear in her eyes, just pure curiosity.
+&lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.customRender(&quot;F: Meeting Tiffany options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="55" name="F: Tiffany bad girl" tags="floater" position="3425,4650" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;)) {
+&lt;action&gt;...a child...&lt;/action&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;...a little girl.&lt;/action&gt;
+&lt;action&gt;She can&#39;t be more than 7 or 8 years old.&lt;/action&gt;
+&lt;action&gt;I can just make out shoulder-length blonde hair, bright blue eyes, a dark blue dress with white dots, and some kind of stuffed toy in her hands.&lt;/action&gt;
+&lt;action&gt;Our eyes meet and we stare at each other for a moment.&lt;/action&gt;
+&lt;action&gt;There&#39;s not a hint of fear in her eyes, just pure curiosity.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[...|C1P17V2]]
+    [[Hello there?|C1P17V1]]
+    [[What&#39;s your name?|C1P17V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="55" name="F: Tiffany bad girl" tags="floater" position="3425,4650" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;)) {
 	print(&quot;She doesn&#39;t reply, she&#39;s just staring...&quot;);
 } %&gt;
 
@@ -949,19 +991,17 @@ Our eyes meet and we stare at each other for a moment, there&#39;s not a hint of
 
 I hear footsteps behind the door and muffled voices. I was ready to fight my way out of here, but, now I&#39;m not sure what to do.
 
-[[[Wait]|C1P18]]</tw-passagedata><tw-passagedata pid="56" name="F: Meeting Tiffany options" tags="floater" position="3575,4500" size="100,100">[[...|C1P17V2]]&lt;br&gt;
-[[Hello there?|C1P17V1]]&lt;br&gt;
-[[What&#39;s your name?|C1P17V3]]</tw-passagedata><tw-passagedata pid="57" name="C1P17V1" tags="variation" position="2925,4650" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;HelloThere&quot;, &quot;Hello There&quot;, &quot;General Kenobi... you are a bold one.&quot;) %&gt;
+[[[Wait]|C1P18]]</tw-passagedata><tw-passagedata pid="56" name="C1P17V1" tags="variation" position="2925,4650" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;HelloThere&quot;, &quot;Hello There&quot;, &quot;General Kenobi... you are a bold one.&quot;) %&gt;
 
 &quot;Hello there&quot;, I say cautiously.
 
-&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="58" name="C1P17V2" tags="variation" position="3075,4650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="57" name="C1P17V2" tags="variation" position="3075,4650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) %&gt;
 
 I stare into her eyes for a moment longer.
 
-&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P17V3" tags="variation" position="3225,4650" size="100,100">&quot;What&#39;s your name?&quot; I say cautiously.
+&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="58" name="C1P17V3" tags="variation" position="3225,4650" size="100,100">&quot;What&#39;s your name?&quot; I say cautiously.
 
-&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="60" name="C1P18" tags="page" position="3075,4800" size="100,100">The voices stop, there are more footsteps- The door is opening.
+&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P18" tags="page" position="3075,4800" size="100,100">The voices stop, there are more footsteps- The door is opening.
 
 A woman steps through. She has brown hair done up in a bun, soft brown eyes, is wearing cargo pants and a t-shirt, and is in her mid-30s if I had to guess. She has a sort of weathered look about her.
 
@@ -971,35 +1011,35 @@ She notices I am looking her over.
 
 [[...|C1P18V2]]&lt;br&gt;
 [[Yeah|C1P18V1]]&lt;br&gt;
-[[Why would I be?|C1P18V3]]</tw-passagedata><tw-passagedata pid="61" name="C1P18V1" tags="variation" position="2775,4950" size="100,100">&quot;Yeah, I am&quot;, I say while keeping eye contact.
+[[Why would I be?|C1P18V3]]</tw-passagedata><tw-passagedata pid="60" name="C1P18V1" tags="variation" position="2775,4950" size="100,100">&quot;Yeah, I am&quot;, I say while keeping eye contact.
 
 &quot;How am I fairing?&quot;, the woman replies.
 
 [[...|C1P18V12]]&lt;br&gt;
 [[A threat|C1P18V11]]&lt;br&gt;
-[[Not a threat|C1P18V13]]</tw-passagedata><tw-passagedata pid="62" name="C1P18V2" tags="variation" position="3075,4950" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) %&gt;
+[[Not a threat|C1P18V13]]</tw-passagedata><tw-passagedata pid="61" name="C1P18V2" tags="variation" position="3075,4950" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) %&gt;
 
 Well, she&#39;s caught me, no point stopping I suppose. I continue to look her over; she doesn&#39;t seem bothered by it. She&#39;s still standing in the doorway.
 
-&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="63" name="C1P18V3" tags="variation" position="3225,4950" size="100,100">&quot;Why would I be doing a thing like that I wonder?&quot;, I remark sarcastically.
+&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="62" name="C1P18V3" tags="variation" position="3225,4950" size="100,100">&quot;Why would I be doing a thing like that I wonder?&quot;, I remark sarcastically.
 
 &quot;Hmm, I don&#39;t know; maybe it has something to do with waking up on a stranger couch?&quot;, the woman replies without missing a beat.
 
 &quot;Could be...&quot;, I say back.
 
-&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="64" name="C1P18V12" tags="variation" position="2775,5100" size="100,100">I stare for a moment longer, then shrug.
+&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="63" name="C1P18V12" tags="variation" position="2775,5100" size="100,100">I stare for a moment longer, then shrug.
 
 The lady gives me a half-smile.
 
-&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="65" name="C1P18V11" tags="variation" position="2625,5100" size="100,100">&quot;You&#39;re definitely a threat: I don&#39;t know you&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="64" name="C1P18V11" tags="variation" position="2625,5100" size="100,100">&quot;You&#39;re definitely a threat: I don&#39;t know you&quot;, I say.
 
 &quot;Cautious; not a bad trait to have these days.&quot;, she replies.
 
-&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="66" name="C1P18V13" tags="variation" position="2925,5100" size="100,100">&quot;You&#39;re not a threat: if you wanted to kill me, you&#39;d have done it while I was passed out&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="65" name="C1P18V13" tags="variation" position="2925,5100" size="100,100">&quot;You&#39;re not a threat: if you wanted to kill me, you&#39;d have done it while I was passed out&quot;, I say.
 
 &quot;Good point, but what if I wanted you to be awake when I killed you?&quot;, she asks. I stare back at her, unsure how to reply.
 
-&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="67" name="F: My name is Lucy" tags="floater" position="3425,4975" size="100,200">She steps through the door and closes it behind her.
+&lt;%= window.story.customRender(&quot;F: My name is Lucy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="66" name="F: My name is Lucy" tags="floater" position="3425,4975" size="100,200">She steps through the door and closes it behind her.
 
 &quot;My name is Lucy, and it seems you&#39;ve already met my daughter, Tiffany&quot;, Lucy says.
 
@@ -1014,7 +1054,7 @@ Guess that explains where I am.
 [[I had no choice|C1P19V3]]&lt;br&gt;
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) {
 	print(&quot;[[I did knock|C1P19V4]]&quot;);
-} %&gt;</tw-passagedata><tw-passagedata pid="68" name="Characters" tags="info" position="3875,575" size="200,100">Protagonist - Sarah:
+} %&gt;</tw-passagedata><tw-passagedata pid="67" name="Characters" tags="info" position="3875,575" size="200,100">Protagonist - Sarah:
 - 20 years old
 - Brown eyes
 - Messy, short brown hair
@@ -1039,39 +1079,39 @@ Stranger - Charles:
 - 27 years old
 - Long black hair in a ponytail
 - Light green eyes
-- Tall and skinny</tw-passagedata><tw-passagedata pid="69" name="C1P19V2" tags="variation" position="3000,5250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
+- Tall and skinny</tw-passagedata><tw-passagedata pid="68" name="C1P19V2" tags="variation" position="3000,5250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) %&gt;
 
 Well, this is awkward... I maintain eye contact with her.
 
-&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="70" name="C1P19V1" tags="variation" position="2850,5250" size="100,100">&quot;Ah, right... sorry about that&quot;, I say as I awkwardly scratch the back of my head.
+&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="69" name="C1P19V1" tags="variation" position="2850,5250" size="100,100">&quot;Ah, right... sorry about that&quot;, I say as I awkwardly scratch the back of my head.
 
 &quot;Don&#39;t sweat it, we only set up shop here a few days ago ourselves&quot;, Lucy remarks.&quot;
 
-&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="71" name="C1P19V3" tags="variation" position="3150,5250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="70" name="C1P19V3" tags="variation" position="3150,5250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;) %&gt;
 
 &quot;I didn&#39;t have much of a choice, if I stayed out there I would have been a meal for the walkers by the end of the day&quot;, I remark.
 
 &quot;That is true, you really weren&#39;t in great shape. That much I can attest to that&quot;, Lucy replies.
 
-&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="C1P19V4" tags="variation" position="3300,5250" size="100,100">&quot;I did try knocking before I came in&quot;, I remark.
+&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="71" name="C1P19V4" tags="variation" position="3300,5250" size="100,100">&quot;I did try knocking before I came in&quot;, I remark.
 
 &quot;Yeah, you did&quot;, Lucy chuckles.
 
 &quot;I was half tempted to open the door just to see who was crazy enough to still knock these days&quot;, Lucy says.
 
-&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="73" name="F: Anyway, since" tags="floater" position="3500,5250" size="100,100">Lucy takes a few more steps into the room and sits in an armchair across from me.
+&lt;%= window.story.customRender(&quot;F: Anyway, since&quot;) %&gt;</tw-passagedata><tw-passagedata pid="72" name="F: Anyway, since" tags="floater" position="3500,5250" size="100,100">Lucy takes a few more steps into the room and sits in an armchair across from me.
 
 &quot;Anyway, since you went and collapsed in my laundry room, you left me with a difficult choice: put you outside, which I could tell just by looking at the state you were in would be a death sentence; kill you there and then, which would also, you know, be a death sentence; or bring you in and patch you up&quot;, Lucy says very casually.
 
 [[...|C1P20V2]]&lt;br&gt;
 [[Thanks|C1P20V1]]&lt;br&gt;
-[[Should have let me die|C1P20V3]]</tw-passagedata><tw-passagedata pid="74" name="C1P20V2" tags="variation" position="3075,5400" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) %&gt;
+[[Should have let me die|C1P20V3]]</tw-passagedata><tw-passagedata pid="73" name="C1P20V2" tags="variation" position="3075,5400" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) %&gt;
 
 I continue to stare at Lucy.
 
-&lt;%= window.story.customRender(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="C1P20V1" tags="variation" position="2925,5400" size="100,100">&quot;Thanks for choosing option number three, I think&quot;, I reply cautiously.
+&lt;%= window.story.customRender(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="74" name="C1P20V1" tags="variation" position="2925,5400" size="100,100">&quot;Thanks for choosing option number three, I think&quot;, I reply cautiously.
 
-&lt;%= window.story.customRender(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="C1P20V3" tags="variation" position="3225,5400" size="100,100">&quot;You should have left me to die&quot;, I state.
+&lt;%= window.story.customRender(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="C1P20V3" tags="variation" position="3225,5400" size="100,100">&quot;You should have left me to die&quot;, I state.
 
 &quot;Oh, and why&#39;s that?&quot;, Lucy asks.
 
@@ -1079,7 +1119,7 @@ I continue to stare at Lucy.
 
 &quot;Good point, I guess I&#39;m just too trusting&quot;, Lucy replies.
 
-&lt;%= window.story.customRender(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="77" name="F: How did you?" tags="floater" position="3500,5550" size="100,100">&quot;Yup. It&#39;s called a cannula, and that bag it&#39;s connected to, is just salty water&quot;, Lucy explains.
+&lt;%= window.story.customRender(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="F: How did you?" tags="floater" position="3500,5550" size="100,100">&quot;Yup. It&#39;s called a cannula, and that bag it&#39;s connected to, is just salty water&quot;, Lucy explains.
 
 &quot;You&#39;re lucky that you broke into the one house around here with a nurse in it, albeit an ill-supplied nurse&quot;, Lucy chuckles.
 
@@ -1087,7 +1127,7 @@ Lucy pauses, then sits forward in her chair.
 
 &quot;Speaking of injuries, how *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
 
-[[[Tell Lucy the Truth]|C1P22V1]][[[Lie to Lucy]|C1P22V2]]</tw-passagedata><tw-passagedata pid="78" name="C1P22V1" tags="variation" position="2850,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;, false) %&gt;
+[[[Tell Lucy the Truth]|C1P22V1]][[[Lie to Lucy]|C1P22V2]]</tw-passagedata><tw-passagedata pid="77" name="C1P22V1" tags="variation" position="2850,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;, false) %&gt;
 
 &quot;I killed a man&quot;, I state.
 
@@ -1099,7 +1139,7 @@ She pauses for a moment.
 
 [[...|C1P22V12]]&lt;br&gt;
 [[Yes, it was unprovoked|C1P22V11]]&lt;br&gt;
-[[No, wrong place wrong time|C1P22V13]]</tw-passagedata><tw-passagedata pid="79" name="C1P22V2" tags="variation" position="3300,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;) %&gt;
+[[No, wrong place wrong time|C1P22V13]]</tw-passagedata><tw-passagedata pid="78" name="C1P22V2" tags="variation" position="3300,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;) %&gt;
 
 &quot;I cut myself climbing a fence&quot;, I say; I&#39;m not good at lying.
 
@@ -1109,7 +1149,7 @@ She pauses for a moment.
 
 [[Yeah|C1P22V21]]&lt;br&gt;
 [[It was|C1P22V22]]&lt;br&gt;
-[[Biggest ever|C1P22V23]]</tw-passagedata><tw-passagedata pid="80" name="C1P9V2" tags="variation" position="3075,2825" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
+[[Biggest ever|C1P22V23]]</tw-passagedata><tw-passagedata pid="79" name="C1P9V2" tags="variation" position="3075,2825" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
 &lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1117,7 +1157,7 @@ She pauses for a moment.
 
 &lt;action&gt;I couldn&#39;t care less...&lt;/action&gt;
     
-&lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="81" name="Credits" tags="info floater" position="3875,725" size="200,100">Game &amp; Infrastructure - Christopher &quot;Inferno&quot; M.&lt;br&gt;
+&lt;%= window.story.customRender(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="80" name="Credits" tags="info floater" position="3875,725" size="200,100">Game &amp; Infrastructure - Christopher &quot;Inferno&quot; M.&lt;br&gt;
 &lt;a href=&quot;https://purpose-game.com&quot; target=&quot;_blank&quot;&gt;https://purpose-game.com&lt;/a&gt;&lt;br&gt;&lt;br&gt;
 
 Character Artwork, UI Design, &amp; Sound Design - Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
@@ -1160,7 +1200,7 @@ Snowman 2 - videlais &amp; Contributors&lt;br&gt;
 &lt;a href=&quot;https://github.com/videlais/snowman&quot; target=&quot;_blank&quot;&gt;https://github.com/videlais/snowman&lt;/a&gt;
 
 Twine 2 - Twine and Twee&lt;br&gt;
-&lt;a href=&quot;https://twinery.org/&quot; target=&quot;_blank&quot;&gt;https://twinery.org/&lt;/a&gt;</tw-passagedata><tw-passagedata pid="82" name="F: Stay in bed" tags="floater" position="3425,2825" size="100,100">&lt;choices&gt;[[[Stay in bed]|C1P11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="83" name="C1P11V2" tags="variation" position="3075,3150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;) %&gt;
+&lt;a href=&quot;https://twinery.org/&quot; target=&quot;_blank&quot;&gt;https://twinery.org/&lt;/a&gt;</tw-passagedata><tw-passagedata pid="81" name="F: Stay in bed" tags="floater" position="3425,2825" size="100,100">&lt;choices&gt;[[[Stay in bed]|C1P11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="82" name="C1P11V2" tags="variation" position="3075,3150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;) %&gt;
 
 &lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1169,7 +1209,7 @@ Twine 2 - Twine and Twee&lt;br&gt;
 
 &lt;action&gt;I huff and ignore her.&lt;/action&gt;
     
-&lt;%= window.story.customRender(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="84" name="F: I used your stuff" tags="floater" position="3500,5400" size="100,100">&lt;%
+&lt;%= window.story.customRender(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="83" name="F: I used your stuff" tags="floater" position="3500,5400" size="100,100">&lt;%
 let verbal = true;
 
 if (
@@ -1216,29 +1256,29 @@ Lucy crosses her arms.
 [[[Raise arm]|C1P21V2]]&lt;br&gt;
 [[Like in Hospital?|C1P21V3]]&lt;br&gt;
 [[The thing in my arm?|C1P21V1]]
-</tw-passagedata><tw-passagedata pid="85" name="C1P21V2" tags="variation" position="3075,5550" size="100,100">I raise my arm with the thing sticking out of it.
+</tw-passagedata><tw-passagedata pid="84" name="C1P21V2" tags="variation" position="3075,5550" size="100,100">I raise my arm with the thing sticking out of it.
 
-&lt;%= window.story.customRender(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="C1P21V1" tags="variation" position="2925,5550" size="100,100">&quot;Is that what this thing sticking in my arm is for?&quot;, I enquire.
+&lt;%= window.story.customRender(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="85" name="C1P21V1" tags="variation" position="2925,5550" size="100,100">&quot;Is that what this thing sticking in my arm is for?&quot;, I enquire.
 
-&lt;%= window.story.customRender(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="87" name="C1P21V3" tags="variation" position="3225,5550" size="100,100">&quot;Oh, like when you&#39;re in the hospital?&quot;, I enquire.
+&lt;%= window.story.customRender(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="C1P21V3" tags="variation" position="3225,5550" size="100,100">&quot;Oh, like when you&#39;re in the hospital?&quot;, I enquire.
 
-&lt;%= window.story.customRender(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="88" name="C1P22V12" tags="variation" position="2850,5850" size="100,100">I look down for a moment, then back at Lucy. But I think that&#39;s all she needed to see.
+&lt;%= window.story.customRender(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="87" name="C1P22V12" tags="variation" position="2850,5850" size="100,100">I look down for a moment, then back at Lucy. But I think that&#39;s all she needed to see.
 
 &quot;I&#39;ll take that as a no then&quot;, Lucy says in a flat tone.
 
 &lt;%= window.story.customRender(&quot;F: Picking fights&quot;) %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="89" name="C1P22V11" tags="variation" position="2700,5850" size="100,100">&quot;Yes, definitely. &lt;%= window.story.customRender(&quot;F: Basement&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="88" name="C1P22V11" tags="variation" position="2700,5850" size="100,100">&quot;Yes, definitely. &lt;%= window.story.customRender(&quot;F: Basement&quot;) %&gt;
 
 &quot;I didn&#39;t mean to walk into his place, he could have just asked me to leave, or tried to talk to me, or something, but instead, he saw a *defenseless little girl*, and tried to kill me. So yeah, it was self-defense. The prick had it coming&quot;, I say passionately.
 
-&lt;%= window.story.customRender(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="90" name="C1P22V13" tags="variation" position="3000,5850" size="100,100">&quot;No, it was a bad case of wrong place, wrong time. &lt;%= window.story.customRender(&quot;F: Basement&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="89" name="C1P22V13" tags="variation" position="3000,5850" size="100,100">&quot;No, it was a bad case of wrong place, wrong time. &lt;%= window.story.customRender(&quot;F: Basement&quot;) %&gt;
 
 &lt;%= window.story.customRender(&quot;F: Picking fights&quot;) %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="91" name="F: Basement" tags="floater" position="2500,5850" size="100,100">I was going house by house, scavenging what I could. I went into this one place, started poking around, but I got sloppy, didn&#39;t clear the place fully before I started going through it. He was in the basement, and we bumped into each other on the stairs. We looked at each other for a moment, then he came at me with a hacksaw&quot;, I explain.
+&lt;%= window.story.customRender(&quot;F: Dying action&quot;) %&gt;</tw-passagedata><tw-passagedata pid="90" name="F: Basement" tags="floater" position="2500,5850" size="100,100">I was going house by house, scavenging what I could. I went into this one place, started poking around, but I got sloppy, didn&#39;t clear the place fully before I started going through it. He was in the basement, and we bumped into each other on the stairs. We looked at each other for a moment, then he came at me with a hacksaw&quot;, I explain.
 
-&quot;So it was self-defense&quot;, Lucy says, sounding unconvinced.</tw-passagedata><tw-passagedata pid="92" name="F: Picking fights" tags="floater" position="2350,5850" size="100,100">&quot;I wasn&#39;t trying to pick a fight, hell, I wasn&#39;t even trying to find people, I was just looking for food, like everyone else these days. Yes, I was in this guy&#39;s house and he probably had the right to defend himself, but I possed no threat to him, and he attacked first... after he came at me, it was me or him&quot;, I try to justify.</tw-passagedata><tw-passagedata pid="93" name="F: Dying action" tags="floater" position="2200,5850" size="100,100">Lucy&#39;s expression hasn&#39;t changed much, she looks a little tenser though.
+&quot;So it was self-defense&quot;, Lucy says, sounding unconvinced.</tw-passagedata><tw-passagedata pid="91" name="F: Picking fights" tags="floater" position="2350,5850" size="100,100">&quot;I wasn&#39;t trying to pick a fight, hell, I wasn&#39;t even trying to find people, I was just looking for food, like everyone else these days. Yes, I was in this guy&#39;s house and he probably had the right to defend himself, but I possed no threat to him, and he attacked first... after he came at me, it was me or him&quot;, I try to justify.</tw-passagedata><tw-passagedata pid="92" name="F: Dying action" tags="floater" position="2200,5850" size="100,100">Lucy&#39;s expression hasn&#39;t changed much, she looks a little tenser though.
 
 &quot;Anyway, to put a long story short, I got the upper hand, put him on the floor, and got on top of him, then I plunged my knife deep into the side of his neck. I thought it was over, so I let go... the last thing he did on this earth, was pull that knife out of his neck, and put it in my leg&quot;, I explain.
 
@@ -1248,13 +1288,13 @@ Lucy crosses her arms.
 
 [[...|C1P23V2]]&lt;br&gt;
 [[What...?|C1P23V1]]&lt;br&gt;
-[[Seriously?|C1P23V3]]</tw-passagedata><tw-passagedata pid="94" name="C1P23V2" tags="variation" position="2850,6000" size="100,100">I give her my best &#39;What the Fuck&#39; look.
+[[Seriously?|C1P23V3]]</tw-passagedata><tw-passagedata pid="93" name="C1P23V2" tags="variation" position="2850,6000" size="100,100">I give her my best &#39;What the Fuck&#39; look.
 
-&lt;%= window.story.customRender(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="95" name="C1P23V1" tags="variation" position="2700,6000" size="100,100">&quot;What...?&quot;, I say, confused.
+&lt;%= window.story.customRender(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="94" name="C1P23V1" tags="variation" position="2700,6000" size="100,100">&quot;What...?&quot;, I say, confused.
 
-&lt;%= window.story.customRender(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="96" name="C1P23V3" tags="variation" position="3000,6000" size="100,100">&quot;Seriously? I just told you I killed a guy and you&#39;re worried about my use of the F-Bomb?&quot;, I say, confuzzled.
+&lt;%= window.story.customRender(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="95" name="C1P23V3" tags="variation" position="3000,6000" size="100,100">&quot;Seriously? I just told you I killed a guy and you&#39;re worried about my use of the F-Bomb?&quot;, I say, confuzzled.
 
-&lt;%= window.story.customRender(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="97" name="F: Habit" tags="floater" position="2500,6000" size="100,100">&quot;Sorry, habit. I don&#39;t like Tiffany swearing... she&#39;s too young&quot;, Lucy says apologetically.
+&lt;%= window.story.customRender(&quot;F: Habit&quot;) %&gt;</tw-passagedata><tw-passagedata pid="96" name="F: Habit" tags="floater" position="2500,6000" size="100,100">&quot;Sorry, habit. I don&#39;t like Tiffany swearing... she&#39;s too young&quot;, Lucy says apologetically.
 
 We look at each other for a few moments.
 
@@ -1266,7 +1306,7 @@ We look at each other for a few moments.
 
 We sit in silence for a moment.
 
-[[She must mean a lot to you|C1P24]]</tw-passagedata><tw-passagedata pid="98" name="Random Ideas" tags="info" position="4150,825" size="200,200">- Tiffany gets hurt and you use the ducktape and or white shirt to bandage the wound up. If you don&#39;t have it or don&#39;t use it, Tiff passes out and you carry her, if you do, she spots someone or something useful.
+[[She must mean a lot to you|C1P24]]</tw-passagedata><tw-passagedata pid="97" name="Random Ideas" tags="info" position="4150,825" size="200,200">- Tiffany gets hurt and you use the ducktape and or white shirt to bandage the wound up. If you don&#39;t have it or don&#39;t use it, Tiff passes out and you carry her, if you do, she spots someone or something useful.
 
 - Tiff makes fun of/questions why Sophia gave up, make you angry
 
@@ -1286,13 +1326,13 @@ We sit in silence for a moment.
 
 - Add background music
 
-- Add sound effects</tw-passagedata><tw-passagedata pid="99" name="C1P24" tags="page save" position="3075,6150" size="100,100">&quot;She must mean a lot to you&quot;, I say.
+- Add sound effects</tw-passagedata><tw-passagedata pid="98" name="C1P24" tags="page save" position="3075,6150" size="100,100">&quot;She must mean a lot to you&quot;, I say.
 
 &quot;She means everything to me&quot;, Lucy replies, not missing a beat.
 
 We both sit quietly for a moment.
 
-[[Tell me about Tiff|C1P25]]</tw-passagedata><tw-passagedata pid="100" name="F: Got cornered" tags="floater" position="3650,5850" size="100,100">I was trying to get away from a pack of walkers, got cornered, and had to climb it, but it had wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I say, trying to sound convincing.
+[[Tell me about Tiff|C1P25]]</tw-passagedata><tw-passagedata pid="99" name="F: Got cornered" tags="floater" position="3650,5850" size="100,100">I was trying to get away from a pack of walkers, got cornered, and had to climb it, but it had wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I say, trying to sound convincing.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;)) {
 	window.story.achievement(&quot;Chapter1&quot;, &quot;NoChoice&quot;, &quot;Broken Record&quot;, &quot;You need some new material.&quot;);
@@ -1306,7 +1346,7 @@ Lucy sighs.
 
 &quot;Look, kid- What&#39;s your name?&quot;, Lucy asks.
 
-[[Sarah|C1P23V4]]</tw-passagedata><tw-passagedata pid="101" name="C1P22V22" tags="variation" position="3300,5850" size="100,100">&quot;Oh it was. &lt;%= window.story.customRender(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="102" name="C1P22V21" tags="variation" position="3150,5850" size="100,100">&quot;Yeah, hellova fence. &lt;%= window.story.customRender(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="103" name="C1P22V23" tags="variation" position="3450,5850" size="100,100">&quot;It was crazy, the biggest fence I&#39;d ever seen. &lt;%= window.story.customRender(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="104" name="C1P23V4" tags="variation" position="3300,6000" size="100,100">&quot;It&#39;s Sarah&quot;, I say.
+[[Sarah|C1P23V4]]</tw-passagedata><tw-passagedata pid="100" name="C1P22V22" tags="variation" position="3300,5850" size="100,100">&quot;Oh it was. &lt;%= window.story.customRender(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="101" name="C1P22V21" tags="variation" position="3150,5850" size="100,100">&quot;Yeah, hellova fence. &lt;%= window.story.customRender(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="102" name="C1P22V23" tags="variation" position="3450,5850" size="100,100">&quot;It was crazy, the biggest fence I&#39;d ever seen. &lt;%= window.story.customRender(&quot;F: Got cornered&quot;) %&gt;</tw-passagedata><tw-passagedata pid="103" name="C1P23V4" tags="variation" position="3300,6000" size="100,100">&quot;It&#39;s Sarah&quot;, I say.
 
 No point in giving a fake name, I&#39;d probably just forget it anyway.
 
@@ -1320,7 +1360,7 @@ Oh boy, not good.
 
 The air is tense, we stare at each other for a moment.
 
-[[She must mean a lot to you|C1P24]]</tw-passagedata><tw-passagedata pid="105" name="C1P25" tags="page" position="3075,6300" size="100,100">&quot;Tell me about Tiff&quot;, I say&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) print(&quot;, trying to change the subject&quot;) %&gt;.
+[[She must mean a lot to you|C1P24]]</tw-passagedata><tw-passagedata pid="104" name="C1P25" tags="page" position="3075,6300" size="100,100">&quot;Tell me about Tiff&quot;, I say&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) print(&quot;, trying to change the subject&quot;) %&gt;.
 
 &quot;Tiff*any* is the only good thing left in this world&quot;, Lucy remarks.
 
@@ -1330,7 +1370,7 @@ She pauses for a moment.
 
 [[...|C1P25V2]]&lt;br&gt;
 [[Go on...|C1P25V1]]&lt;br&gt;
-[[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="106" name="Title Screen" tags="menu" position="2000,725" size="200,100">&lt;% window.story.startMenuMusic() %&gt;
+[[If I what?|C1P25V3]]</tw-passagedata><tw-passagedata pid="105" name="Title Screen" tags="menu" position="2000,725" size="200,100">&lt;% window.story.startMenuMusic() %&gt;
 
 &lt;img.title-image&gt;
 
@@ -1339,19 +1379,19 @@ She pauses for a moment.
 [[Extras|Extras]]
 [[Settings|Global Settings]]
 [[Credits|Global Credits]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="C1P25V2" tags="variation" position="3075,6450" size="100,100">Lucy pauses again, then looks at me with an almost apologetic look.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="C1P25V2" tags="variation" position="3075,6450" size="100,100">Lucy pauses again, then looks at me with an almost apologetic look.
 
-&lt;%= window.story.customRender(&quot;F: Tell me about Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="108" name="C1P25V1" tags="variation" position="2925,6450" size="100,100">&quot;Go on...&quot;, I say uncertainly.
+&lt;%= window.story.customRender(&quot;F: Tell me about Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="107" name="C1P25V1" tags="variation" position="2925,6450" size="100,100">&quot;Go on...&quot;, I say uncertainly.
 
-&lt;%= window.story.customRender(&quot;F: Tell me about Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="109" name="C1P25V3" tags="variation" position="3225,6450" size="100,100">&quot;If I what?&quot;, I ask.
+&lt;%= window.story.customRender(&quot;F: Tell me about Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="108" name="C1P25V3" tags="variation" position="3225,6450" size="100,100">&quot;If I what?&quot;, I ask.
 
-&lt;%= window.story.customRender(&quot;F: Tell me about Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="110" name="F: Tell me about Sophia" tags="floater" position="3425,6450" size="100,100">Lucy takes a deep breath, what the hell is she about to say that has made her so uncomfortable all of a sudden?
+&lt;%= window.story.customRender(&quot;F: Tell me about Sophia&quot;) %&gt;</tw-passagedata><tw-passagedata pid="109" name="F: Tell me about Sophia" tags="floater" position="3425,6450" size="100,100">Lucy takes a deep breath, what the hell is she about to say that has made her so uncomfortable all of a sudden?
 
 &quot;Sophia&quot;, she finally says.
 
 &quot;If you tell me who Sophia is&quot;, she says.
 
-[[[Pause in shock]|C1P26]]</tw-passagedata><tw-passagedata pid="111" name="Tags" tags="info" position="3875,875" size="200,100">menu: Title Screen/Menu/Miscellaneous player interaction stuff.
+[[[Pause in shock]|C1P26]]</tw-passagedata><tw-passagedata pid="110" name="Tags" tags="info" position="3875,875" size="200,100">menu: Title Screen/Menu/Miscellaneous player interaction stuff.
 
 save: Auto-save when player reaches this page.
 
@@ -1369,7 +1409,7 @@ info: Passage is for developer reference, not for use in-game (directly).
 
 addition: Normal page or variation passage added after story was finished, saves reordering passages.
 
-No Tag: Temporary/Test page</tw-passagedata><tw-passagedata pid="112" name="C1P26" tags="page" position="3075,6600" size="100,100">I pause for a moment. It feels like she just slapped me across the face.
+No Tag: Temporary/Test page</tw-passagedata><tw-passagedata pid="111" name="C1P26" tags="page" position="3075,6600" size="100,100">I pause for a moment. It feels like she just slapped me across the face.
 
 Sophia, my little sister... how does she even know about her? Why does she want to know about her?
 
@@ -1385,25 +1425,25 @@ I look at her with a mixture of emotions showing.
 
 [[She&#39;s dead|C1P27V1]]&lt;br&gt;
 [[I loved her, very much|C1P27V2]]&lt;br&gt;
-[[She gave up a long time ago|C1P27V3]]</tw-passagedata><tw-passagedata pid="113" name="C1P27V1" tags="variation" position="2925,6750" size="100,100">&quot;She was my sister&quot;, I say in a quivering tone, with tears starting to form.
+[[She gave up a long time ago|C1P27V3]]</tw-passagedata><tw-passagedata pid="112" name="C1P27V1" tags="variation" position="2925,6750" size="100,100">&quot;She was my sister&quot;, I say in a quivering tone, with tears starting to form.
 
 I take a deep breath to center myself.
 
 &quot;And she&#39;s dead&quot;, I finish.
 
-&lt;%= window.story.customRender(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="114" name="C1P27V2" tags="variation" position="3075,6750" size="100,100">&quot;I loved-&quot;, I start to say, but my emotions flare up and I have to stop.
+&lt;%= window.story.customRender(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="113" name="C1P27V2" tags="variation" position="3075,6750" size="100,100">&quot;I loved-&quot;, I start to say, but my emotions flare up and I have to stop.
 
 I take a deep breath and wipe away the tears that are forming.
 
 &quot;I loved my little sister, very, very much&quot;, I manage to get out.
 
-&lt;%= window.story.customRender(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="115" name="C1P27V3" tags="variation" position="3225,6750" size="100,100">&quot;My little sister...&quot;, I trail off, as tears start to run down my face.
+&lt;%= window.story.customRender(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="114" name="C1P27V3" tags="variation" position="3225,6750" size="100,100">&quot;My little sister...&quot;, I trail off, as tears start to run down my face.
 
 I wipe away the tears and try again.
 
 &quot;My little sister, gave up, a long time ago&quot;, I manage to get out.
 
-&lt;%= window.story.customRender(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="116" name="F: Pain in her eyes" tags="floater" position="3425,6750" size="100,100">Lucy looks at me; pain in her eyes.
+&lt;%= window.story.customRender(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="115" name="F: Pain in her eyes" tags="floater" position="3425,6750" size="100,100">Lucy looks at me; pain in her eyes.
 
 &quot;How-&quot;, Lucy starts to say, but chocks up on her own emotions.
 
@@ -1423,19 +1463,19 @@ I&#39;m glace at her knife. Lucy notices, she looks down at it, then back at me.
 
 &lt;% } %&gt;
 
-[[[Weep quietly]|C1P28]]</tw-passagedata><tw-passagedata pid="117" name="C1P28" tags="page" position="3075,6900" size="100,100">I quietly let my emotions run. It&#39;s been a long time since I&#39;ve thought about her.
+[[[Weep quietly]|C1P28]]</tw-passagedata><tw-passagedata pid="116" name="C1P28" tags="page" position="3075,6900" size="100,100">I quietly let my emotions run. It&#39;s been a long time since I&#39;ve thought about her.
 
 We sit in silence for a few minutes, then without saying a word, Lucy gets up and leaves the room; leaving me alone with my consciousness.
 
 With Lucy gone, I don&#39;t have a reason to hold back anymore. I lay back on the sofa, and close my eyes.
 
-[[[Bawl eyes out]|C1P29]]</tw-passagedata><tw-passagedata pid="118" name="C1P29" tags="page" position="3075,7050" size="100,100">I begin to bawl.
+[[[Bawl eyes out]|C1P29]]</tw-passagedata><tw-passagedata pid="117" name="C1P29" tags="page" position="3075,7050" size="100,100">I begin to bawl.
 
 Raw, hard, tears.
 
 I never had the chance to properly mourn her, I was too busy focusing on my own survival, and for what? So I could die somewhere else another day?
 
-[[[Reflect on Sophia&#39;s death]|C1P30]]</tw-passagedata><tw-passagedata pid="119" name="C1P30" tags="page" position="3075,7200" size="100,100">&lt;% window.story.delayedText(4000, &quot;delayed&quot;, 3000) %&gt;
+[[[Reflect on Sophia&#39;s death]|C1P30]]</tw-passagedata><tw-passagedata pid="118" name="C1P30" tags="page" position="3075,7200" size="100,100">&lt;% window.story.delayedText(4000, &quot;delayed&quot;, 3000) %&gt;
 
 I think about her while I&#39;m laying here.
 
@@ -1447,7 +1487,7 @@ I have nothing to live for.
 
 [[[Continue crying]|C1P31]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="C1P31" tags="page" position="3075,7350" size="100,100">The tears continue to stream down my face.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="C1P31" tags="page" position="3075,7350" size="100,100">The tears continue to stream down my face.
 
 I had one job as a big sister: look after my little sister, and I failed horribly.
 
@@ -1455,15 +1495,15 @@ How can I live with myself... how have I lived with myself?
 
 I&#39;m exhausted... mentally and physically.
 
-[[[Reflect on near-death experience]|C1P32]]</tw-passagedata><tw-passagedata pid="121" name="C1P32" tags="page" position="3075,7500" size="100,100">I reflect on my near-death experience. Would it have been better if that guy had’ve killed me? I&#39;m tired, I&#39;ve had enough; what&#39;s even the point in living...
+[[[Reflect on near-death experience]|C1P32]]</tw-passagedata><tw-passagedata pid="120" name="C1P32" tags="page" position="3075,7500" size="100,100">I reflect on my near-death experience. Would it have been better if that guy had’ve killed me? I&#39;m tired, I&#39;ve had enough; what&#39;s even the point in living...
 
-[[I have no purpose|C1P33V1]] [[I need a new purpose|C1P33V2]]</tw-passagedata><tw-passagedata pid="122" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;, false) %&gt;
+[[I have no purpose|C1P33V1]] [[I need a new purpose|C1P33V2]]</tw-passagedata><tw-passagedata pid="121" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;, false) %&gt;
 
 I have no purpose in life. What&#39;s the point in living at all?
 
 The world would be better off without me. People like that guy I killed can attest to that...
 
-[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="123" name="C1P33V2" tags="variation" position="3150,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;) %&gt;
+[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="122" name="C1P33V2" tags="variation" position="3150,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;) %&gt;
 
 I need a new purpose in life. Something worth living for. Surviving by itself isn&#39;t good enough; it&#39;s an excuse.
 
@@ -1471,11 +1511,11 @@ I need to atone for what I did.
 
 I can&#39;t bring Sophia back... but maybe I can find something good in this world to dedicate myself to, in her name. 
 
-[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="124" name="C1P33R1" tags="redirect" position="3075,7800" size="100,100">&lt;%
+[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="123" name="C1P33R1" tags="redirect" position="3075,7800" size="100,100">&lt;%
 window.story.achievement(&quot;Chapter1&quot;, &quot;RollCredits&quot;, &quot;Roll Credits&quot;, &quot;And that&#39;s a Sin.&quot;)
 
 window.story.redirect(&quot;C1P34&quot;, 7);
-%&gt;</tw-passagedata><tw-passagedata pid="125" name="Choices" tags="info" position="3875,1025" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot; - Knocked on the door to see if anyone was home
+%&gt;</tw-passagedata><tw-passagedata pid="124" name="Choices" tags="info" position="3875,1025" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot; - Knocked on the door to see if anyone was home
 
 &quot;Chapter1&quot;, &quot;Kicked&quot; - Kicked the door in to get inside
 
@@ -1583,17 +1623,17 @@ window.story.redirect(&quot;C1P34&quot;, 7);
 
 !&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot; - Did as Lucy asked, took Tiffany and went
 
-&quot;Chapter1&quot;, &quot;StrangerDied&quot; - Made decisions that resulted in the death of the stranger.</tw-passagedata><tw-passagedata pid="126" name="Global Credits" tags="menu" position="2250,575" size="200,100">&lt;img.title-image&gt;
+&quot;Chapter1&quot;, &quot;StrangerDied&quot; - Made decisions that resulted in the death of the stranger.</tw-passagedata><tw-passagedata pid="125" name="Global Credits" tags="menu" position="2250,575" size="200,100">&lt;img.title-image&gt;
 
 &lt;%= window.story.customRender(&quot;Credits&quot;) %&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="127" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;i&gt;&quot;Sarah?&quot;&lt;/i&gt;, a voice says softly. I start to stir from my sleep.
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="126" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;i&gt;&quot;Sarah?&quot;&lt;/i&gt;, a voice says softly. I start to stir from my sleep.
 
 There&#39;s someone near my face again... Sophia back to haunt me?
 
 I squint, it&#39;s bright and my vision is blurry. There&#39;s a face, eyes, but... they&#39;re blue, very blue.
 
-[[[Rub eyes]|C1P35]]</tw-passagedata><tw-passagedata pid="128" name="C1P35" tags="page" position="3075,8100" size="100,100">I rub my eyes and open them again.
+[[[Rub eyes]|C1P35]]</tw-passagedata><tw-passagedata pid="127" name="C1P35" tags="page" position="3075,8100" size="100,100">I rub my eyes and open them again.
 
 &quot;Sarah?&quot;, the voice says again.
 
@@ -1603,9 +1643,9 @@ How does she know my name? Lucy must have told her...
 
 [[...|C1P35V2]]&lt;br&gt;
 [[Morning...?|C1P35V1]]&lt;br&gt;
-[[Lose something over here?|C1P35V3]]</tw-passagedata><tw-passagedata pid="129" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">I stare back at her for a moment.
+[[Lose something over here?|C1P35V3]]</tw-passagedata><tw-passagedata pid="128" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">I stare back at her for a moment.
 
-&lt;%= window.story.customRender(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="130" name="C1P35V1" tags="variation" position="2925,8250" size="100,100">&quot;Um...&quot;, I start. My throat is still dry. I cough to clear it a little.
+&lt;%= window.story.customRender(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="129" name="C1P35V1" tags="variation" position="2925,8250" size="100,100">&quot;Um...&quot;, I start. My throat is still dry. I cough to clear it a little.
 
 &quot;Good morning...?&quot;, I say, a hint of uncertainty in my voice.
 
@@ -1623,7 +1663,7 @@ A slightly puzzled look appears across her face.
 
 She shrugs.
 
-&lt;%= window.story.customRender(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="131" name="C1P35V3" tags="variation" position="3225,8250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="130" name="C1P35V3" tags="variation" position="3225,8250" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;) %&gt;
 
 &quot;Did you lose something over here?&quot;, I remark.
 
@@ -1643,19 +1683,19 @@ She shakes her head.
 
 I can&#39;t remember the last time I laughed...
 
-&lt;%= window.story.customRender(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="132" name="F: Breakfast?" tags="floater" position="3425,8250" size="100,100">&quot;Would you like some breakfast?&quot;, she asks, a hint of excitement in her voice.
+&lt;%= window.story.customRender(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="131" name="F: Breakfast?" tags="floater" position="3425,8250" size="100,100">&quot;Would you like some breakfast?&quot;, she asks, a hint of excitement in her voice.
 
 I&#39;m starving, I hadn&#39;t had a proper meal for days before I got here, and who knows how long I&#39;ve been on this sofa for.
 
-[[Yeah, thanks Tiff|C1P35R1]] [[Yeah, thanks Tiffany|C1P35R2]]</tw-passagedata><tw-passagedata pid="133" name="C1P35R1" tags="redirect" position="3000,8400" size="100,100">&lt;%
+[[Yeah, thanks Tiff|C1P35R1]] [[Yeah, thanks Tiffany|C1P35R2]]</tw-passagedata><tw-passagedata pid="132" name="C1P35R1" tags="redirect" position="3000,8400" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Tiffany&quot;, false);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiff&quot;);
 window.story.redirect(&quot;C1P36&quot;, 1);
-%&gt;</tw-passagedata><tw-passagedata pid="134" name="C1P35R2" tags="redirect" position="3150,8400" size="100,100">&lt;%
+%&gt;</tw-passagedata><tw-passagedata pid="133" name="C1P35R2" tags="redirect" position="3150,8400" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Tiffany&quot;);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiffany&quot;);
 window.story.redirect(&quot;C1P36&quot;, 1);
-%&gt;</tw-passagedata><tw-passagedata pid="135" name="C1P36" tags="page" position="3075,8550" size="100,100">&quot;Yeah, thanks &lt;% print(window.story.tiffany()) %&gt;&quot;, I say.
+%&gt;</tw-passagedata><tw-passagedata pid="134" name="C1P36" tags="page" position="3075,8550" size="100,100">&quot;Yeah, thanks &lt;% print(window.story.tiffany()) %&gt;&quot;, I say.
 
 Her face lights up with a smile. &lt;% if (window.story.tiffany() === &quot;Tiff&quot;) { print(&quot;I think she likes that nickname.&quot;) } %&gt;
 
@@ -1671,33 +1711,33 @@ The other door swings open, speak of the devil. Lucy walks in.
 
 [[Better|C1P36V1]]&lt;br&gt;
 [[I&#39;ll live|C1P36V2]]&lt;br&gt;
-[[Like shit|C1P36V3]]</tw-passagedata><tw-passagedata pid="136" name="C1P36V1" tags="variation" position="2925,8700" size="100,100">&quot;Better, actually&quot;, I say.
+[[Like shit|C1P36V3]]</tw-passagedata><tw-passagedata pid="135" name="C1P36V1" tags="variation" position="2925,8700" size="100,100">&quot;Better, actually&quot;, I say.
 
 &quot;Good, those fluids did you the world of good&quot;, she replies.
 
-&lt;%= window.story.customRender(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="C1P36V2" tags="variation" position="3075,8700" size="100,100">&quot;I&#39;ll live&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="136" name="C1P36V2" tags="variation" position="3075,8700" size="100,100">&quot;I&#39;ll live&quot;, I say.
 
 &quot;Very presumptuous of you&quot;, Lucy says with a smirk.
 
-&lt;%= window.story.customRender(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="138" name="C1P36V3" tags="variation" position="3225,8700" size="100,100">&quot;Like shit&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="C1P36V3" tags="variation" position="3225,8700" size="100,100">&quot;Like shit&quot;, I say.
 
 She takes a breath as if to say something, but stops then shakes her head.
 
 &quot;Hmm, you haven&#39;t had anything to eat in days. Once you get some food in you you&#39;ll feel better. But first&quot;, she says.
 
-&lt;%= window.story.customRender(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="139" name="F: Get that out" tags="floater" position="3425,8700" size="100,100">Lucy points at my arm.
+&lt;%= window.story.customRender(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="138" name="F: Get that out" tags="floater" position="3425,8700" size="100,100">Lucy points at my arm.
 
 &quot;Let&#39;s get that out shall we?&quot;, she remarks.
 
 [[Yeah... sure|C1P37V1]]&lt;br&gt;
 [[Will it hurt?|C1P37V2]]&lt;br&gt;
-[[Can I keep it?|C1P37V3]]</tw-passagedata><tw-passagedata pid="140" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&quot;Uh, yeah... sure&quot;, I say uncertainly.
+[[Can I keep it?|C1P37V3]]</tw-passagedata><tw-passagedata pid="139" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&quot;Uh, yeah... sure&quot;, I say uncertainly.
 
 Lucy comes over and gives me a reassuring look.
 
 &quot;Don&#39;t worry, it will only take a second&quot;, she says.
 
-&lt;%= window.story.customRender(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="141" name="C1P37V2" tags="variation" position="3075,8850" size="100,100">&quot;Will it, uh, hurt?&quot;, I ask uncertainly.
+&lt;%= window.story.customRender(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="140" name="C1P37V2" tags="variation" position="3075,8850" size="100,100">&quot;Will it, uh, hurt?&quot;, I ask uncertainly.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
 
@@ -1711,7 +1751,7 @@ I roll my eyes at her.
 
 &lt;% } %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="142" name="C1P37V3" tags="variation" position="3225,8850" size="100,100">&quot;Can I keep it? Seems handy&quot;, I ask.
+&lt;%= window.story.customRender(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="141" name="C1P37V3" tags="variation" position="3225,8850" size="100,100">&quot;Can I keep it? Seems handy&quot;, I ask.
 
 &quot;First off, was that a pun? And secondly, no, it&#39;ll just increase your chances of getting an infection&quot;, she replies.
 
@@ -1725,7 +1765,7 @@ I can&#39;t remember the last time I laughed...
 
 &lt;% } %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="143" name="F: Peel back" tags="floater" position="3425,8850" size="100,100">Lucy sits across from me on the coffee table, then puts her hand out and beckons me to give her my hand.
+&lt;%= window.story.customRender(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="142" name="F: Peel back" tags="floater" position="3425,8850" size="100,100">Lucy sits across from me on the coffee table, then puts her hand out and beckons me to give her my hand.
 
 I place my hand on hers.
 
@@ -1733,7 +1773,7 @@ She peels back the tape and disconnects the tubbing. She reaches into the pocket
 
 [[Impressive|C1P38V1]]&lt;br&gt;
 [[[Cry out in fake pain]|C1P38V2]]&lt;br&gt;
-[[You&#39;ve done that a few times|C1P38V3]]</tw-passagedata><tw-passagedata pid="144" name="C1P38V1" tags="variation" position="2925,9000" size="100,100">&quot;Impressive, I didn&#39;t feel a thing&quot;, I remark.
+[[You&#39;ve done that a few times|C1P38V3]]</tw-passagedata><tw-passagedata pid="143" name="C1P38V1" tags="variation" position="2925,9000" size="100,100">&quot;Impressive, I didn&#39;t feel a thing&quot;, I remark.
 
 Lucy smiles.
 
@@ -1741,7 +1781,7 @@ Lucy smiles.
 
 Her smile fades.
 
-&lt;%= window.story.customRender(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="145" name="C1P38V2" tags="variation" position="3075,9000" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Drama&quot;, &quot;Drama Queen&quot;, &quot;You should have been an actor.&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="144" name="C1P38V2" tags="variation" position="3075,9000" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Drama&quot;, &quot;Drama Queen&quot;, &quot;You should have been an actor.&quot;) %&gt;
 
 &quot;Argh!&quot;, I exclaim.
 
@@ -1749,11 +1789,11 @@ Lucy doesn&#39;t bother to move her head up, just her eyes. She gives me a look 
 
 I thought it was pretty funny.
 
-&lt;%= window.story.customRender(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="146" name="C1P38V3" tags="variation" position="3225,9000" size="100,100">&quot;Clearly you&#39;ve done that a few times before&quot;, I remark.
+&lt;%= window.story.customRender(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="145" name="C1P38V3" tags="variation" position="3225,9000" size="100,100">&quot;Clearly you&#39;ve done that a few times before&quot;, I remark.
 
 &quot;Oh yeah, once or twice&quot;, she replies.
 
-&lt;%= window.story.customRender(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="147" name="Achievements" tags="info" position="3875,1175" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;
+&lt;%= window.story.customRender(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="146" name="Achievements" tags="info" position="3875,1175" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;
 
 &quot;Chapter1&quot;, &quot;Soap&quot;, &quot;Nothing wasted&quot;, &quot;You never know when it will come in handy!&quot;
 
@@ -1773,7 +1813,7 @@ I thought it was pretty funny.
 
 &quot;Chapter1&quot;, &quot;Nerve&quot;, &quot;Struck a Nerve&quot;, &quot;Found a touchy subject&quot;
 
-&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;</tw-passagedata><tw-passagedata pid="148" name="F: Breakfast time!" tags="floater" position="3425,9000" size="100,100">Lucy reaches back into her pocket with her free hand and pulls out a roll of... something. It looks like tape, but fabric-like.
+&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;</tw-passagedata><tw-passagedata pid="147" name="F: Breakfast time!" tags="floater" position="3425,9000" size="100,100">Lucy reaches back into her pocket with her free hand and pulls out a roll of... something. It looks like tape, but fabric-like.
 
 &quot;Alright, you&#39;re good to go&quot;, Lucy says, tearing a bit of tape off and using it to secure the cotton wool ball to my hand.
 
@@ -1789,7 +1829,7 @@ I stand up- Woah, my left leg is, like, stiff? It feels kinda like when you sit 
 
 I slowly take a few steps; yeah, I can manage this. She&#39;ll be right.
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="149" name="F: Living room search options" tags="floater" position="3575,9025" size="100,200">&lt;%
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="148" name="F: Living room search options" tags="floater" position="3575,9025" size="100,200">&lt;%
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) {
 	print(&quot;[[[Go through second door]|C1P39V1]]&lt;br&gt;&quot;);
 }
@@ -1811,7 +1851,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) {
 }
 %&gt;
 
-[[[Go through hallway door]|C1P40]]</tw-passagedata><tw-passagedata pid="150" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
+[[[Go through hallway door]|C1P40]]</tw-passagedata><tw-passagedata pid="149" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
 
 I walk around to the other door and open it. Huh, a familiar sight: it&#39;s the laundry room.
 
@@ -1819,13 +1859,13 @@ There&#39;s a red stain on the floor just near the door, I guess that&#39;s wher
 
 I close the door.
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="C1P39V3" tags="variation" position="3075,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="150" name="C1P39V3" tags="variation" position="3075,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;) %&gt;
 
 I walk up to the coffee table. It&#39;s pretty ordinary, a few coffee stains here and there, otherwise in good shape.
 
 I wonder if Lucy has any coffee? I haven&#39;t had any in years.
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="152" name="C1P39V5" tags="variation" position="3375,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="C1P39V5" tags="variation" position="3375,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;) %&gt;
 
 I walk over to the TV and cabinet. The TV looks reasonably new, one of those fancy new super flat ones. Well, I guess not new anymore.
 
@@ -1833,7 +1873,7 @@ I bend down and open the cabinet. There&#39;s a load of old TV crap, set-top box
 
 [[[Take spinning top]|C1P39V51]]
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="153" name="C1P39V4" tags="variation" position="3225,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Saline&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="152" name="C1P39V4" tags="variation" position="3225,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Saline&quot;) %&gt;
 
 I walk up to the hat hanger and look at the clear bag of fluid, what&#39;s left of it anyway.
 
@@ -1843,11 +1883,11 @@ There&#39;s more writing near the bottom, &quot;Sterile non-pyrogenic... osmolal
 
 I put the bag back on the hanger.
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="154" name="C1P40" tags="page save" position="3075,9450" size="100,100">I head to the door, wary of my leg. I then go through the door to the hallway. The hallway has doors on all four sides, and a set of stairs on one side.
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="153" name="C1P40" tags="page save" position="3075,9450" size="100,100">I head to the door, wary of my leg. I then go through the door to the hallway. The hallway has doors on all four sides, and a set of stairs on one side.
 
 &lt;i&gt;&quot;Tiffany, stop playing with your food...&quot;&lt;/i&gt;, I hear Lucy say somewhere behind the furthest door. That must be to the kitchen.
 
-&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="155" name="C1P39V2" tags="variation" position="2925,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="154" name="C1P39V2" tags="variation" position="2925,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
 
 I walk over to the window. It&#39;s been boarded up from the outside, but there are a few cracks I can look through. I squat down and have a look through one.
 
@@ -1857,23 +1897,23 @@ Anyway, the front garden is much smaller than the back garden, it&#39;s got a sm
 
 I stand up again.
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P39V51" tags="variation" position="3375,9300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="155" name="C1P39V51" tags="variation" position="3375,9300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;) %&gt;
 
 I pick up the spinning top. &lt;% print(window.story.tiffany()) %&gt; might like this.
 
-&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="C1P40V1" tags="variation" position="2925,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40V1" tags="variation" position="2925,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;) %&gt;
 
 I walk up to the stairs, they bend and go to the left as they go up. I better not go up there, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { print(&quot;Lucy doesn&#39;t trust me as it is, no need to give her another excuse&quot;) } else { print(&quot;don&#39;t want to push my luck and risk a free meal&quot;) } %&gt;.
 
-&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="158" name="C1P40V2" tags="variation" position="3075,9600" size="100,100">I walk up to the door on the left and open it. It&#39;s a bathroom! I could really use a freshening up...
+&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="C1P40V2" tags="variation" position="3075,9600" size="100,100">I walk up to the door on the left and open it. It&#39;s a bathroom! I could really use a freshening up...
 
 [[[Enter bathroom]|C1P40V21]]
 
-&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="C1P40V3" tags="variation" position="3225,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="158" name="C1P40V3" tags="variation" position="3225,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;) %&gt;
 
 I walk up to the door, it&#39;s larger than the other doors, and has locks on it: this must be the front door. I don&#39;t really want to go out there right now&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, not with all those walkers out there&quot;) %&gt;.
 
-&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="160" name="C1P41" tags="page" position="3075,10050" size="100,100">&lt;%
+&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="C1P41" tags="page" position="3075,10050" size="100,100">&lt;%
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) {
 	window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;, false);
 }
@@ -1887,7 +1927,7 @@ I walk to the end of the hallway and go through the kitchen door.
 
 &quot;Come sit here!&quot;, %Tiffany% says, gesturing to the chair next to her. I look over at Lucy, she gives a slight smile and nods her approval.
 
-[[[Sit next to %Tiffany%]|C1P42]]</tw-passagedata><tw-passagedata pid="161" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;%
+[[[Sit next to %Tiffany%]|C1P42]]</tw-passagedata><tw-passagedata pid="160" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;%
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) {
 	print(&quot;[[[Look at stairs]|C1P40V1]]&lt;br&gt;&quot;);
 }
@@ -1901,7 +1941,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) {
 }
 %&gt;
 
-[[[Go through kitchen door]|C1P41]]</tw-passagedata><tw-passagedata pid="162" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
+[[[Go through kitchen door]|C1P41]]</tw-passagedata><tw-passagedata pid="161" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
 
 I step inside. There&#39;s a sink with some water in it, it looks pretty clean too. I walk over to it, dip my hands in, and run my hands over my face. Wow, that feels great, I don&#39;t recall the last time I had a wash.
 
@@ -1910,9 +1950,9 @@ I give my face and arms a good scrub, the water turns a nasty brown color. I loo
 I wonder if there is a pair of scissors around here?
 
 [[[Leave bathroom]|C1P40V211]]&lt;br&gt;
-[[[Search for scissors]|C1P40V212]]</tw-passagedata><tw-passagedata pid="163" name="C1P40V211" tags="variation" position="3000,9900" size="100,100">Ah well, another time. I let out the water in the sink and leave the bathroom.
+[[[Search for scissors]|C1P40V212]]</tw-passagedata><tw-passagedata pid="162" name="C1P40V211" tags="variation" position="3000,9900" size="100,100">Ah well, another time. I let out the water in the sink and leave the bathroom.
 
-&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="164" name="C1P40V212" tags="variation" position="3150,9900" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="163" name="C1P40V212" tags="variation" position="3150,9900" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;) %&gt;
 
 I search around the bathroom. I find a small vanity box and open it, it contains some bits and bobs, and- Perfect, a pair of scissors.
 
@@ -1924,7 +1964,7 @@ I pocket the scissors, I doubt that box was Lucy&#39;s, judging by the dust on i
 
 I let the water in the sink go, and head back into the hallway.
 
-&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="165" name="C1P42" tags="page" position="3075,10200" size="100,100">I sit down at the table.
+&lt;%= window.story.customRender(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="164" name="C1P42" tags="page" position="3075,10200" size="100,100">I sit down at the table.
 
 &quot;I&#39;ll fix you a bowl&quot;, Lucy says as she stands up from the table.
 
@@ -1956,7 +1996,7 @@ She walks over to the portable stove and fills a bowl with the contents of the c
 
 &quot;Here you go, Beans and Cheese!&quot;, Lucy exclaims.
 
-[[[Take the bowl]|C1P43]]</tw-passagedata><tw-passagedata pid="166" name="C1P43" tags="page" position="3075,10350" size="100,100">I take the bowl and set it down.
+[[[Take the bowl]|C1P43]]</tw-passagedata><tw-passagedata pid="165" name="C1P43" tags="page" position="3075,10350" size="100,100">I take the bowl and set it down.
 
 &quot;Thanks, I haven&#39;t had a hot meal in... well, a long time&quot;, I remark.
 
@@ -1972,7 +2012,7 @@ I nearly choke laughing; Lucy was not so impressed.
 
 [[Eat, it tastes good|C1P43V1]]&lt;br&gt;
 [[What do you like to eat?|C1P43V2]]&lt;br&gt;
-[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="167" name="Saved Games" tags="menu" position="2250,1025" size="200,100">&lt;% window.story.loadSaves() %&gt;
+[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="166" name="Saved Games" tags="menu" position="2250,1025" size="200,100">&lt;% window.story.loadSaves() %&gt;
 
 &lt;img.title-image&gt;
 
@@ -1980,7 +2020,7 @@ I nearly choke laughing; Lucy was not so impressed.
 
 &lt;div-#savesContainer&gt;&lt;/div&gt;
 
-[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="168" name="Save Options" tags="menu" position="2000,875" size="200,100">&lt;img.title-image&gt;
+[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="167" name="Save Options" tags="menu" position="2000,875" size="200,100">&lt;img.title-image&gt;
 
 This game has an optional Cloud Saving feature, to enable it, click the button below and follow the instructions. itch.io account required.
 
@@ -1998,7 +2038,7 @@ If you choose not to enable Cloud Saving, your progress will be lost when you re
 
 &lt;div#title-button&gt;[[Continue without Saving|Game Options]]&lt;/div&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="169" name="Linking" tags="menu" position="2250,875" size="200,100">&lt;img.title-image&gt;
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="168" name="Linking" tags="menu" position="2250,875" size="200,100">&lt;img.title-image&gt;
 
 Clicking the button below will open a new tab, ask you to authorize Purpose (this game) to access your public itch.io information, and will then give you a temporary &quot;Linking Code&quot; to use below. Purpose only uses your itch.io information for saving your game progress. Purpose does not have access to your E-Mail, Password, or any other personal information.
 
@@ -2019,13 +2059,13 @@ Clicking the button below will open a new tab, ask you to authorize Purpose (thi
 	&lt;a.small.normal-link onclick=&quot;window.story.toggleLinkingDisplays(true)&quot;&gt;I need another Linking Code&lt;/a&gt;
 &lt;/form&gt;
 
-[[Back|Save Options]]</tw-passagedata><tw-passagedata pid="170" name="Linked" tags="menu" position="2500,875" size="200,100">&lt;img.title-image&gt;
+[[Back|Save Options]]</tw-passagedata><tw-passagedata pid="169" name="Linked" tags="menu" position="2500,875" size="200,100">&lt;img.title-image&gt;
 
 Thanks for linking your itch.io account with Purpose, &lt;% print(window.story.player.name) %&gt;. Your story progress and achievements will now be saved to the Cloud.
 
 You will need to re-link your account each time you play the game.
 
-&lt;div#title-button&gt;[[Continue|Game Options]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="Game Options" tags="menu" position="2000,1025" size="200,100">&lt;img.title-image&gt;
+&lt;div#title-button&gt;[[Continue|Game Options]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="Game Options" tags="menu" position="2000,1025" size="200,100">&lt;img.title-image&gt;
 
 &lt;div#title-button&gt;
 &lt;%
@@ -2038,7 +2078,7 @@ if (window.story.saving) {
 }
 %&gt;
 &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="New Game" tags="menu" position="2000,1175" size="200,100">&lt;% window.story.loadSaves(true) %&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="New Game" tags="menu" position="2000,1175" size="200,100">&lt;% window.story.loadSaves(true) %&gt;
 
 &lt;img.title-image&gt;
 
@@ -2060,19 +2100,19 @@ Select a Save Slot to start a new game.
   &lt;button0#selectSlotButton onclick=&quot;window.story.selectSlot()&quot;&gt;Select Slot and Start Game&lt;/button&gt;
 &lt;/form&gt;
 
-[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="173" name="C1P43V1" tags="variation" position="2925,10500" size="100,100">&quot;Eat up, it tastes good&quot;, I say with a mouthful.
+[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="172" name="C1P43V1" tags="variation" position="2925,10500" size="100,100">&quot;Eat up, it tastes good&quot;, I say with a mouthful.
 
 &quot;It&#39;s all gluggy and gross&quot;, %Tiffany% replies.
 
 &quot;That&#39;s because you let it go cold...&quot;, Lucy says with a sigh.
 
-&lt;%= window.story.customRender(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="174" name="C1P43V2" tags="variation" position="3075,10500" size="100,100">&quot;What do you like to eat?&quot;, I ask %Tiffany%.
+&lt;%= window.story.customRender(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="173" name="C1P43V2" tags="variation" position="3075,10500" size="100,100">&quot;What do you like to eat?&quot;, I ask %Tiffany%.
 
 &quot;Pizza, and peanut butter sandwiches!&quot;, she replies excitedly.
 
 &quot;Not much of that around these days&quot;, I remark.
 
-&lt;%= window.story.customRender(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="175" name="C1P43V3" tags="variation" position="3225,10500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Eating&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="174" name="C1P43V3" tags="variation" position="3225,10500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Eating&quot;) %&gt;
 
 &quot;Eat up, you need food for strength&quot;, I say.
 
@@ -2086,7 +2126,7 @@ I glance at Lucy. She looks back uncomfortably but doesn&#39;t say anything.
 
 %Tiffany% starts to eat, I think I taught her something important.
 
-&lt;%= window.story.customRender(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="176" name="F: Come chat" tags="floater" position="3425,10500" size="100,100">I get back to my bowl.
+&lt;%= window.story.customRender(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="175" name="F: Come chat" tags="floater" position="3425,10500" size="100,100">I get back to my bowl.
 
 &quot;Sarah, come chat with me when you&#39;re finished&quot;, Lucy says, as she stands up and heads for the other door.
 
@@ -2094,7 +2134,7 @@ I glance at Lucy. She looks back uncomfortably but doesn&#39;t say anything.
 
 Lucy leaves the room.
 
-[[[Keep eating]|C1P44]]</tw-passagedata><tw-passagedata pid="177" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
+[[[Keep eating]|C1P44]]</tw-passagedata><tw-passagedata pid="176" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
 
 I look over at %Tiffany%, she&#39;s actually making decent process on her meal. Good.
 
@@ -2108,7 +2148,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;)) {
 	print(`[[[Give %Tiffany% the spinning top]|C1P44V4]]`);
 } %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="C1P44V1" tags="variation" position="2850,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="177" name="C1P44V1" tags="variation" position="2850,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;) %&gt;
 
 &quot;So, uh, where&#39;s your dad?&quot;, I ask %Tiffany%.
 
@@ -2130,7 +2170,7 @@ We sit for a moment, while I process what this little girl just described to me.
 
 &quot;I&#39;m not sure, I couldn&#39;t get back to him or my mom after everything went to shit. I like to think they&#39;re out there somewhere, but it&#39;s unlikely&quot;, I reply.
 
-&lt;%= window.story.customRender(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="C1P44V2" tags="variation" position="3000,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="C1P44V2" tags="variation" position="3000,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot;) %&gt;
 
 &quot;So, where have you guys been staying, have you moved around a lot?&quot;, I ask %Tiffany%.
 
@@ -2150,7 +2190,7 @@ She looks up from her meal.
 
 &quot;Sometimes, but I&#39;m used to it. I&#39;ve been on my own for a shit long time&quot;, I reply.
 
-&lt;%= window.story.customRender(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="180" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;%
+&lt;%= window.story.customRender(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;);
 
 _.delay(function() {
@@ -2190,7 +2230,7 @@ Still caught up on that, gee.
 
 &quot;Because they bloody walk everywhere&quot;, I reply.
 
-&lt;%= window.story.customRender(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="181" name="C1P45" tags="page" position="3075,10950" size="100,100">&quot;Anyway, uh, I had better go chat with your mom&quot;, I say, getting up from the table.
+&lt;%= window.story.customRender(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="180" name="C1P45" tags="page" position="3075,10950" size="100,100">&quot;Anyway, uh, I had better go chat with your mom&quot;, I say, getting up from the table.
 
 I head to the other door in the room. I can hear rain outside, the gentle tapping on the roof is actually pretty soothing... I get to the door and open it, then step through.
 
@@ -2202,7 +2242,7 @@ Lucy turns to look at me as I close the door. She looks away again, back at the 
 
 [[...|C1P45V1]]&lt;br&gt;
 [[No stress|C1P45V2]]&lt;br&gt;
-[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="182" name="F: Better get going" tags="floater" position="3500,10800" size="100,100">%Tiffany%&#39;s face contorts into a look of shock.
+[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="181" name="F: Better get going" tags="floater" position="3500,10800" size="100,100">%Tiffany%&#39;s face contorts into a look of shock.
 
 &quot;Swear!&quot;, she exclaims.
 
@@ -2214,13 +2254,13 @@ Another awkward pause.
 
 I scrape the last drops out of the bowl: all finished.
 
-[[I better go talk to Lucy|C1P45]]</tw-passagedata><tw-passagedata pid="183" name="C1P45V1" tags="variation" position="2925,11100" size="100,100">I stay by the door, there&#39;s an uncomfortable silence.
+[[I better go talk to Lucy|C1P45]]</tw-passagedata><tw-passagedata pid="182" name="C1P45V1" tags="variation" position="2925,11100" size="100,100">I stay by the door, there&#39;s an uncomfortable silence.
 
-&lt;%= window.story.customRender(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45V2" tags="variation" position="3075,11100" size="100,100">&quot;Don&#39;t worry about it. It was clearly... difficult, for both of us&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="183" name="C1P45V2" tags="variation" position="3075,11100" size="100,100">&quot;Don&#39;t worry about it. It was clearly... difficult, for both of us&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="185" name="C1P45V3" tags="variation" position="3225,11100" size="100,100">&quot;You broke our deal&quot;, I remark.
+&lt;%= window.story.customRender(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45V3" tags="variation" position="3225,11100" size="100,100">&quot;You broke our deal&quot;, I remark.
 
-&lt;%= window.story.customRender(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="186" name="F: Broke our deal" tags="floater" position="3425,11100" size="100,100">Lucy puts the picture frame down and turns to face me.
+&lt;%= window.story.customRender(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="185" name="F: Broke our deal" tags="floater" position="3425,11100" size="100,100">Lucy puts the picture frame down and turns to face me.
 
 &quot;&lt;% if (window.passage.name === &quot;C1P45V3&quot;) { print(&quot;Yes, I did.&quot;) } else { print(&quot;I broke our deal, last night.&quot;) } %&gt; That&#39;s why I wanted to talk to you&quot;, Lucy sighs.
 
@@ -2232,7 +2272,7 @@ Lucy gives a slight smile.
 
 &quot;Fair enough&quot;, she replies.
 
-[[[Walk over to Lucy]|C1P46]]</tw-passagedata><tw-passagedata pid="187" name="C1P46" tags="page" position="3075,11250" size="100,100">I walk over to Lucy. I glance down at the picture frames she was looking at, they&#39;re not of her, or of %Tiffany%; just some random family, a happy, family.
+[[[Walk over to Lucy]|C1P46]]</tw-passagedata><tw-passagedata pid="186" name="C1P46" tags="page" position="3075,11250" size="100,100">I walk over to Lucy. I glance down at the picture frames she was looking at, they&#39;re not of her, or of %Tiffany%; just some random family, a happy, family.
 
 &quot;Tiffany used to be like the little boy in these pictures&quot;, Lucy says, gesturing to the picture frames.
 
@@ -2240,13 +2280,13 @@ Lucy gives a slight smile.
 
 [[...|C1P46V1]]&lt;br&gt;
 [[She&#39;s still happy|C1P46V2]]&lt;br&gt;
-[[You still love her|C1P46V3]]</tw-passagedata><tw-passagedata pid="188" name="C1P46V1" tags="variation" position="2925,11400" size="100,100">I look at Lucy, then back at the frames.
+[[You still love her|C1P46V3]]</tw-passagedata><tw-passagedata pid="187" name="C1P46V1" tags="variation" position="2925,11400" size="100,100">I look at Lucy, then back at the frames.
 
-&lt;%= window.story.customRender(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="189" name="C1P46V2" tags="variation" position="3075,11400" size="100,100">&quot;She still looks pretty happy to me&quot;, I state.
+&lt;%= window.story.customRender(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="188" name="C1P46V2" tags="variation" position="3075,11400" size="100,100">&quot;She still looks pretty happy to me&quot;, I state.
 
-&lt;%= window.story.customRender(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="190" name="C1P46V3" tags="variation" position="3225,11400" size="100,100">&quot;You still love her, she has that&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="189" name="C1P46V3" tags="variation" position="3225,11400" size="100,100">&quot;You still love her, she has that&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="191" name="F: Happy cuz of you" tags="floater" position="3575,11400" size="100,100">&quot;&lt;% if (window.passage.name === &quot;C1P46V2&quot;) { print (&quot;She&#39;s happy because of you.&quot;) } else { print(&quot;And that&#39;s not enough.&quot;) } %&gt;&quot;, Lucy remarks.
+&lt;%= window.story.customRender(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="190" name="F: Happy cuz of you" tags="floater" position="3575,11400" size="100,100">&quot;&lt;% if (window.passage.name === &quot;C1P46V2&quot;) { print (&quot;She&#39;s happy because of you.&quot;) } else { print(&quot;And that&#39;s not enough.&quot;) } %&gt;&quot;, Lucy remarks.
 
 &quot;You are the first thing, the first *person* to bring any joy into her life in a very long time. I try to keep her happy, but I&#39;m so busy trying to keep her alive and fed, I just don&#39;t have the time. You don&#39;t even need to do anything, just being around you is enough to lift her spirits!&quot;, Lucy exclaims.
 
@@ -2266,21 +2306,21 @@ switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;))
 		print(&quot;[[You don&#39;t involve her enough|C1P47V33]]&quot;);
 		break;
 }
-%&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">I&#39;m not sure where this is going...
+%&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">I&#39;m not sure where this is going...
 
-&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="193" name="C1P47V2" tags="variation" position="2925,11550" size="100,100">&quot;Jealous?&quot;, I ask?
+&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P47V2" tags="variation" position="2925,11550" size="100,100">&quot;Jealous?&quot;, I ask?
 
 Lucy scoffs.
 
 &quot;Yeah, I guess I am a little bit&quot;, she says, smiling slightly.
 
-&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V31" tags="variation" position="3075,11550" size="100,100">&quot;She&#39;s just lonely. And I mean can you blame her, when she&#39;s left alone all day long?&quot;, I remark. I didn&#39;t realize how rude that sounded till the words left my mouth.
+&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="193" name="C1P47V31" tags="variation" position="3075,11550" size="100,100">&quot;She&#39;s just lonely. And I mean can you blame her, when she&#39;s left alone all day long?&quot;, I remark. I didn&#39;t realize how rude that sounded till the words left my mouth.
 
 Lucy turns to me with a mixture of anger and shock, but it quickly fades away to a look of pain.
 
 She knows I&#39;m right.
 
-&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="195" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Nerve&quot;, &quot;Struck a Nerve&quot;, &quot;Found a touchy subject&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Nerve&quot;, &quot;Struck a Nerve&quot;, &quot;Found a touchy subject&quot;) %&gt;
 
 &quot;She just misses her dad; it sounded like he was going through al-&quot;, I start.
 
@@ -2292,7 +2332,7 @@ I&#39;m caught off guard, I bite my tongue.
 
 There&#39;s an awkward silence. I guess she either doesn&#39;t understand, or doesn&#39;t want to understand it, from his perspective.
 
-&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="196" name="C1P47V33" tags="variation" position="3375,11550" size="100,100">&quot;You don&#39;t get her involved enough&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="195" name="C1P47V33" tags="variation" position="3375,11550" size="100,100">&quot;You don&#39;t get her involved enough&quot;, I say.
 
 Lucy looks at me in confusion.
 
@@ -2304,7 +2344,7 @@ Lucy takes a breath as if to say something, but stops and looks away instead.
 
 She knows I&#39;m right.
 
-&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="197" name="F: Tiff is a child" tags="floater" position="3575,11550" size="100,100">Lucy moves away towards the window.
+&lt;%= window.story.customRender(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="196" name="F: Tiff is a child" tags="floater" position="3575,11550" size="100,100">Lucy moves away towards the window.
 
 &quot;She&#39;s just a child. She didn&#39;t even get the chance to go to school...&quot;, Lucy trails off.
 
@@ -2312,7 +2352,7 @@ She knows I&#39;m right.
 
 She looks out the window for a few moments.
 
-[[Why did you save me?|C1P48]]</tw-passagedata><tw-passagedata pid="198" name="C1P48" tags="page" position="3075,11700" size="100,100">&quot;Why did you save me, really&quot;, I ask.
+[[Why did you save me?|C1P48]]</tw-passagedata><tw-passagedata pid="197" name="C1P48" tags="page" position="3075,11700" size="100,100">&quot;Why did you save me, really&quot;, I ask.
 
 Lucy is silent for a moment.
 
@@ -2326,19 +2366,19 @@ She turns to face me, tears streaking down her eyes.
 
 [[...|C1P48V1]]&lt;br&gt;
 [[They will be|C1P48V2]]&lt;br&gt;
-[[They won&#39;t be|C1P48V3]]</tw-passagedata><tw-passagedata pid="199" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
+[[They won&#39;t be|C1P48V3]]</tw-passagedata><tw-passagedata pid="198" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
 
 I&#39;m not sure what to say.
 
-&lt;%= window.story.customRender(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="200" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) %&gt;
+&lt;%= window.story.customRender(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="199" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) %&gt;
 
 &quot;They will be&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="201" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
+&lt;%= window.story.customRender(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="200" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
 
 &quot;They won&#39;t be&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="202" name="F: Stay" tags="floater" position="3425,11850" size="100,100">&lt;% if (window.passage.name === &quot;C1P48V1&quot;) { %&gt;
+&lt;%= window.story.customRender(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="201" name="F: Stay" tags="floater" position="3425,11850" size="100,100">&lt;% if (window.passage.name === &quot;C1P48V1&quot;) { %&gt;
 
 Lucy looks at me... she understands there are not many good people left these days. She takes a breath, wiping her tears away.
 
@@ -2366,7 +2406,7 @@ My heart skips a beat, I haven&#39;t been with other people long term since... S
 
 This is a lot to process, I have to think about this for a minute. I&#39;ve known these people for like, five minutes; they seem nice, but is this even something I want?
 
-[[[Think about Lucy&#39;s offer]|C1P49]]</tw-passagedata><tw-passagedata pid="203" name="C1P49" tags="page" position="3075,12000" size="100,100">I think about it for a minute, Lucy staring at me all the while.
+[[[Think about Lucy&#39;s offer]|C1P49]]</tw-passagedata><tw-passagedata pid="202" name="C1P49" tags="page" position="3075,12000" size="100,100">I think about it for a minute, Lucy staring at me all the while.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;)) { %&gt;
 
@@ -2380,7 +2420,7 @@ I don&#39;t know... I don&#39;t want, no, I *can&#39;t* have another little girl
 
 &lt;% } %&gt;
 
-[[I&#39;ll stay|C1P50]] [[I&#39;m not staying|C1P50]]</tw-passagedata><tw-passagedata pid="204" name="C1P50" tags="page save" position="3075,12150" size="100,100">&quot;I-&quot;, I start to say.
+[[I&#39;ll stay|C1P50]] [[I&#39;m not staying|C1P50]]</tw-passagedata><tw-passagedata pid="203" name="C1P50" tags="page save" position="3075,12150" size="100,100">&quot;I-&quot;, I start to say.
 
 
 &lt;i&gt;&quot;AAARGH!&quot;&lt;/i&gt;, someone, or something, screams from outside.
@@ -2388,19 +2428,19 @@ I don&#39;t know... I don&#39;t want, no, I *can&#39;t* have another little girl
 Lucy and I both look towards the direction of the source. It sounded like it came from somewhere outside the front of the house.
 
 [[I got %Tiffany%, go!|C1P51V1]]
-[[Watch %Tiffany%, I&#39;ll go!|C1P51V2]]</tw-passagedata><tw-passagedata pid="205" name="C1P51V1" tags="variation" position="3000,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;) %&gt;
+[[Watch %Tiffany%, I&#39;ll go!|C1P51V2]]</tw-passagedata><tw-passagedata pid="204" name="C1P51V1" tags="variation" position="3000,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;) %&gt;
 
 &quot;I&#39;ll protect %Tiffany%, go find out what *the fuck* that was!&quot;, I exclaim.
 
 Lucy looks at me and nods, then runs out the door, I go right behind her.
 
-[[[Go to %Tiffany%]|C1P52V1]]</tw-passagedata><tw-passagedata pid="206" name="C1P51V2" tags="variation" position="3150,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;, false) %&gt;
+[[[Go to %Tiffany%]|C1P52V1]]</tw-passagedata><tw-passagedata pid="205" name="C1P51V2" tags="variation" position="3150,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;, false) %&gt;
 
 &quot;You protect &lt;% print(window.story.tiffany()) %&gt;, I&#39;ll go find out what *the fuck* that was!&quot;, I exclaim as I head for the door.
 
 &quot;Right!&quot;, I hear Lucy say behind me.
 
-[[[Go through the door]|C1P52V2]]</tw-passagedata><tw-passagedata pid="207" name="C1P52V1" tags="variation" position="3000,12450" size="100,100">I go through the doorway back into the Kitchen, Lucy is already at the door to the hallway.
+[[[Go through the door]|C1P52V2]]</tw-passagedata><tw-passagedata pid="206" name="C1P52V1" tags="variation" position="3000,12450" size="100,100">I go through the doorway back into the Kitchen, Lucy is already at the door to the hallway.
 
 &quot;Mom?!&quot;, %Tiffany% says, sounding distressed.
 
@@ -2414,7 +2454,7 @@ Lucy looks at me and nods, then runs out the door, I go right behind her.
 
 I walk to the corner of the room so I can see down the hallway.
 
-[[[Look at Lucy]|C1P53V1]]</tw-passagedata><tw-passagedata pid="208" name="C1P52V2" tags="variation" position="3150,12450" size="100,100">I walk through the doorway back into the Kitchen and head straight for the door to the hallway.
+[[[Look at Lucy]|C1P53V1]]</tw-passagedata><tw-passagedata pid="207" name="C1P52V2" tags="variation" position="3150,12450" size="100,100">I walk through the doorway back into the Kitchen and head straight for the door to the hallway.
 
 &quot;Sarah?!&quot;, %Tiffany% says, clearly distressed.
 
@@ -2426,7 +2466,7 @@ I walk to the corner of the room so I can see down the hallway.
 
 I&#39;m at the front door now, I can hear a commotion outside.
 
-[[[Look through the peephole]|C1P53V2]]</tw-passagedata><tw-passagedata pid="209" name="C1P53V1" tags="variation" position="3000,12600" size="100,100">I look down the hallway, I can see Lucy standing at the front door. She&#39;s looking through the peephole.
+[[[Look through the peephole]|C1P53V2]]</tw-passagedata><tw-passagedata pid="208" name="C1P53V1" tags="variation" position="3000,12600" size="100,100">I look down the hallway, I can see Lucy standing at the front door. She&#39;s looking through the peephole.
 
 &lt;i&gt;&quot;Someone, please!&quot;&lt;/i&gt;, the voice screams again.
 
@@ -2441,7 +2481,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&am
 } else {
 	$(&quot;#lucyAction&quot;).replaceWith(window.story.customRender(&quot;F: Lucy goes outside&quot;));
 }
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="210" name="F: Lucy stays inside" tags="floater" position="2825,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;, false) %&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="209" name="F: Lucy stays inside" tags="floater" position="2825,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;, false) %&gt;
 
 She holds eye contact for a moment, then looks back at the door, and looks around it. Is she looking for a way to lock it? I guess she&#39;s not going out there. Probably for the best.
 
@@ -2449,7 +2489,7 @@ She holds eye contact for a moment, then looks back at the door, and looks aroun
 
 [[...|C1P53V122]]&lt;br&gt;
 [[She&#39;s keeping us safe|C1P53V121]]&lt;br&gt;
-[[She&#39;s helping someone outside [Lie]|C1P53V123]]</tw-passagedata><tw-passagedata pid="211" name="F: Lucy goes outside" tags="floater" position="2125,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;) %&gt;
+[[She&#39;s helping someone outside [Lie]|C1P53V123]]</tw-passagedata><tw-passagedata pid="210" name="F: Lucy goes outside" tags="floater" position="2125,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;) %&gt;
 
 Lucy pulls out her knife, opens the door, and disappears through it.
 
@@ -2459,11 +2499,11 @@ I look back at %Tiffany%, she&#39;s still sitting at the table, looking terrifie
 
 [[...|C1P53V112]]&lt;br&gt;
 [[She&#39;ll be fine %Tiffany%|C1P53V111]]&lt;br&gt;
-[[[Extend hand out to %Tiffany%]|C1P53V113]]</tw-passagedata><tw-passagedata pid="212" name="Network Check" tags="noFade menu" position="2000,425" size="200,100">&lt;% window.story.networkCheck(&quot;Alpha&quot;) %&gt;
+[[[Extend hand out to %Tiffany%]|C1P53V113]]</tw-passagedata><tw-passagedata pid="211" name="Network Check" tags="noFade menu" position="2000,425" size="200,100">&lt;% window.story.networkCheck(&quot;Alpha&quot;) %&gt;
 
-Loading, please wait...</tw-passagedata><tw-passagedata pid="213" name="Alpha" tags="menu" position="2000,575" size="200,100">This game is in an alpha state (v&lt;% print(window.story.version) %&gt;), all content is subject to change.
+Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" tags="menu" position="2000,575" size="200,100">This game is in an alpha state (v&lt;% print(window.story.version) %&gt;), all content is subject to change.
 
-[[Understood|Title Screen]]</tw-passagedata><tw-passagedata pid="214" name="C1P53V2" tags="variation" position="3150,12600" size="100,100">I look through the peephole, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { print(&quot;the weather has gotten a lot worse too&quot;) } else { print(&quot;the weather is terrible outside&quot;) } %&gt;, the rain is coming down heavy. There&#39;s a lot of walkers outside&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, even more than when I looked before&quot;) %&gt;, they&#39;re all focused on something in the middle of the street, it&#39;s difficult to see... There! A guy outside!
+[[Understood|Title Screen]]</tw-passagedata><tw-passagedata pid="213" name="C1P53V2" tags="variation" position="3150,12600" size="100,100">I look through the peephole, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { print(&quot;the weather has gotten a lot worse too&quot;) } else { print(&quot;the weather is terrible outside&quot;) } %&gt;, the rain is coming down heavy. There&#39;s a lot of walkers outside&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, even more than when I looked before&quot;) %&gt;, they&#39;re all focused on something in the middle of the street, it&#39;s difficult to see... There! A guy outside!
 
 &lt;i&gt;&quot;Get away from me!&quot;&lt;/i&gt;, he screams.
 
@@ -2476,7 +2516,7 @@ I step back from the peephole and look towards the end of the hallway. Lucy is s
 I look back towards the door.&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) print (&quot; I told Lucy people still help each other out, might be time to put my money where my mouth is.&quot;) %&gt; I could go out and help him... or, I can make sure nothing gets through this door.
 
 [[[Help the stranger]|C1P53V21]]
-[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="215" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) %&gt;
+[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="214" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) %&gt;
 
 Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she nods&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;, she understands what I&#39;m about to do. I unlock the door, open it, and step outside.
 
@@ -2497,7 +2537,7 @@ I look for the guy, he&#39;s in the middle of the street a couple of meters away
 They must be at least 20 or 30 walkers, no way we can take them all out, not without proper weapons. My options are limited here: maybe I can get his attention from here and have him come over here to the house, save having to fight my way to him; or, I can try and clear a path to him, and get his attention when I&#39;m closer to him.
 
 [[[Yell at him]|C1P53V211]]
-[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="216" name="C1P53V22" tags="variation" position="4175,12775" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;, false) %&gt;
+[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="215" name="C1P53V22" tags="variation" position="4175,12775" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;, false) %&gt;
 
 No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly nods her head at me&quot;) } %&gt;.
 
@@ -2513,7 +2553,7 @@ Shit! Now what?! It won&#39;t take him long to figure out it&#39;s not fucking l
 
 [[Go away!|C1P53V221]]&lt;br&gt;
 [[&lt;% print (window.story.tiffany()) %&gt; run!|C1P53V222]]&lt;br&gt;
-[[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="217" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;) %&gt;
+[[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;) %&gt;
 
 I don&#39;t want to have to go over to him, too dangerous.
 
@@ -2531,7 +2571,7 @@ Uh-oh, that drew some unwanted attention as well. A few walkers have started hea
 [[[Use Scissors]|C1P53V2111]]
 &lt;% } else { %&gt;
 [[[Look around for a weapon]|C1P53V2112]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="218" name="C1P53V212" tags="variation" position="3475,12900" size="100,100">I had better go over to him, no point yelling and drawing more walkers.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="217" name="C1P53V212" tags="variation" position="3475,12900" size="100,100">I had better go over to him, no point yelling and drawing more walkers.
 
 The path between him and I is actually pretty clear, most of the walkers are on the street, there&#39;s only one walker directly in my way. I start towards it, the rain is covering up the sound of my walking, so I&#39;ve got that going for me at least.
 
@@ -2547,15 +2587,15 @@ I take a breath, been a while since I&#39;ve had to do that. Its head has turned
 
 &lt;% } %&gt;
 
-[[[Keep heading towards the stranger]|C1P53V2121]]</tw-passagedata><tw-passagedata pid="219" name="C1P53V2111" tags="variation" position="3175,13050" size="100,100">I take a few steps forward towards the closest walker, then wait for him to get within arm&#39;s length. &lt;%= window.story.customRender(&quot;F: Scissor takedown&quot;) %&gt;
+[[[Keep heading towards the stranger]|C1P53V2121]]</tw-passagedata><tw-passagedata pid="218" name="C1P53V2111" tags="variation" position="3175,13050" size="100,100">I take a few steps forward towards the closest walker, then wait for him to get within arm&#39;s length. &lt;%= window.story.customRender(&quot;F: Scissor takedown&quot;) %&gt;
 
-&lt;%= window.story.customRender(&quot;F: Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="220" name="C1P53V2112" tags="variation" position="3325,13050" size="100,100">I look around for a weapon. There&#39;s nothing out here! Just a doormat and a potted plant.
+&lt;%= window.story.customRender(&quot;F: Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="219" name="C1P53V2112" tags="variation" position="3325,13050" size="100,100">I look around for a weapon. There&#39;s nothing out here! Just a doormat and a potted plant.
 
 Wait, the plant, that could do. I walk over to it and start to pick it up. It&#39;s got a fair bit of weight to it. I look back towards the walkers, the closest one is just a few meters from me. I brace myself, and then throw the potted plant right at it.
 
 The pot connects with the walker&#39;s head and shatters. The walker goes down like a sack of potatoes. 
 
-&lt;%= window.story.customRender(&quot;Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="221" name="F: Ow my leg" tags="floater" position="3675,13050" size="100,100">Fuck, I forgot about my leg, argh! That really hurt. I look up, there are still two walkers headed for me, shit. I take a step back- ARGH, shit, I&#39;ve properly buggered my leg: this isn&#39;t good.
+&lt;%= window.story.customRender(&quot;Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="220" name="F: Ow my leg" tags="floater" position="3675,13050" size="100,100">Fuck, I forgot about my leg, argh! That really hurt. I look up, there are still two walkers headed for me, shit. I take a step back- ARGH, shit, I&#39;ve properly buggered my leg: this isn&#39;t good.
 
 I start to hobble back towards the door, pain shooting up my leg; I look back over at the stranger. We make eye contact for a moment, he sees I&#39;m hurt and I&#39;m being followed. There&#39;s a moment of panic in his eyes, then he must have had an idea, because he smiles.
 
@@ -2567,7 +2607,7 @@ The walkers following me stop and slowly swing back towards him.
 
 He must be crazy, but it&#39;s working.
 
-[[[Open the door to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="222" name="C1P53V21111" tags="variation" position="3350,13200" size="100,100">I shuffle back to the front door and open it, I look back towards the stranger. He&#39;s made it most of the way over to me now.
+[[[Open the door to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="221" name="C1P53V21111" tags="variation" position="3350,13200" size="100,100">I shuffle back to the front door and open it, I look back towards the stranger. He&#39;s made it most of the way over to me now.
 
 &quot;Come on!&quot;, I shout at him.
 
@@ -2585,7 +2625,7 @@ We both stand there for a moment, soaking wet, and panting. I notice he&#39;s go
 
 Charles jumps a little, he must not have seen her; but he quickly recovers and gives a little slow-wave.
 
-[[[Turn towards Lucy]|C1P53V211111]]</tw-passagedata><tw-passagedata pid="223" name="F: Scissor takedown" tags="floater" position="3825,12925" size="100,200">I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally. The walker tumbles to its knees, its head bent over, perfectly within reach. I take the scissors and drive them deep into the back of its head, it makes a horrid gurgling sound, then flops to the ground. I go to pull the scissors out of its head, but they snap at the handle, leaving the sharp end in the walker&#39;s head. Figures.</tw-passagedata><tw-passagedata pid="224" name="C1P53V2121" tags="variation" position="3475,13050" size="100,100">I take a step towards the stranger- ARGH, shit! I forgot about my leg; I&#39;ve properly buggered it taking down that walker.
+[[[Turn towards Lucy]|C1P53V211111]]</tw-passagedata><tw-passagedata pid="222" name="F: Scissor takedown" tags="floater" position="3825,12925" size="100,200">I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally. The walker tumbles to its knees, its head bent over, perfectly within reach. I take the scissors and drive them deep into the back of its head, it makes a horrid gurgling sound, then flops to the ground. I go to pull the scissors out of its head, but they snap at the handle, leaving the sharp end in the walker&#39;s head. Figures.</tw-passagedata><tw-passagedata pid="223" name="C1P53V2121" tags="variation" position="3475,13050" size="100,100">I take a step towards the stranger- ARGH, shit! I forgot about my leg; I&#39;ve properly buggered it taking down that walker.
 
 I&#39;m not as close to him as I would have liked, but this will have to do.
 
@@ -2599,13 +2639,13 @@ He stops swinging his bat for a moment and looks at me, with the expression on h
 
 He nods and starts heading towards me, swinging as he goes.
 
-[[[Head back to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="225" name="C1P53V221" tags="variation" position="4025,12925" size="100,100">&quot;Go aw-&quot;, I start to say.
+[[[Head back to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="224" name="C1P53V221" tags="variation" position="4025,12925" size="100,100">&quot;Go aw-&quot;, I start to say.
 
-&lt;%= window.story.customRender(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="226" name="C1P53V222" tags="variation" position="4175,12925" size="100,100">&quot;&lt;% print(window.story.tiffany()) %&gt; ru-&quot;, I start to say.
+&lt;%= window.story.customRender(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="225" name="C1P53V222" tags="variation" position="4175,12925" size="100,100">&quot;&lt;% print(window.story.tiffany()) %&gt; ru-&quot;, I start to say.
 
-&lt;%= window.story.customRender(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="227" name="C1P53V223" tags="variation" position="4325,12925" size="100,100">I lean on the door-
+&lt;%= window.story.customRender(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="226" name="C1P53V223" tags="variation" position="4325,12925" size="100,100">I lean on the door-
 
-&lt;%= window.story.customRender(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="228" name="F: Door swings open" tags="floater" position="4525,12925" size="100,100">\*Crash\*
+&lt;%= window.story.customRender(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="227" name="F: Door swings open" tags="floater" position="4525,12925" size="100,100">\*Crash\*
 
 Suddenly, the door swings open, and a man comes crashing through. I get knocked to the ground by the door and land awkwardly on my bad leg. Argh, fuck&#39;s sake. The man lands on the stairs, soaked.
 
@@ -2617,27 +2657,27 @@ There&#39;s a moment of silence. His expression turns to one of anger.
 
 [[I don&#39;t know you!|C1P53V2211]]&lt;br&gt;
 [[You were going to get yourself killed!|C1P53V2212]]&lt;br&gt;
-[[I was going to! [Lie]|C1P53V2213]]</tw-passagedata><tw-passagedata pid="229" name="C1P53V2211" tags="variation" position="4025,13075" size="100,100">Who the hell does this guy think he is?
+[[I was going to! [Lie]|C1P53V2213]]</tw-passagedata><tw-passagedata pid="228" name="C1P53V2211" tags="variation" position="4025,13075" size="100,100">Who the hell does this guy think he is?
 
 &quot;I don&#39;t know you, and I don&#39;t owe you shit!&quot;, I snap back.
 
-&lt;%= window.story.customRender(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="230" name="C1P53V2212" tags="variation" position="4175,13075" size="100,100">Is this guy for real?
+&lt;%= window.story.customRender(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="229" name="C1P53V2212" tags="variation" position="4175,13075" size="100,100">Is this guy for real?
 
 &quot;You were carrying on like a headless chicken! You&#39;ve pulled every walker within a half-mile, and it looked like you were trying to get yourself killed!&quot;, I snap back at him.
 
-&lt;%= window.story.customRender(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="231" name="C1P53V2213" tags="variation" position="4325,13075" size="100,100">&quot;I was about to, OK?&quot;, I say; the look on his face says he&#39;s not convinced.
+&lt;%= window.story.customRender(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="230" name="C1P53V2213" tags="variation" position="4325,13075" size="100,100">&quot;I was about to, OK?&quot;, I say; the look on his face says he&#39;s not convinced.
 
-&lt;%= window.story.customRender(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="232" name="F: Not now" tags="floater" position="4525,13075" size="100,100">&quot;Hey! Now&#39;s not the time, we&#39;ve got bigger problems&quot;, Lucy says from somewhere behind me.
+&lt;%= window.story.customRender(&quot;F: Not now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="231" name="F: Not now" tags="floater" position="4525,13075" size="100,100">&quot;Hey! Now&#39;s not the time, we&#39;ve got bigger problems&quot;, Lucy says from somewhere behind me.
 
 The stranger looks startled, he must not have seen her. He takes a breath as if to say something, but doesn&#39;t. He shoots me a dirty look, then begins to stand up.
 
 What an asshole.
 
-[[[Stand up]|C1P53V22111]]</tw-passagedata><tw-passagedata pid="233" name="C1P53V22111" tags="variation" position="4175,13225" size="100,100">I get up off the floor awkwardly, getting knocked down really did a number on my leg.
+[[[Stand up]|C1P53V22111]]</tw-passagedata><tw-passagedata pid="232" name="C1P53V22111" tags="variation" position="4175,13225" size="100,100">I get up off the floor awkwardly, getting knocked down really did a number on my leg.
 
-&lt;%= window.story.customRender(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="234" name="C1P53V211111" tags="variation" position="3350,13350" size="100,100">I awkwardly spin towards Lucy, I really did a number on my leg.
+&lt;%= window.story.customRender(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="233" name="C1P53V211111" tags="variation" position="3350,13350" size="100,100">I awkwardly spin towards Lucy, I really did a number on my leg.
 
-&lt;%= window.story.customRender(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="235" name="F: What we need to do now" tags="floater" position="3825,13500" size="100,100">&quot;Alright, what we need to do now is-&quot;, I begin to say.
+&lt;%= window.story.customRender(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="234" name="F: What we need to do now" tags="floater" position="3825,13500" size="100,100">&quot;Alright, what we need to do now is-&quot;, I begin to say.
 
 \*Crash\*
 
@@ -2647,7 +2687,7 @@ A hand appears through one of the boarded-up windows in the hallway, between the
 
 [[&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles,&quot;) } else { print(&quot;The&quot;) } %&gt; Bat!|C1P54V21]]&lt;br&gt;
 [[Upstairs, quickly!|C1P54V22]]&lt;br&gt;
-[[[Run to the kitchen]|C1P54V23]]</tw-passagedata><tw-passagedata pid="236" name="C1P54V21" tags="variation" position="3675,13650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
+[[[Run to the kitchen]|C1P54V23]]</tw-passagedata><tw-passagedata pid="235" name="C1P54V21" tags="variation" position="3675,13650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
 &quot;Charles, the bat!&quot;, I turn and shout.
 &lt;% } else { %&gt;
 &quot;The bat!&quot;, I turn and shout.
@@ -2663,7 +2703,7 @@ I drop the bat and look up towards the kitchen to meet Lucy&#39;s gaze.
 
 Lucy grabs &lt;% print(window.story.tiffany()) %&gt; from somewhere beside her and starts booking it down the hallway towards me.
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="237" name="C1P54V22" tags="variation" position="3825,13650" size="100,100">&quot;Upstairs, quickly!&quot;, I shout.
+[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="236" name="C1P54V22" tags="variation" position="3825,13650" size="100,100">&quot;Upstairs, quickly!&quot;, I shout.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;The stranger&quot;) } %&gt; doesn&#39;t need to be told twice, he scrambles to the stairs and starts going up.
 
@@ -2675,7 +2715,7 @@ I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; and
 
 I look back at Lucy again, she has her knife out now. She quickly stabs the arm several times, then takes a swipe at it. The arm comes clean off.
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="238" name="C1P54V23" tags="variation" position="3975,13650" size="100,100">Without thinking I bolt for the kitchen, pushing through the pain in my leg.
+[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="237" name="C1P54V23" tags="variation" position="3975,13650" size="100,100">Without thinking I bolt for the kitchen, pushing through the pain in my leg.
 
 &quot;No!&quot;, Lucy shouts. I stop running.
 
@@ -2685,7 +2725,7 @@ I look back at Lucy again, she has her knife out now. She quickly stabs the arm 
 
 I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; in one hand, her knife in the other, and is head down the hallway towards me. As she passes the window, she makes one clean swipe at the hand and it comes clean off. Impressive.
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="239" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;% window.story.delayedText(20 * 1000) %&gt;
+[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="238" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;% window.story.delayedText(20 * 1000) %&gt;
 
 I head for the stairs, %Tiffany% and Lucy right behind me. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) || window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { print(&quot;No sign of Charles, he must be upstairs already.&quot;) } else if (window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { &quot;I glance over at the stranger, he has two walkers on him now; his face is contorted, but totally silent... poor guy.&quot; } %&gt;
 
@@ -2716,7 +2756,7 @@ The walkers are starting to get up. I look down at %Tiffany%, she&#39;s frozen i
 [[[Try to help Lucy]|C1P55V1]]
 [[[Grab %Tiffany% and go]|C1P55V2]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="240" name="C1P55V1" tags="variation" position="3000,14000" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;) %&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="239" name="C1P55V1" tags="variation" position="3000,14000" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;) %&gt;
 
 Fuck that, I can&#39;t just leave her!
 
@@ -2732,7 +2772,7 @@ More walkers are coming through the open doorway now. I take one last look at Lu
 
 The look on her face will be burned into my brain for as long as I live. Her blue eyes staring, unblinking, tears budding in the corners of her eyes, her face slowly going pale. She won&#39;t forget this.
 
-[[[Grab %Tiffany%]|C1P55V11]]</tw-passagedata><tw-passagedata pid="241" name="C1P55V2" tags="variation" position="3150,14075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;, false) %&gt;
+[[[Grab %Tiffany%]|C1P55V11]]</tw-passagedata><tw-passagedata pid="240" name="C1P55V2" tags="variation" position="3150,14075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;, false) %&gt;
 
 I go down the stairs towards %Tiffany% and grab her by the hand.
 
@@ -2744,7 +2784,7 @@ I go down the stairs towards %Tiffany% and grab her by the hand.
 
 &quot;%Tiffany%, move!&quot;, I shout, continuing to pull her up the stairs.
 
-[[[Go up the stairs]|C1P56]]</tw-passagedata><tw-passagedata pid="242" name="C1P55V11" tags="variation" position="3000,14150" size="100,100">I go up the stairs towards %Tiffany% and grab her by the hand.
+[[[Go up the stairs]|C1P56]]</tw-passagedata><tw-passagedata pid="241" name="C1P55V11" tags="variation" position="3000,14150" size="100,100">I go up the stairs towards %Tiffany% and grab her by the hand.
 
 &quot;Come on %Tiffany%, there&#39;s nothing we can do for her&quot;, I say, pulling her up the stairs.
 
@@ -2752,7 +2792,7 @@ She doesn&#39;t say a word, she must be in shock... I guess I am too for that ma
 
 &quot;Ugh, ugh...&quot;, Lucy gurgles somewhere behind me. I don&#39;t look back.
 
-[[[Go up the stairs]|C1P56]]</tw-passagedata><tw-passagedata pid="243" name="C1P56" tags="page save" position="3075,14300" size="100,100">We climb to the top of the stairs... Why do people keep dying around me? Am I just a death maganet? Ugh, no time for this now, we need to get out of here.
+[[[Go up the stairs]|C1P56]]</tw-passagedata><tw-passagedata pid="242" name="C1P56" tags="page save" position="3075,14300" size="100,100">We climb to the top of the stairs... Why do people keep dying around me? Am I just a death maganet? Ugh, no time for this now, we need to get out of here.
 
 I start to look around, we are in another hallway, there are three doors along the sides and some kind of open room at the end.
 
@@ -2764,7 +2804,7 @@ I start to look around, we are in another hallway, there are three doors along t
 
 [[%Tiffany%, she&#39;s dead|C1P56V1]]&lt;br&gt;
 [[Keep your voice down!|C1P56V2]]&lt;br&gt;
-[[That&#39;s not your mom anymore...|C1P56V3]]</tw-passagedata><tw-passagedata pid="244" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&quot;Hey, I got you something&quot;, I say to %Tiffany%, as I get the spinning top out of my pocket.
+[[That&#39;s not your mom anymore...|C1P56V3]]</tw-passagedata><tw-passagedata pid="243" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&quot;Hey, I got you something&quot;, I say to %Tiffany%, as I get the spinning top out of my pocket.
 
 &quot;You did?&quot;, she replies, her eyes lighting up as if it was Christmas.
 
@@ -2788,23 +2828,23 @@ She does, and the spinning top spins.
 
 We both sit and watch it for a moment, till it spins itself out.
 
-&lt;%= window.story.customRender(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="245" name="F: Tiff Breakfast Talk Options" tags="floater" position="3650,10675" size="100,200">[[Where&#39;s your dad?|C1P44V1]]&lt;br&gt;
+&lt;%= window.story.customRender(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="244" name="F: Tiff Breakfast Talk Options" tags="floater" position="3650,10675" size="100,200">[[Where&#39;s your dad?|C1P44V1]]&lt;br&gt;
 [[Where have you guys been staying?|C1P44V2]]&lt;br&gt;
 [[How many walkers have you killed?|C1P44V3]]&lt;br&gt;
 
-[[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="246" name="C1P53V111" tags="variation" position="1975,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
+[[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="245" name="C1P53V111" tags="variation" position="1975,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
 
 She slowly nods her head, but I think she&#39;s only doing that for my benefit...
 
-&lt;%= window.story.customRender(&quot;F: Clap o&#39; thunder&quot;) %&gt;</tw-passagedata><tw-passagedata pid="247" name="C1P53V112" tags="variation" position="2125,12900" size="100,100">I really have no idea what to say to her right now that would make her feel better.
+&lt;%= window.story.customRender(&quot;F: Clap o&#39; thunder&quot;) %&gt;</tw-passagedata><tw-passagedata pid="246" name="C1P53V112" tags="variation" position="2125,12900" size="100,100">I really have no idea what to say to her right now that would make her feel better.
 
-&lt;%= window.story.customRender(&quot;F: Clap o&#39; thunder&quot;) %&gt;</tw-passagedata><tw-passagedata pid="248" name="C1P53V113" tags="variation" position="2275,12900" size="100,100">Maybe she&#39;ll feel better if she holds my hand, I don&#39;t know...
+&lt;%= window.story.customRender(&quot;F: Clap o&#39; thunder&quot;) %&gt;</tw-passagedata><tw-passagedata pid="247" name="C1P53V113" tags="variation" position="2275,12900" size="100,100">Maybe she&#39;ll feel better if she holds my hand, I don&#39;t know...
 
 I extend my arm out in her direction, she looks up at me, keeps still for a moment, then jumps out of her chair. She rushes over and wraps both her little arms around my waist.
 
 Woah, OK, that&#39;s not what I was going for, but sure, that works. I lower my arm back down and hold her.
 
-&lt;%= window.story.customRender(&quot;F: Clap o&#39; thunder&quot;) %&gt;</tw-passagedata><tw-passagedata pid="249" name="F: Clap o&#39; thunder" tags="floater" position="1775,12900" size="100,100">Nothing happens for a few moments.
+&lt;%= window.story.customRender(&quot;F: Clap o&#39; thunder&quot;) %&gt;</tw-passagedata><tw-passagedata pid="248" name="F: Clap o&#39; thunder" tags="floater" position="1775,12900" size="100,100">Nothing happens for a few moments.
 
 \*Bang\*
 
@@ -2820,7 +2860,7 @@ This time I jump, as the front door swings open, and Lucy comes crashing through
 
 She moves to the door, looking ready to close it. Suddenly, a man comes bolting through and crashes into the stairs. Lucy kicks the door closed behind him.
 
-[[[Look at the stranger]|C1P54V11]]</tw-passagedata><tw-passagedata pid="250" name="C1P54V11" tags="variation" position="2125,13050" size="100,100">I look at the stranger slumped on the stairs, panting. He looks pretty tall but kinda skinny, he&#39;s wearing a trench coat or something, got light green eyes, and long black hair in a ponytail; he&#39;s soaking wet. I also notice a bat lying next to him, it&#39;s covered in walker bits.
+[[[Look at the stranger]|C1P54V11]]</tw-passagedata><tw-passagedata pid="249" name="C1P54V11" tags="variation" position="2125,13050" size="100,100">I look at the stranger slumped on the stairs, panting. He looks pretty tall but kinda skinny, he&#39;s wearing a trench coat or something, got light green eyes, and long black hair in a ponytail; he&#39;s soaking wet. I also notice a bat lying next to him, it&#39;s covered in walker bits.
 
 &quot;Thanks...&quot;, he manages to say, between breaths.
 
@@ -2834,19 +2874,19 @@ Charles jumps a little, he must not have seen me; but he quickly recovers and gi
 
 [[We need to hide|C1P54V111]]&lt;br&gt;
 [[We need to get out of here|C1P54V112]]&lt;br&gt;
-[[We need to fortify this place|C1P54V113]]</tw-passagedata><tw-passagedata pid="251" name="C1P54V111" tags="variation" position="1975,13200" size="100,100">&quot;We need to hide, and quickly. Those walkers will be on us any minute.&quot;, I say.
+[[We need to fortify this place|C1P54V113]]</tw-passagedata><tw-passagedata pid="250" name="C1P54V111" tags="variation" position="1975,13200" size="100,100">&quot;We need to hide, and quickly. Those walkers will be on us any minute.&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="252" name="C1P53V122" tags="variation" position="2825,12900" size="100,100">I don&#39;t know how to explain to her Lucy isn&#39;t helping whoever&#39;s outside...
+&lt;%= window.story.customRender(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="251" name="C1P53V122" tags="variation" position="2825,12900" size="100,100">I don&#39;t know how to explain to her Lucy isn&#39;t helping whoever&#39;s outside...
 
-&lt;%= window.story.customRender(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="253" name="C1P53V121" tags="variation" position="2675,12900" size="100,100">&quot;She&#39;s making sure we stay safe, OK?&quot;, I reply, trying to sound reassuring.
+&lt;%= window.story.customRender(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="252" name="C1P53V121" tags="variation" position="2675,12900" size="100,100">&quot;She&#39;s making sure we stay safe, OK?&quot;, I reply, trying to sound reassuring.
 
 She slowly nods her head, but I think she&#39;s convinced.
 
-&lt;%= window.story.customRender(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="254" name="C1P53V123" tags="variation" position="2975,12900" size="100,100">&quot;She&#39;s just, um, helping someone outside, OK&quot;?, I say.
+&lt;%= window.story.customRender(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="253" name="C1P53V123" tags="variation" position="2975,12900" size="100,100">&quot;She&#39;s just, um, helping someone outside, OK&quot;?, I say.
 
 I look back down the hallway, Lucy&#39;s looking at me, an uneasy expression on her face, but she quickly gets back to the door.
 
-&lt;%= window.story.customRender(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="255" name="F: Let me in!" tags="floater" position="2475,12900" size="100,100">\*Bang, bang, bang\*
+&lt;%= window.story.customRender(&quot;F: Let me in!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="254" name="F: Let me in!" tags="floater" position="2475,12900" size="100,100">\*Bang, bang, bang\*
 
 That sounded like the front door.
 
@@ -2860,7 +2900,7 @@ Oh fuck, what is she going to do?
 
 [[&lt;% print (window.story.tiffany()) %&gt; run!|C1P54V12]]&lt;br&gt;
 [[Lucy, be careful!|C1P54V12]]&lt;br&gt;
-[[Lucy, don&#39;t do it!|C1P54V12]]</tw-passagedata><tw-passagedata pid="256" name="C1P54V12" tags="variation" position="2825,13050" size="100,100">I take a breath to speak-
+[[Lucy, don&#39;t do it!|C1P54V12]]</tw-passagedata><tw-passagedata pid="255" name="C1P54V12" tags="variation" position="2825,13050" size="100,100">I take a breath to speak-
 
 \*Crash\*
 
@@ -2876,13 +2916,13 @@ There&#39;s a moment of silence. His expression turns to one of anger.
 
 [[...|C1P54V1212]]&lt;br&gt;
 [[Lucy stop!|C1P54V1211]]&lt;br&gt;
-[[Watch out for the bat!|C1P54V1213]]</tw-passagedata><tw-passagedata pid="257" name="C1P54V1211" tags="variation" position="2675,13200" size="100,100">&quot;Lucy stop!&quot;, I shout at her. What the hell is she doing?!
+[[Watch out for the bat!|C1P54V1213]]</tw-passagedata><tw-passagedata pid="256" name="C1P54V1211" tags="variation" position="2675,13200" size="100,100">&quot;Lucy stop!&quot;, I shout at her. What the hell is she doing?!
 
-&lt;%= window.story.customRender(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="258" name="C1P54V1212" tags="variation" position="2825,13200" size="100,100">I don&#39;t know what the hell she&#39;s doing, but now is not the time to interrupt.
+&lt;%= window.story.customRender(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="257" name="C1P54V1212" tags="variation" position="2825,13200" size="100,100">I don&#39;t know what the hell she&#39;s doing, but now is not the time to interrupt.
 
-&lt;%= window.story.customRender(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="259" name="C1P54V1213" tags="variation" position="2975,13200" size="100,100">&quot;Watch out for the bat!&quot;, I shout.
+&lt;%= window.story.customRender(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="258" name="C1P54V1213" tags="variation" position="2975,13200" size="100,100">&quot;Watch out for the bat!&quot;, I shout.
 
-&lt;%= window.story.customRender(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="260" name="F: wtf" tags="floater" position="2475,13200" size="100,100">&quot;What the- argh, FUCK, are you doing?!&quot;, the man shouts, while tumbling around with Lucy.
+&lt;%= window.story.customRender(&quot;F: wtf&quot;) %&gt;</tw-passagedata><tw-passagedata pid="259" name="F: wtf" tags="floater" position="2475,13200" size="100,100">&quot;What the- argh, FUCK, are you doing?!&quot;, the man shouts, while tumbling around with Lucy.
 
 Lucy has the knife right near his throat, but the man has his arms up in front of him, she can&#39;t push it close enough to get him- Suddenly the man cries out in pain: Lucy dropped the knife from one hand, caught it with the other, and took a swipe the guy&#39;s arm. Where did she learn to do that...
 
@@ -2892,7 +2932,7 @@ Lucy backs off, the stranger, still on the floor, crawling back down the hallway
 
 Lucy takes a defensive stance, staying between us and the man.
 
-[[[Look at %Tiffany%]|C1P54V12111]]</tw-passagedata><tw-passagedata pid="261" name="C1P54V12111" tags="variation" position="2825,13350" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;, false) %&gt;
+[[[Look at %Tiffany%]|C1P54V12111]]</tw-passagedata><tw-passagedata pid="260" name="C1P54V12111" tags="variation" position="2825,13350" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;, false) %&gt;
 
 I look over at %Tiffany%, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified. I take a step towards her-
 
@@ -2910,7 +2950,7 @@ A hand has appeared through one of the boarded-up windows in the hallway and gra
 
 Lucy starts running down the hallway towards us.
 
-&lt;%= window.story.customRender(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="262" name="F: You&#39;re heavy" tags="floater" position="2475,13350" size="100,100">&quot;Come on %Tiffany%, we need to move&quot;, I say as I get up to her.
+&lt;%= window.story.customRender(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="261" name="F: You&#39;re heavy" tags="floater" position="2475,13350" size="100,100">&quot;Come on %Tiffany%, we need to move&quot;, I say as I get up to her.
 
 She looks up at me, scared, but doesn&#39;t move.
 
@@ -2920,7 +2960,7 @@ We don&#39;t have time for this, I stretch my arms out toward her and beckon. Sh
 
 I balance her properly so she&#39;s sitting on my hips, as she wraps her hands around my neck to hold herself. I take a step towards the door- oof, I forgot about my leg, this could be interesting.
 
-[[[Head down the hallway]|C1P54V11111]]</tw-passagedata><tw-passagedata pid="263" name="C1P54V11111" tags="variation" position="2475,13500" size="100,100">I get to the doorway and start down the hallway, %Tiffany% in tow. Lucy and I exchange brief glances: she looks grateful.
+[[[Head down the hallway]|C1P54V11111]]</tw-passagedata><tw-passagedata pid="262" name="C1P54V11111" tags="variation" position="2475,13500" size="100,100">I get to the doorway and start down the hallway, %Tiffany% in tow. Lucy and I exchange brief glances: she looks grateful.
 
 I&#39;m halfway down the hallway, Lucy right behind me-
 
@@ -2940,15 +2980,15 @@ Lucy appears with her knife, takes one swipe at the hand, and detaches it from t
 
 She&#39;s right, this is not a good spot to be in. I manage to get on my knees, pain shooting up my leg, but I push through it and manage to stand.
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="264" name="C1P54V112" tags="variation" position="2125,13200" size="100,100">&quot;We need to get out of, fast. Those walkers won&#39;t take long to get in here.&quot;, I say.
+[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="263" name="C1P54V112" tags="variation" position="2125,13200" size="100,100">&quot;We need to get out of, fast. Those walkers won&#39;t take long to get in here.&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="265" name="C1P54V113" tags="variation" position="2275,13200" size="100,100">&quot;We need to fortify this place, ASAP. Those walkers will make quick work of those shitty windows.&quot;, I say.
+&lt;%= window.story.customRender(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="264" name="C1P54V113" tags="variation" position="2275,13200" size="100,100">&quot;We need to fortify this place, ASAP. Those walkers will make quick work of those shitty windows.&quot;, I say.
 
-&lt;%= window.story.customRender(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="266" name="C1P54V1111" tags="variation" position="2125,13350" size="100,100">I look over at %Tiffany%, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified.
+&lt;%= window.story.customRender(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="265" name="C1P54V1111" tags="variation" position="2125,13350" size="100,100">I look over at %Tiffany%, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified.
 
 &quot;I&#39;m coming&quot;, I hear Lucy shout from the hallway.
 
-&lt;%= window.story.customRender(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="267" name="F: Smash" tags="floater" position="1775,13200" size="100,100">Charles looks up.
+&lt;%= window.story.customRender(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="266" name="F: Smash" tags="floater" position="1775,13200" size="100,100">Charles looks up.
 
 &quot;She&#39;s right&quot;, he says.
 
@@ -2966,11 +3006,11 @@ Lucy moves towards him to help.
 
 We need to get going, now.
 
-[[[Get %Tiffany%]|C1P54V1111]]</tw-passagedata><tw-passagedata pid="268" name="Global Settings" tags="menu" position="2250,725" size="200,100">&lt;img.title-image&gt;
+[[[Get %Tiffany%]|C1P54V1111]]</tw-passagedata><tw-passagedata pid="267" name="Global Settings" tags="menu" position="2250,725" size="200,100">&lt;img.title-image&gt;
 
 &lt;%= window.story.customRender(&quot;Settings&quot;) %&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="269" name="Extras" tags="menu" position="1625,725" size="200,100">&lt;img.title-image&gt;
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="268" name="Extras" tags="menu" position="1625,725" size="200,100">&lt;img.title-image&gt;
 
 &lt;div#title-button&gt;
 [[Artwork|Artwork]]
@@ -2979,32 +3019,32 @@ We need to get going, now.
 &lt;a href=&quot;https://github.com/cm8263/Purpose&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;
 &lt;/div&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="270" name="Artwork" tags="menu" position="1625,875" size="200,100">&lt;img.title-image&gt;
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="269" name="Artwork" tags="menu" position="1625,875" size="200,100">&lt;img.title-image&gt;
 
 &lt;div#title-button&gt;
 [[Sarah|Sarah]]
 [[Tiffany|Tiffany]]
 &lt;/div&gt;
 
-[[Back|Extras]]</tw-passagedata><tw-passagedata pid="271" name="Sarah" tags="menu" position="1500,1025" size="200,100">&lt;img.sarah-image&gt;
+[[Back|Extras]]</tw-passagedata><tw-passagedata pid="270" name="Sarah" tags="menu" position="1500,1025" size="200,100">&lt;img.sarah-image&gt;
 
 Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
 &lt;a href=&quot;https://www.artstation.com/darkcan&quot; target=&quot;_blank&quot;&gt;https://www.artstation.com/darkcan&lt;/a&gt;
 
-[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="272" name="Tiffany" tags="menu" position="1750,1025" size="200,100">&lt;img.tiffany-image&gt;
+[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="271" name="Tiffany" tags="menu" position="1750,1025" size="200,100">&lt;img.tiffany-image&gt;
 
 Daniel &quot;DanDarkDesigns&quot; Ayala&lt;br&gt;
 &lt;a href=&quot;https://www.artstation.com/darkcan&quot; target=&quot;_blank&quot;&gt;https://www.artstation.com/darkcan&lt;/a&gt;
 
-[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="273" name="C1P56V1" tags="variation" position="2925,14450" size="100,100">&quot;%Tiffany%, listen to me: I know you don&#39;t want to accept this right now, but Sarah is gone, and unless you want...&quot;, I start to say; I was going to say unless you want to join her, but I don&#39;t want to give her any ideas.
+[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="272" name="C1P56V1" tags="variation" position="2925,14450" size="100,100">&quot;%Tiffany%, listen to me: I know you don&#39;t want to accept this right now, but Sarah is gone, and unless you want...&quot;, I start to say; I was going to say unless you want to join her, but I don&#39;t want to give her any ideas.
 
 &quot;...unless you want to waste the sacrifice she made, &lt;i&gt;for you&lt;/i&gt;, we need to go, now.&quot;, I finish.
 
-&lt;%= window.story.customRender(&quot;F: Softening the blow&quot;) %&gt;</tw-passagedata><tw-passagedata pid="274" name="C1P56V2" tags="variation" position="3075,14450" size="100,100">&quot;Keep your voice down %Tiffany%! Those walkers are going to find their way up here soon enough, no need to encourage them.&quot;, I remark.
+&lt;%= window.story.customRender(&quot;F: Softening the blow&quot;) %&gt;</tw-passagedata><tw-passagedata pid="273" name="C1P56V2" tags="variation" position="3075,14450" size="100,100">&quot;Keep your voice down %Tiffany%! Those walkers are going to find their way up here soon enough, no need to encourage them.&quot;, I remark.
 
-&lt;%= window.story.customRender(&quot;F: Softening the blow&quot;) %&gt;</tw-passagedata><tw-passagedata pid="275" name="C1P56V3" tags="variation" position="3225,14450" size="100,100">&quot;%Tiffany%, that&#39;s... that&#39;s not your mom anymore&quot;, I say, looking at her.
+&lt;%= window.story.customRender(&quot;F: Softening the blow&quot;) %&gt;</tw-passagedata><tw-passagedata pid="274" name="C1P56V3" tags="variation" position="3225,14450" size="100,100">&quot;%Tiffany%, that&#39;s... that&#39;s not your mom anymore&quot;, I say, looking at her.
 
-&lt;%= window.story.customRender(&quot;F: Softening the blow&quot;) %&gt;</tw-passagedata><tw-passagedata pid="276" name="F: Softening the blow" tags="floater" position="3425,14450" size="100,100">Tears run down her small face, she doesn&#39;t reply.
+&lt;%= window.story.customRender(&quot;F: Softening the blow&quot;) %&gt;</tw-passagedata><tw-passagedata pid="275" name="F: Softening the blow" tags="floater" position="3425,14450" size="100,100">Tears run down her small face, she doesn&#39;t reply.
 
 &quot;We will mourn her later, I promise&quot;, I add, trying to soften the blow.
 
@@ -3014,7 +3054,7 @@ I look behind me to the stairs, I can hear the walkers making their way up.
 
 Time to move.
 
-[[[Look around the hallway]|C1P57]]</tw-passagedata><tw-passagedata pid="277" name="C1P57" tags="page" position="3075,14600" size="100,100">Pulling %Tiffany% along behind me, I start down the hallway. I stick my head through the first doorway: it looks like an office, it has a desk, a computer, some books, nothing else, and nothing useful.
+[[[Look around the hallway]|C1P57]]</tw-passagedata><tw-passagedata pid="276" name="C1P57" tags="page" position="3075,14600" size="100,100">Pulling %Tiffany% along behind me, I start down the hallway. I stick my head through the first doorway: it looks like an office, it has a desk, a computer, some books, nothing else, and nothing useful.
 
 I hobble down to the next door, this one is a bedroom; it has a bed frame but no mattress, a wardrobe, and a cupboard. The cupboard door is open, I can see a few clothes hanging, but no weapons or tools to help get us out of here.
 
@@ -3022,7 +3062,7 @@ I head for the final door, it&#39;s closed. I open the door, another bedroom; tw
 
 I look down at %Tiffany%, she still has tears running down her face, but she looks otherwise emotionless. I don&#39;t know if that&#39;s good or bad considering the circumstances.
 
-[[[Look at the backpacks]|C1P58]]</tw-passagedata><tw-passagedata pid="278" name="C1P58" tags="page" position="3075,14750" size="100,100">I step into the room and go over to the backpacks.
+[[[Look at the backpacks]|C1P58]]</tw-passagedata><tw-passagedata pid="277" name="C1P58" tags="page" position="3075,14750" size="100,100">I step into the room and go over to the backpacks.
 
 One is a black sling backpack, with a single strap that connects with a clip in the middle; must have been Sarah&#39;s.
 
@@ -3038,7 +3078,7 @@ I spin her around, as gently as I can, and put the backpack on her. %Tiffany% ac
 
 I quickly look around for anything else useful: there&#39;s nothing.
 
-[[[Leave the room]|C1P58A1]]</tw-passagedata><tw-passagedata pid="279" name="READ ME - Yes, you!" tags="info" position="3875,325" size="200,200">Hello!
+[[[Leave the room]|C1P58A1]]</tw-passagedata><tw-passagedata pid="278" name="READ ME - Yes, you!" tags="info" position="3875,325" size="200,200">Hello!
 
 Thanks for poking around the source code. For starters, if you&#39;re looking at this in your browser, or you&#39;ve downloaded the HTML file from itch.io, the source code is freely available on GitHub, so go get it from there instead: https://github.com/cm8263/Purpose
 
@@ -3046,9 +3086,9 @@ It goes without saying that there may be spoilers in here, either in passages yo
 
 All that out of the way, have fun, and feel free to leave PRs on GitHub with improvements!
 
-- Christopher</tw-passagedata><tw-passagedata pid="280" name="C1P58V11" tags="variation" position="3000,15050" size="100,100">That stupid soap bar, perfect! I take it out of my pocket, still hard as a rock: just what I need.
+- Christopher</tw-passagedata><tw-passagedata pid="279" name="C1P58V11" tags="variation" position="3000,15050" size="100,100">That stupid soap bar, perfect! I take it out of my pocket, still hard as a rock: just what I need.
 
-&lt;%= window.story.customRender(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="281" name="C1P59V1" tags="variation" position="3075,15200" size="100,100">I step out onto the patio roof behind %Tiffany%, it&#39;s bucketing rain out here, I can barely see, and it&#39;s pretty windy too. I shield my eyes from the rain and look down at the garden, it&#39;s clear of walkers, good.
+&lt;%= window.story.customRender(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="280" name="C1P59V1" tags="variation" position="3075,15200" size="100,100">I step out onto the patio roof behind %Tiffany%, it&#39;s bucketing rain out here, I can barely see, and it&#39;s pretty windy too. I shield my eyes from the rain and look down at the garden, it&#39;s clear of walkers, good.
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
@@ -3070,13 +3110,13 @@ We step over towards the edge of the roof, the stairs leading up to the patio di
 
 [[You need to|C1P59V11]]&lt;br&gt;
 [[Yes you can, it&#39;s not so bad|C1P59V12]]&lt;br&gt;
-[[%Tiffany%, less talking, more doing|C1P59V13]]</tw-passagedata><tw-passagedata pid="282" name="C1P59V11" tags="variation" position="2925,15350" size="100,100">&quot;I know this is scary %Tiffany%, but you need to, or else the walkers are going to get us&quot;, I state.
+[[%Tiffany%, less talking, more doing|C1P59V13]]</tw-passagedata><tw-passagedata pid="281" name="C1P59V11" tags="variation" position="2925,15350" size="100,100">&quot;I know this is scary %Tiffany%, but you need to, or else the walkers are going to get us&quot;, I state.
 
-&lt;%= window.story.customRender(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="283" name="C1P59V12" tags="variation" position="3075,15350" size="100,100">&quot;Yes you can %Tiffany%, it&#39;s not as bad as it looks, I promise&quot;, I say reassuringly.
+&lt;%= window.story.customRender(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="282" name="C1P59V12" tags="variation" position="3075,15350" size="100,100">&quot;Yes you can %Tiffany%, it&#39;s not as bad as it looks, I promise&quot;, I say reassuringly.
 
-&lt;%= window.story.customRender(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="284" name="C1P59V13" tags="variation" position="3225,15350" size="100,100">&quot;Less talking, more doing %Tiffany%. The sooner you start, the sooner you finish&quot; I state.
+&lt;%= window.story.customRender(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="283" name="C1P59V13" tags="variation" position="3225,15350" size="100,100">&quot;Less talking, more doing %Tiffany%. The sooner you start, the sooner you finish&quot; I state.
 
-&lt;%= window.story.customRender(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="285" name="F: Lowering" tags="floater" position="3425,15350" size="100,100">She looks away from me and down at the edge of the roof, then slowly nods her head.
+&lt;%= window.story.customRender(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="284" name="F: Lowering" tags="floater" position="3425,15350" size="100,100">She looks away from me and down at the edge of the roof, then slowly nods her head.
 
 &quot;Ok, good. &lt;i&gt;Carefully&lt;/i&gt; climb off the edge, then hang onto it, and I&#39;ll grab you, OK?&quot;, I say. %Tiffany% precariously lowers herself off the roof.
 
@@ -3104,7 +3144,7 @@ I shoot him a dirty look, then turn my focus back to %Tiffany%.
 
 &lt;% } %&gt;
 
-[[[Lower %Tiffany% down]|C1P60]]</tw-passagedata><tw-passagedata pid="286" name="C1P60" tags="page" position="3075,15500" size="100,100">I start to lower %Tiffany% down, crawling closer to the edge to get her further down. I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.
+[[[Lower %Tiffany% down]|C1P60]]</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">I start to lower %Tiffany% down, crawling closer to the edge to get her further down. I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.
 
 &quot;That&#39;s as far as I can go %Tiffany%&quot;, I say, as she looks back up at me, hanging over the stairs.
 
@@ -3146,7 +3186,7 @@ I let out a breath, alright, now to figure out how to get me down there.
 
 &lt;% } %&gt;
 
-[[[Stand up]|C1P61]]</tw-passagedata><tw-passagedata pid="287" name="C1P61" tags="page" position="3075,15650" size="100,100">&lt;% window.story.delayedText(15 * 1000) %&gt;
+[[[Stand up]|C1P61]]</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page" position="3075,15650" size="100,100">&lt;% window.story.delayedText(15 * 1000) %&gt;
 
 I get back up and step away from the edge.
 
@@ -3180,13 +3220,13 @@ I feel the strangest sense of relaxation... the air and rain rushing over me as 
  
 [[[Hit the ground]|C1P61R1]] 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="289" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
 
 I&#39;m laying on my side, and there&#39;s someone near my face, again... Hopefully it&#39;s %Tiffany% here to offer me breakfast again... that would be nice...
 
 I squint, my vision is blurry. There&#39;s a face, but... it has no eyes?
 
-[[[Rub own eyes]|C1P63]]</tw-passagedata><tw-passagedata pid="290" name="C1P63" tags="page" position="3075,16100" size="100,100">I move my arm to my face- AH, oh the pain! That was enough to jolt me properly awake. I&#39;m on the ground, laying in large puddle, face to face with a walker who&#39;s crawling right towards me.
+[[[Rub own eyes]|C1P63]]</tw-passagedata><tw-passagedata pid="289" name="C1P63" tags="page" position="3075,16100" size="100,100">I move my arm to my face- AH, oh the pain! That was enough to jolt me properly awake. I&#39;m on the ground, laying in large puddle, face to face with a walker who&#39;s crawling right towards me.
 
 I need to get up. I roll onto my back, pain shoots up my neck, holy crap does it hurt. I try to push myself up, but the pain in my arms is too great, I collapse back down again. I turn my head towards the walker- it&#39;s lunging at me!
 
@@ -3220,9 +3260,9 @@ Reluctantly she steps out from behind the tree and approaches.
 [[Push it off!|C1P63V1]]&lt;br&gt;
 [[Use the knife!|C1P63V2]]&lt;br&gt;
 [[Get me the knife!|C1P63V3]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="291" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">I go over to the table, rip the net off one of the clamps, then remove the clamp from the table; it&#39;s got some weight to it: perfect. I walk back over to the window.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="290" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">I go over to the table, rip the net off one of the clamps, then remove the clamp from the table; it&#39;s got some weight to it: perfect. I walk back over to the window.
 
-&lt;%= window.story.customRender(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="292" name="F: The window shatters" tags="floater" position="3350,15050" size="100,100">&quot;Step back %Tiffany%&quot;, I say. She shuffles back a few steps, not far enough for my liking; I step in front of her. I take aim, and swing, throwing it at the window.
+&lt;%= window.story.customRender(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="291" name="F: The window shatters" tags="floater" position="3350,15050" size="100,100">&quot;Step back %Tiffany%&quot;, I say. She shuffles back a few steps, not far enough for my liking; I step in front of her. I take aim, and swing, throwing it at the window.
 
 The window shatters, then falls apart, leaving only the frame remaining. A strong gust of wind blows through, and rain starts dripping in.
 
@@ -3248,7 +3288,7 @@ The stranger sees them too.
 
 &quot;Step through, watch your head&quot;, I say. %Tiffany% complies, without saying a word. I take one last look over my shoulder...
 
-[[[Step through the window]|C1P59V1]]</tw-passagedata><tw-passagedata pid="293" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+[[[Step through the window]|C1P59V1]]</tw-passagedata><tw-passagedata pid="292" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
 
 &quot;Well done %Tiffany%&quot;, I say, breathless. She looks a bit shaken.
 
@@ -3286,21 +3326,21 @@ I start towards the back wall, pulling %Tiffany% along behind me. As we get to i
 
 [[I know how you feel|C1P64V1]]&lt;br&gt;
 [[We will end up dead too|C1P64V2]]&lt;br&gt;
-[[Now is not the time %Tiffany%!|C1P64V3]]</tw-passagedata><tw-passagedata pid="294" name="C1P64V1" tags="variation" position="2925,16550" size="100,100">I painfully drop down on one knee to be level with her.
+[[Now is not the time %Tiffany%!|C1P64V3]]</tw-passagedata><tw-passagedata pid="293" name="C1P64V1" tags="variation" position="2925,16550" size="100,100">I painfully drop down on one knee to be level with her.
 
 &quot;%Tiffany%, believe me, I know exactly how you are feeling right now, but I need you to be brave like your mom was&quot;, I say to her.
 
-&lt;%= window.story.customRender(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="295" name="C1P64V2" tags="variation" position="3075,16550" size="100,100">I painfully drop down on one knee to be level with her, then gentle grab both of her shoulders and look her directly in the eyes. 
+&lt;%= window.story.customRender(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="294" name="C1P64V2" tags="variation" position="3075,16550" size="100,100">I painfully drop down on one knee to be level with her, then gentle grab both of her shoulders and look her directly in the eyes. 
 
 &quot;%Tiffany%, I understand you are processing a lot of emotions right now, but unless you and I get over that wall, you&#39;re not going to be alive to process them&quot;, I say to her.
 
-&lt;%= window.story.customRender(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="296" name="C1P64V3" tags="variation" position="3225,16550" size="100,100">&quot;%Tiffany%, now is not the time! I&#39;m so, so sorry that your mom is dead, but unless you want to end up just like her, we need to get over this wall.&quot;, I say to her.
+&lt;%= window.story.customRender(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="295" name="C1P64V3" tags="variation" position="3225,16550" size="100,100">&quot;%Tiffany%, now is not the time! I&#39;m so, so sorry that your mom is dead, but unless you want to end up just like her, we need to get over this wall.&quot;, I say to her.
 
 She stares back at me, a lick of anger visible across her face. Shit, this isn&#39;t working...
 
 I painfully drop down on one knee to be level with her. 
 
-&lt;%= window.story.customRender(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="297" name="F: Look behind" tags="floater" position="3425,16550" size="100,100">I look behind her, walkers fast approaching. We really need to get moving.
+&lt;%= window.story.customRender(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="296" name="F: Look behind" tags="floater" position="3425,16550" size="100,100">I look behind her, walkers fast approaching. We really need to get moving.
 
 &quot;Look, %Tiffany%, when my sister died, I was a wreck: I didn&#39;t know what to do, and it took a long time for me to come to terms with what happened; I&#39;m still processing it to this day&quot;, I explain to her.
 
@@ -3308,7 +3348,7 @@ I painfully drop down on one knee to be level with her.
 
 We continue to stare at each other, the walkers nearly on us now, rain soaking us both. I can&#39;t leave her here, I just can&#39;t, I wouldn&#39;t be able to live with myself.
 
-[[[Pled with %Tiffany%]|C1P65]]</tw-passagedata><tw-passagedata pid="298" name="C1P65" tags="page" position="3075,16700" size="100,100">&lt;%
+[[[Pled with %Tiffany%]|C1P65]]</tw-passagedata><tw-passagedata pid="297" name="C1P65" tags="page" position="3075,16700" size="100,100">&lt;%
 window.story.delayedText(27 * 1000, &quot;one&quot;);
 window.story.delayedText(35 * 1000, &quot;two&quot;);
 %&gt;
@@ -3340,7 +3380,7 @@ I smile.
 [[[Pick %Tiffany% up]|C1P66]]
 
 &lt;div-#two&gt;
-</tw-passagedata><tw-passagedata pid="299" name="C1P66" tags="page" position="3075,16850" size="100,100">I muster all my strength and push myself up off my knee. I topple and nearly fall, but manage to recover. Walkers have us mostly surrounded now, the only option is the back wall.
+</tw-passagedata><tw-passagedata pid="298" name="C1P66" tags="page" position="3075,16850" size="100,100">I muster all my strength and push myself up off my knee. I topple and nearly fall, but manage to recover. Walkers have us mostly surrounded now, the only option is the back wall.
 
 I hastily carry %Tiffany% the last few meters to the wall, then stop.
 
@@ -3358,7 +3398,7 @@ She takes a deep breath.
 
 &quot;Ready&quot;, %Tiffany% says.
 
-[[[Boost %Tiffany% up]|C1P67]]</tw-passagedata><tw-passagedata pid="300" name="C1P67" tags="page" position="3075,17000" size="100,100">I bend my knees, then shove %Tiffany% as high as I can manage. A crippling pain shoots up my back, I don&#39;t get her as far as I thought I could. She manages to grab the top of the wall with her little hands.
+[[[Boost %Tiffany% up]|C1P67]]</tw-passagedata><tw-passagedata pid="299" name="C1P67" tags="page" position="3075,17000" size="100,100">I bend my knees, then shove %Tiffany% as high as I can manage. A crippling pain shoots up my back, I don&#39;t get her as far as I thought I could. She manages to grab the top of the wall with her little hands.
 
 &quot;Good girl %Tiffany%! Now climb!&quot;, I exclaim, as I grab her dangling legs and push her up.
 
@@ -3374,11 +3414,11 @@ The walker is up in my face now. Instinctively, I contract my arm and then swing
 
 Walkers are approaching me from all angles: it&#39;s now or never.
 
-[[[Climb the wall]|C1P68]]</tw-passagedata><tw-passagedata pid="301" name="C1P68" tags="page" position="3075,17150" size="100,100">I spin around, and with the last of my strength, jump. I grab the top of the wall and begin to worm my way up. It&#39;s slippery from the rain, I feel %Tiffany% grabbing my hoodie trying to help pull me up, but I&#39;m far too heavy for her.
+[[[Climb the wall]|C1P68]]</tw-passagedata><tw-passagedata pid="300" name="C1P68" tags="page" position="3075,17150" size="100,100">I spin around, and with the last of my strength, jump. I grab the top of the wall and begin to worm my way up. It&#39;s slippery from the rain, I feel %Tiffany% grabbing my hoodie trying to help pull me up, but I&#39;m far too heavy for her.
 
 Halfway up I feel hands grabbing at my feet. Without looking, I kick out and try to use my feet to get a better grip on the wall. Shit- one of the walkers has grabbed my leg!
 
-[[[Push against walker]|C1P69]]</tw-passagedata><tw-passagedata pid="302" name="C1P69" tags="page" position="3075,17300" size="100,100">&lt;% window.story.delayedText(25 * 1000) %&gt;
+[[[Push against walker]|C1P69]]</tw-passagedata><tw-passagedata pid="301" name="C1P69" tags="page" position="3075,17300" size="100,100">&lt;% window.story.delayedText(25 * 1000) %&gt;
 
 I lean back slightly and push myself up using the walker as a stepping stone. I swing myself up, past %Tiffany%, and over onto the other side. I land awkwardly and fall to the ground. %Tiffany% jumps down and lands gracefully beside me.
 
@@ -3400,7 +3440,7 @@ I lay for a moment; even though every inch of my body is screaming in pain, I ma
 
 [[Continue|C1 End]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="303" name="C1 End" tags="menu" position="3025,17450" size="200,100">&lt;%
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="302" name="C1 End" tags="menu" position="3025,17450" size="200,100">&lt;%
 window.story.delayedText(2000, &quot;one&quot;, 500);
 window.story.delayedText(5000, &quot;two&quot;, 500);
 window.story.delayedText(8000, &quot;three&quot;, 500);
@@ -3417,15 +3457,15 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 
 &lt;div-#three&gt;
 [[Continue|C1 Achievements]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="304" name="C1 Statistics" tags="menu" position="3025,17750" size="200,100">&lt;% window.story.loadStats() %&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="303" name="C1 Statistics" tags="menu" position="3025,17750" size="200,100">&lt;% window.story.loadStats() %&gt;
 
 &lt;span#statsLoading&gt;Loading...&lt;/span&gt;
 
 &lt;div-#statsContainer&gt;&lt;/div&gt;
 
-[[Continue|C1 Credits]]</tw-passagedata><tw-passagedata pid="305" name="Loading Save" tags="menu noFade" position="2500,1025" size="200,100">&lt;img.title-image&gt;
+[[Continue|C1 Credits]]</tw-passagedata><tw-passagedata pid="304" name="Loading Save" tags="menu noFade" position="2500,1025" size="200,100">&lt;img.title-image&gt;
 
-&lt;span&gt;Loading Save...&lt;/span&gt;</tw-passagedata><tw-passagedata pid="306" name="C1 Achievements" tags="menu" position="3025,17600" size="200,100">&lt;% window.story.loadAchievements() %&gt;
+&lt;span&gt;Loading Save...&lt;/span&gt;</tw-passagedata><tw-passagedata pid="305" name="C1 Achievements" tags="menu" position="3025,17600" size="200,100">&lt;% window.story.loadAchievements() %&gt;
 
 &lt;span#achievementsLoading&gt;Loading...&lt;/span&gt;
 
@@ -3434,9 +3474,9 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
   &lt;hr&gt;
 &lt;/div&gt;
 
-[[Continue|C1 Statistics]]</tw-passagedata><tw-passagedata pid="307" name="C1 Credits" tags="menu" position="3025,17900" size="200,100">&lt;%= window.story.customRender(&quot;Credits&quot;) %&gt;
+[[Continue|C1 Statistics]]</tw-passagedata><tw-passagedata pid="306" name="C1 Credits" tags="menu" position="3025,17900" size="200,100">&lt;%= window.story.customRender(&quot;Credits&quot;) %&gt;
 
-[[Continue|C2 Intro]]</tw-passagedata><tw-passagedata pid="308" name="F: Games Room" tags="floater" position="3350,14900" size="100,100">We exit the room and go to the end of the hallway, there&#39;s a games room of sorts. There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and there&#39;s also a large circular window: that&#39;s where the light was coming from.</tw-passagedata><tw-passagedata pid="309" name="F: The window" tags="floater" position="3500,14900" size="100,100">I go over to the window and take a closer look; the rain outside is really heavy now, it&#39;s hard to see more than a few meters. On the other side of the window is the patio roof, that might be our ticket out of here, if I can find a way to get this window open...
+[[Continue|C2 Intro]]</tw-passagedata><tw-passagedata pid="307" name="F: Games Room" tags="floater" position="3350,14900" size="100,100">We exit the room and go to the end of the hallway, there&#39;s a games room of sorts. There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and there&#39;s also a large circular window: that&#39;s where the light was coming from.</tw-passagedata><tw-passagedata pid="308" name="F: The window" tags="floater" position="3500,14900" size="100,100">I go over to the window and take a closer look; the rain outside is really heavy now, it&#39;s hard to see more than a few meters. On the other side of the window is the patio roof, that might be our ticket out of here, if I can find a way to get this window open...
 
 \*Creak creak, creak, creak creak\*
 
@@ -3450,7 +3490,7 @@ I feel around in my pockets for anything useful...
 I look around for something to break the glass with... The table tennis table has a clamp on either side holding the net up, they look pretty solid.
 
 [[[Use Clamp]|C1P58V12]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="310" name="C1P58A1" tags="addition" position="3075,14900" size="100,100">&lt;%= window.story.customRender(&quot;F: Games Room&quot;) %&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="309" name="C1P58A1" tags="addition" position="3075,14900" size="100,100">&lt;%= window.story.customRender(&quot;F: Games Room&quot;) %&gt;
 
 &lt;div#strangerAlive&gt;&lt;/div&gt;
 
@@ -3461,7 +3501,7 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) {
 }
 &lt;/script&gt;
 
-&lt;%= window.story.customRender(&quot;F: The window&quot;) %&gt;</tw-passagedata><tw-passagedata pid="311" name="F: Stranger Alive" tags="floater" position="2875,14900" size="100,100">&lt;%
+&lt;%= window.story.customRender(&quot;F: The window&quot;) %&gt;</tw-passagedata><tw-passagedata pid="310" name="F: Stranger Alive" tags="floater" position="2875,14900" size="100,100">&lt;%
 if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { %&gt;
 
 Charles is standing next to the window. He turns around and faces us.
@@ -3508,7 +3548,7 @@ He leans back again.
 
 &quot;Yeah... right. I had a look around up here, but there&#39;s no way out. The only thing is this window, but I can&#39;t find a way to open it&quot;, he says.
 
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="312" name="C1P63V1" tags="variation" position="3225,16250" size="100,100">&quot;Push this thing off me %Tiffany%!&quot;, I shout.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="311" name="C1P63V1" tags="variation" position="3225,16250" size="100,100">&quot;Push this thing off me %Tiffany%!&quot;, I shout.
 
 She slowly approaches from the side, then takes a bit of a run-up and with both hands stretched outwards, pushes the walker off me.
 
@@ -3516,7 +3556,7 @@ It rolls one and lands on its back, it immediately starts to get up again. I cra
 
 The walker goes limp and flops to the ground.
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="313" name="C1P63V2" tags="variation" position="3375,16250" size="100,100">&quot;Use the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
+[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="312" name="C1P63V2" tags="variation" position="3375,16250" size="100,100">&quot;Use the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
 
 She goes around behind me out of sight, then comes back over and stands off to my side.
 
@@ -3530,7 +3570,7 @@ She goes around behind me out of sight, then comes back over and stands off to m
 
 Walker bits get all over my face, %Tiffany% steps back, the walker goes limp and I push it off. I reach over and pull the knife out of the back of its head.
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="314" name="C1P63V3" tags="variation" position="3525,16250" size="100,100">&quot;Get me the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
+[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="313" name="C1P63V3" tags="variation" position="3525,16250" size="100,100">&quot;Get me the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
 
 She goes around behind me out of sight, then comes back over and stands over me, nerviosuly holding out the knife. If I grab it like that I&#39;m going to cut myself, no time to muck around. I grab %Tiffany%&#39;s hand with my free hand and pull the knife and her along with it the last few inches to the walker&#39;s head.
 
@@ -3538,7 +3578,7 @@ She goes around behind me out of sight, then comes back over and stands over me,
 
 Walker bits get all over my face, I let go of %Tiffany%&#39;s hand and she steps back out of the way, the walker, knife still in it’s head, goes limp, and I push it off. I reach over and pull the knife out of its face.
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="315" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
+[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="314" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
 
 &lt;%
 window.story.delayedText(4000, &quot;one&quot;, 0);
@@ -3559,20 +3599,20 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 
 [[Return the Main Menu|Title Screen]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="316" name="Pause Menu" tags="menu" position="3025,275" size="200,100">&lt;img.title-image&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="315" name="Pause Menu" tags="menu" position="3025,275" size="200,100">&lt;img.title-image&gt;
 
 &lt;%= window.story.customRender(&quot;Settings&quot;) %&gt;
 
-&lt;a0.sound-confirm onclick=&quot;window.story.pauseMenu()&quot;&gt;Resume&lt;/a&gt;</tw-passagedata><tw-passagedata pid="317" name="Settings" tags="floater" position="4425,725" size="200,100">&lt;div#title-button&gt;
+&lt;a0.sound-confirm onclick=&quot;window.story.pauseMenu()&quot;&gt;Resume&lt;/a&gt;</tw-passagedata><tw-passagedata pid="316" name="Settings" tags="floater" position="4425,725" size="200,100">&lt;div#title-button&gt;
   &lt;p&gt;Game Version: v&lt;% print(window.story.version) %&gt;&lt;/p&gt;
   
   &lt;a onclick=&quot;window.story.toggleDebug()&quot;&gt;Toggle Debug Mode&lt;br&gt;&lt;span.smaller&gt;(Recommended for Mobile Users)&lt;/span&gt;&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleFont()&quot;&gt;Toggle Font&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleAchievements()&quot;&gt;Toggle Achievements&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="318" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="317" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
 	[[Launch Game|Network Check]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Test Passage" tags="page" position="2550,100" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="318" name="Test Passage" tags="page" position="2550,100" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;special&gt;kitchen&lt;/special&gt;
 &lt;music&gt;calm&lt;/music&gt;
@@ -3635,17 +3675,17 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 [[[Take the bowl]|C1P43]]
 [[[the take bowl]|C1P43]]
 [[[bowl Take the]|C1P43]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="320" name="Loading" tags="" position="2050,100" size="100,100">This game has a lot of images: UI, characters, etc.
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="319" name="Loading" tags="" position="2050,100" size="100,100">This game has a lot of images: UI, characters, etc.
 We&#39;re loading those images right now.
 Please sit tight!
 
 &lt;progress#loading-bar max=&quot;100&quot;&gt;&lt;/progress&gt;
-&lt;label#loading-bar-label for=&quot;loading-bar&quot;&gt;0%&lt;/label&gt;</tw-passagedata><tw-passagedata pid="321" name="Debug" tags="" position="2400,100" size="100,100">&lt;input#debugSelector type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot; value=&quot;C1P&quot;&gt;&lt;/input&gt;
+&lt;label#loading-bar-label for=&quot;loading-bar&quot;&gt;0%&lt;/label&gt;</tw-passagedata><tw-passagedata pid="320" name="Debug" tags="" position="2400,100" size="100,100">&lt;input#debugSelector type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot; value=&quot;C1P&quot;&gt;&lt;/input&gt;
 &lt;button#debugGo&gt;Go&lt;/button&gt;
 
 &lt;script&gt;
 	$(&quot;#debugGo&quot;).click(() =&gt; window.story.show($(&quot;#debugSelector&quot;).val().toUpperCase()));
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="322" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
