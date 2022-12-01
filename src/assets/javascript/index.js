@@ -11,7 +11,7 @@ const apiUrl = "https://purpose-game.com/api/";
 // Keys that progress the story
 const progressKeys = [13, 32, 38, 39, 40];
 // Custom HTML Tags
-const customTags = "ui, character, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait";
+const customTags = "ui, character, resetcharacter, characteroverride, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait";
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
@@ -113,6 +113,7 @@ const audioLibrary = {
 		"bedroom": new Audio("assets/audio/sfx/bedroom.mp3"),
 		"bed": new Audio("assets/audio/sfx/bed.mp3"),
 		"behind-door": new Audio("assets/audio/sfx/behind_door.mp3"),
+		"door-close": new Audio("assets/audio/sfx/door_close.mp3"),
 		"chair": new Audio("assets/audio/sfx/chair.mp3"),
 		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
 		"bowl": new Audio("assets/audio/sfx/bowl.mp3"),
@@ -677,6 +678,24 @@ async function stepPassage() {
 				break;
 			}
 
+			// Resets a character slot
+			case "RESETCHARACTER": {
+				const slot = extra.replace("/", "").split(" ").shift();
+
+				$(`#character-${slot}`).text("");
+				$(`#character-${slot}-image`).css("background-image", "");
+
+				stepPassage();
+				break;
+			}
+
+			// Override a character name by slot
+			case "CHARACTEROVERRIDE":
+				$(`#character-${extra.split(" ").shift()}`).text(content);
+
+				stepPassage();
+				break;
+
 			// Set the special image for the Special UI
 			case "SPECIAL":
 				$("#special-image").attr("class", "special-image");
@@ -703,16 +722,16 @@ async function stepPassage() {
 
 			// Stops background music
 			case "STOPMUSIC":
-				if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
-
 				stepPassage();
+
+				if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
 				break;
 
 			// Kills background music
 			case "KILLMUSIC":
-				if (backgroundMusic) await audioHelpers.killMusic(backgroundMusic);
-
 				stepPassage();
+
+				if (backgroundMusic) await audioHelpers.killMusic(backgroundMusic);
 				break;
 
 			// Sets passage as a flashback passage
@@ -773,7 +792,7 @@ async function stepPassage() {
 				lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
 				if (type !== "CHOICES") {
-					if (type === "SPEECH") {
+					if (type === "SPEECH" && character) {
 						speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
 
 						let backgroundImages = speaker.css("background-image");

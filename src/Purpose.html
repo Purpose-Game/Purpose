@@ -916,8 +916,8 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 
 &lt;choices&gt;
     [[...|C1P16V2]]
+    [[Show yourself!|C1P16V3]]
     [[I&#39;m armed, back off! [Lie]|C1P16V1]]
-    [[Who are you? Show yourself!|C1P16V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="45" name="C1P16V2" tags="variation" position="3075,4500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -975,6 +975,7 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Tiffany&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 &lt;music&gt;calm&lt;/music&gt;
 
 &lt;action&gt;...a little girl.&lt;/action&gt;
@@ -987,23 +988,60 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
     [[...|C1P17V2]]
     [[Hello there?|C1P17V1]]
     [[What&#39;s your name?|C1P17V3]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="55" name="F: Tiffany bad girl" tags="floater" position="3425,4650" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;)) {
-	print(&quot;She doesn&#39;t reply, she&#39;s just staring...&quot;);
-} %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="55" name="F: Tiffany bad girl" tags="floater" position="3425,4650" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;)) { %&gt;
 
-&quot;Tiffany!&quot;, a woman says somewhere behind her. The curiosity in her eyes is quickly replaced by panic, and the door snaps shut.
+&lt;action&gt;She doesn&#39;t reply.&lt;/action&gt;
+&lt;action&gt;She&#39;s just continues to stare.&lt;/action&gt;
 
-I hear footsteps behind the door and muffled voices. I was ready to fight my way out of here, but, now I&#39;m not sure what to do.
+&lt;% } %&gt;
 
-[[[Wait]|C1P18]]</tw-passagedata><tw-passagedata pid="56" name="C1P17V1" tags="variation" position="2925,4650" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;HelloThere&quot;, &quot;Hello There&quot;, &quot;General Kenobi... you are a bold one.&quot;) %&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;killmusic/&gt;
 
-&quot;Hello there&quot;, I say cautiously.
+&lt;speech.unknown&gt;Tiffany!&lt;/speech&gt;
+
+&lt;action&gt;A woman shouts from somewhere behind her.&lt;/action&gt;
+
+&lt;character.two.scared.ditto&gt;Tiffany&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+
+&lt;action&gt;The curiosity in her eyes is quickly replaced by panic.&lt;/action&gt;
+
+&lt;resetcharacter.two/&gt;
+&lt;sound&gt;door-close&lt;/sound&gt;
+
+&lt;action&gt;The door snaps shut again.&lt;/action&gt;
+&lt;action&gt;I hear footsteps behind the door and muffled voices.&lt;/action&gt;
+
+&lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I was ready to fight my way out of here, but, now I&#39;m not sure what to do.&lt;/action&gt;
+
+&lt;choices&gt;[[[Wait]|C1P18]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="56" name="C1P17V1" tags="variation" position="2925,4650" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;HelloThere&quot;, &quot;Hello There&quot;, &quot;General Kenobi... you are a bold one.&quot;) %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;speech.sarah&gt;Hello there...&lt;/speech&gt;
 
 &lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="57" name="C1P17V2" tags="variation" position="3075,4650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) %&gt;
 
-I stare into her eyes for a moment longer.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="58" name="C1P17V3" tags="variation" position="3225,4650" size="100,100">&quot;What&#39;s your name?&quot; I say cautiously.
+&lt;action&gt;I stare into her eyes for a moment longer.&lt;/action&gt;
+
+&lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="58" name="C1P17V3" tags="variation" position="3225,4650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;speech.sarah&gt;What&#39;s your name?&lt;/speech&gt;
 
 &lt;%= window.story.customRender(&quot;F: Tiffany bad girl&quot;) %&gt;</tw-passagedata><tw-passagedata pid="59" name="C1P18" tags="page" position="3075,4800" size="100,100">The voices stop, there are more footsteps- The door is opening.
 
@@ -3687,8 +3725,31 @@ Please sit tight!
 &lt;label#loading-bar-label for=&quot;loading-bar&quot;&gt;0%&lt;/label&gt;</tw-passagedata><tw-passagedata pid="320" name="Debug" tags="" position="2400,100" size="100,100">&lt;input#debugSelector type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot; value=&quot;C1P&quot;&gt;&lt;/input&gt;
 &lt;button#debugGo&gt;Go&lt;/button&gt;
 
+&lt;br&gt;&lt;hr&gt;
+
+C&lt;input#debugSelectorC type=&quot;text&quot; placeholder=&quot;Type Chapter Here&quot; autocomplete=&quot;off&quot; value=&quot;1&quot;&gt;&lt;/input&gt;
+P&lt;input#debugSelectorP type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot;&gt;&lt;/input&gt;
+V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation Here&quot; autocomplete=&quot;off&quot;&gt;&lt;/input&gt;
+&lt;button#debugGo2&gt;Go&lt;/button&gt;
+
 &lt;script&gt;
-	$(&quot;#debugGo&quot;).click(() =&gt; window.story.show($(&quot;#debugSelector&quot;).val().toUpperCase()));
+	$(&quot;#debugGo&quot;).click(function() {
+    	const passage = $(&quot;#debugSelector&quot;).val();
+        
+        window.story.show(passage.startsWith(&quot;C1&quot;) ? passage.toUpperCase() : passage);
+    });
+
+    $(&quot;#debugGo2&quot;).click(function() {
+    	let chapter = $(&quot;#debugSelectorC&quot;).val();
+    	let passage = $(&quot;#debugSelectorP&quot;).val();
+    	let variation = $(&quot;#debugSelectorV&quot;).val();
+
+        if (chapter) chapter = `C${chapter}`;
+        if (passage) passage = `P${passage}`;
+        if (variation) variation = `V${variation}`;
+        
+        window.story.show(chapter + passage + variation);
+    });
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
