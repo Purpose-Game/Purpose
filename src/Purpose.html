@@ -874,7 +874,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Woah...&lt;/action&gt;
 &lt;action&gt;Someone has bandaged it properly...&lt;/action&gt;
 
-&lt;action&gt;[[[Inspect the dressing]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="42" name="C1P15V2" tags="variation" position="3075,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;choices&gt;[[[Inspect the dressing]|C1P16]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="42" name="C1P15V2" tags="variation" position="3075,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;living-room&lt;/special&gt;
 &lt;character.one.angry.solo&gt;Sarah&lt;/character&gt;
 
@@ -887,7 +887,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;speech.sarah&gt;Alright, deep breath, you can do this...&lt;/speech&gt;
 &lt;speech.sarah&gt;You can do this.&lt;/speech&gt;
 
-&lt;action&gt;[[[Pull it out]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="43" name="C1P15V3" tags="variation" position="3225,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;choices&gt;[[[Pull it out]|C1P16]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="43" name="C1P15V3" tags="variation" position="3225,4200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;living-room&lt;/special&gt;
 &lt;character.one.sad.solo&gt;Sarah&lt;/character&gt;
 
@@ -896,11 +896,12 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Taking a closer look, I think I can just unscrew it at the part where the tubing connects with the thing in my hand.&lt;/action&gt;
 &lt;action&gt;Worth a shot, here goes nothing.&lt;/action&gt;
 
-&lt;action&gt;[[[Disconnect the tubbing]|C1P16]]&lt;/action&gt;</tw-passagedata><tw-passagedata pid="44" name="C1P16" tags="page" position="3075,4350" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;choices&gt;[[[Disconnect the tubbing]|C1P16]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="44" name="C1P16" tags="page" position="3075,4350" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;living-room&lt;/special&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;killmusic/&gt;
 
-&lt;sound&gt;floorboard&lt;/sound&gt;
+&lt;sound&gt;behind-door&lt;/sound&gt;
 
 &lt;action&gt;I hear something behind me.&lt;/action&gt;
 &lt;action&gt;I freeze for a moment, then look behind me.&lt;/action&gt;
@@ -956,7 +957,9 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
     [[[Go to the door]|C1P5V1]]
     &lt;% if (window.passage.name != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&quot;) %&gt;
     [[[Pull off lowest board]|C1P5V22]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;rumble&gt;1 1 200&lt;/rumble&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;wait&gt;1000&lt;/wait&gt;
+&lt;sound&gt;collapse&lt;/sound&gt;
+&lt;rumble&gt;1 1 200&lt;/rumble&gt;
 
 &lt;% window.story.redirect(&quot;C1P9&quot;) %&gt;</tw-passagedata><tw-passagedata pid="54" name="F: Meeting Tiffany" tags="floater" position="3425,4500" size="100,100">&lt;action&gt;The door is starting to open slowly.&lt;/action&gt;
 
@@ -972,6 +975,7 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Tiffany&lt;/character&gt;
+&lt;music&gt;calm&lt;/music&gt;
 
 &lt;action&gt;...a little girl.&lt;/action&gt;
 &lt;action&gt;She can&#39;t be more than 7 or 8 years old.&lt;/action&gt;

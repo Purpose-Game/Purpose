@@ -11,7 +11,7 @@ const apiUrl = "https://purpose-game.com/api/";
 // Keys that progress the story
 const progressKeys = [13, 32, 38, 39, 40];
 // Custom HTML Tags
-const customTags = "ui, character, special, action, speech, sound, music, stopmusic, flashback, choices, rumble, wait";
+const customTags = "ui, character, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait";
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
@@ -109,8 +109,10 @@ const audioLibrary = {
 	sfx: {
 		// Diegetic
 		"knocking": new Audio("assets/audio/sfx/knocking.mp3"),
+		"collapse": new Audio("assets/audio/sfx/collapse.mp3"),
 		"bedroom": new Audio("assets/audio/sfx/bedroom.mp3"),
 		"bed": new Audio("assets/audio/sfx/bed.mp3"),
+		"behind-door": new Audio("assets/audio/sfx/behind_door.mp3"),
 		"chair": new Audio("assets/audio/sfx/chair.mp3"),
 		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
 		"bowl": new Audio("assets/audio/sfx/bowl.mp3"),
@@ -542,7 +544,9 @@ async function stepPassage() {
 
 		lastText = $(`#text-area-${ui}-${lastTextStep}-skipped`);
 
-		typewriting = typewriting.filter(i => i !== lastTextStep)
+		typewriting = typewriting.filter(i => i !== lastTextStep);
+
+		debugMessage(`Skipped to end of passage ${lastTextStep}.`);
 	} else if (steps[currentStep]) {
 		const step = currentStep;
 		
@@ -690,7 +694,7 @@ async function stepPassage() {
 
 			// Plays background music
 			case "MUSIC":
-				if (backgroundMusic) return;
+				if (backgroundMusic) await audioHelpers.fadeOut(backgroundMusic);
 
 				backgroundMusic = await audioHelpers.playMusic(audioLibrary.music[content]);
 
@@ -700,6 +704,13 @@ async function stepPassage() {
 			// Stops background music
 			case "STOPMUSIC":
 				if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
+
+				stepPassage();
+				break;
+
+			// Kills background music
+			case "KILLMUSIC":
+				if (backgroundMusic) await audioHelpers.killMusic(backgroundMusic);
 
 				stepPassage();
 				break;
@@ -825,16 +836,30 @@ async function stepPassage() {
 				break;
 			}
 		}
+
+		debugMessage(`Stepped through passage ${step}.`);
 	}
 }
 
 function processPassage(twPassage) {
+	steps = [];
+	currentStep = 0;
+	lastTextStep = 0;
+
 	// Populate steps list
 	twPassage.find(customTags).each(function() {
 		const element = $(this);
 
 		steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
 	});
+
+	if (steps.length === 0) {
+		alert("Passage incompatible.");
+		debugMessage(`Failed to process passage, passage incompatible.`);
+		return;
+	}
+
+	debugMessage(`Processed passage with ${steps.length} steps.`);
 
 	twPassage.empty();
 	twPassage.append(`<div class="story-box"></div>`);
