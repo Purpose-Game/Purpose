@@ -1,214 +1,172 @@
-/* global _, SimpleNotification, body, debugMessage, audioHelpers, audioLibrary */
+/* global SimpleNotification, body, debugMessage, sleep, audioHelpers, audioLibrary */
 
-const apiUrl = "https://purpose-game.com/api/";
+const apiUrl = "https://purpose-game.com/api";
 
 let menuMusic;
-let saveNotification;
+let notification;
 let prePausePassage;
 let achievementsEnabled = true;
 let customFontEnabled = true;
 
-// Checks network connection
-window.story.networkCheck = function (nextPassage) {
-	$.get(apiUrl + "status").done(function() {
-		debugMessage("Connection to server made successfully");
+// Checks connection to API
+window.story.networkCheck = (nextPassage) => {
+	$.get(`${apiUrl}/status`)
+        .done(() => window.story.network = true)
+        .catch((error) => {
+            debugMessage(`Connection to server failed: "${error}".`);
 
-		window.story.network = true;
-	}).catch(function(error) {
-		debugMessage("Connection to server failed: " + error);
-
-		saveNotification = SimpleNotification.error({
-			title: "Network Connection Failed!",
-			text: "Could not connect to the remote server, Cloud Saving unavailable."
-		}, {
-			duration: 10 * 1000,
-			position: "bottom-right"
-		});
-	// Show the next passage regardless
-	}).then(function() {
-		window.story.show(nextPassage);
-	});
+            window.story.noConnection();
+        })
+        .then(() => window.story.show(nextPassage));
 }
 
-// Shows "No Connection" error message
-window.story.noConnection = function () {
-	saveNotification = SimpleNotification.error({
-		title: "Network Connection Failed!",
-		text: "Could not connect to the remote server, Cloud Saving unavailable."
-	}, {
-		duration: 10 * 1000,
-		position: "bottom-right"
-	});
-}
+// Shows connection error message
+window.story.noConnection = () => SimpleNotification.error({
+    title: "Network Connection Failed!",
+    text: "Could not connect to the remote server, Cloud Saving unavailable."
+}, {
+    duration: 10 * 1000,
+    position: "bottom-right"
+});
 
-// Redirects one passage to another after a given time
-window.story.redirect = function (pageName, time = 5) {
-	debugMessage(`Redirecting to ${pageName} in ${time} seconds`);
+// Redirects one passage to another after a given period of time
+window.story.redirect = async (pageName, time = 5) => {
+	debugMessage(`Redirecting to ${pageName} in ${time} seconds.`);
 
-	let timeLeft = time;
+	await sleep(time * 1000);
 
-	function tick() {
-		if (--timeLeft === 0) window.story.show(pageName);
-
-		_.delay(tick, 1000);
-	}
-
-	_.delay(tick, 1000);
+    window.story.show(pageName);
 };
 
-// Displays text on screen after x period of time
-window.story.delayedText = function (time = 1000, id = "delayed", fadeIn = 1000) {
-	debugMessage(`Showing delayed text ${id} in ${time} milliseconds`);
-
-	_.delay(function() {
-		$(`#${id}`).fadeIn(fadeIn);
-	}, time);
-}
-
 // Sets an achievement and shows a popup
-window.story.achievement = function (chapter, shorthand, title, text) {
-	try {
-		if (window.story.state.achievements[chapter][shorthand]) {
-			debugMessage(`Chapter ${chapter} achievement ${shorthand} already earned`);
-			return;
-		} else {
-			debugMessage(`Chapter ${chapter} achievement ${shorthand} earned, showing ${achievementsEnabled}`);
-		}
+window.story.achievement = (chapter, shorthand, title, text) => {
+    if (!Object.prototype.hasOwnProperty.call(window.story.state.achievements, chapter)) window.story.state.achievements[chapter] = {};
+    
+    if (Object.prototype.hasOwnProperty.call(window.story.state.achievements[chapter], shorthand)) {
+        debugMessage(`Chapter ${chapter} achievement ${shorthand} already earned.`);
+        return;
+    } else {
+        debugMessage(`Chapter ${chapter} achievement ${shorthand} earned, showing ${achievementsEnabled}.`);
+    }
 
-		window.story.state.achievements[chapter][shorthand] = true;
-	} catch (_) {
-		window.story.state.achievements[chapter] = {};
-		window.story.state.achievements[chapter][shorthand] = true;
-	}
+    window.story.state.achievements[chapter][shorthand] = true;
 
-	if (achievementsEnabled) {
-		SimpleNotification.info({
-			title: `Achievement: ${title}`,
-			text,
-		}, {
-			duration: 10 * 1000,
-			position: "bottom-right",
-			closeButton: false,
-			closeOnClick: false
-		});
-	}
+	if (!achievementsEnabled) return;
+
+    SimpleNotification.info({
+        title: `Achievement: ${title}`,
+        text,
+    }, {
+        duration: 10 * 1000,
+        position: "bottom-right",
+        closeButton: false,
+        closeOnClick: false
+    });
 };
 
 // Sets a story choice
-window.story.setChoice = function (chapter, choice, value = true) {
-	debugMessage(`Chapter ${chapter} choice ${choice} set to ${value}`);
+window.story.setChoice = (chapter, choice, value = true) => {
+	debugMessage(`Chapter ${chapter} choice ${choice} set to "${value}".`);
 
-	try {
-		window.story.state.choices[chapter][choice] = value;
-	} catch (_) {
-		window.story.state.choices[chapter] = {};
-		window.story.state.choices[chapter][choice] = value;
-	}
+    if (!Object.prototype.hasOwnProperty.call(window.story.state.choices, chapter)) window.story.state.choices[chapter] = {};
+
+	window.story.state.choices[chapter][choice] = value;
 };
 
-// Gets a story choice
-window.story.getChoice = function (chapter, choice) {
-	try {
-		return window.story.state.choices[chapter][choice];
-	} catch (_) {
-		// TODO: Replace with an enum or similar, since
-		// there are cases where the choice not being set
-		// should result in a different action from the
-		// choice being set to false
-		return false;
-	}
+// Returns a story choice
+window.story.getChoice = (chapter, choice) => {
+    if (Object.prototype.hasOwnProperty.call(window.story.state.choices[chapter], choice)) return window.story.state.choices[chapter][choice];
+
+	return null;
 };
 
-// Gets all the choices from a chapter
-window.story.getChoices = function (chapter) {
-	try {
-		return Object.entries(window.story.state.choices[chapter]) || [];
-	} catch (_) {
-		return [];
-	}
+// Gets all set choices for a chapter
+window.story.getChoices = (chapter) => {
+    if (Object.prototype.hasOwnProperty.call(window.story.state.choices, chapter)) return Object.entries(window.story.state.choices[chapter]);
+	
+    return [];
 }
 
 // Returns the name picked for Tiffany
-window.story.tiffany = function () {
-	try {
-		return window.story.state.choices["Chapter1"]["TiffanyName"] || "Tiffany";
-	} catch (_) {
-		return "Tiffany";
-	}
-}
+window.story.tiffany = () =>
+    Object.prototype.hasOwnProperty.call(window.story.state.choices, "Chapter1") &&
+    Object.prototype.hasOwnProperty.call(window.story.state.choices["Chapter1"], "TiffanyName")
+        ? window.story.state.choices["Chapter1"]["TiffanyName"] : "Tiffany";
 
 // Links a player's account to the current session
-window.story.linkCode = function () {
+window.story.linkCode = () => {
 	const input = $("#linkingCode");
 	const button = $("#linkingCodeButton");
 	const code = input.val();
+    const resetInput = () => {
+        input.prop("disabled", false);
+        button.attr("onclick", "window.story.linkCode()");
+    };
 	
-	saveNotification = SimpleNotification.info({
-		title: "Linking account"
+	notification = SimpleNotification.info({
+		title: "Linking Account..."
 	}, {
 		position: "bottom-right"
 	});
 	
+    button.attr("onclick", "");
 	input.prop("disabled", true);
-	button.attr("onclick", "");
 	
 	if (!code || code === "") {
-		debugMessage(`Empty linking code provided`);
+		debugMessage(`Empty linking code provided.`);
 
-		saveNotification.setType("error");
-		saveNotification.setTitle("Error: No Code");
-		saveNotification.setText("No code entered!");
+		notification.setType("error");
+		notification.setTitle("Error: No Code");
+		notification.setText("No code entered!");
 		
-		input.prop("disabled", false);
-		button.attr("onclick", "window.story.linkCode()");
+		resetInput();
 		return;
 	}
 	
 	if (code.length != 9) {
-		debugMessage(`Linking code wrong length`);
+		debugMessage(`Linking code wrong length.`);
 
-		saveNotification.setType("error");
-		saveNotification.setTitle("Error: Invalid Code");
-		saveNotification.setText("Entered code is invalid!");
-		input.prop("disabled", false);
-		button.attr("onclick", "window.story.linkCode()");
+		notification.setType("error");
+		notification.setTitle("Error: Invalid Code");
+		notification.setText("Entered code is invalid!");
+
+		resetInput();
 		return;
 	}
 	
-	$.post(apiUrl + "link", {
-		code
-	}).done(function(data) {
-		debugMessage(`Account linked with code ${code}`);
+	$.post(`${apiUrl}/link`, { code })
+        .done((data) => {
+            debugMessage(`Account linked with code "${code}".`);
 
-		saveNotification.setType("success");
-		saveNotification.setTitle("Account Linked!");
-		
-		window.story.player.name = data.userName;
-		window.story.player.id = data.userId;
-		window.story.player.key = data.userKey;
+            notification.setType("success");
+            notification.setTitle("Account Linked!");
+            
+            window.story.player.name = data.userName;
+            window.story.player.id = data.userId;
+            window.story.player.key = data.userKey;
 
-		debugMessage(`Name: ${window.story.player.name}, ID: ${window.story.player.id}, User Key: ${window.story.player.key}`);
-		
-		window.story.saving = true;
-		
-		window.story.show("Linked");
-	}).catch(function(error) {
-		debugMessage(`Account failed to link with code ${code}: ` + error);
+            debugMessage(`Name: "${window.story.player.name}", ID: "${window.story.player.id}", User Key: "${window.story.player.key}"`);
+            
+            window.story.saving = true;
+            window.story.show("Linked");
+        })
+        .catch((error) => {
+            debugMessage(`Account failed to link with code "${code}": "${error}".`);
 
-		SimpleNotification.error({
-			title: `Error: ${error.status}`,
-			text: error.responseText
-		}, {
-			position: "bottom-right"
-		});
+            SimpleNotification.error({
+                title: `Error: ${error.status}`,
+                text: error.responseText
+            }, {
+                position: "bottom-right"
+            });
 
-		input.prop("disabled", false);
-		button.attr("onclick", "window.story.linkCode()");
-	});
+            resetInput();
+        });
 }
 
-// Saves player's game
-window.story.saveGame = function (manual = false) {
+// Saves game
+// TODO: Rewrite save system
+window.story.saveGame = (manual = false) => {
 	if (!window.story.saving) {
 		SimpleNotification.error({
 			title: `Error: Saving Not Enabled`
@@ -218,113 +176,113 @@ window.story.saveGame = function (manual = false) {
 		return;
 	}
 
-	saveNotification = SimpleNotification.info({
+	notification = SimpleNotification.info({
 		title: `${manual ? "" : "Auto-"}Saving...`
 	}, {
 		position: "bottom-right"
 	});
 
-	$.post(apiUrl + "save", {
-		key: window.story.player.key,
-		data: {
-			saveSlot: window.story.saveSlot,
-			saveData: JSON.stringify(window.story.state)
-		}
-	}).done(function() {
-		debugMessage("Game saved");
+	$.post(`${apiUrl}/save`, {
+            key: window.story.player.key,
+            data: {
+                saveSlot: window.story.saveSlot,
+                saveData: JSON.stringify(window.story.state)
+            }
+        })
+        .done(() => {
+            notification.setType("success");
+            notification.setTitle(`${manual ? "" : "Auto-"}Save Complete!`);
+        })
+        .catch((error) => {
+            debugMessage(`Game failed to save: "${error}"`);
 
-		saveNotification.setType("success");
-		saveNotification.setTitle(`${manual ? "" : "Auto-"}Save Complete!`);
-	}).catch(function(error) {
-		debugMessage("Game failed to save: " + error);
-
-		saveNotification.setType("error");
-		saveNotification.setTitle(`${manual ? "" : "Auto-"}Save Failed!`);
-		saveNotification.setText(error.responseText);
-	});
+            notification.setType("error");
+            notification.setTitle(`${manual ? "" : "Auto-"}Save Failed!`);
+            notification.setText(error.responseText);
+        });
 }
 
-// Loads all player saves
-window.story.loadSaves = function (newGame = false) {
-	$.post(apiUrl + "saves", {
-		key: window.story.player.key
-	}).done(function(data) {
-		debugMessage(`Loaded ${data.length} saves for ${window.story.player.key}`);
+// Loads all saves
+// TODO: Rewrite save system
+window.story.loadSaves = (newGame = false) => {
+	$.post(`${apiUrl}/saves`, { key: window.story.player.key })
+        .done((data) => {
+            debugMessage(`Loaded ${data.length} saves for "${window.story.player.key}".`);
 
-		$("#slotsLoading").hide();
-		
-		if (data.length === 0 && !newGame) {
-			saveNotification = SimpleNotification.message({
-				title: "No Saved Games!"
-			}, {
-				position: "bottom-right"
-			});
-			return;
-		}
+            $("#slotsLoading").hide();
+            
+            if (data.length === 0 && !newGame) {
+                SimpleNotification.message({
+                    title: "No Saved Games!"
+                }, {
+                    position: "bottom-right"
+                });
+                return;
+            }
 
-		if (!newGame) {
-			$.each( data, function( _, value ) {
-				const lastUsed = new Date(value.lastActive);
-				$("#savesContainer").append(`<a onclick="window.story.loadSave(${value.slot})"><u>Save Slot ${value.slot}</u><br>Chapter: ${value.data.lastPassage.charAt(1)}<br>Last passage: ${value.data.lastPassage}<br>Last Used: ${lastUsed.toLocaleDateString()}</a>`);
-			});
-		} else {
-			$.each( data, function( _, value ) {
-				$("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (In Use)");
-			});
-		}
-		
-		if (newGame) {
-			$("#saveSlotSelector").fadeIn(500);	
-		} else {
-			$("#savesContainer").fadeIn(500);
-		}
-	}).catch(function(error) {
-		debugMessage(`Failed to load saves for ${window.story.player.key}: ` + error);
+            if (!newGame) {
+                $.each(data, (_, value) => {
+                    $("#savesContainer").append(`
+                        <a onclick="window.story.loadSave(${value.slot})">
+                            <u>Save Slot ${value.slot}</u><br>
+                            Chapter: ${value.data.lastPassage.charAt(1)}<br>
+                            Last passage: ${value.data.lastPassage}<br>
+                            Last Used: ${new Date(value.lastActive).toLocaleDateString()}
+                        </a>
+                    `);
+                });
+            } else {
+                $.each(data, (_, value) => $("#saveSlot" + value.slot).text("Save Slot " + value.slot + " (In Use)"));
+            }
 
-		saveNotification = SimpleNotification.error({
-			title: "Load Failed!",
-			text: error.responseText
-		}, {
-			position: "bottom-right"
-		});
-	});
+            $(newGame ? "#saveSlotSelector" : "#savesContainer").fadeIn(500);
+        }).catch((error) => {
+            debugMessage(`Failed to load saves for "${window.story.player.key}": "${error}"`);
+
+            SimpleNotification.error({
+                title: "Load Failed!",
+                text: error.responseText
+            }, {
+                position: "bottom-right"
+            });
+        });
 }
 
 // Loads a player's save
-window.story.loadSave = function (saveSlot) {
+window.story.loadSave = async function (saveSlot) {
 	window.story.show("Loading Save");
 
-	saveNotification = SimpleNotification.info({
+	notification = SimpleNotification.info({
 		title: "Loading Save..."
 	}, {
 		position: "bottom-right"
 	});
 	
-	$.post(apiUrl + "load", {
+	$.post(`${apiUrl}/load`, {
 		key: window.story.player.key,
 		saveSlot: saveSlot,	
-	}).done(function(data) {
+	}).done(async function(data) {
 		debugMessage(`Loaded save ${saveSlot} for ${window.story.player.key}`);
 
 		window.story.state = data;
 		window.story.saveSlot = saveSlot;
 		
-		saveNotification.setType("success");
-		saveNotification.setTitle("Save Loaded!");
+		notification.setType("success");
+		notification.setTitle("Save Loaded!");
 
-		_.delay(function() {
-			window.story.show(window.story.state.lastPassage);
-		}, 1000);
-	}).catch(function(error) {
+		await sleep(1000);
+
+        window.story.show(window.story.state.lastPassage);
+	}).catch(async function(error) {
 		debugMessage(`Failed to load save ${saveSlot} for ${window.story.player.key}: ` + error);
 
-		saveNotification.setType("error");
-		saveNotification.setTitle("Load Failed!");
-		saveNotification.setText(error.responseText);
+		notification.setType("error");
+		notification.setTitle("Load Failed!");
+		notification.setText(error.responseText);
 		
-		_.delay(function() {
-			window.story.show("Saved Games");
-		}, 1000);
+		await sleep(1000);
+
+        window.story.show("Saved Games");
 	});
 }
 
@@ -342,20 +300,20 @@ window.story.toggleLinkingDisplays = function (reverse = false) {
 }
 
 // Selects a slot of a new game, and starts new game
-window.story.selectSlot = function () {
+window.story.selectSlot = async function () {
 	debugMessage(`Starting game in save slot ${$("#slots").val()}`);
 
 	window.story.saveSlot = $("#slots").val();
 	
-	saveNotification = SimpleNotification.info({
+	SimpleNotification.info({
 		title: "Save Slot " + window.story.saveSlot + " Selected"
 	}, {
 		position: "bottom-right"
 	});
 	
-	_.delay(function() {
-		window.story.show("C1 Intro");
-	}, 1000);
+	await sleep(1000);
+    
+    window.story.show("C1 Intro");
 }
 
 // Toggles Custom Font
@@ -388,7 +346,7 @@ window.story.toggleFont = function () {
 
 // Loads statistics
 window.story.loadStats = function () {
-	$.post(apiUrl + "stats", {
+	$.post(`${apiUrl}/stats`, {
 		key: window.story.player.key,
 		chapter: window.story.state.chapter
 	}).done(function(data) {
@@ -420,7 +378,7 @@ window.story.loadStats = function () {
 	}).catch(function(error) {
 		debugMessage(`Failed to load stats for chapter ${window.story.state.chapter} ${window.story.player.key}`);
 
-		saveNotification = SimpleNotification.error({
+		SimpleNotification.error({
 			title: "Load Failed!",
 			text: error.responseText
 		}, {
@@ -430,10 +388,12 @@ window.story.loadStats = function () {
 }
 
 // Loads achievements
-window.story.loadAchievements = function () {
+window.story.loadAchievements = async function () {
 	// Fake loading to allow the passage to load or else jQuery won't make the changes
-	_.delay(function() {
-		$("#achievementsLoading").hide();
+    // TODO: Huh? Look into this, ?really required
+	await sleep(1000);
+
+    $("#achievementsLoading").hide();
 
 		let earnedAchievements = 0;
 		const totalAchievements = Object.entries(window.story.achievementDescriptions[window.story.state.chapter]).length;
@@ -454,7 +414,6 @@ window.story.loadAchievements = function () {
 
 		$("#achievementsCounter").fadeIn(500);
 		$("#achievementsContainer").fadeIn(500);
-	}, 1000);
 }
 
 // Toggles opening of pause menu
