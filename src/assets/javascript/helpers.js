@@ -75,7 +75,12 @@ window.story.setChoice = (chapter, choice, value = true) => {
 
 // Returns a story choice
 window.story.getChoice = (chapter, choice) => {
-    if (Object.prototype.hasOwnProperty.call(window.story.state.choices[chapter], choice)) return window.story.state.choices[chapter][choice];
+    if (
+		Object.prototype.hasOwnProperty.call(window.story.state.choices, chapter) &&
+		Object.prototype.hasOwnProperty.call(window.story.state.choices[chapter], choice)
+	) {
+		return window.story.state.choices[chapter][choice];
+	}
 
 	return null;
 };
@@ -88,10 +93,16 @@ window.story.getChoices = (chapter) => {
 }
 
 // Returns the name picked for Tiffany
-window.story.tiffany = () =>
-    Object.prototype.hasOwnProperty.call(window.story.state.choices, "Chapter1") &&
-    Object.prototype.hasOwnProperty.call(window.story.state.choices["Chapter1"], "TiffanyName")
-        ? window.story.state.choices["Chapter1"]["TiffanyName"] : "Tiffany";
+window.story.tiffany = () => {
+	if (
+		Object.prototype.hasOwnProperty.call(window.story.state.choices, "Chapter1") &&
+		Object.prototype.hasOwnProperty.call(window.story.state.choices["Chapter1"], "TiffanyName")
+	) {
+		return window.story.state.choices["Chapter1"]["TiffanyName"];
+	} else {
+		return "Tiffany";
+	}
+}
 
 // Links a player's account to the current session
 window.story.linkCode = () => {
@@ -249,7 +260,7 @@ window.story.loadSaves = (newGame = false) => {
 }
 
 // Loads a player's save
-window.story.loadSave = async function (saveSlot) {
+window.story.loadSave = async (saveSlot) => {
 	window.story.show("Loading Save");
 
 	notification = SimpleNotification.info({
@@ -258,37 +269,36 @@ window.story.loadSave = async function (saveSlot) {
 		position: "bottom-right"
 	});
 	
-	$.post(`${apiUrl}/load`, {
-		key: window.story.player.key,
-		saveSlot: saveSlot,	
-	}).done(async function(data) {
-		debugMessage(`Loaded save ${saveSlot} for ${window.story.player.key}`);
+	$.post(`${apiUrl}/load`, { key: window.story.player.key, saveSlot: saveSlot })
+		.done(async (data) => {
+			debugMessage(`Loaded save "${saveSlot}" for "${window.story.player.key}".`);
 
-		window.story.state = data;
-		window.story.saveSlot = saveSlot;
-		
-		notification.setType("success");
-		notification.setTitle("Save Loaded!");
+			window.story.state = data;
+			window.story.saveSlot = saveSlot;
+			
+			notification.setType("success");
+			notification.setTitle("Save Loaded!");
 
-		await sleep(1000);
+			await sleep(1000);
 
-        window.story.show(window.story.state.lastPassage);
-	}).catch(async function(error) {
-		debugMessage(`Failed to load save ${saveSlot} for ${window.story.player.key}: ` + error);
+			window.story.show(window.story.state.lastPassage);
+		})
+		.catch(async (error) => {
+			debugMessage(`Failed to load save "${saveSlot}" for "${window.story.player.key}": "${error}".`);
 
-		notification.setType("error");
-		notification.setTitle("Load Failed!");
-		notification.setText(error.responseText);
-		
-		await sleep(1000);
+			notification.setType("error");
+			notification.setTitle("Load Failed!");
+			notification.setText(error.responseText);
+			
+			await sleep(1000);
 
-        window.story.show("Saved Games");
-	});
+			window.story.show("Saved Games");
+		});
 }
 
 // Hides generate button and shows linking form
-window.story.toggleLinkingDisplays = function (reverse = false) {
-	debugMessage(`Linking buttons toggled (${reverse})`);
+window.story.toggleLinkingDisplays = (reverse = false) => {
+	debugMessage(`Linking buttons toggled "${reverse}".`);
 	
 	if (!reverse) {
 		$("#generateButton").hide();
@@ -300,13 +310,15 @@ window.story.toggleLinkingDisplays = function (reverse = false) {
 }
 
 // Selects a slot of a new game, and starts new game
-window.story.selectSlot = async function () {
-	debugMessage(`Starting game in save slot ${$("#slots").val()}`);
+window.story.selectSlot = async () => {
+	const slot = $("#slots").val();
 
-	window.story.saveSlot = $("#slots").val();
+	debugMessage(`Starting game in save slot "${slot}".`);
+
+	window.story.saveSlot = slot;
 	
 	SimpleNotification.info({
-		title: "Save Slot " + window.story.saveSlot + " Selected"
+		title: `Save Slot ${window.story.saveSlot} Selected`
 	}, {
 		position: "bottom-right"
 	});
@@ -317,8 +329,8 @@ window.story.selectSlot = async function () {
 }
 
 // Toggles Custom Font
-window.story.toggleFont = function () {
-	debugMessage(`Font toggled (${!customFontEnabled})`);
+window.story.toggleFont = () => {
+	debugMessage(`Font toggled "${!customFontEnabled}".`);
 
 	customFontEnabled = !customFontEnabled;
 	
@@ -346,79 +358,89 @@ window.story.toggleFont = function () {
 
 // Loads statistics
 window.story.loadStats = function () {
-	$.post(`${apiUrl}/stats`, {
-		key: window.story.player.key,
-		chapter: window.story.state.chapter
-	}).done(function(data) {
-		debugMessage(`Loaded ${data.length} stats for chapter ${window.story.state.chapter} ${window.story.player.key}`);
+	const chapter = window.story.state.chapter;
 
-		$("#statsLoading").hide();
-		
-		for (const stat in data) {
-			if (
-				!window.story.state.choices[window.story.state.chapter] ||
-				// If choice was never set, not to be confused with choice being set to false
-				!Object.prototype.hasOwnProperty.call(window.story.state.choices[window.story.state.chapter], stat)
-			) {
-				continue;
+	$.post(`${apiUrl}/stats`, { key: window.story.player.key, chapter: chapter})
+		.done((data) => {
+			debugMessage(`Loaded ${data.length} stats for chapter "${chapter}", for "${window.story.player.key}".`);
+
+			$("#statsLoading").hide();
+			
+			for (const stat in data) {
+				if (
+					!Object.prototype.hasOwnProperty.call(window.story.state.choices, chapter) ||
+					// If choice was never set, not to be confused with choice being set to false
+					!Object.prototype.hasOwnProperty.call(window.story.state.choices[chapter], stat)
+				) {
+					continue;
+				}
+				
+				let message;
+				
+				if (window.story.getChoice(chapter, stat)) {
+					message = `You and ${data[stat][0]} of players ${window.story.choiceDescriptions[chapter][stat][0]}`;
+				} else {
+					message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[chapter][stat][1]}`;
+				}
+				
+				$("#statsContainer").append(`
+					<p>${message}</p>
+					<progress class="did-bar" value="${data[stat][0].slice(0, -1)}" max="100"></progress><br>
+					<progress class="did-not-bar" value="${data[stat][1].slice(0, -1)}" max="100"></progress>
+				`);	
 			}
 			
-			let message;
-			
-			if (window.story.getChoice(window.story.state.chapter, stat)) {
-				message = `You and ${data[stat][0]} of players ${window.story.choiceDescriptions[window.story.state.chapter][stat][0]}`;
-			} else {
-				message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[window.story.state.chapter][stat][1]}`;
-			}
-			
-			$("#statsContainer").append(`<p>${message}</p><progress class="did-bar" value="${data[stat][0].slice(0, -1)}" max="100"></progress><br><progress class="did-not-bar" value="${data[stat][1].slice(0, -1)}" max="100"></progress>`);	
-		}
-		
-		$("#statsContainer").fadeIn(500);
-	}).catch(function(error) {
-		debugMessage(`Failed to load stats for chapter ${window.story.state.chapter} ${window.story.player.key}`);
+			$("#statsContainer").fadeIn(500);
+		})
+		.catch((error) => {
+			debugMessage(`Failed to load stats for chapter "${chapter}", for "${window.story.player.key}".`);
 
-		SimpleNotification.error({
-			title: "Load Failed!",
-			text: error.responseText
-		}, {
-			position: "bottom-right"
+			SimpleNotification.error({
+				title: "Load Failed!",
+				text: error.responseText
+			}, {
+				position: "bottom-right"
+			});
 		});
-	});
 }
 
 // Loads achievements
-window.story.loadAchievements = async function () {
-	// Fake loading to allow the passage to load or else jQuery won't make the changes
-    // TODO: Huh? Look into this, ?really required
-	await sleep(1000);
+window.story.loadAchievements = async () => {
+	while ($("#achievementsLoading").length === 0) {
+		await sleep(1);
+	}
 
     $("#achievementsLoading").hide();
 
-		let earnedAchievements = 0;
-		const totalAchievements = Object.entries(window.story.achievementDescriptions[window.story.state.chapter]).length;
+	const totalAchievements = Object.entries(window.story.achievementDescriptions[window.story.state.chapter]).length;
 
-		$("#achievementsCounter").text(`${earnedAchievements}/${totalAchievements} Achievements Earned`);
+	let earnedAchievements = 0;
 
-		for (const [internal, [name, description]] of Object.entries(window.story.achievementDescriptions[window.story.state.chapter])) {
-			if (!window.story.state.achievements[window.story.state.chapter] || !window.story.state.achievements[window.story.state.chapter][internal]) {
-				continue;
-			}
-
-			$("#achievementsCounter").text(`${++earnedAchievements}/${totalAchievements} Achievements Earned`);
-
-			$("#achievementsContainer").append(`<p>- <b>${name}</b>: ${description.replaceAll("*", "")}</p>`);
+	for (const [internal, [name, description]] of Object.entries(window.story.achievementDescriptions[window.story.state.chapter])) {
+		if (
+			!Object.prototype.hasOwnProperty.call(window.story.state.achievements, window.story.state.chapter) ||
+			!Object.prototype.hasOwnProperty.call(window.story.state.achievements[window.story.state.chapter], internal)
+		) {
+			continue;
 		}
 
-		if (totalAchievements > 0) $("#achievementsContainer").append(`<hr>`);
+		$("#achievementsContainer").append(`<p>- <b>${name}</b>: ${description.replaceAll("*", "")}</p>`);
 
-		$("#achievementsCounter").fadeIn(500);
-		$("#achievementsContainer").fadeIn(500);
+		++earnedAchievements;
+	}
+
+	if (totalAchievements > 0) {
+		$("#achievementsContainer").append(`<hr>`);
+		$("#achievementsCounter").text(`${earnedAchievements}/${totalAchievements} Achievements Earned`);
+	}
+
+	$("#achievementsCounter").fadeIn(500);
+	$("#achievementsContainer").fadeIn(500);
 }
 
 // Toggles opening of pause menu
 window.story.pauseMenu = async function () {
-	debugMessage(`Pause menu toggled (${prePausePassage == null})`);
+	debugMessage(`Pause menu toggled "${prePausePassage == null}".`);
 
 	if (prePausePassage == null) {
 		prePausePassage = window.passage.name;
@@ -427,20 +449,20 @@ window.story.pauseMenu = async function () {
 
 		await audioHelpers.toggleBackgroundMusic();
 
-		window.story.startMenuMusic(true);
+		await window.story.startMenuMusic(true);
 	} else {
 		window.story.show(prePausePassage);
-		window.story.stopMenuMusic(menuMusic);
-
-		audioHelpers.toggleBackgroundMusic();
+		window.story.stopMenuMusic();
 
 		prePausePassage = null;
+
+		await audioHelpers.toggleBackgroundMusic();
 	}
 }
 
 // Toggles showing of achievements
 window.story.toggleAchievements = function () {
-	debugMessage(`Achievements toggled (${!achievementsEnabled})`);
+	debugMessage(`Achievements toggled "${!achievementsEnabled}"`);
 
 	achievementsEnabled = !achievementsEnabled;
 	
@@ -454,36 +476,24 @@ window.story.toggleAchievements = function () {
 	});
 }
 
-// Renders a passage and replaces text
-window.story.customRender = function (passageName) {
-	const passage = window.story.passage(passageName);
-
-	// Replace %Tiffany% with what the player chose to call Tiffany
-	if (passage.source.includes("%Tiffany%")) {
-		passage.source = passage.source.replaceAll("%Tiffany%", window.story.tiffany());
-	}
-	
-	return window.story.render(passageName);
-}
-
 // Starts menu music
 window.story.startMenuMusic = async function (pauseMenu = false) {
+	debugMessage("Main menu music started.");
+
 	if (menuMusic) await audioHelpers.killMusic(menuMusic);
 
-	debugMessage("Main menu music started");
-
-	menuMusic = await audioHelpers.playMusic(!pauseMenu ? audioLibrary.music.menu.main_menu : audioLibrary.music.menu.pause_menu);
+	await audioHelpers.playMusic(!pauseMenu ? audioLibrary.music.menu.main_menu : audioLibrary.music.menu.pause_menu);
 }
 
 // Stops the menu music
 window.story.stopMenuMusic = async function () {
 	if (!menuMusic) return;
 
+	debugMessage("Main menu music stopped.");
+
 	await audioHelpers.stopMusic(menuMusic);
 
-	menuMusic = null;
-
-	debugMessage("Main menu music stopped");
+	menuMusic = null;	
 }
 
 //
@@ -492,17 +502,17 @@ window.story.stopMenuMusic = async function () {
 
 // toggleFullscreen.js
 // https://gist.github.com/demonixis/5188326
-window.story.toggleFullscreen = function (event) {
+window.story.toggleFullscreen = (event) => {
 	let element = document.documentElement;
 
 	if (event instanceof HTMLElement) element = event;
 
 	const isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
 
-	debugMessage(`Fullscreen toggled (${!isFullscreen})`);
+	debugMessage(`Fullscreen toggled "${!isFullscreen}".`);
 
-	element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
-	document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
+	element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || (() => false);
+	document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || (() => false);
 
 	isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
 }
