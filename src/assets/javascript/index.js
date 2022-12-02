@@ -861,12 +861,6 @@ function processPassage(twPassage) {
 		steps.push([element.prop("tagName"), element.html(), element.attr("class")]);
 	});
 
-	if (steps.length === 0) {
-		alert("Passage incompatible.");
-		debugMessage(`Failed to process passage, passage incompatible.`);
-		return;
-	}
-
 	debugMessage(`Processed passage with ${steps.length} steps.`);
 
 	twPassage.empty();
