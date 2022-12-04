@@ -31,7 +31,7 @@ window.story.noConnection = () => SimpleNotification.error({
 
 // Redirects one passage to another after a given period of time
 window.story.redirect = async (pageName, time = 5) => {
-	debugMessage(`Redirecting to ${pageName} in ${time} seconds.`);
+	debugMessage(`Redirecting to "${pageName}" in ${time} seconds.`);
 
 	await sleep(time * 1000);
 
@@ -39,23 +39,32 @@ window.story.redirect = async (pageName, time = 5) => {
 };
 
 // Sets an achievement and shows a popup
-window.story.achievement = (chapter, shorthand, title, text) => {
+window.story.achievement = (chapter, shorthand) => {
+    if (
+		!Object.prototype.hasOwnProperty.call(window.story.achievementDescriptions, chapter) ||
+		!Object.prototype.hasOwnProperty.call(window.story.achievementDescriptions[chapter], shorthand)
+	) {
+		return;
+	}
+
     if (!Object.prototype.hasOwnProperty.call(window.story.state.achievements, chapter)) window.story.state.achievements[chapter] = {};
     
     if (Object.prototype.hasOwnProperty.call(window.story.state.achievements[chapter], shorthand)) {
-        debugMessage(`Chapter ${chapter} achievement ${shorthand} already earned.`);
+        debugMessage(`Chapter ${chapter} achievement "${shorthand}" already earned.`);
         return;
     } else {
-        debugMessage(`Chapter ${chapter} achievement ${shorthand} earned, showing ${achievementsEnabled}.`);
+        debugMessage(`Chapter ${chapter} achievement "${shorthand}" earned, showing "${achievementsEnabled}".`);
     }
 
     window.story.state.achievements[chapter][shorthand] = true;
 
 	if (!achievementsEnabled) return;
 
+	const achievement = window.story.achievementDescriptions[chapter][shorthand];
+
     SimpleNotification.info({
-        title: `Achievement: ${title}`,
-        text,
+        title: `Achievement: ${achievement[0]}`,
+        text: achievement[1],
     }, {
         duration: 10 * 1000,
         position: "bottom-right",

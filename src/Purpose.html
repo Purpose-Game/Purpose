@@ -419,7 +419,7 @@ if (!window.passage.tried) {
 
 &lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
-window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;, &quot;Nothing wasted&quot;, &quot;You never know when it will come in handy!&quot;);
+window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;);
 %&gt;
 
 &lt;action&gt;With a bit of effort, I separate the soap from the bench.&lt;/action&gt;
@@ -791,7 +791,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 
 &lt;action&gt;I mumble back.&lt;/action&gt;
     
-&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="35" name="C1P9V3" tags="variation" position="3225,2825" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Filter&quot;, &quot;No Filter&quot;, &quot;Speaking your mind, *even when you shouldn&#39;t.*&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="35" name="C1P9V3" tags="variation" position="3225,2825" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Filter&quot;) %&gt;
 
 &lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1019,7 +1019,7 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 
 &lt;action&gt;I was ready to fight my way out of here, but, now I&#39;m not sure what to do.&lt;/action&gt;
 
-&lt;choices&gt;[[[Wait]|C1P18]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="56" name="C1P17V1" tags="variation" position="2925,4650" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;HelloThere&quot;, &quot;Hello There&quot;, &quot;General Kenobi... you are a bold one.&quot;) %&gt;
+&lt;choices&gt;[[[Wait]|C1P18]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="56" name="C1P17V1" tags="variation" position="2925,4650" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;HelloThere&quot;) %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
@@ -1266,7 +1266,7 @@ if (
 ) {
 	verbal = false;
 
-	window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;, &quot;You have the right to remain silent...&quot;);
+	window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;);
 }
 %&gt;
 
@@ -1378,7 +1378,7 @@ We both sit quietly for a moment.
 [[Tell me about Tiff|C1P25]]</tw-passagedata><tw-passagedata pid="99" name="F: Got cornered" tags="floater" position="3650,5850" size="100,100">I was trying to get away from a pack of walkers, got cornered, and had to climb it, but it had wire on top of it. Wasn&#39;t fun, but I didn&#39;t have a choice&quot;, I say, trying to sound convincing.
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NoChoice&quot;)) {
-	window.story.achievement(&quot;Chapter1&quot;, &quot;NoChoice&quot;, &quot;Broken Record&quot;, &quot;You need some new material.&quot;);
+	window.story.achievement(&quot;Chapter1&quot;, &quot;NoChoice&quot;);
 %&gt;
 
 &quot;Seems to be a running theme with you&quot;, Lucy remarks.
@@ -2237,7 +2237,7 @@ She looks up from her meal.
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;);
 
 _.delay(function() {
-	window.story.achievement(&quot;Chapter1&quot;, &quot;Walkers&quot;, &quot;Walkers?&quot;, &quot;What do you call the ones that run?&quot;)
+	window.story.achievement(&quot;Chapter1&quot;, &quot;Walkers&quot;);
 }, 30 * 1000);
 %&gt;
 
@@ -2363,7 +2363,7 @@ Lucy turns to me with a mixture of anger and shock, but it quickly fades away to
 
 She knows I&#39;m right.
 
-&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Nerve&quot;, &quot;Struck a Nerve&quot;, &quot;Found a touchy subject&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Nerve&quot;1); %&gt;
 
 &quot;She just misses her dad; it sounded like he was going through al-&quot;, I start.
 
@@ -2596,7 +2596,7 @@ Shit! Now what?! It won&#39;t take him long to figure out it&#39;s not fucking l
 
 [[Go away!|C1P53V221]]&lt;br&gt;
 [[&lt;% print (window.story.tiffany()) %&gt; run!|C1P53V222]]&lt;br&gt;
-[[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;) %&gt;
+[[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;); %&gt;
 
 I don&#39;t want to have to go over to him, too dangerous.
 
