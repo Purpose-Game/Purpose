@@ -7,7 +7,9 @@
 // Game Version
 const version = "2.0.0";
 // Keys that progress the story
-const progressKeys = [13, 32, 38, 39, 40];
+const progressKeys = [ 13, 32, 38, 39, 40 ];
+// Body Element
+const body = $("body");
 // Custom HTML Tags
 const customTags = "ui, character, resetcharacter, characteroverride, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait";
 // Save Options UI
@@ -92,8 +94,6 @@ const uiStyles = {
 		</div>
 	`,
 }
-// Body Element
-const body = $("body");
 // Audio Library
 const audioLibrary = {
 	// UI Sounds
@@ -136,11 +136,9 @@ const audioLibrary = {
 	}
 }
 
-// Shows debug notification when true
+
 let debug = false;
-
 let debugNotification;
-
 
 let images;
 let uiType;
@@ -159,6 +157,10 @@ let currentChoiceIndex = -1;
 
 let backgroundMusic;
 let killFade = false;
+
+//
+// Story Variables
+//
 
 window.story.version = version;
 
@@ -188,9 +190,6 @@ window.story.makingChoice = false;
 //		"did some opposite actions or made some other choice"
 //	],
 window.story.choiceDescriptions = {
-	"": {
-		// Empty for debugging
-	},
 	"Chapter1": {
 		"Lied": [
 			"lied to Lucy about how you hurt your leg",
@@ -230,7 +229,7 @@ window.story.choiceDescriptions = {
 		],
 		"TriedToSaveLucy": [
 			"tried to save Lucy, but let Tiffany watch her die",
-			"did as Lucy asked, saved Tiffany from watching her die"
+			"did as Lucy asked, saving Tiffany from watching her die"
 		],
 		"StrangerDied": [
 			"watched the stranger die",
@@ -244,9 +243,6 @@ window.story.choiceDescriptions = {
 //		"Achievement Name", "Achievement Description"
 //	],
 window.story.achievementDescriptions = {
-	"": {
-		// Empty for debugging
-	},
 	"Chapter1": {
 		"Knocked": [
 			"Knock, knock", "Who's *there?*"
@@ -285,13 +281,13 @@ window.story.achievementDescriptions = {
 // Events
 //
 
-$(document).on("sm.passage.showing", function(_, data) {
+$(document).on("sm.passage.showing", (_, data) => {
 	if (data.passage === undefined) return;
 	
 	const passage = data.passage;
 	const twPassage = $("tw-passage");
 
-	debugMessage(`Passage changed to ${passage.name}`);
+	debugMessage(`Passage changed to "${passage.name}".`);
 	
 	// Set browser tab name, doesn't work when inside iFrame
 	$(document).attr("title", "Purpose - " + passage.name);
@@ -313,52 +309,44 @@ $(document).on("sm.passage.showing", function(_, data) {
 		debugNotification.setText(`Content subject to change!\nCurrent Passage: \`\`${passage.name}\`\``);
 	}
 
-	if (passage.tags) {
-		if (
-			passage.tags.includes("forceFade") || (
-				!passage.tags.includes("noFade") &&
-				!passage.tags.includes("redirect") &&
-				!passage.tags.includes("page")) &&
-				!passage.tags.includes("variation")
-			) {
-			twPassage.hide(0).fadeIn(500);
+	if (!passage.tags) return;
+
+	if (passage.tags.includes("menu")) twPassage.hide(0).fadeIn(500);
+
+	if (window.story.saving && passage.tags.includes("save")) {
+		// TODO: Rework save system
+		/* // Stop saving of the page we just loaded back into
+		if (justSaved) {
+			debugMessage(`Not saving ${passage.name} as justLoaded is ${true}`);
+			return;
 		}
 
-		if (window.story.saving && passage.tags.includes("save")) {
-			// TODO: Rework save system
-			/* // Stop saving of the page we just loaded back into
-			if (justSaved) {
-				debugMessage(`Not saving ${passage.name} as justLoaded is ${true}`);
-				return;
-			}
+		debugMessage(`Game saved at ${passage.name}`);
 
-			debugMessage(`Game saved at ${passage.name}`);
-
-			window.story.state.lastPassage = passage.name;
-			window.story.saveGame();*/
-		}
+		window.story.state.lastPassage = passage.name;
+		window.story.saveGame();*/
 	}
 });
 
-$(document).on("sm.passage.shown", function(_, data) {
+$(document).on("sm.passage.shown", (_, data) => {
 	const passage = data.passage;
     const twPassage = $("tw-passage");
 
 	window.story.makingChoice = false;
 
-    if (passage.tags && (passage.tags.includes("page") || passage.tags.includes("variation") || passage.tags.includes("redirect"))) {
+	if (!passage.tags) return;
+
+    if (passage.tags.includes("page") || passage.tags.includes("variation") || passage.tags.includes("redirect")) {
 		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
-		if (pageHTML.includes("%Tiffany%")) {
-			twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
-		}
+		if (pageHTML.includes("%Tiffany%")) twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
 
 		if (twPassage.length) processPassage(twPassage);
     }
 });
 
-body.mouseover(function (e) {
-	const element = $(e.target);
+body.mouseover((event) => {
+	const element = $(event.target);
 
     if (!element.is("a") && !element.attr("class")?.includes("sound-")) return;
 
@@ -370,29 +358,21 @@ body.mouseover(function (e) {
 	audioHelpers.playAudio(audioLibrary.ui.button);
 });
 
-body.click(function (e) {
-	const element = $(e.target);
+body.click((event) => {
+	const element = $(event.target);
 	const elementClass = element.attr("class");
 
     if (!element.is("a") && !elementClass?.includes("sound-")) {
 		const ignoreClick = ["option-one", "option-two"];
 
-		if (!ignoreClick.includes(e.target.id)) stepPassage();
+		if (!ignoreClick.includes(event.target.id)) stepPassage();
 	} else {
-		switch (elementClass) {
-			case "sound-confirm":
-				audioHelpers.playAudio(audioLibrary.ui.confirm);
-				break;
-	
-			default:
-				audioHelpers.playAudio(audioLibrary.ui.click);
-				break;
-		}
+		audioHelpers.playAudio(elementClass === "sound-confirm" ? audioLibrary.ui.confirm : audioLibrary.ui.click);
 	}
 });
 
-body.keyup(function (e) {
-	if (!progressKeys.includes(e.keyCode)) return;
+body.keyup((event) => {
+	if (!progressKeys.includes(event.keyCode)) return;
 
 	if (!window.story.makingChoice) {
 		stepPassage();
@@ -406,7 +386,7 @@ body.keyup(function (e) {
 	} else {
 		$(`#choice-${currentChoiceIndex}`).removeClass("hovered");
 
-		switch (e.keyCode) {
+		switch (event.keyCode) {
 			// Enter
 			case 13:
 				$(`#choice-${currentChoiceIndex}`).trigger("click");
@@ -426,10 +406,7 @@ body.keyup(function (e) {
 
 	const currentElement = $(`#choice-${currentChoiceIndex}`);
 
-	if (oldChoiceIndex != currentChoiceIndex) {
-		audioHelpers.playAudio(audioLibrary.ui.click);
-		GamePad.gamepadRumble(0.5, 0, 200);
-	}
+	if (oldChoiceIndex != currentChoiceIndex) audioHelpers.playAudio(audioLibrary.ui.click);
 
 	currentElement.addClass("hovered");
 
@@ -441,9 +418,9 @@ body.keyup(function (e) {
 //
 
 // Prints a debug message to the console if in debug mode
-const debugMessage = (message) => { if (debug) console.log("DEBUG: " + message); };
+const debugMessage = (message) => debug && console.log(`DEBUG: ${message}`);
 
-// Delays script execution for X ms
+// Delays execution for X ms
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Audio functions
@@ -516,7 +493,7 @@ const audioHelpers = {
 	}
 };
 
-async function stepPassage() {
+const stepPassage = async () => {
 	const storyBox = $(".story-box");
 	const ui = uiType === "standard" ? "main" : uiType === "special" ? "special" : "minimal";
 
@@ -530,10 +507,13 @@ async function stepPassage() {
 			speaker.css("background-image", originalImages.join(", "));
 		}
 		
-		textArea.append(`<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${lastTextStep}-skipped">${type === "SPEECH" ? `"${content}"` : content}</div>`);
+		textArea.append(`
+			<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${lastTextStep}-skipped">
+				${type === "SPEECH" ? `"${content}"` : content}
+			</div>
+		`);
 
 		lastText = $(`#text-area-${ui}-${lastTextStep}-skipped`);
-
 		typewriting = typewriting.filter(i => i !== lastTextStep);
 
 		debugMessage(`Skipped to end of passage ${lastTextStep}.`);
@@ -542,10 +522,10 @@ async function stepPassage() {
 		
 		let [type, content, extra] = steps[step];
 
+		currentStep++;
+
 		if (extra === "Tiff") extra = "Tiffany";
 		if (content === "Tiff") content = "Tiffany";
-		
-		currentStep++;
 
 		switch (type) {
 			// Change the current UI layout
@@ -576,10 +556,10 @@ async function stepPassage() {
 
 			// Set a character to a slot
 			case "CHARACTER": {
-				const knownUnknown = content.startsWith("?");
 				const extras = extra.split(" ");
 				const slot = extras.shift();
-				const character = (knownUnknown ? "Unknown" : content).toLowerCase();
+				const knownUnknown = content.startsWith("?");
+				const character = knownUnknown ? "unknown" : content.toLowerCase();
 				const mixer = document.createElement("span");
 				
 				mixer.id = "mixer-image";
@@ -587,8 +567,8 @@ async function stepPassage() {
 			
 				let parts = [];
 				let images = [];
-				let parent = $(`#character-${slot}`);
 				let mixerImage = $(`#mixer-image`);
+				let parent = $(`#character-${slot}`);
 				let parentImage = $(`#character-${slot}-image`);
 
 				switch (extras.length) {
@@ -662,6 +642,7 @@ async function stepPassage() {
 				parentImage.attr("class", "character-slot");
 				parentImage.css("background-image", images.join(", "));
 				mixerImage.remove();
+				mixer.remove();
 
 				stepPassage();
 				break;
@@ -678,14 +659,14 @@ async function stepPassage() {
 				break;
 			}
 
-			// Override a character name by slot
+			// Override a character slot name by slot number
 			case "CHARACTEROVERRIDE":
 				$(`#character-${extra.split(" ").shift()}`).text(content);
 
 				stepPassage();
 				break;
 
-			// Set the special image for the Special UI
+			// Set the image for the Special UI
 			case "SPECIAL":
 				$("#special-image").attr("class", "special-image");
 				$("#special-image").addClass(`${content.toLowerCase()}-image`);
@@ -751,20 +732,22 @@ async function stepPassage() {
 				let character;
 				let specificSpeech = "";
 
-				if (extra?.includes(" ")) {
-					const extras = extra.split(" ");
+				if (lastText) lastText.remove();
 
-					character = extras[0].toLowerCase() ?? "";
-					specificSpeech = `-${extras[1].toLowerCase()}`;
+				if (extra?.includes(" ")) {
+					const extras = extra.toLowerCase().split(" ");
+
+					character = extras[0] ?? "";
+					specificSpeech = `-${extras[1]}`;
 				} else {
 					character = extra?.toLowerCase() ?? "";
 				}
 
-				if (lastText) lastText.remove();
-
 				if (type !== "CHOICES") typewriting.push(step);
 
-				textArea.append(`<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${step}"></div>`);
+				textArea.append(`
+					<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${step}"></div>
+				`);
 
 				lastTextStep = step;
 				lastText = $(`#text-area-${ui}-${step}`);
@@ -787,11 +770,11 @@ async function stepPassage() {
 						let backgroundImages = speaker.css("background-image");
 
 						if (
-							// Scared Tiffany has her mouth covered OR
+							// Not scared Tiffany has her mouth covered OR
 							(character !== "Tiffany" && !backgroundImages.includes("stance/scared")) &&
-							// Lucy has surgical mask on
+							// Not Lucy has surgical mask on OR
 							(character !== "Lucy" && !backgroundImages.includes("stance/neutral_mask")) &&
-							// Known Unknown has no mouth
+							// Not Unknown has no mouth
 							(!backgroundImages.includes("unknown/neutral"))
 						) {
 							images = backgroundImages.split(", ");
@@ -811,23 +794,22 @@ async function stepPassage() {
 							speaker.css("background-image", images.join(", "));
 
 							mixerImage.remove();
+							mixer.remove();
 						} else {
 							speaker = null;
 						}
 					}
 
-					lastText.typeWrite({
-						speed: 50,
-						cursor: false,
-						color: "#c8c3bc"
-					}).then(() => {
-						if (type === "SPEECH" && speaker && originalImages && typewriting.includes(step)) {
-							speaker.attr("class", "character-slot");
-							speaker.css("background-image", originalImages.join(", "));
-						}
+					// TODO: Add setting to control speed
+					lastText.typeWrite({ speed: 55, cursor: false, color: "#c8c3bc" })
+						.then(() => {
+							if (type === "SPEECH" && speaker && originalImages && typewriting.includes(step)) {
+								speaker.attr("class", "character-slot");
+								speaker.css("background-image", originalImages.join(", "));
+							}
 
-						typewriting = typewriting.filter(i => i !== step);
-					});
+							typewriting = typewriting.filter(i => i !== step);
+						});
 				} else {
 					currentChoiceIndex = -1;
 					keybindSelectedElement = null;
@@ -849,10 +831,11 @@ async function stepPassage() {
 	}
 }
 
-function processPassage(twPassage) {
+const processPassage = (twPassage) => {
 	steps = [];
 	currentStep = 0;
 	lastTextStep = 0;
+	inFlashback = false;
 
 	// Populate steps list
 	twPassage.find(customTags).each(function() {
@@ -866,55 +849,53 @@ function processPassage(twPassage) {
 	twPassage.empty();
 	twPassage.append(`<div class="story-box"></div>`);
 
-	inFlashback = false;
-
 	stepPassage();
 }
+
+const initializeScript = (path) => {
+	const script = document.createElement("script");
+	script.src = path;
+
+	return script
+}
+
+const executeScript = (script) => document.head.appendChild(script);
 
 //
 // Scripts
 //
 
-// Window Helpers
-const helpers = document.createElement("script");
-helpers.src = "assets/javascript/helpers.js";
-
-document.head.appendChild(helpers);
-
-// Game Pad
-const gamepad = document.createElement("script");
-gamepad.src = "assets/javascript/gamepad.js";
-
-document.head.appendChild(gamepad);
-
-// Preload
-const preload = document.createElement("script");
-preload.src = "assets/javascript/preload.js";
-
-const startPreload = () => document.head.appendChild(preload);
+const helpers = initializeScript("assets/javascript/helpers.js");
+const gamepad = initializeScript("assets/javascript/gamepad.js");
+const preload = initializeScript("assets/javascript/preload.js");
 
 // SimpleNotification
 // https://github.com/Glagan/SimpleNotification
 // https://github.com/Glagan/SimpleNotification/blob/master/LICENSE
-const simpleNotification = document.createElement("script");
-simpleNotification.src = "assets/javascript/simpleNotification.min.js";
-
-document.head.appendChild(simpleNotification);
+const simpleNotification = initializeScript("assets/javascript/simpleNotification.min.js");
 
 // jquery-typewriter-plugin
 // https://github.com/0xPranavDoshi/jquery-typewriter
 // https://github.com/0xPranavDoshi/jquery-typewriter/blob/master/LICENSE
-const typewriter = document.createElement("script");
-typewriter.src = "assets/javascript/jquery.typewriter.min.js";
-
-document.head.appendChild(typewriter);
+const typewriter = initializeScript("assets/javascript/jquery.typewriter.min.js");
 
 ///
 /// Initialization
 ///
 
 // Adds Favicons
-$("head").append('<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">');
+$("head").append(`
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+`);
+
+executeScript(helpers);
+executeScript(gamepad);
+executeScript(simpleNotification);
+executeScript(typewriter);
 
 // Start preloading all images
-startPreload();
+executeScript(preload);
