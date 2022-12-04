@@ -15,15 +15,13 @@ class GamePad {
 	//
 
 	// Cross-platform requestAnimationFrame
-	static requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame; // eslint-disable-line no-redeclare
+	static requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
 	// Cross-platform cancelAnimationFrame
-	static cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame; // eslint-disable-line no-redeclare
+	static cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
 
 	// Polls for gamepads
-	static pollGamepads() {
-		debugMessage("Polling gamepads...");
-		
+	static pollGamepads() {	
 		for (const gp of getGamepads()) {
 			if (!gp) return;
 
@@ -31,6 +29,7 @@ class GamePad {
 			connectedNotification();
 			GamePad.checkForGamepadInput();
 			clearInterval(gamepadCheckInterval);
+			return;
 		}
 	}
 
@@ -46,11 +45,12 @@ class GamePad {
 			return;
 		}
 
-		// Step story
+		// Select Choice / Step story
 		if (buttonPressed(gp.buttons[0])) {
+			// Stop spam pressing
 			if (!anyGamepadButtonPressed) {
 				if (window.story.makingChoice) {
-					body.trigger({type: "keyup", keyCode: 13});
+					body.trigger({ type: "keyup", keyCode: 13 });
 				} else {
 					$(".story-box").trigger("click");
 				}
@@ -70,21 +70,18 @@ class GamePad {
 		let b = 0;
 		
 		if (gp.axes[0] !== 0) b -= gp.axes[0];
-		
 		if (gp.axes[1] !== 0) a += gp.axes[1];
-		
 		if (gp.axes[2] !== 0) b += gp.axes[2];
-		
 		if (gp.axes[3] !== 0) a -= gp.axes[3];
 
 		const [left, right, up, down] = [b > 0.75, b < -0.75, a < -0.75, a > 0.75];
 
 		if (up || left) {
-			if (!anyGamepadAxisPressed) body.trigger({type: "keyup", keyCode: 38});
+			if (!anyGamepadAxisPressed) body.trigger({ type: "keyup", keyCode: 38 });
 
 			anyGamepadAxisPressed = true;
 		} else if (down || right) {
-			if (!anyGamepadAxisPressed) body.trigger({type: "keyup", keyCode: 40});
+			if (!anyGamepadAxisPressed) body.trigger({ type: "keyup", keyCode: 40 });
 			
 			anyGamepadAxisPressed = true;
 		} else {
@@ -140,14 +137,7 @@ $(document).on("gamepaddisconnected", function() {
 
 const getGamepads = () => navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
 
-// Checks if gamepad button pressed
-function buttonPressed(b) {
-	if (typeof b === "object") {
-		return b.pressed;
-	}
-	
-	return b === 1.0;
-}
+const buttonPressed = (button) => typeof button === "object" ? button.pressed : button === 1.0;
 
 const setCheckInterval = () => gamepadCheckInterval = setInterval(() => GamePad.pollGamepads(), 2 * 1000);
 
