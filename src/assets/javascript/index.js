@@ -108,7 +108,7 @@ const audioLibrary = {
 		// Diegetic
 		"knocking": new Audio("assets/audio/sfx/knocking.mp3"),
 		"collapse": new Audio("assets/audio/sfx/collapse.mp3"),
-		"bedroom": new Audio("assets/audio/sfx/bedroom.mp3"),
+		"door": new Audio("assets/audio/sfx/door.mp3"),
 		"bed": new Audio("assets/audio/sfx/bed.mp3"),
 		"behind-door": new Audio("assets/audio/sfx/behind_door.mp3"),
 		"door-close": new Audio("assets/audio/sfx/door_close.mp3"),
@@ -650,21 +650,32 @@ const stepPassage = async () => {
 
 			// Resets a character slot
 			case "RESETCHARACTER": {
-				const slot = extra.replace("/", "").split(" ").shift();
+				const slot = extra?.replace("/", "")?.split(" ")?.shift();
 
-				$(`#character-${slot}`).text("");
-				$(`#character-${slot}-image`).css("background-image", "");
+				if (!slot) {
+					alert("No slot provided to Reset Character!");
+				} else {
+					$(`#character-${slot}`).text("");
+					$(`#character-${slot}-image`).css("background-image", "");
+				}
 
 				stepPassage();
 				break;
 			}
 
 			// Override a character slot name by slot number
-			case "CHARACTEROVERRIDE":
-				$(`#character-${extra.split(" ").shift()}`).text(content);
+			case "CHARACTEROVERRIDE": {
+				const slot = extra?.split(" ")?.shift();
+
+				if (!slot) {
+					alert("No slot provided to Character Override!");
+				} else {
+					$(`#character-${slot}`).text(content);
+				}
 
 				stepPassage();
 				break;
+			}
 
 			// Set the image for the Special UI
 			case "SPECIAL":
