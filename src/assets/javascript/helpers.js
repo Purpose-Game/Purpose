@@ -456,16 +456,13 @@ window.story.pauseMenu = async function () {
 
 		window.story.show("Pause Menu");
 
-		await audioHelpers.toggleBackgroundMusic();
-
-		await window.story.startMenuMusic(true);
+		await audioHelpers.toggleMenuMusic();
 	} else {
 		window.story.show(prePausePassage);
-		window.story.stopMenuMusic();
 
 		prePausePassage = null;
 
-		await audioHelpers.toggleBackgroundMusic();
+		await audioHelpers.toggleMenuMusic();
 	}
 }
 

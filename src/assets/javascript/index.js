@@ -443,13 +443,13 @@ const audioHelpers = {
 		return music;
 	},
 
-	toggleBackgroundMusic: async () => {
-		if (!backgroundMusic) return;
+	toggleMenuMusic: async (pauseMenu = false) => {
+		if (backgroundMusic) {
+			await audioHelpers.stopMusic(backgroundMusic);
 
-		if (backgroundMusic.paused) {
-			audioHelpers.play(backgroundMusic);
+			backgroundMusic = null;
 		} else {
-			await audioHelpers.killMusic(backgroundMusic);
+			backgroundMusic = await audioHelpers.playMusic(pauseMenu ? audioLibrary.music.menu.pause_menu : audioLibrary.music.menu.main_menu);
 		}
 	},
 
