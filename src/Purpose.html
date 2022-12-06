@@ -1245,51 +1245,121 @@ Stranger - Charles:
     [[...|C1P20V2]]
     [[Thanks|C1P20V1]]
     [[Should have let me die|C1P20V3]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="73" name="C1P20V2" tags="variation" position="3075,5400" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="73" name="C1P20V2" tags="variation" position="3075,5400" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;); %&gt;
 
-I continue to stare at Lucy.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="74" name="C1P20V1" tags="variation" position="2925,5400" size="100,100">&quot;Thanks for choosing option number three, I think&quot;, I reply cautiously.
+&lt;action&gt;I continue to stare at Lucy.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="C1P20V3" tags="variation" position="3225,5400" size="100,100">&quot;You should have left me to die&quot;, I state.
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="74" name="C1P20V1" tags="variation" position="2925,5400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&quot;Oh, and why&#39;s that?&quot;, Lucy asks.
+&lt;speech.sarah&gt;Thanks for choosing option number three, I think...&lt;/speech&gt;
 
-&quot;That&#39;s what I would have done in your position. Supplies are scarce these days, I was in pretty bad shape, and I was, and still am, a stranger. For all you know, I could have got hurt breaking into someone else&#39;s house, just like I did yours&quot;, I state matter-of-factly.
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="C1P20V3" tags="variation" position="3225,5400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&quot;Good point, I guess I&#39;m just too trusting&quot;, Lucy replies.
+&lt;speech.sarah&gt;You should have left me to die.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="F: How did you?" tags="floater" position="3500,5550" size="100,100">&quot;Yup. It&#39;s called a cannula, and that bag it&#39;s connected to, is just salty water&quot;, Lucy explains.
+&lt;character.two.happy.eyes&gt;Lucy&lt;/character&gt;
 
-&quot;You&#39;re lucky that you broke into the one house around here with a nurse in it, albeit an ill-supplied nurse&quot;, Lucy chuckles.
+&lt;speech.lucy&gt;Oh, and why&#39;s that?&lt;/speech&gt;
 
-Lucy pauses, then sits forward in her chair.
+&lt;speech.sarah&gt;That&#39;s what I would have done in your position.&lt;/speech&gt;
+&lt;speech.sarah&gt;Supplies are scarce these days, and I was in pretty bad shape.&lt;/speech&gt;
+&lt;speech.sarah&gt;I was, and still am, a stranger.&lt;/speech&gt;
+&lt;speech.sarah&gt;For all you know, I could have got hurt breaking into someone else&#39;s house, just like I did yours.&lt;/speech&gt;
 
-&quot;Speaking of injuries, how *did* you manage to get yourself so banged up anyway?&quot;, Lucy asks as she gestures to my leg.
+&lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
 
-[[[Tell Lucy the Truth]|C1P22V1]][[[Lie to Lucy]|C1P22V2]]</tw-passagedata><tw-passagedata pid="77" name="C1P22V1" tags="variation" position="2850,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;, false) %&gt;
+&lt;action&gt;Lucy raises an eyebrow.&lt;/action&gt;
 
-&quot;I killed a man&quot;, I state.
+&lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
 
-Lucy sits there for a moment, then her slight smile drops as she realizes I wasn&#39;t joking.
+&lt;action&gt;Shit, might have given too much away there...&lt;/action&gt;
 
-She pauses for a moment.
+&lt;speech.lucy&gt;I guess I&#39;m just too trusting&lt;/speech&gt;
 
-&quot;Did he deserve it?&quot;, she asks.
+&lt;%= window.story.render(&quot;F: I used your stuff&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="F: How did you?" tags="floater" position="3500,5550" size="100,100">&lt;speech.lucy&gt;Yup. It&#39;s called a cannula, and that bag it&#39;s connected to, is just salty water.&lt;/speech&gt;
+&lt;speech.lucy&gt;You&#39;re lucky you broke into the one house around here with a nurse in it.&lt;/speech&gt;
 
-[[...|C1P22V12]]&lt;br&gt;
-[[Yes, it was unprovoked|C1P22V11]]&lt;br&gt;
-[[No, wrong place wrong time|C1P22V13]]</tw-passagedata><tw-passagedata pid="78" name="C1P22V2" tags="variation" position="3300,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;) %&gt;
+&lt;character.two.happy&gt;Lucy&lt;/character&gt;
 
-&quot;I cut myself climbing a fence&quot;, I say; I&#39;m not good at lying.
+&lt;speech.lucy&gt;Albeit an ill-equipped one.&lt;/speech&gt;
 
-&quot;Uh-huh&quot;, Lucy says, clearly unconvinced.
+&lt;action&gt;She chuckles at her own comment.&lt;/action&gt;
 
-&quot;Must have been a hellova fence&quot;, she adds.
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
 
-[[Yeah|C1P22V21]]&lt;br&gt;
-[[It was|C1P22V22]]&lt;br&gt;
-[[Biggest ever|C1P22V23]]</tw-passagedata><tw-passagedata pid="79" name="C1P9V2" tags="variation" position="3075,2825" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
+&lt;action&gt;Lucy then pauses and sits forward in her chair.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Speaking of injuries, how exactly did you manage to get yourself so scrapped up?&lt;/speech&gt;
+
+&lt;action&gt;Lucy gestures to my leg.&lt;/action&gt;
+&lt;action&gt;I suspected this would come up.&lt;/action&gt;
+&lt;action&gt;I&#39;m not sure what to say...&lt;/action&gt;
+
+&lt;choices&gt;
+    [[[Lie to Lucy]|C1P22V2]]
+    [[[Tell Lucy the Truth]|C1P22V1]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="77" name="C1P22V1" tags="variation" position="2850,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;, false); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;Honesty is the best policy, right?&lt;/action&gt;
+&lt;action&gt;I take a deep breath, preparing myself for whatever might happen next.&lt;/action&gt;
+
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;I killed a man.&lt;/speech&gt;
+
+&lt;action&gt;Lucy sits there staring.&lt;/action&gt;
+
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;Her slight smile drops as she realizes I wasn&#39;t joking.&lt;/action&gt;
+&lt;action&gt;She pauses for a moment.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Did he deserve it?&lt;/speech&gt;
+
+&lt;choices&gt;
+    [[...|C1P22V12]]
+    [[Yes, it was unprovoked|C1P22V11]]
+    [[No, wrong place wrong time|C1P22V13]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="78" name="C1P22V2" tags="variation" position="3300,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;She might kill me on the spot if I tell her the truth.&lt;/action&gt;
+&lt;action&gt;I better come up with something, quickly.&lt;/action&gt;
+
+&lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;I, uh, cut myself climbing a fence.&lt;/speech&gt;
+
+&lt;action&gt;Fuck I&#39;m a terrible lier.&lt;/action&gt;
+
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;Uh-huh.&lt;/speech&gt;
+
+&lt;action&gt;She&#39;s clearly not convinced.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Must have been a hellova fence...&lt;/speech&gt;
+
+&lt;choices&gt;
+    [[Yeah|C1P22V21]]
+    [[It was|C1P22V22]]
+    [[Biggest ever|C1P22V23]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="79" name="C1P9V2" tags="variation" position="3075,2825" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
 &lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1353,54 +1423,95 @@ Twine 2 - Twine and Twee&lt;br&gt;
 let verbal = true;
 
 if (
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) &amp;&amp;
-	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;)
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) &amp;&amp;
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) &amp;&amp;
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) &amp;&amp;
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) &amp;&amp;
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) &amp;&amp;
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) &amp;&amp;
+    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;)
 ) {
-	verbal = false;
+    verbal = false;
 
-	window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;);
+    window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;);
 }
 %&gt;
 
-Lucy crosses her arms.
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+    
+&lt;action&gt;Lucy crosses her arms.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) { %&gt;
 
-&quot;You know that disinfectant you had on you is for cleaning floors, right?&quot;, Lucy remarks.
+&lt;speech.lucy&gt;You know that disinfectant you had on you is for cleaning floors, right?&lt;/speech&gt;
 
-&quot;Yeah I know, but it was all I could find. I couldn&#39;t exactly take myself down to the local chemist&quot;, I reply.
+&lt;speech.sarah&gt;Yeah I know, but it was all I could find.&lt;/speech&gt;
+&lt;speech.sarah&gt;I couldn&#39;t exactly take myself down to the local chemist.&lt;/speech&gt;
 
-&quot;&lt;% if (!verbal) { print(&quot;She does speak! &quot;); verbal = true; } %&gt;Well, good thing you had it because I was all out, and you would have had a nasty infection if I hadn&#39;t used it. Definitely shaved a few days off your recovery&quot;, Lucy says.
+&lt;%
+if (!verbal) {
+    verbal = true;
+%&gt;
+&lt;speech.lucy&gt;So she does speak...&lt;/speech&gt;
+&lt;% } %&gt;
+
+&lt;speech.lucy&gt;Well, good thing you had it because I was all out, and you would have had a nasty infection if I hadn&#39;t used it.&lt;/speech&gt;
+&lt;speech.lucy&gt;Definitely shaved a few days off your recovery.&lt;/speech&gt;
 
 &lt;% } else { %&gt;
 
-&quot;I didn&#39;t have anything to properly clean that wound with, so you developed a nasty infection for a little while there. It resolved within a few days though&quot;, Lucy says.
+&lt;speech.lucy&gt;Anyway, I didn&#39;t have anything to properly clean your wound with, so you picked up a nasty infection.&lt;/speech&gt;
+&lt;speech.lucy&gt;Lucky for you, it resolved in a few days, and you&#39;re no worse for wear it appears.&lt;/speech&gt;
 
 &lt;% } %&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) { %&gt;
 
-&quot;Also, what the hell was the soap bar for?&quot;, Lucy adds.
+&lt;character.two.happy.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;Also, what the hell was the soap bar for?&lt;/speech&gt;
 
 &lt;% } %&gt;
 
-&quot;Hold on, *Days?!*&quot;, I exclaim.
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
 
-&quot;&lt;% if (!verbal) print(&quot;She does speak! &quot;) %&gt;Oh yeah, you had one foot in the grave. That&#39;s why I had to give you IV fluids, couldn&#39;t have you dying of dehydration on me after all the effort I put into *not* killing you&quot;, Lucy states calmly.
+&lt;speech.sarah&gt;Hold on, days!?&lt;/speech&gt;
 
-[[[Raise arm]|C1P21V2]]&lt;br&gt;
-[[Like in Hospital?|C1P21V3]]&lt;br&gt;
-[[The thing in my arm?|C1P21V1]]
-</tw-passagedata><tw-passagedata pid="84" name="C1P21V2" tags="variation" position="3075,5550" size="100,100">I raise my arm with the thing sticking out of it.
+&lt;% if (!verbal) { %&gt;
 
-&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="85" name="C1P21V1" tags="variation" position="2925,5550" size="100,100">&quot;Is that what this thing sticking in my arm is for?&quot;, I enquire.
+&lt;speech.lucy&gt;Ah, so she does speak.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="C1P21V3" tags="variation" position="3225,5550" size="100,100">&quot;Oh, like when you&#39;re in the hospital?&quot;, I enquire.
+&lt;% } %&gt;
+
+&lt;speech.lucy&gt;Oh yeah, you had one foot in the grave.&lt;/speech&gt;
+&lt;speech.lucy&gt;That&#39;s why I had to give you IV fluids.&lt;/speech&gt;
+&lt;speech.lucy&gt;Couldn&#39;t have you dying of dehydration on me after all the effort I put into not killing you.&lt;/speech&gt;
+
+&lt;action&gt;This lady has a strange sense of humor...&lt;/action&gt;
+
+&lt;choices&gt;
+    [[[Raise arm]|C1P21V2]]
+    [[Like in Hospital?|C1P21V3]]
+    [[The thing in my arm?|C1P21V1]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="84" name="C1P21V2" tags="variation" position="3075,5550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I raise my arm with the thing sticking out of it.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="85" name="C1P21V1" tags="variation" position="2925,5550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;Is that what this thing sticking in my arm is for?&lt;/speech&gt;
+
+&lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="C1P21V3" tags="variation" position="3225,5550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;Oh... like, in the hospital?&lt;/speech&gt;
 
 &lt;%= window.story.render(&quot;F: How did you?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="87" name="C1P22V12" tags="variation" position="2850,5850" size="100,100">I look down for a moment, then back at Lucy. But I think that&#39;s all she needed to see.
 
@@ -3847,7 +3958,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2600,5250" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2600,5700" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
