@@ -593,14 +593,6 @@ const stepPassage = async () => {
 
 					case 2:
 						switch (extras[1]) {
-							case "solo":
-								parts = [
-									`${character}-eyes-${extras[0]}`,
-									`${character}-mouth-neutral`,
-									`${character}-stance-neutral`
-								];
-								break;
-
 							case "ditto":
 								parts = [
 									`${character}-eyes-${extras[0]}`,
@@ -608,6 +600,22 @@ const stepPassage = async () => {
 									`${character}-stance-${extras[0]}`
 								];
 								break;
+
+							case "eyes":
+								parts = [
+									`${character}-eyes-${extras[0]}`,
+									`${character}-mouth-neutral`,
+									`${character}-stance-neutral`
+								];
+								break;
+
+							case "mouth":
+									parts = [
+										`${character}-eyes-neutral`,
+										`${character}-mouth-${extras[0]}`,
+										`${character}-stance-neutral`
+									];
+									break;
 
 							case "stance":
 								parts = [
