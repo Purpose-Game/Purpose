@@ -181,6 +181,8 @@ window.story.saveSlot = 1;
 window.story.network = false;
 // Is player making a choice
 window.story.makingChoice = false;
+// If a passage can be stepped through
+window.story.stepable = false;
 
 // Used for statistics passages, see "Choices" passage for all choices
 //	"Choice Internal Name": [
@@ -333,6 +335,7 @@ $(document).on("sm.passage.shown", (_, data) => {
     const twPassage = $("tw-passage");
 
 	window.story.makingChoice = false;
+	window.story.stepable = false;
 
 	if (!passage.tags) return;
 
@@ -371,10 +374,10 @@ body.click((event) => {
 	}
 });
 
-body.keyup((event) => {
+body.keydown((event) => {
 	if (!progressKeys.includes(event.keyCode)) return;
 
-	if (!window.story.makingChoice) {
+	if (window.story.stepable && !window.story.makingChoice) {
 		stepPassage();
 		return;
 	}
@@ -741,6 +744,7 @@ const stepPassage = async () => {
 			// Handles SPEECH, ACTION, and CHOICES
 			default: {
 				let character;
+				let slotOverride;
 				let specificSpeech = "";
 
 				if (lastText) lastText.remove();
@@ -749,7 +753,12 @@ const stepPassage = async () => {
 					const extras = extra.toLowerCase().split(" ");
 
 					character = extras[0] ?? "";
-					specificSpeech = `-${extras[1]}`;
+
+					if (extras[1].startsWith("!")) {
+						slotOverride = extras[1].substring(1);
+					} else {
+						specificSpeech = `-${extras[1]}`;
+					}
 				} else {
 					character = extra?.toLowerCase() ?? "";
 				}
@@ -769,14 +778,18 @@ const stepPassage = async () => {
 				if (characterOne === "???") characterOne = "unknown";
 				if (characterTwo === "???") characterTwo = "unknown";
 
-				$("#character-one-image").css("opacity", character !== characterOne ? "0.6" : "1");
-				$("#character-two-image").css("opacity", character !== characterTwo ? "0.6" : "1");
+				if (!slotOverride) {
+					$("#character-one-image").css("opacity", character !== characterOne ? "0.6" : "1");
+					$("#character-two-image").css("opacity", character !== characterTwo ? "0.6" : "1");
+				} else {
+					$(`#character-${slotOverride}-image`).css("opacity", "1");
+				}
 				
 				lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
 				if (type !== "CHOICES") {
 					if (type === "SPEECH" && character) {
-						speaker = $(`#character-${character === characterOne ? "one" : "two"}-image`)
+						speaker = $(`#character-${slotOverride ? slotOverride : character === characterOne ? "one" : "two"}-image`)
 
 						let backgroundImages = speaker.css("background-image");
 
@@ -856,6 +869,8 @@ const processPassage = (twPassage) => {
 	});
 
 	debugMessage(`Processed passage with ${steps.length} steps.`);
+
+	window.story.stepable = true;
 
 	twPassage.empty();
 	twPassage.append(`<div class="story-box"></div>`);
