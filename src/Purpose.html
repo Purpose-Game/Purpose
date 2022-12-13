@@ -1934,9 +1934,11 @@ No Tag: Temporary/Test page</tw-passagedata><tw-passagedata pid="111" name="C1P2
 &lt;action&gt;I trail off, as I notice tears start to run down my face.&lt;/action&gt;
 &lt;action&gt;I wipe them away, take a breath, and try again.&lt;/action&gt;
 
-&lt;speech.sarah&gt;My little sister, gave up, a long time ago...&lt;/speech&gt;
+&lt;speech.sarah&gt;My little sister... gave up&lt;/speech&gt;
 
 &lt;action&gt;I trail off again, as I stare at the floor.&lt;/action&gt;
+
+&lt;speech.sarah&gt;She couldn&#39;t survive this is world...&lt;/speech&gt;
 
 &lt;%= window.story.render(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="115" name="F: Pain in her eyes" tags="floater" position="3425,6750" size="100,100">&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
@@ -1980,56 +1982,115 @@ No Tag: Temporary/Test page</tw-passagedata><tw-passagedata pid="111" name="C1P2
 
 &lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;choices&gt;[[[Weep quietly]|C1P28]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="116" name="C1P28" tags="page" position="3075,6900" size="100,100">I quietly let my emotions run. It&#39;s been a long time since I&#39;ve thought about her.
+&lt;choices&gt;[[[Weep quietly]|C1P28]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="116" name="C1P28" tags="page" position="3075,6900" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
-We sit in silence for a few minutes, then without saying a word, Lucy gets up and leaves the room; leaving me alone with my consciousness.
+&lt;action&gt;I quietly let my emotions run.&lt;/action&gt;
+&lt;action&gt;It&#39;s been a long time since I&#39;ve thought about Sophia.&lt;/action&gt;
+&lt;action&gt;We sit in silence for a few minutes.&lt;/action&gt;
 
-With Lucy gone, I don&#39;t have a reason to hold back anymore. I lay back on the sofa, and close my eyes.
+&lt;resetcharacter.two/&gt;
 
-[[[Bawl eyes out]|C1P29]]</tw-passagedata><tw-passagedata pid="117" name="C1P29" tags="page" position="3075,7050" size="100,100">I begin to bawl.
+&lt;action&gt;Without saying a word, Lucy gets up and leaves the room.&lt;/action&gt;
+&lt;action&gt;Leaving me alone with my conscience.&lt;/action&gt;
+&lt;action&gt;With Lucy gone, I don&#39;t have a reason to hold back anymore.&lt;/action&gt;
 
-Raw, hard, tears.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
 
-I never had the chance to properly mourn her, I was too busy focusing on my own survival, and for what? So I could die somewhere else another day?
+&lt;action&gt;I lay back on the sofa, and close my eyes.&lt;/action&gt;
 
-[[[Reflect on Sophia&#39;s death]|C1P30]]</tw-passagedata><tw-passagedata pid="118" name="C1P30" tags="page" position="3075,7200" size="100,100">&lt;% window.story.delayedText(4000, &quot;delayed&quot;, 3000) %&gt;
+&lt;choices&gt;[[[Bawl eyes out]|C1P29]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="117" name="C1P29" tags="page" position="3075,7050" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
 
-I think about her while I&#39;m laying here.
+&lt;action&gt;I begin to bawl.&lt;/action&gt;
+&lt;action&gt;Raw, hard, tears.&lt;/action&gt;
+&lt;action&gt;I never had the chance to properly mourn her.&lt;/action&gt;
+&lt;action&gt;I was too busy focusing on my own survival, and for what?&lt;/action&gt;
+&lt;action&gt;So I could die somewhere else another day?&lt;/action&gt;
 
-Maybe the reason I never dealt with her death, was because I was scared. Scared that I&#39;d realize that I-
+&lt;choices&gt;[[[Reflect on her death]|C1P30]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="118" name="C1P30" tags="page" position="3075,7200" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
 
-&lt;div-#delayed&gt;
+&lt;action&gt;I think about Sophia while I&#39;m laying here.&lt;/action&gt;
+&lt;action&gt;Maybe the reason I never dealt with her death...&lt;/action&gt;
+&lt;action&gt;...was because I was scared.&lt;/action&gt;
+&lt;action&gt;Scared that I&#39;d realize that now that she&#39;s gone, I-&lt;/action&gt;
+&lt;action&gt;I have nothing, and no one to live for.&lt;/action&gt;
 
-I have nothing to live for.
+&lt;choices&gt;[[[Continue crying]|C1P31]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="119" name="C1P31" tags="page" position="3075,7350" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
 
-[[[Continue crying]|C1P31]]
+&lt;action&gt;The tears continue to stream down my face.&lt;/action&gt;
+&lt;action&gt;I had one job as a big sister: look after my little sister.&lt;/action&gt;
+&lt;action&gt;And I failed.&lt;/action&gt;
+&lt;action&gt;Horribly.&lt;/action&gt;
+&lt;action&gt;How can I live with myself... how have I lived with myself?&lt;/action&gt;
+&lt;action&gt;I&#39;m exhausted...&lt;/action&gt;
+&lt;action&gt;Mentally and physically.&lt;/action&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="C1P31" tags="page" position="3075,7350" size="100,100">The tears continue to stream down my face.
+&lt;choices&gt;[[[Reflect on experience]|C1P32]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="120" name="C1P32" tags="page" position="3075,7500" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
 
-I had one job as a big sister: look after my little sister, and I failed horribly.
+&lt;action&gt;I reflect on my near-death experience.&lt;/action&gt;
+&lt;action&gt;Would it have been better if that guy had of killed me?&lt;/action&gt;
+&lt;action&gt;What&#39;s the point in it all.&lt;/action&gt;
+&lt;action&gt;I&#39;m tired, I&#39;ve had enough.&lt;/action&gt;
+&lt;action&gt;What&#39;s even the point in carrying on...&lt;/action&gt;
 
-How can I live with myself... how have I lived with myself?
+&lt;choices&gt;
+    [[I have no purpose|C1P33V1]]
+    [[I need a new purpose|C1P33V2]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="121" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;, false); %&gt;
 
-I&#39;m exhausted... mentally and physically.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
 
-[[[Reflect on near-death experience]|C1P32]]</tw-passagedata><tw-passagedata pid="120" name="C1P32" tags="page" position="3075,7500" size="100,100">I reflect on my near-death experience. Would it have been better if that guy had’ve killed me? I&#39;m tired, I&#39;ve had enough; what&#39;s even the point in living...
+&lt;action&gt;I have no purpose in life.&lt;/action&gt;
+&lt;action&gt;Why bother going on at all?&lt;/action&gt;
+&lt;action&gt;The world would be better off without me.&lt;/action&gt;
+&lt;action&gt;People like that guy I killed would attest to that...&lt;/action&gt;
+&lt;action&gt;I&#39;m worthless.&lt;/action&gt;
+&lt;action&gt;More than that, I&#39;m pathetic.&lt;/action&gt;
+&lt;action&gt;And I know it.&lt;/action&gt;
 
-[[I have no purpose|C1P33V1]] [[I need a new purpose|C1P33V2]]</tw-passagedata><tw-passagedata pid="121" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;, false) %&gt;
+&lt;choices&gt;[[[Cry yourself to sleep]|C1P33R1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="122" name="C1P33V2" tags="variation" position="3150,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;); %&gt;
 
-I have no purpose in life. What&#39;s the point in living at all?
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one.sad&gt;Sarah&lt;/character&gt;
 
-The world would be better off without me. People like that guy I killed can attest to that...
+&lt;action&gt;What am I even saying.&lt;/action&gt;
+&lt;action&gt;If Sophia could see me now she&#39;d be so disappointed in me.&lt;/action&gt;
+&lt;action&gt;&quot;Why are you giving up sis?&quot;, she&#39;d probably say.&lt;/action&gt;
+&lt;action&gt;&quot;Get up and let&#39;s go!&quot;&lt;/action&gt;
+&lt;action&gt;She was always pushing me to do more, to be more.&lt;/action&gt;
+&lt;action&gt;I might have been the big sister, but she was always the positive one.&lt;/action&gt;
+&lt;action&gt;Always the one that supported me get back on my feet when my job inevitably feel through.&lt;/action&gt;
+&lt;action&gt;Even near the end, when she didn&#39;t want to carry on.&lt;/action&gt;
+&lt;action&gt;Even when I forced her to carry on, one step at a time.&lt;/action&gt;
+&lt;action&gt;She wanted me to push on...&lt;/action&gt;
+&lt;action&gt;...albeit without her.&lt;/action&gt;
+&lt;action&gt;To keep living.&lt;/action&gt;
+&lt;action&gt;To find something to live for.&lt;/action&gt;
+&lt;action&gt;Find...&lt;/action&gt;
+&lt;action&gt;...a way to honour her life.&lt;/action&gt;
+&lt;action&gt;I&#39;ve made up my mind.&lt;/action&gt;
+&lt;action&gt;I need a new purpose in life.&lt;/action&gt;
+&lt;action&gt;Something worth living for.&lt;/action&gt;
+&lt;action&gt;Surviving on its own isn&#39;t good enough: it&#39;s an excuse.&lt;/action&gt;
+&lt;action&gt;I need to do more than live.&lt;/action&gt;
+&lt;action&gt;I need to live for Sophia.&lt;/action&gt;
 
-[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="122" name="C1P33V2" tags="variation" position="3150,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;) %&gt;
-
-I need a new purpose in life. Something worth living for. Surviving by itself isn&#39;t good enough; it&#39;s an excuse.
-
-I need to atone for what I did.
-
-I can&#39;t bring Sophia back... but maybe I can find something good in this world to dedicate myself to, in her name. 
-
-[[[Cry yourself to sleep]|C1P33R1]]</tw-passagedata><tw-passagedata pid="123" name="C1P33R1" tags="redirect" position="3075,7800" size="100,100">&lt;%
-window.story.achievement(&quot;Chapter1&quot;, &quot;RollCredits&quot;, &quot;Roll Credits&quot;, &quot;And that&#39;s a Sin.&quot;)
+&lt;choices&gt;[[[Cry yourself to sleep]|C1P33R1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="123" name="C1P33R1" tags="redirect" position="3075,7800" size="100,100">&lt;%
+window.story.achievement(&quot;Chapter1&quot;, &quot;RollCredits&quot;);
 
 window.story.redirect(&quot;C1P34&quot;, 7);
 %&gt;</tw-passagedata><tw-passagedata pid="124" name="Choices" tags="info" position="3875,1025" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot; - Knocked on the door to see if anyone was home
@@ -2144,23 +2205,41 @@ window.story.redirect(&quot;C1P34&quot;, 7);
 
 &lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
-[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="126" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;i&gt;&quot;Sarah?&quot;&lt;/i&gt;, a voice says softly. I start to stir from my sleep.
+[[Back|Title Screen]]</tw-passagedata><tw-passagedata pid="126" name="C1P34" tags="page save" position="3075,7950" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
 
-There&#39;s someone near my face again... Sophia back to haunt me?
+&lt;speech.unknown&gt;Sarah?&lt;/speech&gt;
 
-I squint, it&#39;s bright and my vision is blurry. There&#39;s a face, eyes, but... they&#39;re blue, very blue.
+&lt;action&gt;I start to stir from my sleep.&lt;/action&gt;
+&lt;action&gt;Someone&#39;s speaking in a soft voice.&lt;/action&gt;
+&lt;action&gt;And there&#39;s someone near my face again...&lt;/action&gt;
+&lt;action&gt;Sophia back to haunt me?&lt;/action&gt;
+&lt;action&gt;I squint, it&#39;s bright and my vision is blurry.&lt;/action&gt;
+&lt;action&gt;There&#39;s a face, eyes, but...&lt;/action&gt;
+&lt;action&gt;...they&#39;re blue, very blue.&lt;/action&gt;
 
-[[[Rub eyes]|C1P35]]</tw-passagedata><tw-passagedata pid="127" name="C1P35" tags="page" position="3075,8100" size="100,100">I rub my eyes and open them again.
+&lt;choices&gt;[[[Rub eyes]|C1P35]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="127" name="C1P35" tags="page" position="3075,8100" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
 
-&quot;Sarah?&quot;, the voice says again.
+&lt;action&gt;I rub my eyes and open them again.&lt;/action&gt;
 
-It&#39;s Tiffany. She&#39;s sitting on the coffee table, watching me.
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
 
-How does she know my name? Lucy must have told her...
+&lt;speech.tiffany&gt;Sarah?&lt;/speech&gt;
 
-[[...|C1P35V2]]&lt;br&gt;
-[[Morning...?|C1P35V1]]&lt;br&gt;
-[[Lose something over here?|C1P35V3]]</tw-passagedata><tw-passagedata pid="128" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">I stare back at her for a moment.
+&lt;action&gt;It&#39;s Tiffany.&lt;/action&gt;
+&lt;action&gt;She&#39;s sitting on the coffee table, watching me.&lt;/action&gt;
+&lt;action&gt;How does she know my name?&lt;/action&gt;
+&lt;action&gt;Lucy must have told her...&lt;/action&gt;
+
+&lt;choices&gt;
+    [[...|C1P35V2]]
+    [[Morning...?|C1P35V1]]
+    [[Lose something over here?|C1P35V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="128" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">I stare back at her for a moment.
 
 &lt;%= window.story.render(&quot;F: Breakfast?&quot;) %&gt;</tw-passagedata><tw-passagedata pid="129" name="C1P35V1" tags="variation" position="2925,8250" size="100,100">&quot;Um...&quot;, I start. My throat is still dry. I cough to clear it a little.
 
@@ -4224,7 +4303,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2775,6900" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2700,8250" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
