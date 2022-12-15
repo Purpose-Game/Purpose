@@ -7,7 +7,7 @@
 // Game Version
 const version = "2.0.0";
 // Keys that progress the story
-const progressKeys = [ 13, 32, 38, 39, 40 ];
+const progressKeys = [ 13, 17, 32, 38, 39, 40 ];
 // Body Element
 const body = $("body");
 // Custom HTML Tags
@@ -139,6 +139,7 @@ const audioLibrary = {
 
 let debug = false;
 let debugNotification;
+let skipNotification;
 
 let images;
 let uiType;
@@ -374,13 +375,34 @@ body.click((event) => {
 	}
 });
 
+body.keyup((event) => {
+	if (!skipNotification || event.keyCode !== 17) return;
+
+	skipNotification.close();
+	skipNotification = null;
+});
+
 body.keydown((event) => {
 	if (!progressKeys.includes(event.keyCode)) return;
 
 	if (window.story.stepable && !window.story.makingChoice) {
+		if (event.keyCode === 17 && !skipNotification) {
+			skipNotification = SimpleNotification.info({
+				title: "Skipping..."
+			}, {
+				position: "top-left",
+				sticky: true,
+				closeButton: false,
+				closeOnClick: false
+			});
+		}
+
 		stepPassage();
 		return;
 	}
+
+	// Skip key
+	if (event.keyCode === 17) return;
 
 	let oldChoiceIndex = currentChoiceIndex;
 
@@ -843,6 +865,8 @@ const stepPassage = async () => {
 							typewriting = typewriting.filter(i => i !== step);
 						});
 				} else {
+					if (skipNotification) skipNotification.close();
+
 					currentChoiceIndex = -1;
 					keybindSelectedElement = null;
 					window.story.makingChoice = true;
