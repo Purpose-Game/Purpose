@@ -2322,48 +2322,105 @@ window.story.redirect(&quot;C1P34&quot;, 7);
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="132" name="C1P35R1" tags="redirect" position="3000,8400" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Tiffany&quot;, false);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiff&quot;);
-window.story.redirect(&quot;C1P36&quot;);
+window.story.redirect(&quot;C1P36&quot;, 0);
 %&gt;</tw-passagedata><tw-passagedata pid="133" name="C1P35R2" tags="redirect" position="3150,8400" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Tiffany&quot;);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiffany&quot;);
-window.story.redirect(&quot;C1P36&quot;);
-%&gt;</tw-passagedata><tw-passagedata pid="134" name="C1P36" tags="page" position="3075,8550" size="100,100">&quot;Yeah, thanks &lt;% print(window.story.tiffany()) %&gt;&quot;, I say.
+window.story.redirect(&quot;C1P36&quot;, 0);
+%&gt;</tw-passagedata><tw-passagedata pid="134" name="C1P36" tags="page" position="3075,8550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.happy.eyes&gt;Tiffany&lt;/character&gt;
 
-Her face lights up with a smile. &lt;% if (window.story.tiffany() === &quot;Tiff&quot;) { print(&quot;I think she likes that nickname.&quot;) } %&gt;
+&lt;speech.sarah&gt;Yeah, thanks %Tiffany%.&lt;/speech&gt;
 
-&quot;Come on then!&quot;, she says, jumping up from the table and heading for the door.
+&lt;character.two.happy&gt;Tiffany&lt;/character&gt;
 
-&quot;Hey, &lt;% print(window.story.tiffany()) %&gt;, wait!&quot;, I say, but she&#39;s already out the door by the time the words leave my mouth.
+&lt;action&gt;Her face lights up with a smile.&lt;/action&gt;
 
-I still have this thing in my arm, what did Lucy call it- a cannula, I think?
+&lt;% if (window.story.tiffany() === &quot;Tiff&quot;) { %&gt;
 
-The other door swings open, speak of the devil. Lucy walks in.
+&lt;action&gt;I think she likes that nickname.&lt;/action&gt;
+    
+&lt;% } %&gt;
 
-&quot;Morning, didn&#39;t think you&#39;d be awake this early. How are you feeling?&quot;, she asks, closing the door behind her.
+&lt;speech.tiffany&gt;Come on then!&lt;/speech&gt;
 
-[[Better|C1P36V1]]&lt;br&gt;
-[[I&#39;ll live|C1P36V2]]&lt;br&gt;
-[[Like shit|C1P36V3]]</tw-passagedata><tw-passagedata pid="135" name="C1P36V1" tags="variation" position="2925,8700" size="100,100">&quot;Better, actually&quot;, I say.
+&lt;action&gt;She jumps up from the table and heads for the door.&lt;/action&gt;
 
-&quot;Good, those fluids did you the world of good&quot;, she replies.
+&lt;speech.sarah&gt;Hey, %Tiffany%, wait!&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="136" name="C1P36V2" tags="variation" position="3075,8700" size="100,100">&quot;I&#39;ll live&quot;, I say.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&quot;Very presumptuous of you&quot;, Lucy says with a smirk.
+&lt;action&gt;Too late, she&#39;s already out the door by the time the words leave my mouth.&lt;/action&gt;
+&lt;action&gt;I still have this thing in my arm, what did Lucy call it... a cannula, I think?&lt;/action&gt;
+&lt;action&gt;The other door swings open behind me, speak of the devil.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="C1P36V3" tags="variation" position="3225,8700" size="100,100">&quot;Like shit&quot;, I say.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-She takes a breath as if to say something, but stops then shakes her head.
+&lt;speech.lucy&gt;Morning.&lt;/speech&gt;
+&lt;speech.lucy&gt;I didn&#39;t think you&#39;d be awake this early.&lt;/speech&gt;
 
-&quot;Hmm, you haven&#39;t had anything to eat in days. Once you get some food in you you&#39;ll feel better. But first&quot;, she says.
+&lt;action&gt;Hmph.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="138" name="F: Get that out" tags="floater" position="3425,8700" size="100,100">Lucy points at my arm.
+&lt;speech.lucy&gt;How are you feeling?&lt;/speech&gt;
 
-&quot;Let&#39;s get that out shall we?&quot;, she remarks.
+&lt;action&gt;She closes the door and walks over towards me.&lt;/action&gt;
 
-[[Yeah... sure|C1P37V1]]&lt;br&gt;
-[[Will it hurt?|C1P37V2]]&lt;br&gt;
-[[Can I keep it?|C1P37V3]]</tw-passagedata><tw-passagedata pid="139" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&quot;Uh, yeah... sure&quot;, I say uncertainly.
+&lt;choices&gt;
+    [[Better|C1P36V1]]
+    [[I&#39;ll live|C1P36V2]]
+    [[Like shit|C1P36V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="135" name="C1P36V1" tags="variation" position="2925,8700" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;Better, actually.&lt;/speech&gt;
+
+&lt;speech.lucy&gt;Good.&lt;/speech&gt;
+&lt;speech.lucy&gt;Those fluids did you the world of good.&lt;/speech&gt;
+
+&lt;action&gt;She nods in the direction of the coat hanger stand.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="136" name="C1P36V2" tags="variation" position="3075,8700" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;I&#39;ll live.&lt;/speech&gt;
+
+&lt;character.two.happy.mouth&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;Very presumptuous of you.&lt;/speech&gt;
+
+&lt;action&gt;A smirk creeps across her face.&lt;/action&gt;
+
+&lt;character.two&gt;Lucy&lt;/character&gt;
+    
+&lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="C1P36V3" tags="variation" position="3225,8700" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;Like shit.&lt;/speech&gt;
+
+&lt;character.two.concern.mouth&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;She takes a breath as if to say something, but stops then shakes her head.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Well, you look the part.&lt;/speech&gt;
+&lt;speech.lucy&gt;Once you get some food in you you&#39;ll feel better.&lt;/speech&gt;
+
+&lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="138" name="F: Get that out" tags="floater" position="3425,8700" size="100,100">&lt;action&gt;Lucy points at my arm.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Let&#39;s get that out, shall we?&lt;/speech&gt;
+
+&lt;choices&gt;
+    [[Yeah... sure|C1P37V1]]
+    [[Will it hurt?|C1P37V2]]
+    [[Can I keep it?|C1P37V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="139" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&quot;Uh, yeah... sure&quot;, I say uncertainly.
 
 Lucy comes over and gives me a reassuring look.
 
@@ -4339,7 +4396,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2700,8250" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2700,8700" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
