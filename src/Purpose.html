@@ -2420,67 +2420,104 @@ window.story.redirect(&quot;C1P36&quot;, 0);
     [[Yeah... sure|C1P37V1]]
     [[Will it hurt?|C1P37V2]]
     [[Can I keep it?|C1P37V3]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="139" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&quot;Uh, yeah... sure&quot;, I say uncertainly.
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="139" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-Lucy comes over and gives me a reassuring look.
+&lt;speech.sarah&gt;Uh, yeah... sure.&lt;/speech&gt;
 
-&quot;Don&#39;t worry, it will only take a second&quot;, she says.
+&lt;action&gt;I try to sound at least a little confident.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="140" name="C1P37V2" tags="variation" position="3075,8850" size="100,100">&quot;Will it, uh, hurt?&quot;, I ask uncertainly.
+&lt;speech.lucy&gt;Don&#39;t stress, it will only take a second.&lt;/speech&gt;
+
+&lt;%= window.story.render(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="140" name="C1P37V2" tags="variation" position="3075,8850" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;Will it... hurt?&lt;/speech&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
 
-&quot;No, not at all. Might feel a bit weird, but shouldn&#39;t hurt&quot;, she replies.
+&lt;speech.lucy&gt;No, not really.&lt;/speech&gt;
+&lt;speech.lucy&gt;Might feel a bit weird though.&lt;/speech&gt;
 
 &lt;% } else { %&gt;
 
-&quot;Not as much as pulling a knife out, if that&#39;s what you&#39;re asking&quot;, she remarks, a grin on her face.
+&lt;speech.lucy&gt;Not as much as pulling a knife out I would imagine.&lt;/speech&gt;
 
-I roll my eyes at her.
-
-&lt;% } %&gt;
-
-&lt;%= window.story.render(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="141" name="C1P37V3" tags="variation" position="3225,8850" size="100,100">&quot;Can I keep it? Seems handy&quot;, I ask.
-
-&quot;First off, was that a pun? And secondly, no, it&#39;ll just increase your chances of getting an infection&quot;, she replies.
-
-&quot;Yeah, I guess that was&quot;, I say as I chuckle.
-
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;)) {
-	window.story.setChoice(&quot;Chapter1&quot;, &quot;Laughed&quot;);
-%&gt;
-
-I can&#39;t remember the last time I laughed...
+&lt;action&gt;Yikes. I can&#39;t tell if that was her attempting to be humorous or not.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&lt;%= window.story.render(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="142" name="F: Peel back" tags="floater" position="3425,8850" size="100,100">Lucy sits across from me on the coffee table, then puts her hand out and beckons me to give her my hand.
+&lt;%= window.story.render(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="141" name="C1P37V3" tags="variation" position="3225,8850" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-I place my hand on hers.
+&lt;speech.sarah&gt;Can I keep it? Sounds useful.&lt;/speech&gt;
 
-She peels back the tape and disconnects the tubbing. She reaches into the pockets of her cargo pants, takes out a ball of cotton wool, then in one smooth motion, swiftly and gently pulls out the cannula, and holds the cotton wool where it was inserted.
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-[[Impressive|C1P38V1]]&lt;br&gt;
-[[[Cry out in fake pain]|C1P38V2]]&lt;br&gt;
-[[You&#39;ve done that a few times|C1P38V3]]</tw-passagedata><tw-passagedata pid="143" name="C1P38V1" tags="variation" position="2925,9000" size="100,100">&quot;Impressive, I didn&#39;t feel a thing&quot;, I remark.
+&lt;speech.lucy&gt;No, they&#39;re not designed to be permanent.&lt;/speech&gt;
+&lt;speech.lucy&gt;Any more than a few days and you risk getting an infection.&lt;/speech&gt;
 
-Lucy smiles.
+&lt;%= window.story.render(&quot;F: Peel back&quot;) %&gt;</tw-passagedata><tw-passagedata pid="142" name="F: Peel back" tags="floater" position="3425,8850" size="100,100">&lt;action&gt;Lucy moves to sit across from me on the coffee table.&lt;/action&gt;
+&lt;action&gt;She extends her hand out, beckoning me to give her mine.&lt;/action&gt;
+&lt;action&gt;I hesitate for a moment.&lt;/action&gt;
+&lt;action&gt;I guess if she wanted to hurt me, she would have done it by now...&lt;/action&gt;
+&lt;action&gt;I place my hand in hers.&lt;/action&gt;
+&lt;action&gt;She disconnects the tubbing and peels back the tape.&lt;/action&gt;
+&lt;action&gt;She reaches into one of the pockets of her cargo pants and takes out a packet of cotton wool balls.&lt;/action&gt;
+&lt;action&gt;Then in one smooth motion, she swiftly pulls out the cannula and holds the cotton wool where it was inserted.&lt;/action&gt;
 
-&quot;Thanks, I use to do these daily... I miss it sometimes&quot;, she replies.
+&lt;choices&gt;
+    [[Impressive|C1P38V1]]
+    [[[Cry fake pain]|C1P38V2]]
+    [[You&#39;re experienced|C1P38V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="143" name="C1P38V1" tags="variation" position="2925,9000" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-Her smile fades.
+&lt;speech.sarah&gt;Impressive, I didn&#39;t feel a thing.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="144" name="C1P38V2" tags="variation" position="3075,9000" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Drama&quot;, &quot;Drama Queen&quot;, &quot;You should have been an actor.&quot;) %&gt;
+&lt;character.two.happy.mouth&gt;Lucy&lt;/character&gt;
 
-&quot;Argh!&quot;, I exclaim.
+&lt;action&gt;Lucy smiles.&lt;/action&gt;
 
-Lucy doesn&#39;t bother to move her head up, just her eyes. She gives me a look that says &quot;Shut up&quot;, then looks away again.
+&lt;speech.lucy&gt;Thanks, I use to do these daily...&lt;/speech&gt;
+&lt;speech.lucy&gt;I miss it sometimes.&lt;/speech&gt;
 
-I thought it was pretty funny.
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="145" name="C1P38V3" tags="variation" position="3225,9000" size="100,100">&quot;Clearly you&#39;ve done that a few times before&quot;, I remark.
+&lt;action&gt;Her smile fades.&lt;/action&gt;
 
-&quot;Oh yeah, once or twice&quot;, she replies.
+&lt;%= window.story.render(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="144" name="C1P38V2" tags="variation" position="3075,9000" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Drama&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;Argh!&lt;/speech&gt;
+
+&lt;action&gt;Lucy doesn&#39;t bother to move her head up, just her eyes so they meet mine.&lt;/action&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;She gives me a look that says &quot;Really?&quot;, then looks away again.&lt;/action&gt;
+
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;Well, I thought it was pretty funny.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="145" name="C1P38V3" tags="variation" position="3225,9000" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;You&#39;ve clearly done that a few times before&lt;/speech&gt;
+
+&lt;speech.lucy&gt;Mhm, once or twice.&lt;/speech&gt;
+
+&lt;action&gt;She mumbles back.&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: Breakfast time!&quot;) %&gt;</tw-passagedata><tw-passagedata pid="146" name="Achievements" tags="info" position="3875,1175" size="200,100">&quot;Chapter1&quot;, &quot;Knocked&quot;, &quot;Knock, knock&quot;, &quot;Who&#39;s *there?*&quot;
 
@@ -2502,45 +2539,62 @@ I thought it was pretty funny.
 
 &quot;Chapter1&quot;, &quot;Nerve&quot;, &quot;Struck a Nerve&quot;, &quot;Found a touchy subject&quot;
 
-&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;</tw-passagedata><tw-passagedata pid="147" name="F: Breakfast time!" tags="floater" position="3425,9000" size="100,100">Lucy reaches back into her pocket with her free hand and pulls out a roll of... something. It looks like tape, but fabric-like.
+&quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;</tw-passagedata><tw-passagedata pid="147" name="F: Breakfast time!" tags="floater" position="3425,9000" size="100,100">&lt;action&gt;Lucy reaches back into one of her pockets with her free hand.&lt;/action&gt;
+&lt;action&gt;She pulls out a roll of tape, then tearing a bit off, secures the cotton wool ball to my hand.&lt;/action&gt;
 
-&quot;Alright, you&#39;re good to go&quot;, Lucy says, tearing a bit of tape off and using it to secure the cotton wool ball to my hand.
+&lt;speech.lucy&gt;Alright, you&#39;re good to go.&lt;/speech&gt;
 
-&quot;Let&#39;s get some food in you&quot;, she says as she gets up and heads towards the door.
+&lt;speech.sarah&gt;Just like that?&lt;/speech&gt;
 
-I slowly get up off the sofa.
+&lt;speech.lucy&gt;Just like that.&lt;/speech&gt;
 
-&quot;Through here and down this hallway, when you&#39;re ready&quot;, Lucy says as she reaches the door, then goes through it, leaving me alone.
+&lt;action&gt;She stands up and heads for one of the doors.&lt;/action&gt;
 
-That sounded like an invitation to have a look around.
+&lt;speech.lucy&gt;Let&#39;s get some food in you.&lt;/speech&gt;
 
-I stand up- Woah, my left leg is, like, stiff? It feels kinda like when you sit on it for too long and you cut all the blood off from it.
+&lt;action&gt;I slowly start to get off the sofa.&lt;/action&gt;
+&lt;action&gt;Lucy opens the door.&lt;/action&gt;
 
-I slowly take a few steps; yeah, I can manage this. She&#39;ll be right.
+&lt;speech.lucy&gt;Through here and down this hallway, when you&#39;re ready.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="148" name="F: Living room search options" tags="floater" position="3575,9025" size="100,200">&lt;%
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) {
-	print(&quot;[[[Go through second door]|C1P39V1]]&lt;br&gt;&quot;);
-}
+&lt;resetcharacter.two&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) {
-	print(&quot;[[[Look out of the window]|C1P39V2]]&lt;br&gt;&quot;);
-}
+&lt;action&gt;Lucy exits through the door, leaving me alone.&lt;/action&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) {
-	print(&quot;[[[Look at the coffee table]|C1P39V3]]&lt;br&gt;&quot;);
-}
+&lt;speech.sarah&gt;Thanks...&lt;/speech&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Saline&quot;)) {
-	print(&quot;[[[Look at bag of clear fluid]|C1P39V4]]&lt;br&gt;&quot;);
-}
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) {
-	print(&quot;[[[Look at the TV and cabinet]|C1P39V5]]&lt;br&gt;&quot;);
-}
-%&gt;
+&lt;action&gt;Well, that sounded like an invitation to have a look around.&lt;/action&gt;
+&lt;action&gt;I stand up-&lt;/action&gt;
 
-[[[Go through hallway door]|C1P40]]</tw-passagedata><tw-passagedata pid="149" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
+&lt;character.one.pain&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Woah, my left leg is, like, stiff?&lt;/action&gt;
+&lt;action&gt;It feels kinda like when you sit on it for too long and you cut all the blood off from it.&lt;/action&gt;
+&lt;action&gt;I slowly take a few steps...&lt;/action&gt;
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+&lt;action&gt;Yeah, okay, I can manage this.&lt;/action&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="148" name="F: Living room search options" tags="floater" position="3575,9025" size="100,200">&lt;choices&gt;
+    &lt;%
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;[[[Look at window]|C1P39V2]]&quot;);
+
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) print(&quot;[[[Go to second door]|C1P39V1]]&quot;);
+
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) print(&quot;[[[Look at coffee table]|C1P39V3]]&quot;);
+
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Saline&quot;)) print(&quot;[[[Look at bag of clear fluid]|C1P39V4]]&quot;);
+
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) print(&quot;[[[Look at the TV and cabinet]|C1P39V5]]&quot;);
+    %&gt;
+
+    [[[Go through hallway door]|C1P40]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="149" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
 
 I walk around to the other door and open it. Huh, a familiar sight: it&#39;s the laundry room.
 
@@ -4396,7 +4450,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2700,8700" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2550,9150" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
