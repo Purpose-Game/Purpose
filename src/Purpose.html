@@ -2593,56 +2593,132 @@ window.story.redirect(&quot;C1P36&quot;, 0);
     if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) print(&quot;[[[Look at the TV and cabinet]|C1P39V5]]&quot;);
     %&gt;
 
-    [[[Go through hallway door]|C1P40]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="149" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;) %&gt;
+    [[[Follow Lucy]|C1P40]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="149" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;); %&gt;
 
-I walk around to the other door and open it. Huh, a familiar sight: it&#39;s the laundry room.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-There&#39;s a red stain on the floor just near the door, I guess that&#39;s where I passed out... good thing I didn&#39;t hit my head.
+&lt;action&gt;I walk around to the other door and open it.&lt;/action&gt;
+&lt;action&gt;Huh, a familiar sight, it&#39;s the laundry room.&lt;/action&gt;
+&lt;action&gt;There&#39;s a red stain on the floor just near the door.&lt;/action&gt;
+&lt;action&gt;I guess that&#39;s where I passed out...&lt;/action&gt;
+&lt;action&gt;I&#39;m glad I didn&#39;t hit my head.&lt;/action&gt;
+&lt;action&gt;I close the door.&lt;/action&gt;
 
-I close the door.
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="150" name="C1P39V3" tags="variation" position="3075,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;); %&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="150" name="C1P39V3" tags="variation" position="3075,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;) %&gt;
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I walk up to the coffee table. It&#39;s pretty ordinary, a few coffee stains here and there, otherwise in good shape.
+&lt;action&gt;I walk up to the coffee table.&lt;/action&gt;
+&lt;action&gt;It&#39;s pretty ordinary, a few coffee stains here and there, otherwise in good shape.&lt;/action&gt;
+&lt;action&gt;I wonder if Lucy has any coffee?&lt;/action&gt;
+&lt;action&gt;I would kill for a coffee.&lt;/action&gt;
 
-I wonder if Lucy has any coffee? I haven&#39;t had any in years.
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="C1P39V5" tags="variation" position="3375,9150" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="C1P39V5" tags="variation" position="3375,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;) %&gt;
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) { %&gt;
 
-I walk over to the TV and cabinet. The TV looks reasonably new, one of those fancy new super flat ones. Well, I guess not new anymore.
+    &lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;
 
-I bend down and open the cabinet. There&#39;s a load of old TV crap, set-top boxes and what have you, and- What&#39;s this: a spinning top. What&#39;s this doing in here?
+&lt;% } else { %&gt;
+    &lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;); %&gt;
 
-[[[Take spinning top]|C1P39V51]]
+    &lt;action&gt;I walk over to the TV and cabinet.&lt;/action&gt;
+    &lt;action&gt;The TV looks reasonably new, one of those fancy new super flat ones.&lt;/action&gt;
+    &lt;action&gt;Well, I guess not new anymore.&lt;/action&gt;
+    &lt;action&gt;I bend down and open the cabinet.&lt;/action&gt;
+    &lt;action&gt;There&#39;s a load of old TV crap, set-top boxes and what have you, and-&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="152" name="C1P39V4" tags="variation" position="3225,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Saline&quot;) %&gt;
+    &lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 
-I walk up to the hat hanger and look at the clear bag of fluid, what&#39;s left of it anyway.
+    &lt;action&gt;What&#39;s this? A spinning top.&lt;/action&gt;
+    &lt;action&gt;I wonder what this doing in here.&lt;/action&gt;
 
-I take it off the hanger, it&#39;s a long, crumpled up, clear bag, and it looks rather worn. There&#39;s some writing on it I can still make out though, &quot;Sodium Chloride 0.9% 1000ml - For Intravenous Infusion&quot;. I thought Lucy said it was just salty water...
+    &lt;character.one&gt;Sarah&lt;/character&gt;
 
-There&#39;s more writing near the bottom, &quot;Sterile non-pyrogenic... osmolality 308 mOsm/kg water... isotonic... pH 4.5 - 7&quot;, OK I feel like I&#39;m back in highschool science class again, I have no clue what any of this means.
+    &lt;choices&gt;
+        [[[Take spinning top]|C1P39V51]]
+        [[[Leave spinning top]|C1P39V5]]
+    &lt;/choices&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="152" name="C1P39V4" tags="variation" position="3225,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Saline&quot;); %&gt;
 
-I put the bag back on the hanger.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="153" name="C1P40" tags="page save" position="3075,9450" size="100,100">I head to the door, wary of my leg. I then go through the door to the hallway. The hallway has doors on all four sides, and a set of stairs on one side.
+&lt;action&gt;I walk up to the coat hanger stand and look at the clear bag of fluid.&lt;/action&gt;
+&lt;action&gt;What&#39;s left of it anyway.&lt;/action&gt;
+&lt;action&gt;I take the bag off the hanger.&lt;/action&gt;
+&lt;action&gt;It&#39;s a long, crumpled up, clear bag, and it looks rather worn.&lt;/action&gt;
+&lt;action&gt;There&#39;s some writing on it I can still make out though.&lt;/action&gt;
+&lt;action&gt;&quot;Sodium Chloride 0.9% 1000ml - For Intravenous Infusion&quot;&lt;/action&gt;
+&lt;action&gt;&quot;Sterile non-pyrogenic... osmolality 308 mOsm/kg water... isotonic... pH 4.5 - 7&quot;&lt;/action&gt;
 
-&lt;i&gt;&quot;Tiffany, stop playing with your food...&quot;&lt;/i&gt;, I hear Lucy say somewhere behind the furthest door. That must be to the kitchen.
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="154" name="C1P39V2" tags="variation" position="2925,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;) %&gt;
+&lt;action&gt;I feel like I&#39;m back in high school science class again.&lt;/action&gt;
+&lt;action&gt;I have no clue what any of this means.&lt;/action&gt;
 
-I walk over to the window. It&#39;s been boarded up from the outside, but there are a few cracks I can look through. I squat down and have a look through one.
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-It looks out onto a small front garden and the street, and- Whoa, that&#39;s actually quite a lot of walkers. Looks like they&#39;re just passing through, maybe 10 or 20 of them? I should probably let Lucy know...
+&lt;action&gt;I put the bag back on the hanger.&lt;/action&gt;
 
-Anyway, the front garden is much smaller than the back garden, it&#39;s got a small fence running around it, only about half a meter high. The weather doesn&#39;t look great actually, it&#39;s pretty overcast, and I can see storm clouds rolling in. I wonder how this place will hold up in the rain.
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="153" name="C1P40" tags="page save" position="3075,9450" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I stand up again.
+&lt;action&gt;I head to the door Lucy went through, wary of my leg.&lt;/action&gt;
+&lt;action&gt;I open the door.&lt;/action&gt;
+&lt;action&gt;The hallway has doors on all four sides, and a set of stairs on one side.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="155" name="C1P39V51" tags="variation" position="3375,9300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;) %&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;characteroverride.two&gt;Lucy&lt;/characteroverride&gt;
 
-I pick up the spinning top. &lt;% print(window.story.tiffany()) %&gt; might like this.
+&lt;speech.unknown&gt;Tiffany, stop playing with your food...&lt;/speech&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I can hear Lucy say somewhere behind the furthest door.&lt;/action&gt;
+&lt;action&gt;That must be to the kitchen.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="154" name="C1P39V2" tags="variation" position="2925,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I walk over to the window.&lt;/action&gt;
+&lt;action&gt;It&#39;s been boarded up from the outside, but there are a few cracks I can look through.&lt;/action&gt;
+&lt;action&gt;I squat down and have a look through one.&lt;/action&gt;
+&lt;action&gt;It looks out onto a small front garden and the street, and-&lt;/action&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Whoa, that&#39;s actually quite a lot of walkers.&lt;/action&gt;
+&lt;action&gt;Looks like they&#39;re just passing through, maybe 10 or 20 of them?&lt;/action&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I should probably let Lucy know...&lt;/action&gt;
+&lt;action&gt;Anyway, the front garden is much smaller than the back garden.&lt;/action&gt;
+&lt;action&gt;It&#39;s got a small fence running around it, only about half a meter high.&lt;/action&gt;
+&lt;action&gt;The weather doesn&#39;t look great actually, it&#39;s pretty overcast, and I can see storm clouds rolling in.&lt;/action&gt;
+&lt;action&gt;I wonder how this place will hold up in the rain...&lt;/action&gt;
+&lt;action&gt;I stand up again.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="155" name="C1P39V51" tags="variation" position="3375,9300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;living-room&lt;/special&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I pick up the spinning top.&lt;/action&gt;
+&lt;action&gt;%Tiffany% might like this.&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40V1" tags="variation" position="2925,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;) %&gt;
 
@@ -2670,21 +2746,17 @@ I walk to the end of the hallway and go through the kitchen door.
 
 &quot;Come sit here!&quot;, %Tiffany% says, gesturing to the chair next to her. I look over at Lucy, she gives a slight smile and nods her approval.
 
-[[[Sit next to %Tiffany%]|C1P42]]</tw-passagedata><tw-passagedata pid="160" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;%
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) {
-	print(&quot;[[[Look at stairs]|C1P40V1]]&lt;br&gt;&quot;);
-}
+[[[Sit next to %Tiffany%]|C1P42]]</tw-passagedata><tw-passagedata pid="160" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;choices&gt;
+    &lt;%
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) print(&quot;[[[Look at stairs]|C1P40V1]]&quot;);
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) &amp;&amp; window.passage.name != &quot;C1P40V2&quot;) {
-	print(&quot;[[[Look at door on the left]|C1P40V2]]&lt;br&gt;&quot;);
-}
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) &amp;&amp; window.passage.name != &quot;C1P40V2&quot;) print(&quot;[[[Look at left door]|C1P40V2]]&quot;);
 
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) {
-	print(&quot;[[[Look at door on the right]|C1P40V3]]&lt;br&gt;&quot;);
-}
-%&gt;
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) print(&quot;[[[Look at right door]|C1P40V3]]&quot;);
+    %&gt;
 
-[[[Go through kitchen door]|C1P41]]</tw-passagedata><tw-passagedata pid="161" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
+    [[[Go to kitchen]|C1P41]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="161" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
 
 I step inside. There&#39;s a sink with some water in it, it looks pretty clean too. I walk over to it, dip my hands in, and run my hands over my face. Wow, that feels great, I don&#39;t recall the last time I had a wash.
 
@@ -4450,7 +4522,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2550,9150" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2675,9575" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
