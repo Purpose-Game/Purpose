@@ -2720,64 +2720,150 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;I pick up the spinning top.&lt;/action&gt;
 &lt;action&gt;%Tiffany% might like this.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40V1" tags="variation" position="2925,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;) %&gt;
+&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="C1P40V1" tags="variation" position="2925,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;); %&gt;
 
-I walk up to the stairs, they bend and go to the left as they go up. I better not go up there, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { print(&quot;Lucy doesn&#39;t trust me as it is, no need to give her another excuse&quot;) } else { print(&quot;don&#39;t want to push my luck and risk a free meal&quot;) } %&gt;.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="C1P40V2" tags="variation" position="3075,9600" size="100,100">I walk up to the door on the left and open it. It&#39;s a bathroom! I could really use a freshening up...
+&lt;action&gt;I walk up to the stairs.&lt;/action&gt;
+&lt;action&gt;They bend and go to the left as they go up.&lt;/action&gt;
+&lt;action&gt;I better not go up there.&lt;/action&gt;
 
-[[[Enter bathroom]|C1P40V21]]
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="158" name="C1P40V3" tags="variation" position="3225,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;) %&gt;
+    &lt;action&gt;Lucy doesn&#39;t trust me as it is, no need to give her an excuse.&lt;/action&gt;
 
-I walk up to the door, it&#39;s larger than the other doors, and has locks on it: this must be the front door. I don&#39;t really want to go out there right now&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, not with all those walkers out there&quot;) %&gt;.
+&lt;% } else { %&gt;
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="C1P41" tags="page" position="3075,10050" size="100,100">&lt;%
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) {
-	window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;, false);
-}
-%&gt;
+    &lt;action&gt;I don&#39;t want to push my luck and risk a free meal.&lt;/action&gt;
 
-I walk to the end of the hallway and go through the kitchen door.
+&lt;% } %&gt;
 
-%Tiffany% and Lucy are sitting at a table in the middle of the small room. Benches line two sides of the room, and there&#39;s a door on the far side. There&#39;s a portable gas stove with a can on top of it on one of the benches&lt;% if(window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) print(&quot;, no coffee pot though, damn&quot;) %&gt;.
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="C1P40V2" tags="variation" position="3075,9600" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-%Tiffany% looks up from her meal and sees me, a huge smile fills her face.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;)) { %&gt;
 
-&quot;Come sit here!&quot;, %Tiffany% says, gesturing to the chair next to her. I look over at Lucy, she gives a slight smile and nods her approval.
+    &lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;
 
-[[[Sit next to %Tiffany%]|C1P42]]</tw-passagedata><tw-passagedata pid="160" name="F: Hallway search options" tags="floater" position="3425,9475" size="100,200">&lt;choices&gt;
+&lt;% } else { %&gt;
+    &lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;); %&gt;
+
+    &lt;action&gt;I walk up to the door on the left and open it.&lt;/action&gt;
+    &lt;action&gt;It&#39;s a bathroom!&lt;/action&gt;
+    &lt;action&gt;I could use a freshening up...&lt;/action&gt;
+
+    &lt;choices&gt;
+        [[[Enter bathroom]|C1P40V21]]
+        [[[Leave bathroom]|C1P40V2]]
+    &lt;/choices&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="158" name="C1P40V3" tags="variation" position="3225,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I walk up to the door, it&#39;s larger than the other doors, and has locks on it.&lt;/action&gt;
+&lt;action&gt;This must be the front door.&lt;/action&gt;
+&lt;action&gt;I don&#39;t really want to go out there right now.&lt;/action&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { %&gt;
+
+    &lt;action&gt;Especially not with all those walkers out there.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="C1P41" tags="page" position="3075,10050" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;, false); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I walk to the end of the hallway, and go through the kitchen door.&lt;/action&gt;
+&lt;action&gt;%Tiffany% and Lucy are sitting at a table in the middle of the small room.&lt;/action&gt;
+&lt;action&gt;Benches line two sides of the room, and there&#39;s a door on the far side.&lt;/action&gt;
+&lt;action&gt;There&#39;s a portable gas stove with a can of something on top of it on one of the benches.&lt;/action&gt;
+
+&lt;% if(window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) { %&gt;
+
+    &lt;action&gt;No sign of a coffee pot though, damn.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;character.two.happy&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;%Tiffany% looks up from her meal and sees me, a smile fills her face.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;Come sit here!&lt;/speech&gt;
+
+&lt;action&gt;She&#39;s gesturing to the chair next to her.&lt;/action&gt;
+
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I shoot a glace over at Lucy, who gives a small nod of approval.&lt;/action&gt;
+
+&lt;choices&gt;[[[Sit next to %Tiffany%]|C1P42]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="160" name="F: Hallway search options" tags="floater" position="3500,9600" size="100,200">&lt;choices&gt;
     &lt;%
     if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) print(&quot;[[[Look at stairs]|C1P40V1]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) &amp;&amp; window.passage.name != &quot;C1P40V2&quot;) print(&quot;[[[Look at left door]|C1P40V2]]&quot;);
+    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;)) print(&quot;[[[Look at left door]|C1P40V2]]&quot;);
 
     if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) print(&quot;[[[Look at right door]|C1P40V3]]&quot;);
     %&gt;
 
-    [[[Go to kitchen]|C1P41]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="161" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;) %&gt;
+    [[[Go to the kitchen]|C1P41]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="161" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;); %&gt;
 
-I step inside. There&#39;s a sink with some water in it, it looks pretty clean too. I walk over to it, dip my hands in, and run my hands over my face. Wow, that feels great, I don&#39;t recall the last time I had a wash.
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I give my face and arms a good scrub, the water turns a nasty brown color. I look at the mirror above the sink. My brown eyes are plagued by red lines. My brown messy hair is in complete disarray; it&#39;s getting a bit long for my liking too.
+&lt;action&gt;I step inside.&lt;/action&gt;
+&lt;action&gt;There&#39;s a sink with some water in it; it looks pretty clean.&lt;/action&gt;
+&lt;action&gt;I walk over to it, dip my hands in, and run my hands over my face.&lt;/action&gt;
 
-I wonder if there is a pair of scissors around here?
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 
-[[[Leave bathroom]|C1P40V211]]&lt;br&gt;
-[[[Search for scissors]|C1P40V212]]</tw-passagedata><tw-passagedata pid="162" name="C1P40V211" tags="variation" position="3000,9900" size="100,100">Ah well, another time. I let out the water in the sink and leave the bathroom.
+&lt;action&gt;Wow, that feels fantastic...&lt;/action&gt;
+&lt;action&gt;I don&#39;t recall the last time I had a wash.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="163" name="C1P40V212" tags="variation" position="3150,9900" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;) %&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I search around the bathroom. I find a small vanity box and open it, it contains some bits and bobs, and- Perfect, a pair of scissors.
+&lt;action&gt;I give my face and arms a good scrub.&lt;/action&gt;
+&lt;action&gt;The water turns a nasty brown color.&lt;/action&gt;
+&lt;action&gt;I look at the mirror above the sink.&lt;/action&gt;
 
-I walk back over to the sink and start cutting my hair. Doesn&#39;t need to be pretty, just functional...
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 
-There we go, that&#39;s a bit better.
+&lt;action&gt;My eyes are plagued by red lines...&lt;/action&gt;
+&lt;action&gt;...my hair is in complete disarray...&lt;/action&gt;
+&lt;action&gt;...not to mention it&#39;s getting a bit long too.&lt;/action&gt;
+&lt;action&gt;I wonder if there&#39;s some scissors around here?&lt;/action&gt;
+&lt;action&gt;That might be overstepping actually, maybe I should get going&lt;/action&gt;
 
-I pocket the scissors, I doubt that box was Lucy&#39;s, judging by the dust on it, and finding a pair is not easy these days.
+&lt;choices&gt;
+    [[[Leave bathroom]|C1P40V211]]
+    [[[Search for scissors]|C1P40V212]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="162" name="C1P40V211" tags="variation" position="3000,9900" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
 
-I let the water in the sink go, and head back into the hallway.
+&lt;action&gt;Maybe later.&lt;/action&gt;
+&lt;action&gt;I let out the water in the sink, and leave the bathroom.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="163" name="C1P40V212" tags="variation" position="3150,9900" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;); %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I search around the bathroom.&lt;/action&gt;
+&lt;action&gt;I find a small vanity box on top of a self in the corner of the room.&lt;/action&gt;
+&lt;action&gt;It has some bits and pieces, and-&lt;/action&gt;
+&lt;action&gt;Score! A pair of scissors.&lt;/action&gt;
+&lt;action&gt;They look in pretty good condition too, only a little rusty.&lt;/action&gt;
+&lt;action&gt;I walk back over to the sink and start cutting my hair.&lt;/action&gt;
+&lt;action&gt;Doesn&#39;t need to be fancy, just functional...&lt;/action&gt;
+&lt;action&gt;There we go, that&#39;s a bit better.&lt;/action&gt;
+&lt;action&gt;I pocket the scissors.&lt;/action&gt;
+&lt;action&gt;I doubt that box was Lucy&#39;s, judging by all the dust on it.&lt;/action&gt;
+&lt;action&gt;Not to mention finding a pair is not easy these days.&lt;/action&gt;
+&lt;action&gt;I let the hair filled water in the sink go, and head back into the hallway.&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="164" name="C1P42" tags="page" position="3075,10200" size="100,100">I sit down at the table.
 
@@ -4522,7 +4608,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2675,9575" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="321" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="322" name="Up to here :)" tags="" position="2800,10200" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
