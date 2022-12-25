@@ -2936,23 +2936,42 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;speech.lucy&gt;Here, Beans and Cheese.&lt;/speech&gt;
 
-&lt;choices&gt;[[[Take the bowl]|C1P43]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="165" name="C1P43" tags="page" position="3075,10350" size="100,100">I take the bowl and set it down.
+&lt;choices&gt;[[[Take the bowl]|C1P43]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="165" name="C1P43" tags="page" position="3075,10350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&quot;Thanks, I haven&#39;t had a hot meal in... well, a long time&quot;, I remark.
+&lt;speech.sarah&gt;Thanks, I haven&#39;t had a hot meal in... well, a long time.&lt;/speech&gt;
 
-I&#39;m starving, I dig right in.
+&lt;speech.lucy&gt;Mhm.&lt;/speech&gt;
 
-I can feel %Tiffany% staring at me, I stop eating and look at her. She has a hilariously cute look of disgust on her face.
+&lt;action&gt;Lucy grunts.&lt;/action&gt;
+&lt;action&gt;I&#39;m starving, I dig right in.&lt;/action&gt;
 
-&quot;How can you eat *that*?&quot;, she asks unapologetically.
+&lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
 
-I nearly choke laughing; Lucy was not so impressed.
+&lt;action&gt;I can feel %Tiffany% staring at me.&lt;/action&gt;
+&lt;action&gt;I stop eating and look at her.&lt;/action&gt;
+&lt;action&gt;She has a hilariously cute look of disgust on her face.&lt;/action&gt;
 
-&quot;You&#39;re free to go find your own meal little miss picky&quot;, she replies, rolling her eyes.
+&lt;speech.tiffany&gt;How can you eat that?&lt;/speech&gt;
 
-[[Eat, it tastes good|C1P43V1]]&lt;br&gt;
-[[What do you like to eat?|C1P43V2]]&lt;br&gt;
-[[You need food for strength|C1P43V3]]</tw-passagedata><tw-passagedata pid="166" name="Saved Games" tags="menu" position="2250,1025" size="200,100">&lt;% window.story.loadSaves() %&gt;
+&lt;character.one.happy&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I stifle a laugh in response, nearly choking on beans.&lt;/action&gt;
+
+&lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;A quick glance at Lucy confirms she is not impressed by the comment.&lt;/action&gt;
+
+&lt;speech.lucy&gt;You&#39;re free to go find your own meal little miss picky.&lt;/speech&gt;
+
+&lt;action&gt;Lucy rolls her eyes.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[It tastes good|C1P43V1]]
+    [[You need to eat|C1P43V3]]
+    [[What do you like?|C1P43V2]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="166" name="Saved Games" tags="menu" position="2250,1025" size="200,100">&lt;% window.story.loadSaves() %&gt;
 
 &lt;img.title-image&gt;
 
@@ -3040,41 +3059,82 @@ Select a Save Slot to start a new game.
   &lt;button0#selectSlotButton onclick=&quot;window.story.selectSlot()&quot;&gt;Select Slot and Start Game&lt;/button&gt;
 &lt;/form&gt;
 
-[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="172" name="C1P43V1" tags="variation" position="2925,10500" size="100,100">&quot;Eat up, it tastes good&quot;, I say with a mouthful.
+[[Back|Game Options]]</tw-passagedata><tw-passagedata pid="172" name="C1P43V1" tags="variation" position="2925,10500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
 
-&quot;It&#39;s all gluggy and gross&quot;, %Tiffany% replies.
+&lt;speech.sarah&gt;Eat up, it tastes good.&lt;/speech&gt;
 
-&quot;That&#39;s because you let it go cold...&quot;, Lucy says with a sigh.
+&lt;action&gt;I say with a mouthful&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="173" name="C1P43V2" tags="variation" position="3075,10500" size="100,100">&quot;What do you like to eat?&quot;, I ask %Tiffany%.
+&lt;speech.tiffany&gt;But, it&#39;s all gluggy and gross.&lt;/speech&gt;
 
-&quot;Pizza, and peanut butter sandwiches!&quot;, she replies excitedly.
+&lt;character.two.concern.sad&gt;Lucy&lt;/character&gt;
 
-&quot;Not much of that around these days&quot;, I remark.
+&lt;speech.lucy&gt;That&#39;s because you let it go cold...&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="174" name="C1P43V3" tags="variation" position="3225,10500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Eating&quot;) %&gt;
+&lt;action&gt;Lucy replies with a sigh.&lt;/action&gt;
 
-&quot;Eat up, you need food for strength&quot;, I say.
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="173" name="C1P43V2" tags="variation" position="3075,10500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
 
-&quot;But it&#39;s all gluggy and gross&quot;, %Tiffany% replies.
+&lt;speech.sarah&gt;What do you like to eat %Tiffany%?&lt;/speech&gt;
 
-&quot;Doesn&#39;t matter, you never know when you&#39;re going to get your next meal. Have to eat while you can&quot;, I remark.
+&lt;character.two.happy&gt;Tiffany&lt;/character&gt;
 
-I glance at Lucy. She looks back uncomfortably but doesn&#39;t say anything.
+&lt;speech.tiffany&gt;Oh, easy!&lt;/speech&gt;
+&lt;speech.tiffany&gt;Pizza and peanut butter sandwiches!&lt;/speech&gt;
 
-&quot;Hmm, I guess that makes sense&quot;, %Tiffany% says, sounding defeated.
+&lt;speech.sarah&gt;At the same time?&lt;/speech&gt;
 
-%Tiffany% starts to eat, I think I taught her something important.
+&lt;speech.tiffany&gt;No silly!&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="175" name="F: Come chat" tags="floater" position="3425,10500" size="100,100">I get back to my bowl.
+&lt;speech.sarah&gt;Well, not much of either of those around these days.&lt;/speech&gt;    
 
-&quot;Sarah, come chat with me when you&#39;re finished&quot;, Lucy says, as she stands up and heads for the other door.
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="174" name="C1P43V3" tags="variation" position="3225,10500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Eating&quot;); %&gt;
 
-&quot;Yeah, sure&quot;, I reply.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
 
-Lucy leaves the room.
+&lt;speech.sarah&gt;Eat up, you need food for strength.&lt;/speech&gt;
 
-[[[Keep eating]|C1P44]]</tw-passagedata><tw-passagedata pid="176" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
+&lt;speech.tiffany&gt;But, it&#39;s all gluggy and gross...&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Doesn&#39;t matter.&lt;/speech&gt;
+&lt;speech.sarah&gt;You never know when you&#39;re going to get your next meal.&lt;/speech&gt;
+&lt;speech.sarah&gt;Have to eat when you can.&lt;/speech&gt;
+
+&lt;character.two.concern.sad&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I glance at Lucy to gauge her thoughts.&lt;/action&gt;
+&lt;action&gt;She looks back uncomfortably, but doesn&#39;t say anything.&lt;/action&gt;
+
+&lt;character.two.confused.eyes&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Hmm, I guess that makes sense.&lt;/speech&gt;
+
+&lt;action&gt;She replies, sounding defeated.&lt;/action&gt;
+&lt;action&gt;%Tiffany% sticks her spoon into the bowl and starts to eat.&lt;/action&gt;
+&lt;action&gt;Maybe I taught her something important.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="175" name="F: Come chat" tags="floater" position="3425,10500" size="100,100">&lt;action&gt;I get back to my bowl.&lt;/action&gt;
+
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;Sarah, come chat with me when you&#39;re finished eating.&lt;/speech&gt;
+
+&lt;action&gt;She stands up and heads for the other door.&lt;/action&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Oh yeah, sure...&lt;/speech&gt;
+
+&lt;action&gt;Lucy leaves the room.&lt;/action&gt;
+&lt;action&gt;I wonder what that&#39;s about...&lt;/action&gt;
+
+&lt;choices&gt;[[[Keep eating]|C1P44]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="176" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
 
 I look over at %Tiffany%, she&#39;s actually making decent process on her meal. Good.
 
@@ -4584,7 +4644,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,10350" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2850,10650" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
