@@ -3133,102 +3133,190 @@ Select a Save Slot to start a new game.
 
 &lt;action&gt;Lucy leaves the room.&lt;/action&gt;
 &lt;action&gt;I wonder what that&#39;s about...&lt;/action&gt;
+&lt;action&gt;Also very trusting of her to leave me alone with %Tiffany%.&lt;/action&gt;
 
-&lt;choices&gt;[[[Keep eating]|C1P44]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="176" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
-
-I look over at %Tiffany%, she&#39;s actually making decent process on her meal. Good.
-
-&lt;% } else { %&gt;
-
-I look over at %Tiffany%, she&#39;s still playing with her food...
-
-&lt;% }
-
-if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;)) {
-	print(`[[[Give %Tiffany% the spinning top]|C1P44V4]]`);
-} %&gt;
-
-&lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="177" name="C1P44V1" tags="variation" position="2850,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;) %&gt;
-
-&quot;So, uh, where&#39;s your dad?&quot;, I ask %Tiffany%.
-
-She looks up from her meal.
-
-&quot;He got eaten by monsters&quot;, she replies, sounding a little downtrodden.
-
-&quot;Sorry to hear that&quot;, I reply.
-
-&quot;Don&#39;t be, he was being silly&quot;, she adds.
-
-&quot;How so?&quot;, I ask.
-
-&quot;He was really sad all of the time and kept making silly mistakes. One day we were down in this cool underground train station, and we walked into a bunch of monsters. Mom picked me up and ran away, but dad just stood there, Mom tried to shout at him to move, but he didn&#39;t&quot;, she remarks.
-
-We sit for a moment, while I process what this little girl just described to me.
-
-&quot;Anyway, where&#39;s your dad?&quot;, she asks cheerfully.
-
-&quot;I&#39;m not sure, I couldn&#39;t get back to him or my mom after everything went to shit. I like to think they&#39;re out there somewhere, but it&#39;s unlikely&quot;, I reply.
-
-&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="C1P44V2" tags="variation" position="3000,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot;) %&gt;
-
-&quot;So, where have you guys been staying, have you moved around a lot?&quot;, I ask %Tiffany%.
-
-She looks up from her meal.
-
-&quot;We move houses every few days, sometimes we stay longer, but mostly not. Mom finds a safe house, and then leaves me there during the day to go out looking for food and stuff&quot;, she replies.
-
-&quot;That... must be lonely&quot;, I say, feeling bad for her.
-
-&quot;Yeah it is, but mom says that it&#39;s too dangerous outside for me to come with her, except when we move houses&quot;, she replies, sounding a little annoyed.
-
-&quot;What about you?&quot;, %Tiffany% asks.
-
-&quot;Um, I move around a lot. Sometimes I&#39;ll stay in a house, like you, but most of the time I just sleep wherever it&#39;s safest. Being by myself means it&#39;s pretty easy to pack up and go at a moment&#39;s notice, which has its perks&quot;, I explain.
-
-&quot;Don&#39;t you get lonely too?&quot;, she asks.
-
-&quot;Sometimes, but I&#39;m used to it. I&#39;ve been on my own for a shit long time&quot;, I reply.
-
-&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;%
-window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;);
-
-_.delay(function() {
-	window.story.achievement(&quot;Chapter1&quot;, &quot;Walkers&quot;);
-}, 30 * 1000);
-%&gt;
-
-&quot;So, how many walkers have you killed?&quot;, I ask %Tiffany%.
-
-She looks up from her meal.
-
-&quot;Walker? Is that what you call the monsters?&quot;, she asks, sounding a little confused.
-
-&quot;Yeah, the monsters. How many have you killed?&quot;, I reply.
-
-&quot;Oh, I haven&#39;t killed any... I don&#39;t know how to&quot;, she replies, sounding uneasy.
-
-&quot;It&#39;s not hard, you just have to aim for the head&quot;, I reply with a mouth full, looking at her.
-
-&quot;Might be a little hard, considering how little you are, but don&#39;t let that stop you!&quot;, I remark, as I load another spoonful.
-
-%Tiffany% looks away for a moment, like she&#39;s thinking.
+&lt;choices&gt;[[[Keep eating]|C1P44]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="176" name="C1P44" tags="page save" position="3075,10650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
 
-I taught her another important thing.
+&lt;action&gt;I look over at %Tiffany%, she&#39;s actually making decent process on her meal.&lt;/action&gt;
+&lt;action&gt;I suppose that&#39;s good.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-I think I taught her something important.
+&lt;action&gt;I look over at %Tiffany%, she&#39;s still playing with her food...&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&quot;Why do you call them walkers?&quot;, she asks.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SpinningTop&quot;)) { %&gt;
 
-Still caught up on that, gee.
+	&lt;action&gt;Oh yeah, I should give this to %Tiffany% before I forget.&lt;/action&gt;
 
-&quot;Because they bloody walk everywhere&quot;, I reply.
+    &lt;choices&gt;[[[Give %Tiffany%spinning top]|C1P44V4]]&lt;/choices&gt;
+
+&lt;% } else { %&gt;
+
+	&lt;action&gt;With Lucy out of the room, I could find out a bit about %Tiffany%...&lt;/action&gt;
+
+    &lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;
+
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="177" name="C1P44V1" tags="variation" position="2850,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.sarah&gt;So, uh, where&#39;s your dad?&lt;/speech&gt;
+
+&lt;character.two.happy.eyes&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;%Tiffany% looks up from her meal.&lt;/action&gt;
+
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;He got eaten by monsters...&lt;/speech&gt;
+
+&lt;action&gt;She replies, sounding a little downtrodden.&lt;/action&gt;
+
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Ah, I&#39;m sorry to hear that.&lt;/speech&gt;
+
+&lt;speech.tiffany&gt;Don&#39;t be, he was being silly.&lt;/speech&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Oh...&lt;/speech&gt;
+
+&lt;action&gt;I wonder what she means by that...&lt;/action&gt;
+
+&lt;speech.sarah&gt;How so?&lt;/speech&gt;
+
+&lt;speech.tiffany&gt;He was really lazy all of the time, and kept doing silly things.&lt;/speech&gt;
+&lt;speech.tiffany&gt;One day we went down in this cool underground tunnel, and we found a bunch of monsters.&lt;/speech&gt;
+&lt;speech.tiffany&gt;Mom picked me up and we ran away, but dad just stood there.&lt;/speech&gt;
+&lt;speech.tiffany&gt;Mom tried to tell him to move, but he didn&#39;t.&lt;/speech&gt;
+&lt;speech.tiffany&gt;I don&#39;t know why.&lt;/speech&gt;
+&lt;speech.tiffany&gt;Mom doesn&#39;t like to talk about it with me...&lt;/speech&gt;
+
+&lt;action&gt;We sit for a moment, while I process what the little girl just described to me.&lt;/action&gt;
+&lt;action&gt;Damn...&lt;/action&gt;
+
+&lt;character.two.happy.eyes&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Anyway, what about your dad?&lt;/speech&gt;
+
+&lt;action&gt;She remarks cheerfully.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Oh well, I&#39;m not sure actually.&lt;/speech&gt;
+&lt;speech.sarah&gt;I couldn&#39;t get back to him or my mom after everything went tits up.&lt;/speech&gt;
+&lt;speech.sarah&gt;I like to think they&#39;re out there, somewhere...&lt;/speech&gt;
+
+&lt;action&gt;But it&#39;s not likely...&lt;/action&gt;
+&lt;action&gt;Should I have tried harder to find them?&lt;/action&gt;
+&lt;action&gt;They were probably worried sick.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="178" name="C1P44V2" tags="variation" position="3000,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Lonely&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.sarah&gt;So... where have you guys been staying?&lt;/speech&gt;
+&lt;speech.sarah&gt;Have you moved around a lot?&lt;/speech&gt;
+
+&lt;action&gt;%Tiffany% looks up from her meal.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;We move houses every once in a while.&lt;/speech&gt;
+&lt;speech.tiffany&gt;Sometimes we stay longer, but mom doesn&#39;t like doing that.&lt;/speech&gt;
+&lt;speech.tiffany&gt;She finds a safe place, and then leaves me there during the day.&lt;/speech&gt;
+&lt;speech.tiffany&gt;That way she can go out looking for food and other stuff.&lt;/speech&gt;
+
+&lt;action&gt;Lucy leaves %Tiffany% all alone?&lt;/action&gt;
+&lt;action&gt;That&#39;s rough...&lt;/action&gt;
+
+&lt;speech.sarah&gt;That... must be lonely.&lt;/speech&gt;
+
+&lt;speech.tiffany&gt;It is, but mom says that it&#39;s too dangerous for me to come with her.&lt;/speech&gt;
+&lt;speech.tiffany&gt;Except when we move houses, I guess.&lt;/speech&gt;
+
+&lt;action&gt;I can tell she&#39;s not a huge fan of that arrangement.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;What about you?&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Oh, me?&lt;/speech&gt;
+&lt;speech.sarah&gt;Well uh, I move around a lot.&lt;/speech&gt;
+&lt;speech.sarah&gt;Sometimes I&#39;ll stay in a house, like you, but most of the time I just sleep wherever it&#39;s safest.&lt;/speech&gt;
+&lt;speech.sarah&gt;Being by myself means it&#39;s pretty easy to pack up and go at a moment&#39;s notice, which has its perks.&lt;/speech&gt;
+
+&lt;speech.tiffany&gt;Don&#39;t you get lonely too?&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Sometimes I guess, but I&#39;m used to it.&lt;/speech&gt;
+&lt;speech.sarah&gt;I&#39;ve been on my own for a lonnnng fuckin&#39; time.&lt;/speech&gt;
+
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.sarah&gt;So... how many walkers have you killed?&lt;/speech&gt;
+
+&lt;character.two.happy.eyes&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;She looks up from her meal, surprised.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;Walkers?&lt;/speech&gt;
+
+&lt;character.two.confused.eyes&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Is that what you call the monsters?&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Yeah, the monsters.&lt;/speech&gt;
+
+&lt;character.two&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Oh...&lt;/speech&gt;
+&lt;speech.tiffany&gt;I haven&#39;t...&lt;/speech&gt;
+
+&lt;action&gt;She trails off, sounding uneasy.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;I don&#39;t know how to.&lt;/speech&gt;
+
+&lt;speech.sarah&gt;It&#39;s not hard, you just have to aim for the head.&lt;/speech&gt;
+
+&lt;action&gt;I reply with a mouth full, looking at her.&lt;/action&gt;
+&lt;action&gt;She doesn&#39;t meet my gaze.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Might be a little hard, considering how little you are.&lt;/speech&gt;
+
+&lt;action&gt;I load another spoonful of beans.&lt;/action&gt;
+
+&lt;speech.sarah&gt;But don&#39;t let that stop you!&lt;/speech&gt;
+
+&lt;action&gt;Her brow furrows like she&#39;s deep in thought.&lt;/action&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Eating&quot;)) { %&gt;
+
+&lt;action&gt;There&#39;s another piece of useful advise for her.&lt;/action&gt;
+
+&lt;% } else { %&gt;
+
+&lt;action&gt;Hopefully she&#39;ll take what I said on board.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;character.two.confused.eyes&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Why do you call them walkers?&lt;/speech&gt;
+
+&lt;action&gt;She&#39;s still caught up on that haha.&lt;/action&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Because they fuckin&#39; walk everywhere.&lt;/speech&gt;
 
 &lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="180" name="C1P45" tags="page" position="3075,10950" size="100,100">&quot;Anyway, uh, I had better go chat with your mom&quot;, I say, getting up from the table.
 
@@ -3242,19 +3330,24 @@ Lucy turns to look at me as I close the door. She looks away again, back at the 
 
 [[...|C1P45V1]]&lt;br&gt;
 [[No stress|C1P45V2]]&lt;br&gt;
-[[You broke our deal|C1P45V3]]</tw-passagedata><tw-passagedata pid="181" name="F: Better get going" tags="floater" position="3500,10800" size="100,100">%Tiffany%&#39;s face contorts into a look of shock.
+[[You broke our deal|C1P45V3]]`</tw-passagedata><tw-passagedata pid="181" name="F: Better get going" tags="floater" position="3500,10800" size="100,100">&lt;character.two.confused.eyes&gt;Tiffany&lt;/character&gt;
 
-&quot;Swear!&quot;, she exclaims.
+&lt;action&gt;%Tiffany%&#39;s face slowly contorts into a look of shock.&lt;/action&gt;
 
-There&#39;s an awkward pause.
+&lt;speech.tiffany&gt;Swear!&lt;/speech&gt;
 
-&quot;Um, sorry?&quot;, I reply.
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 
-Another awkward pause.
+&lt;action&gt;There&#39;s an awkward pause.&lt;/action&gt;
 
-I scrape the last drops out of the bowl: all finished.
+&lt;speech.sarah&gt;Um...&lt;/speech&gt;
+&lt;speech.sarah&gt;...sorry?&lt;/speech&gt;
 
-[[I better go talk to Lucy|C1P45]]</tw-passagedata><tw-passagedata pid="182" name="C1P45V1" tags="variation" position="2925,11100" size="100,100">I stay by the door, there&#39;s an uncomfortable silence.
+&lt;action&gt;Another awkward pause.&lt;/action&gt;
+&lt;action&gt;I seek refuge in the bowl below me.&lt;/action&gt;
+&lt;action&gt;I scrape the last drops out of the bowl.&lt;/action&gt;
+
+&lt;choices&gt;[[I better go talk to Lucy|C1P45]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P45V1" tags="variation" position="2925,11100" size="100,100">I stay by the door, there&#39;s an uncomfortable silence.
 
 &lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="183" name="C1P45V2" tags="variation" position="3075,11100" size="100,100">&quot;Don&#39;t worry about it. It was clearly... difficult, for both of us&quot;, I say.
 
@@ -3804,35 +3897,58 @@ I start to look around, we are in another hallway, there are three doors along t
 
 [[%Tiffany%, she&#39;s dead|C1P56V1]]&lt;br&gt;
 [[Keep your voice down!|C1P56V2]]&lt;br&gt;
-[[That&#39;s not your mom anymore...|C1P56V3]]</tw-passagedata><tw-passagedata pid="243" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&quot;Hey, I got you something&quot;, I say to %Tiffany%, as I get the spinning top out of my pocket.
+[[That&#39;s not your mom anymore...|C1P56V3]]</tw-passagedata><tw-passagedata pid="243" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Tiffany&lt;/character&gt;
 
-&quot;You did?&quot;, she replies, her eyes lighting up as if it was Christmas.
+&lt;speech.sarah&gt;Oh by the way, I found something for you.&lt;/speech&gt;
 
-&quot;Here&quot;, I say, holding out the spinning top.
+&lt;action&gt;I get the spinning top out of my pocket.&lt;/action&gt;
 
-&quot;What is it?&quot;, %Tiffany% asks, taking it in her small hands.
+&lt;character.two.happy.eyes&gt;Tiffany&lt;/character&gt;
 
-&quot;It&#39;s called a spinning top... it&#39;s a toy, kinda&quot;, I reply.
+&lt;speech.tiffany&gt;Huh, you did?&lt;/speech&gt;
 
-&quot;How does it work?&quot;, %Tiffany% says, sounding intrigued.
+&lt;action&gt;Her eyes light up.&lt;/action&gt;
 
-&quot;Let me show you&quot;, I reply.
+&lt;speech.sarah&gt;Here.&lt;/speech&gt;
 
-I reach out and place my hand on hers, move the spinning top the correct way up, then move our hands down to the tabletop. I take my hand back.
+&lt;action&gt;I pass %Tiffany% the spinning top.&lt;/action&gt;
 
-&quot;Now, grab the top, and twist&quot;, I remark.
+&lt;speech.tiffany&gt;What is it?&lt;/speech&gt;
 
-She does, and the spinning top spins.
+&lt;action&gt;She says, taking it in her small hands.&lt;/action&gt;
 
-&quot;Woah&quot;, %Tiffany% says, as the colors on the spinning top glitter.
+&lt;speech.sarah&gt;It&#39;s called a spinning top.&lt;/speech&gt;
+&lt;speech.sarah&gt;It&#39;s a toy, kinda.&lt;/speech&gt;
 
-We both sit and watch it for a moment, till it spins itself out.
+&lt;speech.tiffany&gt;How does it work?&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="244" name="F: Tiff Breakfast Talk Options" tags="floater" position="3650,10675" size="100,200">[[Where&#39;s your dad?|C1P44V1]]&lt;br&gt;
-[[Where have you guys been staying?|C1P44V2]]&lt;br&gt;
-[[How many walkers have you killed?|C1P44V3]]&lt;br&gt;
+&lt;action&gt;She sounds intrigued.&lt;/action&gt;
 
-[[[Go talk to Lucy]|C1P45]]</tw-passagedata><tw-passagedata pid="245" name="C1P53V111" tags="variation" position="1975,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
+&lt;speech.sarah&gt;Here, I&#39;ll show you.&lt;/speech&gt;
+
+&lt;action&gt;I reach out and place my hand on hers, moving the spinning top the correct way up.&lt;/action&gt;
+&lt;action&gt;Then I move our hands down to the tabletop.&lt;/action&gt;
+&lt;action&gt;I let go.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Okay, now you just need to twist your fingers, and let go.&lt;/speech&gt;
+
+&lt;action&gt;She does as I instruct, and the spinning top spins.&lt;/action&gt;
+&lt;action&gt;The colors on the spinning top glitter in the poorly lit room.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;Woah...&lt;/speech&gt;
+
+&lt;action&gt;We sit and watch it till it spins itself out.&lt;/action&gt;
+&lt;action&gt;%Tiffany% picks up the spinning top and examines it more closely.&lt;/action&gt;
+&lt;action&gt;Speaking of examining, now isn&#39;t a bad time to find out a bit more about %Tiffany%...&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="244" name="F: Tiff Breakfast Talk Options" tags="floater" position="3650,10675" size="100,200">&lt;choices&gt;
+    [[Where&#39;s dad?|C1P44V1]]
+    [[Where&#39;ve you been staying?|C1P44V2]]
+    [[How many walkers you killed?|C1P44V3]]
+    [[[Go talk to Lucy]|C1P45]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="245" name="C1P53V111" tags="variation" position="1975,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
 
 She slowly nods her head, but I think she&#39;s only doing that for my benefit...
 
@@ -4644,7 +4760,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2850,10650" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,10950" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
