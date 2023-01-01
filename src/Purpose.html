@@ -3375,25 +3375,60 @@ Select a Save Slot to start a new game.
 &lt;action&gt;I seek refuge in the bowl below me.&lt;/action&gt;
 &lt;action&gt;I scrape the last drops out of the bowl.&lt;/action&gt;
 
-&lt;choices&gt;[[I better go talk to Lucy|C1P45]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P45V1" tags="variation" position="2925,11100" size="100,100">I stay by the door, there&#39;s an uncomfortable silence.
+&lt;choices&gt;[[I better go talk to Lucy|C1P45]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="182" name="C1P45V1" tags="variation" position="2925,11100" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="183" name="C1P45V2" tags="variation" position="3075,11100" size="100,100">&quot;Don&#39;t worry about it. It was clearly... difficult, for both of us&quot;, I say.
+&lt;action&gt;I stay by the door.&lt;/action&gt;
+&lt;action&gt;An uncomfortable silence settles in.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45V3" tags="variation" position="3225,11100" size="100,100">&quot;You broke our deal&quot;, I remark.
+&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="183" name="C1P45V2" tags="variation" position="3075,11100" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="185" name="F: Broke our deal" tags="floater" position="3425,11100" size="100,100">Lucy puts the picture frame down and turns to face me.
+&lt;action&gt;This again...&lt;/action&gt;
 
-&quot;&lt;% if (window.passage.name === &quot;C1P45V3&quot;) { print(&quot;Yes, I did.&quot;) } else { print(&quot;I broke our deal, last night.&quot;) } %&gt; That&#39;s why I wanted to talk to you&quot;, Lucy sighs.
+&lt;speech.sarah&gt;Don&#39;t worry about it.&lt;/speech&gt;
+&lt;speech.sarah&gt;It was clearly... difficult, for both of us.&lt;/speech&gt;
 
-&quot;I&#39;d be lying if I said I didn&#39;t ask about... your sister, just to find out more about the kind of person you are&quot;, she remarks.
+&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="184" name="C1P45V3" tags="variation" position="3225,11100" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&quot;I&#39;d be lying if I said I didn&#39;t ask about &lt;% print(window.story.tiffany()) %&gt; for the same reason&quot;, I reply.
+&lt;action&gt;Oh yeah, I&#39;d forgotten.&lt;/action&gt;
 
-Lucy gives a slight smile.
+&lt;speech.sarah&gt;Mhm, you broke our deal.&lt;/speech&gt;
 
-&quot;Fair enough&quot;, she replies.
+&lt;%= window.story.render(&quot;F: Broke our deal&quot;) %&gt;</tw-passagedata><tw-passagedata pid="185" name="F: Broke our deal" tags="floater" position="3425,11100" size="100,100">&lt;action&gt;Lucy puts the picture frame down and turns to face me.&lt;/action&gt;
 
-[[[Walk over to Lucy]|C1P46]]</tw-passagedata><tw-passagedata pid="186" name="C1P46" tags="page" position="3075,11250" size="100,100">I walk over to Lucy. I glance down at the picture frames she was looking at, they&#39;re not of her, or of %Tiffany%; just some random family, a happy, family.
+&lt;% if (window.passage.name === &quot;C1P45V3&quot;) { %&gt;
+
+&lt;speech.lucy&gt;Yes, I did.&lt;/speech&gt;
+
+&lt;% } else { %&gt;
+
+&lt;speech.lucy&gt;I broke our deal last night.&lt;/speech&gt;
+
+&lt;% } %&gt;
+
+&lt;speech.lucy&gt;That&#39;s why I wanted to talk to you.&lt;/speech&gt;
+
+&lt;action&gt;Lucy sighs.&lt;/action&gt;
+
+&lt;speech.lucy&gt;I&#39;d be lying if I said I didn&#39;t ask about your sister...&lt;/speech&gt;
+&lt;speech.lucy&gt;Just to find out more about the kind of person you are.&lt;/speech&gt;
+
+&lt;action&gt;I figured as much.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Well, I&#39;d be lying if I said I didn&#39;t ask about %Tiffany% for the same reason.&lt;/speech&gt;
+
+&lt;character.two.happy.mouth&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;A slight smile appears across her face.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Fair enough.&lt;/speech&gt;
+
+&lt;choices&gt;[[[Walk over to Lucy]|C1P46]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="186" name="C1P46" tags="page" position="3075,11250" size="100,100">I walk over to Lucy. I glance down at the picture frames she was looking at, they&#39;re not of her, or of %Tiffany%; just some random family, a happy, family.
 
 &quot;Tiffany used to be like the little boy in these pictures&quot;, Lucy says, gesturing to the picture frames.
 
@@ -4788,7 +4823,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2675,11100" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2850,11250" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
