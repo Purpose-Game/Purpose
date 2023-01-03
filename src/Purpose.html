@@ -3450,35 +3450,83 @@ Select a Save Slot to start a new game.
     [[...|C1P46V1]]
     [[She&#39;s still happy|C1P46V2]]
     [[She&#39;s still loved|C1P46V3]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="187" name="C1P46V1" tags="variation" position="2925,11400" size="100,100">I look at Lucy, then back at the frames.
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="187" name="C1P46V1" tags="variation" position="2925,11400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="188" name="C1P46V2" tags="variation" position="3075,11400" size="100,100">&quot;She still looks pretty happy to me&quot;, I state.
+&lt;action&gt;I look at Lucy, then back at the frames.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="189" name="C1P46V3" tags="variation" position="3225,11400" size="100,100">&quot;You still love her, she has that&quot;, I say.
+&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="188" name="C1P46V2" tags="variation" position="3075,11400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="190" name="F: Happy cuz of you" tags="floater" position="3575,11400" size="100,100">&quot;&lt;% if (window.passage.name === &quot;C1P46V2&quot;) { print (&quot;She&#39;s happy because of you.&quot;) } else { print(&quot;And that&#39;s not enough.&quot;) } %&gt;&quot;, Lucy remarks.
+&lt;speech.sarah&gt;Well, she still looks pretty happy to me.&lt;/speech&gt;
 
-&quot;You are the first thing, the first *person* to bring any joy into her life in a very long time. I try to keep her happy, but I&#39;m so busy trying to keep her alive and fed, I just don&#39;t have the time. You don&#39;t even need to do anything, just being around you is enough to lift her spirits!&quot;, Lucy exclaims.
+&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="189" name="C1P46V3" tags="variation" position="3225,11400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.happy.eyes&gt;Lucy&lt;/character&gt;
 
-[[...|C1P47V1]]&lt;br&gt;
-[[Jealous?|C1P47V2]]&lt;br&gt;
-&lt;%
-switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;)) {
-	case &quot;Lonely&quot;:
-		print(&quot;[[She&#39;s lonely|C1P47V31]]&quot;);
-		break;
-		
-	case &quot;Dad&quot;:
-		print(&quot;[[She misses her dad|C1P47V32]]&quot;);
-		break;
-		
-	case &quot;Killing&quot;:
-		print(&quot;[[You don&#39;t involve her enough|C1P47V33]]&quot;);
-		break;
-}
-%&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">I&#39;m not sure where this is going...
+&lt;speech.sarah&gt;Not all of it.&lt;/speech&gt;
+&lt;speech.sarah&gt;You still love her, don&#39;t you?&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P47V2" tags="variation" position="2925,11550" size="100,100">&quot;Jealous?&quot;, I ask?
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="190" name="F: Happy cuz of you" tags="floater" position="3575,11400" size="100,100">&lt;action&gt;Lucy lets out a sigh.&lt;/action&gt;
+
+&lt;% if (window.passage.name === &quot;C1P46V1&quot; || window.passage.name === &quot;C1P46V2&quot;) { %&gt;
+    
+    &lt;speech.lucy&gt;Your seeing a side of her that I haven&#39;t seen in a long time.&lt;/speech&gt;
+    &lt;speech.lucy&gt;A side I haven&#39;t been able to coax out of her since her father died.&lt;/speech&gt;
+
+&lt;% } else { %&gt;
+
+    &lt;speech.lucy&gt;Of course I do.&lt;/speech&gt;
+    &lt;action&gt;She pauses for a moment.&lt;/action&gt;
+    &lt;speech.lucy&gt;But I don&#39;t think that&#39;s enough.&lt;/speech&gt;
+    &lt;speech.lucy&gt;She needs more.&lt;/speech&gt;
+
+&lt;% } %&gt;
+
+&lt;action&gt;Lucy continues to look at the frames.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Watching how she behaves around you, reminds me how she use to be.&lt;/speech&gt;
+&lt;speech.lucy&gt;You are the first thing to bring any joy into her life in a very long time.&lt;/speech&gt;
+&lt;speech.lucy&gt;I do my best to keep her alive and fed...&lt;/speech&gt;
+&lt;speech.lucy&gt;...but that leaves me so little time to keep her happy.&lt;/speech&gt;
+
+&lt;action&gt;She looks away from the frames, at one of the blank walls.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Back... before... I used to work all the time.&lt;/speech&gt;
+&lt;speech.lucy&gt;Doing shift work meant I didn&#39;t get to see Tiffany very much.&lt;/speech&gt;
+&lt;speech.lucy&gt;When she wasn&#39;t at school, she was home with her father.&lt;/speech&gt;
+&lt;speech.lucy&gt;They were such a good team, and how that he&#39;s gone...&lt;/speech&gt;
+
+&lt;character.two.sad&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;She finally turns to look at me.&lt;/action&gt;
+
+&lt;speech.lucy&gt;I don&#39;t know what to do to make her happy anymore.&lt;/speech&gt;
+
+&lt;choices&gt;
+    [[...|C1P47V1]]
+    &lt;%
+    switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;)) {
+        case &quot;Lonely&quot;:
+            print(&quot;[[She&#39;s lonely|C1P47V31]]&quot;);
+            break;
+            
+        case &quot;Dad&quot;:
+            print(&quot;[[She misses her dad|C1P47V32]]&quot;);
+            break;
+            
+        case &quot;Killing&quot;:
+            print(&quot;[[You don&#39;t involve her enough|C1P47V33]]&quot;);
+            break;
+    }
+    %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">I&#39;m not sure where this is going...
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P47V2" tags="" position="3725,11550" size="100,100">&quot;Jealous?&quot;, I ask?
 
 Lucy scoffs.
 
@@ -4024,7 +4072,6 @@ I start to look around, we are in another hallway, there are three doors along t
     [[Where&#39;s dad?|C1P44V1]]
     [[Where&#39;ve you been staying?|C1P44V2]]
     [[How many walkers you killed?|C1P44V3]]
-    [[[Go talk to Lucy]|C1P45]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="245" name="C1P53V111" tags="variation" position="1975,12900" size="100,100">&quot;Don&#39;t worry &lt;% print (window.story.tiffany()) %&gt;, she&#39;ll be fine. She can handle herself&quot;, I say, trying to sound reassuring.
 
 She slowly nods her head, but I think she&#39;s only doing that for my benefit...
@@ -4837,7 +4884,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2700,11400" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2525,11550" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
