@@ -271,9 +271,6 @@ window.story.achievementDescriptions = {
 		"Walkers": [
 			"Walkers?", "What do you call the ones that run?"
 		],
-		"Nerve": [
-			"Struck a Nerve", "Found a touchy subject"
-		],
 		"Scorpion": [
 			"Scorpion", "*Get over here*"
 		]

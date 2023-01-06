@@ -1857,7 +1857,7 @@ info: Passage is for developer reference, not for use in-game (directly).
 
 addition: Normal page or variation passage added after story was finished, saves reordering passages.
 
-No Tag: Temporary/Test page</tw-passagedata><tw-passagedata pid="111" name="C1P26" tags="page" position="3075,6600" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+No Tag: Temporary/Test page/Disused</tw-passagedata><tw-passagedata pid="111" name="C1P26" tags="page" position="3075,6600" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
 
@@ -2536,8 +2536,6 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &quot;Chapter1&quot;, &quot;Drama&quot;, &quot;Drama Queen&quot;, &quot;You should have been an actor.&quot;
 
 &quot;Chapter1&quot;, &quot;Walkers&quot;, &quot;Walkers?&quot;, &quot;What do you call the ones that run?&quot;
-
-&quot;Chapter1&quot;, &quot;Nerve&quot;, &quot;Struck a Nerve&quot;, &quot;Found a touchy subject&quot;
 
 &quot;Chapter1&quot;, &quot;Scorpion&quot;, &quot;Scorpion&quot;, &quot;*Get over here*&quot;</tw-passagedata><tw-passagedata pid="147" name="F: Breakfast time!" tags="floater" position="3425,9000" size="100,100">&lt;action&gt;Lucy reaches back into one of her pockets with her free hand.&lt;/action&gt;
 &lt;action&gt;She pulls out a roll of tape, then tearing a bit off, secures the cotton wool ball to my hand.&lt;/action&gt;
@@ -3501,7 +3499,7 @@ Select a Save Slot to start a new game.
 &lt;speech.lucy&gt;When she wasn&#39;t at school, she was home with her father.&lt;/speech&gt;
 &lt;speech.lucy&gt;They were such a good team, and how that he&#39;s gone...&lt;/speech&gt;
 
-&lt;character.two.sad&gt;Lucy&lt;/character&gt;
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
 &lt;action&gt;She finally turns to look at me.&lt;/action&gt;
 
@@ -3520,11 +3518,16 @@ Select a Save Slot to start a new game.
             break;
             
         case &quot;Killing&quot;:
-            print(&quot;[[You don&#39;t involve her enough|C1P47V33]]&quot;);
+            print(&quot;[[She&#39;s not involved enough|C1P47V33]]&quot;);
             break;
     }
     %&gt;
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">I&#39;m not sure where this is going...
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I wonder why Lucy is telling me all this.&lt;/action&gt;
+&lt;action&gt;I&#39;m not sure where this is going...&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="192" name="C1P47V2" tags="" position="3725,11550" size="100,100">&quot;Jealous?&quot;, I ask?
 
@@ -3532,43 +3535,102 @@ Lucy scoffs.
 
 &quot;Yeah, I guess I am a little bit&quot;, she says, smiling slightly.
 
-&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="193" name="C1P47V31" tags="variation" position="3075,11550" size="100,100">&quot;She&#39;s just lonely. And I mean can you blame her, when she&#39;s left alone all day long?&quot;, I remark. I didn&#39;t realize how rude that sounded till the words left my mouth.
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="193" name="C1P47V31" tags="variation" position="3075,11550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
-Lucy turns to me with a mixture of anger and shock, but it quickly fades away to a look of pain.
+&lt;action&gt;Says the woman leaving %Tiffany% alone all day!&lt;/action&gt;
 
-She knows I&#39;m right.
+&lt;speech.sarah&gt;Can you blame her?&lt;/speech&gt;
+&lt;speech.sarah&gt;When she&#39;s left alone all day long?&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Nerve&quot;1); %&gt;
+&lt;action&gt;I didn&#39;t realize how rude that sounded till the words actually left my mouth.&lt;/action&gt;
+&lt;action&gt;Oh well, it&#39;s true.&lt;/action&gt;
 
-&quot;She just misses her dad; it sounded like he was going through al-&quot;, I start.
+&lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
 
-&quot;Don&#39;t talk about my husband&quot;, Lucy snaps.
+&lt;action&gt;Lucy looks at to me with a mixture of anger and shock.&lt;/action&gt;
 
-I&#39;m caught off guard, I bite my tongue.
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
-&quot;He abandoned us, abandoned *Tiffany*, when she needed him most. That&#39;s it, end of story&quot;, Lucy spits out.
+&lt;action&gt;It quickly fades away though.&lt;/action&gt;
+&lt;action&gt;She knows I&#39;m right.&lt;/action&gt;
 
-There&#39;s an awkward silence. I guess she either doesn&#39;t understand, or doesn&#39;t want to understand it, from his perspective.
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="194" name="C1P47V32" tags="variation" position="3225,11550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="195" name="C1P47V33" tags="variation" position="3375,11550" size="100,100">&quot;You don&#39;t get her involved enough&quot;, I say.
+&lt;action&gt;I&#39;m not sure how to talk about this with her.&lt;/action&gt;
+&lt;action&gt;%Tiffany% only told me a little bit about her dad...&lt;/action&gt;
+&lt;action&gt;But I think it needs to be said.&lt;/action&gt;
 
-Lucy looks at me in confusion.
+&lt;speech.sarah&gt;I agree that she probably misses her dad...&lt;/speech&gt;
+&lt;speech.sarah&gt;...and I won&#39;t pretend to understand what he, and the rest of you guys went through...&lt;/speech&gt;
+&lt;speech.sarah&gt;..but...&lt;/speech&gt;
 
-&quot;She said she hasn&#39;t even killed a walker&quot;, I explain.
+&lt;action&gt;This is a bad idea, but I&#39;m in deep now, might as well say it.&lt;/action&gt;
 
-&quot;How can you expect her to be happy when you don&#39;t let her do anything?&quot;, I ask.
+&lt;speech.sarah&gt;From what I gather, he might not have been the best person to...&lt;/speech&gt;
+&lt;speech.sarah&gt;...you know, have around, nowadays.&lt;/speech&gt;
 
-Lucy takes a breath as if to say something, but stops and looks away instead.
+&lt;action&gt;No reaction from Lucy.&lt;/action&gt;
 
-She knows I&#39;m right.
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="196" name="F: Tiff is a child" tags="floater" position="3575,11550" size="100,100">Lucy moves away towards the window.
+&lt;action&gt;This silence is killing me, I gotta say something else.&lt;/action&gt;
 
-&quot;She&#39;s just a child. She didn&#39;t even get the chance to go to school...&quot;, Lucy trails off.
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 
-&quot;I&#39;m doing the best I can to keep her alive; there&#39;s not exactly a handbook on &#39;How to raise a child in the apocalypse&#39;&quot;, she remarks.
+&lt;speech.sarah&gt;And that&#39;s not to say he wasn&#39;t a great guy!&lt;/speech&gt;
+&lt;speech.sarah&gt;I&#39;m sure he was, but, you know, those feelings can be hard to deal with at the best of times.&lt;/speech&gt;
+&lt;speech.sarah&gt;&#39;The apocalypse&#39; isn&#39;t really an ideal environment...&lt;/speech&gt;
 
-She looks out the window for a few moments.
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I would know...&lt;/action&gt;
+&lt;action&gt;We stand in awkward silence again.&lt;/action&gt;
+
+&lt;speech.lucy&gt;I appreciate what he was going through must have been difficult.&lt;/speech&gt;
+&lt;speech.lucy&gt;But Tiffany and I were relying on him, and I don&#39;t think I can ever forgive him.&lt;/speech&gt;
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="195" name="C1P47V33" tags="variation" position="3375,11550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;speech.sarah&gt;I&#39;m not sure what you were expecting.&lt;/speech&gt;
+
+&lt;action&gt;Lucy looks at me in confusion.&lt;/action&gt;
+
+&lt;speech.sarah&gt;%Tiffany% told me she hasn&#39;t ever killed a walker.&lt;/speech&gt;
+&lt;speech.sarah&gt;Honestly I&#39;m a little impressive that you&#39;ve gotten this far without her needing to.&lt;/speech&gt;
+&lt;speech.sarah&gt;However, for that to be the case, she&#39;s obviously lived a far too sheltered life.&lt;/speech&gt;
+&lt;speech.sarah&gt;Killing walkers isn&#39;t the best example, but you get what I mean right?&lt;/speech&gt;
+&lt;speech.sarah&gt;You need to involve her in the day-to-day stuff.&lt;/speech&gt;
+&lt;speech.sarah&gt;If for no other reason than one day she&#39;s going to need to know how to do it herself, alone.&lt;/speech&gt;
+
+&lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;Lucy takes a breath as if to say something...&lt;/action&gt;
+
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;But stops and looks away instead.&lt;/action&gt;
+&lt;action&gt;She knows I&#39;m right.&lt;/action&gt;
+&lt;action&gt;That was actually kinda profound of me, huh.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Tiff is a child&quot;) %&gt;</tw-passagedata><tw-passagedata pid="196" name="F: Tiff is a child" tags="floater" position="3575,11550" size="100,100">&lt;action&gt;Lucy sighs, and moves away over towards the window.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Tiffany didn&#39;t even get the chance to go to school...&lt;/speech&gt;
+&lt;speech.lucy&gt;Didn&#39;t get to make friends.&lt;/speech&gt;
+&lt;speech.lucy&gt;Didn&#39;t get to go out on play dates.&lt;/speech&gt;
+&lt;speech.lucy&gt;Didn&#39;t get to learn.&lt;/speech&gt;
+&lt;speech.lucy&gt;Didn&#39;t get to...&lt;/speech&gt;
+&lt;speech.lucy&gt;Have a childhood.&lt;/speech&gt;
+&lt;speech.lucy&gt;There&#39;s not a handbook on &#39;How to raise a child in the apocalypse&#39;, but I&#39;m trying my best.&lt;/speech&gt;
+
+&lt;action&gt;She looks out the window.&lt;/action&gt;
+&lt;action&gt;...&lt;/action&gt;
+&lt;action&gt;I&#39;ve gotta ask her...&lt;/action&gt;
 
 [[Why did you save me?|C1P48]]</tw-passagedata><tw-passagedata pid="197" name="C1P48" tags="page" position="3075,11700" size="100,100">&quot;Why did you save me, really&quot;, I ask.
 
@@ -4884,7 +4946,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2525,11550" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,11700" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
