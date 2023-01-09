@@ -3652,63 +3652,137 @@ Lucy scoffs.
 
 &lt;choices&gt;
     [[...|C1P48V1]]
-    [[They will be|C1P48V2]]
-    [[They won&#39;t be|C1P48V3]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="198" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
+    [[There will be|C1P48V2]]
+    [[There won&#39;t be|C1P48V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="198" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false); %&gt;
 
-I&#39;m not sure what to say.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="199" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) %&gt;
+&lt;action&gt;I&#39;m not sure what to say...&lt;/action&gt;
+&lt;action&gt;Lucy looks at me.&lt;/action&gt;
 
-&quot;They will be&quot;, I say.
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="200" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false) %&gt;
+&lt;action&gt;She nods slowly.&lt;/action&gt;
+&lt;action&gt;She understands there are not many good people left.&lt;/action&gt;
 
-&quot;They won&#39;t be&quot;, I say.
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="199" name="C1P48V2" tags="variation" position="3075,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;); %&gt;
 
-&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="201" name="F: Stay" tags="floater" position="3425,11850" size="100,100">&lt;% if (window.passage.name === &quot;C1P48V1&quot;) { %&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-Lucy looks at me... she understands there are not many good people left these days. She takes a breath, wiping her tears away.
+&lt;speech.sarah&gt;There will be.&lt;/speech&gt;
 
-&lt;% } else if (window.passage.name === &quot;C1P48V2&quot;) { %&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 
-&quot;Do you really think so?&quot;, she asks, taking a breath, wiping her tears away.
+&lt;speech.sarah&gt;I&#39;m sure of it.&lt;/speech&gt;
 
-&quot;I do&quot;, I say confidently.
+&lt;character.two.happy&gt;Lucy&lt;/character&gt;
 
-&lt;% } else if (window.passage.name === &quot;C1P48V3&quot;) { %&gt;
+&lt;action&gt;Lucy looks at me for a moment, then gives a faint smiles.&lt;/action&gt;
 
-&quot;Deep down, I think I know that&quot;, she says, taking a breath, wiping her tears away.
+&lt;speech.lucy&gt;Do you really think so?&lt;/speech&gt;
 
-&lt;% } %&gt;
+&lt;speech.sarah&gt;Yeah, why not.&lt;/speech&gt;
+&lt;speech.sarah&gt;I mean, me standing her after you looked after me is proof, isn&#39;t it?&lt;/speech&gt;
 
-Lucy takes a moment to center herself.
+&lt;speech.lucy&gt;I suppose it is.&lt;/speech&gt;
 
-&quot;I&#39;m not sure how to say this, so I&#39;ll just say it: I&#39;d like it if you stayed with us&quot;, Lucy says.
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="200" name="C1P48V3" tags="variation" position="3225,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false); %&gt;
 
-My heart skips a beat, I haven&#39;t been with other people long term since... Sophia.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-&quot;I know it&#39;s a lot to lay on you all at once, but, I&#39;ve thought about it;&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;ItemsCollected&quot;) &gt; 0) print(&quot; you&#39;re resourceful,&quot;) %&gt; you clearly know how to survive out there, you can pull your own weight, and you&#39;ll have an influence on Tiffany&quot;, she explains.
+&lt;speech.sarah&gt;There won&#39;t be.&lt;/speech&gt;
+&lt;speech.sarah&gt;This isn&#39;t a magic fairy world where everyone gets along.&lt;/speech&gt;
+&lt;speech.sarah&gt;It&#39;s killed or be killed out there.&lt;/speech&gt;
 
-&quot;Don&#39;t know if it will be a good or bad influence, we&#39;ll have to find out, together&quot;, she says with a slight smile.
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
 
-This is a lot to process, I have to think about this for a minute. I&#39;ve known these people for like, five minutes; they seem nice, but is this even something I want?
+&lt;speech.lucy&gt;Deep down, I think I know that.&lt;/speech&gt;
 
-[[[Think about Lucy&#39;s offer]|C1P49]]</tw-passagedata><tw-passagedata pid="202" name="C1P49" tags="page" position="3075,12000" size="100,100">I think about it for a minute, Lucy staring at me all the while.
+&lt;%= window.story.render(&quot;F: Stay&quot;) %&gt;</tw-passagedata><tw-passagedata pid="201" name="F: Stay" tags="floater" position="3425,11850" size="100,100">&lt;action&gt;Lucy takes a moment to recollect herself.&lt;/action&gt;
+
+&lt;character.two&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;I&#39;ve been trying to think of a good way of wording this, but I keep drawing a blank, so I&#39;m just going to say it.&lt;/speech&gt;
+&lt;speech.lucy&gt;I want you to think about staying with Tiffany and I for a while.&lt;/speech&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;My heart skips a beat.&lt;/action&gt;
+
+&lt;speech.lucy&gt;I know it&#39;s a lot to lay on you all at once, but...&lt;/speech&gt;
+
+&lt;character.two.happy.eyes&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;I think we could make a good team.&lt;/speech&gt;
+&lt;speech.lucy&gt;Not to mention your leg still isn&#39;t 100%, so you might need a hand with that.&lt;/speech&gt;
+
+&lt;action&gt;I haven&#39;t been with other people since...&lt;/action&gt;
+
+&lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Sophia.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Plus, I think Tiffany would benefit from having someone closer to her age around.&lt;/speech&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;She does realize I&#39;m more than double her age right.&lt;/action&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.happy&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;I don&#39;t know if you&#39;ll be a good or bad influence on her, but I&#39;m willing to find out, if you are.&lt;/speech&gt;
+
+&lt;action&gt;This is a lot to process.&lt;/action&gt;
+&lt;action&gt;I have to think about it.&lt;/action&gt;
+&lt;action&gt;I&#39;ve known these people for like, five minutes.&lt;/action&gt;
+&lt;action&gt;They seem nice, but is this even something I want?&lt;/action&gt;
+
+&lt;choices&gt;[[[Think about Lucy&#39;s offer]|C1P49]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="202" name="C1P49" tags="page" position="3075,12000" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.happy&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I think about it for a minute.&lt;/action&gt;
+&lt;action&gt;Lucy staring at me all the while.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;)) { %&gt;
 
-Well, I said I needed a new purpose; this isn&#39;t exactly what I had in mind, but...
+&lt;action&gt;Well, I said I needed a new purpose...&lt;/action&gt;
+&lt;action&gt;...this isn&#39;t exactly what I had in mind, but...&lt;/action&gt;
+&lt;action&gt;Sigh.&lt;/action&gt;
+&lt;action&gt;I can&#39;t bring Sophia back.&lt;/action&gt;
+&lt;action&gt;But maybe, just maybe...&lt;/action&gt;
 
-I can&#39;t bring Sophia back, but maybe I can honor her through helping %Tiffany%.
+&lt;character.one.happy&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I can honor her through helping %Tiffany%.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-I don&#39;t know... I don&#39;t want, no, I *can&#39;t* have another little girl&#39;s blood on my hands. %Tiffany% might be better off without me.
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I don&#39;t know...&lt;/action&gt;
+&lt;action&gt;I don&#39;t want, no, I can&#39;t have another little girl&#39;s blood on my hands.&lt;/action&gt;
+&lt;action&gt;%Tiffany% might be better off without me.&lt;/action&gt;
+
+&lt;character.one.pain&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I&#39;m worthless after all...&lt;/action&gt;
+&lt;action&gt;...right?&lt;/action&gt;
 
 &lt;% } %&gt;
 
-[[I&#39;ll stay|C1P50]] [[I&#39;m not staying|C1P50]]</tw-passagedata><tw-passagedata pid="203" name="C1P50" tags="page save" position="3075,12150" size="100,100">&quot;I-&quot;, I start to say.
+&lt;choices&gt;
+    [[I&#39;ll stay|C1P50]]
+    [[I&#39;m not staying|C1P50]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="203" name="C1P50" tags="page save" position="3075,12150" size="100,100">&quot;I-&quot;, I start to say.
 
 
 &lt;i&gt;&quot;AAARGH!&quot;&lt;/i&gt;, someone, or something, screams from outside.
@@ -4954,7 +5028,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,11700" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,12150" size="200,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
