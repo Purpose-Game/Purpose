@@ -4049,44 +4049,122 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;choices&gt;
     [[[Help stranger]|C1P53V21]]
     [[[Do not help stranger]|C1P53V22]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="214" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) %&gt;
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="214" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;); %&gt;
 
-Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she nods&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;, she understands what I&#39;m about to do. I unlock the door, open it, and step outside.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-I close the door behind me and immediately get slapped by the rain. It&#39;s pouring out here. I reach down for my knife- fuck, I forgot I don&#39;t have it!
+&lt;action&gt;Shit.&lt;/action&gt;
+&lt;action&gt;This is a bad idea.&lt;/action&gt;
+&lt;action&gt;I look back at Lucy for a moment.&lt;/action&gt;
 
-&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { %&gt;
 
-I feel around in my pockets, ah! The scissors! Seems like a waste, they&#39;ll be ruined, but better than going out here with my bare hands...
+&lt;character.two.happy.eyes&gt;Lucy&lt;/character&gt;
+&lt;action&gt;She nods.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-I feel around in my pockets... nothing I can use as a weapon. Guess I&#39;m going to have to be smart about how I move around these walkers.
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+&lt;action&gt;She slowly shakes her head at me.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-I look for the guy, he&#39;s in the middle of the street a couple of meters away, he hasn&#39;t noticed me, and neither have any of the walkers. Between all the noise he&#39;s making and the rain, they&#39;re totally focused on him.
+&lt;action&gt;She understands what I&#39;m about to do.&lt;/action&gt;
 
-They must be at least 20 or 30 walkers, no way we can take them all out, not without proper weapons. My options are limited here: maybe I can get his attention from here and have him come over here to the house, save having to fight my way to him; or, I can try and clear a path to him, and get his attention when I&#39;m closer to him.
+&lt;resetcharacter.two/&gt;
 
-[[[Yell at him]|C1P53V211]]
-[[[Go over to him]|C1P53V212]]</tw-passagedata><tw-passagedata pid="215" name="C1P53V22" tags="variation" position="4175,12775" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;, false) %&gt;
+&lt;action&gt;I unlock the door, open it, and step outside.&lt;/action&gt;
+&lt;action&gt;I close the door behind me and immediately get slapped by the rain.&lt;/action&gt;
+&lt;action&gt;It&#39;s pouring out here.&lt;/action&gt;
+&lt;action&gt;I reach down for my knife-&lt;/action&gt;
+&lt;action&gt;Fuck, I forgot I don&#39;t have it!&lt;/action&gt;
 
-No way in hell am I stepping out there. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she looks at me, disapointed, but doesn&#39;t say anthing&quot;) } else { print(&quot;she slowly nods her head at me&quot;) } %&gt;.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
-I look at the door, there&#39;s not much in the way of locking, in fact, the lock looks busted. I guess that&#39;s how Lucy got in. If I could move a chair or a table in front of the door, that might be enough to-
+&lt;action&gt;I feel around in my pockets, ah!&lt;/action&gt;
+&lt;action&gt;The scissors!&lt;/action&gt;
+&lt;action&gt;Seems like a waste, they&#39;ll be ruined...&lt;/action&gt;
+&lt;action&gt;...but better than going out here with my bare hands.&lt;/action&gt;
 
-\*Bang\*
+&lt;% } else { %&gt;
 
-What the hell, that was on the other side of the door, how&#39;d a walker get up here so quickly-
+&lt;action&gt;I feel around in my pockets...&lt;/action&gt;
+&lt;action&gt;Nothing I can use as a weapon.&lt;/action&gt;
+&lt;action&gt;Shit.&lt;/action&gt;
+&lt;action&gt;Guess I&#39;m going to have to be smart about how I move around these walkers.&lt;/action&gt;
 
-&quot;Hey! Anyone in here?&quot;, a man&#39;s voice shouts from the other side of the door.
+&lt;% } %&gt;
 
-Shit! Now what?! It won&#39;t take him long to figure out it&#39;s not fucking locked!
+&lt;action&gt;I look for the guy.&lt;/action&gt;
+&lt;action&gt;He&#39;s in the middle of the street a couple of meters away.&lt;/action&gt;
+&lt;action&gt;He hasn&#39;t noticed me, and neither have any of the walkers.&lt;/action&gt;
+&lt;action&gt;Between all the noise he&#39;s making and the rain, they&#39;re totally focused on him.&lt;/action&gt;
+&lt;action&gt;There must be at least 20 or 30 walkers...&lt;/action&gt;
+&lt;action&gt;No way I can take them all out, not without a proper weapon.&lt;/action&gt;
+&lt;action&gt;My options are limited here.&lt;/action&gt;
+&lt;action&gt;Maybe I can get his attention from here and have him come to me?&lt;/action&gt;
+&lt;action&gt;That would save having to fight my way over to him.&lt;/action&gt;
+&lt;action&gt;Or I can try and clear a path to him, and get his attention when I&#39;m closer to him.&lt;/action&gt;
+&lt;action&gt;Whatever I decide, I had better do it quick.&lt;/action&gt;
 
-[[Go away!|C1P53V221]]&lt;br&gt;
-[[&lt;% print (window.story.tiffany()) %&gt; run!|C1P53V222]]&lt;br&gt;
-[[[Hold the door closed]|C1P53V223]]</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;); %&gt;
+&lt;choices&gt;
+    [[[Yell at stranger]|C1P53V211]]
+    [[[Go over to stranger]|C1P53V212]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="215" name="C1P53V22" tags="variation" position="4175,12775" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;, false); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;No way in hell am I stepping out there.&lt;/action&gt;
+&lt;action&gt;I look back at Lucy for a moment.&lt;/action&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { %&gt;
+
+&lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
+&lt;action&gt;She looks at me, disappointed.&lt;/action&gt;
+
+&lt;% } else { %&gt;
+
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+&lt;action&gt;She slowly nods her head at me.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I look back at the door.&lt;/action&gt;
+&lt;action&gt;There&#39;s not much in the way of locking...&lt;/action&gt;
+&lt;action&gt;In fact, the lock looks busted.&lt;/action&gt;
+&lt;action&gt;I guess that&#39;s how Lucy and %Tiffany% got in.&lt;/action&gt;
+&lt;action&gt;If I could move a chair or a table in front of the door, that might be enough to-&lt;/action&gt;
+&lt;action&gt;BANG&lt;/action&gt;
+
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;What the hell?!&lt;/action&gt;
+&lt;action&gt;That was on the other side of the door.&lt;/action&gt;
+&lt;action&gt;How&#39;d a walker get up here so quickly-&lt;/action&gt;
+
+&lt;character.two&gt;Unknown&lt;/character&gt;
+
+&lt;speech.unknown&gt;Hey! Anyone in here?&lt;/speech&gt;
+
+&lt;character.one.pain.angry&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;That&#39;s coming from the other side of the door!&lt;/action&gt;
+&lt;action&gt;Shit, shit, shit.&lt;/action&gt;
+&lt;action&gt;Now what?!&lt;/action&gt;
+
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;It won&#39;t take him long to figure out it&#39;s not fucking locked!&lt;/action&gt;
+
+&lt;choices&gt;
+    [[Go away!|C1P53V221]]
+    [[%Tiffany% run!|C1P53V222]]
+    [[[Hold the door closed]|C1P53V223]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;); %&gt;
 
 I don&#39;t want to have to go over to him, too dangerous.
 
@@ -5199,7 +5277,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="3300,12650" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="1500,12900" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
