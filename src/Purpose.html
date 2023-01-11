@@ -3827,13 +3827,19 @@ Lucy scoffs.
 
 &lt;action&gt;I follow behind her.&lt;/action&gt;
 
-&lt;choices&gt;[[[Go to %Tiffany%]|C1P52V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="205" name="C1P51V2" tags="variation" position="3150,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;, false) %&gt;
+&lt;choices&gt;[[[Go to %Tiffany%]|C1P52V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="205" name="C1P51V2" tags="variation" position="3150,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;, false); %&gt;
 
-&quot;You protect &lt;% print(window.story.tiffany()) %&gt;, I&#39;ll go find out what *the fuck* that was!&quot;, I exclaim as I head for the door.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
 
-&quot;Right!&quot;, I hear Lucy say behind me.
+&lt;speech.sarah&gt;You watch %Tiffany%, I&#39;ll go find out what the fuck that was!&lt;/speech&gt;
 
-[[[Go through the door]|C1P52V2]]</tw-passagedata><tw-passagedata pid="206" name="C1P52V1" tags="variation" position="3000,12450" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;action&gt;I head for the door.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Right!&lt;/speech&gt;
+
+&lt;choices&gt;[[[Go through the door]|C1P52V2]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="206" name="C1P52V1" tags="variation" position="3000,12450" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I go through the doorway back into the Kitchen.&lt;/action&gt;
@@ -3846,14 +3852,7 @@ Lucy scoffs.
 
 &lt;speech.tiffany&gt;Mom?!&lt;/speech&gt;
 
-&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
-
-&lt;character.two&gt;Unknown&lt;/character&gt;
-
-&lt;speech.unknown&gt;Oh god, oh fuck, someone help!&lt;/speech&gt;
-
-&lt;action&gt;The voice from outside again.&lt;/action&gt;
-&lt;action&gt;It sounds like a guy.&lt;/action&gt;
+&lt;%= window.story.render(&quot;F: Sounds like a guy&quot;) %&gt;
 
 &lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
 
@@ -3871,19 +3870,33 @@ Lucy scoffs.
 
 &lt;action&gt;I walk to the corner of the room so I can see down the hallway.&lt;/action&gt;
 
-&lt;choices&gt;[[[Look at Lucy]|C1P53V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="207" name="C1P52V2" tags="variation" position="3150,12450" size="100,100">I walk through the doorway back into the Kitchen and head straight for the door to the hallway.
+&lt;choices&gt;[[[Look at Lucy]|C1P53V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="207" name="C1P52V2" tags="variation" position="3150,12450" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
-&quot;Sarah?!&quot;, %Tiffany% says, clearly distressed.
+&lt;action&gt;I walk through the doorway back into the Kitchen.&lt;/action&gt;
+&lt;action&gt;Then head straight for the door to the hallway.&lt;/action&gt;
 
-&lt;i&gt;&quot;Oh fuck, help!&quot;&lt;/i&gt;, the voice screams from outside. It sounds like a guy.
+&lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
 
-&quot;Stay with your mom, I&#39;m handling it&quot;, I say as I walk past her and out into the hallway.
+&lt;speech.tiffany&gt;Sarah?!&lt;/speech&gt;
 
-&quot;Handling what?&quot;, I hear her ask behind me.
+&lt;%= window.story.render(&quot;F: Sounds like a guy&quot;) %&gt;
 
-I&#39;m at the front door now, I can hear a commotion outside.
+&lt;speech.sarah&gt;Stay with your mom, I&#39;m handling it.&lt;/speech&gt;
 
-[[[Look through the peephole]|C1P53V2]]</tw-passagedata><tw-passagedata pid="208" name="C1P53V1" tags="variation" position="3000,12600" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;action&gt;I say as I walk past %Tiffany% and out into the hallway.&lt;/action&gt;
+
+&lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Handling what?&lt;/speech&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I hear her ask behind me.&lt;/action&gt;
+&lt;action&gt;But I&#39;m around out the door and headed down the hallway.&lt;/action&gt;
+&lt;action&gt;I&#39;m at the front door now, I can hear a commotion outside.&lt;/action&gt;
+
+&lt;choices&gt;[[[Look through peephole]|C1P53V2]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="208" name="C1P53V1" tags="variation" position="3000,12600" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I look down the hallway.&lt;/action&gt;
@@ -3966,20 +3979,77 @@ I&#39;m at the front door now, I can hear a commotion outside.
 
 Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" tags="menu" position="2000,575" size="200,100">This game is in an alpha state (v&lt;% print(window.story.version) %&gt;), all content is subject to change.
 
-[[Understood|Title Screen]]</tw-passagedata><tw-passagedata pid="213" name="C1P53V2" tags="variation" position="3150,12600" size="100,100">I look through the peephole, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { print(&quot;the weather has gotten a lot worse too&quot;) } else { print(&quot;the weather is terrible outside&quot;) } %&gt;, the rain is coming down heavy. There&#39;s a lot of walkers outside&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;, even more than when I looked before&quot;) %&gt;, they&#39;re all focused on something in the middle of the street, it&#39;s difficult to see... There! A guy outside!
+[[Understood|Title Screen]]</tw-passagedata><tw-passagedata pid="213" name="C1P53V2" tags="variation" position="3150,12600" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;i&gt;&quot;Get away from me!&quot;&lt;/i&gt;, he screams.
+&lt;action&gt;I look through the peephole.&lt;/action&gt;
 
-He&#39;s pretty tall, but skinny, wearing a trench coat or something, wildly swinging a bat around: he&#39;s going to get himself killed.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { %&gt;
 
-I step back from the peephole and look towards the end of the hallway. Lucy is standing in the corner of the Kitchen, looking at me. Our eyes lock for a moment.
+&lt;action&gt;The weather looks to have gotten worse since I looked earlier.&lt;/action&gt;
 
-&lt;i&gt;&quot;Anyone, please, help!&quot;&lt;/i&gt;, the guy screams from outside.
+&lt;% } else { %&gt;
 
-I look back towards the door.&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) print (&quot; I told Lucy people still help each other out, might be time to put my money where my mouth is.&quot;) %&gt; I could go out and help him... or, I can make sure nothing gets through this door.
+&lt;action&gt;The weather looks terrible outside.&lt;/action&gt;
 
-[[[Help the stranger]|C1P53V21]]
-[[[Do not help the stranger]|C1P53V22]]</tw-passagedata><tw-passagedata pid="214" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) %&gt;
+&lt;% } %&gt;
+
+&lt;action&gt;The rain is really coming down heavy.&lt;/action&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { %&gt;
+
+&lt;action&gt;There&#39;s a lot of walkers outside, even more than when I looked before&lt;/action&gt;
+
+&lt;% } else { %&gt;
+
+&lt;action&gt;Looks like there&#39;s quite a few walkers out there.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;action&gt;I think they&#39;re all focused on something in the middle of the street.&lt;/action&gt;
+&lt;action&gt;It&#39;s difficult to see, but...&lt;/action&gt;
+&lt;action&gt;There!&lt;/action&gt;
+&lt;action&gt;There&#39;s a guy out there!&lt;/action&gt;
+
+&lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;speech.charles.!two.fighting&gt;Get fucked you mindless dogs!&lt;/speech&gt;
+
+&lt;action&gt;He&#39;s pretty tall, but skinny, wearing a trench coat or something.&lt;/action&gt;
+&lt;action&gt;And with the way he&#39;s wildly swinging that axe around, he&#39;s going to get himself killed.&lt;/action&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I step back from the peephole and look towards the end of the hallway.&lt;/action&gt;
+
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;Lucy is standing in the corner of the Kitchen, looking at me.&lt;/action&gt;
+&lt;action&gt;Our eyes lock for a moment.&lt;/action&gt;
+
+&lt;character.two&gt;Unknown&lt;/character&gt;
+
+&lt;speech.unknown&gt;You&#39;re gonna have to earn your dinner today fuckheads!&lt;/speech&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I look back towards the door.&lt;/action&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { %&gt;
+
+&lt;action&gt;I told Lucy people still help each other out.&lt;/action&gt;
+&lt;action&gt;It might be time to practice what I preach.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;action&gt;I could go out and help him...&lt;/action&gt;
+&lt;action&gt;Or, I can make sure nothing gets through this door.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[[Help stranger]|C1P53V21]]
+    [[[Do not help stranger]|C1P53V22]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="214" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) %&gt;
 
 Shit. This is a bad idea. I look back at Lucy for a moment, &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;)) { print (&quot;she nods&quot;) } else { print(&quot;she slowly shakes her head at me&quot;) } %&gt;, she understands what I&#39;m about to do. I unlock the door, open it, and step outside.
 
@@ -5129,7 +5199,14 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="1825,12725" size="200,100"></tw-passagedata></tw-storydata>
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="3300,12650" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+
+&lt;character.two&gt;Unknown&lt;/character&gt;
+
+&lt;speech.unknown&gt;Get off me you sons of bitches!&lt;/speech&gt;
+
+&lt;action&gt;The voice from outside again.&lt;/action&gt;
+&lt;action&gt;It sounds like a guy.&lt;/action&gt;</tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1==arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null==(n=window.story.passage(arguments[t]))||0==window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!=e&&(t=window.story.history.filter(function(n){return n==e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!=r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};
