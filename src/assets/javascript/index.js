@@ -781,11 +781,20 @@ const stepPassage = async () => {
 
 					character = extras[0] ?? "";
 
-					if (extras[1].startsWith("!")) {
-						slotOverride = extras[1].substring(1);
-					} else {
-						specificSpeech = `-${extras[1]}`;
-					}
+					switch (extras.length) {
+						case 2:
+							if (extras[1].startsWith("!")) {
+								slotOverride = extras[1].substring(1);
+							} else {
+								specificSpeech = `-${extras[1]}`;
+							}
+							break;
+
+						case 3:
+							slotOverride = extras[1].substring(1);
+							specificSpeech = `-${extras[2]}`;
+							break;
+					}					
 				} else {
 					character = extra?.toLowerCase() ?? "";
 				}
