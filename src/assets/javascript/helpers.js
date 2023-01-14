@@ -1,8 +1,7 @@
-/* global SimpleNotification, body, debugMessage, sleep, audioHelpers, audioLibrary */
+/* global SimpleNotification, body, debugMessage, sleep, AudioSystem */
 
 const apiUrl = "https://purpose-game.com/api";
 
-let menuMusic;
 let notification;
 let prePausePassage;
 let achievementsEnabled = true;
@@ -454,15 +453,14 @@ window.story.pauseMenu = async function () {
 	if (prePausePassage == null) {
 		prePausePassage = window.passage.name;
 
+		window.story.startMenuMusic(true);
 		window.story.show("Pause Menu");
-
-		await audioHelpers.toggleMenuMusic();
 	} else {
+		await AudioSystem.stopMusic();
+
 		window.story.show(prePausePassage);
 
 		prePausePassage = null;
-
-		await audioHelpers.toggleMenuMusic();
 	}
 }
 
@@ -486,20 +484,14 @@ window.story.toggleAchievements = function () {
 window.story.startMenuMusic = async function (pauseMenu = false) {
 	debugMessage("Main menu music started.");
 
-	if (menuMusic) await audioHelpers.killMusic(menuMusic);
-
-	await audioHelpers.playMusic(!pauseMenu ? audioLibrary.music.menu.main_menu : audioLibrary.music.menu.pause_menu);
+	await AudioSystem.startMenuMusic(pauseMenu);
 }
 
 // Stops the menu music
 window.story.stopMenuMusic = async function () {
-	if (!menuMusic) return;
-
 	debugMessage("Main menu music stopped.");
 
-	await audioHelpers.stopMusic(menuMusic);
-
-	menuMusic = null;	
+	await AudioSystem.stopMusic();
 }
 
 //

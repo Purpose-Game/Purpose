@@ -1,4 +1,4 @@
-/* global SimpleNotification, GamePad */
+/* global SimpleNotification, GamePad, AudioLibrary, AudioSystem */
 
 //
 // Variables
@@ -94,48 +94,6 @@ const uiStyles = {
 		</div>
 	`,
 }
-// Audio Library
-const audioLibrary = {
-	// UI Sounds
-	ui: {
-		button: new Audio("assets/audio/ui/button.mp3"),
-		click: new Audio("assets/audio/ui/click.mp3"),
-		confirm: new Audio("assets/audio/ui/confirm.mp3")
-	},
-
-	// Sound effects
-	sfx: {
-		// Diegetic
-		"knocking": new Audio("assets/audio/sfx/knocking.mp3"),
-		"collapse": new Audio("assets/audio/sfx/collapse.mp3"),
-		"door": new Audio("assets/audio/sfx/door.mp3"),
-		"bed": new Audio("assets/audio/sfx/bed.mp3"),
-		"behind-door": new Audio("assets/audio/sfx/behind_door.mp3"),
-		"door-close": new Audio("assets/audio/sfx/door_close.mp3"),
-		"chair": new Audio("assets/audio/sfx/chair.mp3"),
-		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
-		"bowl": new Audio("assets/audio/sfx/bowl.mp3"),
-
-		// Non-diegetic
-		"stinger": new Audio("assets/audio/sfx/non-diegetic/stinger.mp3")
-	},
-
-	// Music
-	music: {
-		// Menu Music
-		menu: {
-			main_menu: new Audio("assets/audio/music/menu/main_menu.mp3"),
-			pause_menu: new Audio("assets/audio/music/menu/pause_menu.mp3"),
-		},
-		
-		// Game Music
-		"limping": new Audio("assets/audio/music/limping.mp3"),
-		"flashback": new Audio("assets/audio/music/flashback.mp3"),
-		"sofa": new Audio("assets/audio/music/sofa.mp3"),
-		"calm": new Audio("assets/audio/music/calm.mp3"),
-	}
-}
-
 
 let debug = false;
 let debugNotification;
@@ -155,9 +113,6 @@ let typewriting = [];
 let maxChoiceIndex = 0;
 let keybindSelectedElement;
 let currentChoiceIndex = -1;
-
-let backgroundMusic;
-let killFade = false;
 
 //
 // Story Variables
@@ -356,7 +311,7 @@ body.mouseover((event) => {
 		keybindSelectedElement = null;
 	}
 
-	audioHelpers.playAudio(audioLibrary.ui.button);
+	AudioSystem.playSound(AudioLibrary.ui.button);
 });
 
 body.click((event) => {
@@ -368,7 +323,7 @@ body.click((event) => {
 
 		if (!ignoreClick.includes(event.target.id)) stepPassage();
 	} else {
-		audioHelpers.playAudio(elementClass === "sound-confirm" ? audioLibrary.ui.confirm : audioLibrary.ui.click);
+		AudioSystem.playSound(elementClass === "sound-confirm" ? AudioLibrary.ui.confirm : AudioLibrary.ui.click);
 	}
 });
 
@@ -428,7 +383,7 @@ body.keydown((event) => {
 
 	const currentElement = $(`#choice-${currentChoiceIndex}`);
 
-	if (oldChoiceIndex != currentChoiceIndex) audioHelpers.playAudio(audioLibrary.ui.click);
+	if (oldChoiceIndex != currentChoiceIndex) AudioSystem.playSound(AudioLibrary.ui.click);
 
 	currentElement.addClass("hovered");
 
@@ -444,76 +399,6 @@ const debugMessage = (message) => debug && console.log(`DEBUG: ${message}`);
 
 // Delays execution for X ms
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-// Audio functions
-const audioHelpers = {
-	play: (music) => {
-		music.volume = 0;
-		music.play();
-		music.loop = true;
-
-		audioHelpers.fadeIn(music);
-	},
-
-	playAudio: (audio) => audio.cloneNode().play(),
-
-	playMusic: async (audio) => {
-		const music = audio.cloneNode();
-
-		audioHelpers.play(music);
-
-		return music;
-	},
-
-	toggleMenuMusic: async (pauseMenu = false) => {
-		if (backgroundMusic) {
-			await audioHelpers.stopMusic(backgroundMusic);
-
-			backgroundMusic = null;
-		} else {
-			backgroundMusic = await audioHelpers.playMusic(pauseMenu ? audioLibrary.music.menu.pause_menu : audioLibrary.music.menu.main_menu);
-		}
-	},
-
-	stopMusic: async (music) => {
-		killFade = true;
-
-		// Wait for any fade-ins to die
-		sleep(550);
-
-		killFade = false;
-
-		audioHelpers.fadeOut(music);
-	},
-
-	killMusic: async (music) => {
-		while (music.volume > 0) {
-			music.volume = Math.max(0, music.volume - 0.1);
-			
-			await sleep(100);
-		}
-
-		music.pause();
-	},
-
-	fadeIn: async (music) => {
-		while (!killFade && music.volume < 1) {
-			music.volume = Math.min(1, music.volume + 0.025);
-
-			await sleep(500);
-		}
-	},
-
-	fadeOut: async (music) => {
-		while (!killFade && music.volume > 0) {
-			music.volume = Math.max(0, music.volume - 0.025);
-			
-			await sleep(125);
-		}
-
-		music.pause();
-	}
-};
 
 const stepPassage = async () => {
 	const storyBox = $(".story-box");
@@ -717,16 +602,14 @@ const stepPassage = async () => {
 
 			// Plays a sound effect
 			case "SOUND":
-				audioHelpers.playAudio(audioLibrary.sfx[content]);
+				AudioSystem.playSound(AudioLibrary.sfx[content]);
 
 				stepPassage();
 				break;
 
 			// Plays background music
 			case "MUSIC":
-				if (backgroundMusic) await audioHelpers.fadeOut(backgroundMusic);
-
-				backgroundMusic = await audioHelpers.playMusic(audioLibrary.music[content]);
+				await AudioSystem.playMusic(AudioLibrary.music[content]);
 
 				stepPassage();
 				break;
@@ -735,14 +618,14 @@ const stepPassage = async () => {
 			case "STOPMUSIC":
 				stepPassage();
 
-				if (backgroundMusic) await audioHelpers.stopMusic(backgroundMusic);
+				await AudioSystem.stopMusic();
 				break;
 
 			// Kills background music
 			case "KILLMUSIC":
 				stepPassage();
 
-				if (backgroundMusic) await audioHelpers.killMusic(backgroundMusic);
+				await AudioSystem.killMusic();
 				break;
 
 			// Sets passage as a flashback passage
@@ -931,6 +814,7 @@ const executeScript = (script) => document.head.appendChild(script);
 
 const helpers = initializeScript("assets/javascript/helpers.js");
 const gamepad = initializeScript("assets/javascript/gamepad.js");
+const audio = initializeScript("assets/javascript/audio.js");
 const preload = initializeScript("assets/javascript/preload.js");
 
 // SimpleNotification
@@ -958,6 +842,7 @@ $("head").append(`
 
 executeScript(helpers);
 executeScript(gamepad);
+executeScript(audio);
 executeScript(simpleNotification);
 executeScript(typewriter);
 
