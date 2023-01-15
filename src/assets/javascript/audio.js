@@ -4,6 +4,8 @@
 //	Variables
 //
 
+const dir = "assets/audio/";
+
 let audioCurrentMusic;
 let audioKillFades = false;
 
@@ -31,7 +33,6 @@ class AudioSystem {
 		if (audioCurrentMusic) await AudioSystem.killMusic();
 
 		await AudioSystem.playMusic(pauseMenu ? AudioLibrary.music.menu.pause_menu : AudioLibrary.music.menu.main_menu);
-		console.log("starting");
 	}
 
 	static stopMusic = async () => {
@@ -49,7 +50,6 @@ class AudioSystem {
 
 	static killMusic = async () => {
 		if (!audioCurrentMusic) {
-			console.log("awks");
 			return;
 		}
 
@@ -60,7 +60,6 @@ class AudioSystem {
 		}
 
 		audioCurrentMusic.pause();
-		console.log("fin")
 	}
 
 	static fadeIn = async (music) => {
@@ -89,40 +88,40 @@ class AudioLibrary {
 
     // UI Sounds
     static ui = {
-		button: new Audio("assets/audio/ui/button.mp3"),
-		click: new Audio("assets/audio/ui/click.mp3"),
-		confirm: new Audio("assets/audio/ui/confirm.mp3")
+		button: new Audio(`${dir}ui/button.mp3`),
+		click: new Audio(`${dir}ui/click.mp3`),
+		confirm: new Audio(`${dir}ui/confirm.mp3`)
 	};
 
     // Sound effects
 	static sfx = {
 		// Diegetic
-		"knocking": new Audio("assets/audio/sfx/knocking.mp3"),
-		"collapse": new Audio("assets/audio/sfx/collapse.mp3"),
-		"door": new Audio("assets/audio/sfx/door.mp3"),
-		"bed": new Audio("assets/audio/sfx/bed.mp3"),
-		"behind-door": new Audio("assets/audio/sfx/behind_door.mp3"),
-		"door-close": new Audio("assets/audio/sfx/door_close.mp3"),
-		"chair": new Audio("assets/audio/sfx/chair.mp3"),
-		"chair2": new Audio("assets/audio/sfx/chair2.mp3"),
-		"bowl": new Audio("assets/audio/sfx/bowl.mp3"),
+		"knocking": new Audio(`${dir}sfx/knocking.mp3`),
+		"collapse": new Audio(`${dir}sfx/collapse.mp3`),
+		"door": new Audio(`${dir}sfx/door.mp3`),
+		"bed": new Audio(`${dir}sfx/bed.mp3`),
+		"behind-door": new Audio(`${dir}sfx/behind_door.mp3`),
+		"door-close": new Audio(`${dir}sfx/door_close.mp3`),
+		"chair": new Audio(`${dir}sfx/chair.mp3`),
+		"chair2": new Audio(`${dir}sfx/chair2.mp3`),
+		"bowl": new Audio(`${dir}sfx/bowl.mp3`),
 
 		// Non-diegetic
-		"stinger": new Audio("assets/audio/sfx/non-diegetic/stinger.mp3")
+		"stinger": new Audio(`${dir}sfx/non-diegetic/stinger.mp3`)
 	}
 
 	// Music
 	static music = {
 		// Menu Music
 		menu: {
-			main_menu: new Audio("assets/audio/music/menu/main_menu.mp3"),
-			pause_menu: new Audio("assets/audio/music/menu/pause_menu.mp3"),
+			main_menu: new Audio(`${dir}music/menu/main_menu.mp3`),
+			pause_menu: new Audio(`${dir}music/menu/pause_menu.mp3`),
 		},
 		
 		// Game Music
-		"limping": new Audio("assets/audio/music/limping.mp3"),
-		"flashback": new Audio("assets/audio/music/flashback.mp3"),
-		"sofa": new Audio("assets/audio/music/sofa.mp3"),
-		"calm": new Audio("assets/audio/music/calm.mp3"),
+		"limping": new Audio(`${dir}music/limping.mp3`),
+		"flashback": new Audio(`${dir}music/flashback.mp3`),
+		"sofa": new Audio(`${dir}music/sofa.mp3`),
+		"calm": new Audio(`${dir}music/calm.mp3`),
 	}
 }

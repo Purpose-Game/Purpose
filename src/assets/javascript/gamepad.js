@@ -27,7 +27,9 @@ class GamePad {
 
 			debugMessage("Gamepad polled");
 			connectedNotification();
+
 			GamePad.checkForGamepadInput();
+
 			clearInterval(gamepadCheckInterval);
 			return;
 		}
@@ -45,12 +47,12 @@ class GamePad {
 			return;
 		}
 
-		// Select Choice / Step story
-		if (buttonPressed(gp.buttons[0])) {
+		// Confirm Choice / Step story
+		if (isButtonPressed(gp.buttons[0])) {
 			// Stop spam pressing
 			if (!anyGamepadButtonPressed) {
 				if (window.story.makingChoice) {
-					body.trigger({ type: "keyup", keyCode: 13 });
+					body.trigger({ type: "keyup", keyCode: 13 }); // Enter
 				} else {
 					$(".story-box").trigger("click");
 				}
@@ -58,7 +60,7 @@ class GamePad {
 
 			anyGamepadButtonPressed = true;
 		// Pause Game
-		} else if (buttonPressed(gp.buttons[1])) {
+		} else if (isButtonPressed(gp.buttons[1])) {
 			if (!anyGamepadButtonPressed) window.story.pauseMenu();
 
 			anyGamepadButtonPressed = true;
@@ -66,6 +68,7 @@ class GamePad {
 			anyGamepadButtonPressed = false;
 		}
 
+		// Select Choice
 		let a = 0;
 		let b = 0;
 		
@@ -77,11 +80,11 @@ class GamePad {
 		const [left, right, up, down] = [b > 0.75, b < -0.75, a < -0.75, a > 0.75];
 
 		if (up || left) {
-			if (!anyGamepadAxisPressed) body.trigger({ type: "keyup", keyCode: 38 });
+			if (!anyGamepadAxisPressed) body.trigger({ type: "keyup", keyCode: 38 }); // Up Arrow
 
 			anyGamepadAxisPressed = true;
 		} else if (down || right) {
-			if (!anyGamepadAxisPressed) body.trigger({ type: "keyup", keyCode: 40 });
+			if (!anyGamepadAxisPressed) body.trigger({ type: "keyup", keyCode: 40 }); // Down Arrow
 			
 			anyGamepadAxisPressed = true;
 		} else {
@@ -92,11 +95,11 @@ class GamePad {
 	}
 
 	static async gamepadRumble(weak, strong = 0, duration = 500) {
-		const gamepads = getGamepads();
+		const gps = getGamepads();
 
-		if (!gamepads) return;
+		if (!gps) return;
 
-		const gp = gamepads[0];
+		const gp = gps[0];
 
 		if (!gp) return;
 
@@ -117,14 +120,16 @@ class GamePad {
 //  Events
 //
 
-$(document).on("gamepadconnected", function() {
+$(document).on("gamepadconnected", () => {
 	debugMessage("Gamepad connected");
+
 	GamePad.checkForGamepadInput();
+
 	clearInterval(gamepadCheckInterval);
 	connectedNotification();
 });
 
-$(document).on("gamepaddisconnected", function() {
+$(document).on("gamepaddisconnected", () => {
 	debugMessage("Gamepad disconnected");
 	cancelAnimationFrame(gamepadInputCheck);
 	disconnectedNotification();
@@ -137,7 +142,7 @@ $(document).on("gamepaddisconnected", function() {
 
 const getGamepads = () => navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
 
-const buttonPressed = (button) => typeof button === "object" ? button.pressed : button === 1.0;
+const isButtonPressed = (button) => typeof button === "object" ? button.pressed : button === 1.0;
 
 const setCheckInterval = () => gamepadCheckInterval = setInterval(() => GamePad.pollGamepads(), 2 * 1000);
 

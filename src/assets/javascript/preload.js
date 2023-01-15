@@ -1,6 +1,5 @@
 /* global debugMessage */
 
-
 const requiredImages = [
     // Buttons
     "buttons/options.png",
@@ -152,8 +151,8 @@ debugMessage(`Starting to load ${needToLoad} images`);
 
 for (const image of requiredImages) {
     const path = dir + image;
-
     const element = document.createElement("link");
+
     element.rel = "prefetch";
     element.as = "image";
     element.onload = imageLoaded;
@@ -162,8 +161,9 @@ for (const image of requiredImages) {
     document.head.appendChild(element);
 }
 
-async function imageLoaded() {
+const imageLoaded = async () => {
     const percentage = (++loaded / needToLoad) * 100;
+    
     loadingBar.val(percentage);
     loadingBarLabel.text(`${Math.floor(percentage)}%`);
 

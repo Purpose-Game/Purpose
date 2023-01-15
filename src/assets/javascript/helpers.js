@@ -4,8 +4,8 @@ const apiUrl = "https://purpose-game.com/api";
 
 let notification;
 let prePausePassage;
-let achievementsEnabled = true;
 let customFontEnabled = true;
+let achievementsEnabled = true;
 
 // Checks connection to API
 window.story.networkCheck = (nextPassage) => {
@@ -94,23 +94,17 @@ window.story.getChoice = (chapter, choice) => {
 };
 
 // Gets all set choices for a chapter
-window.story.getChoices = (chapter) => {
-    if (Object.prototype.hasOwnProperty.call(window.story.state.choices, chapter)) return Object.entries(window.story.state.choices[chapter]);
-	
-    return [];
-}
+window.story.getChoices = (chapter) =>
+	Object.prototype.hasOwnProperty.call(window.story.state.choices, chapter)
+		? Object.entries(window.story.state.choices[chapter])
+		: [];
 
 // Returns the name picked for Tiffany
-window.story.tiffany = () => {
-	if (
-		Object.prototype.hasOwnProperty.call(window.story.state.choices, "Chapter1") &&
-		Object.prototype.hasOwnProperty.call(window.story.state.choices["Chapter1"], "TiffanyName")
-	) {
-		return window.story.state.choices["Chapter1"]["TiffanyName"];
-	} else {
-		return "Tiffany";
-	}
-}
+window.story.tiffany = () =>
+	Object.prototype.hasOwnProperty.call(window.story.state.choices, "Chapter1") &&
+	Object.prototype.hasOwnProperty.call(window.story.state.choices["Chapter1"], "TiffanyName")
+		? window.story.state.choices["Chapter1"]["TiffanyName"]
+		: "Tiffany";
 
 // Links a player's account to the current session
 window.story.linkCode = () => {
@@ -307,14 +301,9 @@ window.story.loadSave = async (saveSlot) => {
 // Hides generate button and shows linking form
 window.story.toggleLinkingDisplays = (reverse = false) => {
 	debugMessage(`Linking buttons toggled "${reverse}".`);
-	
-	if (!reverse) {
-		$("#generateButton").hide();
-		$("#linkingForm").show();
-	} else {
-		$("#generateButton").show();
-		$("#linkingForm").hide();
-	}
+
+	$(reverse ? "#linkingForm" : "#generateButton").hide();
+	$(reverse ? "#generateButton" : "#linkingForm").show();
 }
 
 // Selects a slot of a new game, and starts new game
@@ -368,7 +357,7 @@ window.story.toggleFont = () => {
 window.story.loadStats = function () {
 	const chapter = window.story.state.chapter;
 
-	$.post(`${apiUrl}/stats`, { key: window.story.player.key, chapter: chapter})
+	$.post(`${apiUrl}/stats`, { key: window.story.player.key, chapter: chapter })
 		.done((data) => {
 			debugMessage(`Loaded ${data.length} stats for chapter "${chapter}", for "${window.story.player.key}".`);
 
@@ -383,13 +372,8 @@ window.story.loadStats = function () {
 					continue;
 				}
 				
-				let message;
-				
-				if (window.story.getChoice(chapter, stat)) {
-					message = `You and ${data[stat][0]} of players ${window.story.choiceDescriptions[chapter][stat][0]}`;
-				} else {
-					message = `You and ${data[stat][1]} of players ${window.story.choiceDescriptions[chapter][stat][1]}`;
-				}
+				let choice = window.story.getChoice(chapter, stat);
+				let message = `You and ${data[stat][choice ? 0 : 1]} of players ${window.story.choiceDescriptions[chapter][stat][choice ? 0 : 1]}`;
 				
 				$("#statsContainer").append(`
 					<p>${message}</p>
@@ -447,10 +431,10 @@ window.story.loadAchievements = async () => {
 }
 
 // Toggles opening of pause menu
-window.story.pauseMenu = async function () {
+window.story.pauseMenu = async () => {
 	debugMessage(`Pause menu toggled "${prePausePassage == null}".`);
 
-	if (prePausePassage == null) {
+	if (prePausePassage === null) {
 		prePausePassage = window.passage.name;
 
 		window.story.startMenuMusic(true);
@@ -465,7 +449,7 @@ window.story.pauseMenu = async function () {
 }
 
 // Toggles showing of achievements
-window.story.toggleAchievements = function () {
+window.story.toggleAchievements = () => {
 	debugMessage(`Achievements toggled "${!achievementsEnabled}"`);
 
 	achievementsEnabled = !achievementsEnabled;
@@ -481,14 +465,14 @@ window.story.toggleAchievements = function () {
 }
 
 // Starts menu music
-window.story.startMenuMusic = async function (pauseMenu = false) {
+window.story.startMenuMusic = async (pauseMenu = false) => {
 	debugMessage("Main menu music started.");
 
 	await AudioSystem.startMenuMusic(pauseMenu);
 }
 
 // Stops the menu music
-window.story.stopMenuMusic = async function () {
+window.story.stopMenuMusic = async () => {
 	debugMessage("Main menu music stopped.");
 
 	await AudioSystem.stopMusic();

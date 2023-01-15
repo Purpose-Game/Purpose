@@ -812,20 +812,20 @@ const executeScript = (script) => document.head.appendChild(script);
 // Scripts
 //
 
-const helpers = initializeScript("assets/javascript/helpers.js");
-const gamepad = initializeScript("assets/javascript/gamepad.js");
-const audio = initializeScript("assets/javascript/audio.js");
-const preload = initializeScript("assets/javascript/preload.js");
+const helperScript = initializeScript("assets/javascript/helpers.js");
+const gamepadScript = initializeScript("assets/javascript/gamepad.js");
+const audioScript = initializeScript("assets/javascript/audio.js");
+const preloadScript = initializeScript("assets/javascript/preload.js");
 
 // SimpleNotification
 // https://github.com/Glagan/SimpleNotification
 // https://github.com/Glagan/SimpleNotification/blob/master/LICENSE
-const simpleNotification = initializeScript("assets/javascript/simpleNotification.min.js");
+const simpleNotificationScript = initializeScript("assets/javascript/simpleNotification.min.js");
 
 // jquery-typewriter-plugin
 // https://github.com/0xPranavDoshi/jquery-typewriter
 // https://github.com/0xPranavDoshi/jquery-typewriter/blob/master/LICENSE
-const typewriter = initializeScript("assets/javascript/jquery.typewriter.min.js");
+const typewriterScript = initializeScript("assets/javascript/typewriter.min.js");
 
 ///
 /// Initialization
@@ -840,11 +840,12 @@ $("head").append(`
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
 `);
 
-executeScript(helpers);
-executeScript(gamepad);
-executeScript(audio);
-executeScript(simpleNotification);
-executeScript(typewriter);
+// Load all required scripts
+executeScript(helperScript);
+executeScript(gamepadScript);
+executeScript(audioScript);
+executeScript(simpleNotificationScript);
+executeScript(typewriterScript);
 
 // Start preloading all images
-executeScript(preload);
+executeScript(preloadScript);
