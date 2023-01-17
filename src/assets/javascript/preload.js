@@ -140,27 +140,9 @@ const requiredImages = [
     // Titles
     "titles/title-image.png",
 ];
-const dir = "assets/images/ui/";
+const imageDir = "assets/images/ui/";
 const loadingBar = $("#loading-bar");
 const loadingBarLabel = $("#loading-bar-label");
-
-let loaded = 0;
-let needToLoad = requiredImages.length;
-
-debugMessage(`Starting to load ${needToLoad} images`);
-
-for (const image of requiredImages) {
-    const path = dir + image;
-    const element = document.createElement("link");
-
-    element.rel = "prefetch";
-    element.as = "image";
-    element.onload = imageLoaded;
-    element.href = path;
-
-    document.head.appendChild(element);
-}
-
 const imageLoaded = async () => {
     const percentage = (++loaded / needToLoad) * 100;
     
@@ -172,4 +154,21 @@ const imageLoaded = async () => {
 
         $("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Debug')">[Continue]</a>`);
     }
+}
+
+let loaded = 0;
+let needToLoad = requiredImages.length;
+
+debugMessage(`Starting to load ${needToLoad} images`);
+
+for (const image of requiredImages) {
+    const path = imageDir + image;
+    const element = document.createElement("link");
+
+    element.rel = "prefetch";
+    element.as = "image";
+    element.onload = imageLoaded;
+    element.href = path;
+
+    document.head.appendChild(element);
 }

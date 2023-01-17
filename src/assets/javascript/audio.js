@@ -4,7 +4,7 @@
 //	Variables
 //
 
-const dir = "assets/audio/";
+const audioDir = "assets/audio/";
 
 let audioCurrentMusic;
 let audioKillFades = false;
@@ -88,40 +88,40 @@ class AudioLibrary {
 
     // UI Sounds
     static ui = {
-		button: new Audio(`${dir}ui/button.mp3`),
-		click: new Audio(`${dir}ui/click.mp3`),
-		confirm: new Audio(`${dir}ui/confirm.mp3`)
+		button: new Audio(`${audioDir}ui/button.mp3`),
+		click: new Audio(`${audioDir}ui/click.mp3`),
+		confirm: new Audio(`${audioDir}ui/confirm.mp3`)
 	};
 
     // Sound effects
 	static sfx = {
 		// Diegetic
-		"knocking": new Audio(`${dir}sfx/knocking.mp3`),
-		"collapse": new Audio(`${dir}sfx/collapse.mp3`),
-		"door": new Audio(`${dir}sfx/door.mp3`),
-		"bed": new Audio(`${dir}sfx/bed.mp3`),
-		"behind-door": new Audio(`${dir}sfx/behind_door.mp3`),
-		"door-close": new Audio(`${dir}sfx/door_close.mp3`),
-		"chair": new Audio(`${dir}sfx/chair.mp3`),
-		"chair2": new Audio(`${dir}sfx/chair2.mp3`),
-		"bowl": new Audio(`${dir}sfx/bowl.mp3`),
+		"knocking": new Audio(`${audioDir}sfx/knocking.mp3`),
+		"collapse": new Audio(`${audioDir}sfx/collapse.mp3`),
+		"door": new Audio(`${audioDir}sfx/door.mp3`),
+		"bed": new Audio(`${audioDir}sfx/bed.mp3`),
+		"behind-door": new Audio(`${audioDir}sfx/behind_door.mp3`),
+		"door-close": new Audio(`${audioDir}sfx/door_close.mp3`),
+		"chair": new Audio(`${audioDir}sfx/chair.mp3`),
+		"chair2": new Audio(`${audioDir}sfx/chair2.mp3`),
+		"bowl": new Audio(`${audioDir}sfx/bowl.mp3`),
 
 		// Non-diegetic
-		"stinger": new Audio(`${dir}sfx/non-diegetic/stinger.mp3`)
+		"stinger": new Audio(`${audioDir}sfx/non-diegetic/stinger.mp3`)
 	}
 
 	// Music
 	static music = {
 		// Menu Music
 		menu: {
-			main_menu: new Audio(`${dir}music/menu/main_menu.mp3`),
-			pause_menu: new Audio(`${dir}music/menu/pause_menu.mp3`),
+			main_menu: new Audio(`${audioDir}music/menu/main_menu.mp3`),
+			pause_menu: new Audio(`${audioDir}music/menu/pause_menu.mp3`),
 		},
 		
 		// Game Music
-		"limping": new Audio(`${dir}music/limping.mp3`),
-		"flashback": new Audio(`${dir}music/flashback.mp3`),
-		"sofa": new Audio(`${dir}music/sofa.mp3`),
-		"calm": new Audio(`${dir}music/calm.mp3`),
+		"limping": new Audio(`${audioDir}music/limping.mp3`),
+		"flashback": new Audio(`${audioDir}music/flashback.mp3`),
+		"sofa": new Audio(`${audioDir}music/sofa.mp3`),
+		"calm": new Audio(`${audioDir}music/calm.mp3`),
 	}
 }
