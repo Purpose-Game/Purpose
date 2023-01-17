@@ -4527,21 +4527,47 @@ I start to look around, we are in another hallway, there are three doors along t
 &lt;action&gt;Suddenly, a man comes bolting through and crashes into the stairs.&lt;/action&gt;
 &lt;action&gt;Lucy kicks the door closed behind him.&lt;/action&gt;
 
-&lt;choices&gt;[[[Look at the stranger]|C1P54V11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="249" name="C1P54V11" tags="variation" position="2125,13050" size="100,100">I look at the stranger slumped on the stairs, panting. He looks pretty tall but kinda skinny, he&#39;s wearing a trench coat or something, got light green eyes, and long black hair in a ponytail; he&#39;s soaking wet. I also notice a bat lying next to him, it&#39;s covered in walker bits.
+&lt;choices&gt;[[[Look at the stranger]|C1P54V11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="249" name="C1P54V11" tags="variation" position="2125,13050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-&quot;Thanks...&quot;, he manages to say, between breaths.
+&lt;action&gt;I look at the stranger slumped on the stairs, panting.&lt;/action&gt;
+&lt;action&gt;He looks pretty tall, but kinda skinny.&lt;/action&gt;
+&lt;action&gt;He&#39;s wearing a trench coat or something, has light green eyes, and long black hair in a ponytail.&lt;/action&gt;
+&lt;action&gt;I also notice an axe lying next to him, it&#39;s covered in walker bits.&lt;/action&gt;
 
-&quot;Your welcome&quot;, Lucy replies.
+&lt;character.two&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-&quot;My name&#39;s Charles&quot;, he says between puffs.
+&lt;speech.charles&gt;Thanks...&lt;/speech&gt;
 
-&quot;I&#39;m Lucy, and that&#39;s Sarah and Tiffany&quot;, she says, gesturing back down the hallway towards us.
+&lt;action&gt;He manages to say between breaths.&lt;/action&gt;
 
-Charles jumps a little, he must not have seen me; but he quickly recovers and gives me a little slow-wave.
+&lt;character.one.concern&gt;Lucy&lt;/character&gt;
 
-[[We need to hide|C1P54V111]]&lt;br&gt;
-[[We need to get out of here|C1P54V112]]&lt;br&gt;
-[[We need to fortify this place|C1P54V113]]</tw-passagedata><tw-passagedata pid="250" name="C1P54V111" tags="variation" position="1975,13200" size="100,100">&quot;We need to hide, and quickly. Those walkers will be on us any minute.&quot;, I say.
+&lt;speech.lucy&gt;Don&#39;t mention it.&lt;/speech&gt;
+
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+&lt;speech.charles&gt;Name&#39;s Charles.&lt;/speech&gt;
+
+&lt;speech.lucy&gt;Lucy, and that&#39;s Sarah and Tiffany.&lt;/speech&gt;
+
+&lt;action&gt;She vaguely gestures back down the hallway towards us.&lt;/action&gt;
+&lt;action&gt;Charles jumps a little, he must not have seen us.&lt;/action&gt;
+&lt;action&gt;He quickly recovers and gives me a nod.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[We need to hide|C1P54V111]]
+    [[We need to get out of here|C1P54V112]]
+    [[We need to fortify this place|C1P54V113]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="250" name="C1P54V111" tags="variation" position="1975,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+&lt;speech.sarah&gt;We should hide.&lt;/speech&gt;
+&lt;speech.sarah&gt;Those walkers will be on us any minute.&lt;/speech&gt;
 
 &lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="251" name="C1P53V122" tags="variation" position="2825,12900" size="100,100">I don&#39;t know how to explain to her Lucy isn&#39;t helping whoever&#39;s outside...
 
@@ -4647,33 +4673,63 @@ Lucy appears with her knife, takes one swipe at the hand, and detaches it from t
 
 She&#39;s right, this is not a good spot to be in. I manage to get on my knees, pain shooting up my leg, but I push through it and manage to stand.
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="263" name="C1P54V112" tags="variation" position="2125,13200" size="100,100">&quot;We need to get out of, fast. Those walkers won&#39;t take long to get in here.&quot;, I say.
+[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="263" name="C1P54V112" tags="variation" position="2125,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="264" name="C1P54V113" tags="variation" position="2275,13200" size="100,100">&quot;We need to fortify this place, ASAP. Those walkers will make quick work of those shitty windows.&quot;, I say.
+&lt;speech.sarah&gt;We should get moving.&lt;/speech&gt;
+&lt;speech.sarah&gt;Those walkers won&#39;t take long to get in here.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="265" name="C1P54V1111" tags="variation" position="2125,13350" size="100,100">I look over at %Tiffany%, she&#39;s got her feet up on the seat, and she&#39;s buried her head in her knees. She must be terrified.
+&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="264" name="C1P54V113" tags="variation" position="2275,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&quot;I&#39;m coming&quot;, I hear Lucy shout from the hallway.
+&lt;speech.sarah&gt;We need to fortify this place, ASAP.&lt;/speech&gt;
+&lt;speech.sarah&gt;Those walkers will make quick work of those shitty windows.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="266" name="F: Smash" tags="floater" position="1775,13200" size="100,100">Charles looks up.
+&lt;%= window.story.render(&quot;F: Smash&quot;) %&gt;</tw-passagedata><tw-passagedata pid="265" name="C1P54V1111" tags="variation" position="2125,13350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.scared&gt;Tiffany&lt;/character&gt;
 
-&quot;She&#39;s right&quot;, he says.
+&lt;action&gt;I look at %Tiffany%.&lt;/action&gt;
+&lt;action&gt;She&#39;s got her feet up on the seat, and buried her head in her knees.&lt;/action&gt;
+&lt;action&gt;She must be terrified.&lt;/action&gt;
 
-\*Smash\*
+&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;characteroverride.two&gt;Lucy&lt;/characteroverride&gt;
+    
+&lt;speech.unknown&gt;I&#39;m coming&lt;/speech&gt;
 
-A hand suddenly appears through one of the boarded-up windows in the hallway, near Charles.
+&lt;action&gt;Lucy shouts from the hallway.&lt;/action&gt;
 
-&quot;Walkers!&quot;, Lucy shouts, as the sound of glass and wood breaking around the house starts to be heard.
+&lt;%= window.story.render(&quot;F: You&#39;re heavy&quot;) %&gt;</tw-passagedata><tw-passagedata pid="266" name="F: Smash" tags="floater" position="1775,13200" size="100,100">&lt;action&gt;Charles stands up.&lt;/action&gt;
 
-&quot;Shit!&quot;, Charles shouts.
+&lt;speech.charles&gt;She&#39;s right.&lt;/speech&gt;
 
-Lucy moves towards him to help.
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.scared.eyes&gt;Charles&lt;/character&gt;
 
-&quot;Head upstairs&quot;, Lucy shouts over her shoulder.
+&lt;action&gt;SMASH&lt;/action&gt;
+&lt;action&gt;A hand suddenly appears through one of the boarded-up windows in the hallway, near Charles.&lt;/action&gt;
 
-We need to get going, now.
+&lt;character.one.happy.sad&gt;Lucy&lt;/character&gt;
 
-[[[Get %Tiffany%]|C1P54V1111]]</tw-passagedata><tw-passagedata pid="267" name="Global Settings" tags="menu" position="2250,725" size="200,100">&lt;img.title-image&gt;
+&lt;speech.lucy&gt;Walkers!&lt;/speech&gt;
+
+&lt;action&gt;Lucy shouts, as the sound of glass and wood breaking erupts.&lt;/action&gt;
+
+&lt;speech.charles&gt;Shit!&lt;/speech&gt;
+
+&lt;character.one.fighting.ditto&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;Lucy moves towards him to help.&lt;/action&gt;
+
+&lt;speech.lucy.fighting&gt;Head upstairs!&lt;/speech&gt;
+
+&lt;action&gt;Lucy shouts over her shoulder at %Tiffany% and I.&lt;/action&gt;
+&lt;action&gt;We need to get going, now.&lt;/action&gt;
+
+&lt;choices&gt;[[[Get %Tiffany%]|C1P54V1111]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="267" name="Global Settings" tags="menu" position="2250,725" size="200,100">&lt;img.title-image&gt;
 
 &lt;%= window.story.render(&quot;Settings&quot;) %&gt;
 
@@ -5311,7 +5367,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="1725,13050" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2350,12850" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
