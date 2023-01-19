@@ -389,3 +389,22 @@ tw-story {
   width: 35%;
   content: url("../../assets/images/ui/buttons/options-active.png");
 }
+
+/*
+Steam-like Trading Card Interaction
+https://github.com/imchell/steam-like-card-curation
+*/
+
+.gallery {
+  text-align: center;
+}
+
+.gallery-item {
+  width: 14vw;
+  height: 64vh;
+  border-radius: 5px;
+  transition: 0.2s;
+  transform: perspective(1000px);
+  filter: brightness(1);
+  background-size: cover;
+}

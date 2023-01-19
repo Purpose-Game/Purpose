@@ -1,4 +1,4 @@
-/* global SimpleNotification, body, debugMessage, sleep, AudioSystem */
+/* global SimpleNotification, body, debugMessage, sleep, AudioSystem, Gallery */
 
 const apiUrl = "https://purpose-game.com/api";
 
@@ -476,6 +476,44 @@ window.story.stopMenuMusic = async () => {
 	debugMessage("Main menu music stopped.");
 
 	await AudioSystem.stopMusic();
+}
+
+window.story.createGalleryItem = async (character) => {
+	while ($("#gallery-container").length === 0) {
+		await sleep(1);
+	}
+
+	const mixer = document.createElement("span");	
+	mixer.id = "mixer-image";
+	document.head.appendChild(mixer);
+
+	let parts = [];
+	let images = [];
+	let mixerImage = $(`#mixer-image`);
+	let parentImage = $(`#gallery-image`);
+
+	switch (character) {
+		case "Sarah":
+			parts.push(
+				"sarah-eyes-neutral",
+				"sarah-mouth-neutral",
+				"sarah-stance-neutral"
+			);
+			break;
+	}
+
+	for (const part of parts) {
+		mixerImage.attr("class", part);
+		images.push(mixerImage.css("background-image"));
+	}
+
+	parentImage.attr("class", "gallery-item");
+	parentImage.css("background-image", images.join(", "));
+
+	mixerImage.remove();
+	mixer.remove();
+
+	new Gallery();
 }
 
 //

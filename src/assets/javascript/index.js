@@ -815,6 +815,7 @@ const executeScript = (script) => document.head.appendChild(script);
 const helperScript = initializeScript("assets/javascript/helpers.js");
 const gamepadScript = initializeScript("assets/javascript/gamepad.js");
 const audioScript = initializeScript("assets/javascript/audio.js");
+const galleryScript = initializeScript("assets/javascript/gallery.js");
 const preloadScript = initializeScript("assets/javascript/preload.js");
 
 // SimpleNotification
@@ -844,6 +845,7 @@ $("head").append(`
 executeScript(helperScript);
 executeScript(gamepadScript);
 executeScript(audioScript);
+executeScript(galleryScript);
 executeScript(simpleNotificationScript);
 executeScript(typewriterScript);
 
