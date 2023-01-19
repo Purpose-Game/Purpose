@@ -4167,91 +4167,219 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
     [[[Hold the door closed]|C1P53V223]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;); %&gt;
 
-I don&#39;t want to have to go over to him, too dangerous.
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-&quot;Hey! You!&quot;, I yell at the man.
+&lt;action&gt;I can&#39;t go over to him, its too dangerous.&lt;/action&gt;
 
-He stops swinging his bat for a moment and looks at me, with the expression on his face you&#39;d have thought he just laid eyes on a pot of gold.
+&lt;speech.sarah&gt;Hey! You!&lt;/speech&gt;
 
-&quot;Get over here!&quot;, I yell at him.
+&lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-He nods, and gets back to swinging, slowly moving towards me.
+&lt;action&gt;He stops swinging his axe for a moment and looks at me.&lt;/action&gt;
+&lt;action&gt;At first his expression is surprised, but he quickly recovers.&lt;/action&gt;
 
-Uh-oh, that drew some unwanted attention as well. A few walkers have started heading my direction now, shit!
+&lt;speech.sarah&gt;Get over here!&lt;/speech&gt;
+
+&lt;action&gt;He nods, and gets back to swinging.&lt;/action&gt;
+&lt;action&gt;Slowly he starts making his way towards me.&lt;/action&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;Ah crap, my shouting drew some unwanted attention.&lt;/action&gt;
+&lt;action&gt;A few walkers have started heading my direction.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
-[[[Use Scissors]|C1P53V2111]]
-&lt;% } else { %&gt;
-[[[Look around for a weapon]|C1P53V2112]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="217" name="C1P53V212" tags="variation" position="3475,12900" size="100,100">I had better go over to him, no point yelling and drawing more walkers.
 
-The path between him and I is actually pretty clear, most of the walkers are on the street, there&#39;s only one walker directly in my way. I start towards it, the rain is covering up the sound of my walking, so I&#39;ve got that going for me at least.
+&lt;choices&gt;[[[Use Scissors]|C1P53V2111]]&lt;/choices&gt;
+
+&lt;% } else { %&gt;
+
+&lt;choices&gt;[[[Look for a weapon]|C1P53V2112]]&lt;/choices&gt;
+
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="217" name="C1P53V212" tags="variation" position="3475,12900" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I had better try and get over to him.&lt;/action&gt;
+&lt;action&gt;No point yelling and drawing more walkers.&lt;/action&gt;
+&lt;action&gt;The path between him and I is actually pretty clear, most of the walkers are on the street.&lt;/action&gt;
+&lt;action&gt;There&#39;s only one walker directly in my way.&lt;/action&gt;
+&lt;action&gt;I start towards it, the rain is covering up the sound of my movement, so I&#39;ve got that going for me at least.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
-I get up right behind it, then &lt;%= window.story.render(&quot;F: Scissor takedown&quot;) %&gt;
+&lt;action&gt;I get up right behind it.&lt;/action&gt;
+
+&lt;%= window.story.render(&quot;F: Scissor takedown&quot;) %&gt;
 
 &lt;% } else { %&gt;
 
-I get up right behind it, then I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally. The walker tumbles to its knees. I push it to the ground, then stomp its head in.
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
-I take a breath, been a while since I&#39;ve had to do that. Its head has turned to mush... and I have said mush all over my shoes; a problem for later.
+&lt;action&gt;I get up right behind it, then I quickly kick out its left knee.&lt;/action&gt;
+&lt;action&gt;It makes a pronounced snapping noise and bends abnormally.&lt;/action&gt;
+&lt;action&gt;The walker tumbles, I push it to the ground, then stomp its head in.&lt;/action&gt;
+
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I take a breath, its been a while since I&#39;ve had to do that.&lt;/action&gt;
+&lt;action&gt;Its head has turned to mush... and I now have said mush all over my shoes. Great.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-[[[Keep heading towards the stranger]|C1P53V2121]]</tw-passagedata><tw-passagedata pid="218" name="C1P53V2111" tags="variation" position="3175,13050" size="100,100">I take a few steps forward towards the closest walker, then wait for him to get within arm&#39;s length. &lt;%= window.story.render(&quot;F: Scissor takedown&quot;) %&gt;
+&lt;choices&gt;[[[Continue forward]|C1P53V2121]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="218" name="C1P53V2111" tags="variation" position="3175,13050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="219" name="C1P53V2112" tags="variation" position="3325,13050" size="100,100">I look around for a weapon. There&#39;s nothing out here! Just a doormat and a potted plant.
+&lt;action&gt;I take a few steps forward towards the closest walker, then wait for him to get within arm&#39;s length.&lt;/action&gt;
 
-Wait, the plant, that could do. I walk over to it and start to pick it up. It&#39;s got a fair bit of weight to it. I look back towards the walkers, the closest one is just a few meters from me. I brace myself, and then throw the potted plant right at it.
+&lt;%= window.story.render(&quot;F: Scissor takedown&quot;) %&gt;
 
-The pot connects with the walker&#39;s head and shatters. The walker goes down like a sack of potatoes. 
+&lt;%= window.story.render(&quot;F: Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="219" name="C1P53V2112" tags="variation" position="3325,13050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="220" name="F: Ow my leg" tags="floater" position="3675,13050" size="100,100">Fuck, I forgot about my leg, argh! That really hurt. I look up, there are still two walkers headed for me, shit. I take a step back- ARGH, shit, I&#39;ve properly buggered my leg: this isn&#39;t good.
+&lt;action&gt;I look around for a weapon.&lt;/action&gt;
 
-I start to hobble back towards the door, pain shooting up my leg; I look back over at the stranger. We make eye contact for a moment, he sees I&#39;m hurt and I&#39;m being followed. There&#39;s a moment of panic in his eyes, then he must have had an idea, because he smiles.
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
-&quot;Hey! Hey, dummies; over here!&quot;, he shouts over the top of the rain.
+&lt;action&gt;For fuck&#39;s sake, there&#39;s nothing out here!&lt;/action&gt;
+&lt;action&gt;Just a doormat and a potted plant.&lt;/action&gt;
 
-The walkers following me stop and slowly swing back towards him.
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 
-&quot;Yeah that&#39;s right idiots, over here!&quot;, he shouts again.
+&lt;action&gt;Wait, the plant, that could do.&lt;/action&gt;
+&lt;action&gt;I walk over to it and pick it up.&lt;/action&gt;
 
-He must be crazy, but it&#39;s working.
+&lt;character.one.happy&gt;Sarah&lt;/character&gt;
 
-[[[Open the door to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="221" name="C1P53V21111" tags="variation" position="3350,13200" size="100,100">I shuffle back to the front door and open it, I look back towards the stranger. He&#39;s made it most of the way over to me now.
+&lt;action&gt;It&#39;s got a fair bit of weight to it, this will work.&lt;/action&gt;
 
-&quot;Come on!&quot;, I shout at him.
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-He takes one final swing, then bolts towards the door. I step inside and out of the way, right as he comes crashing in. I slam the door behind him.
+&lt;action&gt;I look back towards the walkers, the closest one is just a few meters from me.&lt;/action&gt;
+&lt;action&gt;I get close to it, brace myself, and then throw the potted plant right at it.&lt;/action&gt;
+&lt;action&gt;The pot connects with the walker&#39;s head and shatters.&lt;/action&gt;
+&lt;action&gt;The walker goes down like a sack of potatoes.&lt;/action&gt;
 
-We both stand there for a moment, soaking wet, and panting. I notice he&#39;s got light green eyes, and long black hair in a ponytail.
+&lt;%= window.story.render(&quot;F: Ow my leg&quot;) %&gt;</tw-passagedata><tw-passagedata pid="220" name="F: Ow my leg" tags="floater" position="3675,13050" size="100,100">&lt;character.one.pain&gt;Sarah&lt;/character&gt;
 
-&quot;Thanks...&quot;, he manages to say, between breaths.
+&lt;action&gt;ARGH, shit!&lt;/action&gt;
 
-&quot;Don&#39;t mention it&quot;, I reply.
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 
-&quot;My name&#39;s Charles&quot;, he says between puffs.
+&lt;action&gt;I forgot about my leg.&lt;/action&gt;
+&lt;action&gt;That really hurt.&lt;/action&gt;
+&lt;action&gt;I look up, there are still two walkers headed for me, shit.&lt;/action&gt;
+&lt;action&gt;I take a step back-&lt;/action&gt;
+&lt;action&gt;GRRR, shit, I&#39;ve properly fucked my leg.&lt;/action&gt;
+&lt;action&gt;This isn&#39;t good.&lt;/action&gt;
+&lt;action&gt;I start to hobble back towards the door, pain shooting up my leg.&lt;/action&gt;
 
-&quot;Sarah, and that&#39;s Lucy&quot;, I say as I gesture over my shoulder back towards the kitchen.
+&lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-Charles jumps a little, he must not have seen her; but he quickly recovers and gives a little slow-wave.
+&lt;action&gt;I look back over at the stranger.&lt;/action&gt;
+&lt;action&gt;We make eye contact for a moment, he sees I&#39;m hurt.&lt;/action&gt;
+&lt;action&gt;He nods again, this time with a slight smirk.&lt;/action&gt;
 
-[[[Turn towards Lucy]|C1P53V211111]]</tw-passagedata><tw-passagedata pid="222" name="F: Scissor takedown" tags="floater" position="3825,12925" size="100,200">I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally. The walker tumbles to its knees, its head bent over, perfectly within reach. I take the scissors and drive them deep into the back of its head, it makes a horrid gurgling sound, then flops to the ground. I go to pull the scissors out of its head, but they snap at the handle, leaving the sharp end in the walker&#39;s head. Figures.</tw-passagedata><tw-passagedata pid="223" name="C1P53V2121" tags="variation" position="3475,13050" size="100,100">I take a step towards the stranger- ARGH, shit! I forgot about my leg; I&#39;ve properly buggered it taking down that walker.
+&lt;speech.charles.fighting&gt;Hey, dummies, over here!&lt;/speech&gt;
 
-I&#39;m not as close to him as I would have liked, but this will have to do.
+&lt;action&gt;He does his best to shout over the top of the rain.&lt;/action&gt;
+&lt;action&gt;It works, the walkers following me stop and slowly swing back towards him.&lt;/action&gt;
 
-&quot;Hey!&quot;, I shout over the rain, as I wave my hands in the air.
+&lt;speech.charles.fighting&gt;Yeah that&#39;s right idiots, come over here!&lt;/speech&gt;
 
-He stops swinging his bat for a moment and looks at me, with the expression on his face you&#39;d have thought he just laid eyes on a pot of gold.
+&lt;action&gt;He&#39;s crazy, but it&#39;s working.&lt;/action&gt;
 
-&quot;Hey! Someone actually heard me!&quot;, he exclaims happily.
+&lt;choices&gt;[[[Open the door to the house]|C1P53V21111]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="221" name="C1P53V21111" tags="variation" position="3350,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain&gt;Sarah&lt;/character&gt;
 
-&quot;Come on, let&#39;s get inside&quot;, I say back to him.
+&lt;action&gt;I shuffle back to the front door and open it.&lt;/action&gt;
+&lt;action&gt;I look back towards the stranger.&lt;/action&gt;
 
-He nods and starts heading towards me, swinging as he goes.
+&lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-[[[Head back to the house]|C1P53V21111]]</tw-passagedata><tw-passagedata pid="224" name="C1P53V221" tags="variation" position="4025,12925" size="100,100">&quot;Go aw-&quot;, I start to say.
+&lt;action&gt;He&#39;s made it most of the way over to me now.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Hurry up!&lt;/speech&gt;
+
+&lt;action&gt;He takes one final swing, then bolts towards the door.&lt;/action&gt;
+&lt;action&gt;I step inside and out of the way, right as he comes crashing in.&lt;/action&gt;
+
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I slam the door behind him.&lt;/action&gt;
+
+&lt;character.two&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;action&gt;We both stand there for a moment, soaking wet, and panting.&lt;/action&gt;
+
+&lt;speech.charles&gt;Thanks...&lt;/speech&gt;
+
+&lt;action&gt;He manages to say, between gasps.&lt;/action&gt;
+
+&lt;speech.sarah&gt;No problem.&lt;/speech&gt;
+
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+&lt;speech.charles&gt;Name&#39;s Charles.&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Sarah; that&#39;s Lucy.&lt;/speech&gt;
+
+&lt;action&gt;I gesture over my shoulder back towards the kitchen.&lt;/action&gt;
+&lt;action&gt;Charles jumps a little, he must not have seen her.&lt;/action&gt;
+&lt;action&gt;He quickly recovers and gives a slow-wave.&lt;/action&gt;
+
+&lt;choices&gt;[[[Turn towards Lucy]|C1P53V211111]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="222" name="F: Scissor takedown" tags="floater" position="3825,12925" size="100,200">&lt;action&gt;I quickly kick out its left knee, it makes a pronounced snapping noise and bends abnormally.&lt;/action&gt;
+&lt;action&gt;The walker tumbles, its head bent over, perfectly within reach.&lt;/action&gt;
+
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I take the scissors and drive them deep into the back of its head, it makes a horrid gurgling sound, then flops to the ground.&lt;/action&gt;
+
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I go to pull the scissors out of its head-&lt;/action&gt;
+
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Shit, it&#39;s snapped off at the handle, leaving the sharp end in the walker&#39;s head.&lt;/action&gt;
+&lt;action&gt;Figures.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="223" name="C1P53V2121" tags="variation" position="3475,13050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I take a step towards the stranger-&lt;/action&gt;
+
+&lt;character.one.pain&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;ARGH, shit!&lt;/action&gt;
+
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I forgot about my leg.&lt;/action&gt;
+&lt;action&gt;I&#39;ve properly fucked it taking down that walker.&lt;/action&gt;
+&lt;action&gt;I&#39;m not as close to him as I would have liked, but this is going to have to do.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Hey!&lt;/speech&gt;
+
+&lt;action&gt;I do my best to shout over the rain, as I wave my hands as well.&lt;/action&gt;
+
+&lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;action&gt;He stops swinging his axe for a moment and looks at me.&lt;/action&gt;
+&lt;action&gt;At first his expression is surprised, but he quickly recovers.&lt;/action&gt;
+
+&lt;speech.charles.fighting&gt;Hey!&lt;/speech&gt;
+
+&lt;action&gt;He exclaims back at me.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Come on, let&#39;s get inside!&lt;/speech&gt;
+
+&lt;action&gt;He nods and starts heading towards me, swinging at walkers as he goes.&lt;/action&gt;
+
+&lt;choices&gt;[[[Head back to the house]|C1P53V21111]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="224" name="C1P53V221" tags="variation" position="4025,12925" size="100,100">&quot;Go aw-&quot;, I start to say.
 
 &lt;%= window.story.render(&quot;F: Door swings open&quot;) %&gt;</tw-passagedata><tw-passagedata pid="225" name="C1P53V222" tags="variation" position="4175,12925" size="100,100">&quot;&lt;% print(window.story.tiffany()) %&gt; ru-&quot;, I start to say.
 
@@ -4287,7 +4415,11 @@ What an asshole.
 
 [[[Stand up]|C1P53V22111]]</tw-passagedata><tw-passagedata pid="232" name="C1P53V22111" tags="variation" position="4175,13225" size="100,100">I get up off the floor awkwardly, getting knocked down really did a number on my leg.
 
-&lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="233" name="C1P53V211111" tags="variation" position="3350,13350" size="100,100">I awkwardly spin towards Lucy, I really did a number on my leg.
+&lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="233" name="C1P53V211111" tags="variation" position="3350,13350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I awkwardly spin to face Lucy, I really did a number on my leg.&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: What we need to do now&quot;) %&gt;</tw-passagedata><tw-passagedata pid="234" name="F: What we need to do now" tags="floater" position="3825,13500" size="100,100">&quot;Alright, what we need to do now is-&quot;, I begin to say.
 
@@ -5515,7 +5647,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="3125,12775" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="3925,12750" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
