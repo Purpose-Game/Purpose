@@ -471,12 +471,13 @@ const stepPassage = async () => {
 				
 				mixer.id = "mixer-image";
 				document.head.appendChild(mixer);
+
+				const mixerImage = $(`#mixer-image`);
+				const parent = $(`#character-${slot}`);
+				const parentImage = $(`#character-${slot}-image`);
 			
 				let parts = [];
 				let images = [];
-				let mixerImage = $(`#mixer-image`);
-				let parent = $(`#character-${slot}`);
-				let parentImage = $(`#character-${slot}-image`);
 
 				switch (extras.length) {
 					case 0:
@@ -815,7 +816,7 @@ const executeScript = (script) => document.head.appendChild(script);
 const helperScript = initializeScript("assets/javascript/helpers.js");
 const gamepadScript = initializeScript("assets/javascript/gamepad.js");
 const audioScript = initializeScript("assets/javascript/audio.js");
-const galleryScript = initializeScript("assets/javascript/gallery.js");
+const galleryItemScript = initializeScript("assets/javascript/galleryItem.js");
 const preloadScript = initializeScript("assets/javascript/preload.js");
 
 // SimpleNotification
@@ -845,7 +846,7 @@ $("head").append(`
 executeScript(helperScript);
 executeScript(gamepadScript);
 executeScript(audioScript);
-executeScript(galleryScript);
+executeScript(galleryItemScript);
 executeScript(simpleNotificationScript);
 executeScript(typewriterScript);
 

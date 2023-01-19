@@ -1,4 +1,4 @@
-/* global SimpleNotification, body, debugMessage, sleep, AudioSystem, Gallery */
+/* global SimpleNotification, body, debugMessage, sleep, AudioSystem, GalleryItem */
 
 const apiUrl = "https://purpose-game.com/api";
 
@@ -478,26 +478,64 @@ window.story.stopMenuMusic = async () => {
 	await AudioSystem.stopMusic();
 }
 
-window.story.createGalleryItem = async (character) => {
+window.story.createGalleryItem = async (index, character, eyes, mouth = null, stance = null) => {
 	while ($("#gallery-container").length === 0) {
 		await sleep(1);
+	}
+
+	if (!mouth) {
+		mouth = eyes;
+		stance = eyes;
 	}
 
 	const mixer = document.createElement("span");	
 	mixer.id = "mixer-image";
 	document.head.appendChild(mixer);
 
+	const mixerImage = $(`#mixer-image`);
+	const parentImage = $(`#gallery-image-${index}`);
+
 	let parts = [];
 	let images = [];
-	let mixerImage = $(`#mixer-image`);
-	let parentImage = $(`#gallery-image`);
-
+	
 	switch (character) {
 		case "Sarah":
 			parts.push(
-				"sarah-eyes-neutral",
-				"sarah-mouth-neutral",
-				"sarah-stance-neutral"
+				`sarah-eyes-${eyes}`,
+				`sarah-mouth-${mouth}`,
+				`sarah-stance-${stance}`
+			);
+			break;
+
+		case "Tiffany":
+			parts.push(
+				`tiffany-eyes-${eyes}`,
+				`tiffany-mouth-${mouth}`,
+				`tiffany-stance-${stance}`
+			);
+			break;
+
+		case "Lucy":
+			parts.push(
+				`lucy-eyes-${eyes}`,
+				`lucy-mouth-${mouth}`,
+				`lucy-stance-${stance}`
+			);
+			break;
+
+		case "Charles":
+			parts.push(
+				`charles-eyes-${eyes}`,
+				`charles-mouth-${mouth}`,
+				`charles-stance-${stance}`
+			);
+			break;
+
+		case "Sophia":
+			parts.push(
+				`sophia-eyes-${eyes}`,
+				`sophia-mouth-${mouth}`,
+				`sophia-stance-${stance}`
 			);
 			break;
 	}
@@ -513,7 +551,7 @@ window.story.createGalleryItem = async (character) => {
 	mixerImage.remove();
 	mixer.remove();
 
-	new Gallery();
+	new GalleryItem(index);
 }
 
 //

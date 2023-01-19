@@ -2,12 +2,12 @@
 // https://github.com/imchell/steam-like-card-curation
 
 // eslint-disable-next-line  no-unused-vars
-class Gallery {
+class GalleryItem {
     //
 	//  Constructor
 	//
-    constructor() {
-        this.item = document.getElementById("gallery-image");
+    constructor(index) {
+        this.item = document.getElementById(`gallery-image-${index}`);
 
         this.calculate(this.item);
 
@@ -44,7 +44,7 @@ class Gallery {
 
     brightness = (cursorPositionY, centerPositionY, strength = 50) => 1 - (this.rotate(cursorPositionY, centerPositionY) / strength);
 
-    rotate = (cursorPosition, centerPosition, threshold = 20) => {
+    rotate = (cursorPosition, centerPosition, threshold = 15) => {
         if (cursorPosition - centerPosition >= 0) {
             return (cursorPosition - centerPosition) >= threshold ? threshold : (cursorPosition - centerPosition);
         } else {

@@ -403,8 +403,9 @@ https://github.com/imchell/steam-like-card-curation
   width: 14vw;
   height: 64vh;
   border-radius: 5px;
-  transition: 0.2s;
+  transition: 0.5s;
   transform: perspective(1000px);
   filter: brightness(1);
   background-size: cover;
+  outline: outset;
 }
