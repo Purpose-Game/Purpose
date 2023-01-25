@@ -4501,45 +4501,127 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
     [[&lt;% print(window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) ? &quot;Charles,&quot; : &quot;The&quot;) %&gt; Bat!|C1P54V21]]
     [[Upstairs, quickly!|C1P54V22]]
     [[[Run to %Tiffany%]|C1P54V23]]
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="235" name="C1P54V21" tags="variation" position="3675,13650" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
-&quot;Charles, the bat!&quot;, I turn and shout.
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="235" name="C1P54V21" tags="variation" position="3675,13650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
+
+&lt;speech.sarah&gt;Charles, your axe!&lt;/speech&gt;
+
 &lt;% } else { %&gt;
-&quot;The bat!&quot;, I turn and shout.
+
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;speech.sarah&gt;Axe, now!&lt;/speech&gt;
+
 &lt;% } %&gt;
 
-He grabs it and throws it in my direction, I catch it, and head towards the window, pushing through the pain in my leg. As I approach, I raise the bat well above my head and bring it down on the arm with all my strength.
+&lt;action&gt;He grabs it and throws it in my direction.&lt;/action&gt;
+&lt;action&gt;I catch it, and head towards the window, pushing through the pain in my leg.&lt;/action&gt;
 
-The bat hits the arm and keeps going; the arm makes a horrible snapping noise, as whatever bones were left in the walker&#39;s arm turned to dust. The bat hits the ground and splits in two. The arm, pointing 90 degrees downward now, continues to twitch and wriggle.
+&lt;resetcharacter.two/&gt;
 
-I drop the bat and look up towards the kitchen to meet Lucy&#39;s gaze.
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
 
-&quot;Let&#39;s, go!&quot;, I shout.
+&lt;action&gt;As I approach, I raise the axe well above my head and bring it down on the arm with all my strength.&lt;/action&gt;
+&lt;action&gt;The axe connects with the arm and keeps going.&lt;/action&gt;
+&lt;action&gt;The arm makes a horrible snapping noise, as whatever bones were left in the walker&#39;s arm turn to dust.&lt;/action&gt;
+&lt;action&gt;The axe hits the ground and buries into the wooden floor.&lt;/action&gt;
+&lt;action&gt;The arm, pointing 90 degrees downward and only connected by a thin bit of skin now, continues to twitch and wriggle&lt;/action&gt;
+&lt;action&gt;I give the axe pull, but it&#39;s stuck in the ground.&lt;/action&gt;
+&lt;action&gt;No time to muck around with it now.&lt;/action&gt;
 
-Lucy grabs &lt;% print(window.story.tiffany()) %&gt; from somewhere beside her and starts booking it down the hallway towards me.
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="236" name="C1P54V22" tags="variation" position="3825,13650" size="100,100">&quot;Upstairs, quickly!&quot;, I shout.
+&lt;action&gt;I look up towards the kitchen to meet Lucy&#39;s gaze.&lt;/action&gt;
 
-&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;The stranger&quot;) } %&gt; doesn&#39;t need to be told twice, he scrambles to the stairs and starts going up.
+&lt;speech.sarah&gt;Let&#39;s, go!&lt;/speech&gt;
 
-I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; and is headed down the hallway towards me. As she passes the window, the hand suddenly reaches out and grabs Lucy&#39;s pants. &lt;% print(window.story.tiffany()) %&gt; screams.
+&lt;action&gt;Lucy grabs %Tiffany% from somewhere beside her, and starts booking it down the hallway towards me.&lt;/action&gt;
 
-&quot;Come to me!&quot;, I shout at &lt;% print(window.story.tiffany()) %&gt;.
+&lt;choices&gt;[[[Head for the stairs]|C1P55]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="236" name="C1P54V22" tags="variation" position="3825,13650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
-&lt;% print(window.story.tiffany()) %&gt; doesn&#39;t move, but Lucy lets go of her and shoves her in my direction. &lt;% print(window.story.tiffany()) %&gt; stumbles towards me, and I catch her in a hug.
+&lt;speech.sarah&gt;Upstairs, quickly!&lt;/speech&gt;
 
-I look back at Lucy again, she has her knife out now. She quickly stabs the arm several times, then takes a swipe at it. The arm comes clean off.
+&lt;character.two.scared&gt;Charles&lt;/character&gt;
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="237" name="C1P54V23" tags="variation" position="3975,13650" size="100,100">Without thinking I bolt for the kitchen, pushing through the pain in my leg.
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
 
-&quot;No!&quot;, Lucy shouts. I stop running.
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-&quot;We&#39;ll come to you&quot;, she says. I nod, and turn back to &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { print(&quot;Charles&quot;) } else { print(&quot;the stranger&quot;) } %&gt;.
+&lt;% } %&gt;
 
-&quot;Get upstairs&quot;, I shout. He doesn&#39;t need to be told twice, he starts scrambling up the stairs.
+&lt;action&gt;&lt;% print(window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) ? &quot;Charles&quot; : &quot;The stranger&quot;) %&gt; doesn&#39;t need to be told twice, he scrambles to the stairs and starts going up.&lt;/action&gt;
 
-I look back at Lucy, she&#39;s got &lt;% print(window.story.tiffany()) %&gt; in one hand, her knife in the other, and is head down the hallway towards me. As she passes the window, she makes one clean swipe at the hand and it comes clean off. Impressive.
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
 
-[[[Head for the stairs]|C1P55]]</tw-passagedata><tw-passagedata pid="238" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;% window.story.delayedText(20 * 1000) %&gt;
+&lt;action&gt;I look back at Lucy, she&#39;s got %Tiffany% and is headed down the hallway towards me.&lt;/action&gt;
+&lt;action&gt;As she passes the window, the hand suddenly reaches out and grabs Lucy&#39;s pants.&lt;/action&gt;
+
+&lt;character.two.scared.ditto&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;EEEP!&lt;/speech&gt;
+
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Come to me %Tiffany%!&lt;/speech&gt;
+
+&lt;character.one.concern&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;%Tiffany% doesn&#39;t move, but Lucy lets go of her and shoves her in my direction.&lt;/action&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;%Tiffany% stumbles towards me, and I catch her in a hug.&lt;/action&gt;
+
+&lt;character.two.fighting.ditto&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I look back at Lucy again, she has her knife out now.&lt;/action&gt;
+&lt;action&gt;She takes several quick jabs at the arm, then takes a swipe at it.&lt;/action&gt;
+&lt;action&gt;The arm comes clean off from the rest of the walker.&lt;/action&gt;
+
+&lt;choices&gt;[[[Head for the stairs]|C1P55]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="237" name="C1P54V23" tags="variation" position="3975,13650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Without thinking I bolt for the kitchen, pushing through the pain in my leg.&lt;/action&gt;
+
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;Stop!&lt;/speech&gt;
+
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I stop dead in my tracks.&lt;/action&gt;
+
+&lt;speech.lucy&gt;We&#39;re coming to you.&lt;/speech&gt;
+
+&lt;character.two.scared&gt;Charles&lt;/character&gt;
+
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
+
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+
+&lt;% } %&gt;
+
+&lt;action&gt;I nod, and turn back to &lt;% print(window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) ? &quot;Charles&quot; : &quot;the stranger&quot;) %&gt;.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Get upstairs.&lt;/speech&gt;
+
+&lt;action&gt;He doesn&#39;t need to be told twice, he starts scrambling up the stairs.&lt;/action&gt;
+
+&lt;character.two.fighting.ditto&gt;Lucy&lt;/character&gt;
+
+&lt;action&gt;I look back at Lucy, she&#39;s got %Tiffany% in one hand, and her knife in the other.&lt;/action&gt;
+&lt;action&gt;They&#39;re head down the hallway towards me.&lt;/action&gt;
+&lt;action&gt;As she passes the window, she makes one clean swipe at the hand, and it comes clean off.&lt;/action&gt;
+
+&lt;character.one&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Impressive.&lt;/action&gt;
+
+&lt;choices&gt;[[[Head for the stairs]|C1P55]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="238" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;% window.story.delayedText(20 * 1000) %&gt;
 
 I head for the stairs, %Tiffany% and Lucy right behind me. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) || window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { print(&quot;No sign of Charles, he must be upstairs already.&quot;) } else if (window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { &quot;I glance over at the stranger, he has two walkers on him now; his face is contorted, but totally silent... poor guy.&quot; } %&gt;
 
@@ -5718,7 +5800,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="3450,13650" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,13850" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
