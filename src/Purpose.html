@@ -4621,38 +4621,89 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 
 &lt;action&gt;Impressive.&lt;/action&gt;
 
-&lt;choices&gt;[[[Head for the stairs]|C1P55]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="238" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;% window.story.delayedText(20 * 1000) %&gt;
+&lt;choices&gt;[[[Head for the stairs]|C1P55]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="238" name="C1P55" tags="page" position="3075,13850" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one&gt;Sarah&lt;/character&gt;
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-I head for the stairs, %Tiffany% and Lucy right behind me. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) || window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { print(&quot;No sign of Charles, he must be upstairs already.&quot;) } else if (window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { &quot;I glance over at the stranger, he has two walkers on him now; his face is contorted, but totally silent... poor guy.&quot; } %&gt;
+&lt;action&gt;I head for the stairs, %Tiffany% and Lucy right behind me.&lt;/action&gt;
 
-I get to the first step and stop, I look behind me to make sure the other two are still following me. %Tiffany% hot on my heels, Lucy just behind her.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) || window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { %&gt;
 
-\*Bang, bang bang, bang\*
+&lt;action&gt;No sign of Charles, he must be upstairs already.&lt;/action&gt;
 
-The door! Lucy hears it too.
+&lt;% } else { %&gt;
 
-&quot;Don&#39;t stop, keep going!&quot;, she exclaims, practically pushing %Tiffany% to the stairs, then turning around and throwing herself against the door. I start heading up-
+&lt;character.two.sad&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
-&lt;div-#delayed&gt;
+&lt;action&gt;I glance over at the stranger.&lt;/action&gt;
+&lt;action&gt;He has two walkers on him now, his face is contorted, but totally silent...&lt;/action&gt;
 
-\*Crash, bang\*
+&lt;% } %&gt;
 
-&quot;Argh!&quot;, Lucy shouts behind me.
+&lt;character.two&gt;Lucy&lt;/character&gt;
 
-I look behind me; the front door has come clean off its hinges, landed on Lucy, and there are four or five walkers piled on top of the fallen door! 
+&lt;action&gt;I get to the first step and stop.&lt;/action&gt;
+&lt;action&gt;I look behind me to make sure the other two are still following me.&lt;/action&gt;
+&lt;action&gt;Lucy hot on my heels, %Tiffany% just behind her.&lt;/action&gt;
 
-&quot;Shit, no!&quot;, I exclaim, as I head back down the stairs. Lucy must have dropped her knife because it&#39;s laying on the stairs in front of her. I pick it up and start towards the walkers.
+&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.concern&gt;Lucy&lt;/character&gt;
 
-&quot;No!&quot;, Lucy wails.
+&lt;action&gt;BANG, BANG BANG, BANG&lt;/action&gt;
+&lt;action&gt;The door!&lt;/action&gt;
+&lt;action&gt;Lucy hears it too.&lt;/action&gt;
 
-&quot;Get Tiffany and go, please!&quot;, she cries out.
+&lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
+&lt;character.two.fighting.ditto&gt;Lucy&lt;/character&gt;
 
-The walkers are starting to get up. I look down at %Tiffany%, she&#39;s frozen in place, hands to her face, looking down at her mom.
+&lt;speech.lucy.fighting&gt;Don&#39;t stop, keep going!&lt;/speech&gt;
 
-[[[Try to help Lucy]|C1P55V1]]
-[[[Grab %Tiffany% and go]|C1P55V2]]
+&lt;action&gt;She exclaims as she practically pushes %Tiffany% to the stairs.&lt;/action&gt;
+&lt;action&gt;She then turns around and throws herself against the door.&lt;/action&gt;
+&lt;action&gt;CRASH, BANG&lt;/action&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="239" name="C1P55V1" tags="variation" position="3000,14000" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;) %&gt;
+&lt;speech.lucy.fighting&gt;Argh!&lt;/speech&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;The front door has come clean off its hinges.&lt;/action&gt;
+&lt;action&gt;It&#39;s landed on Lucy, and there are a pile of walkers on top of the fallen door!&lt;/action&gt;
+
+&lt;character.one.angry&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Shit, no!&lt;/speech&gt;
+
+&lt;character.two.scared.ditto&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;I head back down the stairs, passing %Tiffany% who&#39;s frozen in place.&lt;/action&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;Lucy must have dropped her knife because it&#39;s laying on the stairs in front of her.&lt;/action&gt;
+
+&lt;character.one.fighting.ditto&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I pick it up and start towards the walkers.&lt;/action&gt;
+
+&lt;character.two&gt;?Lucy&lt;/character&gt;
+
+&lt;speech.lucy&gt;No!&lt;/speech&gt;
+
+&lt;action&gt;Lucy wails from somewhere beneath the door.&lt;/action&gt;
+
+&lt;speech.lucy&gt;Get Tiffany and go, please!&lt;/speech&gt;
+
+&lt;action&gt;The walkers are starting to get up.&lt;/action&gt;
+
+&lt;character.two.scared.ditto&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;I look back at %Tiffany%, she&#39;s still frozen in place, hands to her face, looking down at her mom.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[[Try to help Lucy]|C1P55V1]]
+    [[[Grab %Tiffany% and go]|C1P55V2]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="239" name="C1P55V1" tags="variation" position="3000,14000" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;) %&gt;
 
 Fuck that, I can&#39;t just leave her!
 
@@ -5800,7 +5851,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,13850" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2775,14000" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
