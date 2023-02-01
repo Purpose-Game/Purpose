@@ -5804,79 +5804,126 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 
 &lt;% window.story.loadAchievements() %&gt;</tw-passagedata><tw-passagedata pid="306" name="C1 Credits" tags="menu" position="3025,17900" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
-[[Continue|C2 Intro]]</tw-passagedata><tw-passagedata pid="307" name="F: Games Room" tags="floater" position="3350,14900" size="100,100">We exit the room and go to the end of the hallway, there&#39;s a games room of sorts. There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and there&#39;s also a large circular window: that&#39;s where the light was coming from.</tw-passagedata><tw-passagedata pid="308" name="F: The window" tags="floater" position="3500,14900" size="100,100">I go over to the window and take a closer look; the rain outside is really heavy now, it&#39;s hard to see more than a few meters. On the other side of the window is the patio roof, that might be our ticket out of here, if I can find a way to get this window open...
+[[Continue|C2 Intro]]</tw-passagedata><tw-passagedata pid="307" name="F: Games Room" tags="floater" position="3350,14900" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-\*Creak creak, creak, creak creak\*
+&lt;action&gt;We exit the room and go to the end of the hallway, there&#39;s a games room of sorts.&lt;/action&gt;
+&lt;action&gt;There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and also a large circular window: that&#39;s where the light was coming from.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="308" name="F: The window" tags="floater" position="3500,14900" size="100,100">&lt;action&gt;I go over to the window and take a closer look.&lt;/action&gt;
+&lt;action&gt;The rain outside is really heavy now, it&#39;s hard to see more than a few meters.&lt;/action&gt;
+&lt;action&gt;On the other side of the window is the patio roof, that might be our ticket out of here, if I can find a way to get this window open...&lt;/action&gt;
+&lt;action&gt;CREAK CREAK, CREAK, CREAK CREAK&lt;/action&gt;
+&lt;action&gt;Crap, the stairs behind us, no time to waste.&lt;/action&gt;
+&lt;action&gt;I look at the window frame, it doesn&#39;t look like it was designed to be opened.&lt;/action&gt;
 
-The stairs behind us, no time to waste. I look at the window frame, it doesn&#39;t look like it was designed to be opened&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;)) { print(&quot;, but that&#39;s alright, I&#39;m already a window opening expert&quot;) } %&gt;...
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;)) { %&gt;
+
+&lt;action&gt;That&#39;s alright though, I&#39;m already a window opening expert.&lt;/action&gt;
+
+&lt;% } %&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) { %&gt;
-I feel around in my pockets for anything useful...
 
-[[[Use Soap Bar]|C1P58V11]]
+&lt;action&gt;I feel around in my pockets for anything useful...&lt;/action&gt;
+
+&lt;choices&gt;[[[Feel hard object]|C1P58V11]]&lt;/choices&gt;
+
 &lt;% } else { %&gt;
-I look around for something to break the glass with... The table tennis table has a clamp on either side holding the net up, they look pretty solid.
 
-[[[Use Clamp]|C1P58V12]]
+&lt;action&gt;I look around for something to break the glass with...&lt;/action&gt;
+&lt;action&gt;The table tennis table has a clamp on either side holding the net up, they look pretty solid.&lt;/action&gt;
+
+&lt;choices&gt;[[[Use Clamp]|C1P58V12]]&lt;/choices&gt;
+
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="309" name="C1P58A1" tags="addition" position="3075,14900" size="100,100">&lt;%= window.story.render(&quot;F: Games Room&quot;) %&gt;
 
-&lt;div#strangerAlive&gt;&lt;/div&gt;
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&lt;script&gt;
-// Using script tags here instead of Underscore templates because you can&#39;t use if statements and a render in Interpolation tags
-if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) {
-	$(&quot;#strangerAlive&quot;).replaceWith(window.story.render(&quot;F: Stranger Alive&quot;));
-}
-&lt;/script&gt;
+&lt;%= window.story.render(&quot;F: Stranger Alive&quot;) %&gt;
 
-&lt;%= window.story.render(&quot;F: The window&quot;) %&gt;</tw-passagedata><tw-passagedata pid="310" name="F: Stranger Alive" tags="floater" position="2875,14900" size="100,100">&lt;%
-if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { %&gt;
+&lt;% } %&gt;
 
-Charles is standing next to the window. He turns around and faces us.
+&lt;%= window.story.render(&quot;F: The window&quot;) %&gt;</tw-passagedata><tw-passagedata pid="310" name="F: Stranger Alive" tags="floater" position="2875,14900" size="100,100">&lt;character.two&gt;Charles&lt;/character&gt;
 
-&quot;Hey, are you guys OK? Where&#39;s that lady?&quot;, he asks.
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { %&gt;
 
-I shake my head slowly.
+&lt;action&gt;Charles is standing at the window.&lt;/action&gt;
+&lt;action&gt;He turns around and faces us.&lt;/action&gt;
 
-&quot;Oh shit, for real? But she was like, totally badass five seconds ago!&quot;, he says.
+&lt;speech.charles&gt;Hey, are you guys okay?&lt;/speech&gt;
 
-&quot;I&#39;m like, really sorry for your loss, she seemed really chill&quot;, he adds.
+&lt;action&gt;He looks past us.&lt;/action&gt;
 
-Who speaks like that anymore?
+&lt;speech&gt;Where&#39;s the other lady?&lt;/speech&gt;
 
-&quot;Thanks... we need to get out of here, any ideas?&quot;, I ask.
+&lt;action&gt;I shake my head slowly.&lt;/action&gt;
 
-&quot;Yeah totally; I had a look around up here, but there&#39;s no way out. The only thing is this window, but I can&#39;t find a way to open it&quot;, he replies.
+&lt;speech.charles&gt;Shit...&lt;/speech&gt;
+&lt;speech.charles&gt;Sorry for uh, your loss.&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Thanks...&lt;/speech&gt;
+&lt;speech.sarah&gt;We need to get out of here, any ideas?&lt;/speech&gt;
+
+&lt;speech.charles&gt;I&#39;m with you on that.&lt;/speech&gt;
+
 
 &lt;% } else if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;)) { %&gt;
 
-The stranger is standing next to the window. Oh boy, am I going to give this shithead a piece of my mind.
+&lt;action&gt;The stranger is standing next to the window.&lt;/action&gt;
 
-&quot;Are you proud of yourself, huh? Your little performance out there, got Lucy killed!&quot;, I shout angrily.
+&lt;character.one.angry.angry.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-He spins around to face me, his face already red with anger; clearly, he&#39;s ready for round two as well.
+&lt;action&gt;Oh boy, am I going to give this shithead a piece of my mind.&lt;/action&gt;
 
-&quot;If you had the balls to come outside and help, maybe things would have been different, had you considered that bitch?&quot;, he retorts.
+&lt;speech.sarah&gt;Are you proud of yourself, huh?!&lt;/speech&gt;
+&lt;speech.sarah&gt;Your little performance out there, got Lucy killed!&lt;/speech&gt;
 
-&quot;What fuckin&#39; fantasy land do you live in where you expect strangers to risk their lives for you? Strangers with children to look after, no less?!&quot;
+&lt;character.two.angry&gt;Charles&lt;/character&gt;
 
-&quot;Children?! What children?&quot;, he replies, sounding like I&#39;ve caught him off guard.
+&lt;action&gt;He spins around to face me, his face already red with anger.&lt;/action&gt;
+&lt;action&gt;Clearly he&#39;s ready for round two as well.&lt;/action&gt;
 
-We stand for a moment, then he bends his head and takes a step to his side to see around me. %Tiffany% has been hiding behind me this whole time.
+&lt;speech.charles&gt;If you had the balls to come outside and help, maybe things would have been different!&lt;/speech&gt;
+&lt;speech.charles&gt;Had you considered that, bitch!?&lt;/speech&gt;
 
-He leans back again.
+&lt;speech.sarah&gt;What fuckin&#39; fantasy land do you live in where you expect strangers to risk their lives for you?&lt;/speech&gt;
+&lt;speech.sarah&gt;Strangers with children to look after, no less!&lt;/speech&gt;
 
-&quot;That lady... was she her-&quot;, he starts.
+&lt;speech.charles&gt;Children?!&lt;/speech&gt;
 
-&quot;Yes, and now she&#39;s dead, no thanks to you&quot;, I grumble, cutting him off.
+&lt;action&gt;He pauses briefly.&lt;/action&gt;
 
-&quot;I- I didn&#39;t know&quot;, he stumbles.
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&quot;Save it. We need to get out of here&quot;, I reply.
+&lt;speech.charles&gt;What children?&lt;/speech&gt;
 
-&quot;Yeah... right. I had a look around up here, but there&#39;s no way out. The only thing is this window, but I can&#39;t find a way to open it&quot;, he says.
+&lt;action&gt;He adds, quieter than before.&lt;/action&gt;
+&lt;action&gt;We stand for a moment, then he bends his head and takes a step to his side to see around me.&lt;/action&gt;
 
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="311" name="C1P63V1" tags="variation" position="3225,16250" size="100,100">&quot;Push this thing off me %Tiffany%!&quot;, I shout.
+&lt;character.one.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;%Tiffany% had been hiding behind me for the duration of the pissing match.&lt;/action&gt;
+&lt;action&gt;He leans back again.&lt;/action&gt;
+
+&lt;character.one.angry.angry.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;speech.charles&gt;That lady... was she her-&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Yes, and now thanks to you, she&#39;s dead.&lt;/speech&gt;
+
+&lt;action&gt;I deliberately cut him off.&lt;/action&gt;
+
+&lt;speech.charles&gt;I- I didn&#39;t know...&lt;/speech&gt;
+
+&lt;speech.sarah&gt;Save it.&lt;/speech&gt;
+&lt;speech.sarah&gt;We need to get out of here.&lt;/speech&gt;
+
+&lt;speech.charles&gt;Yeah... right, okay.&lt;/speech&gt;
+
+&lt;% } %&gt;
+
+&lt;speech.charles&gt;I had a look around up here, but there&#39;s no way out.&lt;/speech&gt;
+&lt;speech.charles&gt;Only thing is this window, but it doesn&#39;t seem like it opens.&lt;/speech&gt;</tw-passagedata><tw-passagedata pid="311" name="C1P63V1" tags="variation" position="3225,16250" size="100,100">&quot;Push this thing off me %Tiffany%!&quot;, I shout.
 
 She slowly approaches from the side, then takes a bit of a run-up and with both hands stretched outwards, pushes the walker off me.
 
