@@ -10,6 +10,8 @@ const version = "2.0.0";
 const progressKeys = [ 13, 17, 32, 38, 39, 40 ];
 // Body Element
 const body = $("body");
+// Tags to treat as story passages
+const storyTags = [ "page", "variation", "redirect", "addition" ]
 // Custom HTML Tags
 const customTags = "ui, character, resetcharacter, characteroverride, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait";
 // Save Options UI
@@ -292,7 +294,7 @@ $(document).on("sm.passage.shown", (_, data) => {
 
 	if (!passage.tags) return;
 
-    if (passage.tags.includes("page") || passage.tags.includes("variation") || passage.tags.includes("redirect")) {
+    if (passage.tags.some(tag => storyTags.includes(tag))) {
 		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
 		if (pageHTML.includes("%Tiffany%")) twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
