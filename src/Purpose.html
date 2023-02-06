@@ -2197,6 +2197,8 @@ window.story.redirect(&quot;C1P34&quot;, 7);
 
 !&quot;Chapter1&quot;, &quot;LucySavesStranger&quot; - Lucy stayed inside and tried to keep the stranger out
 
+&quot;Chapter1&quot;, &quot;CharlesName&quot; - Player learns Charles&#39; name.
+
 &quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot; - Tried to save Lucy, let Tiffany watch her mom die
 
 !&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot; - Did as Lucy asked, took Tiffany and went
@@ -4291,7 +4293,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 
 &lt;action&gt;He&#39;s crazy, but it&#39;s working.&lt;/action&gt;
 
-&lt;choices&gt;[[[Open the door to the house]|C1P53V21111]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="221" name="C1P53V21111" tags="variation" position="3350,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;[[[Open the door to the house]|C1P53V21111]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="221" name="C1P53V21111" tags="variation" position="3350,13200" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I shuffle back to the front door and open it.&lt;/action&gt;
@@ -4937,7 +4941,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;Suddenly, a man comes bolting through and crashes into the stairs.&lt;/action&gt;
 &lt;action&gt;Lucy kicks the door closed behind him.&lt;/action&gt;
 
-&lt;choices&gt;[[[Look at the stranger]|C1P54V11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="249" name="C1P54V11" tags="variation" position="2125,13050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;[[[Look at the stranger]|C1P54V11]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="249" name="C1P54V11" tags="variation" position="2125,13050" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;); %&gt;
+
+&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two.fighting.ditto&gt;Charles&lt;/character&gt;
 &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
@@ -5414,7 +5420,12 @@ It goes without saying that there may be spoilers in here, either in passages yo
 
 All that out of the way, have fun, and feel free to leave PRs on GitHub with improvements!
 
-- Christopher</tw-passagedata><tw-passagedata pid="279" name="C1P58V11" tags="variation" position="3000,15050" size="100,100">That stupid soap bar, perfect! I take it out of my pocket, still hard as a rock: just what I need.
+- Christopher</tw-passagedata><tw-passagedata pid="279" name="C1P58V11" tags="variation" position="3000,15050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;That stupid soap bar, perfect!&lt;/action&gt;
+&lt;action&gt;I take it out of my pocket, it&#39;s still hard as a rock.&lt;/action&gt;
+&lt;action&gt;Just what I need.&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="280" name="C1P59V1" tags="variation" position="3075,15200" size="100,100">I step out onto the patio roof behind %Tiffany%, it&#39;s bucketing rain out here, I can barely see, and it&#39;s pretty windy too. I shield my eyes from the rain and look down at the garden, it&#39;s clear of walkers, good.
 
@@ -5588,35 +5599,74 @@ Reluctantly she steps out from behind the tree and approaches.
 [[Push it off!|C1P63V1]]&lt;br&gt;
 [[Use the knife!|C1P63V2]]&lt;br&gt;
 [[Get me the knife!|C1P63V3]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="290" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">I go over to the table, rip the net off one of the clamps, then remove the clamp from the table; it&#39;s got some weight to it: perfect. I walk back over to the window.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="290" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="291" name="F: The window shatters" tags="floater" position="3350,15050" size="100,100">&quot;Step back %Tiffany%&quot;, I say. She shuffles back a few steps, not far enough for my liking; I step in front of her. I take aim, and swing, throwing it at the window.
+&lt;action&gt;I go over to the table and rip the net off one of the clamps.&lt;/action&gt;
+&lt;action&gt;Then I remove the clamp from the table; it&#39;s got some weight to it...&lt;/action&gt;
+&lt;action&gt;Perfect.&lt;/action&gt;
+&lt;action&gt;I walk back over to the window.&lt;/action&gt;
 
-The window shatters, then falls apart, leaving only the frame remaining. A strong gust of wind blows through, and rain starts dripping in.
+&lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="291" name="F: The window shatters" tags="floater" position="3350,15050" size="100,100">&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.sarah&gt;Step back %Tiffany%.&lt;/speech&gt;
+
+&lt;action&gt;She shuffles back a few steps, not far enough for my liking.&lt;/action&gt;
+&lt;action&gt;I step in front of her.&lt;/action&gt;
+&lt;action&gt;Then take aim, and swing; throwing it at the window.&lt;/action&gt;
+&lt;action&gt;The window shatters, then falls apart, leaving only the frame remaining.&lt;/action&gt;
+&lt;action&gt;A strong gust of wind blows through, and rain starts dripping in.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Nicely done&quot;, the stranger remarks.
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+        
+    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+    
+    &lt;% } %&gt;
+
+&lt;speech.charles&gt;Nicely done.&lt;/speech&gt;
 
 &lt;% } %&gt;
 
-\*Thud, thud, thud\*
+&lt;action&gt;THUD, THUD, THUD&lt;/action&gt;
+&lt;action&gt;I look over my shoulder-&lt;/action&gt;
 
-I look over my shoulder- walkers! They&#39;ve made it up the stairs, and they&#39;re headed down the hallway towards us.
+&lt;character.one.angry.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Walkers!&lt;/action&gt;
+&lt;action&gt;They&#39;ve made it up the stairs, and they&#39;re headed down the hallway towards us.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-The stranger sees them too.
+&lt;action&gt;The stranger sees them too.&lt;/action&gt;
 
-&quot;Shit&quot;, he mutters. He goes to the window and steps through. Nice of him to wait for us...
+&lt;speech.charles&gt;Shit...&lt;/speech&gt;
+
+&lt;action&gt;He goes to the remnants of the window and steps through.&lt;/action&gt;
+&lt;action&gt;Nice of him to wait for us...&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&quot;Time to go %Tiffany%&quot;, I say, turning to face her. She looks absolutely miserable, but I can&#39;t do anything about that right now. I take her hand again and go back to the window.
+&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;Step through, watch your head&quot;, I say. %Tiffany% complies, without saying a word. I take one last look over my shoulder...
+&lt;speech.sarah&gt;Time to go %Tiffany%.&lt;/speech&gt;
 
-[[[Step through the window]|C1P59V1]]</tw-passagedata><tw-passagedata pid="292" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+&lt;action&gt;I say, turning to face her.&lt;/action&gt;
+&lt;action&gt;She looks absolutely miserable, but I can&#39;t do anything about that right now.&lt;/action&gt;
+&lt;action&gt;I take her hand again and go back to the window.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Step through, watch your head.&lt;/speech&gt;
+
+&lt;action&gt;%Tiffany% complies, without saying a word.&lt;/action&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I take one last look over my shoulder...&lt;/action&gt;
+
+&lt;choices&gt;[[[Step through the window]|C1P59V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="292" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
 
 &quot;Well done %Tiffany%&quot;, I say, breathless. She looks a bit shaken.
 
@@ -5809,7 +5859,10 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 &lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
 &lt;action&gt;We exit the room and go to the end of the hallway, there&#39;s a games room of sorts.&lt;/action&gt;
-&lt;action&gt;There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and also a large circular window: that&#39;s where the light was coming from.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="308" name="F: The window" tags="floater" position="3500,14900" size="100,100">&lt;action&gt;I go over to the window and take a closer look.&lt;/action&gt;
+&lt;action&gt;There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and also a large circular window: that&#39;s where the light was coming from.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="308" name="F: The window" tags="floater" position="3500,14900" size="100,100">&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I go over to the window and take a closer look.&lt;/action&gt;
 &lt;action&gt;The rain outside is really heavy now, it&#39;s hard to see more than a few meters.&lt;/action&gt;
 &lt;action&gt;On the other side of the window is the patio roof, that might be our ticket out of here, if I can find a way to get this window open...&lt;/action&gt;
 &lt;action&gt;CREAK CREAK, CREAK, CREAK CREAK&lt;/action&gt;
@@ -5879,6 +5932,7 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 &lt;speech.sarah&gt;Your little performance out there, got Lucy killed!&lt;/speech&gt;
 
 &lt;character.two.angry&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
 &lt;action&gt;He spins around to face me, his face already red with anger.&lt;/action&gt;
 &lt;action&gt;Clearly he&#39;s ready for round two as well.&lt;/action&gt;
@@ -5894,6 +5948,7 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 &lt;action&gt;He pauses briefly.&lt;/action&gt;
 
 &lt;character.two&gt;Charles&lt;/character&gt;
+&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
 
 &lt;speech.charles&gt;What children?&lt;/speech&gt;
 
@@ -6019,7 +6074,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2625,14900" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15200" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
