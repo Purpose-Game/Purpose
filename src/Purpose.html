@@ -5427,63 +5427,143 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;I take it out of my pocket, it&#39;s still hard as a rock.&lt;/action&gt;
 &lt;action&gt;Just what I need.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="280" name="C1P59V1" tags="variation" position="3075,15200" size="100,100">I step out onto the patio roof behind %Tiffany%, it&#39;s bucketing rain out here, I can barely see, and it&#39;s pretty windy too. I shield my eyes from the rain and look down at the garden, it&#39;s clear of walkers, good.
+&lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="280" name="C1P59" tags="page" position="3075,15200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;I step out onto the patio roof behind %Tiffany%, it&#39;s bucketing rain out here.&lt;/action&gt;
+&lt;action&gt;I can barely see, and it&#39;s soo windy out here too.&lt;/action&gt;
+
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I shield my eyes from the rain and look down at the garden, it&#39;s clear of walkers, good.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Well now what?&quot;, the stranger shouts over the rain. Gee, give us a second, will you?
+&lt;character.two&gt;Charles&lt;/character&gt;
+    
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+        
+    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+    
+    &lt;% } %&gt;
+
+&lt;speech.charles&gt;Well now what?&lt;/speech&gt;
+
+&lt;action&gt;He shouts over the rain.&lt;/action&gt;
+&lt;action&gt;Gee, give us a second, will you?&lt;/action&gt;
 
 &lt;% } %&gt;
 
-I look around for a good way to get down off the roof... I don&#39;t see anything that would help us get down. I could lower %Tiffany% down alright, but how would I get down? Shit, one problem at a time.
+&lt;action&gt;I look around for a good way to get down off the roof...&lt;/action&gt;
+&lt;action&gt;I don&#39;t see anything that would help us get down.&lt;/action&gt;
 
-&quot;%Tiffany%, come over here, I&#39;m going to lower you down&quot;, I shout over the rain.
+&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-We step over towards the edge of the roof, the stairs leading up to the patio directly below us.
+&lt;action&gt;I could probably lower %Tiffany% down myself, but how would I get down?&lt;/action&gt;
+&lt;action&gt;Ugh, one problem at a time.&lt;/action&gt;
 
-&quot;How are you going to get me down there?&quot;, she whimpers in response, I can barely hear her, but at least she&#39;s speaking again.
+&lt;speech.sarah&gt;%Tiffany%, come over here, I&#39;m going to lower you down.&lt;/speech&gt;
 
-&quot;You&#39;re going to start to climb down, then I&#39;m going to hold your hands and lower you the rest of the way&quot;, I reply.
+&lt;action&gt;I have to shout to be heard over the rain.&lt;/action&gt;
+&lt;action&gt;We step over towards the edge of the roof; the stairs leading up to the patio directly below us.&lt;/action&gt;
 
-&quot;I can&#39;t do that&quot;, she says, looking at me with her piercing blue eyes wide open.
+&lt;speech.tiffany&gt;How are you going to get me down there?&lt;/speech&gt;
 
-[[You need to|C1P59V11]]&lt;br&gt;
-[[Yes you can, it&#39;s not so bad|C1P59V12]]&lt;br&gt;
-[[%Tiffany%, less talking, more doing|C1P59V13]]</tw-passagedata><tw-passagedata pid="281" name="C1P59V11" tags="variation" position="2925,15350" size="100,100">&quot;I know this is scary %Tiffany%, but you need to, or else the walkers are going to get us&quot;, I state.
+&lt;action&gt;She whimpers in response.&lt;/action&gt;
+&lt;action&gt;I can barely hear her, but at least she&#39;s talking again.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="282" name="C1P59V12" tags="variation" position="3075,15350" size="100,100">&quot;Yes you can %Tiffany%, it&#39;s not as bad as it looks, I promise&quot;, I say reassuringly.
+&lt;speech.sarah&gt;You&#39;re going to start to climb down, then I&#39;m going to hold your hands and lower you the rest of the way.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="283" name="C1P59V13" tags="variation" position="3225,15350" size="100,100">&quot;Less talking, more doing %Tiffany%. The sooner you start, the sooner you finish&quot; I state.
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&lt;%= window.story.render(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="284" name="F: Lowering" tags="floater" position="3425,15350" size="100,100">She looks away from me and down at the edge of the roof, then slowly nods her head.
+&lt;speech.tiffany&gt;I can&#39;t do that!&lt;/speech&gt;
 
-&quot;Ok, good. &lt;i&gt;Carefully&lt;/i&gt; climb off the edge, then hang onto it, and I&#39;ll grab you, OK?&quot;, I say. %Tiffany% precariously lowers herself off the roof.
+&lt;action&gt;She looks up at me with her piercing blue eyes wide open.&lt;/action&gt;
 
-&quot;Mmmmm&quot;, she murmurs nervously.
+&lt;choices&gt;
+    [[You need to|C1P59V1]]
+    [[Yes you can, it&#39;s not so bad|C1P59V2]]
+    [[%Tiffany%, less talking, more doing|C1P59V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="281" name="C1P59V1" tags="variation" position="2925,15350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-I slowly start to lay flat on the roof.
+&lt;speech.sarah&gt;I know this is scary %Tiffany%, but you need to, or else the monsters are going to get us.&lt;/speech&gt;
 
-&quot;It&#39;s alright, I&#39;m right here. Just hang on tight, it&#39;s slippery&quot;, I remark.
+&lt;%= window.story.render(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="282" name="C1P59V2" tags="variation" position="3075,15350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;Ok, grab me, grab me now!&quot;, she squeaks.
+&lt;speech.sarah&gt;Yes you can %Tiffany%, it&#39;s not as bad as it looks, I promise.&lt;/speech&gt;
 
-&quot;I got you, I got you&quot;, I say, as I crawl forward and grab her by the wrists.
+&lt;action&gt;I try to sound reassuring.&lt;/action&gt;
 
-&quot;Alright, you need to let go, I&#39;ve got you. Trust me&quot;, I state.
+&lt;%= window.story.render(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="283" name="C1P59V3" tags="variation" position="3225,15350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-She looks up at me, we lock eyes for a moment. I stare, unblinking, trying to convey confidence. She must be buying it because without looking back down, she lets go.
+&lt;speech.sarah&gt;Less talking, more doing %Tiffany%.&lt;/speech&gt;
+&lt;speech.sarah&gt;The sooner you start, the sooner you finish&lt;/speech&gt;
 
-&quot;Oof&quot;, I let out, as I take her whole body weight.
+&lt;%= window.story.render(&quot;F: Lowering&quot;) %&gt;</tw-passagedata><tw-passagedata pid="284" name="F: Lowering" tags="floater" position="3425,15350" size="100,100">&lt;action&gt;She looks away from me and down at the edge of the roof, then slowly nods her head.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Alright, good.&lt;/speech&gt;
+&lt;speech.sarah&gt;Carefully climb off the edge, then hang onto it, and I&#39;ll grab you, okay?&lt;/speech&gt;
+
+&lt;action&gt;%Tiffany% precariously lowers herself off the roof.&lt;/action&gt;
+
+&lt;character.two.scared.scared.scared-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.tiffany&gt;Mmmmm&lt;/speech&gt;
+
+&lt;action&gt;She murmurs nervously.&lt;/action&gt;
+&lt;action&gt;I slowly start to lay flat on the roof.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Everything&#39;s fine, I&#39;m right here.&lt;/speech&gt;
+&lt;speech.sarah&gt;Just hang on tight, it&#39;s slippery.&lt;/speech&gt;
+
+&lt;speech.tiffany&gt;Grab me, grab me now!&lt;/speech&gt;
+
+&lt;action&gt;She squeaks.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Don&#39;t worry, I&#39;ve got you, I got you.&lt;/speech&gt;
+
+&lt;action&gt;I say as I crawl forward and grab her by the wrists.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Alright, you need to let go of the roof, I&#39;ve got you now.&lt;/speech&gt;
+
+&lt;action&gt;She doesn&#39;t move.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Trust me %Tiffany%.&lt;/speech&gt;
+
+&lt;action&gt;She looks up at me, and we lock eyes for a moment.&lt;/action&gt;
+&lt;action&gt;I stare, unblinking, trying to convey confidence.&lt;/action&gt;
+&lt;action&gt;She must be buying it because without looking back down, she lets go.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Oof&lt;/speech&gt;
+
+&lt;action&gt;I let out, as I take her whole body weight.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Careful not to drop her!&quot;, the stranger remarks.
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-I shoot him a dirty look, then turn my focus back to %Tiffany%.
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+        
+    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+    
+    &lt;% } %&gt;
+
+&lt;speech.charles&gt;Careful not to drop her!&lt;/speech&gt;
+
+&lt;character.one.angry.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I shoot him a dirty look, then turn my focus back to %Tiffany%.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-[[[Lower %Tiffany% down]|C1P60]]</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">I start to lower %Tiffany% down, crawling closer to the edge to get her further down. I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.
+&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">I start to lower %Tiffany% down, crawling closer to the edge to get her further down. I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.
 
 &quot;That&#39;s as far as I can go %Tiffany%&quot;, I say, as she looks back up at me, hanging over the stairs.
 
@@ -5666,7 +5746,7 @@ Reluctantly she steps out from behind the tree and approaches.
 
 &lt;action&gt;I take one last look over my shoulder...&lt;/action&gt;
 
-&lt;choices&gt;[[[Step through the window]|C1P59V1]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="292" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+&lt;choices&gt;[[[Step through the window]|C1P59]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="292" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
 
 &quot;Well done %Tiffany%&quot;, I say, breathless. She looks a bit shaken.
 
@@ -6074,7 +6154,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
         
         window.story.show(chapter + passage + variation);
     });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15200" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15500" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
