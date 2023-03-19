@@ -10,10 +10,10 @@
 	</head>
 	<body>
 		<tw-story tags></tw-story>
-		<tw-storydata name="Purpose" startnode="318" creator="Twine" creator-version="2.5.1" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
+		<tw-storydata name="Purpose" startnode="318" creator="Twine" creator-version="2.6.2" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
 script.src = "assets/javascript/index.js";
 
-document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
+document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-tag name="chase" color="red"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;music&gt;limping&lt;/music&gt;
@@ -5563,45 +5563,90 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;% } %&gt;
 
-&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">I start to lower %Tiffany% down, crawling closer to the edge to get her further down. I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.
+&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page chase" position="3075,15500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 
-&quot;That&#39;s as far as I can go %Tiffany%&quot;, I say, as she looks back up at me, hanging over the stairs.
+// in order to get the full picture, I think I need to read through an entire script. do you have that document sitting around? Otherwise I have a hard time painting their expressions
 
-&quot;I can swing myself to the top of the stairs&quot;, %Tiffany% says.
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;Yeah, good idea %Tiffany%&quot;, I reply.
+&lt;action&gt;I start to lower %Tiffany% down, crawling closer to the edge to get her further down.&lt;/action&gt; 
+&lt;action&gt;I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.&lt;/action&gt;
+
+&lt;speech.sarah&gt;That&#39;s as far as I can go %Tiffany%.&lt;/speech&gt;
+
+&lt;action&gt;I say, as she looks back up at me, hanging over the stairs.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt; 
+
+&lt;action&gt;%Tiffany% says.&lt;/action&gt;
+
+&lt;speech.sarah&gt;Yeah, good idea %Tiffany%.&lt;/speech&gt;
+
+&lt;action&gt;I reply.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Are you sure that&#39;s a good idea?&quot;, the stranger asks.
+// not completely sure on this syntax
 
-I ignore him.
+&lt;resetcharacter.two/&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
+
+&lt;speech.unknown&gt;Are you sure that&#39;s a good idea? &lt;/speech&gt;
+&lt;action&gt; The stranger asks. &lt;/action&gt;
+
+&lt;action&gt;I ignore him.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-I brace myself as best I can, then nod. She starts to swing, I slide a little but manage to otherwise stay still.
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;Let go!&quot;, she says, I release my grip and she disappears out of view onto the patio. I wait a moment for her to say something.
+&lt;action&gt;I brace myself as best I can, then nod.&lt;/action&gt;
+&lt;action&gt;She starts to swing, I slide a little but manage to otherwise stay still.&lt;/action&gt;
 
-&quot;You alright %Tiffany%?&quot;, I ask.
+&lt;speech.tiffany&gt;Let go!&lt;/speech&gt;
+
+&lt;action&gt;She says.&lt;/action&gt;
+&lt;action&gt;I release my grip and she disappears out of view onto the patio. &lt;/action&gt;
+&lt;action&gt;I wait a moment for her to say something. &lt;/action&gt;
+
+&lt;speech.sarah&gt;You alright %Tiffany%?&lt;/speech&gt;
+&lt;action&gt;I ask.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Yeah you good down there?&quot;, the stranger adds.
+&lt;resetcharacter.two/&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
+
+&lt;speech.unknown&gt;Yeah you good down there?&lt;/speech&gt;
+&lt;action&gt;the stranger adds.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-There&#39;s a moment&#39;s pause.
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt; 
 
-&quot;I&#39;m alright&quot;, she replies.
+&lt;action&gt;There&#39;s a moment&#39;s pause. &lt;/action&gt;
 
-I let out a breath, alright, now to figure out how to get me down there.
+&lt;speech.sarah&gt;I&#39;m alright.&lt;/speech&gt;
+
+&lt;action&gt;She replies.&lt;/action&gt;
+
+&lt;action&gt;I let out a breath, alright, now to figure out how to get me down there.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Can you lower me down?&quot;, the stranger asks.
+&lt;resetcharacter.two/&gt;
+&lt;character.two&gt;Unknown&lt;/character&gt;
 
-&quot;What? No!&quot;, I snap back.
+&lt;speech.unknown&gt;Can you lower me down?&lt;/speech&gt;
+
+&lt;action&gt;the stranger asks.&lt;/action&gt;
+
+&lt;speech.sarah&gt;What? No!&lt;/speech&gt;
+
+&lt;action&gt;I snap back.&lt;/action&gt;
 
 &lt;% } %&gt;
 
