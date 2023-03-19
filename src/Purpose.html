@@ -68,15 +68,15 @@ document.head.appendChild(script);</script><tw-tag name="addition" color="blue">
 &lt;action&gt;Getting closer, I can see two ways I might be able to get in: the back door, or a window around the side of the house.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Go to the window]|C1P5V2]]
-    [[[Go to the back door]|C1P5V1]]
+	[[[Go to the window]|C1P5V2]]
+	[[[Go to the back door]|C1P5V1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="5" name="C1P5V1" tags="variation" position="2850,1175" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backdoor&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I go up the patio steps and head to the back door, it&#39;s a large, sturdy-looking wooden door.&lt;/action&gt;
@@ -102,7 +102,7 @@ if (!window.passage.tried) {
 
 &lt;%
 if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;As I limp up to the window, I can see it has been partially boarded up.&lt;/action&gt;
@@ -138,7 +138,7 @@ if (!window.passage.tried) {
 
 &lt;%
 if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I try the door handle...&lt;/action&gt;
@@ -187,7 +187,7 @@ if (!window.passage.tried) {
 
 &lt;%
 if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I place my head against the window...&lt;/action&gt;
@@ -254,8 +254,8 @@ if (!window.passage.tried) {
 &lt;action&gt;But my elbow might be quieter...&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Use elbow]|C1P5V2211]]
-    [[[Use the rock]|C1P5V2212]]
+	[[[Use elbow]|C1P5V2211]]
+	[[[Use the rock]|C1P5V2212]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="14" name="C1P5V2212" tags="variation" position="3450,1625" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backwindow&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
@@ -321,7 +321,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;) &amp;&amp; wi
 
 if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Sink&quot;)) {
 	if (!window.passage.tried) {
-    	window.passage.tried = true;
+		window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I limp over to the sink and take a look.&lt;/action&gt;
@@ -346,22 +346,22 @@ if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Sink&quot;)) {
 &lt;% } %&gt;
 
 &lt;choices&gt;
-    &lt;%
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) print(&quot;[[[Take the soap bar]|C1P7V11]]&quot;);
+	&lt;%
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Soap&quot;)) print(&quot;[[[Take the soap bar]|C1P7V11]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) print(&quot;[[[Look under the sink]|C1P7V12]]&quot;);
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) print(&quot;[[[Look under the sink]|C1P7V12]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) print(&quot;[[[Try turning on the tap]|C1P7V13]]&quot;);
-    %&gt;
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tap&quot;)) print(&quot;[[[Try turning on the tap]|C1P7V13]]&quot;);
+	%&gt;
 
-    &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="18" name="C1P7V3" tags="variation" position="3075,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I walk over to the cupboards and open them.&lt;/action&gt;
@@ -383,16 +383,16 @@ if (!window.passage.tried) {
 &lt;% } %&gt;
 
 &lt;choices&gt;
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) print(&quot;[[[Take the disinfectant]|C1P7V31]]&quot;); %&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) print(&quot;[[[Take the disinfectant]|C1P7V31]]&quot;); %&gt;
 
-    &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="19" name="C1P7V2" tags="variation" position="3300,1925" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;machines&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;%
 if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I get up to the washing machine and dryer; they look old and dusty, but otherwise in good shape.&lt;/action&gt;
@@ -406,13 +406,13 @@ if (!window.passage.tried) {
 &lt;% } %&gt;
 
 &lt;choices&gt;
-    &lt;%
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) print(&quot;[[[Search the dryer]|C1P7V22]]&quot;);
+	&lt;%
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) print(&quot;[[[Search the dryer]|C1P7V22]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;);
-    %&gt;
-    
-    &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;);
+	%&gt;
+	
+	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="variation" position="2625,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;laundryroom&lt;/special&gt;
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
@@ -430,7 +430,7 @@ window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;);
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I look in the cabinet under the sink-&lt;/action&gt;
@@ -452,8 +452,8 @@ window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;);
 &lt;% } %&gt;
 
 &lt;choices&gt;
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) print(&quot;[[[Take the duck tape]|C1P7V121]]&quot;); %&gt;
-    [[[Return to the sink]|C1P7V1]]
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Tape&quot;)) print(&quot;[[[Take the duck tape]|C1P7V121]]&quot;); %&gt;
+	[[[Return to the sink]|C1P7V1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="22" name="C1P7V13" tags="variation" position="2925,2075" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Tap&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -555,8 +555,8 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;I open the washing machine: whole lotta nothin.&lt;/action&gt;
 
 &lt;choices&gt;
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) print(&quot;[[[Search the dryer]|C1P7V22]]&quot;); %&gt;
-    &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) print(&quot;[[[Search the dryer]|C1P7V22]]&quot;); %&gt;
+	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="27" name="C1P7V22" tags="variation" position="3375,2075" size="100,100">&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;)) window.story.setChoice(&quot;Chapter1&quot;, &quot;WandD&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -564,7 +564,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;% if (!window.passage.tried) {
-    window.passage.tried = true;
+	window.passage.tried = true;
 %&gt;
 
 &lt;action&gt;I open the dryer-&lt;/action&gt;
@@ -586,12 +586,12 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;% } %&gt;
 
 &lt;choices&gt;
-    &lt;%
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;)) print(&quot;[[[Take the shirt]|C1P7V221]]&quot;);
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;);
-    %&gt;
+	&lt;%
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;)) print(&quot;[[[Take the shirt]|C1P7V221]]&quot;);
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;);
+	%&gt;
 
-    &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="28" name="C1P7V221" tags="variation" position="3375,2225" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Dryer&quot;);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Shirt&quot;);
@@ -606,9 +606,9 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;I take out the white shirt.&lt;/action&gt;
 
 &lt;choices&gt;
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;); %&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;)) print(&quot;[[[Search the washing machine]|C1P7V21]]&quot;); %&gt;
 
-    &lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="29" name="C1P9" tags="page" position="3075,2675" size="100,100">&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Unknown&lt;/character&gt;
@@ -661,9 +661,9 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;speech.sophia&gt;Remember?&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P11V2]]
-    [[I don&#39;t care|C1P11V1]]
-    [[Ask me tomorrow|C1P11V3]]
+	[[...|C1P11V2]]
+	[[I don&#39;t care|C1P11V1]]
+	[[Ask me tomorrow|C1P11V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="31" name="C1P13" tags="page" position="3075,3450" size="100,100">&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
@@ -713,9 +713,9 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Her eyes are locked with mine, unblinking.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P13R1]]
-    [[No, Sophia!|C1P13R1]]
-    [[Sophia, please!|C1P13R1]]
+	[[...|C1P13R1]]
+	[[No, Sophia!|C1P13R1]]
+	[[Sophia, please!|C1P13R1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="32" name="C1P14" tags="page" position="3075,3750" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.angry&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Unknown&lt;/character&gt;
@@ -780,9 +780,9 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Where the hell am I, and what the fuck is in my arm?!&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Leave it alone]|C1P15V1]]
-    [[[Try ripping it out]|C1P15V2]]
-    [[[Disconnect the tubing]|C1P15V3]]
+	[[[Leave it alone]|C1P15V1]]
+	[[[Try ripping it out]|C1P15V2]]
+	[[[Disconnect the tubing]|C1P15V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="34" name="C1P9V1" tags="variation" position="2925,2825" size="100,100">&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
@@ -790,7 +790,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;speech.sarah&gt;It&#39;s too cold... and my bed is so warm.&lt;/speech&gt;
 
 &lt;action&gt;I mumble back.&lt;/action&gt;
-    
+	
 &lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="35" name="C1P9V3" tags="variation" position="3225,2825" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Filter&quot;) %&gt;
 
 &lt;flashback/&gt;
@@ -803,7 +803,7 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Watch that tone young woman or you&#39;ll be sleeping outside!&lt;/speech&gt;
-    
+	
 &lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="36" name="C1P12" tags="page" position="3075,3300" size="100,100">&lt;flashback/&gt;
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
@@ -916,9 +916,9 @@ if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Washer&quot;) &amp;&amp; 
 &lt;action&gt;Someone&#39;s standing on the other side.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P16V2]]
-    [[Show yourself!|C1P16V3]]
-    [[I&#39;m armed, back off! [Lie]|C1P16V1]]
+	[[...|C1P16V2]]
+	[[Show yourself!|C1P16V3]]
+	[[I&#39;m armed, back off! [Lie]|C1P16V1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="45" name="C1P16V2" tags="variation" position="3075,4500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -950,14 +950,14 @@ if (!passageName.startsWith(&quot;C1P7V3&quot;)) print(&quot;[[[Search cupboards
 if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing machine and dryer]|C1P7V2]]&quot;);
 %&gt;
 [[[Leave the laundry room]|C1P8]]</tw-passagedata><tw-passagedata pid="51" name="F: Door entry options" tags="floater" position="2650,1175" size="100,100">&lt;choices&gt;
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) print(&quot;[[[Knock on door]|C1P5V11]]&quot;); %&gt;
-    [[[Go to window]|C1P5V2]]
-    &lt;% if (window.passage.name != &quot;C1P5V12&quot;) print(&quot;[[[Try door handle]|C1P5V12]]&quot;); %&gt;
-    [[[Kick the door in]|C1P5V13]]
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) print(&quot;[[[Knock on door]|C1P5V11]]&quot;); %&gt;
+	[[[Go to window]|C1P5V2]]
+	&lt;% if (window.passage.name != &quot;C1P5V12&quot;) print(&quot;[[[Try door handle]|C1P5V12]]&quot;); %&gt;
+	[[[Kick the door in]|C1P5V13]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="52" name="F: Window entry options" tags="floater" position="3425,1175" size="100,100">&lt;choices&gt;
-    [[[Go to the door]|C1P5V1]]
-    &lt;% if (window.passage.name != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&quot;) %&gt;
-    [[[Pull off lowest board]|C1P5V22]]
+	[[[Go to the door]|C1P5V1]]
+	&lt;% if (window.passage.name != &quot;C1P5V21&quot;) print(&quot;[[[Look inside the house]|C1P5V21]]&quot;) %&gt;
+	[[[Pull off lowest board]|C1P5V22]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="53" name="C1P8R1" tags="redirect" position="3075,2525" size="100,100">&lt;wait&gt;1000&lt;/wait&gt;
 &lt;sound&gt;collapse&lt;/sound&gt;
 &lt;rumble&gt;1 1 200&lt;/rumble&gt;
@@ -986,9 +986,9 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 &lt;action&gt;There&#39;s not a hint of fear in her eyes, just pure curiosity.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P17V2]]
-    [[Hello there?|C1P17V1]]
-    [[What&#39;s your name?|C1P17V3]]
+	[[...|C1P17V2]]
+	[[Hello there?|C1P17V1]]
+	[[What&#39;s your name?|C1P17V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="55" name="F: Tiffany bad girl" tags="floater" position="3425,4650" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;)) { %&gt;
 
 &lt;action&gt;She doesn&#39;t reply.&lt;/action&gt;
@@ -1064,9 +1064,9 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 &lt;speech.lucy.!two&gt;Sizing me up are you?&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P18V2]]
-    [[Yeah|C1P18V1]]
-    [[Why would I be?|C1P18V3]]
+	[[...|C1P18V2]]
+	[[Yeah|C1P18V1]]
+	[[Why would I be?|C1P18V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="60" name="C1P18V1" tags="variation" position="2775,4950" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -1079,9 +1079,9 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 &lt;speech.lucy.!two&gt;How am I fairing?&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P18V12]]
-    [[A threat|C1P18V11]]
-    [[Not a threat|C1P18V13]]
+	[[...|C1P18V12]]
+	[[A threat|C1P18V11]]
+	[[Not a threat|C1P18V13]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="61" name="C1P18V2" tags="variation" position="3075,4950" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1157,10 +1157,10 @@ if (!passageName.startsWith(&quot;C1P7V2&quot;)) print(&quot;[[[Search washing m
 &lt;action&gt;I guess that explains where I am.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P19V2]]
-    [[Sorry|C1P19V1]]
-    &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) print(&quot;[[I did knock|C1P19V4]]&quot;); %&gt;
-    [[I had no choice|C1P19V3]]
+	[[...|C1P19V2]]
+	[[Sorry|C1P19V1]]
+	&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;)) print(&quot;[[I did knock|C1P19V4]]&quot;); %&gt;
+	[[I had no choice|C1P19V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="67" name="Characters" tags="info" position="3875,575" size="200,100">Protagonist - Sarah:
 - 20 years old
 - Brown eyes
@@ -1242,9 +1242,9 @@ Stranger - Charles:
 &lt;action&gt;She&#39;s says very casually.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P20V2]]
-    [[Thanks|C1P20V1]]
-    [[Should have let me die|C1P20V3]]
+	[[...|C1P20V2]]
+	[[Thanks|C1P20V1]]
+	[[Should have let me die|C1P20V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="73" name="C1P20V2" tags="variation" position="3075,5400" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1304,8 +1304,8 @@ Stranger - Charles:
 &lt;action&gt;I&#39;m not sure what to say...&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Lie to Lucy]|C1P22V2]]
-    [[[Tell Lucy the Truth]|C1P22V1]]
+	[[[Lie to Lucy]|C1P22V2]]
+	[[[Tell Lucy the Truth]|C1P22V1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="77" name="C1P22V1" tags="variation" position="2850,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;, false); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1329,9 +1329,9 @@ Stranger - Charles:
 &lt;speech.lucy&gt;Did he deserve it?&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P22V12]]
-    [[Yes, it was unprovoked|C1P22V11]]
-    [[No, wrong place wrong time|C1P22V13]]
+	[[...|C1P22V12]]
+	[[Yes, it was unprovoked|C1P22V11]]
+	[[No, wrong place wrong time|C1P22V13]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="78" name="C1P22V2" tags="variation" position="3300,5700" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Lied&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -1356,9 +1356,9 @@ Stranger - Charles:
 &lt;speech.lucy&gt;Must have been a hellova fence...&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[Yeah|C1P22V21]]
-    [[It was|C1P22V22]]
-    [[Biggest ever|C1P22V23]]
+	[[Yeah|C1P22V21]]
+	[[It was|C1P22V22]]
+	[[Biggest ever|C1P22V23]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="79" name="C1P9V2" tags="variation" position="3075,2825" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) %&gt;
 
 &lt;flashback/&gt;
@@ -1366,7 +1366,7 @@ Stranger - Charles:
 &lt;character.one.sad.eyes&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I couldn&#39;t care less...&lt;/action&gt;
-    
+	
 &lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="80" name="Credits" tags="info floater" position="3875,725" size="200,100">Game &amp; Infrastructure - Christopher &quot;Inferno&quot; M.&lt;br&gt;
 &lt;a href=&quot;https://purpose-game.com&quot; target=&quot;_blank&quot;&gt;https://purpose-game.com&lt;/a&gt;&lt;br&gt;&lt;br&gt;
 
@@ -1418,28 +1418,28 @@ Twine 2 - Twine and Twee&lt;br&gt;
 &lt;character.two.excited&gt;Sophia&lt;/character&gt;
 
 &lt;action&gt;I huff and ignore her.&lt;/action&gt;
-    
+	
 &lt;%= window.story.render(&quot;F: Rollover&quot;) %&gt;</tw-passagedata><tw-passagedata pid="83" name="F: I used your stuff" tags="floater" position="3500,5400" size="100,100">&lt;%
 let verbal = true;
 
 if (
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) &amp;&amp;
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) &amp;&amp;
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) &amp;&amp;
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) &amp;&amp;
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) &amp;&amp;
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) &amp;&amp;
-    window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;)
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing1&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing2&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing3&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing4&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing5&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing6&quot;) &amp;&amp;
+	window.story.getChoice(&quot;Chapter1&quot;, &quot;Nothing7&quot;)
 ) {
-    verbal = false;
+	verbal = false;
 
-    window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;);
+	window.story.achievement(&quot;Chapter1&quot;, &quot;Nothing&quot;, &quot;Silent Treatment&quot;);
 }
 %&gt;
 
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two.concern&gt;Lucy&lt;/character&gt;
-    
+	
 &lt;action&gt;Lucy crosses her arms.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Disinfectant&quot;)) { %&gt;
@@ -1451,7 +1451,7 @@ if (
 
 &lt;%
 if (!verbal) {
-    verbal = true;
+	verbal = true;
 %&gt;
 &lt;speech.lucy&gt;So she does speak...&lt;/speech&gt;
 &lt;% } %&gt;
@@ -1492,9 +1492,9 @@ if (!verbal) {
 &lt;action&gt;This lady has a strange sense of humor...&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Raise arm]|C1P21V2]]
-    [[Like in Hospital?|C1P21V3]]
-    [[The thing in my arm?|C1P21V1]]
+	[[[Raise arm]|C1P21V2]]
+	[[Like in Hospital?|C1P21V3]]
+	[[The thing in my arm?|C1P21V1]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="84" name="C1P21V2" tags="variation" position="3075,5550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -1607,9 +1607,9 @@ if (!verbal) {
 &lt;action&gt;Lucy&#39;s quick snapping of the word catches me off-guard.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P23V2]]
-    [[What...?|C1P23V1]]
-    [[Seriously?|C1P23V3]]
+	[[...|C1P23V2]]
+	[[What...?|C1P23V1]]
+	[[Seriously?|C1P23V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="93" name="C1P23V2" tags="variation" position="2850,6000" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -1782,9 +1782,9 @@ if (!verbal) {
 &lt;action&gt;She looks really unconformable all of a sudden.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P25V2]]
-    [[Go on...|C1P25V1]]
-    [[If I what?|C1P25V3]]
+	[[...|C1P25V2]]
+	[[Go on...|C1P25V1]]
+	[[If I what?|C1P25V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="105" name="Title Screen" tags="menu" position="2000,725" size="200,100">&lt;% window.story.startMenuMusic() %&gt;
 
 &lt;img.title-image&gt;
@@ -1889,9 +1889,9 @@ No Tag: Temporary/Test page/Disused</tw-passagedata><tw-passagedata pid="111" na
 &lt;action&gt;I channel what little emotional stability I have left and answer.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[She&#39;s dead|C1P27V1]]
-    [[I loved her|C1P27V2]]
-    [[She gave up|C1P27V3]]
+	[[She&#39;s dead|C1P27V1]]
+	[[I loved her|C1P27V2]]
+	[[She gave up|C1P27V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="112" name="C1P27V1" tags="variation" position="2925,6750" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -1908,7 +1908,7 @@ No Tag: Temporary/Test page/Disused</tw-passagedata><tw-passagedata pid="111" na
 &lt;speech.sarah&gt;...and she&#39;s dead&lt;/speech&gt;
 
 &lt;action&gt;I manage to finish, before choking on the lump forming in my throat.&lt;/action&gt;
-    
+	
 &lt;%= window.story.render(&quot;F: Pain in her eyes&quot;) %&gt;</tw-passagedata><tw-passagedata pid="113" name="C1P27V2" tags="variation" position="3075,6750" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -2045,8 +2045,8 @@ No Tag: Temporary/Test page/Disused</tw-passagedata><tw-passagedata pid="111" na
 &lt;action&gt;What&#39;s even the point in carrying on...&lt;/action&gt;
 
 &lt;choices&gt;
-    [[I have no purpose|C1P33V1]]
-    [[I need a new purpose|C1P33V2]]
+	[[I have no purpose|C1P33V1]]
+	[[I need a new purpose|C1P33V2]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="121" name="C1P33V1" tags="variation" position="3000,7650" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;NewPurpose&quot;, false); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -2238,9 +2238,9 @@ window.story.redirect(&quot;C1P34&quot;, 7);
 &lt;action&gt;Lucy must have told her...&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P35V2]]
-    [[Morning...?|C1P35V1]]
-    [[Lose something over here?|C1P35V3]]
+	[[...|C1P35V2]]
+	[[Morning...?|C1P35V1]]
+	[[Lose something over here?|C1P35V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="128" name="C1P35V2" tags="variation" position="3075,8250" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two.happy.eyes&gt;Tiffany&lt;/character&gt;
@@ -2319,8 +2319,8 @@ window.story.redirect(&quot;C1P34&quot;, 7);
 &lt;action&gt;And who knows how long I&#39;ve been on this sofa for.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[Yeah, Tiff|C1P35R1]]
-    [[Yeah, Tiffany|C1P35R2]]
+	[[Yeah, Tiff|C1P35R1]]
+	[[Yeah, Tiffany|C1P35R2]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="132" name="C1P35R1" tags="redirect" position="3000,8400" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Tiffany&quot;, false);
 window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffanyName&quot;, &quot;Tiff&quot;);
@@ -2342,7 +2342,7 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;% if (window.story.tiffany() === &quot;Tiff&quot;) { %&gt;
 
 &lt;action&gt;I think she likes that nickname.&lt;/action&gt;
-    
+	
 &lt;% } %&gt;
 
 &lt;speech.tiffany&gt;Come on then!&lt;/speech&gt;
@@ -2373,9 +2373,9 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;She closes the door and walks over towards me.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[Better|C1P36V1]]
-    [[I&#39;ll live|C1P36V2]]
-    [[Like shit|C1P36V3]]
+	[[Better|C1P36V1]]
+	[[I&#39;ll live|C1P36V2]]
+	[[Like shit|C1P36V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="135" name="C1P36V1" tags="variation" position="2925,8700" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -2400,7 +2400,7 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;A smirk creeps across her face.&lt;/action&gt;
 
 &lt;character.two&gt;Lucy&lt;/character&gt;
-    
+	
 &lt;%= window.story.render(&quot;F: Get that out&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="C1P36V3" tags="variation" position="3225,8700" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -2419,9 +2419,9 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;speech.lucy&gt;Let&#39;s get that out, shall we?&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[Yeah... sure|C1P37V1]]
-    [[Will it hurt?|C1P37V2]]
-    [[Can I keep it?|C1P37V3]]
+	[[Yeah... sure|C1P37V1]]
+	[[Will it hurt?|C1P37V2]]
+	[[Can I keep it?|C1P37V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="139" name="C1P37V1" tags="variation" position="2925,8850" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -2472,9 +2472,9 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;Then in one smooth motion, she swiftly pulls out the cannula and holds the cotton wool where it was inserted.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[Impressive|C1P38V1]]
-    [[[Cry fake pain]|C1P38V2]]
-    [[You&#39;re experienced|C1P38V3]]
+	[[Impressive|C1P38V1]]
+	[[[Cry fake pain]|C1P38V2]]
+	[[You&#39;re experienced|C1P38V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="143" name="C1P38V1" tags="variation" position="2925,9000" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -2581,19 +2581,19 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;character.one&gt;Sarah&lt;/character&gt;
 
 &lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="148" name="F: Living room search options" tags="floater" position="3575,9025" size="100,200">&lt;choices&gt;
-    &lt;%
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;[[[Look at window]|C1P39V2]]&quot;);
+	&lt;%
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) print(&quot;[[[Look at window]|C1P39V2]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) print(&quot;[[[Go to second door]|C1P39V1]]&quot;);
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Door2&quot;)) print(&quot;[[[Go to second door]|C1P39V1]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) print(&quot;[[[Look at coffee table]|C1P39V3]]&quot;);
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) print(&quot;[[[Look at coffee table]|C1P39V3]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Saline&quot;)) print(&quot;[[[Look at bag of clear fluid]|C1P39V4]]&quot;);
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Saline&quot;)) print(&quot;[[[Look at bag of clear fluid]|C1P39V4]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) print(&quot;[[[Look at the TV and cabinet]|C1P39V5]]&quot;);
-    %&gt;
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) print(&quot;[[[Look at the TV and cabinet]|C1P39V5]]&quot;);
+	%&gt;
 
-    [[[Follow Lucy]|C1P40]]
+	[[[Follow Lucy]|C1P40]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="149" name="C1P39V1" tags="variation" position="2775,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Door2&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -2624,28 +2624,28 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;)) { %&gt;
 
-    &lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Living room search options&quot;) %&gt;
 
 &lt;% } else { %&gt;
-    &lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;); %&gt;
+	&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TVandC&quot;); %&gt;
 
-    &lt;action&gt;I walk over to the TV and cabinet.&lt;/action&gt;
-    &lt;action&gt;The TV looks reasonably new, one of those fancy new super flat ones.&lt;/action&gt;
-    &lt;action&gt;Well, I guess not new anymore.&lt;/action&gt;
-    &lt;action&gt;I bend down and open the cabinet.&lt;/action&gt;
-    &lt;action&gt;There&#39;s a load of old TV crap, set-top boxes and what have you, and-&lt;/action&gt;
+	&lt;action&gt;I walk over to the TV and cabinet.&lt;/action&gt;
+	&lt;action&gt;The TV looks reasonably new, one of those fancy new super flat ones.&lt;/action&gt;
+	&lt;action&gt;Well, I guess not new anymore.&lt;/action&gt;
+	&lt;action&gt;I bend down and open the cabinet.&lt;/action&gt;
+	&lt;action&gt;There&#39;s a load of old TV crap, set-top boxes and what have you, and-&lt;/action&gt;
 
-    &lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
+	&lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 
-    &lt;action&gt;What&#39;s this? A spinning top.&lt;/action&gt;
-    &lt;action&gt;I wonder what this doing in here.&lt;/action&gt;
+	&lt;action&gt;What&#39;s this? A spinning top.&lt;/action&gt;
+	&lt;action&gt;I wonder what this doing in here.&lt;/action&gt;
 
-    &lt;character.one&gt;Sarah&lt;/character&gt;
+	&lt;character.one&gt;Sarah&lt;/character&gt;
 
-    &lt;choices&gt;
-        [[[Take spinning top]|C1P39V51]]
-        [[[Leave spinning top]|C1P39V5]]
-    &lt;/choices&gt;
+	&lt;choices&gt;
+		[[[Take spinning top]|C1P39V51]]
+		[[[Leave spinning top]|C1P39V5]]
+	&lt;/choices&gt;
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="152" name="C1P39V4" tags="variation" position="3225,9150" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Saline&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -2731,11 +2731,11 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
 
-    &lt;action&gt;Lucy doesn&#39;t trust me as it is, no need to give her an excuse.&lt;/action&gt;
+	&lt;action&gt;Lucy doesn&#39;t trust me as it is, no need to give her an excuse.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-    &lt;action&gt;I don&#39;t want to push my luck and risk a free meal.&lt;/action&gt;
+	&lt;action&gt;I don&#39;t want to push my luck and risk a free meal.&lt;/action&gt;
 
 &lt;% } %&gt;
 
@@ -2744,19 +2744,19 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;)) { %&gt;
 
-    &lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Hallway search options&quot;) %&gt;
 
 &lt;% } else { %&gt;
-    &lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;); %&gt;
+	&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;); %&gt;
 
-    &lt;action&gt;I walk up to the door on the left and open it.&lt;/action&gt;
-    &lt;action&gt;It&#39;s a bathroom!&lt;/action&gt;
-    &lt;action&gt;I could use a freshening up...&lt;/action&gt;
+	&lt;action&gt;I walk up to the door on the left and open it.&lt;/action&gt;
+	&lt;action&gt;It&#39;s a bathroom!&lt;/action&gt;
+	&lt;action&gt;I could use a freshening up...&lt;/action&gt;
 
-    &lt;choices&gt;
-        [[[Enter bathroom]|C1P40V21]]
-        [[[Leave bathroom]|C1P40V2]]
-    &lt;/choices&gt;
+	&lt;choices&gt;
+		[[[Enter bathroom]|C1P40V21]]
+		[[[Leave bathroom]|C1P40V2]]
+	&lt;/choices&gt;
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="158" name="C1P40V3" tags="variation" position="3225,9600" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -2768,7 +2768,7 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LivingWindow&quot;)) { %&gt;
 
-    &lt;action&gt;Especially not with all those walkers out there.&lt;/action&gt;
+	&lt;action&gt;Especially not with all those walkers out there.&lt;/action&gt;
 
 &lt;% } %&gt;
 
@@ -2785,7 +2785,7 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;% if(window.story.getChoice(&quot;Chapter1&quot;, &quot;CoffeeTable&quot;)) { %&gt;
 
-    &lt;action&gt;No sign of a coffee pot though, damn.&lt;/action&gt;
+	&lt;action&gt;No sign of a coffee pot though, damn.&lt;/action&gt;
 
 &lt;% } %&gt;
 
@@ -2804,15 +2804,15 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;I shoot a glace over at Lucy, who gives a small nod of approval.&lt;/action&gt;
 
 &lt;choices&gt;[[[Sit next to %Tiffany%]|C1P42]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="160" name="F: Hallway search options" tags="floater" position="3500,9600" size="100,200">&lt;choices&gt;
-    &lt;%
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) print(&quot;[[[Look at stairs]|C1P40V1]]&quot;);
+	&lt;%
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Stairs&quot;)) print(&quot;[[[Look at stairs]|C1P40V1]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;)) print(&quot;[[[Look at left door]|C1P40V2]]&quot;);
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;FreshenUp&quot;)) print(&quot;[[[Look at left door]|C1P40V2]]&quot;);
 
-    if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) print(&quot;[[[Look at right door]|C1P40V3]]&quot;);
-    %&gt;
+	if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;Frontdoor&quot;)) print(&quot;[[[Look at right door]|C1P40V3]]&quot;);
+	%&gt;
 
-    [[[Go to the kitchen]|C1P41]]
+	[[[Go to the kitchen]|C1P41]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="161" name="C1P40V21" tags="variation" position="3075,9750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Bathroom&quot;); %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
@@ -2842,8 +2842,8 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;That might be overstepping actually, maybe I should get going&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Leave bathroom]|C1P40V211]]
-    [[[Search for scissors]|C1P40V212]]
+	[[[Leave bathroom]|C1P40V211]]
+	[[[Search for scissors]|C1P40V212]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="162" name="C1P40V211" tags="variation" position="3000,9900" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 
@@ -2888,44 +2888,44 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
-    &lt;character.two.confused&gt;Tiffany&lt;/character&gt;
+	&lt;character.two.confused&gt;Tiffany&lt;/character&gt;
 
-    &lt;action&gt;%Tiffany% looks at me, puzzled.&lt;/action&gt;
-    
-    &lt;speech.tiffany&gt;You look different.&lt;/speech&gt;
-    &lt;speech.sarah&gt;I cut my hair.&lt;/speech&gt;
-    &lt;speech.sarah&gt;It&#39;s important to keep your hair short.&lt;/speech&gt;
-    &lt;speech.tiffany&gt;Why?&lt;/speech&gt;
+	&lt;action&gt;%Tiffany% looks at me, puzzled.&lt;/action&gt;
+	
+	&lt;speech.tiffany&gt;You look different.&lt;/speech&gt;
+	&lt;speech.sarah&gt;I cut my hair.&lt;/speech&gt;
+	&lt;speech.sarah&gt;It&#39;s important to keep your hair short.&lt;/speech&gt;
+	&lt;speech.tiffany&gt;Why?&lt;/speech&gt;
 
-    &lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
+	&lt;character.one.pain.eyes&gt;Sarah&lt;/character&gt;
 
-    &lt;speech.sarah&gt;So, um, &#39;bad people&#39;, can&#39;t grab you as easily...&lt;/speech&gt;
-    
-    &lt;character.two.confused.neutral&gt;%Tiffany%&lt;/character&gt;
-    
-    &lt;speech.tiffany&gt;Like the monsters?&lt;/speech&gt;
-    &lt;speech.sarah&gt;Well yeah, but also-&lt;/speech&gt;
-    
-    &lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
-    
-    &lt;action&gt;Lucy is walking back over, shooting me a dirty look.&lt;/action&gt;
-    
-    &lt;character.one&gt;Sarah&lt;/character&gt;
-    &lt;character.two.confused.neutral&gt;%Tiffany%&lt;/character&gt;
-    
-    &lt;speech.sarah&gt;Uhh...&lt;/speech&gt;
+	&lt;speech.sarah&gt;So, um, &#39;bad people&#39;, can&#39;t grab you as easily...&lt;/speech&gt;
+	
+	&lt;character.two.confused.neutral&gt;%Tiffany%&lt;/character&gt;
+	
+	&lt;speech.tiffany&gt;Like the monsters?&lt;/speech&gt;
+	&lt;speech.sarah&gt;Well yeah, but also-&lt;/speech&gt;
+	
+	&lt;character.two.concern.eyes&gt;Lucy&lt;/character&gt;
+	
+	&lt;action&gt;Lucy is walking back over, shooting me a dirty look.&lt;/action&gt;
+	
+	&lt;character.one&gt;Sarah&lt;/character&gt;
+	&lt;character.two.confused.neutral&gt;%Tiffany%&lt;/character&gt;
+	
+	&lt;speech.sarah&gt;Uhh...&lt;/speech&gt;
 
 &lt;% } else { %&gt;
 
-    &lt;action&gt;Lucy walks over to the portable stove.&lt;/action&gt;
-    &lt;action&gt;She stirs the contents of the can on top of it.&lt;/action&gt;
-    &lt;action&gt;Then she pours some of it out into a bowl.&lt;/action&gt;
+	&lt;action&gt;Lucy walks over to the portable stove.&lt;/action&gt;
+	&lt;action&gt;She stirs the contents of the can on top of it.&lt;/action&gt;
+	&lt;action&gt;Then she pours some of it out into a bowl.&lt;/action&gt;
 
-    &lt;character.two.happy&gt;Tiffany&lt;/character&gt;
-    
-    &lt;action&gt;I glance over at %Tiffany%.&lt;/action&gt;
-    &lt;action&gt;She&#39;s just staring at me and smiling, a little creepy I must say.&lt;/action&gt;
-    &lt;action&gt;Lucy walks back over to us.&lt;/action&gt;
+	&lt;character.two.happy&gt;Tiffany&lt;/character&gt;
+	
+	&lt;action&gt;I glance over at %Tiffany%.&lt;/action&gt;
+	&lt;action&gt;She&#39;s just staring at me and smiling, a little creepy I must say.&lt;/action&gt;
+	&lt;action&gt;Lucy walks back over to us.&lt;/action&gt;
 
 &lt;% } %&gt;
 
@@ -2968,9 +2968,9 @@ window.story.redirect(&quot;C1P36&quot;, 0);
 &lt;action&gt;Lucy rolls her eyes.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[It tastes good|C1P43V1]]
-    [[You need to eat|C1P43V3]]
-    [[What do you like?|C1P43V2]]
+	[[It tastes good|C1P43V1]]
+	[[You need to eat|C1P43V3]]
+	[[What do you like?|C1P43V2]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="166" name="Saved Games" tags="menu" position="2250,1025" size="200,100">&lt;% window.story.loadSaves() %&gt;
 
 &lt;img.title-image&gt;
@@ -3050,10 +3050,10 @@ Select a Save Slot to start a new game.
 &lt;form-#saveSlotSelector action=&quot;javascript:void(0)&quot;&gt;
   &lt;label for=&quot;slots&quot;&gt;Choose a Save Slot:&lt;/label&gt;
   &lt;select#slots name=&quot;slots&quot;&gt;
-    &lt;option#saveSlot1 value=&quot;1&quot;&gt;Save Slot 1&lt;/option&gt;
-    &lt;option#saveSlot2 value=&quot;2&quot;&gt;Save Slot 2&lt;/option&gt;
-    &lt;option#saveSlot3 value=&quot;3&quot;&gt;Save Slot 3&lt;/option&gt;
-    &lt;option#saveSlot4 value=&quot;4&quot;&gt;Save Slot 4&lt;/option&gt;
+	&lt;option#saveSlot1 value=&quot;1&quot;&gt;Save Slot 1&lt;/option&gt;
+	&lt;option#saveSlot2 value=&quot;2&quot;&gt;Save Slot 2&lt;/option&gt;
+	&lt;option#saveSlot3 value=&quot;3&quot;&gt;Save Slot 3&lt;/option&gt;
+	&lt;option#saveSlot4 value=&quot;4&quot;&gt;Save Slot 4&lt;/option&gt;
   &lt;/select&gt;
   
   &lt;button0#selectSlotButton onclick=&quot;window.story.selectSlot()&quot;&gt;Select Slot and Start Game&lt;/button&gt;
@@ -3090,7 +3090,7 @@ Select a Save Slot to start a new game.
 
 &lt;speech.tiffany&gt;No silly!&lt;/speech&gt;
 
-&lt;speech.sarah&gt;Well, not much of either of those around these days.&lt;/speech&gt;    
+&lt;speech.sarah&gt;Well, not much of either of those around these days.&lt;/speech&gt;	
 
 &lt;%= window.story.render(&quot;F: Come chat&quot;) %&gt;</tw-passagedata><tw-passagedata pid="174" name="C1P43V3" tags="variation" position="3225,10500" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Eating&quot;); %&gt;
 
@@ -3154,13 +3154,13 @@ Select a Save Slot to start a new game.
 
 	&lt;action&gt;Oh yeah, I should give this to %Tiffany% before I forget.&lt;/action&gt;
 
-    &lt;choices&gt;[[[Give %Tiffany%spinning top]|C1P44V4]]&lt;/choices&gt;
+	&lt;choices&gt;[[[Give %Tiffany%spinning top]|C1P44V4]]&lt;/choices&gt;
 
 &lt;% } else { %&gt;
 
 	&lt;action&gt;With Lucy out of the room, I could find out a bit about %Tiffany%...&lt;/action&gt;
 
-    &lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;
+	&lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;
 
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="177" name="C1P44V1" tags="variation" position="2850,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Dad&quot;); %&gt;
 
@@ -3355,9 +3355,9 @@ Select a Save Slot to start a new game.
 &lt;speech.lucy&gt;I&#39;m sorry about last night.&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P45V1]]
-    [[No stress|C1P45V2]]
-    [[You broke our deal|C1P45V3]]
+	[[...|C1P45V1]]
+	[[No stress|C1P45V2]]
+	[[You broke our deal|C1P45V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="181" name="F: Better get going" tags="floater" position="3500,10800" size="100,100">&lt;character.two.confused.eyes&gt;Tiffany&lt;/character&gt;
 
 &lt;action&gt;%Tiffany%&#39;s face slowly contorts into a look of shock.&lt;/action&gt;
@@ -3447,9 +3447,9 @@ Select a Save Slot to start a new game.
 &lt;speech.lucy&gt;...and there wasn&#39;t a damn thing I could do about it.&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P46V1]]
-    [[She&#39;s still happy|C1P46V2]]
-    [[She&#39;s still loved|C1P46V3]]
+	[[...|C1P46V1]]
+	[[She&#39;s still happy|C1P46V2]]
+	[[She&#39;s still loved|C1P46V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="187" name="C1P46V1" tags="variation" position="2925,11400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Lucy&lt;/character&gt;
@@ -3474,16 +3474,16 @@ Select a Save Slot to start a new game.
 &lt;%= window.story.render(&quot;F: Happy cuz of you&quot;) %&gt;</tw-passagedata><tw-passagedata pid="190" name="F: Happy cuz of you" tags="floater" position="3575,11400" size="100,100">&lt;action&gt;Lucy lets out a sigh.&lt;/action&gt;
 
 &lt;% if (window.passage.name === &quot;C1P46V1&quot; || window.passage.name === &quot;C1P46V2&quot;) { %&gt;
-    
-    &lt;speech.lucy&gt;Your seeing a side of her that I haven&#39;t seen in a long time.&lt;/speech&gt;
-    &lt;speech.lucy&gt;A side I haven&#39;t been able to coax out of her since her father died.&lt;/speech&gt;
+	
+	&lt;speech.lucy&gt;Your seeing a side of her that I haven&#39;t seen in a long time.&lt;/speech&gt;
+	&lt;speech.lucy&gt;A side I haven&#39;t been able to coax out of her since her father died.&lt;/speech&gt;
 
 &lt;% } else { %&gt;
 
-    &lt;speech.lucy&gt;Of course I do.&lt;/speech&gt;
-    &lt;action&gt;She pauses for a moment.&lt;/action&gt;
-    &lt;speech.lucy&gt;But I don&#39;t think that&#39;s enough.&lt;/speech&gt;
-    &lt;speech.lucy&gt;She needs more.&lt;/speech&gt;
+	&lt;speech.lucy&gt;Of course I do.&lt;/speech&gt;
+	&lt;action&gt;She pauses for a moment.&lt;/action&gt;
+	&lt;speech.lucy&gt;But I don&#39;t think that&#39;s enough.&lt;/speech&gt;
+	&lt;speech.lucy&gt;She needs more.&lt;/speech&gt;
 
 &lt;% } %&gt;
 
@@ -3508,22 +3508,22 @@ Select a Save Slot to start a new game.
 &lt;speech.lucy&gt;I don&#39;t know what to do to make her happy anymore.&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[...|C1P47V1]]
-    &lt;%
-    switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;)) {
-        case &quot;Lonely&quot;:
-            print(&quot;[[She&#39;s lonely|C1P47V31]]&quot;);
-            break;
-            
-        case &quot;Dad&quot;:
-            print(&quot;[[She misses her dad|C1P47V32]]&quot;);
-            break;
-            
-        case &quot;Killing&quot;:
-            print(&quot;[[She&#39;s not involved enough|C1P47V33]]&quot;);
-            break;
-    }
-    %&gt;
+	[[...|C1P47V1]]
+	&lt;%
+	switch (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;)) {
+		case &quot;Lonely&quot;:
+			print(&quot;[[She&#39;s lonely|C1P47V31]]&quot;);
+			break;
+			
+		case &quot;Dad&quot;:
+			print(&quot;[[She misses her dad|C1P47V32]]&quot;);
+			break;
+			
+		case &quot;Killing&quot;:
+			print(&quot;[[She&#39;s not involved enough|C1P47V33]]&quot;);
+			break;
+	}
+	%&gt;
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="191" name="C1P47V1" tags="variation" position="2775,11550" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
 &lt;character.two.sad.eyes&gt;Lucy&lt;/character&gt;
@@ -3653,9 +3653,9 @@ Lucy scoffs.
 &lt;action&gt;We stare at each other.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P48V1]]
-    [[There will be|C1P48V2]]
-    [[There won&#39;t be|C1P48V3]]
+	[[...|C1P48V1]]
+	[[There will be|C1P48V2]]
+	[[There won&#39;t be|C1P48V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="198" name="C1P48V1" tags="variation" position="2925,11850" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;, false); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -3782,8 +3782,8 @@ Lucy scoffs.
 &lt;% } %&gt;
 
 &lt;choices&gt;
-    [[I&#39;ll stay|C1P50]]
-    [[I&#39;m not staying|C1P50]]
+	[[I&#39;ll stay|C1P50]]
+	[[I&#39;m not staying|C1P50]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="203" name="C1P50" tags="page save" position="3075,12150" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.two.happy&gt;Lucy&lt;/character&gt;
 
@@ -3792,7 +3792,7 @@ Lucy scoffs.
 &lt;character.one.happy&gt;Sarah&lt;/character&gt;
 
 &lt;% } else { %&gt;
-    
+	
 &lt;character.one.pain&gt;Sarah&lt;/character&gt;
 
 &lt;% } %&gt;
@@ -3813,8 +3813,8 @@ Lucy scoffs.
 &lt;action&gt;We look back at each other.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[I&#39;ll watch %Tiffany%, go!|C1P51V1]]
-    [[You watch %Tiffany%, I&#39;ll go!|C1P51V2]]
+	[[I&#39;ll watch %Tiffany%, go!|C1P51V1]]
+	[[You watch %Tiffany%, I&#39;ll go!|C1P51V2]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="204" name="C1P51V1" tags="variation" position="3000,12300" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Protect&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -3919,11 +3919,11 @@ Lucy scoffs.
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;WillHelp&quot;) &amp;&amp; window.story.getChoice(&quot;Chapter1&quot;, &quot;Lied&quot;)) { %&gt;
 
-    &lt;choices&gt;[[[Watch Lucy]|C1P53V11]]&lt;/choices&gt;
+	&lt;choices&gt;[[[Watch Lucy]|C1P53V11]]&lt;/choices&gt;
 
 &lt;% } else { %&gt;
 
-    &lt;choices&gt;[[[Watch Lucy]|C1P53V12]]&lt;/choices&gt;
+	&lt;choices&gt;[[[Watch Lucy]|C1P53V12]]&lt;/choices&gt;
 
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="209" name="C1P53V12" tags="variation" position="2825,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;, false); %&gt;
 
@@ -3944,9 +3944,9 @@ Lucy scoffs.
 &lt;action&gt;I look back at her, she looks terrified.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P53V122]]
-    [[She&#39;s keeping us safe|C1P53V121]]
-    [[She&#39;s helping someone [Lie]|C1P53V123]]
+	[[...|C1P53V122]]
+	[[She&#39;s keeping us safe|C1P53V121]]
+	[[She&#39;s helping someone [Lie]|C1P53V123]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="210" name="C1P53V11" tags="variation" position="2125,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -3975,9 +3975,9 @@ Lucy scoffs.
 &lt;action&gt;She&#39;s still sitting at the table, looking terrified.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P53V112]]
-    [[She&#39;ll be fine|C1P53V111]]
-    [[[Extend hand to %Tiffany%]|C1P53V113]]
+	[[...|C1P53V112]]
+	[[She&#39;ll be fine|C1P53V111]]
+	[[[Extend hand to %Tiffany%]|C1P53V113]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="211" name="Network Check" tags="noFade menu" position="2000,425" size="200,100">&lt;% window.story.networkCheck(&quot;Alpha&quot;) %&gt;
 
 Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" tags="menu" position="2000,575" size="200,100">This game is in an alpha state (v&lt;% print(window.story.version) %&gt;), all content is subject to change.
@@ -4050,8 +4050,8 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;Or, I can make sure nothing gets through this door.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Help stranger]|C1P53V21]]
-    [[[Do not help stranger]|C1P53V22]]
+	[[[Help stranger]|C1P53V21]]
+	[[[Do not help stranger]|C1P53V22]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="214" name="C1P53V21" tags="variation" position="3350,12750" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -4112,8 +4112,8 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;Whatever I decide, I had better do it quick.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Yell at stranger]|C1P53V211]]
-    [[[Go over to stranger]|C1P53V212]]
+	[[[Yell at stranger]|C1P53V211]]
+	[[[Go over to stranger]|C1P53V212]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="215" name="C1P53V22" tags="variation" position="4175,12775" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;, false); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -4164,9 +4164,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;It won&#39;t take him long to figure out it&#39;s not fucking locked!&lt;/action&gt;
 
 &lt;choices&gt;
-    [[Go away!|C1P53V221]]
-    [[%Tiffany% run!|C1P53V222]]
-    [[[Hold the door closed]|C1P53V223]]
+	[[Go away!|C1P53V221]]
+	[[%Tiffany% run!|C1P53V222]]
+	[[[Hold the door closed]|C1P53V223]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="216" name="C1P53V211" tags="variation" position="3250,12900" size="100,100">&lt;% window.story.achievement(&quot;Chapter1&quot;, &quot;Scorpion&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -4428,9 +4428,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;speech.charles&gt;There&#39;s no way you didn&#39;t hear me!&lt;/speech&gt;
 
 &lt;choices&gt;
-    [[I don&#39;t know you!|C1P53V2211]]
-    [[I was going to! [Lie]|C1P53V2213]]
-    [[You were going to get yourself killed!|C1P53V2212]]
+	[[I don&#39;t know you!|C1P53V2211]]
+	[[I was going to! [Lie]|C1P53V2213]]
+	[[You were going to get yourself killed!|C1P53V2212]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="228" name="C1P53V2211" tags="variation" position="4025,13075" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry&gt;Sarah&lt;/character&gt;
 &lt;character.two.angry&gt;Charles&lt;/character&gt;
@@ -4502,9 +4502,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;Lucy shouts, as the sound of glass and wood breaking erupts.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[&lt;% print(window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) ? &quot;Charles,&quot; : &quot;The&quot;) %&gt; Bat!|C1P54V21]]
-    [[Upstairs, quickly!|C1P54V22]]
-    [[[Run to %Tiffany%]|C1P54V23]]
+	[[&lt;% print(window.story.getChoice(&quot;Chapter1&quot;, &quot;SaveStranger&quot;) ? &quot;Charles,&quot; : &quot;The&quot;) %&gt; Bat!|C1P54V21]]
+	[[Upstairs, quickly!|C1P54V22]]
+	[[[Run to %Tiffany%]|C1P54V23]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="235" name="C1P54V21" tags="variation" position="3675,13650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Charles&lt;/character&gt;
@@ -4705,8 +4705,8 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;I look back at %Tiffany%, she&#39;s still frozen in place, hands to her face, looking down at her mom.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[[Try to help Lucy]|C1P55V1]]
-    [[[Grab %Tiffany% and go]|C1P55V2]]
+	[[[Try to help Lucy]|C1P55V1]]
+	[[[Grab %Tiffany% and go]|C1P55V2]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="239" name="C1P55V1" tags="variation" position="3000,14000" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TriedToSaveLucy&quot;); %&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
@@ -4827,9 +4827,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;She&#39;s half shouting, half crying.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[%Tiffany%, she&#39;s dead|C1P56V1]]
-    [[Keep your voice down!|C1P56V2]]
-    [[That&#39;s not your mom anymore...|C1P56V3]]
+	[[%Tiffany%, she&#39;s dead|C1P56V1]]
+	[[Keep your voice down!|C1P56V2]]
+	[[That&#39;s not your mom anymore...|C1P56V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="243" name="C1P44V4" tags="variation" position="3300,10800" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.happy.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Tiffany&lt;/character&gt;
@@ -4877,9 +4877,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;Speaking of examining, now isn&#39;t a bad time to find out a bit more about %Tiffany%...&lt;/action&gt;
 
 &lt;%= window.story.render(&quot;F: Tiff Breakfast Talk Options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="244" name="F: Tiff Breakfast Talk Options" tags="floater" position="3650,10675" size="100,200">&lt;choices&gt;
-    [[Where&#39;s dad?|C1P44V1]]
-    [[Where&#39;ve you been staying?|C1P44V2]]
-    [[How many walkers you killed?|C1P44V3]]
+	[[Where&#39;s dad?|C1P44V1]]
+	[[Where&#39;ve you been staying?|C1P44V2]]
+	[[How many walkers you killed?|C1P44V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="245" name="C1P53V111" tags="variation" position="1975,12900" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two.confused.sad&gt;Tiffany&lt;/character&gt;
@@ -4975,9 +4975,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;He quickly recovers and gives me a nod.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[We need to hide|C1P54V111]]
-    [[We need to get out of here|C1P54V112]]
-    [[We need to fortify this place|C1P54V113]]
+	[[We need to hide|C1P54V111]]
+	[[We need to get out of here|C1P54V112]]
+	[[We need to fortify this place|C1P54V113]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="250" name="C1P54V111" tags="variation" position="1975,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two&gt;Charles&lt;/character&gt;
@@ -5028,9 +5028,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;Shit, what is she going to do?&lt;/action&gt;
 
 &lt;choices&gt;
-    [[%Tiffany%, run!|C1P54V12]]
-    [[Lucy, be careful!|C1P54V12]]
-    [[Lucy, don&#39;t do it!|C1P54V12]]
+	[[%Tiffany%, run!|C1P54V12]]
+	[[Lucy, be careful!|C1P54V12]]
+	[[Lucy, don&#39;t do it!|C1P54V12]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="255" name="C1P54V12" tags="variation" position="2825,13050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 
@@ -5066,9 +5066,9 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 &lt;action&gt;She&#39;s lunging towards him with her knife!&lt;/action&gt;
 
 &lt;choices&gt;
-    [[...|C1P54V1212]]
-    [[Lucy stop!|C1P54V1211]]
-    [[Watch out for the axe!|C1P54V1213]]
+	[[...|C1P54V1212]]
+	[[Lucy stop!|C1P54V1211]]
+	[[Watch out for the axe!|C1P54V1213]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="256" name="C1P54V1211" tags="variation" position="2675,13200" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry&gt;Sarah&lt;/character&gt;
 &lt;character.two.fighting.ditto&gt;Lucy&lt;/character&gt;
@@ -5257,7 +5257,7 @@ Loading, please wait...</tw-passagedata><tw-passagedata pid="212" name="Alpha" t
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 &lt;characteroverride.two&gt;Lucy&lt;/characteroverride&gt;
-    
+	
 &lt;speech.unknown&gt;I&#39;m coming!&lt;/speech&gt;
 
 &lt;action&gt;Lucy shouts from the hallway.&lt;/action&gt;
@@ -5441,12 +5441,12 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
 &lt;character.two&gt;Charles&lt;/character&gt;
-    
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
-        
-    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
-    
-    &lt;% } %&gt;
+	
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
 
 &lt;speech.charles&gt;Well now what?&lt;/speech&gt;
 
@@ -5482,9 +5482,9 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;She looks up at me with her piercing blue eyes wide open.&lt;/action&gt;
 
 &lt;choices&gt;
-    [[You need to|C1P59V1]]
-    [[Yes you can, it&#39;s not so bad|C1P59V2]]
-    [[%Tiffany%, less talking, more doing|C1P59V3]]
+	[[You need to|C1P59V1]]
+	[[Yes you can, it&#39;s not so bad|C1P59V2]]
+	[[%Tiffany%, less talking, more doing|C1P59V3]]
 &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="281" name="C1P59V1" tags="variation" position="2925,15350" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 &lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
@@ -5549,11 +5549,11 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;character.two&gt;Charles&lt;/character&gt;
 
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
-        
-    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
-    
-    &lt;% } %&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
 
 &lt;speech.charles&gt;Careful not to drop her!&lt;/speech&gt;
 
@@ -5701,11 +5701,11 @@ Reluctantly she steps out from behind the tree and approaches.
 
 &lt;character.two&gt;Charles&lt;/character&gt;
 
-    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
-        
-    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
-    
-    &lt;% } %&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
 
 &lt;speech.charles&gt;Nicely done.&lt;/speech&gt;
 
@@ -6138,22 +6138,22 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 
 &lt;script&gt;
 	$(&quot;#debugGo&quot;).click(function() {
-    	const passage = $(&quot;#debugSelector&quot;).val();
-        
-        window.story.show(passage.startsWith(&quot;C1&quot;) ? passage.toUpperCase() : passage);
-    });
+		const passage = $(&quot;#debugSelector&quot;).val();
+		
+		window.story.show(passage.startsWith(&quot;C1&quot;) ? passage.toUpperCase() : passage);
+	});
 
-    $(&quot;#debugGo2&quot;).click(function() {
-    	let chapter = $(&quot;#debugSelectorC&quot;).val();
-    	let passage = $(&quot;#debugSelectorP&quot;).val();
-    	let variation = $(&quot;#debugSelectorV&quot;).val();
+	$(&quot;#debugGo2&quot;).click(function() {
+		let chapter = $(&quot;#debugSelectorC&quot;).val();
+		let passage = $(&quot;#debugSelectorP&quot;).val();
+		let variation = $(&quot;#debugSelectorV&quot;).val();
 
-        if (chapter) chapter = `C${chapter}`;
-        if (passage) passage = `P${passage}`;
-        if (variation) variation = `V${variation}`;
-        
-        window.story.show(chapter + passage + variation);
-    });
+		if (chapter) chapter = `C${chapter}`;
+		if (passage) passage = `P${passage}`;
+		if (variation) variation = `V${variation}`;
+		
+		window.story.show(chapter + passage + variation);
+	});
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15500" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
@@ -6169,13 +6169,13 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 &lt;action&gt;She&#39;s got her feet up on the seat, and buried her head in her knees.&lt;/action&gt;
 &lt;action&gt;She must be terrified.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="324" name="F: Artwork" tags="floater" position="1475,875" size="100,100">&lt;div#gallery-container.gallery&gt;
 	&lt;img#gallery-image-1&gt;
-    &lt;img#gallery-image-2&gt;
-    &lt;img#gallery-image-3&gt;
-    &lt;img#gallery-image-4&gt;
-    &lt;img#gallery-image-5&gt;
-    &lt;img#gallery-image-6&gt;
-    &lt;img#gallery-image-7&gt;
-    &lt;img#gallery-image-8&gt;
+	&lt;img#gallery-image-2&gt;
+	&lt;img#gallery-image-3&gt;
+	&lt;img#gallery-image-4&gt;
+	&lt;img#gallery-image-5&gt;
+	&lt;img#gallery-image-6&gt;
+	&lt;img#gallery-image-7&gt;
+	&lt;img#gallery-image-8&gt;
 &lt;/div&gt;
 
 Character Artwork - Despoina &quot;DesDarkDesigns&quot;&lt;br&gt;

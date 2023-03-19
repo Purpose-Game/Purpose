@@ -11,7 +11,7 @@ let audioKillFades = false;
 
 // eslint-disable-next-line  no-unused-vars
 class AudioSystem {
-    //
+	//
 	//  Methods
 	//
 
@@ -82,18 +82,18 @@ class AudioSystem {
 }
 
 class AudioLibrary {
-    //
+	//
 	//  Variables
 	//
 
-    // UI Sounds
-    static ui = {
+	// UI Sounds
+	static ui = {
 		button: new Audio(`${audioDir}ui/button.mp3`),
 		click: new Audio(`${audioDir}ui/click.mp3`),
 		confirm: new Audio(`${audioDir}ui/confirm.mp3`)
 	};
 
-    // Sound effects
+	// Sound effects
 	static sfx = {
 		// Diegetic
 		"knocking": new Audio(`${audioDir}sfx/knocking.mp3`),

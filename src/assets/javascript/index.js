@@ -287,26 +287,26 @@ $(document).on("sm.passage.showing", (_, data) => {
 
 $(document).on("sm.passage.shown", (_, data) => {
 	const passage = data.passage;
-    const twPassage = $("tw-passage");
+	const twPassage = $("tw-passage");
 
 	window.story.makingChoice = false;
 	window.story.stepable = false;
 
 	if (!passage.tags) return;
 
-    if (passage.tags.some(tag => storyTags.includes(tag))) {
+	if (passage.tags.some(tag => storyTags.includes(tag))) {
 		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
 		if (pageHTML.includes("%Tiffany%")) twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
 
 		if (twPassage.length) processPassage(twPassage);
-    }
+	}
 });
 
 body.mouseover((event) => {
 	const element = $(event.target);
 
-    if (!element.is("a") && !element.attr("class")?.includes("sound-")) return;
+	if (!element.is("a") && !element.attr("class")?.includes("sound-")) return;
 
 	if (keybindSelectedElement) {
 		keybindSelectedElement.removeClass("hovered");
@@ -320,7 +320,7 @@ body.click((event) => {
 	const element = $(event.target);
 	const elementClass = element.attr("class");
 
-    if (!element.is("a") && !elementClass?.includes("sound-")) {
+	if (!element.is("a") && !elementClass?.includes("sound-")) {
 		const ignoreClick = ["option-one", "option-two"];
 
 		if (!ignoreClick.includes(event.target.id)) stepPassage();
@@ -481,6 +481,8 @@ const stepPassage = async () => {
 				let parts = [];
 				let images = [];
 
+				character.one.angry.sad.happy
+
 				switch (extras.length) {
 					case 0:
 						parts = [
@@ -517,12 +519,12 @@ const stepPassage = async () => {
 								break;
 
 							case "mouth":
-									parts = [
-										`${character}-eyes-neutral`,
-										`${character}-mouth-${extras[0]}`,
-										`${character}-stance-neutral`
-									];
-									break;
+								parts = [
+									`${character}-eyes-neutral`,
+									`${character}-mouth-${extras[0]}`,
+									`${character}-stance-neutral`
+								];
+								break;
 
 							case "stance":
 								parts = [
