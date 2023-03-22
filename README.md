@@ -1,4 +1,4 @@
-![Banner](https://i.imgur.com/YcvSwDo.png)
+![Banner](https://i.imgur.com/RvCGS6I.png)
 
 # Purpose
 
@@ -24,7 +24,7 @@ Made in [Twine 2](https://twinery.org/) with [Snowman 2](https://github.com/vide
 
 ##### Content Warning: Mature themes including trauma, depression, suicidal ideation, swearing, and written depictions of death and gore, in a post-apocalyptic setting.
 
-##### Donations go towards paying for artwork, and the server that hosts the Cloud-Saving.
+##### Donations go towards paying for artwork, code helpers, and the server that hosts the Cloud-Saving.
 
 ## Contributing
 If you have a story related suggestion, the best place to put it is in our Discord. If you have a technical suggestion or contribution, feel free to make an issue and/or PR.
