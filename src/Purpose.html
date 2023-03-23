@@ -3259,7 +3259,10 @@ Select a Save Slot to start a new game.
 &lt;speech.sarah&gt;Sometimes I guess, but I&#39;m used to it.&lt;/speech&gt;
 &lt;speech.sarah&gt;I&#39;ve been on my own for a lonnnng fuckin&#39; time.&lt;/speech&gt;
 
-&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;); %&gt;
+&lt;%= window.story.render(&quot;F: Better get going&quot;) %&gt;</tw-passagedata><tw-passagedata pid="179" name="C1P44V3" tags="variation" position="3150,10800" size="100,100">&lt;%
+window.story.achievement(&quot;Chapter1&quot;, &quot;Walkers&quot;);
+window.story.setChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;, &quot;Killing&quot;);
+%&gt;
 
 &lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one&gt;Sarah&lt;/character&gt;
