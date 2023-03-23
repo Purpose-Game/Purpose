@@ -481,8 +481,6 @@ const stepPassage = async () => {
 				let parts = [];
 				let images = [];
 
-				character.one.angry.sad.happy
-
 				switch (extras.length) {
 					case 0:
 						parts = [
