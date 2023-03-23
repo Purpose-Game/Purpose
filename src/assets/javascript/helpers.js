@@ -38,7 +38,7 @@ window.story.redirect = async (pageName, time = 5) => {
 };
 
 // Sets an achievement and shows a popup
-window.story.achievement = (chapter, shorthand) => {
+window.story.achievement = async (chapter, shorthand) => {
 	if (
 		!Object.prototype.hasOwnProperty.call(window.story.achievementDescriptions, chapter) ||
 		!Object.prototype.hasOwnProperty.call(window.story.achievementDescriptions[chapter], shorthand)
@@ -60,6 +60,8 @@ window.story.achievement = (chapter, shorthand) => {
 	if (!achievementsEnabled) return;
 
 	const achievement = window.story.achievementDescriptions[chapter][shorthand];
+
+	await sleep(10 * 1000);
 
 	SimpleNotification.info({
 		title: `Achievement: ${achievement[0]}`,
