@@ -115,7 +115,10 @@ if (!window.passage.tried) {
 
 &lt;% } %&gt;
 
-&lt;%= window.story.render(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="7" name="C1P5V11" tags="variation" position="2700,1325" size="100,100">&lt;% window.story.setChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;); %&gt;
+&lt;%= window.story.render(&quot;F: Window entry options&quot;) %&gt;</tw-passagedata><tw-passagedata pid="7" name="C1P5V11" tags="variation" position="2700,1325" size="100,100">&lt;%
+window.story.setChoice(&quot;Chapter1&quot;, &quot;Knocked&quot;);
+window.story.achievement(&quot;Chapter1&quot;, &quot;Knocked&quot;);
+%&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;special&gt;backdoor&lt;/special&gt;
@@ -413,14 +416,14 @@ if (!window.passage.tried) {
 	%&gt;
 	
 	&lt;%= window.story.render(&quot;F: Search options&quot;) %&gt;
-&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="variation" position="2625,2075" size="100,100">&lt;ui&gt;special&lt;/ui&gt;
-&lt;special&gt;laundryroom&lt;/special&gt;
-&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
-
-&lt;%
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="20" name="C1P7V11" tags="variation" position="2625,2075" size="100,100">&lt;%
 window.story.setChoice(&quot;Chapter1&quot;, &quot;Soap&quot;);
 window.story.achievement(&quot;Chapter1&quot;, &quot;Soap&quot;);
 %&gt;
+
+&lt;ui&gt;special&lt;/ui&gt;
+&lt;special&gt;laundryroom&lt;/special&gt;
+&lt;character.one.limping.ditto&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;With a bit of effort, I separate the soap from the bench.&lt;/action&gt;
 &lt;action&gt;It&#39;s hard as a rock...&lt;/action&gt;
