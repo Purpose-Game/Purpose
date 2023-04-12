@@ -13,7 +13,7 @@ const body = $("body");
 // Tags to treat as story passages
 const storyTags = [ "page", "variation", "redirect", "addition" ]
 // Custom HTML Tags
-const customTags = "ui, character, resetcharacter, characteroverride, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait";
+const customTags = "ui, character, resetcharacter, characteroverride, special, action, speech, sound, music, stopmusic, killmusic, flashback, choices, rumble, wait, clearwait";
 // Save Options UI
 const saveOptions = `
 <div class="menu-options">
@@ -648,6 +648,16 @@ const stepPassage = async () => {
 
 			// Pause passage progression
 			case "WAIT": {
+				await sleep(content);
+
+				stepPassage();
+				break;
+			}
+
+			// Pause passage progression and clear text box
+			case "CLEARWAIT": {
+				lastText.html("");
+
 				await sleep(content);
 
 				stepPassage();
