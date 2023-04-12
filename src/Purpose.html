@@ -13,7 +13,7 @@
 		<tw-storydata name="Purpose" startnode="318" creator="Twine" creator-version="2.6.2" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
 script.src = "assets/javascript/index.js";
 
-document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
+document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-tag name="chase" color="red"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;music&gt;limping&lt;/music&gt;
@@ -5569,83 +5569,161 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;% } %&gt;
 
-&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">I start to lower %Tiffany% down, crawling closer to the edge to get her further down. I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.
+&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;That&#39;s as far as I can go %Tiffany%&quot;, I say, as she looks back up at me, hanging over the stairs.
+&lt;action&gt;I start to lower %Tiffany% down, crawling closer to the edge to get her further down.&lt;/action&gt; 
+&lt;action&gt;I stop when most of my upper body is hanging off the edge, scared I&#39;ll lose my balance.&lt;/action&gt;
 
-&quot;I can swing myself to the top of the stairs&quot;, %Tiffany% says.
+&lt;speech.sarah&gt;That&#39;s as far as I can go %Tiffany%.&lt;/speech&gt;
 
-&quot;Yeah, good idea %Tiffany%&quot;, I reply.
+&lt;action&gt;She looks back up at me, hanging over the stairs.&lt;/action&gt;
 
-&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
+&lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt; 
 
-&quot;Are you sure that&#39;s a good idea?&quot;, the stranger asks.
-
-I ignore him.
-
-&lt;% } %&gt;
-
-I brace myself as best I can, then nod. She starts to swing, I slide a little but manage to otherwise stay still.
-
-&quot;Let go!&quot;, she says, I release my grip and she disappears out of view onto the patio. I wait a moment for her to say something.
-
-&quot;You alright %Tiffany%?&quot;, I ask.
+&lt;speech.sarah&gt;Yeah, good idea %Tiffany%.&lt;/speech&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Yeah you good down there?&quot;, the stranger adds.
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
+
+&lt;speech.charles&gt;Are you sure that&#39;s a good idea?&lt;/speech&gt;
+
+&lt;action&gt;I ignore him.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-There&#39;s a moment&#39;s pause.
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;I&#39;m alright&quot;, she replies.
+&lt;action&gt;I brace myself as best I can, then nod.&lt;/action&gt;
+&lt;action&gt;She starts to swing, I slide a little but manage to otherwise stay still.&lt;/action&gt;
 
-I let out a breath, alright, now to figure out how to get me down there.
+&lt;speech.tiffany&gt;Let go!&lt;/speech&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I release my grip and she disappears out of view onto the patio.&lt;/action&gt;
+&lt;action&gt;I wait a moment for her to say something.&lt;/action&gt;
+
+&lt;speech.sarah&gt;You alright %Tiffany%?&lt;/speech&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Can you lower me down?&quot;, the stranger asks.
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&quot;What? No!&quot;, I snap back.
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
+
+&lt;speech.charles&gt;Yeah you good down there?&lt;/speech&gt;
 
 &lt;% } %&gt;
 
-[[[Stand up]|C1P61]]</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page" position="3075,15650" size="100,100">&lt;% window.story.delayedText(15 * 1000) %&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-I get back up and step away from the edge.
+&lt;action&gt;There&#39;s a moment&#39;s pause.&lt;/action&gt;
 
-Alright, maybe if-
+&lt;clearwait&gt;3000&lt;/clearwait&gt;
+
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt; 
+
+&lt;speech.tiffany&gt;I&#39;m alright.&lt;/speech&gt;
+
+&lt;character.one.happy.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I let out a breath.&lt;/action&gt;
+&lt;action&gt;Alright, now to figure out how to get me down there.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Shit, watch out!&quot;, the stranger shouts.
+&lt;character.two&gt;Charles&lt;/character&gt;
+	
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
+	
+&lt;speech.charles&gt;Can you lower me down?&lt;/speech&gt;
+
+&lt;character.one.angry.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;What? No!&lt;/speech&gt;
+
+&lt;action&gt;I snap back.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&quot;Argh!&quot;, I let out.
+&lt;choices&gt;[[[Stand up]|C1P61]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page" position="3075,15650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I get back up and step away from the edge.&lt;/action&gt;
+&lt;action&gt;Alright, maybe if-&lt;/action&gt;
+
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
+
+&lt;character.two&gt;Charles&lt;/character&gt;
+
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
+
+&lt;speech.charles&gt;Shit, watch out!&lt;/speech&gt;
+
+&lt;% } %&gt;
+
+&lt;character.one.happy.angry.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;speech.sarah&gt;Argh!&lt;/speech&gt; 
+&lt;action&gt;I instinctively cry out.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
 
-Something is grabbing my jacket! I spin around to see a walker hand flailing through the window, I instinctively take a few steps back- SHIT, too many steps! I step backward right off the patio roof.
+&lt;action&gt;Something is grabbing my jacket!&lt;/action&gt;
+&lt;action&gt;I spin around to see a walker hand flailing through the window, I instinctively take a few steps back-&lt;/action&gt;
+
+&lt;character.one.pain.angry.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;SHIT, too many steps!&lt;/action&gt;
+&lt;action&gt;I step backward right off the patio roof.&lt;/action&gt;
 
 &lt;% } else { %&gt;
 
-Something is grabbing my hair! I get pulled backward, pain shooting over my scalp. I fall down and the grip releases, looking up, I see a walker hand through the window. I roll out of the way and start to get up- uh oh.
-
-\* Creeeeeeak, crack \*
-
-My hand, then my arm, then my whole body goes through the patio roof as it collapses inwards.
+&lt;action&gt;Something is grabbing my hair!&lt;/action&gt;
+&lt;action&gt;I get pulled backward, pain shooting over my scalp.&lt;/action&gt;
+&lt;action&gt;I fall down and the grip releases, looking up, I see a walker hand through the window.&lt;/action&gt;
+&lt;action&gt;I roll out of the way and start to get up-&lt;/action&gt;
+&lt;action&gt;Uh oh.&lt;/action&gt;
+&lt;action&gt;CREEEEEEK- CRACK&lt;/action&gt;
+&lt;action&gt;My hand, then my arm, then my whole body goes through the patio roof as it collapses inwards.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-&lt;div-#delayed&gt;
+&lt;resetcharacter.two/&gt;
 
-I feel the strangest sense of relaxation... the air and rain rushing over me as I rapidly approach the ground. But it only lasts a moment.
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;clearwait&gt;3500&lt;/clearwait&gt;
+
+&lt;action&gt;I feel the strangest sense of relaxation...&lt;/action&gt;
+&lt;action&gt;The air and rain rushing over me as I rapidly approach the ground.&lt;/action&gt;
+
+&lt;clearwait&gt;1500&lt;/clearwait&gt;
+
+&lt;action&gt;But it only lasts a moment.&lt;/action&gt;
  
-[[[Hit the ground]|C1P61R1]] 
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
+&lt;choices&gt;[[[Hit the ground]|C1P61R1]] &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
 
 I&#39;m laying on my side, and there&#39;s someone near my face, again... Hopefully it&#39;s %Tiffany% here to offer me breakfast again... that would be nice...
 
@@ -6160,7 +6238,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 		
 		window.story.show(chapter + passage + variation);
 	});
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15500" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15950" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
