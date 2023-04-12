@@ -5569,10 +5569,7 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;% } %&gt;
 
-&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page chase" position="3075,15500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
-
-// in order to get the full picture, I think I need to read through an entire script. do you have that document sitting around? Otherwise I have a hard time painting their expressions
-
+&lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page" position="3075,15500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 &lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
@@ -5585,18 +5582,19 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt; 
 
-&lt;action&gt;%Tiffany% says.&lt;/action&gt;
-
 &lt;speech.sarah&gt;Yeah, good idea %Tiffany%.&lt;/speech&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-// not completely sure on this syntax
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&lt;character.two&gt;Unknown&lt;/character&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
 
-&lt;speech.unknown&gt;Are you sure that&#39;s a good idea? &lt;/speech&gt;
-&lt;action&gt; The stranger asks. &lt;/action&gt;
+&lt;speech.charles&gt;Are you sure that&#39;s a good idea?&lt;/speech&gt;
 
 &lt;action&gt;I ignore him.&lt;/action&gt;
 
@@ -5609,40 +5607,55 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;speech.tiffany&gt;Let go!&lt;/speech&gt;
 
-&lt;action&gt;I release my grip and she disappears out of view onto the patio. &lt;/action&gt;
-&lt;action&gt;I wait a moment for her to say something. &lt;/action&gt;
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;I release my grip and she disappears out of view onto the patio.&lt;/action&gt;
+&lt;action&gt;I wait a moment for her to say something.&lt;/action&gt;
 
 &lt;speech.sarah&gt;You alright %Tiffany%?&lt;/speech&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&lt;resetcharacter.two/&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&lt;speech.unknown&gt;Yeah you good down there?&lt;/speech&gt;
-&lt;action&gt;the stranger adds.&lt;/action&gt;
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
+
+&lt;speech.charles&gt;Yeah you good down there?&lt;/speech&gt;
 
 &lt;% } %&gt;
 
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;There&#39;s a moment&#39;s pause.&lt;/action&gt;
+
+&lt;clearwait&gt;3000&lt;/clearwait&gt;
+
 &lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt; 
 
-&lt;action&gt;There&#39;s a moment&#39;s pause. &lt;/action&gt;
+&lt;speech.tiffany&gt;I&#39;m alright.&lt;/speech&gt;
 
-&lt;speech.sarah&gt;I&#39;m alright.&lt;/speech&gt;
+&lt;character.one.happy.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-&lt;action&gt;She replies.&lt;/action&gt;
-
-&lt;action&gt;I let out a breath, alright, now to figure out how to get me down there.&lt;/action&gt;
+&lt;action&gt;I let out a breath.&lt;/action&gt;
+&lt;action&gt;Alright, now to figure out how to get me down there.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&lt;resetcharacter.two/&gt;
-&lt;character.two&gt;Unknown&lt;/character&gt;
+&lt;character.two&gt;Charles&lt;/character&gt;
+	
+	&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+		
+	&lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+	
+	&lt;% } %&gt;
+	
+&lt;speech.charles&gt;Can you lower me down?&lt;/speech&gt;
 
-&lt;speech.unknown&gt;Can you lower me down?&lt;/speech&gt;
-
-&lt;action&gt;the stranger asks.&lt;/action&gt;
+&lt;character.one.angry.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
 &lt;speech.sarah&gt;What? No!&lt;/speech&gt;
 
@@ -5650,7 +5663,7 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;% } %&gt;
 
-[[[Stand up]|C1P61]]</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page chase" position="3075,15650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;[[[Stand up]|C1P61]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page chase" position="3075,15650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I get back up and step away from the edge.&lt;/action&gt;
@@ -5696,7 +5709,7 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;I feel the strangest sense of relaxation... the air and rain rushing over me as I rapidly approach the ground. &lt;/action&gt;
 &lt;action&gt;But it only lasts a moment. &lt;/action&gt;
  
-<choices>[[[Hit the ground]|C1P61R1]] </choices>
+[[[Hit the ground]|C1P61R1]] 
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
 
