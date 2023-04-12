@@ -13,7 +13,7 @@
 		<tw-storydata name="Purpose" startnode="318" creator="Twine" creator-version="2.6.2" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
 script.src = "assets/javascript/index.js";
 
-document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-tag name="chase" color="red"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
+document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-tag name="chase" color="green"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;music&gt;limping&lt;/music&gt;
@@ -5571,8 +5571,6 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;choices&gt;[[[Lower %Tiffany% down]|C1P60]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="285" name="C1P60" tags="page chase" position="3075,15500" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 
-// in order to get the full picture, I think I need to read through an entire script. do you have that document sitting around? Otherwise I have a hard time painting their expressions
-
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 &lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
@@ -5583,22 +5581,15 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;action&gt;She looks back up at me, hanging over the stairs.&lt;/action&gt;
 
-&lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt; 
-
-&lt;action&gt;%Tiffany% says.&lt;/action&gt;
+&lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt;
 
 &lt;speech.sarah&gt;Yeah, good idea %Tiffany%.&lt;/speech&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-// not completely sure on this syntax
-
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Are you sure that&#39;s a good idea? &lt;/speech&gt;
-&lt;action&gt; The stranger asks. &lt;/action&gt;
-
-&lt;action&gt;I ignore him.&lt;/action&gt;
 
 &lt;% } %&gt;
 
@@ -5616,11 +5607,9 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&lt;resetcharacter.two/&gt;
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Yeah you good down there?&lt;/speech&gt;
-&lt;action&gt;the stranger adds.&lt;/action&gt;
 
 &lt;% } %&gt;
 
@@ -5631,26 +5620,19 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;speech.sarah&gt;I&#39;m alright.&lt;/speech&gt;
 
-&lt;action&gt;She replies.&lt;/action&gt;
-
 &lt;action&gt;I let out a breath, alright, now to figure out how to get me down there.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&lt;resetcharacter.two/&gt;
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Can you lower me down?&lt;/speech&gt;
 
-&lt;action&gt;the stranger asks.&lt;/action&gt;
-
 &lt;speech.sarah&gt;What? No!&lt;/speech&gt;
-
-&lt;action&gt;I snap back.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-[[[Stand up]|C1P61]]</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page chase" position="3075,15650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;[[[Stand up]|C1P61]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="286" name="C1P61" tags="page chase" position="3075,15650" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I get back up and step away from the edge.&lt;/action&gt;
@@ -5662,15 +5644,11 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;speech.unknown&gt;Shit, watch out!&lt;/speech&gt;
 
-&lt;action&gt;the stranger shouts.&lt;/action&gt;
-
 &lt;% } %&gt;
 
 &lt;speech.sarah&gt;Argh!&lt;/speech&gt; 
-&lt;action&gt;I instinctively cry out.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
-
 
 &lt;action&gt;Something is grabbing my jacket!&lt;/action&gt;
 &lt;action&gt;I spin around to see a walker hand flailing through the window, I instinctively take a few steps back-&lt;/action&gt;
@@ -5685,7 +5663,8 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;I roll out of the way and start to get up-&lt;/action&gt;
 &lt;action&gt;Uh oh.&lt;/action&gt;
 
-\* Creeeeeeak, crack \*
+&lt;action&gt;CREEEEEEEEEEEEK-&lt;/action&gt;
+&lt;action&gt;CRACK&lt;/action&gt;
 
 &lt;action&gt;My hand, then my arm, then my whole body goes through the patio roof as it collapses inwards. &lt;/action&gt;
 
@@ -5696,48 +5675,74 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;I feel the strangest sense of relaxation... the air and rain rushing over me as I rapidly approach the ground. &lt;/action&gt;
 &lt;action&gt;But it only lasts a moment. &lt;/action&gt;
  
-<choices>[[[Hit the ground]|C1P61R1]] </choices>
+&lt;choices&gt;[[[Hit the ground]|C1P61R1]]&lt;/choices&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save chase" position="3075,15950" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-I&#39;m laying on my side, and there&#39;s someone near my face, again... Hopefully it&#39;s %Tiffany% here to offer me breakfast again... that would be nice...
+&lt;speech.unknown&gt;&quot;Sarah? Sarah!&quot;&lt;/speech&gt;
 
-I squint, my vision is blurry. There&#39;s a face, but... it has no eyes?
+&lt;action&gt;I groan and start to stir.&lt;/action&gt;
+&lt;action&gt;I&#39;m laying on my side, and there&#39;s someone near my face, again... Hopefully it&#39;s %Tiffany% here to offer me breakfast again... that would be nice...&lt;/action&gt;
 
-[[[Rub own eyes]|C1P63]]</tw-passagedata><tw-passagedata pid="289" name="C1P63" tags="page" position="3075,16100" size="100,100">I move my arm to my face- AH, oh the pain! That was enough to jolt me properly awake. I&#39;m on the ground, laying in large puddle, face to face with a walker who&#39;s crawling right towards me.
+&lt;action&gt;I squint, my vision is blurry. There&#39;s a face, but... it has no eyes?&lt;/action&gt;
 
-I need to get up. I roll onto my back, pain shoots up my neck, holy crap does it hurt. I try to push myself up, but the pain in my arms is too great, I collapse back down again. I turn my head towards the walker- it&#39;s lunging at me!
+&lt;choices&gt;[[[Rub own eyes]|C1P63]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="289" name="C1P63" tags="page chase" position="3075,16100" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 
-I grab its arms and hold it off, its mangled face snapping its teeth, trying to take a bite out of me. I manage to brace the walker on one arm, pain like I&#39;ve never felt before radiating from it; I reach down for Sarah&#39;s knife with the other arm- oh come on, it&#39;s not there! I quickly look around for it-
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I move my arm to my face- AH, oh the pain!&lt;/action&gt;
+&lt;action&gt;That was enough to jolt me properly awake.&lt;/action&gt;
+&lt;actrion&gt;I&#39;m on the ground, laying in large puddle, face to face with a walker who&#39;s crawling right towards me.&lt;/action&gt;
+
+&lt;action&gt;I need to get up.&lt;/action&gt;
+&lt;action&gt;I roll onto my back, pain shoots up my neck, holy crap does it hurt.&lt;/action&gt;
+&lt;action&gt;I try to push myself up, but the pain in my arms is too great, I collapse back down again. &lt;/action&gt;
+&lt;action&gt;I turn my head towards the walker- it&#39;s lunging at me!&lt;/action&gt;
+
+&lt;action&gt;I grab its arms and hold it off, its mangled face snapping its teeth, trying to take a bite out of me. &lt;/action&gt;
+&lt;action&gt;I manage to brace the walker on one arm, pain like I&#39;ve never felt before radiating from it; I reach down for Sarah&#39;s knife with the other arm- oh come on, it&#39;s not there!&lt;/action&gt;
+&lt;action&gt;I quickly look around for it- &lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
 
-\* Splat \*
+&lt;action&gt;SPLAT!&lt;/action&gt;
 
-I splutter, the walker just vomited blood or something all over my face! The weight of the walker lifts, I push it off and wipe my face so I can see again. I look at the walker... a knife is stuck square through the middle of its head, with the end poking out of its face just next to one of its eye sockets. I look to my right, %Tiffany% is stood there, hands to her chest, a blood splatter across her face quickly being washed away by the rain.
+&lt;action&gt;I splutter, the walker just vomited blood or something all over my face!&lt;/action&gt;
+&lt;action&gt;The weight of the walker lifts, I push it off and wipe my face so I can see again.&lt;/action&gt;
+&lt;action&gt;I look at the walker... a knife is stuck square through the middle of its head, with the end poking out of its face just next to one of its eye sockets.&lt;/action&gt;
+&lt;action&gt;I look to my right, %Tiffany% is stood there, hands to her chest, a blood splatter across her face quickly being washed away by the rain.&lt;/action&gt;
 
-&quot;%Tiffany%...&quot;, I start.
+&lt;speech.sarah&gt;&quot;%Tiffany%...&quot;&lt;/speech&gt;
+//will there be a character image of Tiffany here?
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-\* Thunk \*
+&lt;action&gt; Thunk! &lt;/action&gt;
 
-I look over just in time to see a walker fall off the patio roof down onto the ground, with another close behind it.
+&lt;action&gt;I look over just in time to see a walker fall off the patio roof down onto the ground, with another close behind it.&lt;/action&gt;
 
-&quot;We need to go&quot;, I say back to %Tiffany%.
+&lt;speech.sarah&gt;We need to go.&lt;/speech&gt;
 
-[[[Get up]|C1P64]]
+&lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;
 
 &lt;% } else { %&gt;
-There, it&#39;s just behind me, but out of reach. %Tiffany%, I need %Tiffany%&#39;s help! Where is she?
+&lt;action&gt;There, it&#39;s just behind me, but out of reach.&lt;/action&gt;
+&lt;action&gt;%Tiffany%, I need %Tiffany%&#39;s help! &lt;/action&gt;
+&lt;action&gt;Where is she?&lt;/action&gt;
 
-I look for her... there! She&#39;s hiding behind a tree near the edge of the garden.
+&lt;action&gt;I look for her... there! &lt;/action&gt;
+&lt;action&gt;She&#39;s hiding behind a tree near the edge of the garden.&lt;/action&gt;
 
-&quot;%Tiffany%- help!&quot;, I manage to shout.
+&lt;speech.sarah&gt;%Tiffany%- help!&lt;/speech&gt;
 
-Reluctantly she steps out from behind the tree and approaches.
+&lt;action&gt;Reluctantly she steps out from behind the tree and approaches.&lt;/action&gt;
 
+&lt;choices&gt;
 [[Push it off!|C1P63V1]]&lt;br&gt;
 [[Use the knife!|C1P63V2]]&lt;br&gt;
 [[Get me the knife!|C1P63V3]]
+&lt;/choices&gt;
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="290" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
@@ -6213,7 +6218,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 		
 		window.story.show(chapter + passage + variation);
 	});
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15650" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2825,16400" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
