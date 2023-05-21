@@ -10,10 +10,10 @@
 	</head>
 	<body>
 		<tw-story tags></tw-story>
-		<tw-storydata name="Purpose" startnode="318" creator="Twine" creator-version="2.6.2" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
+		<tw-storydata name="Purpose" startnode="320" creator="Twine" creator-version="2.6.2" format="Snowman" format-version="2.0.2" ifid="901730C1-8884-4C9B-A4A6-7D8AA0D23D92" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("assets/css/style.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">const script = document.createElement("script");
 script.src = "assets/javascript/index.js";
 
-document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-tag name="chase" color="red"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
+document.head.appendChild(script);</script><tw-tag name="addition" color="blue"></tw-tag><tw-tag name="floater" color="purple"></tw-tag><tw-tag name="info" color="green"></tw-tag><tw-tag name="menu" color="orange"></tw-tag><tw-tag name="misc" color="green"></tw-tag><tw-tag name="noFade" color="gray"></tw-tag><tw-tag name="noSave" color="red"></tw-tag><tw-tag name="page" color="blue"></tw-tag><tw-tag name="redirect" color="orange"></tw-tag><tw-tag name="save" color="red"></tw-tag><tw-tag name="variation" color="yellow"></tw-tag><tw-tag name="forceFade" color="yellow"></tw-tag><tw-tag name="chase" color="green"></tw-tag><tw-passagedata pid="1" name="C1P1" tags="page forceFade" position="3075,575" size="100,100">&lt;% window.story.state.chapter = &quot;Chapter1&quot;; %&gt;
 
 &lt;ui&gt;special&lt;/ui&gt;
 &lt;music&gt;limping&lt;/music&gt;
@@ -5586,7 +5586,7 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;action&gt;She looks back up at me, hanging over the stairs.&lt;/action&gt;
 
-&lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt; 
+&lt;speech.tiffany&gt;I can swing myself to the top of the stairs.&lt;/speech&gt;
 
 &lt;speech.sarah&gt;Yeah, good idea %Tiffany%.&lt;/speech&gt;
 
@@ -5691,7 +5691,8 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;character.one.happy.angry.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-&lt;speech.sarah&gt;Argh!&lt;/speech&gt; 
+&lt;speech.sarah&gt;Argh!&lt;/speech&gt;
+
 &lt;action&gt;I instinctively cry out.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Haircut&quot;)) { %&gt;
@@ -5711,9 +5712,9 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;I fall down and the grip releases, looking up, I see a walker hand through the window.&lt;/action&gt;
 &lt;action&gt;I roll out of the way and start to get up-&lt;/action&gt;
 &lt;action&gt;Uh oh.&lt;/action&gt;
-&lt;action&gt;CREEEEEEK- CRACK&lt;/action&gt;
+&lt;action&gt;CREEEEEEEEEEEEK-&lt;/action&gt;
+&lt;action&gt;CRACK&lt;/action&gt;
 &lt;action&gt;My hand, then my arm, then my whole body goes through the patio roof as it collapses inwards.&lt;/action&gt;
-
 &lt;% } %&gt;
 
 &lt;resetcharacter.two/&gt;
@@ -5731,45 +5732,85 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
  
 &lt;choices&gt;[[[Hit the ground]|C1P61R1]] &lt;/choices&gt;</tw-passagedata><tw-passagedata pid="287" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="288" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;i&gt;&quot;Sarah? Sarah!&quot;&lt;/i&gt;, a voice yells, somewhere far away. I groan and start to stir.
 
-I&#39;m laying on my side, and there&#39;s someone near my face, again... Hopefully it&#39;s %Tiffany% here to offer me breakfast again... that would be nice...
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="289" name="C1P61R1" tags="redirect" position="3075,15800" size="100,100">&lt;% window.story.redirect(&quot;C1P62&quot;, 5) %&gt;</tw-passagedata><tw-passagedata pid="290" name="C1P62" tags="page save" position="3075,15950" size="100,100">&lt;flashback/&gt;
+&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-I squint, my vision is blurry. There&#39;s a face, but... it has no eyes?
+&lt;speech.unknown&gt;&quot;Sarah? Sarah!&quot;&lt;/speech&gt;
 
-[[[Rub own eyes]|C1P63]]</tw-passagedata><tw-passagedata pid="289" name="C1P63" tags="page" position="3075,16100" size="100,100">I move my arm to my face- AH, oh the pain! That was enough to jolt me properly awake. I&#39;m on the ground, laying in large puddle, face to face with a walker who&#39;s crawling right towards me.
+&lt;action&gt;I groan and start to stir.&lt;/action&gt;
+&lt;action&gt;I&#39;m laying on my side, and there&#39;s someone near my face, again...&lt;/action&gt;
+&lt;action&gt;Hopefully it&#39;s %Tiffany% here to offer me breakfast again...&lt;/action&gt;
+&lt;action&gt;that would be nice...&lt;/action&gt;&lt;/action&gt;
 
-I need to get up. I roll onto my back, pain shoots up my neck, holy crap does it hurt. I try to push myself up, but the pain in my arms is too great, I collapse back down again. I turn my head towards the walker- it&#39;s lunging at me!
+&lt;action&gt;I squint, my vision is blurry. There&#39;s a face, but... it has no eyes?&lt;/action&gt;
 
-I grab its arms and hold it off, its mangled face snapping its teeth, trying to take a bite out of me. I manage to brace the walker on one arm, pain like I&#39;ve never felt before radiating from it; I reach down for Sarah&#39;s knife with the other arm- oh come on, it&#39;s not there! I quickly look around for it-
+&lt;choices&gt;[[[Rub own eyes]|C1P63]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="291" name="C1P63" tags="page" position="3075,16100" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I move my arm to my face-&lt;/action&gt;
+
+&lt;character.one.pain.pain.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;AH, oh the pain!&lt;/action&gt;
+
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;That was enough to jolt me properly awake.&lt;/action&gt;
+&lt;action&gt;I&#39;m on the ground, laying in large puddle, face to face with a walker who&#39;s crawling right towards me.&lt;/action&gt;
+&lt;action&gt;I need to get up.&lt;/action&gt;
+&lt;action&gt;I roll onto my back, pain shoots up my neck, holy crap does it hurt.&lt;/action&gt;
+&lt;action&gt;I try to push myself up, but the pain in my arms is too great, I collapse back down again.&lt;/action&gt;
+&lt;action&gt;I turn my head towards the walker-&lt;/action&gt;
+&lt;action&gt;It&#39;s lunging at me!&lt;/action&gt;
+&lt;action&gt;I grab its arms and hold it off, its mangled face snapping its teeth, trying to take a bite out of me.&lt;/action&gt;
+&lt;action&gt;I manage to brace the walker on one arm, pain like I&#39;ve never felt before radiating from it&lt;/action&gt;
+&lt;action&gt;I reach down for Sarah&#39;s knife with the other arm-&lt;/action&gt;
+&lt;action&gt;Oh come on, it&#39;s not there!&lt;/action&gt;
+&lt;action&gt;I frantically look around for it.&lt;/action&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
 
-\* Splat \*
+&lt;action&gt;SPLAT!&lt;/action&gt;
 
-I splutter, the walker just vomited blood or something all over my face! The weight of the walker lifts, I push it off and wipe my face so I can see again. I look at the walker... a knife is stuck square through the middle of its head, with the end poking out of its face just next to one of its eye sockets. I look to my right, %Tiffany% is stood there, hands to her chest, a blood splatter across her face quickly being washed away by the rain.
+&lt;action&gt;I splutter, the walker just vomited blood or something all over my face!&lt;/action&gt;
+&lt;action&gt;The weight of the walker lifts, I push it off and wipe my face so I can see again.&lt;/action&gt;
+&lt;action&gt;I look at the walker...&lt;/action&gt;
+&lt;action&gt;A knife is stuck square through the middle of its head, with the end poking out of its face just next to one of its eye sockets.&lt;/action&gt;
+&lt;action&gt;I look to my right, %Tiffany% is stood there, hands to her chest, a blood splatter across her face quickly being washed away by the rain.&lt;/action&gt;
 
-&quot;%Tiffany%...&quot;, I start.
+&lt;speech.sarah&gt;%Tiffany%...&lt;/speech&gt;
+&lt;!-- TODO: Special of Tiffany w/ knife &amp; blood --&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-\* Thunk \*
+&lt;action&gt;THUNK!&lt;/action&gt;
 
-I look over just in time to see a walker fall off the patio roof down onto the ground, with another close behind it.
+&lt;action&gt;I look over just in time to see a walker fall off the patio roof down onto the ground, with another close behind it.&lt;/action&gt;
 
-&quot;We need to go&quot;, I say back to %Tiffany%.
+&lt;speech.sarah&gt;We need to go.&lt;/speech&gt;
 
-[[[Get up]|C1P64]]
+&lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;
 
 &lt;% } else { %&gt;
-There, it&#39;s just behind me, but out of reach. %Tiffany%, I need %Tiffany%&#39;s help! Where is she?
 
-I look for her... there! She&#39;s hiding behind a tree near the edge of the garden.
+&lt;action&gt;There, it&#39;s just behind me, but out of reach.&lt;/action&gt;
+&lt;action&gt;%Tiffany%, I need %Tiffany%&#39;s help! &lt;/action&gt;
+&lt;action&gt;Where is she?&lt;/action&gt;
+&lt;action&gt;I look for her...&lt;/action&gt;
+&lt;action&gt;There!&lt;/action&gt;
+&lt;action&gt;She&#39;s hiding behind a tree near the edge of the garden.&lt;/action&gt;
 
-&quot;%Tiffany%- help!&quot;, I manage to shout.
+&lt;speech.sarah&gt;%Tiffany%- help me!&lt;/speech&gt;
 
-Reluctantly she steps out from behind the tree and approaches.
+&lt;action&gt;Reluctantly she steps out from behind the tree and approaches.&lt;/action&gt;
 
-[[Push it off!|C1P63V1]]&lt;br&gt;
-[[Use the knife!|C1P63V2]]&lt;br&gt;
-[[Get me the knife!|C1P63V3]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="290" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;choices&gt;
+    [[Push it off!|C1P63V1]]
+    [[Use the knife!|C1P63V2]]
+    [[Get me the knife!|C1P63V3]]
+&lt;/choices&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="292" name="C1P58V12" tags="variation" position="3150,15050" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
 &lt;action&gt;I go over to the table and rip the net off one of the clamps.&lt;/action&gt;
@@ -5777,7 +5818,7 @@ Reluctantly she steps out from behind the tree and approaches.
 &lt;action&gt;Perfect.&lt;/action&gt;
 &lt;action&gt;I walk back over to the window.&lt;/action&gt;
 
-&lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="291" name="F: The window shatters" tags="floater" position="3350,15050" size="100,100">&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
+&lt;%= window.story.render(&quot;F: The window shatters&quot;) %&gt;</tw-passagedata><tw-passagedata pid="293" name="F: The window shatters" tags="floater" position="3350,15050" size="100,100">&lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
 &lt;speech.sarah&gt;Step back %Tiffany%.&lt;/speech&gt;
 
@@ -5836,7 +5877,7 @@ Reluctantly she steps out from behind the tree and approaches.
 
 &lt;action&gt;I take one last look over my shoulder...&lt;/action&gt;
 
-&lt;choices&gt;[[[Step through the window]|C1P59]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="292" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+&lt;choices&gt;[[[Step through the window]|C1P59]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="294" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
 
 &quot;Well done %Tiffany%&quot;, I say, breathless. She looks a bit shaken.
 
@@ -5874,21 +5915,21 @@ I start towards the back wall, pulling %Tiffany% along behind me. As we get to i
 
 [[I know how you feel|C1P64V1]]&lt;br&gt;
 [[We will end up dead too|C1P64V2]]&lt;br&gt;
-[[Now is not the time %Tiffany%!|C1P64V3]]</tw-passagedata><tw-passagedata pid="293" name="C1P64V1" tags="variation" position="2925,16550" size="100,100">I painfully drop down on one knee to be level with her.
+[[Now is not the time %Tiffany%!|C1P64V3]]</tw-passagedata><tw-passagedata pid="295" name="C1P64V1" tags="variation" position="2925,16550" size="100,100">I painfully drop down on one knee to be level with her.
 
 &quot;%Tiffany%, believe me, I know exactly how you are feeling right now, but I need you to be brave like your mom was&quot;, I say to her.
 
-&lt;%= window.story.render(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="294" name="C1P64V2" tags="variation" position="3075,16550" size="100,100">I painfully drop down on one knee to be level with her, then gentle grab both of her shoulders and look her directly in the eyes. 
+&lt;%= window.story.render(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="296" name="C1P64V2" tags="variation" position="3075,16550" size="100,100">I painfully drop down on one knee to be level with her, then gentle grab both of her shoulders and look her directly in the eyes. 
 
 &quot;%Tiffany%, I understand you are processing a lot of emotions right now, but unless you and I get over that wall, you&#39;re not going to be alive to process them&quot;, I say to her.
 
-&lt;%= window.story.render(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="295" name="C1P64V3" tags="variation" position="3225,16550" size="100,100">&quot;%Tiffany%, now is not the time! I&#39;m so, so sorry that your mom is dead, but unless you want to end up just like her, we need to get over this wall.&quot;, I say to her.
+&lt;%= window.story.render(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="297" name="C1P64V3" tags="variation" position="3225,16550" size="100,100">&quot;%Tiffany%, now is not the time! I&#39;m so, so sorry that your mom is dead, but unless you want to end up just like her, we need to get over this wall.&quot;, I say to her.
 
 She stares back at me, a lick of anger visible across her face. Shit, this isn&#39;t working...
 
 I painfully drop down on one knee to be level with her. 
 
-&lt;%= window.story.render(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="296" name="F: Look behind" tags="floater" position="3425,16550" size="100,100">I look behind her, walkers fast approaching. We really need to get moving.
+&lt;%= window.story.render(&quot;F: Look behind&quot;) %&gt;</tw-passagedata><tw-passagedata pid="298" name="F: Look behind" tags="floater" position="3425,16550" size="100,100">I look behind her, walkers fast approaching. We really need to get moving.
 
 &quot;Look, %Tiffany%, when my sister died, I was a wreck: I didn&#39;t know what to do, and it took a long time for me to come to terms with what happened; I&#39;m still processing it to this day&quot;, I explain to her.
 
@@ -5896,7 +5937,7 @@ I painfully drop down on one knee to be level with her.
 
 We continue to stare at each other, the walkers nearly on us now, rain soaking us both. I can&#39;t leave her here, I just can&#39;t, I wouldn&#39;t be able to live with myself.
 
-[[[Pled with %Tiffany%]|C1P65]]</tw-passagedata><tw-passagedata pid="297" name="C1P65" tags="page" position="3075,16700" size="100,100">&lt;%
+[[[Pled with %Tiffany%]|C1P65]]</tw-passagedata><tw-passagedata pid="299" name="C1P65" tags="page" position="3075,16700" size="100,100">&lt;%
 window.story.delayedText(27 * 1000, &quot;one&quot;);
 window.story.delayedText(35 * 1000, &quot;two&quot;);
 %&gt;
@@ -5928,7 +5969,7 @@ I smile.
 [[[Pick %Tiffany% up]|C1P66]]
 
 &lt;div-#two&gt;
-</tw-passagedata><tw-passagedata pid="298" name="C1P66" tags="page" position="3075,16850" size="100,100">I muster all my strength and push myself up off my knee. I topple and nearly fall, but manage to recover. Walkers have us mostly surrounded now, the only option is the back wall.
+</tw-passagedata><tw-passagedata pid="300" name="C1P66" tags="page" position="3075,16850" size="100,100">I muster all my strength and push myself up off my knee. I topple and nearly fall, but manage to recover. Walkers have us mostly surrounded now, the only option is the back wall.
 
 I hastily carry %Tiffany% the last few meters to the wall, then stop.
 
@@ -5946,7 +5987,7 @@ She takes a deep breath.
 
 &quot;Ready&quot;, %Tiffany% says.
 
-[[[Boost %Tiffany% up]|C1P67]]</tw-passagedata><tw-passagedata pid="299" name="C1P67" tags="page" position="3075,17000" size="100,100">I bend my knees, then shove %Tiffany% as high as I can manage. A crippling pain shoots up my back, I don&#39;t get her as far as I thought I could. She manages to grab the top of the wall with her little hands.
+[[[Boost %Tiffany% up]|C1P67]]</tw-passagedata><tw-passagedata pid="301" name="C1P67" tags="page" position="3075,17000" size="100,100">I bend my knees, then shove %Tiffany% as high as I can manage. A crippling pain shoots up my back, I don&#39;t get her as far as I thought I could. She manages to grab the top of the wall with her little hands.
 
 &quot;Good girl %Tiffany%! Now climb!&quot;, I exclaim, as I grab her dangling legs and push her up.
 
@@ -5962,11 +6003,11 @@ The walker is up in my face now. Instinctively, I contract my arm and then swing
 
 Walkers are approaching me from all angles: it&#39;s now or never.
 
-[[[Climb the wall]|C1P68]]</tw-passagedata><tw-passagedata pid="300" name="C1P68" tags="page" position="3075,17150" size="100,100">I spin around, and with the last of my strength, jump. I grab the top of the wall and begin to worm my way up. It&#39;s slippery from the rain, I feel %Tiffany% grabbing my hoodie trying to help pull me up, but I&#39;m far too heavy for her.
+[[[Climb the wall]|C1P68]]</tw-passagedata><tw-passagedata pid="302" name="C1P68" tags="page" position="3075,17150" size="100,100">I spin around, and with the last of my strength, jump. I grab the top of the wall and begin to worm my way up. It&#39;s slippery from the rain, I feel %Tiffany% grabbing my hoodie trying to help pull me up, but I&#39;m far too heavy for her.
 
 Halfway up I feel hands grabbing at my feet. Without looking, I kick out and try to use my feet to get a better grip on the wall. Shit- one of the walkers has grabbed my leg!
 
-[[[Push against walker]|C1P69]]</tw-passagedata><tw-passagedata pid="301" name="C1P69" tags="page" position="3075,17300" size="100,100">&lt;% window.story.delayedText(25 * 1000) %&gt;
+[[[Push against walker]|C1P69]]</tw-passagedata><tw-passagedata pid="303" name="C1P69" tags="page" position="3075,17300" size="100,100">&lt;% window.story.delayedText(25 * 1000) %&gt;
 
 I lean back slightly and push myself up using the walker as a stepping stone. I swing myself up, past %Tiffany%, and over onto the other side. I land awkwardly and fall to the ground. %Tiffany% jumps down and lands gracefully beside me.
 
@@ -5988,7 +6029,7 @@ I lay for a moment; even though every inch of my body is screaming in pain, I ma
 
 [[Continue|C1 End]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="302" name="C1 End" tags="menu" position="3025,17450" size="200,100">&lt;%
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="304" name="C1 End" tags="menu" position="3025,17450" size="200,100">&lt;%
 window.story.delayedText(2000, &quot;one&quot;, 500);
 window.story.delayedText(5000, &quot;two&quot;, 500);
 window.story.delayedText(8000, &quot;three&quot;, 500);
@@ -6005,15 +6046,15 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 
 &lt;div-#three&gt;
 [[Continue|C1 Achievements]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="303" name="C1 Statistics" tags="menu" position="3025,17750" size="200,100">&lt;% window.story.loadStats() %&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="305" name="C1 Statistics" tags="menu" position="3025,17750" size="200,100">&lt;% window.story.loadStats() %&gt;
 
 &lt;span#statsLoading&gt;Loading...&lt;/span&gt;
 
 &lt;div-#statsContainer&gt;&lt;/div&gt;
 
-[[Continue|C1 Credits]]</tw-passagedata><tw-passagedata pid="304" name="Loading Save" tags="menu noFade" position="2500,1025" size="200,100">&lt;img.title-image&gt;
+[[Continue|C1 Credits]]</tw-passagedata><tw-passagedata pid="306" name="Loading Save" tags="menu noFade" position="2500,1025" size="200,100">&lt;img.title-image&gt;
 
-&lt;span&gt;Loading Save...&lt;/span&gt;</tw-passagedata><tw-passagedata pid="305" name="C1 Achievements" tags="menu" position="3025,17600" size="200,100">&lt;span#achievementsLoading&gt;Loading...&lt;/span&gt;
+&lt;span&gt;Loading Save...&lt;/span&gt;</tw-passagedata><tw-passagedata pid="307" name="C1 Achievements" tags="menu" position="3025,17600" size="200,100">&lt;span#achievementsLoading&gt;Loading...&lt;/span&gt;
 
 &lt;div-#achievementsContainer&gt;
   &lt;span#achievementsCounter&gt;&lt;/span&gt;
@@ -6022,14 +6063,14 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 
 [[Continue|C1 Statistics]]
 
-&lt;% window.story.loadAchievements() %&gt;</tw-passagedata><tw-passagedata pid="306" name="C1 Credits" tags="menu" position="3025,17900" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
+&lt;% window.story.loadAchievements() %&gt;</tw-passagedata><tw-passagedata pid="308" name="C1 Credits" tags="menu" position="3025,17900" size="200,100">&lt;%= window.story.render(&quot;Credits&quot;) %&gt;
 
-[[Continue|C2 Intro]]</tw-passagedata><tw-passagedata pid="307" name="F: Games Room" tags="floater" position="3350,14900" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+[[Continue|C2 Intro]]</tw-passagedata><tw-passagedata pid="309" name="F: Games Room" tags="floater" position="3350,14900" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 &lt;character.two.sad.neutral.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
 &lt;action&gt;We exit the room and go to the end of the hallway, there&#39;s a games room of sorts.&lt;/action&gt;
-&lt;action&gt;There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and also a large circular window: that&#39;s where the light was coming from.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="308" name="F: The window" tags="floater" position="3500,14900" size="100,100">&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;action&gt;There&#39;s a table tennis table in the middle of the open space, a sofa and TV in the corner, and also a large circular window: that&#39;s where the light was coming from.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="310" name="F: The window" tags="floater" position="3500,14900" size="100,100">&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 &lt;resetcharacter.two/&gt;
 
 &lt;action&gt;I go over to the window and take a closer look.&lt;/action&gt;
@@ -6058,7 +6099,7 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 
 &lt;choices&gt;[[[Use Clamp]|C1P58V12]]&lt;/choices&gt;
 
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="309" name="C1P58A1" tags="addition" position="3075,14900" size="100,100">&lt;%= window.story.render(&quot;F: Games Room&quot;) %&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="311" name="C1P58A1" tags="addition" position="3075,14900" size="100,100">&lt;%= window.story.render(&quot;F: Games Room&quot;) %&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
@@ -6066,7 +6107,7 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 
 &lt;% } %&gt;
 
-&lt;%= window.story.render(&quot;F: The window&quot;) %&gt;</tw-passagedata><tw-passagedata pid="310" name="F: Stranger Alive" tags="floater" position="2875,14900" size="100,100">&lt;character.two&gt;Charles&lt;/character&gt;
+&lt;%= window.story.render(&quot;F: The window&quot;) %&gt;</tw-passagedata><tw-passagedata pid="312" name="F: Stranger Alive" tags="floater" position="2875,14900" size="100,100">&lt;character.two&gt;Charles&lt;/character&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;LucySavesStranger&quot;)) { %&gt;
 
@@ -6148,7 +6189,7 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 &lt;% } %&gt;
 
 &lt;speech.charles&gt;I had a look around up here, but there&#39;s no way out.&lt;/speech&gt;
-&lt;speech.charles&gt;Only thing is this window, but it doesn&#39;t seem like it opens.&lt;/speech&gt;</tw-passagedata><tw-passagedata pid="311" name="C1P63V1" tags="variation" position="3225,16250" size="100,100">&quot;Push this thing off me %Tiffany%!&quot;, I shout.
+&lt;speech.charles&gt;Only thing is this window, but it doesn&#39;t seem like it opens.&lt;/speech&gt;</tw-passagedata><tw-passagedata pid="313" name="C1P63V1" tags="variation" position="3225,16250" size="100,100">&quot;Push this thing off me %Tiffany%!&quot;, I shout.
 
 She slowly approaches from the side, then takes a bit of a run-up and with both hands stretched outwards, pushes the walker off me.
 
@@ -6156,7 +6197,7 @@ It rolls one and lands on its back, it immediately starts to get up again. I cra
 
 The walker goes limp and flops to the ground.
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="312" name="C1P63V2" tags="variation" position="3375,16250" size="100,100">&quot;Use the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
+[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="314" name="C1P63V2" tags="variation" position="3375,16250" size="100,100">&quot;Use the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
 
 She goes around behind me out of sight, then comes back over and stands off to my side.
 
@@ -6170,7 +6211,7 @@ She goes around behind me out of sight, then comes back over and stands off to m
 
 Walker bits get all over my face, %Tiffany% steps back, the walker goes limp and I push it off. I reach over and pull the knife out of the back of its head.
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="313" name="C1P63V3" tags="variation" position="3525,16250" size="100,100">&quot;Get me the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
+[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="315" name="C1P63V3" tags="variation" position="3525,16250" size="100,100">&quot;Get me the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
 
 She goes around behind me out of sight, then comes back over and stands over me, nerviosuly holding out the knife. If I grab it like that I&#39;m going to cut myself, no time to muck around. I grab %Tiffany%&#39;s hand with my free hand and pull the knife and her along with it the last few inches to the walker&#39;s head.
 
@@ -6178,7 +6219,7 @@ She goes around behind me out of sight, then comes back over and stands over me,
 
 Walker bits get all over my face, I let go of %Tiffany%&#39;s hand and she steps back out of the way, the walker, knife still in it’s head, goes limp, and I push it off. I reach over and pull the knife out of its face.
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="314" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
+[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="316" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
 
 &lt;%
 window.story.delayedText(4000, &quot;one&quot;, 0);
@@ -6199,24 +6240,24 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
 
 [[Return the Main Menu|Title Screen]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="315" name="Pause Menu" tags="menu" position="3025,275" size="200,100">&lt;img.title-image&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="317" name="Pause Menu" tags="menu" position="3025,275" size="200,100">&lt;img.title-image&gt;
 
 &lt;%= window.story.render(&quot;Settings&quot;) %&gt;
 
-&lt;a0.sound-confirm onclick=&quot;window.story.pauseMenu()&quot;&gt;Resume&lt;/a&gt;</tw-passagedata><tw-passagedata pid="316" name="Settings" tags="floater" position="4425,725" size="200,100">&lt;div#title-button&gt;
+&lt;a0.sound-confirm onclick=&quot;window.story.pauseMenu()&quot;&gt;Resume&lt;/a&gt;</tw-passagedata><tw-passagedata pid="318" name="Settings" tags="floater" position="4425,725" size="200,100">&lt;div#title-button&gt;
   &lt;p&gt;Game Version: v&lt;% print(window.story.version) %&gt;&lt;/p&gt;
   
   &lt;a onclick=&quot;window.story.toggleFont()&quot;&gt;Toggle Font&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleAchievements()&quot;&gt;Toggle Achievements&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="317" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
 	[[Launch Game|Network Check]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="318" name="Loading" tags="" position="2050,100" size="100,100">This game has a lot of images: UI, characters, etc.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="320" name="Loading" tags="" position="2050,100" size="100,100">This game has a lot of images: UI, characters, etc.
 We&#39;re loading those images right now.
 Please sit tight!
 
 &lt;progress#loading-bar max=&quot;100&quot;&gt;&lt;/progress&gt;
-&lt;label#loading-bar-label for=&quot;loading-bar&quot;&gt;0%&lt;/label&gt;</tw-passagedata><tw-passagedata pid="319" name="Debug" tags="" position="2400,100" size="100,100">&lt;input#debugSelector type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot; value=&quot;C1P&quot;&gt;&lt;/input&gt;
+&lt;label#loading-bar-label for=&quot;loading-bar&quot;&gt;0%&lt;/label&gt;</tw-passagedata><tw-passagedata pid="321" name="Debug" tags="" position="2400,100" size="100,100">&lt;input#debugSelector type=&quot;text&quot; placeholder=&quot;Type Passage Here&quot; autocomplete=&quot;off&quot; value=&quot;C1P&quot;&gt;&lt;/input&gt;
 &lt;button#debugGo&gt;Go&lt;/button&gt;
 
 &lt;br&gt;&lt;hr&gt;
@@ -6244,20 +6285,20 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 		
 		window.story.show(chapter + passage + variation);
 	});
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="320" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="321" name="Up to here :)" tags="" position="2800,15950" size="200,100"></tw-passagedata><tw-passagedata pid="322" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="322" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="323" name="Up to here :)" tags="" position="2825,16400" size="200,100"></tw-passagedata><tw-passagedata pid="324" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Get off me you sons of bitches!&lt;/speech&gt;
 
 &lt;action&gt;The voice from outside again.&lt;/action&gt;
-&lt;action&gt;It sounds like a guy.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="323" name="F: Feet on seat" tags="floater" position="2425,13350" size="200,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;action&gt;It sounds like a guy.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="325" name="F: Feet on seat" tags="floater" position="2425,13350" size="200,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two.scared.ditto&gt;Tiffany&lt;/character&gt;
 
 &lt;action&gt;I look at %Tiffany%.&lt;/action&gt;
 &lt;action&gt;She&#39;s got her feet up on the seat, and buried her head in her knees.&lt;/action&gt;
-&lt;action&gt;She must be terrified.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="324" name="F: Artwork" tags="floater" position="1475,875" size="100,100">&lt;div#gallery-container.gallery&gt;
+&lt;action&gt;She must be terrified.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="326" name="F: Artwork" tags="floater" position="1475,875" size="100,100">&lt;div#gallery-container.gallery&gt;
 	&lt;img#gallery-image-1&gt;
 	&lt;img#gallery-image-2&gt;
 	&lt;img#gallery-image-3&gt;
@@ -6271,20 +6312,20 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 Character Artwork - Despoina &quot;DesDarkDesigns&quot;&lt;br&gt;
 &lt;a href=&quot;https://linktr.ee/despoinanyx&quot; target=&quot;_blank&quot;&gt;https://linktr.ee/despoinanyx&lt;/a&gt;
 
-[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="325" name="Lucy" tags="menu" position="1825,1025" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
+[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="327" name="Lucy" tags="menu" position="1825,1025" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
 
 &lt;% window.story.createGalleryItem(1, &quot;Lucy&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(2, &quot;Lucy&quot;, &quot;neutral&quot;, &quot;neutral-mask&quot;, &quot;neutral-mask&quot;); %&gt;
 &lt;% window.story.createGalleryItem(3, &quot;Lucy&quot;, &quot;fighting&quot;); %&gt;
 &lt;% window.story.createGalleryItem(4, &quot;Lucy&quot;, &quot;concern&quot;, &quot;concern&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(5, &quot;Lucy&quot;, &quot;happy&quot;, &quot;happy&quot;, &quot;neutral&quot;); %&gt;
-&lt;% window.story.createGalleryItem(6, &quot;Lucy&quot;, &quot;sad&quot;, &quot;sad&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="326" name="Charles" tags="menu" position="1600,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
+&lt;% window.story.createGalleryItem(6, &quot;Lucy&quot;, &quot;sad&quot;, &quot;sad&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="328" name="Charles" tags="menu" position="1600,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
 
 &lt;% window.story.createGalleryItem(1, &quot;Charles&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(2, &quot;Charles&quot;, &quot;fighting&quot;); %&gt;
 &lt;% window.story.createGalleryItem(3, &quot;Charles&quot;, &quot;angry&quot;, &quot;angry&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(4, &quot;Charles&quot;, &quot;sad&quot;, &quot;sad&quot;, &quot;neutral&quot;); %&gt;
-&lt;% window.story.createGalleryItem(5, &quot;Charles&quot;, &quot;scared&quot;, &quot;scared&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="327" name="Sophia" tags="menu" position="1775,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
+&lt;% window.story.createGalleryItem(5, &quot;Charles&quot;, &quot;scared&quot;, &quot;scared&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="329" name="Sophia" tags="menu" position="1775,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
 
 &lt;% window.story.createGalleryItem(1, &quot;Sophia&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(2, &quot;Sophia&quot;, &quot;close-up&quot;, &quot;neutral-close-up&quot;, &quot;close-up&quot;); %&gt;
