@@ -1,4 +1,4 @@
-/* global SimpleNotification, GamePad, AudioLibrary, AudioSystem */
+/* global SimpleNotification, GamePad, AudioLibrary, AudioSystem, Drift */
 
 //
 // Variables
@@ -66,10 +66,6 @@ const uiStyles = {
 				<img id="character-one-image" class="character-slot">
 			</div>
 
-			<div class="special-right">
-				<img id="special-image" class="special-image">
-			</div>
-
 			<div class="text-area">
 				<div class="character-name character-name-left">
 					<img class="character-name">
@@ -79,6 +75,10 @@ const uiStyles = {
 				<div class="text-area-special">
 					<img>
 				</div>
+			</div>
+
+			<div class="special-right">
+				<img id="special-image" class="special-image">
 			</div>
 
 		</div>
@@ -596,12 +596,22 @@ const stepPassage = async () => {
 			}
 
 			// Set the image for the Special UI
-			case "SPECIAL":
+			case "SPECIAL": {
 				$("#special-image").attr("class", "special-image");
 				$("#special-image").addClass(`${content.toLowerCase()}-image`);
 
+				const imageURL = window.getComputedStyle(document.querySelector("#special-image")).getPropertyValue("background-image");
+
+				$("#special-image").attr("data-zoom", imageURL.substring(imageURL.indexOf("\"") + 1, imageURL.lastIndexOf("\"")));
+
+				new Drift(document.querySelector("#special-image"), {
+					inlinePane: false,
+					paneContainer: document.querySelector(".text-area")
+				});
+
 				stepPassage();
 				break;
+			}
 
 			// Plays a sound effect
 			case "SOUND":
@@ -841,6 +851,11 @@ const simpleNotificationScript = initializeScript("assets/javascript/simpleNotif
 // https://github.com/0xPranavDoshi/jquery-typewriter/blob/master/LICENSE
 const typewriterScript = initializeScript("assets/javascript/typewriter.min.js");
 
+// Drift
+// https://github.com/imgix/drift
+// https://github.com/imgix/drift/blob/main/LICENSE.md
+const driftScript = initializeScript("assets/javascript/Drift.min.js");
+
 ///
 /// Initialization
 ///
@@ -861,6 +876,7 @@ executeScript(audioScript);
 executeScript(galleryItemScript);
 executeScript(simpleNotificationScript);
 executeScript(typewriterScript);
+executeScript(driftScript);
 
 // Start preloading all images
 executeScript(preloadScript);

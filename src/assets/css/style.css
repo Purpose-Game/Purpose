@@ -125,6 +125,10 @@ tw-story {
   font-size: 15px !important;
 }
 
+.drift-zoom-pane {
+  border-radius: 25px;
+}
+
 .did-bar::-webkit-progress-value {
   background: green;
 }
@@ -340,6 +344,7 @@ tw-story {
 .special-right > .special-image {
   width: 150%;
   background-size: cover;
+  background-position: center;
   content: url("../../assets/images/ui/story-box/special-outline.png");
   background-image: url("../../assets/images/ui/story-box/special.png");
 }

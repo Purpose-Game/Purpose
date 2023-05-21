@@ -111,14 +111,12 @@ const requiredImages = [
 	// "specials/items/tap.png",
 
 	// Places
-	// "specials/places/backdoor.png",
-	// "specials/places/backstreet.png",
-	// "specials/places/backwall.png",
-	// "specials/places/backwindow.png",
-	// "specials/places/garden.png",
-	// "specials/places/kitchen.png",
-	// "specials/places/laundryroom.png",
-	// "specials/places/living_room.png",
+	"specials/places/back_door.png",
+	"specials/places/back_garden.png",
+	"specials/places/back_street.png",
+	"specials/places/back_wall.png",
+	"specials/places/back_window.png",
+	"specials/places/back_window_broken.png",
 
 	// Story-Box
 	
