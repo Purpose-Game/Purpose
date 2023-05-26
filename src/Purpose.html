@@ -5877,45 +5877,98 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;action&gt;I take one last look over my shoulder...&lt;/action&gt;
 
-&lt;choices&gt;[[[Step through the window]|C1P59]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="294" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+&lt;choices&gt;[[[Step through the window]|C1P59]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="294" name="C1P64" tags="page" position="3075,16400" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
 
-&quot;Well done %Tiffany%&quot;, I say, breathless. She looks a bit shaken.
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+
+&lt;speech.sarah&gt;Well done %Tiffany%&lt;/speech&gt;
+
+&lt;action&gt;I say, breathless.&lt;/action&gt;
+&lt;action&gt;She looks a bit shaken.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-I force myself up off the ground, pain screaming from every part of my body. &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { print(`I pull the knife out of the walker&#39;s head, and`) } else { print(`I take %Tiffany%&#39;s hand and`) } %&gt; look around: the house is a no-go, which only leaves the way I came in originally, the back wall.
+&lt;character.one.pain.pain.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;I force myself up off the ground, pain screaming from every part of my body.&lt;/action&gt;
+
+&lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;TiffBackstory&quot;) == &quot;Killing&quot;) { %&gt;
+
+&lt;action&gt;I pull the knife out of the walker&#39;s head.&lt;/action&gt;
+
+&lt;% } else { %&gt;
+
+&lt;action&gt;I take %Tiffany%&#39;s hand.&lt;/action&gt;
+
+&lt;% } %&gt;
+
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+
+&lt;action&gt;Looking around, the house is a no-go, which only leaves the way I came in originally, the back wall.&lt;/action&gt;
 
 &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;StrangerDied&quot;)) { %&gt;
 
-&quot;Hey, you alright?&quot;, the stranger says, coming up from behind us.
+&lt;character.two&gt;Charles&lt;/character&gt;
 
-&quot;Where the hell were you?&quot;, I ask.
+    &lt;% if (!window.story.getChoice(&quot;Chapter1&quot;, &quot;CharlesName&quot;)) { %&gt;
+        
+    &lt;characteroverride.two&gt;???&lt;/characteroverride&gt;
+    
+    &lt;% } %&gt;
 
-&quot;I had to climb down a drainpipe to get off the roof, I wasn&#39;t so keen on your rapid decent option&quot;, he replies.
+&lt;speech.charles&gt;Hey, you alright?&lt;/speech&gt;
 
-I roll my eyes.
+&lt;action&gt;He says coming up from behind us.&lt;/action&gt;
 
-&quot;We&#39;re going over the back wall&quot;, I say.
+&lt;speech.sarah&gt;Where the hell were you?&lt;/speech&gt;
 
-&quot;Yeah, alright, good idea&quot;, he replies as he starts heading towards it.
+&lt;speech.charles&gt;I had to climb down a drainpipe to get off the roof.&lt;/speech&gt;
+&lt;speech.charles&gt;I wasn&#39;t so keen on your rapid decent option.&lt;/speech&gt;
+
+&lt;action&gt;I roll my eyes.&lt;/action&gt;
+
+&lt;speech.sarah&gt;We&#39;re going over the back wall.&lt;/speech&gt;
+
+&lt;speech.charles&gt;Yeah, alright, good idea.&lt;/speech&gt;
+
+&lt;action&gt;He replies as he starts heading towards it.&lt;/action&gt;
 
 &lt;% } %&gt;
+
+&lt;character.two.confused.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
 &lt;% if (window.story.getChoice(&quot;Chapter1&quot;, &quot;Kicked&quot;)) { %&gt;
 
-I look back at the house. The back door is wide open, and walkers are making their way down the patio steps. Guess that doorstop didn&#39;t pose much of an obstacle to them.
+&lt;action&gt;I look back at the house.&lt;/action&gt;
+&lt;action&gt;The back door is wide open, and walkers are making their way down the patio steps.&lt;/action&gt;
+&lt;action&gt;Guess that doorstop didn&#39;t pose much of an obstacle to them.&lt;/action&gt;
 
 &lt;% } %&gt;
 
-I start towards the back wall, pulling %Tiffany% along behind me. As we get to it, I feel more resistance on my arm from %Tiffany%: she&#39;s trying to get me to stop. I comply and face her.
+&lt;action&gt;I start towards the back wall, pulling %Tiffany% along behind me.&lt;/action&gt;
+&lt;action&gt;As we get towards it, I feel more resistance on my arm from %Tiffany%...&lt;/action&gt;
+&lt;action&gt;...she&#39;s trying to get me to stop.&lt;/action&gt;
+&lt;action&gt;I comply and face her.&lt;/action&gt;
 
-&quot;What, what&#39;s wrong?&quot;, I say quickly, wary of the walkers slowly approaching from our rear.
+&lt;character.two.sad.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-&quot;We have to go back for mom, we can&#39;t leave her here with the monsters!&quot;, she says, tears again budding in the corners of her big blue eyes.
+&lt;speech.sarah&gt;What, what&#39;s wrong?&lt;/speech&gt;
 
-[[I know how you feel|C1P64V1]]&lt;br&gt;
-[[We will end up dead too|C1P64V2]]&lt;br&gt;
-[[Now is not the time %Tiffany%!|C1P64V3]]</tw-passagedata><tw-passagedata pid="295" name="C1P64V1" tags="variation" position="2925,16550" size="100,100">I painfully drop down on one knee to be level with her.
+&lt;action&gt;I say quickly, wary of the walkers slowly approaching from our rear.&lt;/action&gt;
+
+&lt;speech.tiffany&gt;We have to go back for mom.&lt;/speech&gt;
+&lt;speech.tiffany&gt;We can&#39;t leave her there with all the monsters!&lt;/speech&gt;
+
+&lt;action&gt;Tears again budding in the corners of her big blue eyes.&lt;/action&gt;
+
+&lt;choices&gt;
+    [[I know how you feel|C1P64V1]]
+    [[We will end up dead too|C1P64V2]]
+    [[Now is not the time %Tiffany%!|C1P64V3]]
+&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="295" name="C1P64V1" tags="variation" position="2925,16550" size="100,100">I painfully drop down on one knee to be level with her.
 
 &quot;%Tiffany%, believe me, I know exactly how you are feeling right now, but I need you to be brave like your mom was&quot;, I say to her.
 
@@ -6206,29 +6259,69 @@ window.story.delayedText(8000, &quot;three&quot;, 500);
 &lt;action&gt;I put the knife clean between its eyes, or rather, where its eyes should have been.&lt;/action&gt;
 &lt;action&gt;The walker goes limp and flops to the ground.&lt;/action&gt;
 
-&lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="314" name="C1P63V2" tags="variation" position="3375,16250" size="100,100">&quot;Use the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
+&lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="314" name="C1P63V2" tags="variation" position="3375,16250" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-She goes around behind me out of sight, then comes back over and stands off to my side.
+&lt;speech.sarah&gt;Use the knife %Tiffany%!&lt;/speech&gt;
 
-&quot;What do I do with it?&quot;, she shouts.
+&lt;action&gt;Pointing to it with my free hand.&lt;/action&gt;
 
-&quot;Stab it %Tiffany%, in the head! The head!&quot;, I reply frantically; I can&#39;t hold this thing for much longer.
+&lt;resetcharacter.two/&gt;
 
-%Tiffany% comes right up next to the walker and I, raises the knife almost comically high above her head, then brings it down. 
+&lt;action&gt;She goes around behind me out of sight...&lt;/action&gt;
 
-\* Splat \*
+&lt;character.two.sad.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
 
-Walker bits get all over my face, %Tiffany% steps back, the walker goes limp and I push it off. I reach over and pull the knife out of the back of its head.
+&lt;action&gt;...then comes back over and stands off to my side.&lt;/action&gt;
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="315" name="C1P63V3" tags="variation" position="3525,16250" size="100,100">&quot;Get me the knife %Tiffany%!&quot;, I shout, pointing to it with my free hand.
+&lt;speech.tiffany&gt;Wha- what do I do with it?&lt;/speech&gt;
 
-She goes around behind me out of sight, then comes back over and stands over me, nerviosuly holding out the knife. If I grab it like that I&#39;m going to cut myself, no time to muck around. I grab %Tiffany%&#39;s hand with my free hand and pull the knife and her along with it the last few inches to the walker&#39;s head.
+&lt;speech.sarah&gt;Stab it %Tiffany%!&lt;/speech&gt;
+&lt;speech.sarah&gt;In the head! The head!&lt;/speech&gt;
 
-\* Splat \*
+&lt;action&gt;I reply frantically.&lt;/action&gt;
+&lt;action&gt;I can&#39;t hold this thing for much longer.&lt;/action&gt;
+&lt;action&gt;%Tiffany% comes right up next to the walker...&lt;/action&gt;
+&lt;action&gt;Raises the knife almost comically high above her head, then...&lt;/action&gt;
+&lt;!-- TODO: SFX here --&gt;
+&lt;action&gt;SPLAT&lt;/action&gt;
 
-Walker bits get all over my face, I let go of %Tiffany%&#39;s hand and she steps back out of the way, the walker, knife still in it’s head, goes limp, and I push it off. I reach over and pull the knife out of its face.
+&lt;character.one.neutral.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
 
-[[[Get up]|C1P64]]</tw-passagedata><tw-passagedata pid="316" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
+&lt;action&gt;Walker bits get all over my face.&lt;/action&gt;
+&lt;action&gt;%Tiffany% steps back, the walker goes limp and I push it off.&lt;/action&gt;
+&lt;action&gt;I reach over and pull the knife out of the back of its head.&lt;/action&gt;
+
+&lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="315" name="C1P63V3" tags="variation" position="3525,16250" size="100,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;character.one.pain.neutral.neutral-backpack&gt;Sarah&lt;/character&gt;
+&lt;character.two.sad.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;speech.sarah&gt;Get me the knife %Tiffany%!&lt;/speech&gt;
+
+&lt;action&gt;Pointing to it with my free hand.&lt;/action&gt;
+
+&lt;resetcharacter.two/&gt;
+
+&lt;action&gt;She goes around behind me out of sight...&lt;/action&gt;
+
+&lt;character.two.sad.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;...then comes back over and stands over me, nervously holding out the knife blade first.&lt;/action&gt;
+&lt;action&gt;If I grab it like that I&#39;m going to cut myself, no time to muck around.&lt;/action&gt;
+&lt;character.two.happy.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
+&lt;action&gt;I grab %Tiffany%&#39;s wrist with my free hand and pull the knife and her along with it the last few inches to the walker&#39;s head.&lt;/action&gt;
+&lt;!-- TODO: SFX here --&gt;
+&lt;action&gt;SPLAT&lt;/action&gt;
+&lt;action&gt;Walker bits get all over my face.&lt;/action&gt;
+
+&lt;character.two.sad.sad.neutral-backpack&gt;Tiffany&lt;/character&gt;
+
+&lt;action&gt;I let go of %Tiffany% and she steps backwards.&lt;/action&gt;
+&lt;action&gt;The walker, knife still in it&#39;s head, goes limp: I push it off.&lt;/action&gt;
+&lt;action&gt;I reach over and pull the knife out of its face.&lt;/action&gt;
+
+&lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="316" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
 
 &lt;%
 window.story.delayedText(4000, &quot;one&quot;, 0);
@@ -6294,7 +6387,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 		
 		window.story.show(chapter + passage + variation);
 	});
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="322" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="323" name="Up to here :)" tags="" position="2825,16400" size="200,100"></tw-passagedata><tw-passagedata pid="324" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="322" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="323" name="Up to here :)" tags="" position="2700,16550" size="200,100"></tw-passagedata><tw-passagedata pid="324" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
