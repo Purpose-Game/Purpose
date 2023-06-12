@@ -1,11 +1,8 @@
 Game & Infrastructure - Christopher "Inferno" M.
 > https://purpose-game.com/
 
-Character Artwork, UI Design, & Sound Design - Daniel "DanDarkDesigns" Ayala
+Artwork, UI Design, & Sound Design - Daniel "DanDarkDesigns" Ayala
 > https://www.artstation.com/darkcan
-
-Item & Location Artwork - NovelAI (Anlatan)
-> https://novelai.net
 
 UI Sound Effects - Kenney Vleugels
 > https://kenney.nl
@@ -33,6 +30,9 @@ toggleFullscreen.js - demonixis
 
 jquery-typewriter-plugin - 0xPranavDoshi
 > https://github.com/0xPranavDoshi/jquery-typewriter
+
+Drift - imgix
+> https://github.com/imgix/drift
 
 Underscore.js - DocumentCloud & Contributors
 > https://underscorejs.org/
