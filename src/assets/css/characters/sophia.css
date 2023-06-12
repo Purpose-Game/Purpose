@@ -1,0 +1,53 @@
+/* Stance */
+
+.sophia-stance-close-up {
+  background-image: url("../../../assets/images/ui/characters/sophia/stance/close_up.png");
+}
+
+.sophia-stance-neutral {
+  background-image: url("../../../assets/images/ui/characters/sophia/stance/neutral.png");
+}
+
+/* Eyes */
+
+.sophia-eyes-close-up {
+  background-image: url("../../../assets/images/ui/characters/sophia/eyes/close_up.gif");
+}
+
+.sophia-eyes-demonic {
+  background-image: url("../../../assets/images/ui/characters/sophia/eyes/demonic.gif");
+}
+
+.sophia-eyes-excited {
+  background-image: url("../../../assets/images/ui/characters/sophia/eyes/excited.gif");
+}
+
+.sophia-eyes-neutral {
+  background-image: url("../../../assets/images/ui/characters/sophia/eyes/neutral.gif");
+}
+
+/* Mouth */
+
+.sophia-mouth-talking {
+  background-image: url("../../../assets/images/ui/characters/sophia/mouth/talking.gif");
+}
+
+.sophia-mouth-talking-close-up {
+  background-image: url("../../../assets/images/ui/characters/sophia/mouth/talking_close_up.gif");
+}
+
+.sophia-mouth-demonic {
+  background-image: url("../../../assets/images/ui/characters/sophia/mouth/demonic.png");
+}
+
+.sophia-mouth-excited {
+  background-image: url("../../../assets/images/ui/characters/sophia/mouth/excited.png");
+}
+
+.sophia-mouth-neutral {
+  background-image: url("../../../assets/images/ui/characters/sophia/mouth/neutral.png");
+}
+
+.sophia-mouth-neutral-close-up {
+  background-image: url("../../../assets/images/ui/characters/sophia/mouth/neutral_close_up.png");
+}

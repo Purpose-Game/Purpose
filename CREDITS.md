@@ -1,8 +1,20 @@
 Game & Infrastructure - Christopher "Inferno" M.
 > https://purpose-game.com/
 
-Artwork - Daniel "DanDarkDesigns" Ayala
+Artwork, UI Design, & Sound Design - Daniel "DanDarkDesigns" Ayala
 > https://www.artstation.com/darkcan
+
+UI Sound Effects - Kenney Vleugels
+> https://kenney.nl
+
+SFX - Reference Individual File Metadata
+https://freesound.org/
+(https://creativecommons.org/publicdomain/zero/1.0/)
+(https://creativecommons.org/licenses/by/3.0/)
+(https://creativecommons.org/licenses/by/4.0/)
+
+Music - Reference Individual File Metadata
+> https://www.humblebundle.com
 
 Dead Font Walking Font - Allison James
 > https://www.1001fonts.com/dead-font-walking-font.html
@@ -15,6 +27,18 @@ SimpleNotification - Glagan & Contributors
 
 toggleFullscreen.js - demonixis
 > https://gist.github.com/demonixis/5188326
+
+jquery-typewriter-plugin - 0xPranavDoshi
+> https://github.com/0xPranavDoshi/jquery-typewriter
+
+Steam-like Trading Card Interaction - imchell
+> https://github.com/imchell/steam-like-card-curation
+
+Drift - imgix
+> https://github.com/imgix/drift
+
+Underscore.js - DocumentCloud & Contributors
+> https://underscorejs.org/
 
 jQuery - OpenJS Foundation & Contributors
 > https://jquery.com/

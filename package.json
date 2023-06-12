@@ -4,8 +4,9 @@
   "description": "Purpose is an episodic story about a young woman struggling with the loss of her sister in the Walker-infested post-apocalyptic world. Join her on her journey as you make decisions that influence the outcome of the story, in this text-based multiple-choice adventure inspired by Telltale Games' The Walking Dead.",
   "main": "index.js",
   "scripts": {
-    "jslint": "eslint . index.js",
-    "csslint": "npx stylelint style.css"
+    "jslint": "npx eslint --ext .js \"src\"",
+    "csslint": "npx stylelint \"src/**/*.css\"",
+    "copy": "shx cp -r src/* dist"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   "homepage": "https://github.com/cm8263/Purpose#readme",
   "devDependencies": {
     "eslint": "^8.41.0",
-    "stylelint": "15.6.2",
-    "stylelint-config-standard": "^33.0.0"
+    "shx": "^0.3.4",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard": "33.0.0"
   }
 }

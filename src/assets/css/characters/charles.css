@@ -1,0 +1,46 @@
+/* Stance */
+
+.charles-stance-neutral {
+  background-image: url("../../../assets/images/ui/characters/charles/stance/neutral.png");
+}
+
+.charles-stance-fighting {
+  background-image: url("../../../assets/images/ui/characters/charles/stance/fighting.png");
+}
+
+/* Eyes */
+
+.charles-eyes-angry {
+  background-image: url("../../../assets/images/ui/characters/charles/eyes/angry.gif");
+}
+
+.charles-eyes-fighting {
+  background-image: url("../../../assets/images/ui/characters/charles/eyes/fighting.gif");
+}
+
+.charles-eyes-neutral {
+  background-image: url("../../../assets/images/ui/characters/charles/eyes/neutral.gif");
+}
+
+.charles-eyes-sad {
+  background-image: url("../../../assets/images/ui/characters/charles/eyes/sad.gif");
+}
+
+.charles-eyes-scared {
+  background-image: url("../../../assets/images/ui/characters/charles/eyes/scared.gif");
+}
+
+/* Mouth */
+
+.charles-mouth-talking {
+  background-image: url("../../../assets/images/ui/characters/charles/mouth/talking.gif");
+}
+
+.charles-mouth-talking-fighting {
+  background-image: url("../../../assets/images/ui/characters/charles/mouth/talking_fighting.gif");
+}
+
+/* Mouth is attached to stance, no image required */
+.charles-mouth-neutral {
+  background-image: url("");
+}
