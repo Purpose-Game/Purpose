@@ -31,6 +31,9 @@ toggleFullscreen.js - demonixis
 jquery-typewriter-plugin - 0xPranavDoshi
 > https://github.com/0xPranavDoshi/jquery-typewriter
 
+Steam-like Trading Card Interaction - imchell
+> https://github.com/imchell/steam-like-card-curation
+
 Drift - imgix
 > https://github.com/imgix/drift
 
