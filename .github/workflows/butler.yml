@@ -48,11 +48,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-    - name: Copy Twine File to dist
-      uses: canastro/copy-file-action@master
-      with:
-        source: "Purpose.html"
-        target: "dist/index.html"
     - name: Minify JS & CSS dist files
       uses: nizarmah/auto-minify@v2.1
       with:

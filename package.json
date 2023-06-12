@@ -6,7 +6,7 @@
   "scripts": {
     "jslint": "npx eslint --ext .js \"src\"",
     "csslint": "npx stylelint \"src/**/*.css\"",
-    "copy": "shx cp -r src/* dist"
+    "copy": "shx cp -r src/* dist && shx mv dist/Purpose.html dist/index.html"
   },
   "repository": {
     "type": "git",
