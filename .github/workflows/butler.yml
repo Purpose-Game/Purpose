@@ -51,7 +51,7 @@ jobs:
     - name: Copy Twine File to dist
       uses: canastro/copy-file-action@master
       with:
-        source: "Purpose.html"
+        source: "src/Purpose.html"
         target: "dist/index.html"
     - name: Minify JS & CSS dist files
       uses: nizarmah/auto-minify@v2.1
