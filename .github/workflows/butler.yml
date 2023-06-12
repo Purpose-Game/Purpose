@@ -8,10 +8,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+
       - name: Cache npm Directory
         uses: c-hive/gha-npm-cache@v1
+
       - name: npm Install
         run: npm ci
+
       - name: Lint Javascript
         run: npm run jslint
   cssLint:
@@ -20,26 +23,46 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+
       - name: Cache npm Directory
         uses: c-hive/gha-npm-cache@v1
+
       - name: npm Install
         run: npm ci
+
       - name: Lint CSS
         run: npm run csslint
   copy:
-    name: Copy Files To dist
+    name: Copy Files To dist and Minify
     needs: [jsLint, cssLint]
     runs-on: ubuntu-latest
     if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          lfs: true
+
       - name: Cache npm Directory
         uses: c-hive/gha-npm-cache@v1
+
       - name: npm Install
         run: npm ci
+
       - name: Copy Files To dist
         run: npm run copy
+
+      - name: Minify JS & CSS dist files
+        uses: nizarmah/auto-minify@v2.1
+        with:
+          overwrite: true
+          directory: 'dist'
+
+      - name: Save Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
   deploy:
     name: Deploy to itch.io
     needs: copy
@@ -48,11 +71,13 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-    - name: Minify JS & CSS dist files
-      uses: nizarmah/auto-minify@v2.1
+
+    - name: Download Artifact
+      uses: actions/download-artifact@v3
       with:
-        overwrite: true
-        directory: 'dist'
+        name: dist
+        path: dist 
+
     - name: Deploy to itch.io
       uses: josephbmanley/butler-publish-itchio-action@master
       env:
