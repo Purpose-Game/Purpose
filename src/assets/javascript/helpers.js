@@ -436,7 +436,7 @@ window.story.loadAchievements = async () => {
 window.story.pauseMenu = async () => {
 	debugMessage(`Pause menu toggled "${prePausePassage == null}".`);
 
-	if (prePausePassage === null) {
+	if (prePausePassage == null) {
 		prePausePassage = window.passage.name;
 
 		window.story.startMenuMusic(true);
