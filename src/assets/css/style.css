@@ -10,6 +10,11 @@
 @import url("specials/items.css");
 @import url("specials/places.css");
 
+/* Menu Imports */
+@import url("menus/main.css");
+@import url("menus/settings.css");
+@import url("menus/gallery.css");
+
 /*
 https://github.com/Glagan/SimpleNotification
 https://github.com/Glagan/SimpleNotification
@@ -143,12 +148,6 @@ tw-story {
 
 .story-box.contents.textonly {
   padding-top: 21vw;
-}
-
-.title-image {
-  width: 95%;
-  border: 20px solid rgba(0 0 0 / 30%);
-  content: url("../../assets/images/ui/titles/title-image.png");
 }
 
 .container {
