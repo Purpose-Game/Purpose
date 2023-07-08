@@ -20,7 +20,7 @@
   "devDependencies": {
     "eslint": "^8.41.0",
     "shx": "^0.3.4",
-    "stylelint": "^15.6.2",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "33.0.0"
   }
 }
