@@ -11,5 +11,6 @@
         "ecmaVersion": "latest"
     },
     "rules": {
+        "indent": ["error", "tab", { "SwitchCase": 1 }]
     }
 }

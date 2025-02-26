@@ -1,4 +1,4 @@
-name: Lint & Deploy
+name: Lint, Copy, & Deploy
 on: push
 
 jobs:
@@ -7,11 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
       - name: Cache npm Directory
-        uses: c-hive/gha-npm-cache@v1
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
       - name: npm Install
         run: npm ci
+
       - name: Lint Javascript
         run: npm run jslint
   cssLint:
@@ -19,41 +25,68 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
       - name: Cache npm Directory
-        uses: c-hive/gha-npm-cache@v1
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
       - name: npm Install
         run: npm ci
-      - name: Lint Javascript
+
+      - name: Lint CSS
         run: npm run csslint
-  deploy:
-    name: Deploy to itch.io
+  copy:
+    name: Copy Files To dist and Minify
     needs: [jsLint, cssLint]
     runs-on: ubuntu-latest
     if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache npm Directory
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: npm Install
+        run: npm ci
+
+      - name: Copy Files To dist
+        run: npm run copy
+
+      - name: Minify JS & CSS dist files
+        uses: nizarmah/auto-minify@v3
+        with:
+          overwrite: true
+          directory: 'dist'
+
+      - name: Save Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+  deploy:
+    name: Deploy to itch.io
+    needs: copy
+    runs-on: ubuntu-latest
+    if: contains(github.ref, 'refs/tags/') || github.ref == 'refs/heads/develop'
+    steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: Copy Twine File to dist
-      uses: canastro/copy-file-action@master
+      uses: actions/checkout@v4
+
+    - name: Download Artifact
+      uses: actions/download-artifact@v4
       with:
-        source: "Purpose.html"
-        target: "dist/index.html"
-    - name: Copy Javascript File to dist
-      uses: canastro/copy-file-action@master
-      with:
-        source: "index.js"
-        target: "dist/assets/javascript/index.js"
-    - name: Copy CSS File to dist
-      uses: canastro/copy-file-action@master
-      with:
-        source: "style.css"
-        target: "dist/assets/css/style.css"
-    - name: Minify JS & CSS dist files
-      uses: nizarmah/auto-minify@v2.1
-      with:
-        overwrite: true
-        directory: 'dist'
+        name: dist
+        path: dist
+
     - name: Deploy to itch.io
       uses: josephbmanley/butler-publish-itchio-action@master
       env:
@@ -63,14 +96,3 @@ jobs:
         ITCH_USER: infernochris
         PACKAGE: dist
         VERSION: ${{ env.GITHUB_REF_NAME }}
-  webhook:
-    name: Trigger Discord Webhook
-    if: ${{ always() }}
-    needs: [jsLint, cssLint, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Discord Webhook
-        uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}

@@ -1,5 +1,6 @@
+.vscode
 .DS_Store
+.idea
+.env
 node_modules
-dist/Purpose.html
-dist/assets/javascript/index.js
-dist/assets/css/style.css
+dist/*
