@@ -298,7 +298,7 @@ $(document).on("sm.passage.shown", (_, data) => {
 		const pageHTML = twPassage.html();
 		// Replace %Tiffany% with what the player chose to call Tiffany
 		if (pageHTML.includes("%Tiffany%")) twPassage.html(pageHTML.replaceAll("%Tiffany%", window.story.tiffany()));
-
+console.log(twPassage.html());
 		if (twPassage.length) processPassage(twPassage);
 	}
 });
