@@ -1,7 +1,6 @@
 // Steam-like Trading Card Interaction
 // https://github.com/imchell/steam-like-card-curation
 
-// eslint-disable-next-line  no-unused-vars
 class GalleryItem {
 	//
 	//  Constructor
@@ -16,7 +15,7 @@ class GalleryItem {
 		//
 
 		window.addEventListener("resize", () => this.calculate(this.item));
-	
+
 		this.item.addEventListener("mousemove", (event) => {
 			this.item.style.transform = `
 				perspective(1000px)
@@ -25,7 +24,7 @@ class GalleryItem {
 			`;
 			this.item.style.filter = `brightness(${this.brightness(event.y, this.centerY)})`;
 		})
-	
+
 		this.item.addEventListener("mouseleave", () => {
 			this.item.style.transform = `perspective(500px)`;
 			this.item.style.filter = `brightness(1)`;

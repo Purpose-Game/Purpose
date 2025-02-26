@@ -155,7 +155,7 @@ tw-story {
   display: grid;
   grid-template-columns: 0.8fr 1.4fr 0.8fr;
   grid-template-rows: 0fr 1.3fr 1.4fr;
-  gap: 0 0;
+  gap: 0;
   grid-auto-flow: row;
   /* stylelint-disable */
   grid-template-areas:
@@ -258,7 +258,7 @@ tw-story {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0fr 0fr 1fr;
-  gap: 0 0;
+  gap: 0;
   grid-auto-flow: row;
   /* stylelint-disable */
   grid-template-areas:
@@ -353,7 +353,7 @@ tw-story {
   display: grid;
   grid-template-columns: 1fr 0.5fr 1.5fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0 0;
+  gap: 0;
   /* stylelint-disable */
   grid-template-areas:
 	"option-one option-one option-two"

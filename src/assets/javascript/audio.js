@@ -9,7 +9,6 @@ const audioDir = "assets/audio/";
 let audioCurrentMusic;
 let audioKillFades = false;
 
-// eslint-disable-next-line  no-unused-vars
 class AudioSystem {
 	//
 	//  Methods
@@ -55,7 +54,7 @@ class AudioSystem {
 
 		while (audioCurrentMusic.volume > 0) {
 			audioCurrentMusic.volume = Math.max(0, audioCurrentMusic.volume - 0.1);
-			
+
 			await sleep(100);
 		}
 
@@ -73,7 +72,7 @@ class AudioSystem {
 	static fadeOut = async (music) => {
 		while (!audioKillFades && music.volume > 0) {
 			music.volume = Math.max(0, music.volume - 0.025);
-			
+
 			await sleep(125);
 		}
 
@@ -117,7 +116,7 @@ class AudioLibrary {
 			main_menu: new Audio(`${audioDir}music/menu/main_menu.mp3`),
 			pause_menu: new Audio(`${audioDir}music/menu/pause_menu.mp3`),
 		},
-		
+
 		// Game Music
 		"limping": new Audio(`${audioDir}music/limping.mp3`),
 		"flashback": new Audio(`${audioDir}music/flashback.mp3`),
