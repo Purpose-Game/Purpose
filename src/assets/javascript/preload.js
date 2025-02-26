@@ -79,7 +79,7 @@ const requiredImages = [
 	"characters/sophia/mouth/neutral_close_up.png",
 	"characters/sophia/mouth/talking.gif",
 	"characters/sophia/mouth/talking_close_up.gif",
-	
+
 	"characters/sophia/stance/close_up.png",
 	"characters/sophia/stance/neutral.png",
 
@@ -95,7 +95,7 @@ const requiredImages = [
 	"characters/tiffany/mouth/neutral.png",
 	"characters/tiffany/mouth/sad.png",
 	"characters/tiffany/mouth/talking.gif",
-	
+
 	"characters/tiffany/stance/neutral.png",
 	"characters/tiffany/stance/neutral_backpack.png",
 	"characters/tiffany/stance/scared.png",
@@ -119,7 +119,7 @@ const requiredImages = [
 	"specials/places/back_window_broken.png",
 
 	// Story-Box
-	
+
 	"story-box/character-name.png",
 	"story-box/character-slot.png",
 	"story-box/character-slot-outline.png",
@@ -143,14 +143,18 @@ const loadingBar = $("#loading-bar");
 const loadingBarLabel = $("#loading-bar-label");
 const imageLoaded = async () => {
 	const percentage = (++loaded / needToLoad) * 100;
-	
+
 	loadingBar.val(percentage);
 	loadingBarLabel.text(`${Math.floor(percentage)}%`);
 
 	if (loaded == needToLoad) {
 		debugMessage(`Finished loading ${loaded} images`);
 
-		$("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Debug')">[Continue]</a>`);
+		if (debug) {
+			$("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Debug')">[Continue]</a>`);
+		} else {
+			$("tw-passage").append(`<br><a href="javascript:void(0)" class="sound-click" onclick="window.story.show('Entry Point')">[Continue]</a>`);
+		}
 	}
 }
 

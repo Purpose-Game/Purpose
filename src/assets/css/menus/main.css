@@ -1,5 +1,7 @@
 .title-image {
-    width: 95%;
     border: 20px solid rgba(0 0 0 / 30%);
-    content: url("../../assets/images/ui/titles/title-image.png");
+    content: url("../../images/ui/titles/title-image.png");
+    max-width: 50%;
+    display: block;
+    margin: auto;
 }

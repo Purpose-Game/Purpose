@@ -1374,10 +1374,13 @@ Stranger - Charles:
 &lt;action&gt;I couldn&#39;t care less...&lt;/action&gt;
 	
 &lt;%= window.story.render(&quot;F: Stay in bed&quot;) %&gt;</tw-passagedata><tw-passagedata pid="80" name="Credits" tags="info floater" position="3875,725" size="200,100">Game &amp; Infrastructure - Christopher &quot;Inferno&quot; M.&lt;br&gt;
-&lt;a href=&quot;https://purpose-game.com&quot; target=&quot;_blank&quot;&gt;https://purpose-game.com&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;a href=&quot;https://inferno-chris.com&quot; target=&quot;_blank&quot;&gt;https://inferno-chris.com&lt;/a&gt;&lt;br&gt;&lt;br&gt;
 
 Artwork, UI Design, &amp; Sound Design - Despoina &quot;DesDarkDesigns&quot;&lt;br&gt;
 &lt;a href=&quot;https://linktr.ee/despoinanyx&quot; target=&quot;_blank&quot;&gt;https://linktr.ee/despoinanyx&lt;/a&gt;
+
+V2 Conversion Assistance - Chase Rimmer&lt;br&gt;
+&lt;a href=&quot;https://sites.google.com/view/chase-rimmer/home&quot; target=&quot;_blank&quot;&gt;https://sites.google.com/view/chase-rimmer/home&lt;/a&gt;
 
 UI Sound Effects - Kenney Vleugels&lt;br&gt;
 &lt;a href=&quot;https://kenney.nl&quot; target=&quot;_blank&quot;&gt;https://kenney.nl&lt;/a&gt;
@@ -1782,7 +1785,8 @@ if (!verbal) {
 &lt;img.title-image&gt;
 
 &lt;div#title-button&gt;
-[[Play Game|Save Options]]
+&lt;!-- [[Play Game|Save Options]] --&gt;
+[[Play Game|Game Options]]
 [[Extras|Extras]]
 [[Settings|Global Settings]]
 [[Credits|Global Credits]]
@@ -6208,7 +6212,8 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 &lt;action&gt;Chapter One&lt;/action&gt;
 &lt;action&gt;Poor Choices&lt;/action&gt;
 
-&lt;choices&gt;[[Continue|C1 Achievements]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="305" name="C1 Statistics" tags="menu" position="3025,17750" size="200,100">&lt;% window.story.loadStats() %&gt;
+&lt;!-- &lt;choices&gt;[[Continue|C1 Achievements]]&lt;/choices&gt; --&gt;
+&lt;choices&gt;[[Continue|C1 Credits]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="305" name="C1 Statistics" tags="menu" position="3025,17750" size="200,100">&lt;% window.story.loadStats() %&gt;
 
 &lt;span#statsLoading&gt;Loading...&lt;/span&gt;
 
@@ -6432,14 +6437,7 @@ All that out of the way, have fun, and feel free to leave PRs on GitHub with imp
 
 &lt;choices&gt;[[[Get up]|C1P64]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="316" name="C2 Intro" tags="menu save" position="3275,425" size="200,100">### Chapter Two
 
-&lt;%
-window.story.delayedText(4000, &quot;one&quot;, 0);
-window.story.delayedText(6000, &quot;two&quot;);
-%&gt;
-
-&lt;div-#one&gt;&lt;h1&gt;Coming Soon&lt;/h1&gt;&lt;/div&gt;
-
-&lt;div-#two&gt;
+&lt;h1&gt;Coming Soon&lt;/h1&gt;
 
 Enjoyed the story? Be sure to leave a rating and comment! &lt;a class=&quot;normal-link&quot; href=&quot;https://discord.gg/jNgAEjW7gd&quot; target=&quot;_blank&quot;&gt;Join our Discord&lt;/a&gt; to be informed when Chapter Two is released.
 
@@ -6462,7 +6460,9 @@ When Chapter Two is released, you can use this save slot (#&lt;% print (window.s
   &lt;a onclick=&quot;window.story.toggleAchievements()&quot;&gt;Toggle Achievements&lt;/a&gt;
   &lt;a onclick=&quot;window.story.toggleFullscreen()&quot;&gt;Toggle Fullscreen&lt;/a&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="319" name="Entry Point" tags="menu" position="2050,275" size="100,100">&lt;div#title-button&gt;
-	[[Launch Game|Network Check]]
+	&lt;!--[[Launch Game|Network Check]]--&gt;
+    [[Launch Game|Alpha]]
+    [[Debug Menu|Debug]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="320" name="Loading" tags="" position="2050,100" size="100,100">This game has a lot of images: UI, characters, etc.
 We&#39;re loading those images right now.
 Please sit tight!
@@ -6482,7 +6482,7 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 	$(&quot;#debugGo&quot;).click(function() {
 		const passage = $(&quot;#debugSelector&quot;).val();
 		
-		window.story.show(passage.startsWith(&quot;C1&quot;) ? passage.toUpperCase() : passage);
+		window.story.show(passage);
 	});
 
 	$(&quot;#debugGo2&quot;).click(function() {
@@ -6496,20 +6496,20 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 		
 		window.story.show(chapter + passage + variation);
 	});
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="322" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="323" name="Up to here :)" tags="" position="2775,17600" size="200,100"></tw-passagedata><tw-passagedata pid="324" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="322" name="F: Rollover" tags="floater" position="3425,3150" size="100,100">&lt;choices&gt;[[[Rollover]|C1P12]]&lt;/choices&gt;</tw-passagedata><tw-passagedata pid="323" name="F: Sounds like a guy" tags="floater" position="3300,12450" size="100,100">&lt;action&gt;%Tiffany% sounds scared.&lt;/action&gt;
 
 &lt;character.two&gt;Unknown&lt;/character&gt;
 
 &lt;speech.unknown&gt;Get off me you sons of bitches!&lt;/speech&gt;
 
 &lt;action&gt;The voice from outside again.&lt;/action&gt;
-&lt;action&gt;It sounds like a guy.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="325" name="F: Feet on seat" tags="floater" position="2425,13350" size="200,100">&lt;ui&gt;standard&lt;/ui&gt;
+&lt;action&gt;It sounds like a guy.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="324" name="F: Feet on seat" tags="floater" position="2425,13350" size="200,100">&lt;ui&gt;standard&lt;/ui&gt;
 &lt;character.one.angry.eyes&gt;Sarah&lt;/character&gt;
 &lt;character.two.scared.ditto&gt;Tiffany&lt;/character&gt;
 
 &lt;action&gt;I look at %Tiffany%.&lt;/action&gt;
 &lt;action&gt;She&#39;s got her feet up on the seat, and buried her head in her knees.&lt;/action&gt;
-&lt;action&gt;She must be terrified.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="326" name="F: Artwork" tags="floater" position="1475,875" size="100,100">&lt;div#gallery-container.gallery&gt;
+&lt;action&gt;She must be terrified.&lt;/action&gt;</tw-passagedata><tw-passagedata pid="325" name="F: Artwork" tags="floater" position="1475,875" size="100,100">&lt;div#gallery-container.gallery&gt;
 	&lt;img#gallery-image-1&gt;
 	&lt;img#gallery-image-2&gt;
 	&lt;img#gallery-image-3&gt;
@@ -6523,20 +6523,20 @@ V&lt;input#debugSelectorV type=&quot;text&quot; placeholder=&quot;Type Variation
 Character Artwork - Despoina &quot;DesDarkDesigns&quot;&lt;br&gt;
 &lt;a href=&quot;https://linktr.ee/despoinanyx&quot; target=&quot;_blank&quot;&gt;https://linktr.ee/despoinanyx&lt;/a&gt;
 
-[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="327" name="Lucy" tags="menu" position="1825,1025" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
+[[Back|Artwork]]</tw-passagedata><tw-passagedata pid="326" name="Lucy" tags="menu" position="1825,1025" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
 
 &lt;% window.story.createGalleryItem(1, &quot;Lucy&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(2, &quot;Lucy&quot;, &quot;neutral&quot;, &quot;neutral-mask&quot;, &quot;neutral-mask&quot;); %&gt;
 &lt;% window.story.createGalleryItem(3, &quot;Lucy&quot;, &quot;fighting&quot;); %&gt;
 &lt;% window.story.createGalleryItem(4, &quot;Lucy&quot;, &quot;concern&quot;, &quot;concern&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(5, &quot;Lucy&quot;, &quot;happy&quot;, &quot;happy&quot;, &quot;neutral&quot;); %&gt;
-&lt;% window.story.createGalleryItem(6, &quot;Lucy&quot;, &quot;sad&quot;, &quot;sad&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="328" name="Charles" tags="menu" position="1600,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
+&lt;% window.story.createGalleryItem(6, &quot;Lucy&quot;, &quot;sad&quot;, &quot;sad&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="327" name="Charles" tags="menu" position="1600,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
 
 &lt;% window.story.createGalleryItem(1, &quot;Charles&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(2, &quot;Charles&quot;, &quot;fighting&quot;); %&gt;
 &lt;% window.story.createGalleryItem(3, &quot;Charles&quot;, &quot;angry&quot;, &quot;angry&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(4, &quot;Charles&quot;, &quot;sad&quot;, &quot;sad&quot;, &quot;neutral&quot;); %&gt;
-&lt;% window.story.createGalleryItem(5, &quot;Charles&quot;, &quot;scared&quot;, &quot;scared&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="329" name="Sophia" tags="menu" position="1775,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
+&lt;% window.story.createGalleryItem(5, &quot;Charles&quot;, &quot;scared&quot;, &quot;scared&quot;, &quot;neutral&quot;); %&gt;</tw-passagedata><tw-passagedata pid="328" name="Sophia" tags="menu" position="1775,1175" size="100,100">&lt;%= window.story.render(&quot;F: Artwork&quot;) %&gt;
 
 &lt;% window.story.createGalleryItem(1, &quot;Sophia&quot;, &quot;neutral&quot;); %&gt;
 &lt;% window.story.createGalleryItem(2, &quot;Sophia&quot;, &quot;close-up&quot;, &quot;neutral-close-up&quot;, &quot;close-up&quot;); %&gt;

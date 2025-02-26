@@ -198,7 +198,7 @@ window.story.choiceDescriptions = {
 	}
 };
 
-// Used for achievements and end passages 
+// Used for achievements and end passages
 //	"Achievement Internal Name": [
 //		"Achievement Name", "Achievement Description"
 //	],
@@ -240,12 +240,12 @@ window.story.achievementDescriptions = {
 
 $(document).on("sm.passage.showing", (_, data) => {
 	if (data.passage === undefined) return;
-	
+
 	const passage = data.passage;
 	const twPassage = $("tw-passage");
 
 	debugMessage(`Passage changed to "${passage.name}".`);
-	
+
 	// Set browser tab name, doesn't work when inside iFrame
 	$(document).attr("title", "Purpose - " + passage.name);
 	// Scroll to top of screen on passage change for mobile users
@@ -262,7 +262,7 @@ $(document).on("sm.passage.showing", (_, data) => {
 				closeOnClick: false
 			});
 		}
-		
+
 		debugNotification.setText(`Content subject to change!\nCurrent Passage: \`\`${passage.name}\`\``);
 	}
 
@@ -415,7 +415,7 @@ const stepPassage = async () => {
 			speaker.attr("class", "character-slot");
 			speaker.css("background-image", originalImages.join(", "));
 		}
-		
+
 		textArea.append(`
 			<div ${inFlashback ? `class="italic" ` : ``}id="text-area-${ui}-${lastTextStep}-skipped">
 				${type === "SPEECH" ? `"${content}"` : content}
@@ -428,7 +428,7 @@ const stepPassage = async () => {
 		debugMessage(`Skipped to end of passage ${lastTextStep}.`);
 	} else if (steps[currentStep]) {
 		const step = currentStep;
-		
+
 		let [type, content, extra] = steps[step];
 
 		currentStep++;
@@ -440,7 +440,7 @@ const stepPassage = async () => {
 			// Change the current UI layout
 			case "UI":
 				storyBox.empty();
-				
+
 				uiType = content.toLowerCase();
 
 				switch (uiType) {
@@ -470,14 +470,14 @@ const stepPassage = async () => {
 				const knownUnknown = content.startsWith("?");
 				const character = knownUnknown ? "unknown" : content.toLowerCase();
 				const mixer = document.createElement("span");
-				
+
 				mixer.id = "mixer-image";
 				document.head.appendChild(mixer);
 
 				const mixerImage = $(`#mixer-image`);
 				const parent = $(`#character-${slot}`);
 				const parentImage = $(`#character-${slot}-image`);
-			
+
 				let parts = [];
 				let images = [];
 
@@ -538,8 +538,8 @@ const stepPassage = async () => {
 									`${character}-mouth-${extras[1]}`,
 									`${character}-stance-neutral`
 								];
-								break;	
-						}						
+								break;
+						}
 						break;
 
 					case 3:
@@ -700,7 +700,7 @@ const stepPassage = async () => {
 							slotOverride = extras[1].substring(1);
 							specificSpeech = `-${extras[2]}`;
 							break;
-					}					
+					}
 				} else {
 					character = extra?.toLowerCase() ?? "";
 				}
@@ -726,7 +726,7 @@ const stepPassage = async () => {
 				} else {
 					$(`#character-${slotOverride}-image`).css("opacity", "1");
 				}
-				
+
 				lastText.html(type === "SPEECH" ? `"${content}"` : content);
 
 				if (type !== "CHOICES") {
@@ -844,17 +844,17 @@ const preloadScript = initializeScript("assets/javascript/preload.js");
 // SimpleNotification
 // https://github.com/Glagan/SimpleNotification
 // https://github.com/Glagan/SimpleNotification/blob/master/LICENSE
-const simpleNotificationScript = initializeScript("assets/javascript/simpleNotification.min.js");
+const simpleNotificationScript = initializeScript("assets/javascript/mins/simpleNotification.min.js");
 
 // jquery-typewriter-plugin
 // https://github.com/0xPranavDoshi/jquery-typewriter
 // https://github.com/0xPranavDoshi/jquery-typewriter/blob/master/LICENSE
-const typewriterScript = initializeScript("assets/javascript/typewriter.min.js");
+const typewriterScript = initializeScript("assets/javascript/mins/typewriter.min.js");
 
 // Drift
 // https://github.com/imgix/drift
 // https://github.com/imgix/drift/blob/main/LICENSE.md
-const driftScript = initializeScript("assets/javascript/Drift.min.js");
+const driftScript = initializeScript("assets/javascript/mins/Drift.min.js");
 
 ///
 /// Initialization
