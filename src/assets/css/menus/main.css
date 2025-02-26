@@ -1,0 +1,5 @@
+.title-image {
+    width: 95%;
+    border: 20px solid rgba(0 0 0 / 30%);
+    content: url("../../assets/images/ui/titles/title-image.png");
+}
