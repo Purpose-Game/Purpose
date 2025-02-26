@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/cm8263/Purpose#readme",
   "devDependencies": {
-    "eslint": "^8.41.0",
+    "eslint": "^9.21.0",
     "shx": "^0.3.4",
-    "stylelint": "^15.10.1",
-    "stylelint-config-standard": "33.0.0"
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0"
   }
 }
